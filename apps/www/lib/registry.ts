@@ -29,7 +29,7 @@ export async function getRegistryItem(name: string) {
   // TODO: remove when we migrate to new registry.
   item.files = item.files.map((file: unknown) =>
     typeof file === "string" ? { path: file } : file
-  )
+  ) as typeof item.files
 
   // Fail early before doing expensive file operations.
   const result = registryItemSchema.safeParse(item)
