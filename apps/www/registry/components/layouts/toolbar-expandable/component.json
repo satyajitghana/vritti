@@ -1,0 +1,12 @@
+{
+  "name": "toolbar-expandable",
+  "type": "component",
+  "description": "Expandable toolbar with step-based navigation",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layout", "toolbar", "expandable"],
+    "source": "cult-ui"
+  }
+}

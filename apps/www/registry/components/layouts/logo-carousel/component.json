@@ -1,0 +1,12 @@
+{
+  "name": "logo-carousel",
+  "type": "component",
+  "description": "Animated logo carousel with staggered animations",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layout", "carousel", "logo"],
+    "source": "cult-ui"
+  }
+}

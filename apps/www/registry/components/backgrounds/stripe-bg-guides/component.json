@@ -1,0 +1,12 @@
+{
+  "name": "stripe-bg-guides",
+  "type": "component",
+  "description": "Stripe-style background guides with animated patterns",
+  "category": "backgrounds",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["background", "stripe", "guides"],
+    "source": "cult-ui"
+  }
+}

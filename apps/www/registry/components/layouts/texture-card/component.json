@@ -1,0 +1,12 @@
+{
+  "name": "texture-card",
+  "type": "component",
+  "description": "Card with texture background and customizable styling",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["layout", "card", "texture"],
+    "source": "cult-ui"
+  }
+}

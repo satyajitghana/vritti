@@ -1,0 +1,44 @@
+---
+title: Code Block
+description: Beautiful code block with tabs and copy functionality
+---
+
+<ComponentPreview name="code-block-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://vritti-ui.dev/r/code-block.json"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="code-block" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>

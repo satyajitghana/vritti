@@ -1,0 +1,12 @@
+{
+  "name": "cursor",
+  "type": "component",
+  "description": "Realtime cursor component for collaborative apps",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["interactive", "cursor", "realtime"],
+    "source": "kibo-ui"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "floating-panel",
+  "type": "component",
+  "description": "Floating panel with backdrop blur and position-aware animations",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layout", "panel", "floating"],
+    "source": "cult-ui"
+  }
+}

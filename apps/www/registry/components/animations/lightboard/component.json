@@ -1,0 +1,12 @@
+{
+  "name": "lightboard",
+  "type": "component",
+  "description": "Interactive lightboard with customizable grid and lighting",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation", "interactive", "grid"],
+    "source": "cult-ui"
+  }
+}

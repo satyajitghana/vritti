@@ -1,0 +1,12 @@
+{
+  "name": "image-zoom",
+  "type": "component",
+  "description": "Image zoom with magnifying glass effect",
+  "category": "special",
+  "dependencies": ["react-medium-image-zoom"],
+  "files": [],
+  "meta": {
+    "tags": ["interactive", "image", "zoom"],
+    "source": "kibo-ui"
+  }
+}

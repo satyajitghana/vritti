@@ -33,24 +33,78 @@ const SUB_GROUPS: Record<string, Record<string, string[]>> = {
       'animated-beam', 'border-beam', 'electric-border',
       'laser-flow', 'shine-border', 'star-border',
     ],
+    'Visual Effects': [
+      'distorted-glass', 'lightboard', 'morph-surface', 'shader-lens-blur',
+    ],
+  },
+  backgrounds: {
+    'Textures & Overlays': [
+      'bg-image-texture', 'bg-media', 'texture-overlay', 'stripe-bg-guides',
+    ],
+    'Animated Backgrounds': [
+      'bg-animated-fractal-dot-grid', 'bg-animated-gradient', 'canvas-fractal-grid',
+    ],
+  },
+  buttons: {
+    'Animated Buttons': [
+      'bg-animate-button', 'glow-button', 'shimmer-button', 'shiny-button',
+      'pulsating-button', 'rainbow-button',
+    ],
+    'Styled Buttons': [
+      'family-button', 'neumorph-button', 'texture-button',
+    ],
   },
   layouts: {
     Cards: [
       'decay-card', 'magic-card', 'neon-gradient-card', 'pixel-card',
       'profile-card', 'reflective-card', 'spotlight-card', 'tilted-card',
-      'magic-bento', 'bento-grid',
+      'magic-bento', 'bento-grid', 'minimal-card', 'shift-card', 'texture-card',
     ],
     Navigation: [
       'bubble-menu', 'card-nav', 'dock', 'flowing-menu', 'gooey-nav',
-      'infinite-menu', 'pill-nav', 'staggered-menu',
+      'infinite-menu', 'pill-nav', 'staggered-menu', 'direction-aware-tabs',
+      'toolbar-expandable', 'side-panel', 'floating-panel',
     ],
     Galleries: [
       'carousel', 'chroma-grid', 'circular-gallery', 'dome-gallery',
       'masonry', 'flying-posters', 'bounce-cards', 'card-swap',
+      'feature-carousel', 'logo-carousel',
+      'three-d-carousel',
+    ],
+    'Expandable & Drawers': [
+      'expandable', 'expandable-screen', 'family-drawer', 'dynamic-island',
+      'deck',
+    ],
+    'Lists & Grids': [
+      'sortable-list', 'tweet-grid',
+    ],
+  },
+  text: {
+    'Typewriter Effects': [
+      'typewriter', 'type-animate', 'typing-animation', 'text-type',
+    ],
+    'Number Animations': [
+      'animated-number', 'count-up', 'number-ticker',
+    ],
+    'Headings & Style': [
+      'gradient-heading', 'neumorph-eyebrow', 'text-gif',
     ],
   },
   special: {
-    'Device Mocks': ['android', 'iphone', 'safari'],
+    'Device Mocks': ['android', 'iphone', 'safari', 'mock-browser-window'],
+    'Interactive Widgets': [
+      'timer', 'rating', 'theme-switcher', 'dropzone', 'image-zoom',
+    ],
+    'Data Display': [
+      'avatar-stack', 'banner', 'contribution-graph',
+      'relative-time', 'tree',
+    ],
+    'Media & Content': [
+      'code-block', 'snippet', 'hover-video-player', 'youtube-video-player',
+    ],
+    'Cards & Popovers': [
+      'comparison', 'popover-form', 'squiggle-arrow', 'cursor',
+    ],
   },
 };
 

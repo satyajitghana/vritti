@@ -1,0 +1,12 @@
+{
+  "name": "canvas-fractal-grid",
+  "type": "component",
+  "description": "Interactive canvas-based fractal dot grid with mouse tracking",
+  "category": "backgrounds",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["background", "canvas", "interactive"],
+    "source": "cult-ui"
+  }
+}

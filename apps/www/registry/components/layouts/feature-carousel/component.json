@@ -1,0 +1,12 @@
+{
+  "name": "feature-carousel",
+  "type": "component",
+  "description": "Feature carousel with smooth transitions",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layout", "carousel", "feature"],
+    "source": "cult-ui"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "deck",
+  "type": "component",
+  "description": "Tinder-like swipeable card stack",
+  "category": "layouts",
+  "dependencies": ["lucide-react", "motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layout", "cards", "swipe"],
+    "source": "kibo-ui"
+  }
+}

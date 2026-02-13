@@ -1,0 +1,12 @@
+{
+  "name": "text-gif",
+  "type": "component",
+  "description": "Text component with GIF-like animation effects",
+  "category": "text",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation", "gif"],
+    "source": "cult-ui"
+  }
+}

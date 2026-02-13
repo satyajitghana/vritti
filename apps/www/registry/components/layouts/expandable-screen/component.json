@@ -1,0 +1,12 @@
+{
+  "name": "expandable-screen",
+  "type": "component",
+  "description": "Full-screen expandable with morphing animations",
+  "category": "layouts",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["layout", "fullscreen", "animation"],
+    "source": "cult-ui"
+  }
+}

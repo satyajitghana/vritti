@@ -1,0 +1,12 @@
+{
+  "name": "texture-overlay",
+  "type": "component",
+  "description": "Texture overlay with various CSS gradient patterns",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["background", "texture", "overlay"],
+    "source": "cult-ui"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "distorted-glass",
+  "type": "component",
+  "description": "Glass morphism effect using SVG filters with fractal noise",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation", "glass", "filter"],
+    "source": "cult-ui"
+  }
+}

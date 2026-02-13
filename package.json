@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "turbo run dev",
-    "build": "pnpm run build:registry && turbo run build",
-    "build:registry": "tsx scripts/build-registry.ts",
+    "build": "pnpm --filter @vritti/www run build:registry && turbo run build",
+    "build:registry": "pnpm --filter @vritti/www run build:registry",
     "lint": "turbo run lint",
     "type-check": "turbo run type-check",
     "format": "prettier --write ."

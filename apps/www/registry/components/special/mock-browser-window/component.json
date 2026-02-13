@@ -1,0 +1,12 @@
+{
+  "name": "mock-browser-window",
+  "type": "component",
+  "description": "Customizable browser window mockup",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["display", "mockup", "browser"],
+    "source": "cult-ui"
+  }
+}

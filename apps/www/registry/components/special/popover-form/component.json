@@ -1,0 +1,12 @@
+{
+  "name": "popover-form",
+  "type": "component",
+  "description": "Form popover with success states and animations",
+  "category": "special",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["form", "popover"],
+    "source": "cult-ui"
+  }
+}

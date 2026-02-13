@@ -1,0 +1,12 @@
+{
+  "name": "typewriter",
+  "type": "component",
+  "description": "Typewriter effect with customizable speed and cursor",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "typewriter"],
+    "source": "cult-ui"
+  }
+}

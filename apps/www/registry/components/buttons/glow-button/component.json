@@ -1,0 +1,12 @@
+{
+  "name": "glow-button",
+  "type": "component",
+  "description": "Button with glowing effects and customizable glow colors",
+  "category": "buttons",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["button", "glow", "animation"],
+    "source": "cult-ui"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "theme-switcher",
+  "type": "component",
+  "description": "Light/dark/system theme toggle",
+  "category": "special",
+  "dependencies": ["lucide-react", "motion"],
+  "files": [],
+  "meta": {
+    "tags": ["interactive", "theme", "toggle"],
+    "source": "kibo-ui"
+  }
+}

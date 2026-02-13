@@ -1,0 +1,12 @@
+{
+  "name": "contribution-graph",
+  "type": "component",
+  "description": "GitHub-style activity heatmap visualization",
+  "category": "special",
+  "dependencies": ["date-fns"],
+  "files": [],
+  "meta": {
+    "tags": ["display", "graph", "heatmap"],
+    "source": "kibo-ui"
+  }
+}

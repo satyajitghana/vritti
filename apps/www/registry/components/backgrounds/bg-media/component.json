@@ -1,0 +1,12 @@
+{
+  "name": "bg-media",
+  "type": "component",
+  "description": "Background media component with video/image support",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["background", "media", "video"],
+    "source": "cult-ui"
+  }
+}

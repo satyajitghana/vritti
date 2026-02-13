@@ -1,0 +1,12 @@
+{
+  "name": "minimal-card",
+  "type": "component",
+  "description": "Clean and minimal card with subtle styling",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["layout", "card", "minimal"],
+    "source": "cult-ui"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "family-button",
+  "type": "component",
+  "description": "Button with family-style design and hover effects",
+  "category": "buttons",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["button", "interactive"],
+    "source": "cult-ui"
+  }
+}

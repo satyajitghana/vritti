@@ -1,0 +1,12 @@
+{
+  "name": "rating",
+  "type": "component",
+  "description": "Interactive star rating with keyboard navigation",
+  "category": "special",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["interactive", "rating", "stars"],
+    "source": "kibo-ui"
+  }
+}

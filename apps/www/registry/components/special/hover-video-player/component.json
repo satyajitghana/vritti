@@ -1,0 +1,12 @@
+{
+  "name": "hover-video-player",
+  "type": "component",
+  "description": "Video player that plays on hover",
+  "category": "special",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["media", "video", "interactive"],
+    "source": "cult-ui"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "tweet-grid",
+  "type": "component",
+  "description": "Grid layout for displaying tweet-like content cards",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["layout", "grid", "tweet"],
+    "source": "cult-ui"
+  }
+}

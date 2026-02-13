@@ -1,0 +1,12 @@
+{
+  "name": "tree",
+  "type": "component",
+  "description": "Hierarchical tree view with expand/collapse",
+  "category": "special",
+  "dependencies": ["lucide-react", "motion"],
+  "files": [],
+  "meta": {
+    "tags": ["display", "tree", "hierarchy"],
+    "source": "kibo-ui"
+  }
+}

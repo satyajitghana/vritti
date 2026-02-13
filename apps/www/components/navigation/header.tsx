@@ -44,6 +44,17 @@ export function SiteHeader() {
             >
               Components
             </Link>
+            <Link
+              href="/theme"
+              className={cn(
+                'transition-colors hover:text-foreground/80',
+                pathname?.startsWith('/theme')
+                  ? 'text-brand font-medium'
+                  : 'text-foreground/60'
+              )}
+            >
+              Theme Editor
+            </Link>
 
           </nav>
         </div>

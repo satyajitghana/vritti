@@ -1,0 +1,12 @@
+{
+  "name": "bg-animated-gradient",
+  "type": "component",
+  "description": "Animated gradient background with customizable color transitions",
+  "category": "backgrounds",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["background", "gradient", "animation"],
+    "source": "cult-ui"
+  }
+}

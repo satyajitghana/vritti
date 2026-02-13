@@ -1,0 +1,12 @@
+{
+  "name": "code-block",
+  "type": "component",
+  "description": "Beautiful code block with tabs and copy functionality",
+  "category": "special",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["code", "display"],
+    "source": "cult-ui"
+  }
+}
