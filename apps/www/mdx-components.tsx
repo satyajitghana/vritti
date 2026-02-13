@@ -152,6 +152,15 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
+    Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
+      <h3
+        className={cn(
+          "font-heading mt-8 scroll-m-32 text-xl font-medium tracking-tight",
+          className
+        )}
+        {...props}
+      />
+    ),
     Callout,
     Steps,
     CodeTabs,
