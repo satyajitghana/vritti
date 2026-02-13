@@ -1,0 +1,11 @@
+{
+  "name": "client-tweet-card",
+  "type": "component",
+  "description": "A client-side version of the tweet card.",
+  "category": "special",
+  "dependencies": ["react-tweet"],
+  "files": [],
+  "meta": {
+    "tags": ["special"]
+  }
+}

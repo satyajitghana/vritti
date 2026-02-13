@@ -1,0 +1,12 @@
+{
+  "name": "image-trail",
+  "type": "component",
+  "description": "Trail of images following the cursor.",
+  "category": "animations",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

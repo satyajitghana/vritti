@@ -1,0 +1,11 @@
+{
+  "name": "scroll-based-velocity",
+  "type": "component",
+  "description": "Scrolling text whose speed changes based on scroll speed",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation"]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "infinite-menu",
+  "type": "component",
+  "description": "A layouts infinite menu component",
+  "category": "layouts",
+  "dependencies": ["gl-matrix"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

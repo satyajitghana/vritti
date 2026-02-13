@@ -1,0 +1,11 @@
+{
+  "name": "bento-grid",
+  "type": "component",
+  "description": "Bento grid is a layout used to showcase the features of a product.",
+  "category": "layouts",
+  "dependencies": ["@radix-ui/react-icons"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

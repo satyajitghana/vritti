@@ -1,0 +1,11 @@
+{
+  "name": "meteors",
+  "type": "component",
+  "description": "A meteor shower effect.",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation"]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "antigravity",
+  "type": "component",
+  "description": "Anti-gravity floating animation.",
+  "category": "animations",
+  "dependencies": ["three", "@react-three/fiber"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

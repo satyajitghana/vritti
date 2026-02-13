@@ -1,0 +1,11 @@
+{
+  "name": "number-ticker",
+  "type": "component",
+  "description": "Animate numbers to count up or down to a target number",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation"]
+  }
+}

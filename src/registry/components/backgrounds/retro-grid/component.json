@@ -1,0 +1,11 @@
+{
+  "name": "retro-grid",
+  "type": "component",
+  "description": "A backgrounds retro grid component",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["backgrounds"]
+  }
+}

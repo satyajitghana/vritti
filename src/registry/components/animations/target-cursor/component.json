@@ -1,0 +1,12 @@
+{
+  "name": "target-cursor",
+  "type": "component",
+  "description": "A target-style cursor effect.",
+  "category": "animations",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

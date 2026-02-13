@@ -1,0 +1,11 @@
+{
+  "name": "profile-card",
+  "type": "component",
+  "description": "A layouts profile card component",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

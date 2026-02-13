@@ -1,0 +1,11 @@
+{
+  "name": "aurora-text",
+  "type": "component",
+  "description": "A beautiful aurora text effect",
+  "category": "text",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation"]
+  }
+}

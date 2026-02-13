@@ -1,0 +1,11 @@
+{
+  "name": "stepper",
+  "type": "component",
+  "description": "A layouts stepper component",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

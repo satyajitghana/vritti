@@ -1,0 +1,12 @@
+{
+  "name": "blob-cursor",
+  "type": "component",
+  "description": "An organic blob cursor that follows the pointer.",
+  "category": "animations",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

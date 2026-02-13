@@ -1,0 +1,11 @@
+{
+  "name": "flickering-grid",
+  "type": "component",
+  "description": "A backgrounds flickering grid component",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["backgrounds"]
+  }
+}

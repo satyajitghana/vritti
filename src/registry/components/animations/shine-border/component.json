@@ -1,0 +1,11 @@
+{
+  "name": "shine-border",
+  "type": "component",
+  "description": "Shine border is an animated background border effect.",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation"]
+  }
+}

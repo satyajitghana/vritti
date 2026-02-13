@@ -1,0 +1,12 @@
+{
+  "name": "letter-glitch",
+  "type": "component",
+  "description": "A glitchy letter animation background effect.",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

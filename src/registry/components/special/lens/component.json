@@ -1,0 +1,11 @@
+{
+  "name": "lens",
+  "type": "component",
+  "description": "A interactive component that enables zooming into images, videos and other elements.",
+  "category": "special",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["special"]
+  }
+}

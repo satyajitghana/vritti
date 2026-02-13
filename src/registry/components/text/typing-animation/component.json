@@ -1,0 +1,11 @@
+{
+  "name": "typing-animation",
+  "type": "component",
+  "description": "Characters appearing in typed animation",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation"]
+  }
+}

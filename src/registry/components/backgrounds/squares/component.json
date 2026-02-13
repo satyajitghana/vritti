@@ -1,0 +1,12 @@
+{
+  "name": "squares",
+  "type": "component",
+  "description": "An animated squares pattern background effect.",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "animated-theme-toggler",
+  "type": "component",
+  "description": "A component for theme changing animation.",
+  "category": "animations",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"]
+  }
+}

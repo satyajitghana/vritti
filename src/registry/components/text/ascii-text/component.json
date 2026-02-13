@@ -1,0 +1,7 @@
+{
+  "name": "ascii-text",
+  "type": "component",
+  "description": "Renders text with an ASCII art style effect using Three.js.",
+  "category": "text",
+  "dependencies": ["three"]
+}

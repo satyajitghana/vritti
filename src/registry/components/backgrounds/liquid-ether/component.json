@@ -1,0 +1,12 @@
+{
+  "name": "liquid-ether",
+  "type": "component",
+  "description": "A liquid ethereal fluid background effect.",
+  "category": "backgrounds",
+  "dependencies": ["three"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

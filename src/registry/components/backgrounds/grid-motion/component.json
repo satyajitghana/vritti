@@ -1,0 +1,12 @@
+{
+  "name": "grid-motion",
+  "type": "component",
+  "description": "An animated grid motion background with content cells.",
+  "category": "backgrounds",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

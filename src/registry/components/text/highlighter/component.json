@@ -1,0 +1,11 @@
+{
+  "name": "highlighter",
+  "type": "component",
+  "description": "A text highlighter that mimics the effect of a human-drawn marker stroke.",
+  "category": "text",
+  "dependencies": ["rough-notation"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation"]
+  }
+}

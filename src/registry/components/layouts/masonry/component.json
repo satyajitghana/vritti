@@ -1,0 +1,11 @@
+{
+  "name": "masonry",
+  "type": "component",
+  "description": "A layouts masonry component",
+  "category": "layouts",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

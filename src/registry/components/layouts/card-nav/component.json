@@ -1,0 +1,11 @@
+{
+  "name": "card-nav",
+  "type": "component",
+  "description": "A layouts card nav component",
+  "category": "layouts",
+  "dependencies": ["gsap", "react-icons"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

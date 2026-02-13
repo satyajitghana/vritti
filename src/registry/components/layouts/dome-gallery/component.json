@@ -1,0 +1,11 @@
+{
+  "name": "dome-gallery",
+  "type": "component",
+  "description": "A layouts dome gallery component",
+  "category": "layouts",
+  "dependencies": ["@use-gesture/react"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

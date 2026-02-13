@@ -1,0 +1,11 @@
+{
+  "name": "code-comparison",
+  "type": "component",
+  "description": "A component which compares two code snippets.",
+  "category": "special",
+  "dependencies": ["shiki", "next-themes"],
+  "files": [],
+  "meta": {
+    "tags": ["special"]
+  }
+}

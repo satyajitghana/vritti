@@ -1,0 +1,11 @@
+{
+  "name": "orbiting-circles",
+  "type": "component",
+  "description": "A collection of circles which move in orbit along a circular path",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation"]
+  }
+}

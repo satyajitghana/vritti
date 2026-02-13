@@ -1,0 +1,12 @@
+{
+  "name": "light-pillar",
+  "type": "component",
+  "description": "An animated light pillar background effect.",
+  "category": "backgrounds",
+  "dependencies": ["three"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

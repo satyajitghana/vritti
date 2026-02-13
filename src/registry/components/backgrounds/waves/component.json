@@ -1,0 +1,12 @@
+{
+  "name": "waves",
+  "type": "component",
+  "description": "An animated waves background effect.",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

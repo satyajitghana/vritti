@@ -1,0 +1,11 @@
+{
+  "name": "iphone",
+  "type": "component",
+  "description": "A mockup of the iPhone",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["special"]
+  }
+}

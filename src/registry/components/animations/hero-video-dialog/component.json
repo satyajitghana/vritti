@@ -1,0 +1,11 @@
+{
+  "name": "hero-video-dialog",
+  "type": "component",
+  "description": "A hero video dialog component.",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"]
+  }
+}

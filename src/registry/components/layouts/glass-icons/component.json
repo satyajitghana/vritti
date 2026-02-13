@@ -1,0 +1,11 @@
+{
+  "name": "glass-icons",
+  "type": "component",
+  "description": "A layouts glass icons component",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "lanyard",
+  "type": "component",
+  "description": "A layouts lanyard component",
+  "category": "layouts",
+  "dependencies": ["three", "@react-three/fiber", "@react-three/drei", "@react-three/rapier", "meshline"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "orbit-images",
+  "type": "component",
+  "description": "Images orbiting in a circular path.",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

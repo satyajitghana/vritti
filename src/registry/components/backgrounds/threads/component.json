@@ -1,0 +1,12 @@
+{
+  "name": "threads",
+  "type": "component",
+  "description": "Animated flowing threads background effect.",
+  "category": "backgrounds",
+  "dependencies": ["ogl"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

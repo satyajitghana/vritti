@@ -1,0 +1,11 @@
+{
+  "name": "tilted-card",
+  "type": "component",
+  "description": "A layouts tilted card component",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

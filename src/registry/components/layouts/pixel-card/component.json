@@ -1,0 +1,11 @@
+{
+  "name": "pixel-card",
+  "type": "component",
+  "description": "A layouts pixel card component",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

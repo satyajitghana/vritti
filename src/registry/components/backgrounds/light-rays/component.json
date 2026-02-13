@@ -1,0 +1,11 @@
+{
+  "name": "light-rays",
+  "type": "component",
+  "description": "A backgrounds light rays component",
+  "category": "backgrounds",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["backgrounds"]
+  }
+}

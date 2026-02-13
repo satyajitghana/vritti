@@ -1,0 +1,12 @@
+{
+  "name": "dot-grid",
+  "type": "component",
+  "description": "An interactive animated dot grid background.",
+  "category": "backgrounds",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

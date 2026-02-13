@@ -1,0 +1,11 @@
+{
+  "name": "bubble-menu",
+  "type": "component",
+  "description": "A layouts bubble menu component",
+  "category": "layouts",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "file-tree",
+  "type": "component",
+  "description": "A component used to showcase the folder and file structure of a directory.",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["special"]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "text-animate",
+  "type": "component",
+  "description": "A text animation component that animates text using a variety of different animations.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation"]
+  }
+}

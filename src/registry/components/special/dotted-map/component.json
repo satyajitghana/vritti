@@ -1,0 +1,11 @@
+{
+  "name": "dotted-map",
+  "type": "component",
+  "description": "A component with a dotted map.",
+  "category": "special",
+  "dependencies": ["svg-dotted-map"],
+  "files": [],
+  "meta": {
+    "tags": ["special"]
+  }
+}

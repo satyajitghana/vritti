@@ -1,0 +1,12 @@
+{
+  "name": "faulty-terminal",
+  "type": "component",
+  "description": "A glitchy terminal-style background effect.",
+  "category": "backgrounds",
+  "dependencies": ["ogl"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "globe",
+  "type": "component",
+  "description": "An autorotating, interactive, and highly performant globe made using WebGL.",
+  "category": "special",
+  "dependencies": ["cobe", "motion"],
+  "files": [],
+  "meta": {
+    "tags": ["special"]
+  }
+}

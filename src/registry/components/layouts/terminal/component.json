@@ -1,0 +1,11 @@
+{
+  "name": "terminal",
+  "type": "component",
+  "description": "A terminal component",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

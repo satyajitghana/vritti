@@ -1,0 +1,12 @@
+{
+  "name": "cubes",
+  "type": "component",
+  "description": "3D cube animation effect.",
+  "category": "animations",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

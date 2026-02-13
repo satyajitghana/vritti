@@ -1,0 +1,12 @@
+{
+  "name": "noise",
+  "type": "component",
+  "description": "Visual noise overlay effect.",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "splash-cursor",
+  "type": "component",
+  "description": "Splash effect cursor.",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

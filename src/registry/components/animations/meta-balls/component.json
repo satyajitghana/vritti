@@ -1,0 +1,12 @@
+{
+  "name": "meta-balls",
+  "type": "component",
+  "description": "Metaballs animation effect.",
+  "category": "animations",
+  "dependencies": ["ogl"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

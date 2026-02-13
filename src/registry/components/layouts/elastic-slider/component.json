@@ -1,0 +1,11 @@
+{
+  "name": "elastic-slider",
+  "type": "component",
+  "description": "A layouts elastic slider component",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

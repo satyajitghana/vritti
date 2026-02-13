@@ -1,0 +1,12 @@
+{
+  "name": "floating-lines",
+  "type": "component",
+  "description": "Animated floating lines background effect.",
+  "category": "backgrounds",
+  "dependencies": ["three"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}
