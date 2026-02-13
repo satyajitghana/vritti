@@ -1,0 +1,56 @@
+{
+  "components": [],
+  "categories": [
+    {
+      "name": "backgrounds",
+      "label": "Backgrounds",
+      "description": "Background patterns and effects",
+      "icon": "Layers",
+      "order": 1
+    },
+    {
+      "name": "animations",
+      "label": "Animations",
+      "description": "Motion and animated components",
+      "icon": "Zap",
+      "order": 2
+    },
+    {
+      "name": "text",
+      "label": "Text Effects",
+      "description": "Text animations and effects",
+      "icon": "Type",
+      "order": 3
+    },
+    {
+      "name": "buttons",
+      "label": "Buttons",
+      "description": "Interactive button components",
+      "icon": "MousePointer",
+      "order": 4
+    },
+    {
+      "name": "layouts",
+      "label": "Layouts",
+      "description": "Layout and grid systems",
+      "icon": "Layout",
+      "order": 5
+    },
+    {
+      "name": "shaders",
+      "label": "Shaders",
+      "description": "Advanced shader-based effects",
+      "icon": "Sparkles",
+      "order": 6
+    },
+    {
+      "name": "special",
+      "label": "Special",
+      "description": "Complex and unique components",
+      "icon": "Star",
+      "order": 7
+    }
+  ],
+  "version": "0.1.0",
+  "updatedAt": "2026-02-13T08:12:47.055Z"
+}

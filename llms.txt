@@ -1,0 +1,140 @@
+# Vritti UI
+
+> Beautifully designed React components built with Next.js 16, Tailwind CSS v4, and Motion animations.
+
+This file provides LLM-friendly entry points to documentation and examples.
+
+## Project Overview
+
+Vritti UI is a modern UI components library that combines:
+- Shadcn's CLI-based component installation approach
+- MagicUI's beautiful component designs and category organization
+- Aceternity UI's animation-first philosophy
+- Fumadocs' modern documentation website design
+- Paper Design Shaders for stunning visual effects
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Styling**: Tailwind CSS v4
+- **Animations**: Motion library (modern replacement for Framer Motion)
+- **Type Safety**: TypeScript
+- **Icons**: Lucide React
+- **Effects**: @paper-design/shaders-react
+- **Package Manager**: pnpm (with npm, yarn, bun support in docs)
+
+## Directory Structure
+
+```
+vritti/
+├── src/
+│   ├── app/                    # Next.js App Router pages
+│   ├── components/ui/          # Shadcn UI components
+│   ├── registry/               # Component registry system
+│   │   ├── schema.ts           # Registry type definitions
+│   │   └── components/         # Registrable components by category
+│   │       ├── backgrounds/    # Background effects
+│   │       ├── animations/     # Animation components
+│   │       ├── text/           # Text effects
+│   │       ├── buttons/        # Interactive buttons
+│   │       ├── layouts/        # Layout components
+│   │       ├── shaders/        # Shader-based effects
+│   │       └── special/        # Complex/unique components
+│   ├── lib/                    # Utility functions
+│   ├── hooks/                  # Custom React hooks
+│   ├── styles/                 # Global styles
+│   └── config/                 # Configuration files
+├── registry/                   # Public registry JSON files
+├── scripts/                    # Build scripts
+├── content/                    # Markdown documentation
+└── public/                     # Static assets
+```
+
+## Component Categories
+
+### 1. Backgrounds
+Background patterns and effects:
+- Dot Pattern
+- Grid Pattern
+- Retro Grid
+- Ripple
+- Mesh Gradient (Paper Design Shaders)
+
+### 2. Animations
+Motion and animated components:
+- Animated Beam
+- Marquee
+- Meteors
+- Orbiting Circles
+
+### 3. Text
+Text effects and animations:
+- Text Reveal
+- Sparkles Text
+- Typing Animation
+- Blur In
+
+### 4. Buttons
+Interactive button components:
+- Shimmer Button
+- Pulse Button
+
+### 5. Layouts
+Layout and grid systems:
+- Bento Grid
+- Masonry Grid
+
+### 6. Shaders
+Advanced shader-based effects (Paper Design):
+- Glass Effect
+- Metaballs
+- God Rays
+- Halftone
+
+### 7. Special
+Complex or unique components:
+- Globe
+- Charts
+
+## Component Registry System
+
+Components are organized in a registry system similar to Shadcn UI:
+
+- **Schema**: TypeScript interfaces defining component metadata
+- **Categories**: Components grouped by functionality
+- **Dependencies**: Both npm packages and registry component dependencies
+- **Installation**: Copy-paste workflow with multi-package-manager support
+
+## Development Workflow
+
+1. Create component in `src/registry/components/[category]/[name]/`
+2. Add component.json metadata
+3. Create example.tsx for documentation
+4. Run `pnpm run build:registry` to generate registry JSON
+5. Test in docs site
+6. Commit and push
+
+## Build Scripts
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Build registry and production bundle
+- `pnpm build:registry` - Generate registry JSON files
+- `pnpm lint` - Run ESLint
+- `pnpm format` - Format code with Prettier
+
+## Key Patterns
+
+- **cn() utility**: Combines clsx and tailwind-merge for conditional classes
+- **CSS Variables**: Theme system using CSS custom properties
+- **Motion library**: Modern animation library (replaces Framer Motion)
+- **Category-based**: All components organized by category
+- **Multi-package-manager**: Installation docs show npm, pnpm, yarn, bun
+
+## License
+
+MIT License - See LICENSE file for details
+
+## Optional
+
+- [Repository](https://github.com/satyajitghana/vritti): Source code and issues
+- [Documentation](#): Component docs and guides (coming soon)
