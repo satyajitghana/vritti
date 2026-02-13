@@ -1,0 +1,11 @@
+{
+  "name": "folder",
+  "type": "component",
+  "description": "A layouts folder component",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "avatar-circles",
+  "type": "component",
+  "description": "Overlapping circles of avatars.",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["special"]
+  }
+}

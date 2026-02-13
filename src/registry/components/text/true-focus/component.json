@@ -1,0 +1,7 @@
+{
+  "name": "true-focus",
+  "type": "component",
+  "description": "Text with an animated focus border that highlights words sequentially.",
+  "category": "text",
+  "dependencies": ["motion"]
+}

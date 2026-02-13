@@ -1,0 +1,12 @@
+{
+  "name": "star-border",
+  "type": "component",
+  "description": "Animated star border effect.",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "ripple",
+  "type": "component",
+  "description": "A backgrounds ripple component",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["backgrounds"]
+  }
+}

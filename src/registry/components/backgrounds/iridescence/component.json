@@ -1,0 +1,12 @@
+{
+  "name": "iridescence",
+  "type": "component",
+  "description": "An iridescent shimmering background effect.",
+  "category": "backgrounds",
+  "dependencies": ["ogl"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

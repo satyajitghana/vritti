@@ -1,0 +1,11 @@
+{
+  "name": "warp-background",
+  "type": "component",
+  "description": "A backgrounds warp background component",
+  "category": "backgrounds",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["backgrounds"]
+  }
+}

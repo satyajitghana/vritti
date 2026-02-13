@@ -1,0 +1,12 @@
+{
+  "name": "magnet",
+  "type": "component",
+  "description": "Magnetic attraction effect on hover.",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

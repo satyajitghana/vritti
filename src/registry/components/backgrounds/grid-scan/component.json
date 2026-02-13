@@ -1,0 +1,12 @@
+{
+  "name": "grid-scan",
+  "type": "component",
+  "description": "A grid scanning background effect with optional face detection.",
+  "category": "backgrounds",
+  "dependencies": ["three", "postprocessing", "face-api.js"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

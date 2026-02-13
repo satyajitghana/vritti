@@ -1,0 +1,12 @@
+{
+  "name": "hyperspeed",
+  "type": "component",
+  "description": "A hyperspeed driving simulation background effect.",
+  "category": "backgrounds",
+  "dependencies": ["three", "postprocessing"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

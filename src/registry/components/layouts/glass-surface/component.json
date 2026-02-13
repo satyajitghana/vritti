@@ -1,0 +1,11 @@
+{
+  "name": "glass-surface",
+  "type": "component",
+  "description": "A layouts glass surface component",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "carousel",
+  "type": "component",
+  "description": "A layouts carousel component",
+  "category": "layouts",
+  "dependencies": ["motion", "react-icons"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

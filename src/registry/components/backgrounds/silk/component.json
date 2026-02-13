@@ -1,0 +1,12 @@
+{
+  "name": "silk",
+  "type": "component",
+  "description": "A flowing silk fabric background effect.",
+  "category": "backgrounds",
+  "dependencies": ["three", "@react-three/fiber"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

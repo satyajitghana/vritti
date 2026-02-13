@@ -1,0 +1,12 @@
+{
+  "name": "prism",
+  "type": "component",
+  "description": "A prismatic light refraction background effect.",
+  "category": "backgrounds",
+  "dependencies": ["ogl"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

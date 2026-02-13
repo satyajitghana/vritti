@@ -1,0 +1,12 @@
+{
+  "name": "grid-pattern",
+  "type": "component",
+  "description": "A background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["background", "pattern", "svg", "grid"],
+    "featured": true
+  }
+}

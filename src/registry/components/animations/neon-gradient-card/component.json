@@ -1,0 +1,11 @@
+{
+  "name": "neon-gradient-card",
+  "type": "component",
+  "description": "A beautiful neon card effect",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation"]
+  }
+}

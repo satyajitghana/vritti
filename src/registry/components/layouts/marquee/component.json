@@ -1,0 +1,11 @@
+{
+  "name": "marquee",
+  "type": "component",
+  "description": "An infinite scrolling component that can be used to display text, images, or videos.",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

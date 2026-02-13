@@ -1,0 +1,11 @@
+{
+  "name": "scroll-progress",
+  "type": "component",
+  "description": "Animated Scroll Progress for your pages",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"]
+  }
+}

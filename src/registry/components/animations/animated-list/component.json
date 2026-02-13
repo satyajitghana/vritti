@@ -1,0 +1,11 @@
+{
+  "name": "animated-list",
+  "type": "component",
+  "description": "A list that animates each item in sequence with a delay.",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"]
+  }
+}

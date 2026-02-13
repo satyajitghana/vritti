@@ -1,0 +1,11 @@
+{
+  "name": "pixel-image",
+  "type": "component",
+  "description": "A component that displays an image with a pixelated effect.",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation"]
+  }
+}

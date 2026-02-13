@@ -1,0 +1,11 @@
+{
+  "name": "pulsating-button",
+  "type": "component",
+  "description": "A buttons pulsating button component",
+  "category": "buttons",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["buttons"]
+  }
+}

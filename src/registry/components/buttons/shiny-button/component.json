@@ -1,0 +1,11 @@
+{
+  "name": "shiny-button",
+  "type": "component",
+  "description": "A buttons shiny button component",
+  "category": "buttons",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["buttons"]
+  }
+}

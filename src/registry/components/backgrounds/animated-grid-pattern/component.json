@@ -1,0 +1,11 @@
+{
+  "name": "animated-grid-pattern",
+  "type": "component",
+  "description": "A backgrounds animated grid pattern component",
+  "category": "backgrounds",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["backgrounds"]
+  }
+}

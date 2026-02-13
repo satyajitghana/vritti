@@ -1,0 +1,12 @@
+{
+  "name": "ballpit",
+  "type": "component",
+  "description": "An interactive 3D ball pit physics simulation background.",
+  "category": "backgrounds",
+  "dependencies": ["three", "gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "dot-pattern",
+  "type": "component",
+  "description": "A background dot pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "category": "backgrounds",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["background", "pattern", "svg", "dots"],
+    "featured": true
+  }
+}

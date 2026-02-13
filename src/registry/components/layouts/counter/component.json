@@ -1,0 +1,11 @@
+{
+  "name": "counter",
+  "type": "component",
+  "description": "A layouts counter component",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

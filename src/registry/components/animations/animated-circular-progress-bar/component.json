@@ -1,0 +1,11 @@
+{
+  "name": "animated-circular-progress-bar",
+  "type": "component",
+  "description": "Animated Circular Progress Bar with a percentage value.",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation"]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "safari",
+  "type": "component",
+  "description": "A safari browser mockup to showcase your website.",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["special"]
+  }
+}

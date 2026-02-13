@@ -1,0 +1,12 @@
+{
+  "name": "pixel-blast",
+  "type": "component",
+  "description": "A pixelated blast particle background effect.",
+  "category": "backgrounds",
+  "dependencies": ["three", "postprocessing"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

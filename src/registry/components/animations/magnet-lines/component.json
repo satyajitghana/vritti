@@ -1,0 +1,12 @@
+{
+  "name": "magnet-lines",
+  "type": "component",
+  "description": "Magnetic lines animation effect.",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

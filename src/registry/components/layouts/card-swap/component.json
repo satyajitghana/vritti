@@ -1,0 +1,11 @@
+{
+  "name": "card-swap",
+  "type": "component",
+  "description": "A layouts card swap component",
+  "category": "layouts",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

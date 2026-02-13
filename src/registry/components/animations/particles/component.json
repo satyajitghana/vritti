@@ -1,0 +1,11 @@
+{
+  "name": "particles",
+  "type": "component",
+  "description": "Particles for adding visual flair to your website.",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation"]
+  }
+}

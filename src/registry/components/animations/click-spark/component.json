@@ -1,0 +1,12 @@
+{
+  "name": "click-spark",
+  "type": "component",
+  "description": "Spark effect on click events.",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

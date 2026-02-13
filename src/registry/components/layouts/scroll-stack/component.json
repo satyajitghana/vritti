@@ -1,0 +1,11 @@
+{
+  "name": "scroll-stack",
+  "type": "component",
+  "description": "A layouts scroll stack component",
+  "category": "layouts",
+  "dependencies": ["lenis"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

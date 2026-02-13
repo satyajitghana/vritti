@@ -1,0 +1,7 @@
+{
+  "name": "rotating-text",
+  "type": "component",
+  "description": "Animated text that rotates through a list of strings.",
+  "category": "text",
+  "dependencies": ["motion"]
+}

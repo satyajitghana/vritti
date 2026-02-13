@@ -1,0 +1,12 @@
+{
+  "name": "laser-flow",
+  "type": "component",
+  "description": "Flowing laser animation effect.",
+  "category": "animations",
+  "dependencies": ["three"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

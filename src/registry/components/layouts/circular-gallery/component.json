@@ -1,0 +1,11 @@
+{
+  "name": "circular-gallery",
+  "type": "component",
+  "description": "A layouts circular gallery component",
+  "category": "layouts",
+  "dependencies": ["ogl"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

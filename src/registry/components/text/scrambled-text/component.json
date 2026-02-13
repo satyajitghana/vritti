@@ -1,0 +1,7 @@
+{
+  "name": "scrambled-text",
+  "type": "component",
+  "description": "Text that scrambles on mouse proximity using GSAP.",
+  "category": "text",
+  "dependencies": ["gsap"]
+}

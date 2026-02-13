@@ -1,0 +1,7 @@
+{
+  "name": "scroll-float",
+  "type": "component",
+  "description": "Characters float into view on scroll using GSAP ScrollTrigger.",
+  "category": "text",
+  "dependencies": ["gsap"]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "color-bends",
+  "type": "component",
+  "description": "A colorful bending gradient background effect.",
+  "category": "backgrounds",
+  "dependencies": ["three"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

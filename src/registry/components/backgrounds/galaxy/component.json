@@ -1,0 +1,12 @@
+{
+  "name": "galaxy",
+  "type": "component",
+  "description": "A swirling galaxy background effect.",
+  "category": "backgrounds",
+  "dependencies": ["ogl"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

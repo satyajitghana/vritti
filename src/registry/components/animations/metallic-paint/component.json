@@ -1,0 +1,12 @@
+{
+  "name": "metallic-paint",
+  "type": "component",
+  "description": "Metallic paint animation effect.",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

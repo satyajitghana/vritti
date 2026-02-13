@@ -1,0 +1,7 @@
+{
+  "name": "fuzzy-text",
+  "type": "component",
+  "description": "Text rendered with a fuzzy, vibrating canvas effect.",
+  "category": "text",
+  "dependencies": []
+}
