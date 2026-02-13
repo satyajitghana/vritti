@@ -1,6 +1,6 @@
 # Vritti UI
 
-> Beautifully designed React components built with Next.js 16, Tailwind CSS v4, and Motion animations.
+> Beautifully designed React components built with React, Tailwind CSS, and Motion animations.
 
 ## Overview
 
@@ -8,14 +8,13 @@ Vritti UI is a modern UI components library that combines the best aspects of po
 
 - **Shadcn UI**: CLI-based component installation approach
 - **MagicUI**: Beautiful component designs and category organization
-- **Aceternity UI**: Animation-first philosophy
 - **Fumadocs**: Modern documentation website design
 - **Paper Design Shaders**: Stunning visual effects
 
 ## Tech Stack
 
-- **Framework**: Next.js 16 (App Router)
-- **Styling**: Tailwind CSS v4
+- **Framework**: Next.js (App Router)
+- **Styling**: Tailwind CSS
 - **Animations**: Motion library
 - **Type Safety**: TypeScript
 - **Icons**: Lucide React
@@ -78,20 +77,21 @@ Components are organized into 7 categories:
 ## Project Structure
 
 ```
-vritti/
-├── src/
-│   ├── app/                    # Next.js App Router
-│   ├── components/ui/          # Shadcn UI components
-│   ├── registry/               # Component registry
-│   │   ├── schema.ts           # Registry types
-│   │   ├── index.tsx           # Registry index
-│   │   └── components/         # Components by category
-│   ├── lib/                    # Utilities
-│   ├── hooks/                  # React hooks
-│   ├── styles/                 # Global styles
-│   └── config/                 # Configuration
-├── registry/                   # Generated registry JSON
-├── scripts/                    # Build scripts
+apps/www/
+├── app/                        # Next.js App Router
+│   ├── (marketing)/            # Marketing pages (home)
+│   └── (docs)/                 # Documentation pages
+├── components/                 # React components
+│   ├── ui/                     # Shadcn UI components
+│   ├── marketing/              # Marketing page sections
+│   └── navigation/             # Header, footer, sidebar
+├── registry/                   # Component registry
+│   ├── schema.ts               # Registry types & categories
+│   ├── index.tsx               # Registry index
+│   └── components/             # Components by category
+├── lib/                        # Utilities
+├── styles/                     # Global CSS styles
+├── config/                     # Site & docs configuration
 ├── content/                    # Documentation (MDX)
 └── public/                     # Static assets
 ```
