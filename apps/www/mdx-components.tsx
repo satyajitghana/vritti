@@ -1,92 +1,92 @@
 import type { MDXComponents } from "mdx/types"
 import { cn } from "@/lib/utils"
 import { Callout } from "@/components/callout"
-import { Steps } from "@/components/steps"
 import { CodeTabs } from "@/components/code-tabs"
+import { CodeBlockCommand } from "@/components/code-block-command"
 import { ComponentPreview } from "@/components/component-preview"
 import { ComponentSource } from "@/components/component-source"
+import { CopyButton } from "@/components/copy-button"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { getIconForLanguageExtension } from "@/components/icons"
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    h1: ({ className, ...props }: React.ComponentProps<"h1">) => (
       <h1
         className={cn(
-          "scroll-m-20 text-4xl font-bold tracking-tight mt-2",
+          "font-heading mt-2 scroll-m-28 text-3xl font-bold tracking-tight",
           className
         )}
         {...props}
       />
     ),
-    h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    h2: ({ className, ...props }: React.ComponentProps<"h2">) => (
       <h2
         className={cn(
-          "scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 mt-10",
+          "font-heading mt-8 scroll-m-28 text-xl font-medium tracking-tight first:mt-0 lg:mt-8 [&+p]:!mt-4",
           className
         )}
         {...props}
       />
     ),
-    h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    h3: ({ className, ...props }: React.ComponentProps<"h3">) => (
       <h3
         className={cn(
-          "scroll-m-20 text-2xl font-semibold tracking-tight mt-8",
+          "font-heading mt-8 scroll-m-28 text-lg font-medium tracking-tight",
           className
         )}
         {...props}
       />
     ),
-    h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    h4: ({ className, ...props }: React.ComponentProps<"h4">) => (
       <h4
         className={cn(
-          "scroll-m-20 text-xl font-semibold tracking-tight mt-6",
+          "font-heading mt-8 scroll-m-28 text-base font-medium tracking-tight",
           className
         )}
         {...props}
       />
     ),
-    h5: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    h5: ({ className, ...props }: React.ComponentProps<"h5">) => (
       <h5
         className={cn(
-          "scroll-m-20 text-lg font-semibold tracking-tight mt-4",
+          "mt-8 scroll-m-28 text-base font-medium tracking-tight",
           className
         )}
         {...props}
       />
     ),
-    h6: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    h6: ({ className, ...props }: React.ComponentProps<"h6">) => (
       <h6
         className={cn(
-          "scroll-m-20 text-base font-semibold tracking-tight mt-4",
+          "mt-8 scroll-m-28 text-base font-medium tracking-tight",
           className
         )}
         {...props}
       />
     ),
-    a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
+    a: ({ className, ...props }: React.ComponentProps<"a">) => (
       <a
         className={cn("font-medium underline underline-offset-4", className)}
         {...props}
       />
     ),
-    p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
-      <p
-        className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
-        {...props}
-      />
+    p: ({ className, ...props }: React.ComponentProps<"p">) => (
+      <p className={cn("leading-relaxed not-first:mt-6", className)} {...props} />
     ),
-    ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
+    ul: ({ className, ...props }: React.ComponentProps<"ul">) => (
       <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
     ),
-    ol: ({ className, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
+    ol: ({ className, ...props }: React.ComponentProps<"ol">) => (
       <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
     ),
-    li: ({ className, ...props }: React.HTMLAttributes<HTMLLIElement>) => (
+    li: ({ className, ...props }: React.ComponentProps<"li">) => (
       <li className={cn("mt-2", className)} {...props} />
     ),
-    blockquote: ({ className, ...props }: React.HTMLAttributes<HTMLQuoteElement>) => (
+    blockquote: ({ className, ...props }: React.ComponentProps<"blockquote">) => (
       <blockquote
         className={cn(
-          "mt-6 border-l-2 pl-6 italic [&>*]:text-muted-foreground",
+          "bg-muted/50 mt-6 rounded-r-md border-l-2 py-4 pr-4 pl-6 italic",
           className
         )}
         {...props}
@@ -96,7 +96,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       className,
       alt,
       ...props
-    }: React.ImgHTMLAttributes<HTMLImageElement>) => (
+    }: React.ComponentProps<"img">) => (
       // eslint-disable-next-line @next/next/no-img-element
       <img
         className={cn("rounded-md border", className)}
@@ -104,54 +104,134 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
-    hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
-    table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
-      <div className="my-6 w-full overflow-y-auto">
-        <table className={cn("w-full", className)} {...props} />
+    hr: ({ className, ...props }: React.ComponentProps<"hr">) => (
+      <div className={cn("my-4 flex items-center justify-center md:my-8", className)}>
+        <hr
+          className="via-border mx-4 h-px w-full border-0 bg-linear-to-r from-transparent to-transparent"
+          {...props}
+        />
       </div>
     ),
-    tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
+    table: ({ className, ...props }: React.ComponentProps<"table">) => (
+      <div className="my-6 w-full overflow-x-auto rounded-lg border">
+        <table className={cn("relative w-full text-sm", className)} {...props} />
+      </div>
+    ),
+    thead: ({ className, ...props }: React.ComponentProps<"thead">) => (
+      <thead className={cn("bg-muted border-b", className)} {...props} />
+    ),
+    tr: ({ className, ...props }: React.ComponentProps<"tr">) => (
       <tr
-        className={cn("m-0 border-t p-0 even:bg-muted", className)}
+        className={cn(
+          "hover:bg-muted/50 m-0 border-b transition-colors last:border-b-0",
+          className
+        )}
         {...props}
       />
     ),
-    th: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
+    th: ({ className, ...props }: React.ComponentProps<"th">) => (
       <th
         className={cn(
-          "border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
+          "min-w-[120px] px-4 py-3 text-left font-semibold [&[align=center]]:text-center [&[align=right]]:text-right",
           className
         )}
         {...props}
       />
     ),
-    td: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
+    td: ({ className, ...props }: React.ComponentProps<"td">) => (
       <td
         className={cn(
-          "border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right",
+          "min-w-[120px] px-4 py-3 text-left [&[align=center]]:text-center [&[align=right]]:text-right",
           className
         )}
         {...props}
       />
     ),
-    pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
+    pre: ({ className, children, ...props }: React.ComponentProps<"pre">) => (
       <pre
         className={cn(
-          "mb-4 mt-6 overflow-x-auto rounded-lg border bg-black py-4",
+          "no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-data-highlighted-line:px-0 has-data-line-numbers:px-0 has-data-[slot=tabs]:p-0",
           className
         )}
         {...props}
-      />
+      >
+        {children}
+      </pre>
     ),
-    code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
-      <code
-        className={cn(
-          "relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm",
-          className
-        )}
-        {...props}
-      />
+    figure: ({ className, ...props }: React.ComponentProps<"figure">) => (
+      <figure className={cn(className)} {...props} />
     ),
+    figcaption: ({
+      className,
+      children,
+      ...props
+    }: React.ComponentProps<"figcaption"> & { "data-language"?: string }) => {
+      const lang = props["data-language"]
+      const icon = lang ? getIconForLanguageExtension(lang) : null
+      return (
+        <figcaption
+          className={cn(
+            "text-code-foreground [&_svg]:text-code-foreground flex items-center gap-2 [&_svg]:size-4 [&_svg]:opacity-70",
+            className
+          )}
+          {...props}
+        >
+          {icon}
+          {children}
+        </figcaption>
+      )
+    },
+    code: ({
+      className,
+      __raw__,
+      __src__,
+      __npm__,
+      __yarn__,
+      __pnpm__,
+      __bun__,
+      ...props
+    }: React.ComponentProps<"code"> & {
+      __raw__?: string
+      __src__?: string
+      __npm__?: string
+      __yarn__?: string
+      __pnpm__?: string
+      __bun__?: string
+    }) => {
+      // Inline code
+      if (typeof props.children === "string") {
+        return (
+          <code
+            className={cn(
+              "bg-muted relative rounded-md px-[0.3rem] py-[0.2rem] font-mono text-[0.8rem] break-words outline-none",
+              className
+            )}
+            {...props}
+          />
+        )
+      }
+
+      // npm/install command - show package manager tabs
+      const isNpmCommand = __npm__ && __yarn__ && __pnpm__ && __bun__
+      if (isNpmCommand) {
+        return (
+          <CodeBlockCommand
+            __npm__={__npm__}
+            __yarn__={__yarn__}
+            __pnpm__={__pnpm__}
+            __bun__={__bun__}
+          />
+        )
+      }
+
+      // Default code block
+      return (
+        <>
+          {__raw__ && <CopyButton value={__raw__} src={__src__} />}
+          <code {...props} />
+        </>
+      )
+    },
     Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
       <h3
         className={cn(
@@ -161,8 +241,40 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {...props}
       />
     ),
+    Steps: ({ ...props }) => (
+      <div className="[&>h3]:step steps mb-12 ml-4 [counter-reset:step]" {...props} />
+    ),
+    Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => (
+      <Tabs className={cn("relative mt-6 w-full", className)} {...props} />
+    ),
+    TabsList: ({ className, ...props }: React.ComponentProps<typeof TabsList>) => (
+      <TabsList
+        className={cn(
+          "justify-start gap-4 rounded-none bg-transparent px-0",
+          className
+        )}
+        {...props}
+      />
+    ),
+    TabsTrigger: ({ className, ...props }: React.ComponentProps<typeof TabsTrigger>) => (
+      <TabsTrigger
+        className={cn(
+          "text-muted-foreground data-[state=active]:text-foreground data-[state=active]:border-primary hover:text-primary rounded-none border-0 border-b-2 border-transparent bg-transparent px-0 pb-3 text-base data-[state=active]:bg-transparent data-[state=active]:shadow-none",
+          className
+        )}
+        {...props}
+      />
+    ),
+    TabsContent: ({ className, ...props }: React.ComponentProps<typeof TabsContent>) => (
+      <TabsContent
+        className={cn(
+          "relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-medium [&>.steps]:mt-6",
+          className
+        )}
+        {...props}
+      />
+    ),
     Callout,
-    Steps,
     CodeTabs,
     ComponentPreview,
     ComponentSource,

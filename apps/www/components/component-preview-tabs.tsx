@@ -76,7 +76,7 @@ export function ComponentPreviewTabs({
             key={key}
             data-align={align}
             className={cn(
-              "preview flex min-h-[450px] w-full justify-center p-10 data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start"
+              "preview relative flex min-h-[450px] w-full justify-center overflow-hidden p-10 isolate [contain:layout_paint_size] data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start"
             )}
           >
             {component}
