@@ -1,0 +1,12 @@
+{
+  "name": "shimmer-button",
+  "type": "component",
+  "description": "A button with a shimmering light which travels around the perimeter.",
+  "category": "buttons",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["button", "shimmer", "animation", "interactive"],
+    "featured": true
+  }
+}
