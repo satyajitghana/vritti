@@ -14,6 +14,12 @@ interface RegistryItemFile {
   target: string
 }
 
+interface RegistryFileInput {
+  path: string
+  type: string
+  target?: string
+}
+
 export function getRegistryComponent(name: string) {
   return Index[name]?.component
 }
@@ -37,7 +43,7 @@ export async function getRegistryItem(name: string) {
     return null
   }
 
-  let files: typeof result.data.files = []
+  const files: Array<{ path: string; type: string; target?: string; content: string }> = []
   for (const file of item.files) {
     const content = await getFileContent(file)
     const relativePath = path.relative(process.cwd(), file.path)
@@ -50,11 +56,11 @@ export async function getRegistryItem(name: string) {
   }
 
   // Fix file paths.
-  files = fixFilePaths(files as RegistryItemFile[])
+  const fixedFiles = fixFilePaths(files)
 
   const parsed = registryItemSchema.safeParse({
     ...result.data,
-    files,
+    files: fixedFiles,
   })
 
   if (!parsed.success) {
@@ -65,7 +71,7 @@ export async function getRegistryItem(name: string) {
   return parsed.data
 }
 
-async function getFileContent(file: RegistryItemFile) {
+async function getFileContent(file: RegistryFileInput) {
   const raw = await fs.readFile(file.path, "utf-8")
 
   const project = new Project({
@@ -91,7 +97,7 @@ async function getFileContent(file: RegistryItemFile) {
   return code
 }
 
-function getFileTarget(file: RegistryItemFile) {
+function getFileTarget(file: RegistryFileInput) {
   let target = file.target
 
   if (!target || target === "") {
@@ -125,7 +131,7 @@ async function createTempSourceFile(filename: string) {
   return path.join(dir, filename)
 }
 
-function fixFilePaths(files: RegistryItemFile[]) {
+function fixFilePaths<T extends RegistryFileInput>(files: T[]) {
   if (!files) {
     return []
   }
