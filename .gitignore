@@ -49,3 +49,9 @@ next-env.d.ts
 # OS
 .DS_Store
 Thumbs.db
+
+# Turbo
+.turbo
+
+# Fumadocs
+.source
