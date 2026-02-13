@@ -1,0 +1,11 @@
+{
+  "name": "flying-posters",
+  "type": "component",
+  "description": "A layouts flying posters component",
+  "category": "layouts",
+  "dependencies": ["ogl"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

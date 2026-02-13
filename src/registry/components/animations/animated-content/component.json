@@ -1,0 +1,12 @@
+{
+  "name": "animated-content",
+  "type": "component",
+  "description": "Animates content with entrance effects.",
+  "category": "animations",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

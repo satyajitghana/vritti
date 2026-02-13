@@ -1,0 +1,11 @@
+{
+  "name": "android",
+  "type": "component",
+  "description": "A mockup of an Android device.",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["special"]
+  }
+}

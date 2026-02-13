@@ -1,0 +1,11 @@
+{
+  "name": "confetti",
+  "type": "component",
+  "description": "Confetti animations for delightful user experiences",
+  "category": "animations",
+  "dependencies": ["canvas-confetti"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"]
+  }
+}

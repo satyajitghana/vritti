@@ -1,0 +1,11 @@
+{
+  "name": "smooth-cursor",
+  "type": "component",
+  "description": "A customizable, physics-based smooth cursor animation component",
+  "category": "special",
+  "dependencies": ["framer-motion"],
+  "files": [],
+  "meta": {
+    "tags": ["special"]
+  }
+}

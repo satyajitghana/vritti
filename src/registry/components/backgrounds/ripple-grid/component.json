@@ -1,0 +1,12 @@
+{
+  "name": "ripple-grid",
+  "type": "component",
+  "description": "An animated ripple grid background effect.",
+  "category": "backgrounds",
+  "dependencies": ["ogl"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

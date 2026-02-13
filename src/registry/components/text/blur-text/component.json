@@ -1,0 +1,7 @@
+{
+  "name": "blur-text",
+  "type": "component",
+  "description": "Text animation with a blur reveal effect.",
+  "category": "text",
+  "dependencies": ["motion"]
+}

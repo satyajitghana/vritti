@@ -1,0 +1,11 @@
+{
+  "name": "hyper-text",
+  "type": "component",
+  "description": "A text animation that scrambles letters before revealing the final text.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation"]
+  }
+}

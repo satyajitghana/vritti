@@ -1,0 +1,11 @@
+{
+  "name": "rainbow-button",
+  "type": "component",
+  "description": "A buttons rainbow button component",
+  "category": "buttons",
+  "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+  "files": [],
+  "meta": {
+    "tags": ["buttons"]
+  }
+}

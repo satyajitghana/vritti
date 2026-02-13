@@ -1,0 +1,12 @@
+{
+  "name": "ghost-cursor",
+  "type": "component",
+  "description": "A ghost trail cursor effect.",
+  "category": "animations",
+  "dependencies": ["three"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

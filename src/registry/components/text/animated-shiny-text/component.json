@@ -1,0 +1,11 @@
+{
+  "name": "animated-shiny-text",
+  "type": "component",
+  "description": "A light glare effect which pans across text making it appear as if it is shimmering.",
+  "category": "text",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation"]
+  }
+}

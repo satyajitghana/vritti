@@ -1,0 +1,11 @@
+{
+  "name": "animated-beam",
+  "type": "component",
+  "description": "An animated beam of light which travels along a path.",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"]
+  }
+}

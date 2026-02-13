@@ -1,0 +1,7 @@
+{
+  "name": "variable-proximity",
+  "type": "component",
+  "description": "Variable font text that changes based on mouse proximity.",
+  "category": "text",
+  "dependencies": ["motion"]
+}

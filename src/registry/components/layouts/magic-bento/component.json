@@ -1,0 +1,11 @@
+{
+  "name": "magic-bento",
+  "type": "component",
+  "description": "A layouts magic bento component",
+  "category": "layouts",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

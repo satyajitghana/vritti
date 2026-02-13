@@ -1,0 +1,12 @@
+{
+  "name": "logo-loop",
+  "type": "component",
+  "description": "Looping logo animation.",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

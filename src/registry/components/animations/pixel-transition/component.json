@@ -1,0 +1,12 @@
+{
+  "name": "pixel-transition",
+  "type": "component",
+  "description": "Pixel-based transition effect.",
+  "category": "animations",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

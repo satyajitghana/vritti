@@ -1,0 +1,12 @@
+{
+  "name": "sticker-peel",
+  "type": "component",
+  "description": "Sticker peel animation.",
+  "category": "animations",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

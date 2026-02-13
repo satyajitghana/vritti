@@ -1,0 +1,11 @@
+{
+  "name": "stack",
+  "type": "component",
+  "description": "A layouts stack component",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

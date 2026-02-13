@@ -1,0 +1,11 @@
+{
+  "name": "border-beam",
+  "type": "component",
+  "description": "An animated beam of light which travels along the border of its container.",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"]
+  }
+}

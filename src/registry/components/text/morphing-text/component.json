@@ -1,0 +1,11 @@
+{
+  "name": "morphing-text",
+  "type": "component",
+  "description": "A dynamic text morphing component.",
+  "category": "text",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation"]
+  }
+}

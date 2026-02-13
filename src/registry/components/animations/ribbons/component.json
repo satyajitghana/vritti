@@ -1,0 +1,12 @@
+{
+  "name": "ribbons",
+  "type": "component",
+  "description": "Animated ribbons effect.",
+  "category": "animations",
+  "dependencies": ["ogl"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

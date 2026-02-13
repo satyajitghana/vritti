@@ -1,0 +1,12 @@
+{
+  "name": "lightning",
+  "type": "component",
+  "description": "An animated lightning bolt background effect.",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

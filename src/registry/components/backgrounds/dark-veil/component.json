@@ -1,0 +1,12 @@
+{
+  "name": "dark-veil",
+  "type": "component",
+  "description": "A dark translucent veil overlay background effect.",
+  "category": "backgrounds",
+  "dependencies": ["ogl"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

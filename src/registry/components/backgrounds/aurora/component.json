@@ -1,0 +1,12 @@
+{
+  "name": "aurora",
+  "type": "component",
+  "description": "An aurora borealis background effect with animated light bands.",
+  "category": "backgrounds",
+  "dependencies": ["ogl"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

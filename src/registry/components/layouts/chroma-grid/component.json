@@ -1,0 +1,11 @@
+{
+  "name": "chroma-grid",
+  "type": "component",
+  "description": "A layouts chroma grid component",
+  "category": "layouts",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

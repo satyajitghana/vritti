@@ -1,0 +1,11 @@
+{
+  "name": "text-reveal",
+  "type": "component",
+  "description": "Fade in text as you scroll down the page.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation"]
+  }
+}

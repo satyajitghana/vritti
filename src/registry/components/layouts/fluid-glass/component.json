@@ -1,0 +1,11 @@
+{
+  "name": "fluid-glass",
+  "type": "component",
+  "description": "A layouts fluid glass component",
+  "category": "layouts",
+  "dependencies": ["three", "@react-three/fiber", "@react-three/drei", "maath"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

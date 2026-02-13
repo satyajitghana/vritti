@@ -1,0 +1,11 @@
+{
+  "name": "reflective-card",
+  "type": "component",
+  "description": "A layouts reflective card component",
+  "category": "layouts",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

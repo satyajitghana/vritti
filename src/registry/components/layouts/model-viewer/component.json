@@ -1,0 +1,11 @@
+{
+  "name": "model-viewer",
+  "type": "component",
+  "description": "A layouts model viewer component",
+  "category": "layouts",
+  "dependencies": ["three", "@react-three/fiber", "@react-three/drei"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

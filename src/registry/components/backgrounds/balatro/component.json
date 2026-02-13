@@ -1,0 +1,12 @@
+{
+  "name": "balatro",
+  "type": "component",
+  "description": "A psychedelic warping background effect inspired by the game Balatro.",
+  "category": "backgrounds",
+  "dependencies": ["ogl"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "line-shadow-text",
+  "type": "component",
+  "description": "A text component with a moving line shadow.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation"]
+  }
+}

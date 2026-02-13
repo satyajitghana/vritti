@@ -1,0 +1,11 @@
+{
+  "name": "icon-cloud",
+  "type": "component",
+  "description": "An interactive 3D tag cloud component",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation"]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "decrypted-text",
+  "type": "component",
+  "description": "Text that decrypts itself with a scrambling animation.",
+  "category": "text",
+  "dependencies": ["motion"]
+}

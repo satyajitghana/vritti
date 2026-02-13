@@ -1,0 +1,12 @@
+{
+  "name": "crosshair",
+  "type": "component",
+  "description": "A crosshair cursor effect.",
+  "category": "animations",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

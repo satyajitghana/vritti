@@ -1,0 +1,12 @@
+{
+  "name": "prismatic-burst",
+  "type": "component",
+  "description": "A prismatic burst of colorful light rays background.",
+  "category": "backgrounds",
+  "dependencies": ["ogl"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "shuffle",
+  "type": "component",
+  "description": "Text characters shuffle and rearrange with a GSAP animation.",
+  "category": "text",
+  "dependencies": ["gsap", "@gsap/react"]
+}

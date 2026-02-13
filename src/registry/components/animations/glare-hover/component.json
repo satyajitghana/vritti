@@ -1,0 +1,12 @@
+{
+  "name": "glare-hover",
+  "type": "component",
+  "description": "A glare effect on hover.",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

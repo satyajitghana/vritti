@@ -1,0 +1,11 @@
+{
+  "name": "bounce-cards",
+  "type": "component",
+  "description": "A layouts bounce cards component",
+  "category": "layouts",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

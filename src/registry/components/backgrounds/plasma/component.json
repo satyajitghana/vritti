@@ -1,0 +1,12 @@
+{
+  "name": "plasma",
+  "type": "component",
+  "description": "An animated plasma fluid background effect.",
+  "category": "backgrounds",
+  "dependencies": ["ogl"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

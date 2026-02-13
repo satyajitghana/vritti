@@ -1,0 +1,7 @@
+{
+  "name": "circular-text",
+  "type": "component",
+  "description": "Text arranged and animated in a circular path.",
+  "category": "text",
+  "dependencies": ["motion"]
+}

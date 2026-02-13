@@ -1,0 +1,11 @@
+{
+  "name": "sparkles-text",
+  "type": "component",
+  "description": "A dynamic text that generates continuous sparkles with smooth transitions.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation"]
+  }
+}

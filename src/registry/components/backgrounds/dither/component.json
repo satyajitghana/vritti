@@ -1,0 +1,12 @@
+{
+  "name": "dither",
+  "type": "component",
+  "description": "A dithered gradient background effect with post-processing.",
+  "category": "backgrounds",
+  "dependencies": ["three", "@react-three/fiber", "@react-three/postprocessing", "postprocessing"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

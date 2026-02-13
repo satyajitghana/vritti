@@ -1,0 +1,11 @@
+{
+  "name": "staggered-menu",
+  "type": "component",
+  "description": "A layouts staggered menu component",
+  "category": "layouts",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "electric-border",
+  "type": "component",
+  "description": "An electric border animation effect.",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

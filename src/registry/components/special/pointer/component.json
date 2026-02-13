@@ -1,0 +1,11 @@
+{
+  "name": "pointer",
+  "type": "component",
+  "description": "A component that displays a pointer when hovering over an element",
+  "category": "special",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["special"]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "shape-blur",
+  "type": "component",
+  "description": "Blurred shape animation.",
+  "category": "animations",
+  "dependencies": ["three"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

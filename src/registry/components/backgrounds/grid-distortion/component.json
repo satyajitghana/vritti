@@ -1,0 +1,12 @@
+{
+  "name": "grid-distortion",
+  "type": "component",
+  "description": "An interactive grid distortion background effect.",
+  "category": "backgrounds",
+  "dependencies": ["three"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

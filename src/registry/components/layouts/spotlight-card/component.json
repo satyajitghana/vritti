@@ -1,0 +1,11 @@
+{
+  "name": "spotlight-card",
+  "type": "component",
+  "description": "A layouts spotlight card component",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

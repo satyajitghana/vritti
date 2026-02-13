@@ -1,0 +1,7 @@
+{
+  "name": "count-up",
+  "type": "component",
+  "description": "Animated number counting up effect.",
+  "category": "text",
+  "dependencies": ["motion"]
+}

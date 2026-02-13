@@ -1,0 +1,11 @@
+{
+  "name": "dock",
+  "type": "component",
+  "description": "An implementation of the MacOS dock using react + tailwindcss + motion",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}

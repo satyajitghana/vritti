@@ -1,0 +1,11 @@
+{
+  "name": "striped-pattern",
+  "type": "component",
+  "description": "A backgrounds striped pattern component",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["backgrounds"]
+  }
+}

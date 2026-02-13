@@ -1,0 +1,7 @@
+{
+  "name": "text-cursor",
+  "type": "component",
+  "description": "Text elements that trail behind the mouse cursor.",
+  "category": "text",
+  "dependencies": ["motion"]
+}

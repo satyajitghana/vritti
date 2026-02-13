@@ -1,0 +1,12 @@
+{
+  "name": "gradual-blur",
+  "type": "component",
+  "description": "Gradual blur animation effect.",
+  "category": "animations",
+  "dependencies": ["mathjs"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "fade-content",
+  "type": "component",
+  "description": "Content with fade animation.",
+  "category": "animations",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"],
+    "source": "react-bits"
+  }
+}

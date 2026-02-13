@@ -1,0 +1,11 @@
+{
+  "name": "comic-text",
+  "type": "component",
+  "description": "Comic text animation",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation"]
+  }
+}

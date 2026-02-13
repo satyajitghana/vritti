@@ -1,0 +1,11 @@
+{
+  "name": "animated-gradient-text",
+  "type": "component",
+  "description": "An animated gradient background which transitions between colors for text.",
+  "category": "text",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation"]
+  }
+}

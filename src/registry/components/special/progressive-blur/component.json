@@ -1,0 +1,11 @@
+{
+  "name": "progressive-blur",
+  "type": "component",
+  "description": "Adds a smooth blur gradient effect to scrollable content.",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["special"]
+  }
+}

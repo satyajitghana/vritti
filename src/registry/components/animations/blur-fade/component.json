@@ -1,0 +1,11 @@
+{
+  "name": "blur-fade",
+  "type": "component",
+  "description": "Blur fade in and out animation.",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"]
+  }
+}

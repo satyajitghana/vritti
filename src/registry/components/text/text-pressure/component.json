@@ -1,0 +1,7 @@
+{
+  "name": "text-pressure",
+  "type": "component",
+  "description": "Variable font text that reacts to mouse proximity with pressure.",
+  "category": "text",
+  "dependencies": []
+}

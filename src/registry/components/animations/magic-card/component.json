@@ -1,0 +1,11 @@
+{
+  "name": "magic-card",
+  "type": "component",
+  "description": "A spotlight effect that follows your mouse cursor and highlights borders on hover.",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["animation"]
+  }
+}

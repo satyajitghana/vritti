@@ -1,0 +1,11 @@
+{
+  "name": "interactive-grid-pattern",
+  "type": "component",
+  "description": "A backgrounds interactive grid pattern component",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["backgrounds"]
+  }
+}

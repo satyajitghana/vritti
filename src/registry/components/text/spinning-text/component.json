@@ -1,0 +1,11 @@
+{
+  "name": "spinning-text",
+  "type": "component",
+  "description": "The Spinning Text component animates text in a circular motion.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation"]
+  }
+}

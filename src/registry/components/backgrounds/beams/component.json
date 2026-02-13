@@ -1,0 +1,12 @@
+{
+  "name": "beams",
+  "type": "component",
+  "description": "Animated volumetric light beams background effect.",
+  "category": "backgrounds",
+  "dependencies": ["three", "@react-three/fiber", "@react-three/drei"],
+  "files": [],
+  "meta": {
+    "tags": ["background"],
+    "source": "react-bits"
+  }
+}

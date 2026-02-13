@@ -1,0 +1,11 @@
+{
+  "name": "flowing-menu",
+  "type": "component",
+  "description": "A layouts flowing menu component",
+  "category": "layouts",
+  "dependencies": ["gsap"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts"]
+  }
+}
