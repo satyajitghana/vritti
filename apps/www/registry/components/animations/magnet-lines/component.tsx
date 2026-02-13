@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef, useEffect, CSSProperties } from 'react';
 
 interface MagnetLinesProps {
