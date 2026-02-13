@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ChevronRight, ExternalLink, ArrowLeft, ArrowRight } from 'lucide-react'
-import { findNeighbour } from 'fumadocs-core/server'
+import { findNeighbour } from 'fumadocs-core/page-tree'
 import { getBreadcrumbItems, type BreadcrumbItem } from 'fumadocs-core/breadcrumb'
 
 import { source } from '@/lib/source'
