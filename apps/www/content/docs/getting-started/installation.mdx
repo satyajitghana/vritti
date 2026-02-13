@@ -1,0 +1,97 @@
+---
+title: Installation
+description: How to install and use Vritti UI components
+---
+
+# Installation
+
+Vritti UI components can be installed using the shadcn CLI or copied manually.
+
+## Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js 18+
+- Next.js 14+ (Next.js 16 recommended)
+- Tailwind CSS v4
+- React 19+
+
+## Using the CLI (Recommended)
+
+The easiest way to add components is using the shadcn CLI:
+
+```bash
+npx shadcn add [component-name]
+```
+
+For example, to add the blur-fade component:
+
+```bash
+npx shadcn add blur-fade
+```
+
+## Manual Installation
+
+You can also copy components manually:
+
+1. Browse to the component you want on the [components page](/docs/components)
+2. Copy the component code
+3. Create a new file in your project (e.g., `components/ui/blur-fade.tsx`)
+4. Paste the code
+5. Install any required dependencies listed on the component page
+
+## Dependencies
+
+Most components require the following base dependencies:
+
+```bash
+npm install motion tailwind-merge clsx class-variance-authority
+```
+
+Additional dependencies vary by component and are listed on each component's page.
+
+## Configuration
+
+### Tailwind CSS
+
+Make sure your `tailwind.config.ts` includes:
+
+```typescript
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
+  content: [
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+
+export default config;
+```
+
+### CSS Variables
+
+Add the Vritti UI CSS variables to your `globals.css`:
+
+```css
+@import "tailwindcss";
+
+@theme {
+  --color-background: oklch(1 0 0);
+  --color-foreground: oklch(0.145 0 0);
+}
+
+@theme dark {
+  --color-background: oklch(0.145 0 0);
+  --color-foreground: oklch(0.985 0 0);
+}
+```
+
+## Next Steps
+
+- Browse [all components](/docs/components)
+- Check out the [showcase](/showcase) for examples

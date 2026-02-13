@@ -10,12 +10,12 @@
 
 import { promises as fs } from 'fs';
 import * as path from 'path';
-import { type Registry, type RegistryComponent, CATEGORIES } from '../src/registry/schema';
-import { siteConfig } from '../src/config/site';
+import { type Registry, type RegistryComponent, CATEGORIES } from '../apps/www/src/registry/schema';
+import { siteConfig } from '../apps/www/src/config/site';
 
-const REGISTRY_PATH = path.join(process.cwd(), 'src', 'registry', 'components');
+const REGISTRY_PATH = path.join(process.cwd(), 'apps', 'www', 'src', 'registry', 'components');
 const OUTPUT_PATH = path.join(process.cwd(), 'registry');
-const PUBLIC_PATH = path.join(process.cwd(), 'public');
+const PUBLIC_PATH = path.join(process.cwd(), 'apps', 'www', 'public');
 
 async function buildRegistry() {
   console.log('Building component registry...');
@@ -171,7 +171,7 @@ async function buildLlmsFiles(components: RegistryComponent[]) {
         .split('-')
         .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
         .join(' ');
-      return `- [${title} Example](${siteConfig.links.github}/blob/main/src/registry/components/${c.category}/${c.name}/example.tsx): Example usage`;
+      return `- [${title} Example](${siteConfig.links.github}/blob/main/apps/www/src/registry/components/${c.category}/${c.name}/example.tsx): Example usage`;
     }),
     '',
     '## Optional',
