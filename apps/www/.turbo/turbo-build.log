@@ -4,31 +4,25 @@
 
 ▲ Next.js 16.1.6 (Turbopack)
 
-[MDX] generated files in 40.73597400000017ms
+[MDX] generated files in 44.59453500000018ms
   Creating an optimized production build ...
-✓ Compiled successfully in 2.5s
+✓ Compiled successfully in 7.0s
   Running TypeScript ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/4) ...
+  Generating static pages using 15 workers (1/4) 
+  Generating static pages using 15 workers (2/4) 
+  Generating static pages using 15 workers (3/4) 
+✓ Generating static pages using 15 workers (4/4) in 1432.4ms
+  Finalizing page optimization ...
 
-  We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
-  The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+└ ● /docs/[[...slug]]
+  └ /docs
 
-  	- include was updated to add '.next/dev/types/**/*.ts'
 
-  The following mandatory changes were made to your tsconfig.json:
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
 
-  	- jsx was set to react-jsx (next.js uses the React automatic runtime)
-
-Failed to compile.
-
-./src/app/(docs)/docs/[[...slug]]/page.tsx:22:25
-Type error: Property 'body' does not exist on type 'PageData'.
-
-[0m [90m 20 |[39m   }
- [90m 21 |[39m
-[31m[1m>[22m[39m[90m 22 |[39m   [36mconst[39m [33mMDX[39m [33m=[39m page[33m.[39mdata[33m.[39mbody[33m;[39m
- [90m    |[39m                         [31m[1m^[22m[39m
- [90m 23 |[39m
- [90m 24 |[39m   [36mreturn[39m (
- [90m 25 |[39m     [33m<[39m[33mdiv[39m className[33m=[39m[32m"space-y-2"[39m[33m>[39m[0m
-Next.js build worker exited with code: 1 and signal: null
- ELIFECYCLE  Command failed with exit code 1.
