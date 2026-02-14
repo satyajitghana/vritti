@@ -1,0 +1,12 @@
+{
+  "name": "layer-stack",
+  "type": "component",
+  "description": "Interactive stacked cards with scroll/drag to reveal, with 3D depth effect",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts", "card", "stack", "scroll", "interactive", "3d"],
+    "source": "scrollx-ui"
+  }
+}

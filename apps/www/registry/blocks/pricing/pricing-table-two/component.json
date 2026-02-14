@@ -1,0 +1,12 @@
+{
+  "name": "pricing-table-two",
+  "type": "block",
+  "description": "A comparison pricing table with monthly/yearly toggle, plan cards, and feature comparison grid.",
+  "category": "pricing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["pricing", "comparison", "table", "plans", "features"],
+    "source": "billingsdk"
+  }
+}

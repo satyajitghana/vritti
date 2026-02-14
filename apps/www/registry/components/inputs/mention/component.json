@@ -1,0 +1,12 @@
+{
+  "name": "mention",
+  "type": "component",
+  "description": "@mention input with autocomplete suggestions for referencing users or entities",
+  "category": "inputs",
+  "dependencies": ["@diceui/mention"],
+  "files": [],
+  "meta": {
+    "tags": ["input", "mention", "autocomplete", "at-mention", "textarea"],
+    "source": "diceui"
+  }
+}

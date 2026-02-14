@@ -1,0 +1,12 @@
+{
+  "name": "card-flip",
+  "type": "component",
+  "description": "3D card that flips on hover to reveal back content with staggered feature list",
+  "category": "layouts",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["card", "flip", "3d", "hover", "animation"],
+    "source": "kokonutui"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "pricing-table-one",
+  "type": "block",
+  "description": "A pricing table with monthly/yearly toggle, three-tier plan cards with feature lists and CTA buttons.",
+  "category": "pricing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["pricing", "plans", "billing", "subscription", "toggle"],
+    "source": "billingsdk"
+  }
+}
