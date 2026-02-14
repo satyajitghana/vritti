@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { getRegistryComponent } from "@/lib/registry"
+import { getRegistryComponent, getRegistryMeta } from "@/lib/registry"
 import { ComponentPreviewTabs } from "@/components/component-preview-tabs"
 import { ComponentSource } from "@/components/component-source"
 
@@ -19,6 +19,7 @@ export function ComponentPreview({
   ...props
 }: ComponentPreviewProps) {
   const Component = getRegistryComponent(name)
+  const meta = getRegistryMeta(name)
 
   if (!Component) {
     return (
@@ -31,12 +32,17 @@ export function ComponentPreview({
       </p>
     )
   }
+
+  const isBlock = meta?.type === "registry:block"
+  const previewSize = meta?.previewSize || (isBlock ? "lg" : undefined)
+
   return (
     <ComponentPreviewTabs
       name={name}
       className={className}
-      align={align}
+      align={isBlock ? "start" : align}
       hideCode={hideCode}
+      previewSize={previewSize}
       component={<Component />}
       source={<ComponentSource name={name} collapsible={false} />}
       {...props}

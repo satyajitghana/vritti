@@ -24,6 +24,17 @@ export function getRegistryComponent(name: string) {
   return Index[name]?.component
 }
 
+export function getRegistryMeta(name: string) {
+  const item = Index[name] as Record<string, unknown> | undefined
+  if (!item) return null
+  const meta = item.meta as Record<string, unknown> | undefined
+  return {
+    type: item.type as string | undefined,
+    category: item.category as string | undefined,
+    previewSize: meta?.previewSize as string | undefined,
+  }
+}
+
 export async function getRegistryItem(name: string) {
   const item = Index[name]
 

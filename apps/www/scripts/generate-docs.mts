@@ -109,11 +109,15 @@ async function scanItems(basePath: string, categories: { name: string; label: st
 
 function generateItemMDX(item: ItemInfo): string {
   const lines: string[] = []
-  const docsPath = item.type === 'component' ? 'components' : 'blocks'
+
+  // Escape description for YAML frontmatter
+  const safeDescription = item.description.includes(':') || item.description.includes('"') || item.description.includes("'") || item.description.includes('@')
+    ? `"${item.description.replace(/"/g, '\\"')}"`
+    : item.description
 
   lines.push('---')
   lines.push(`title: ${item.title}`)
-  lines.push(`description: ${item.description}`)
+  lines.push(`description: ${safeDescription}`)
   lines.push('---')
   lines.push('')
 
@@ -123,6 +127,27 @@ function generateItemMDX(item: ItemInfo): string {
   }
 
   lines.push('## Installation')
+  lines.push('')
+  lines.push('<Tabs defaultValue="cli">')
+  lines.push('')
+  lines.push('<TabsList>')
+  lines.push('  <TabsTrigger value="cli">CLI</TabsTrigger>')
+  lines.push('  <TabsTrigger value="manual">Manual</TabsTrigger>')
+  lines.push('</TabsList>')
+  lines.push('')
+
+  // CLI installation tab
+  lines.push('<TabsContent value="cli">')
+  lines.push('')
+  lines.push('```bash')
+  lines.push(`npx shadcn@latest add "https://vritti-ui.dev/r/${item.name}.json"`)
+  lines.push('```')
+  lines.push('')
+  lines.push('</TabsContent>')
+  lines.push('')
+
+  // Manual installation tab
+  lines.push('<TabsContent value="manual">')
   lines.push('')
   lines.push('<Steps>')
   lines.push('')
@@ -135,6 +160,10 @@ function generateItemMDX(item: ItemInfo): string {
   lines.push('<Step>Update the import paths to match your project setup.</Step>')
   lines.push('')
   lines.push('</Steps>')
+  lines.push('')
+  lines.push('</TabsContent>')
+  lines.push('')
+  lines.push('</Tabs>')
 
   if (item.dependencies.length > 0) {
     lines.push('')

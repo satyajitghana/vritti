@@ -1772,7 +1772,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["layouts"]},
+    meta: {"tags":["layouts"],"previewSize":"lg"},
   },
   "circular-gallery-demo": {
     name: "circular-gallery-demo",
@@ -1786,7 +1786,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/layouts/circular-gallery/example")),
-    meta: {"tags":["layouts"]},
+    meta: {"tags":["layouts"],"previewSize":"lg"},
   },
   "circular-text": {
     name: "circular-text",
@@ -2630,7 +2630,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["animation","glass","filter"],"source":"cult-ui"},
+    meta: {"tags":["animation","glass","filter"],"source":"cult-ui","previewSize":"lg"},
   },
   "distorted-glass-demo": {
     name: "distorted-glass-demo",
@@ -2644,7 +2644,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/animations/distorted-glass/example")),
-    meta: {"tags":["animation","glass","filter"],"source":"cult-ui"},
+    meta: {"tags":["animation","glass","filter"],"source":"cult-ui","previewSize":"lg"},
   },
   "dither": {
     name: "dither",
@@ -3125,7 +3125,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["layout","fullscreen","animation"],"source":"cult-ui"},
+    meta: {"tags":["layout","fullscreen","animation"],"source":"cult-ui","previewSize":"lg"},
   },
   "expandable-screen-demo": {
     name: "expandable-screen-demo",
@@ -3139,7 +3139,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/layouts/expandable-screen/example")),
-    meta: {"tags":["layout","fullscreen","animation"],"source":"cult-ui"},
+    meta: {"tags":["layout","fullscreen","animation"],"source":"cult-ui","previewSize":"lg"},
   },
   "fade-content": {
     name: "fade-content",
@@ -3323,7 +3323,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["layout","carousel","feature"],"source":"cult-ui"},
+    meta: {"tags":["layout","carousel","feature"],"source":"cult-ui","previewSize":"lg"},
   },
   "feature-carousel-demo": {
     name: "feature-carousel-demo",
@@ -3337,7 +3337,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/layouts/feature-carousel/example")),
-    meta: {"tags":["layout","carousel","feature"],"source":"cult-ui"},
+    meta: {"tags":["layout","carousel","feature"],"source":"cult-ui","previewSize":"lg"},
   },
   "file-tree": {
     name: "file-tree",
@@ -3620,7 +3620,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["layouts"]},
+    meta: {"tags":["layouts"],"previewSize":"lg"},
   },
   "flying-posters-demo": {
     name: "flying-posters-demo",
@@ -3634,7 +3634,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/layouts/flying-posters/example")),
-    meta: {"tags":["layouts"]},
+    meta: {"tags":["layouts"],"previewSize":"lg"},
   },
   "folder": {
     name: "folder",
@@ -3950,7 +3950,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["special"]},
+    meta: {"tags":["special"],"previewSize":"lg"},
   },
   "globe-demo": {
     name: "globe-demo",
@@ -3964,7 +3964,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/special/globe/example")),
-    meta: {"tags":["special"]},
+    meta: {"tags":["special"],"previewSize":"lg"},
   },
   "glow-button": {
     name: "glow-button",
@@ -4379,7 +4379,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["animation"]},
+    meta: {"tags":["animation"],"previewSize":"lg"},
   },
   "hero-video-dialog-demo": {
     name: "hero-video-dialog-demo",
@@ -4393,7 +4393,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/animations/hero-video-dialog/example")),
-    meta: {"tags":["animation"]},
+    meta: {"tags":["animation"],"previewSize":"lg"},
   },
   "highlighter": {
     name: "highlighter",
@@ -4742,7 +4742,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["layouts"]},
+    meta: {"tags":["layouts"],"previewSize":"lg"},
   },
   "infinite-menu-demo": {
     name: "infinite-menu-demo",
@@ -4756,7 +4756,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/layouts/infinite-menu/example")),
-    meta: {"tags":["layouts"]},
+    meta: {"tags":["layouts"],"previewSize":"lg"},
   },
   "interactive-grid-pattern": {
     name: "interactive-grid-pattern",
@@ -4841,7 +4841,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["special"]},
+    meta: {"tags":["special"],"previewSize":"lg"},
   },
   "iphone-demo": {
     name: "iphone-demo",
@@ -4855,7 +4855,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/special/iphone/example")),
-    meta: {"tags":["special"]},
+    meta: {"tags":["special"],"previewSize":"lg"},
   },
   "iridescence": {
     name: "iridescence",
@@ -5831,7 +5831,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["display","mockup","browser"],"source":"cult-ui"},
+    meta: {"tags":["display","mockup","browser"],"source":"cult-ui","previewSize":"lg"},
   },
   "mock-browser-window-demo": {
     name: "mock-browser-window-demo",
@@ -5845,7 +5845,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/special/mock-browser-window/example")),
-    meta: {"tags":["display","mockup","browser"],"source":"cult-ui"},
+    meta: {"tags":["display","mockup","browser"],"source":"cult-ui","previewSize":"lg"},
   },
   "model-viewer": {
     name: "model-viewer",
@@ -8438,7 +8438,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["cards","scroll","stacking","animation","layout"],"source":"fancy"},
+    meta: {"tags":["cards","scroll","stacking","animation","layout"],"source":"fancy","previewSize":"lg"},
   },
   "stacking-cards-demo": {
     name: "stacking-cards-demo",
@@ -8452,7 +8452,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/layouts/stacking-cards/example")),
-    meta: {"tags":["cards","scroll","stacking","animation","layout"],"source":"fancy"},
+    meta: {"tags":["cards","scroll","stacking","animation","layout"],"source":"fancy","previewSize":"lg"},
   },
   "stagger-chars": {
     name: "stagger-chars",
@@ -9296,7 +9296,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["timeline","visualization","steps","progress","history"],"source":"diceui"},
+    meta: {"tags":["timeline","visualization","steps","progress","history"],"source":"diceui","previewSize":"lg"},
   },
   "timeline-demo": {
     name: "timeline-demo",
@@ -9310,7 +9310,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/special/timeline/example")),
-    meta: {"tags":["timeline","visualization","steps","progress","history"],"source":"diceui"},
+    meta: {"tags":["timeline","visualization","steps","progress","history"],"source":"diceui","previewSize":"lg"},
   },
   "timer": {
     name: "timer",
