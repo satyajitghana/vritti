@@ -1,0 +1,12 @@
+{
+  "name": "bg-animate-button",
+  "type": "component",
+  "description": "Button with animated background effects and gradient transitions",
+  "category": "buttons",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["button", "animation", "gradient"],
+    "source": "cult-ui"
+  }
+}

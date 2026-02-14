@@ -1,0 +1,12 @@
+{
+  "name": "sortable-list",
+  "type": "component",
+  "description": "Drag-and-drop sortable list with smooth reordering",
+  "category": "layouts",
+  "dependencies": ["motion", "react-use-measure"],
+  "files": [],
+  "meta": {
+    "tags": ["layout", "sortable", "drag-drop"],
+    "source": "cult-ui"
+  }
+}

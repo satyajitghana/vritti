@@ -1,0 +1,12 @@
+{
+  "name": "family-drawer",
+  "type": "component",
+  "description": "Multi-view drawer with smooth animations and navigation",
+  "category": "layouts",
+  "dependencies": ["motion", "react-use-measure", "vaul"],
+  "files": [],
+  "meta": {
+    "tags": ["layout", "drawer", "animation"],
+    "source": "cult-ui"
+  }
+}

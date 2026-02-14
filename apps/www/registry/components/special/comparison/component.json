@@ -1,0 +1,12 @@
+{
+  "name": "comparison",
+  "type": "component",
+  "description": "Side-by-side image or content comparison slider",
+  "category": "special",
+  "dependencies": ["lucide-react", "motion"],
+  "files": [],
+  "meta": {
+    "tags": ["interactive", "comparison", "slider"],
+    "source": "kibo-ui"
+  }
+}

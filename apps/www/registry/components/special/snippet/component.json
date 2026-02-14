@@ -1,0 +1,12 @@
+{
+  "name": "snippet",
+  "type": "component",
+  "description": "Tabbed code snippet display with copy",
+  "category": "special",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["display", "code", "snippet"],
+    "source": "kibo-ui"
+  }
+}

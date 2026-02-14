@@ -640,35 +640,4 @@
     @apply mt-6 rounded-lg overflow-hidden;
   }
 
-  /* Steps component styling */
-  .steps {
-    counter-reset: step;
-  }
-
-  .steps > h3 {
-    counter-increment: step;
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-    font-weight: 600;
-    line-height: 1.75rem;
-  }
-
-  .steps > h3:before {
-    content: counter(step);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    flex-shrink: 0;
-    border-radius: 9999px;
-    background-color: var(--muted);
-    color: var(--muted-foreground);
-    font-size: 0.875rem;
-    font-weight: 600;
-  }
 }

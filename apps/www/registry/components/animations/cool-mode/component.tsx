@@ -29,6 +29,8 @@ export interface CoolParticleOptions extends BaseParticleOptions {
 }
 
 const getContainer = () => {
+  if (typeof document === 'undefined') return null as unknown as HTMLElement
+
   const id = "_coolMode_effect"
   const existingContainer = document.getElementById(id)
 

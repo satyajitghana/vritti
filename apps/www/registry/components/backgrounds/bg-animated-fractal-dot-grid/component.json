@@ -1,0 +1,12 @@
+{
+  "name": "bg-animated-fractal-dot-grid",
+  "type": "component",
+  "description": "Background animated fractal dot grid with responsive design",
+  "category": "backgrounds",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["background", "animation", "dots"],
+    "source": "cult-ui"
+  }
+}

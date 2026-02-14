@@ -1,0 +1,12 @@
+{
+  "name": "dynamic-island",
+  "type": "component",
+  "description": "iOS-style dynamic island with expandable content",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layout", "animation", "island"],
+    "source": "cult-ui"
+  }
+}

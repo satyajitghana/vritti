@@ -1,0 +1,12 @@
+{
+  "name": "animated-number",
+  "type": "component",
+  "description": "Number with smooth counting animations and formatting",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation", "number"],
+    "source": "cult-ui"
+  }
+}

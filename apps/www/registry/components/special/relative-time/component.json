@@ -1,0 +1,12 @@
+{
+  "name": "relative-time",
+  "type": "component",
+  "description": "Multi-timezone relative time display",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["display", "time", "timezone"],
+    "source": "kibo-ui"
+  }
+}

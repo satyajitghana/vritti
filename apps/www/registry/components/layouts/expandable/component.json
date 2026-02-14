@@ -1,0 +1,12 @@
+{
+  "name": "expandable",
+  "type": "component",
+  "description": "Expandable component system with smooth animations",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layout", "expandable", "animation"],
+    "source": "cult-ui"
+  }
+}

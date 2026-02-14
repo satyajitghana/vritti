@@ -1,0 +1,12 @@
+{
+  "name": "neumorph-eyebrow",
+  "type": "component",
+  "description": "Neumorphic eyebrow with soft shadow effects",
+  "category": "text",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["text", "neumorphic"],
+    "source": "cult-ui"
+  }
+}

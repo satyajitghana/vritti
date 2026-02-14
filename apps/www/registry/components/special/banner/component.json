@@ -1,0 +1,12 @@
+{
+  "name": "banner",
+  "type": "component",
+  "description": "Full-width dismissible message banner",
+  "category": "special",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["display", "banner", "notification"],
+    "source": "kibo-ui"
+  }
+}

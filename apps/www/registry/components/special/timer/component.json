@@ -1,0 +1,12 @@
+{
+  "name": "timer",
+  "type": "component",
+  "description": "Countdown timer with customizable duration and styles",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["interactive", "timer"],
+    "source": "cult-ui"
+  }
+}

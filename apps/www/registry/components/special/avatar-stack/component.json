@@ -1,0 +1,12 @@
+{
+  "name": "avatar-stack",
+  "type": "component",
+  "description": "Overlapping avatar display for group representation",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["display", "avatar", "stack"],
+    "source": "kibo-ui"
+  }
+}

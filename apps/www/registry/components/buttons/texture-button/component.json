@@ -1,0 +1,12 @@
+{
+  "name": "texture-button",
+  "type": "component",
+  "description": "Button with texture overlay effects and variants",
+  "category": "buttons",
+  "dependencies": ["@radix-ui/react-slot"],
+  "files": [],
+  "meta": {
+    "tags": ["button", "texture"],
+    "source": "cult-ui"
+  }
+}

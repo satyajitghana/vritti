@@ -1,3 +1,5 @@
+"use client";
+
 import VariableProximity from "./component";
 import { useRef } from "react";
 

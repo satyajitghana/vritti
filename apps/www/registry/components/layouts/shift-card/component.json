@@ -1,0 +1,12 @@
+{
+  "name": "shift-card",
+  "type": "component",
+  "description": "Card with shift animation effects and hover interactions",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["layout", "card", "animation"],
+    "source": "cult-ui"
+  }
+}

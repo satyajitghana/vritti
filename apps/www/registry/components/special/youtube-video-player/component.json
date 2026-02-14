@@ -1,0 +1,12 @@
+{
+  "name": "youtube-video-player",
+  "type": "component",
+  "description": "YouTube video player with custom controls",
+  "category": "special",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["media", "youtube"],
+    "source": "cult-ui"
+  }
+}

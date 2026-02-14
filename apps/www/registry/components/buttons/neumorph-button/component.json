@@ -1,0 +1,12 @@
+{
+  "name": "neumorph-button",
+  "type": "component",
+  "description": "Neumorphic button with soft shadows and tactile effects",
+  "category": "buttons",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["button", "neumorphic"],
+    "source": "cult-ui"
+  }
+}

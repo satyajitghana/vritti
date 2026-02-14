@@ -1,0 +1,12 @@
+{
+  "name": "morph-surface",
+  "type": "component",
+  "description": "Morphing surface with smooth animations and customizable dimensions",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["animation", "morph", "surface"],
+    "source": "cult-ui"
+  }
+}

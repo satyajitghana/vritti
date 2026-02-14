@@ -1,0 +1,12 @@
+{
+  "name": "bg-image-texture",
+  "type": "component",
+  "description": "Background texture component with multiple texture variants",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["background", "texture"],
+    "source": "cult-ui"
+  }
+}

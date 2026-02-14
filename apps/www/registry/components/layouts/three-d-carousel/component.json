@@ -1,0 +1,12 @@
+{
+  "name": "three-d-carousel",
+  "type": "component",
+  "description": "3D carousel with perspective effects",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["layout", "carousel", "3d"],
+    "source": "cult-ui"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "type-animate",
+  "type": "component",
+  "description": "Typewriter animation with dynamic text cycling",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "typewriter", "animation"],
+    "source": "cult-ui"
+  }
+}
