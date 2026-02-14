@@ -6,6 +6,7 @@
   "dependencies": ["motion"],
   "files": [],
   "meta": {
-    "tags": ["animation"]
+    "tags": ["animation"],
+    "previewSize": "lg"
   }
 }

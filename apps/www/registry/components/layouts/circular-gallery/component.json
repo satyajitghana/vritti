@@ -6,6 +6,7 @@
   "dependencies": ["ogl"],
   "files": [],
   "meta": {
-    "tags": ["layouts"]
+    "tags": ["layouts"],
+    "previewSize": "lg"
   }
 }

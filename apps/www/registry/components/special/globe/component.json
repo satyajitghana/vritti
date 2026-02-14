@@ -6,6 +6,7 @@
   "dependencies": ["cobe", "motion"],
   "files": [],
   "meta": {
-    "tags": ["special"]
+    "tags": ["special"],
+    "previewSize": "lg"
   }
 }
