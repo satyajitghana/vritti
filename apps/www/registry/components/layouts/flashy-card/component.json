@@ -1,0 +1,12 @@
+{
+  "name": "flashy-card",
+  "type": "component",
+  "description": "A card with animated activation toggle, glare effect, and ripple animation",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["layouts", "card", "animation", "glare", "toggle"],
+    "source": "scrollx-ui"
+  }
+}

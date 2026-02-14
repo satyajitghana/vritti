@@ -1,0 +1,12 @@
+{
+  "name": "particle-button",
+  "type": "component",
+  "description": "Button that emits particle explosion animation on click",
+  "category": "buttons",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["button", "particles", "animation", "click", "effect"],
+    "source": "kokonutui"
+  }
+}

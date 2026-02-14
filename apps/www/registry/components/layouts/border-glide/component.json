@@ -1,0 +1,12 @@
+{
+  "name": "border-glide",
+  "type": "component",
+  "description": "Cards with an animated gliding border effect and swipe carousel",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts", "card", "border", "animation", "carousel"],
+    "source": "scrollx-ui"
+  }
+}

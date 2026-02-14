@@ -1,5 +1,6 @@
-import { CATEGORIES } from '@/registry/schema'
+import { CATEGORIES, BLOCK_CATEGORIES } from '@/registry/schema'
 import { componentList } from '@/registry/component-list'
+import { blockList } from '@/registry/block-list'
 
 export interface NavItem {
   title: string
@@ -28,6 +29,10 @@ export const docsConfig: DocsConfig = {
       title: "Components",
       href: "/docs/components",
     },
+    {
+      title: "Blocks",
+      href: "/docs/blocks",
+    },
   ],
   sidebarNav: [
     {
@@ -50,6 +55,15 @@ export const docsConfig: DocsConfig = {
         .map((c) => ({
           title: c.title,
           href: `/docs/components/${c.name}`,
+        })),
+    })).filter((section) => section.items.length > 0),
+    ...BLOCK_CATEGORIES.map((cat) => ({
+      title: `${cat.label} (Blocks)`,
+      items: blockList
+        .filter((b) => b.category === cat.name)
+        .map((b) => ({
+          title: b.title,
+          href: `/docs/blocks/${b.name}`,
         })),
     })).filter((section) => section.items.length > 0),
   ],

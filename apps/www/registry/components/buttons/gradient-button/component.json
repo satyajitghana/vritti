@@ -1,0 +1,12 @@
+{
+  "name": "gradient-button",
+  "type": "component",
+  "description": "Button with animated gradient border and glow effects, supporting emerald, purple, and orange color variants",
+  "category": "buttons",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["button", "gradient", "glow", "animation"],
+    "source": "kokonutui"
+  }
+}

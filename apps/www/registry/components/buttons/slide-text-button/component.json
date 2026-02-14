@@ -1,0 +1,12 @@
+{
+  "name": "slide-text-button",
+  "type": "component",
+  "description": "Button with vertical sliding text transition on hover",
+  "category": "buttons",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["button", "text", "slide", "hover", "animation"],
+    "source": "kokonutui"
+  }
+}

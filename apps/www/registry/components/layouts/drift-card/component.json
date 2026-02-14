@@ -1,0 +1,12 @@
+{
+  "name": "drift-card",
+  "type": "component",
+  "description": "A card with a smooth drift hover effect that follows cursor movement",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["layouts", "card", "hover", "drift", "interactive"],
+    "source": "scrollx-ui"
+  }
+}

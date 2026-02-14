@@ -10,7 +10,23 @@ export type ComponentCategory =
   | 'buttons'
   | 'layouts'
   | 'shaders'
-  | 'special';
+  | 'special'
+  | 'inputs'
+  | 'media';
+
+export type BlockCategory =
+  | 'hero'
+  | 'pricing'
+  | 'auth'
+  | 'testimonial'
+  | 'contact'
+  | 'faq'
+  | 'footer'
+  | 'blog'
+  | 'ecommerce'
+  | 'billing'
+  | 'modal'
+  | 'account';
 
 export interface RegistryComponent {
   /** Component name in kebab-case (e.g., "dot-pattern") */
@@ -20,7 +36,7 @@ export interface RegistryComponent {
   /** Brief description of the component */
   description: string;
   /** Component category (REQUIRED) */
-  category: ComponentCategory;
+  category: ComponentCategory | BlockCategory;
   /** npm package dependencies */
   dependencies?: string[];
   /** Other registry components this component depends on */
@@ -37,6 +53,8 @@ export interface RegistryComponent {
     pro?: boolean;
     /** Demo video URL */
     video?: string;
+    /** Source library */
+    source?: string;
   };
 }
 
@@ -56,6 +74,8 @@ export interface Registry {
   components: RegistryComponent[];
   /** Category information */
   categories: CategoryInfo[];
+  /** Block category information */
+  blockCategories: BlockCategoryInfo[];
   /** Registry version */
   version: string;
   /** Last update timestamp */
@@ -65,6 +85,19 @@ export interface Registry {
 export interface CategoryInfo {
   /** Category identifier */
   name: ComponentCategory;
+  /** Display label */
+  label: string;
+  /** Category description */
+  description: string;
+  /** Lucide icon name */
+  icon: string;
+  /** Display order */
+  order: number;
+}
+
+export interface BlockCategoryInfo {
+  /** Block category identifier */
+  name: BlockCategory;
   /** Display label */
   label: string;
   /** Category description */
@@ -113,17 +146,119 @@ export const CATEGORIES: CategoryInfo[] = [
     order: 5,
   },
   {
+    name: 'inputs',
+    label: 'Inputs',
+    description: 'Form inputs and interactive controls',
+    icon: 'TextCursorInput',
+    order: 6,
+  },
+  {
+    name: 'media',
+    label: 'Media',
+    description: 'Media players and content display',
+    icon: 'Play',
+    order: 7,
+  },
+  {
     name: 'shaders',
     label: 'Shaders',
     description: 'Advanced shader-based effects',
     icon: 'Sparkles',
-    order: 6,
+    order: 8,
   },
   {
     name: 'special',
     label: 'Special',
     description: 'Complex and unique components',
     icon: 'Star',
+    order: 9,
+  },
+];
+
+/** Block category definitions */
+export const BLOCK_CATEGORIES: BlockCategoryInfo[] = [
+  {
+    name: 'hero',
+    label: 'Hero Sections',
+    description: 'Landing page hero sections',
+    icon: 'Rocket',
+    order: 1,
+  },
+  {
+    name: 'pricing',
+    label: 'Pricing',
+    description: 'Pricing tables and plan comparison',
+    icon: 'CreditCard',
+    order: 2,
+  },
+  {
+    name: 'auth',
+    label: 'Authentication',
+    description: 'Login, signup, and authentication forms',
+    icon: 'Lock',
+    order: 3,
+  },
+  {
+    name: 'testimonial',
+    label: 'Testimonials',
+    description: 'Customer testimonials and reviews',
+    icon: 'Quote',
+    order: 4,
+  },
+  {
+    name: 'contact',
+    label: 'Contact',
+    description: 'Contact forms and information sections',
+    icon: 'Mail',
+    order: 5,
+  },
+  {
+    name: 'faq',
+    label: 'FAQ',
+    description: 'Frequently asked questions sections',
+    icon: 'HelpCircle',
+    order: 6,
+  },
+  {
+    name: 'footer',
+    label: 'Footers',
+    description: 'Page footer sections',
+    icon: 'PanelBottom',
     order: 7,
+  },
+  {
+    name: 'blog',
+    label: 'Blog',
+    description: 'Blog post layouts and content sections',
+    icon: 'FileText',
+    order: 8,
+  },
+  {
+    name: 'ecommerce',
+    label: 'E-Commerce',
+    description: 'Product listings, carts, and checkout',
+    icon: 'ShoppingCart',
+    order: 9,
+  },
+  {
+    name: 'billing',
+    label: 'Billing',
+    description: 'Billing dashboards and payment management',
+    icon: 'Receipt',
+    order: 10,
+  },
+  {
+    name: 'modal',
+    label: 'Modals',
+    description: 'Modal dialogs and overlays',
+    icon: 'Square',
+    order: 11,
+  },
+  {
+    name: 'account',
+    label: 'Account',
+    description: 'Account settings and management',
+    icon: 'User',
+    order: 12,
   },
 ];

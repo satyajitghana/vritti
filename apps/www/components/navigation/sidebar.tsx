@@ -3,12 +3,14 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { CATEGORIES } from '@/registry/schema';
+import { CATEGORIES, BLOCK_CATEGORIES } from '@/registry/schema';
 import { componentList } from '@/registry/component-list';
+import { blockList } from '@/registry/block-list';
 import {
   ChevronDown,
   BookOpen,
   Download,
+  Blocks,
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -59,11 +61,16 @@ const SUB_GROUPS: Record<string, Record<string, string[]>> = {
       'decay-card', 'magic-card', 'neon-gradient-card', 'pixel-card',
       'profile-card', 'reflective-card', 'spotlight-card', 'tilted-card',
       'magic-bento', 'bento-grid', 'minimal-card', 'shift-card', 'texture-card',
+      'card-tilt', 'border-glide', 'drift-card', 'flashy-card',
+      'vercel-card', 'flipstack', 'layer-stack', 'card-stack',
+      'liquid-glass-card', 'card-flip',
     ],
     Navigation: [
       'bubble-menu', 'card-nav', 'dock', 'flowing-menu', 'gooey-nav',
       'infinite-menu', 'pill-nav', 'staggered-menu', 'direction-aware-tabs',
       'toolbar-expandable', 'side-panel', 'floating-panel',
+      'morphic-navbar', 'smooth-drawer', 'smooth-tab',
+      'magicdock', 'navbar-flow',
     ],
     Galleries: [
       'carousel', 'chroma-grid', 'circular-gallery', 'dome-gallery',
@@ -76,7 +83,8 @@ const SUB_GROUPS: Record<string, Record<string, string[]>> = {
       'deck',
     ],
     'Lists & Grids': [
-      'sortable-list', 'tweet-grid',
+      'sortable-list', 'tweet-grid', 'kanban', 'parallax-cards',
+      'infinite-canvas',
     ],
   },
   text: {
@@ -88,16 +96,38 @@ const SUB_GROUPS: Record<string, Record<string, string[]>> = {
     ],
     'Headings & Style': [
       'gradient-heading', 'neumorph-eyebrow', 'text-gif',
+      'electric-text', 'lustre-text',
+    ],
+    'Cursor & Scroll Effects': [
+      'text-cursor-proximity', 'sensitive-text', 'variable-font-cursor',
+      'scroll-swap-text', 'text-along-path',
+    ],
+    'Reveal & Swap': [
+      'letter-3d-swap', 'scramble-hover', 'vertical-cut-reveal',
+      'breathing-text', 'text-spotlight', 'stagger-chars', 'reveal-text',
+    ],
+  },
+  inputs: {
+    'Search & AI': [
+      'ai-prompt', 'ai-input-search', 'action-search-bar',
+    ],
+    'Selection & Pickers': [
+      'color-picker', 'tags-input', 'combobox', 'mention',
+      'angle-slider', 'currency-transfer',
+    ],
+    'File & Media': [
+      'file-upload', 'image-cropper',
     ],
   },
   special: {
     'Device Mocks': ['android', 'iphone', 'safari', 'mock-browser-window'],
     'Interactive Widgets': [
       'timer', 'rating', 'theme-switcher', 'dropzone', 'image-zoom',
+      'qr-code', 'speed-dial',
     ],
     'Data Display': [
       'avatar-stack', 'banner', 'contribution-graph',
-      'relative-time', 'tree',
+      'relative-time', 'tree', 'timeline',
     ],
     'Media & Content': [
       'code-block', 'snippet', 'hover-video-player', 'youtube-video-player',
@@ -105,10 +135,13 @@ const SUB_GROUPS: Record<string, Record<string, string[]>> = {
     'Cards & Popovers': [
       'comparison', 'popover-form', 'squiggle-arrow', 'cursor',
     ],
+    'Physics & 3D': [
+      'gravity', 'elastic-line', 'cursor-attractor', 'css-3d-box',
+    ],
   },
 };
 
-function buildNavSections(): NavSection[] {
+function buildComponentSections(): NavSection[] {
   const sections: NavSection[] = [
     {
       title: 'Getting Started',
@@ -125,7 +158,6 @@ function buildNavSections(): NavSection[] {
 
     const subGroups = SUB_GROUPS[category.name];
     if (!subGroups) {
-      // No sub-groups: add category as a single section
       sections.push({
         title: category.label,
         items: categoryComponents.map((c) => ({
@@ -136,13 +168,9 @@ function buildNavSections(): NavSection[] {
       continue;
     }
 
-    // Collect all sub-grouped component names
     const subGroupedNames = new Set(Object.values(subGroups).flat());
-
-    // Remaining components not in any sub-group
     const remaining = categoryComponents.filter((c) => !subGroupedNames.has(c.name));
 
-    // Add the main category section (remaining items)
     if (remaining.length > 0) {
       sections.push({
         title: category.label,
@@ -153,7 +181,6 @@ function buildNavSections(): NavSection[] {
       });
     }
 
-    // Add sub-group sections
     for (const [groupLabel, names] of Object.entries(subGroups)) {
       const items = names
         .map((name) => categoryComponents.find((c) => c.name === name))
@@ -171,7 +198,27 @@ function buildNavSections(): NavSection[] {
   return sections;
 }
 
-const docsNav: NavSection[] = buildNavSections();
+function buildBlockSections(): NavSection[] {
+  const sections: NavSection[] = [];
+
+  for (const category of BLOCK_CATEGORIES) {
+    const categoryBlocks = blockList.filter((b) => b.category === category.name);
+    if (categoryBlocks.length === 0) continue;
+
+    sections.push({
+      title: category.label,
+      items: categoryBlocks.map((b) => ({
+        title: b.title,
+        href: `/docs/blocks/${b.name}`,
+      })),
+    });
+  }
+
+  return sections;
+}
+
+const docsNav: NavSection[] = buildComponentSections();
+const blocksNav: NavSection[] = buildBlockSections();
 
 function CollapsibleSection({
   section,
@@ -237,19 +284,44 @@ function CollapsibleSection({
 
 export function DocsSidebar() {
   const pathname = usePathname();
+  const isBlocksPage = pathname?.startsWith('/docs/blocks');
 
   return (
     <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 overflow-y-auto border-r md:sticky md:block">
       <div className="py-6 pr-6 lg:py-8">
         <div className="w-full">
-          {docsNav.map((section, i) => (
-            <CollapsibleSection
-              key={section.title}
-              section={section}
-              pathname={pathname}
-              defaultOpen={i === 0}
-            />
-          ))}
+          {isBlocksPage ? (
+            <>
+              <div className="px-2 pb-4">
+                <div className="flex items-center gap-2 text-sm font-bold text-foreground">
+                  <Blocks className="size-4" />
+                  Blocks
+                </div>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  Ready-to-use page sections
+                </p>
+              </div>
+              {blocksNav.map((section) => (
+                <CollapsibleSection
+                  key={section.title}
+                  section={section}
+                  pathname={pathname}
+                  defaultOpen={false}
+                />
+              ))}
+            </>
+          ) : (
+            <>
+              {docsNav.map((section, i) => (
+                <CollapsibleSection
+                  key={section.title}
+                  section={section}
+                  pathname={pathname}
+                  defaultOpen={i === 0}
+                />
+              ))}
+            </>
+          )}
         </div>
       </div>
     </aside>
