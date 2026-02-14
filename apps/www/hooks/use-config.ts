@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useSyncExternalStore } from "react"
+import { useState, useEffect, useCallback } from "react"
 
 export type PackageManager = "pnpm" | "npm" | "yarn" | "bun"
 
@@ -14,40 +14,45 @@ const defaultConfig: Config = {
   packageManager: "pnpm",
 }
 
-function getSnapshot(): Config {
+function readConfig(): Config {
   if (typeof window === "undefined") return defaultConfig
   try {
     const stored = localStorage.getItem(STORAGE_KEY)
-    return stored ? { ...defaultConfig, ...JSON.parse(stored) } : defaultConfig
+    if (!stored) return defaultConfig
+    const parsed = JSON.parse(stored) as Partial<Config>
+    return { packageManager: parsed.packageManager ?? defaultConfig.packageManager }
   } catch {
     return defaultConfig
   }
 }
 
-function getServerSnapshot(): Config {
-  return defaultConfig
-}
-
-const listeners = new Set<() => void>()
-
-function subscribe(listener: () => void) {
-  listeners.add(listener)
-  return () => listeners.delete(listener)
-}
-
-function setConfig(config: Config) {
+function writeConfig(config: Config) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(config))
   } catch {
     // ignore
   }
-  listeners.forEach((l) => l())
+  window.dispatchEvent(new Event("vritti-config-change"))
 }
 
 export function useConfig(): [Config, (config: Config) => void] {
-  const config = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
+  const [config, setConfig] = useState<Config>(defaultConfig)
+
+  useEffect(() => {
+    setConfig(readConfig())
+    const handleChange = () => setConfig(readConfig())
+    window.addEventListener("vritti-config-change", handleChange)
+    window.addEventListener("storage", handleChange)
+    return () => {
+      window.removeEventListener("vritti-config-change", handleChange)
+      window.removeEventListener("storage", handleChange)
+    }
+  }, [])
+
   const update = useCallback((newConfig: Config) => {
     setConfig(newConfig)
+    writeConfig(newConfig)
   }, [])
+
   return [config, update]
 }
