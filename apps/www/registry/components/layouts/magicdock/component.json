@@ -1,0 +1,12 @@
+{
+  "name": "magicdock",
+  "type": "component",
+  "description": "A macOS-style dock with magnification effect and tooltip variants",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts", "dock", "macos", "magnification", "tooltip"],
+    "source": "scrollx-ui"
+  }
+}

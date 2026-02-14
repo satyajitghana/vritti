@@ -50,7 +50,7 @@ const drawerVariants = {
     y: "100%",
     opacity: 0,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       stiffness: 300,
       damping: 30,
     },
@@ -59,7 +59,7 @@ const drawerVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       stiffness: 300,
       damping: 30,
       mass: 0.8,
@@ -74,7 +74,7 @@ const itemVariants = {
     y: 20,
     opacity: 0,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       stiffness: 300,
       damping: 30,
     },
@@ -83,7 +83,7 @@ const itemVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       stiffness: 300,
       damping: 30,
       mass: 0.8,

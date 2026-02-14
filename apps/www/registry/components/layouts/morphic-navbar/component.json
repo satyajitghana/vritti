@@ -1,0 +1,12 @@
+{
+  "name": "morphic-navbar",
+  "type": "component",
+  "description": "Morphing navigation bar where active item separates from the group with rounded edges",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["navbar", "navigation", "morphing", "animation"],
+    "source": "kokonutui"
+  }
+}

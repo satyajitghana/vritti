@@ -1,0 +1,12 @@
+{
+  "name": "infinite-canvas",
+  "type": "component",
+  "description": "An infinite draggable canvas that tiles child cards infinitely with zoom support",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["layouts", "canvas", "infinite", "drag", "zoom", "interactive"],
+    "source": "scrollx-ui"
+  }
+}

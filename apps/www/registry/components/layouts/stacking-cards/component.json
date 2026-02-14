@@ -1,0 +1,12 @@
+{
+  "name": "stacking-cards",
+  "type": "component",
+  "description": "Scroll-driven stacking cards that scale down as they stack on top of each other",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["cards", "scroll", "stacking", "animation", "layout"],
+    "source": "fancy"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "faq-simple",
+  "type": "block",
+  "description": "A simple FAQ section with question and answer pairs in a clean layout.",
+  "category": "faq",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["faq", "simple", "questions", "answers"],
+    "source": "creative-tim"
+  }
+}

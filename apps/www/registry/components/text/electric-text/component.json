@@ -1,0 +1,12 @@
+{
+  "name": "electric-text",
+  "type": "component",
+  "description": "Electric neon text effect with SVG turbulence filters and glow",
+  "category": "text",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["text", "electric", "neon", "glow", "svg", "animation"],
+    "source": "scrollx-ui"
+  }
+}

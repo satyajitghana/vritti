@@ -1,0 +1,12 @@
+{
+  "name": "pricing-table-five",
+  "type": "block",
+  "description": "A minimal pricing table with horizontal plan layout, billing toggle, and clean feature lists.",
+  "category": "pricing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["pricing", "minimal", "horizontal", "plans", "billing"],
+    "source": "billingsdk"
+  }
+}

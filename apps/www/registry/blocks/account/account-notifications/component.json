@@ -1,0 +1,12 @@
+{
+  "name": "account-notifications",
+  "type": "block",
+  "description": "A notification preferences table with email, push, and SMS toggle switches.",
+  "category": "account",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["account", "notifications", "preferences", "settings", "toggles"],
+    "source": "creative-tim"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "faq-accordion",
+  "type": "block",
+  "description": "An accordion-style FAQ section with collapsible question panels.",
+  "category": "faq",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["faq", "accordion", "collapsible", "expandable"],
+    "source": "creative-tim"
+  }
+}

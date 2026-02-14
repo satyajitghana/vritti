@@ -1,0 +1,12 @@
+{
+  "name": "vertical-cut-reveal",
+  "type": "component",
+  "description": "Text reveal animation with vertical cut effect, supporting word, character, and line-level splitting",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "reveal", "animation", "stagger", "split"],
+    "source": "fancy"
+  }
+}

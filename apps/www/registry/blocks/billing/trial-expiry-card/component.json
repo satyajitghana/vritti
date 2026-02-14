@@ -1,0 +1,12 @@
+{
+  "name": "trial-expiry-card",
+  "type": "block",
+  "description": "A trial expiry notification card with countdown, upgrade CTA, and plan comparison.",
+  "category": "billing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["billing", "trial", "expiry", "countdown", "upgrade"],
+    "source": "billingsdk"
+  }
+}

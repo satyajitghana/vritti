@@ -1,0 +1,12 @@
+{
+  "name": "modal-profile",
+  "type": "block",
+  "description": "An edit profile modal with form fields, technology preferences, and notification settings.",
+  "category": "modal",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["modal", "profile", "edit", "form", "settings"],
+    "source": "creative-tim"
+  }
+}

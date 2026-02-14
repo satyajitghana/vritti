@@ -1,0 +1,12 @@
+{
+  "name": "payment-failure",
+  "type": "block",
+  "description": "A payment failure notification card with error details and retry options.",
+  "category": "billing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["billing", "payment", "failure", "error", "retry"],
+    "source": "billingsdk"
+  }
+}

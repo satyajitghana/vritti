@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-cards",
+  "type": "block",
+  "description": "A grid of testimonial cards with avatars, quotes, and social links.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "cards", "grid", "social"],
+    "source": "creative-tim"
+  }
+}

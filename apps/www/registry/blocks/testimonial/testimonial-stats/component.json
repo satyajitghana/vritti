@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-stats",
+  "type": "block",
+  "description": "A testimonial section with star ratings, quotes, and company stats.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "stats", "ratings", "stars"],
+    "source": "creative-tim"
+  }
+}

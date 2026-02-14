@@ -1,0 +1,12 @@
+{
+  "name": "product-details-simple",
+  "type": "block",
+  "description": "A product details page with image, size selector, color options, and similar items.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "product", "details", "size-selector", "cart"],
+    "source": "creative-tim"
+  }
+}

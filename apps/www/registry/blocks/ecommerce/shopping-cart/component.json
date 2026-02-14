@@ -1,0 +1,12 @@
+{
+  "name": "shopping-cart",
+  "type": "block",
+  "description": "A shopping cart with product list, quantity selectors, promo code, and order summary.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "cart", "shopping", "order-summary", "checkout"],
+    "source": "creative-tim"
+  }
+}

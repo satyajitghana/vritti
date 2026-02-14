@@ -1,0 +1,12 @@
+{
+  "name": "ai-input-search",
+  "type": "component",
+  "description": "AI-powered search input with web search toggle, file attachment, and auto-resizing textarea",
+  "category": "inputs",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["input", "search", "ai", "web", "toggle"],
+    "source": "kokonutui"
+  }
+}

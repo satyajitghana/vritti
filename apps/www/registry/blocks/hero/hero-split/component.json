@@ -1,0 +1,12 @@
+{
+  "name": "hero-split",
+  "type": "block",
+  "description": "A split hero section with text on the left, image placeholder on the right, and stat counters.",
+  "category": "hero",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["hero", "split", "landing", "image", "stats"],
+    "source": "creative-tim"
+  }
+}

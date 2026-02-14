@@ -1,0 +1,12 @@
+{
+  "name": "angle-slider",
+  "type": "component",
+  "description": "Circular angle picker with SVG track, range, and draggable thumb",
+  "category": "inputs",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["input", "slider", "angle", "circular", "rotation", "dial"],
+    "source": "diceui"
+  }
+}

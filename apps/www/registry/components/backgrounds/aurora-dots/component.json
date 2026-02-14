@@ -1,0 +1,12 @@
+{
+  "name": "aurora-dots",
+  "type": "component",
+  "description": "Glowing animated dot clusters with interactive cursor glow effect",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["backgrounds", "aurora", "dots", "glow", "interactive", "canvas"],
+    "source": "scrollx-ui"
+  }
+}

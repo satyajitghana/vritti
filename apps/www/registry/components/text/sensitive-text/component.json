@@ -1,0 +1,12 @@
+{
+  "name": "sensitive-text",
+  "type": "component",
+  "description": "Text that compresses or stretches characters based on cursor proximity",
+  "category": "text",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["text", "cursor", "proximity", "interactive", "animation"],
+    "source": "scrollx-ui"
+  }
+}

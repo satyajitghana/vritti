@@ -1,0 +1,12 @@
+{
+  "name": "blog-highlighted",
+  "type": "block",
+  "description": "A highlighted blog section with featured card and image overlay post cards.",
+  "category": "blog",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["blog", "highlighted", "featured", "overlay", "cards"],
+    "source": "creative-tim"
+  }
+}

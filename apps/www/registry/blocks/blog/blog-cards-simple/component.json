@@ -1,0 +1,12 @@
+{
+  "name": "blog-cards-simple",
+  "type": "block",
+  "description": "Simple blog post cards with images, tags, descriptions, and author avatars.",
+  "category": "blog",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["blog", "cards", "simple", "posts", "authors"],
+    "source": "creative-tim"
+  }
+}

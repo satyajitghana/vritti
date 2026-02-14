@@ -1,0 +1,12 @@
+{
+  "name": "venom-beam",
+  "type": "component",
+  "description": "Interactive particle canvas with trails and cursor-attracted particles",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["backgrounds", "particles", "canvas", "interactive", "trails"],
+    "source": "scrollx-ui"
+  }
+}

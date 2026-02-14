@@ -1,0 +1,12 @@
+{
+  "name": "usage-meter",
+  "type": "block",
+  "description": "A usage meter component showing resource consumption with progress bars and limits.",
+  "category": "billing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["billing", "usage", "meter", "progress", "limits"],
+    "source": "billingsdk"
+  }
+}

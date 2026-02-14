@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-centered",
+  "type": "block",
+  "description": "A centered testimonial section with a large quote and author details.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "centered", "quote", "review"],
+    "source": "creative-tim"
+  }
+}

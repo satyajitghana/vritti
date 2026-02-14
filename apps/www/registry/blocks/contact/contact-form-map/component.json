@@ -1,0 +1,12 @@
+{
+  "name": "contact-form-map",
+  "type": "block",
+  "description": "A contact form with an embedded map and location details.",
+  "category": "contact",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["contact", "form", "map", "location"],
+    "source": "creative-tim"
+  }
+}

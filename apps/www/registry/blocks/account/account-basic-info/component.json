@@ -1,0 +1,12 @@
+{
+  "name": "account-basic-info",
+  "type": "block",
+  "description": "A personal information form with fields for name, profession, contact, and preferences.",
+  "category": "account",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["account", "profile", "personal-info", "form", "settings"],
+    "source": "creative-tim"
+  }
+}

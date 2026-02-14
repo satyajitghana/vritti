@@ -1,0 +1,12 @@
+{
+  "name": "footer-dark",
+  "type": "block",
+  "description": "A footer with navigation links, email subscription, and dark styling.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "dark", "subscribe", "newsletter", "links"],
+    "source": "creative-tim"
+  }
+}

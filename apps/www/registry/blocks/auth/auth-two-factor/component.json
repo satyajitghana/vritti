@@ -1,0 +1,12 @@
+{
+  "name": "auth-two-factor",
+  "type": "block",
+  "description": "A two-factor authentication form with numeric code input, paste support, and resend option.",
+  "category": "auth",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["auth", "two-factor", "2fa", "otp", "verification", "security"],
+    "source": "creative-tim"
+  }
+}

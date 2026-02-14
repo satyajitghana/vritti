@@ -1,0 +1,12 @@
+{
+  "name": "subscription-management",
+  "type": "block",
+  "description": "A subscription management card showing current plan details, billing cycle, and upgrade options.",
+  "category": "billing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["billing", "subscription", "management", "plan", "upgrade"],
+    "source": "billingsdk"
+  }
+}

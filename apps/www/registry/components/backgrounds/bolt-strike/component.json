@@ -1,0 +1,12 @@
+{
+  "name": "bolt-strike",
+  "type": "component",
+  "description": "Lightning bolt background effect with branching bolts, sparks, and particles",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["backgrounds", "lightning", "bolt", "canvas", "particles"],
+    "source": "scrollx-ui"
+  }
+}

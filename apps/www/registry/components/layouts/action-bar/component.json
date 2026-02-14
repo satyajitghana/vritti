@@ -1,0 +1,12 @@
+{
+  "name": "action-bar",
+  "type": "component",
+  "description": "Floating action toolbar for bulk actions on selected items",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["layout", "action-bar", "toolbar", "floating", "bulk-actions"],
+    "source": "diceui"
+  }
+}

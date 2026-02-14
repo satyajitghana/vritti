@@ -1,0 +1,12 @@
+{
+  "name": "ai-prompt",
+  "type": "component",
+  "description": "AI chat input with model selector dropdown, file attachment, and auto-resizing textarea",
+  "category": "inputs",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["input", "ai", "chat", "prompt", "model-selector"],
+    "source": "kokonutui"
+  }
+}

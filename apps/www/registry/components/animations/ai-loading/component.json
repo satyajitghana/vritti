@@ -1,0 +1,12 @@
+{
+  "name": "ai-loading",
+  "type": "component",
+  "description": "Code-style loading animation with rotating SVG spinner and scrolling task lines",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["loading", "ai", "animation", "spinner", "code"],
+    "source": "kokonutui"
+  }
+}

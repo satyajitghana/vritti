@@ -1,0 +1,12 @@
+{
+  "name": "elastic-line",
+  "type": "component",
+  "description": "SVG quadratic curve that responds to cursor proximity with spring-based elastic snapping",
+  "category": "special",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["svg", "elastic", "line", "cursor", "spring", "interactive"],
+    "source": "fancy"
+  }
+}

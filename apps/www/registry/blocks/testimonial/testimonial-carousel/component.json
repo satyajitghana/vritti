@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-carousel",
+  "type": "block",
+  "description": "A dark-themed testimonial carousel with avatars and star ratings.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "carousel", "dark", "ratings"],
+    "source": "creative-tim"
+  }
+}

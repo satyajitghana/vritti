@@ -1,0 +1,12 @@
+{
+  "name": "ai-text-loading",
+  "type": "component",
+  "description": "Animated thinking/loading text with gradient shimmer effect and cycling messages",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["loading", "text", "animation", "shimmer", "thinking"],
+    "source": "kokonutui"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "variable-font-cursor",
+  "type": "component",
+  "description": "Variable font that changes weight and slant based on cursor position within container",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "variable-font", "cursor", "interactive", "animation"],
+    "source": "fancy"
+  }
+}

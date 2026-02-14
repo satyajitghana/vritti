@@ -1,0 +1,12 @@
+{
+  "name": "checkout-form",
+  "type": "block",
+  "description": "A checkout form with contact, shipping, payment sections, and order summary sidebar.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "checkout", "payment", "shipping", "form"],
+    "source": "creative-tim"
+  }
+}

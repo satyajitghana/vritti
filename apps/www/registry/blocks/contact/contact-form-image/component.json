@@ -1,0 +1,12 @@
+{
+  "name": "contact-form-image",
+  "type": "block",
+  "description": "A contact form with a side image and contact information details.",
+  "category": "contact",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["contact", "form", "image", "split-layout"],
+    "source": "creative-tim"
+  }
+}

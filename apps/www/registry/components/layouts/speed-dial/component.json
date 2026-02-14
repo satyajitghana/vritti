@@ -1,0 +1,12 @@
+{
+  "name": "speed-dial",
+  "type": "component",
+  "description": "Floating action menu that expands with labeled action buttons",
+  "category": "layouts",
+  "dependencies": ["class-variance-authority"],
+  "files": [],
+  "meta": {
+    "tags": ["layout", "speed-dial", "fab", "floating-action", "menu"],
+    "source": "diceui"
+  }
+}

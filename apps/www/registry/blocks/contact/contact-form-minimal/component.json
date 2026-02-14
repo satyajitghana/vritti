@@ -1,0 +1,12 @@
+{
+  "name": "contact-form-minimal",
+  "type": "block",
+  "description": "A minimal contact form with clean design and essential fields.",
+  "category": "contact",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["contact", "form", "minimal", "clean"],
+    "source": "creative-tim"
+  }
+}

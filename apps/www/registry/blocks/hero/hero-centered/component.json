@@ -1,0 +1,12 @@
+{
+  "name": "hero-centered",
+  "type": "block",
+  "description": "A centered hero section with headline, gradient highlight, subtext, and dual CTA buttons.",
+  "category": "hero",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["hero", "centered", "landing", "cta", "headline"],
+    "source": "creative-tim"
+  }
+}

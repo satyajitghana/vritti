@@ -1,0 +1,12 @@
+{
+  "name": "text-cursor-proximity",
+  "type": "component",
+  "description": "Text that changes CSS properties based on cursor distance from each letter",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "cursor", "proximity", "interactive", "animation"],
+    "source": "fancy"
+  }
+}

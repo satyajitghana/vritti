@@ -1,0 +1,12 @@
+{
+  "name": "invoice-history",
+  "type": "block",
+  "description": "An invoice history table showing past invoices with dates, amounts, and download links.",
+  "category": "billing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["billing", "invoice", "history", "table", "download"],
+    "source": "billingsdk"
+  }
+}

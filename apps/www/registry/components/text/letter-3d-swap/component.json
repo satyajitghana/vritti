@@ -1,0 +1,12 @@
+{
+  "name": "letter-3d-swap",
+  "type": "component",
+  "description": "3D box letter swap animation on hover with configurable rotation direction and stagger",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "3d", "animation", "hover", "swap", "letter"],
+    "source": "fancy"
+  }
+}
