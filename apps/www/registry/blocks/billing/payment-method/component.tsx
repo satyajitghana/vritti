@@ -12,13 +12,13 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 
-interface PaymentMethodProps {
+interface PaymentMethodCardProps {
   type: "visa" | "mastercard"
   number: string
   isDefault?: boolean
 }
 
-function PaymentMethod({ type, number, isDefault }: PaymentMethodProps) {
+function PaymentMethodCard({ type, number, isDefault }: PaymentMethodCardProps) {
   const cardImg =
     type === "visa"
       ? "https://v3.material-tailwind.com/visa.webp"
@@ -105,10 +105,10 @@ export default function PaymentMethod() {
       </div>
 
       <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
-        <PaymentMethod type="mastercard" number="7852" isDefault />
-        <PaymentMethod type="visa" number="9831" />
-        <PaymentMethod type="visa" number="8362" />
-        <PaymentMethod type="mastercard" number="0098" />
+        <PaymentMethodCard type="mastercard" number="7852" isDefault />
+        <PaymentMethodCard type="visa" number="9831" />
+        <PaymentMethodCard type="visa" number="8362" />
+        <PaymentMethodCard type="mastercard" number="0098" />
       </div>
     </div>
   )

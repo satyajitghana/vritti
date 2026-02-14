@@ -5,7 +5,7 @@ import { Building2, Pencil, Plus, Trash2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Card,
-  CardAction,
+  CardFooter,
   CardContent,
   CardHeader,
   CardTitle,
@@ -31,7 +31,7 @@ function BillingCard({ company, contact, email, vat }: BillingCardProps) {
             <p className="text-muted-foreground text-sm">Company</p>
           </div>
         </div>
-        <CardAction>
+        <CardFooter>
           <div className="flex items-center gap-2">
             <Button size="sm" variant="ghost">
               <Pencil className="mr-2 h-4 w-4" />
@@ -46,7 +46,7 @@ function BillingCard({ company, contact, email, vat }: BillingCardProps) {
               Delete
             </Button>
           </div>
-        </CardAction>
+        </CardFooter>
       </CardHeader>
       <CardContent className="space-y-2">
         <div className="text-sm">

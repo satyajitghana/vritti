@@ -31,6 +31,7 @@ const BLOCK_CATEGORIES = [
   'billing',
   'modal',
   'account',
+  'special',
 ]
 
 function toTitleCase(str: string): string {

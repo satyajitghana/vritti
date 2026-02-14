@@ -26,7 +26,8 @@ export type BlockCategory =
   | 'ecommerce'
   | 'billing'
   | 'modal'
-  | 'account';
+  | 'account'
+  | 'special';
 
 export interface RegistryComponent {
   /** Component name in kebab-case (e.g., "dot-pattern") */
@@ -260,5 +261,12 @@ export const BLOCK_CATEGORIES: BlockCategoryInfo[] = [
     description: 'Account settings and management',
     icon: 'User',
     order: 12,
+  },
+  {
+    name: 'special',
+    label: 'Special',
+    description: 'AI agents, Web3, and other specialized blocks',
+    icon: 'Sparkles',
+    order: 13,
   },
 ];
