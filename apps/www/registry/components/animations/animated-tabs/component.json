@@ -1,0 +1,12 @@
+{
+  "name": "animated-tabs",
+  "type": "component",
+  "title": "Animated Tabs",
+  "description": "Tabs component with smooth fill animation on active tab indicator",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animations", "tabs", "navigation", "transition"],
+    "source": "scrollx-ui"
+  }
+}

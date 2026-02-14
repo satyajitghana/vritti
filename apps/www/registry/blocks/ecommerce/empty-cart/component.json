@@ -1,0 +1,12 @@
+{
+  "name": "empty-cart",
+  "type": "block",
+  "description": "An empty shopping cart state with illustration and back-to-store button.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "cart", "empty", "state"],
+    "source": "creative-tim"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "ai-video-generator",
+  "type": "block",
+  "description": "An AI video generation agent with provider selection, progress tracking, and video preview.",
+  "category": "special",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ai", "video", "generator", "agents"],
+    "source": "creative-tim"
+  }
+}

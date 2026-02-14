@@ -1,0 +1,12 @@
+{
+  "name": "ecommerce-video-hero",
+  "type": "block",
+  "description": "An ecommerce hero section with YouTube video background and product cards overlay.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "hero", "video", "products", "overlay"],
+    "source": "creative-tim"
+  }
+}

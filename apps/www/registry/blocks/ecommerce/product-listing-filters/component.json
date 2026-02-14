@@ -1,0 +1,12 @@
+{
+  "name": "product-listing-filters",
+  "type": "block",
+  "description": "A product listing page with sidebar filters and grid layout.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "products", "listing", "filters", "grid"],
+    "source": "creative-tim"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "contact-form-gradient",
+  "type": "block",
+  "description": "A contact form with gradient dark background and glassmorphism styling.",
+  "category": "contact",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["contact", "form", "gradient", "glassmorphism"],
+    "source": "creative-tim"
+  }
+}

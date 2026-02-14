@@ -1,0 +1,12 @@
+{
+  "name": "order-details",
+  "type": "block",
+  "description": "An order details page with timeline tracking, shipping info, and order summary.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "order", "details", "timeline", "tracking"],
+    "source": "creative-tim"
+  }
+}

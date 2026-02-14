@@ -1,0 +1,12 @@
+{
+  "name": "footer-with-form",
+  "type": "block",
+  "description": "A footer with a newsletter subscription form and link columns.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "form", "newsletter", "subscription"],
+    "source": "creative-tim"
+  }
+}

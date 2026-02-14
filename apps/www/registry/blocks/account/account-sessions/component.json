@@ -1,0 +1,12 @@
+{
+  "name": "account-sessions",
+  "type": "block",
+  "description": "An active sessions management panel showing device locations and browser details.",
+  "category": "account",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["account", "sessions", "security", "devices"],
+    "source": "creative-tim"
+  }
+}

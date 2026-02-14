@@ -1,0 +1,12 @@
+{
+  "name": "payment-details-two",
+  "type": "block",
+  "description": "A two-step payment form with card details, card type detection, billing address, and animated transitions.",
+  "category": "billing",
+  "dependencies": ["lucide-react", "motion"],
+  "files": [],
+  "meta": {
+    "tags": ["billing", "payment", "form", "card", "multi-step"],
+    "source": "billingsdk"
+  }
+}

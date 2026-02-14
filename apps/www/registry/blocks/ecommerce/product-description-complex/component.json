@@ -1,0 +1,12 @@
+{
+  "name": "product-description-complex",
+  "type": "block",
+  "description": "A detailed product page with image gallery, color/size selectors, and accordion details.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "product", "description", "gallery", "details"],
+    "source": "creative-tim"
+  }
+}

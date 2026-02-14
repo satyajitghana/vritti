@@ -1,0 +1,12 @@
+{
+  "name": "modal-delete",
+  "type": "block",
+  "description": "A delete confirmation modal with warning state.",
+  "category": "modal",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["modal", "delete", "warning", "confirmation"],
+    "source": "creative-tim"
+  }
+}

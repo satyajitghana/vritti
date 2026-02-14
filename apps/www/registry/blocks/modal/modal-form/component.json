@@ -1,0 +1,12 @@
+{
+  "name": "modal-form",
+  "type": "block",
+  "description": "A modal with an embedded form for data collection.",
+  "category": "modal",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["modal", "form", "input", "data"],
+    "source": "creative-tim"
+  }
+}

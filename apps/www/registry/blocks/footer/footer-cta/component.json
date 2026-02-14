@@ -1,0 +1,12 @@
+{
+  "name": "footer-cta",
+  "type": "block",
+  "description": "A footer with call-to-action section and subscription form.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "cta", "subscription", "action"],
+    "source": "creative-tim"
+  }
+}

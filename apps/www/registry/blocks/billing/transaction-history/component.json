@@ -1,0 +1,12 @@
+{
+  "name": "transaction-history",
+  "type": "block",
+  "description": "A transaction history table with status indicators and date filtering.",
+  "category": "billing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["billing", "transactions", "history", "payments"],
+    "source": "creative-tim"
+  }
+}

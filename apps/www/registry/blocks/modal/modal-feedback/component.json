@@ -1,0 +1,12 @@
+{
+  "name": "modal-feedback",
+  "type": "block",
+  "description": "A feedback collection modal with rating and text input.",
+  "category": "modal",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["modal", "feedback", "rating", "review"],
+    "source": "creative-tim"
+  }
+}

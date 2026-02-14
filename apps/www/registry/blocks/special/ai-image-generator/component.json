@@ -1,0 +1,12 @@
+{
+  "name": "ai-image-generator",
+  "type": "block",
+  "description": "An AI image generator with provider selection, prompt input, and built-in image editor.",
+  "category": "special",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ai", "image", "generator", "editor"],
+    "source": "creative-tim"
+  }
+}

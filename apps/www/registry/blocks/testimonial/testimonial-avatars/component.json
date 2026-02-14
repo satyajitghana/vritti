@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-avatars",
+  "type": "block",
+  "description": "A testimonial section with prominent avatar displays.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "avatars", "profiles", "display"],
+    "source": "creative-tim"
+  }
+}

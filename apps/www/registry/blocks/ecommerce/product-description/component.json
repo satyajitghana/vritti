@@ -1,0 +1,12 @@
+{
+  "name": "product-description",
+  "type": "block",
+  "description": "A product description page with image gallery and detailed specifications.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "product", "description", "specifications"],
+    "source": "creative-tim"
+  }
+}

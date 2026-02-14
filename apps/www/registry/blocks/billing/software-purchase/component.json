@@ -1,0 +1,12 @@
+{
+  "name": "software-purchase",
+  "type": "block",
+  "description": "A software purchase checkout form with plan selection and payment details.",
+  "category": "billing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["billing", "purchase", "software", "checkout"],
+    "source": "creative-tim"
+  }
+}

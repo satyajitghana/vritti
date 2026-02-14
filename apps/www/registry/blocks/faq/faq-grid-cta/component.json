@@ -1,0 +1,12 @@
+{
+  "name": "faq-grid-cta",
+  "type": "block",
+  "description": "A FAQ grid section with a call-to-action support card.",
+  "category": "faq",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["faq", "grid", "cta", "support"],
+    "source": "creative-tim"
+  }
+}

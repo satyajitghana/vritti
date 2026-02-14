@@ -1,0 +1,12 @@
+{
+  "name": "footer-centered-links",
+  "type": "block",
+  "description": "A centered footer with navigation links and social icons.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "centered", "links", "social"],
+    "source": "creative-tim"
+  }
+}

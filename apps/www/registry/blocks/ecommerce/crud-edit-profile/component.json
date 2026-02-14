@@ -1,0 +1,12 @@
+{
+  "name": "crud-edit-profile",
+  "type": "block",
+  "description": "A staff profile update form with username, email, and password fields.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "crud", "edit", "profile", "form"],
+    "source": "creative-tim"
+  }
+}

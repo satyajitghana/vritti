@@ -1,0 +1,12 @@
+{
+  "name": "web3-nft-gallery",
+  "type": "block",
+  "description": "A Web3 NFT gallery with card display and collection details.",
+  "category": "special",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["web3", "nft", "gallery", "collection"],
+    "source": "creative-tim"
+  }
+}

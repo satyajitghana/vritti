@@ -1,0 +1,12 @@
+{
+  "name": "contact-form-sidebar",
+  "type": "block",
+  "description": "A contact form with sidebar showing address and phone details.",
+  "category": "contact",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["contact", "form", "sidebar", "details"],
+    "source": "creative-tim"
+  }
+}

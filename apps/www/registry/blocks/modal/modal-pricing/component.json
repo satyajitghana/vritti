@@ -1,0 +1,12 @@
+{
+  "name": "modal-pricing",
+  "type": "block",
+  "description": "A pricing plan selection modal with tier comparison.",
+  "category": "modal",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["modal", "pricing", "plans", "selection"],
+    "source": "creative-tim"
+  }
+}

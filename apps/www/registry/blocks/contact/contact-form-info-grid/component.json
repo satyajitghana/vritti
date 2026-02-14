@@ -1,0 +1,12 @@
+{
+  "name": "contact-form-info-grid",
+  "type": "block",
+  "description": "A contact section with info cards grid and centered message form.",
+  "category": "contact",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["contact", "form", "info", "grid", "cards"],
+    "source": "creative-tim"
+  }
+}

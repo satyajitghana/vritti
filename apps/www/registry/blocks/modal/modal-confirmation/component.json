@@ -1,0 +1,12 @@
+{
+  "name": "modal-confirmation",
+  "type": "block",
+  "description": "A confirmation dialog modal with action buttons.",
+  "category": "modal",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["modal", "confirmation", "dialog", "action"],
+    "source": "creative-tim"
+  }
+}

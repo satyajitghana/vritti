@@ -1,0 +1,12 @@
+{
+  "name": "contact-form-two-column",
+  "type": "block",
+  "description": "A two-column contact layout with form and contact details side by side.",
+  "category": "contact",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["contact", "form", "two-column", "layout"],
+    "source": "creative-tim"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-highlight",
+  "type": "block",
+  "description": "A highlighted testimonial with emphasis on key quote.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "highlight", "emphasis", "key-quote"],
+    "source": "creative-tim"
+  }
+}

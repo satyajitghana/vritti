@@ -1,0 +1,12 @@
+{
+  "name": "web3-dashboard",
+  "type": "block",
+  "description": "A Web3 dashboard with portfolio overview and transaction history.",
+  "category": "special",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["web3", "dashboard", "portfolio", "transactions"],
+    "source": "creative-tim"
+  }
+}

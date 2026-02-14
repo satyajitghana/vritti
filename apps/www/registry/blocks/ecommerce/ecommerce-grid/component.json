@@ -1,0 +1,12 @@
+{
+  "name": "ecommerce-grid",
+  "type": "block",
+  "description": "An ecommerce product grid with image cards and promotional banner.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "grid", "cards", "promotional"],
+    "source": "creative-tim"
+  }
+}

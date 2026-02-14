@@ -1,0 +1,12 @@
+{
+  "name": "credit-card-display",
+  "type": "block",
+  "description": "A credit card display component with dark and light variants.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "credit-card", "display", "payment"],
+    "source": "creative-tim"
+  }
+}

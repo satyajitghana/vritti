@@ -1,0 +1,12 @@
+{
+  "name": "footer-compact",
+  "type": "block",
+  "description": "A compact footer with minimal links and copyright.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "compact", "minimal", "copyright"],
+    "source": "creative-tim"
+  }
+}

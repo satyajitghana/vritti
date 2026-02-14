@@ -1,0 +1,12 @@
+{
+  "name": "modal-newsletter",
+  "type": "block",
+  "description": "A newsletter subscription modal with email input.",
+  "category": "modal",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["modal", "newsletter", "subscription", "email"],
+    "source": "creative-tim"
+  }
+}

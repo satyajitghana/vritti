@@ -1,0 +1,12 @@
+{
+  "name": "faq-list",
+  "type": "block",
+  "description": "A FAQ section in a simple list format with accordion items.",
+  "category": "faq",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["faq", "list", "accordion", "questions"],
+    "source": "creative-tim"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "account-avatar-upload",
+  "type": "block",
+  "description": "A profile picture upload panel with avatar preview and availability status toggle.",
+  "category": "account",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["account", "avatar", "upload", "profile", "settings"],
+    "source": "creative-tim"
+  }
+}

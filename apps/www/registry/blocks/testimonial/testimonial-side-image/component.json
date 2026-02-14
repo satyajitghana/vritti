@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-side-image",
+  "type": "block",
+  "description": "A testimonial with side image and quote layout.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "image", "side", "quote"],
+    "source": "creative-tim"
+  }
+}

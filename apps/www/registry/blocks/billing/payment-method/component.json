@@ -1,0 +1,12 @@
+{
+  "name": "payment-method",
+  "type": "block",
+  "description": "A payment method selection form with credit card and billing address fields.",
+  "category": "billing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["billing", "payment", "credit-card", "method"],
+    "source": "creative-tim"
+  }
+}

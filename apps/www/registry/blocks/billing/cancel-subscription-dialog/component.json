@@ -1,0 +1,12 @@
+{
+  "name": "cancel-subscription-dialog",
+  "type": "block",
+  "description": "A dialog-based cancellation flow with plan details, warning section, and two-step confirmation.",
+  "category": "billing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["billing", "cancel", "subscription", "dialog", "confirmation"],
+    "source": "billingsdk"
+  }
+}

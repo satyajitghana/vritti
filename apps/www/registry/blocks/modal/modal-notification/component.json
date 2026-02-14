@@ -1,0 +1,12 @@
+{
+  "name": "modal-notification",
+  "type": "block",
+  "description": "A notification modal with icon and message display.",
+  "category": "modal",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["modal", "notification", "message", "icon"],
+    "source": "creative-tim"
+  }
+}

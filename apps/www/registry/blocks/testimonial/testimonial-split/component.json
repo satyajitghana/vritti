@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-split",
+  "type": "block",
+  "description": "A split-layout testimonial with image and quote sides.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "split", "layout", "image"],
+    "source": "creative-tim"
+  }
+}

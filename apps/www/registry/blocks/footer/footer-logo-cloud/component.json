@@ -1,0 +1,12 @@
+{
+  "name": "footer-logo-cloud",
+  "type": "block",
+  "description": "A footer with partner logo cloud and navigation.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "logos", "partners", "cloud"],
+    "source": "creative-tim"
+  }
+}

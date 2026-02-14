@@ -1,0 +1,12 @@
+{
+  "name": "footer-stacked",
+  "type": "block",
+  "description": "A stacked footer with centered content blocks.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "stacked", "centered", "blocks"],
+    "source": "creative-tim"
+  }
+}

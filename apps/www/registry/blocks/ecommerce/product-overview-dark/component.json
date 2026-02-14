@@ -1,0 +1,12 @@
+{
+  "name": "product-overview-dark",
+  "type": "block",
+  "description": "A dark-themed product overview with ratings, pricing, tabs, and add-to-cart.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "product", "overview", "dark", "tabs"],
+    "source": "creative-tim"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-company",
+  "type": "block",
+  "description": "A company testimonial section with logo and attribution.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "company", "logo", "business"],
+    "source": "creative-tim"
+  }
+}

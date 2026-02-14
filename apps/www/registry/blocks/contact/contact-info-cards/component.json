@@ -1,0 +1,12 @@
+{
+  "name": "contact-info-cards",
+  "type": "block",
+  "description": "A contact information section with icon cards for address, email, and phone.",
+  "category": "contact",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["contact", "information", "cards", "icons"],
+    "source": "creative-tim"
+  }
+}

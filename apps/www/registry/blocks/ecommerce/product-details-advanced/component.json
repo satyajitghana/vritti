@@ -1,0 +1,12 @@
+{
+  "name": "product-details-advanced",
+  "type": "block",
+  "description": "An advanced product details page with color and size selectors.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "product", "details", "colors", "sizes"],
+    "source": "creative-tim"
+  }
+}

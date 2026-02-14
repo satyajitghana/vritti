@@ -1,0 +1,12 @@
+{
+  "name": "blog-post-tags",
+  "type": "block",
+  "description": "A blog post grid with tag badges and author attributions.",
+  "category": "blog",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["blog", "posts", "tags", "cards"],
+    "source": "creative-tim"
+  }
+}

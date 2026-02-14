@@ -1,0 +1,12 @@
+{
+  "name": "modal-cookie",
+  "type": "block",
+  "description": "A cookie consent modal with preference options.",
+  "category": "modal",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["modal", "cookie", "consent", "preferences"],
+    "source": "creative-tim"
+  }
+}
