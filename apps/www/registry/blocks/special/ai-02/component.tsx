@@ -159,7 +159,7 @@ export default function Ai02() {
           <div className="ml-auto flex items-center gap-3">
             <Button
               variant="ghost"
-              size="icon-sm"
+              size="icon"
               className="text-muted-foreground hover:text-foreground transition-colors duration-100 ease-out"
               title="Attach images"
               aria-label="Attach images"
@@ -169,7 +169,7 @@ export default function Ai02() {
 
             <Button
               variant="ghost"
-              size="icon-sm"
+              size="icon"
               className={cn(
                 "rounded-full transition-colors duration-100 ease-out cursor-pointer bg-primary",
                 inputValue && "bg-primary hover:bg-primary/90!"

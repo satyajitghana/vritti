@@ -70,7 +70,6 @@ export function CommandMenu02() {
         </DialogHeader>
         <DialogContent
           className="gap-0 overflow-hidden rounded-xl border-border/50 p-0 shadow-lg sm:max-w-lg"
-          showCloseButton={false}
         >
           <Command className="flex h-full w-full flex-col overflow-hidden bg-popover **:data-[slot=command-input-wrapper]:h-auto **:data-[slot=command-input-wrapper]:grow **:data-[slot=command-input-wrapper]:border-0 **:data-[slot=command-input-wrapper]:px-0">
             <div className="flex h-12 items-center gap-2 border-border/50 border-b px-4">

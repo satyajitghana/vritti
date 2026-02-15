@@ -224,7 +224,7 @@ export default function FileUpload01() {
                         </div>
                         <Button
                           variant="ghost"
-                          size="icon-sm"
+                          size="icon"
                           className="bg-transparent! hover:text-red-500"
                           onClick={() => removeFile(file.name)}
                         >

@@ -109,10 +109,8 @@ export default function Dialog10() {
                   </PopoverTrigger>
                   <PopoverContent className="w-auto p-0" align="start">
                     <Calendar
-                      mode="single"
                       selected={date}
                       onSelect={setDate}
-                      initialFocus
                     />
                   </PopoverContent>
                 </Popover>

@@ -49,8 +49,8 @@ function parseCSS(css: string): { light: Record<string, string>; dark: Record<st
   const dark: Record<string, string> = {}
 
   // Match :root { ... } and .dark { ... }
-  const rootMatch = css.match(/:root\s*\{([^}]+)\}/s)
-  const darkMatch = css.match(/\.dark\s*\{([^}]+)\}/s)
+  const rootMatch = css.match(/:root\s*\{([\s\S]+?)\}/)
+  const darkMatch = css.match(/\.dark\s*\{([\s\S]+?)\}/)
 
   const parseBlock = (block: string, target: Record<string, string>) => {
     const varRegex = /--([a-z-]+):\s*([^;]+);/g

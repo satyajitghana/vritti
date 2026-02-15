@@ -67,7 +67,7 @@ export default function Dialog12() {
               </Avatar>
               <Button
                 variant="ghost"
-                size="icon-sm"
+                size="icon"
                 className="absolute -top-0.5 -right-0.5 bg-accent rounded-full border-[3px] border-background hover:bg-accent"
                 onClick={() => {
                   if (image) {

@@ -135,7 +135,7 @@ export default function FileUpload04() {
             <Button
               type="button"
               variant="ghost"
-              size="icon-sm"
+              size="icon"
               className="absolute right-1 top-1 text-muted-foreground hover:text-foreground"
               aria-label="Remove"
               onClick={() => setShowDummy(false)}
@@ -170,7 +170,7 @@ export default function FileUpload04() {
             <Button
               type="button"
               variant="ghost"
-              size="icon-sm"
+              size="icon"
               className="absolute right-1 top-1 text-muted-foreground hover:text-foreground"
               aria-label="Remove"
               onClick={resetFile}

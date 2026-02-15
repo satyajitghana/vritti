@@ -218,7 +218,7 @@ export default function Ai04({
                 <DropdownMenuTrigger asChild>
                   <Button
                     className="ml-[-2px] rounded-md"
-                    size="icon-sm"
+                    size="icon"
                     type="button"
                     variant="ghost"
                     aria-label="Add attachments"
@@ -266,7 +266,7 @@ export default function Ai04({
                 <DropdownMenuTrigger asChild>
                   <Button
                     className="rounded-md"
-                    size="icon-sm"
+                    size="icon"
                     type="button"
                     variant="ghost"
                     aria-label="Adjust settings"
@@ -329,7 +329,7 @@ export default function Ai04({
               <Button
                 className="rounded-md"
                 disabled={!prompt.trim()}
-                size="icon-sm"
+                size="icon"
                 type="submit"
                 variant="default"
                 aria-label="Send message"

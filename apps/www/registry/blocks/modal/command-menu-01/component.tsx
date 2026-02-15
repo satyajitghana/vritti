@@ -82,7 +82,7 @@ export function CommandMenu01() {
         Open Command Menu
       </Button>
 
-      <CommandDialog onOpenChange={setOpen} open={open} showCloseButton={false}>
+      <CommandDialog onOpenChange={setOpen} open={open}>
         <CommandInput
           className="h-12"
           placeholder="Type a command or search..."

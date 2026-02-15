@@ -8,46 +8,11 @@ import { Copy, Check, RotateCcw, Sun, Moon, Palette, Type, SlidersHorizontal, Co
 import { FontPicker } from '@/components/theme/font-picker';
 import { ContrastChecker } from '@/components/theme/contrast-checker';
 import { CSSImportDialog } from '@/components/theme/css-import-dialog';
-import { THEME_PRESETS, type ThemePreset } from '@/lib/theme-presets';
+import { THEME_PRESETS, type ThemePreset, type ThemeColors } from '@/lib/theme-presets';
 
 // ============================================================
 // Types
 // ============================================================
-
-interface ThemeColors {
-  background: string;
-  foreground: string;
-  card: string;
-  'card-foreground': string;
-  popover: string;
-  'popover-foreground': string;
-  primary: string;
-  'primary-foreground': string;
-  secondary: string;
-  'secondary-foreground': string;
-  muted: string;
-  'muted-foreground': string;
-  accent: string;
-  'accent-foreground': string;
-  destructive: string;
-  'destructive-foreground': string;
-  border: string;
-  input: string;
-  ring: string;
-  'chart-1': string;
-  'chart-2': string;
-  'chart-3': string;
-  'chart-4': string;
-  'chart-5': string;
-  'sidebar-background': string;
-  'sidebar-foreground': string;
-  'sidebar-primary': string;
-  'sidebar-primary-foreground': string;
-  'sidebar-accent': string;
-  'sidebar-accent-foreground': string;
-  'sidebar-border': string;
-  'sidebar-ring': string;
-}
 
 interface ThemeConfig {
   light: ThemeColors;
@@ -591,7 +556,7 @@ export function ThemeEditor() {
             <TabsContent value="other" className="space-y-4 mt-4">
               {/* Contrast Checker */}
               <div className="rounded-lg border p-4">
-                <ContrastChecker colors={currentColors} />
+                <ContrastChecker colors={currentColors as unknown as Record<string, string>} />
               </div>
 
               {/* CSS Import */}
