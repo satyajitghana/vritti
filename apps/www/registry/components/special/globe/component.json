@@ -8,5 +8,9 @@
   "meta": {
     "tags": ["special"],
     "previewSize": "lg"
-  }
+  },
+  "props": [
+    { "name": "className", "type": "string", "default": "-", "description": "Additional CSS classes for the globe container" },
+    { "name": "config", "type": "COBEOptions", "default": "GLOBE_CONFIG", "description": "COBE globe configuration options including colors, markers, and rendering settings" }
+  ]
 }

@@ -1,0 +1,12 @@
+{
+  "name": "loginform",
+  "type": "component",
+  "description": "Styled login form with social auth buttons and split layout",
+  "category": "inputs",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["form", "login", "auth", "input"],
+    "source": "scrollx-ui"
+  }
+}

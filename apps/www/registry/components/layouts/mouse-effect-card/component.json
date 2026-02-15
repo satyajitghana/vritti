@@ -1,0 +1,9 @@
+{
+  "name": "mouse-effect-card",
+  "type": "component",
+  "title": "Mouse Effect Card",
+  "description": "Interactive card with an animated dot pattern that repels dots away from the mouse cursor.",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "source": "kokonutui"
+}

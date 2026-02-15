@@ -8,5 +8,16 @@
   "meta": {
     "tags": ["background", "pattern", "svg", "dots"],
     "featured": true
-  }
+  },
+  "props": [
+    { "name": "width", "type": "number", "default": "16", "description": "Horizontal spacing between dots in pixels" },
+    { "name": "height", "type": "number", "default": "16", "description": "Vertical spacing between dots in pixels" },
+    { "name": "x", "type": "number", "default": "0", "description": "Horizontal offset of the entire pattern" },
+    { "name": "y", "type": "number", "default": "0", "description": "Vertical offset of the entire pattern" },
+    { "name": "cx", "type": "number", "default": "1", "description": "Horizontal offset of individual dots" },
+    { "name": "cy", "type": "number", "default": "1", "description": "Vertical offset of individual dots" },
+    { "name": "cr", "type": "number", "default": "1", "description": "Radius of each dot" },
+    { "name": "className", "type": "string", "default": "-", "description": "Additional CSS classes for the SVG container" },
+    { "name": "glow", "type": "boolean", "default": "false", "description": "Whether dots should have a glowing animation effect" }
+  ]
 }

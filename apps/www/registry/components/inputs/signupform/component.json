@@ -1,0 +1,12 @@
+{
+  "name": "signupform",
+  "type": "component",
+  "description": "Styled signup form with social auth buttons and split layout",
+  "category": "inputs",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["form", "signup", "register", "auth", "input"],
+    "source": "scrollx-ui"
+  }
+}

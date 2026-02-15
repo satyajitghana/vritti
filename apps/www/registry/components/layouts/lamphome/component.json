@@ -1,0 +1,12 @@
+{
+  "name": "lamphome",
+  "type": "component",
+  "description": "Hero section with pull-chain lamp theme toggle, navbar, and animated glow",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["hero", "navbar", "lamp", "theme-toggle", "landing"],
+    "source": "scrollx-ui"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "underline-center",
+  "type": "component",
+  "description": "Text underline animation that expands from the center on hover.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "underline", "hover", "animation"],
+    "source": "fancy"
+  }
+}

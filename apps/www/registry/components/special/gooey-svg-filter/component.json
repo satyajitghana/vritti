@@ -1,0 +1,12 @@
+{
+  "name": "gooey-svg-filter",
+  "type": "component",
+  "description": "SVG gooey filter effect that merges overlapping elements with a liquid-like appearance.",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["svg", "filter", "gooey", "liquid"],
+    "source": "fancy"
+  }
+}

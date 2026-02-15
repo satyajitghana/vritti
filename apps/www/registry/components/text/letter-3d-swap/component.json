@@ -8,5 +8,16 @@
   "meta": {
     "tags": ["text", "3d", "animation", "hover", "swap", "letter"],
     "source": "fancy"
-  }
+  },
+  "props": [
+    { "name": "children", "type": "React.ReactNode", "default": "-", "description": "Text content to animate" },
+    { "name": "as", "type": "ElementType", "default": "\"p\"", "description": "HTML element type to render as" },
+    { "name": "mainClassName", "type": "string", "default": "-", "description": "CSS classes for the main container element" },
+    { "name": "frontFaceClassName", "type": "string", "default": "-", "description": "CSS classes for the front face of each letter" },
+    { "name": "secondFaceClassName", "type": "string", "default": "-", "description": "CSS classes for the second (reveal) face of each letter" },
+    { "name": "staggerDuration", "type": "number", "default": "0.05", "description": "Delay between each letter's animation in seconds" },
+    { "name": "staggerFrom", "type": "\"first\" | \"last\" | \"center\" | number | \"random\"", "default": "\"first\"", "description": "Direction from which the stagger effect originates" },
+    { "name": "transition", "type": "ValueAnimationTransition | AnimationOptions", "default": "{ type: \"spring\", damping: 30, stiffness: 300 }", "description": "Motion transition configuration for the swap animation" },
+    { "name": "rotateDirection", "type": "\"top\" | \"right\" | \"bottom\" | \"left\"", "default": "\"right\"", "description": "Direction of the 3D rotation on hover" }
+  ]
 }

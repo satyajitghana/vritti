@@ -1,0 +1,12 @@
+{
+  "name": "element-along-svg-path",
+  "type": "component",
+  "description": "Animate elements along an SVG path with auto or scroll-based animation.",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["animation", "svg", "path", "scroll"],
+    "source": "fancy"
+  }
+}

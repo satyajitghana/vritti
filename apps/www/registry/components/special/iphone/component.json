@@ -8,5 +8,11 @@
   "meta": {
     "tags": ["special"],
     "previewSize": "lg"
-  }
+  },
+  "props": [
+    { "name": "src", "type": "string", "default": "-", "description": "Image source URL to display on the phone screen" },
+    { "name": "videoSrc", "type": "string", "default": "-", "description": "Video source URL to display on the phone screen" },
+    { "name": "className", "type": "string", "default": "-", "description": "Additional CSS classes for the container" },
+    { "name": "style", "type": "React.CSSProperties", "default": "-", "description": "Custom inline styles for the container" }
+  ]
 }

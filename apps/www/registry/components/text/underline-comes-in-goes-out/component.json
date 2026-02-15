@@ -1,0 +1,12 @@
+{
+  "name": "underline-comes-in-goes-out",
+  "type": "component",
+  "description": "Text underline animation that slides in from one direction and out from the other.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "underline", "hover", "animation"],
+    "source": "fancy"
+  }
+}

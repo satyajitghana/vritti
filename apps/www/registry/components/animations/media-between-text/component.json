@@ -1,0 +1,12 @@
+{
+  "name": "media-between-text",
+  "type": "component",
+  "description": "Reveal an image or video between two text elements on hover, scroll, or programmatically.",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["animation", "text", "media", "hover", "reveal"],
+    "source": "fancy"
+  }
+}

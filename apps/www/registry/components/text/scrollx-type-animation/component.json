@@ -1,0 +1,12 @@
+{
+  "name": "scrollx-type-animation",
+  "type": "component",
+  "description": "Typewriter text animation cycling through words with gradient coloring",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "typewriter", "animation", "typing", "gradient"],
+    "source": "scrollx-ui"
+  }
+}

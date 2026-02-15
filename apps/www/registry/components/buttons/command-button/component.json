@@ -1,0 +1,9 @@
+{
+  "name": "command-button",
+  "type": "component",
+  "title": "Command Button",
+  "description": "A keyboard shortcut button with a shimmer hover effect, ideal for CMD+K style triggers.",
+  "category": "buttons",
+  "dependencies": ["lucide-react"],
+  "source": "kokonutui"
+}

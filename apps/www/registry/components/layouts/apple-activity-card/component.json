@@ -1,0 +1,9 @@
+{
+  "name": "apple-activity-card",
+  "type": "component",
+  "title": "Apple Activity Card",
+  "description": "Apple Watch-inspired activity rings card showing Move, Exercise, and Stand progress with animated circular progress indicators.",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "source": "kokonutui"
+}

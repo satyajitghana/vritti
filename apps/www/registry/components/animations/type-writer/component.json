@@ -1,0 +1,9 @@
+{
+  "name": "type-writer",
+  "type": "component",
+  "title": "Typewriter",
+  "description": "A typewriter text animation that types, deletes, and cycles through a sequence of words with natural typing variance.",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "source": "kokonutui"
+}

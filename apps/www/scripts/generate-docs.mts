@@ -40,6 +40,18 @@ function toTitleCase(str: string): string {
     .join(' ')
 }
 
+interface PropInfo {
+  name: string
+  type: string
+  default: string
+  description: string
+}
+
+interface ExampleInfo {
+  name: string
+  title: string
+}
+
 interface ItemInfo {
   name: string
   title: string
@@ -48,6 +60,8 @@ interface ItemInfo {
   dependencies: string[]
   hasExample: boolean
   type: 'component' | 'block'
+  props: PropInfo[]
+  extraExamples: ExampleInfo[]
 }
 
 async function scanItems(basePath: string, categories: { name: string; label: string }[], itemType: 'component' | 'block'): Promise<ItemInfo[]> {
@@ -90,6 +104,25 @@ async function scanItems(basePath: string, categories: { name: string; label: st
         .then(() => true)
         .catch(() => false)
 
+      // Scan for additional example files (example-*.tsx)
+      const allFiles = await fs.readdir(itemDir)
+      const extraExamples: ExampleInfo[] = allFiles
+        .filter(f => f.startsWith('example-') && f.endsWith('.tsx'))
+        .map(f => {
+          const slug = f.replace('example-', '').replace('.tsx', '')
+          return { name: slug, title: toTitleCase(slug) }
+        })
+        .sort((a, b) => a.name.localeCompare(b.name))
+
+      // Read props from component.json
+      const rawProps = (metadata.props as Array<Record<string, string>>) || []
+      const props: PropInfo[] = rawProps.map(p => ({
+        name: p.name || '',
+        type: p.type || 'string',
+        default: p.default || '-',
+        description: p.description || '',
+      }))
+
       items.push({
         name,
         title: (metadata.title as string) || toTitleCase(name),
@@ -100,6 +133,8 @@ async function scanItems(basePath: string, categories: { name: string; label: st
         dependencies: (metadata.dependencies as string[]) || [],
         hasExample,
         type: itemType,
+        props,
+        extraExamples,
       })
     }
   }
@@ -172,6 +207,34 @@ function generateItemMDX(item: ItemInfo): string {
     lines.push('```bash')
     lines.push(`npm install ${item.dependencies.join(' ')}`)
     lines.push('```')
+  }
+
+  // Extra examples section
+  if (item.extraExamples.length > 0) {
+    lines.push('')
+    lines.push('## Examples')
+    lines.push('')
+    for (const ex of item.extraExamples) {
+      lines.push(`### ${ex.title}`)
+      lines.push('')
+      lines.push(`<ComponentPreview name="${item.name}-${ex.name}" />`)
+      lines.push('')
+    }
+  }
+
+  // Props table
+  if (item.props.length > 0) {
+    lines.push('')
+    lines.push('## Props')
+    lines.push('')
+    lines.push(`### ${item.title}`)
+    lines.push('')
+    lines.push('| Prop | Type | Default | Description |')
+    lines.push('| ---- | ---- | ------- | ----------- |')
+    for (const prop of item.props) {
+      const escapedType = prop.type.replace(/\|/g, '\\|')
+      lines.push(`| \`${prop.name}\` | \`${escapedType}\` | \`${prop.default}\` | ${prop.description} |`)
+    }
   }
 
   lines.push('')

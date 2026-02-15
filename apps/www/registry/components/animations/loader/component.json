@@ -1,0 +1,12 @@
+{
+  "name": "loader",
+  "type": "component",
+  "description": "Multi-variant animated loader with spinner, cube, dual-ring, and magnetic dots",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["loader", "spinner", "loading", "animation"],
+    "source": "scrollx-ui"
+  }
+}

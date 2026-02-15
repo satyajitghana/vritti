@@ -1,0 +1,12 @@
+{
+  "name": "animated-textgenerate",
+  "type": "component",
+  "description": "Word-by-word text generation with blur reveal and capsule placeholders",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation", "generate", "blur", "reveal"],
+    "source": "scrollx-ui"
+  }
+}

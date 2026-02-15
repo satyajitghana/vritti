@@ -1,0 +1,12 @@
+{
+  "name": "random-letter-swap-pingpong-anim",
+  "type": "component",
+  "description": "Text animation that swaps letters in random order with ping-pong on hover in/out.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation", "letter", "swap", "random", "pingpong"],
+    "source": "fancy"
+  }
+}

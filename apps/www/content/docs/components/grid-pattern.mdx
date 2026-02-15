@@ -37,3 +37,17 @@ npx shadcn@latest add "https://vritti-ui.dev/r/grid-pattern.json"
 </TabsContent>
 
 </Tabs>
+
+## Props
+
+### Grid Pattern
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `width` | `number` | `40` | Width of each grid cell in pixels |
+| `height` | `number` | `40` | Height of each grid cell in pixels |
+| `x` | `number` | `-1` | Horizontal offset of the pattern |
+| `y` | `number` | `-1` | Vertical offset of the pattern |
+| `squares` | `Array<[x: number, y: number]>` | `-` | Array of [x, y] coordinates for highlighted (filled) squares |
+| `strokeDasharray` | `string` | `"0"` | SVG stroke dash array for the grid lines |
+| `className` | `string` | `-` | Additional CSS classes for the SVG container |

@@ -1,0 +1,12 @@
+{
+  "name": "slide-text",
+  "type": "component",
+  "description": "Per-character slide up/down text animation with stagger effect",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "slide", "animation", "stagger", "character"],
+    "source": "scrollx-ui"
+  }
+}

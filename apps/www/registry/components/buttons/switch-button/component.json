@@ -1,0 +1,9 @@
+{
+  "name": "switch-button",
+  "type": "component",
+  "title": "Switch Button",
+  "description": "An elegant theme toggle button with a spinning sun icon and shimmer hover effect.",
+  "category": "buttons",
+  "dependencies": ["lucide-react"],
+  "source": "kokonutui"
+}

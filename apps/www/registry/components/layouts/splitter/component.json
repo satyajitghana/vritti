@@ -1,0 +1,12 @@
+{
+  "name": "splitter",
+  "type": "component",
+  "description": "Resizable split panel layout with drag handle, snap-to-collapse, and smooth animations",
+  "category": "layouts",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["splitter", "panel", "resize", "layout", "drag"],
+    "source": "scrollx-ui"
+  }
+}

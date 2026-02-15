@@ -1,0 +1,9 @@
+{
+  "name": "avatar-picker",
+  "type": "component",
+  "title": "Avatar Picker",
+  "description": "A profile setup form with animated avatar selection grid, spinning avatar preview, and username input validation.",
+  "category": "inputs",
+  "dependencies": ["motion", "lucide-react"],
+  "source": "kokonutui"
+}

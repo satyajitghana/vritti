@@ -129,6 +129,14 @@ export const Index: Record<string, any> = {`
       .then(() => true)
       .catch(() => false)
 
+    // Scan for additional example files (example-*.tsx)
+    const compDir = path.join(REGISTRY_BASE, comp.category, comp.name)
+    const compFiles = await fs.readdir(compDir)
+    const extraExamples = compFiles
+      .filter(f => f.startsWith('example-') && f.endsWith('.tsx'))
+      .map(f => f.replace('.tsx', ''))
+      .sort()
+
     index += `
   "${comp.name}": {
     name: "${comp.name}",
@@ -167,6 +175,28 @@ export const Index: Record<string, any> = {`
     meta: ${JSON.stringify(comp.meta)},
   },`
     }
+
+    // Register additional examples
+    for (const exName of extraExamples) {
+      const exRelPath = `registry/components/${comp.category}/${comp.name}/${exName}.tsx`
+      const exImportPath = `@/registry/components/${comp.category}/${comp.name}/${exName}`
+      const registryKey = `${comp.name}-${exName.replace('example-', '')}`
+      index += `
+  "${registryKey}": {
+    name: "${registryKey}",
+    description: "${(comp.description || '').replace(/"/g, '\\"')} (${exName.replace('example-', '')})",
+    type: "registry:example",
+    category: "${comp.category}",
+    registryDependencies: ["${comp.name}"],
+    files: [{
+      path: "${exRelPath}",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("${exImportPath}")),
+    meta: ${JSON.stringify(comp.meta)},
+  },`
+    }
   }
 
   // Build block entries
@@ -182,6 +212,14 @@ export const Index: Record<string, any> = {`
       )
       .then(() => true)
       .catch(() => false)
+
+    // Scan for additional example files (example-*.tsx)
+    const blockDir = path.join(BLOCKS_BASE, block.category, block.name)
+    const blockFiles = await fs.readdir(blockDir)
+    const extraBlockExamples = blockFiles
+      .filter(f => f.startsWith('example-') && f.endsWith('.tsx'))
+      .map(f => f.replace('.tsx', ''))
+      .sort()
 
     index += `
   "${block.name}": {
@@ -218,6 +256,28 @@ export const Index: Record<string, any> = {`
       target: ""
     }],
     component: React.lazy(() => import("${exampleImportPath}")),
+    meta: ${JSON.stringify(block.meta)},
+  },`
+    }
+
+    // Register additional examples for blocks
+    for (const exName of extraBlockExamples) {
+      const exRelPath = `registry/blocks/${block.category}/${block.name}/${exName}.tsx`
+      const exImportPath = `@/registry/blocks/${block.category}/${block.name}/${exName}`
+      const registryKey = `${block.name}-${exName.replace('example-', '')}`
+      index += `
+  "${registryKey}": {
+    name: "${registryKey}",
+    description: "${(block.description || '').replace(/"/g, '\\"')} (${exName.replace('example-', '')})",
+    type: "registry:example",
+    category: "${block.category}",
+    registryDependencies: ["${block.name}"],
+    files: [{
+      path: "${exRelPath}",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("${exImportPath}")),
     meta: ${JSON.stringify(block.meta)},
   },`
     }

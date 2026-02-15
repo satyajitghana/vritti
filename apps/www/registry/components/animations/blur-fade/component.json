@@ -7,5 +7,17 @@
   "files": [],
   "meta": {
     "tags": ["animation"]
-  }
+  },
+  "props": [
+    { "name": "children", "type": "React.ReactNode", "default": "-", "description": "Content to animate" },
+    { "name": "className", "type": "string", "default": "-", "description": "Additional CSS classes" },
+    { "name": "variant", "type": "{ hidden: { y: number }; visible: { y: number } }", "default": "-", "description": "Custom motion variants for hidden and visible states" },
+    { "name": "duration", "type": "number", "default": "0.4", "description": "Animation duration in seconds" },
+    { "name": "delay", "type": "number", "default": "0", "description": "Animation delay in seconds" },
+    { "name": "offset", "type": "number", "default": "6", "description": "Distance offset for the slide animation in pixels" },
+    { "name": "direction", "type": "\"up\" | \"down\" | \"left\" | \"right\"", "default": "\"down\"", "description": "Direction of the fade-in slide animation" },
+    { "name": "inView", "type": "boolean", "default": "false", "description": "Whether to trigger animation only when element is in view" },
+    { "name": "inViewMargin", "type": "MarginType", "default": "\"-50px\"", "description": "Margin for the in-view intersection observer" },
+    { "name": "blur", "type": "string", "default": "\"6px\"", "description": "Amount of blur applied during the hidden state" }
+  ]
 }

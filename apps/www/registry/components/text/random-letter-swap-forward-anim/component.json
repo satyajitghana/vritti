@@ -1,0 +1,12 @@
+{
+  "name": "random-letter-swap-forward-anim",
+  "type": "component",
+  "description": "Text animation that swaps letters in random order forward on hover.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation", "letter", "swap", "random", "hover"],
+    "source": "fancy"
+  }
+}

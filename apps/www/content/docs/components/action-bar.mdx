@@ -37,3 +37,22 @@ npx shadcn@latest add "https://vritti-ui.dev/r/action-bar.json"
 </TabsContent>
 
 </Tabs>
+
+## Props
+
+### Action Bar
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `open` | `boolean` | `false` | Whether the action bar is visible |
+| `onOpenChange` | `(open: boolean) => void` | `-` | Callback when the open state changes |
+| `onEscapeKeyDown` | `(event: KeyboardEvent) => void` | `-` | Callback when the Escape key is pressed |
+| `align` | `"start" \| "center" \| "end"` | `"center"` | Horizontal alignment of the action bar |
+| `alignOffset` | `number` | `0` | Offset from the aligned edge in pixels |
+| `side` | `"top" \| "bottom"` | `"bottom"` | Which side of the viewport to position the bar |
+| `sideOffset` | `number` | `16` | Offset from the side edge in pixels |
+| `portalContainer` | `Element \| DocumentFragment \| null` | `document.body` | Container element for the portal |
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Layout orientation of toolbar items |
+| `loop` | `boolean` | `true` | Whether keyboard navigation loops around |
+| `className` | `string` | `-` | Additional CSS classes |
+| `style` | `React.CSSProperties` | `-` | Custom inline styles |

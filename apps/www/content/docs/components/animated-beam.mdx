@@ -43,3 +43,27 @@ npx shadcn@latest add "https://vritti-ui.dev/r/animated-beam.json"
 ```bash
 npm install motion
 ```
+
+## Props
+
+### Animated Beam
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `className` | `string` | `-` | Additional CSS classes for the SVG element |
+| `containerRef` | `RefObject<HTMLElement \| null>` | `-` | Ref to the container element for positioning |
+| `fromRef` | `RefObject<HTMLElement \| null>` | `-` | Ref to the element where the beam starts |
+| `toRef` | `RefObject<HTMLElement \| null>` | `-` | Ref to the element where the beam ends |
+| `curvature` | `number` | `0` | Curvature of the beam path |
+| `reverse` | `boolean` | `false` | Whether to reverse the beam animation direction |
+| `duration` | `number` | `Math.random() * 3 + 4` | Duration of the beam animation in seconds |
+| `delay` | `number` | `0` | Delay before the animation starts in seconds |
+| `pathColor` | `string` | `"gray"` | Color of the static beam path |
+| `pathWidth` | `number` | `2` | Width of the beam path stroke |
+| `pathOpacity` | `number` | `0.2` | Opacity of the static beam path |
+| `gradientStartColor` | `string` | `"#ffaa40"` | Starting color of the animated gradient |
+| `gradientStopColor` | `string` | `"#9c40ff"` | Ending color of the animated gradient |
+| `startXOffset` | `number` | `0` | Horizontal offset for the beam start position |
+| `startYOffset` | `number` | `0` | Vertical offset for the beam start position |
+| `endXOffset` | `number` | `0` | Horizontal offset for the beam end position |
+| `endYOffset` | `number` | `0` | Vertical offset for the beam end position |

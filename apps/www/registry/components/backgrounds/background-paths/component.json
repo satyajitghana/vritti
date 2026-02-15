@@ -1,0 +1,9 @@
+{
+  "name": "background-paths",
+  "type": "component",
+  "title": "Background Paths",
+  "description": "Animated SVG background with elegant floating curved paths in primary, secondary and accent layers.",
+  "category": "backgrounds",
+  "dependencies": ["motion"],
+  "source": "kokonutui"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "gridbackground",
+  "type": "component",
+  "description": "SVG perspective grid background with converging lines and fade overlay",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["background", "grid", "svg", "perspective"],
+    "source": "scrollx-ui"
+  }
+}

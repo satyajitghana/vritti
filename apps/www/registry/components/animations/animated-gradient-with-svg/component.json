@@ -1,0 +1,12 @@
+{
+  "name": "animated-gradient-with-svg",
+  "type": "component",
+  "description": "Animated gradient background using SVG circles with blur effects.",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["animation", "gradient", "background", "svg"],
+    "source": "fancy"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "heroui",
+  "type": "component",
+  "description": "Animated hero section with parallax, gradient text, badge, CTA buttons, and feature tags",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["hero", "landing", "parallax", "cta"],
+    "source": "scrollx-ui"
+  }
+}

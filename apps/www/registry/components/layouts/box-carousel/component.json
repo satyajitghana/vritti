@@ -1,0 +1,12 @@
+{
+  "name": "box-carousel",
+  "type": "component",
+  "description": "3D box/cube carousel with drag, autoplay, and keyboard navigation support.",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["carousel", "3d", "cube", "drag", "autoplay"],
+    "source": "fancy"
+  }
+}

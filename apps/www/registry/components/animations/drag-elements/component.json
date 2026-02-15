@@ -1,0 +1,12 @@
+{
+  "name": "drag-elements",
+  "type": "component",
+  "description": "Draggable elements with momentum, elastic constraints, and z-index management.",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["animation", "drag", "interactive"],
+    "source": "fancy"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "matrix-text",
+  "type": "component",
+  "title": "Matrix Text",
+  "description": "Text animation that cycles through binary characters before revealing the final text, inspired by the Matrix movie effect.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "source": "kokonutui"
+}

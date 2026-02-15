@@ -1,0 +1,9 @@
+{
+  "name": "ai-voice",
+  "type": "component",
+  "title": "AI Voice",
+  "description": "An AI voice recording interface with animated waveform bars, timer, and a spinning stop indicator.",
+  "category": "animations",
+  "dependencies": ["lucide-react"],
+  "source": "kokonutui"
+}

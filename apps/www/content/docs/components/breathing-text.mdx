@@ -43,3 +43,19 @@ npx shadcn@latest add "https://vritti-ui.dev/r/breathing-text.json"
 ```bash
 npm install motion
 ```
+
+## Props
+
+### Breathing Text
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `children` | `React.ReactNode` | `-` | Text content to animate |
+| `as` | `ElementType` | `"span"` | HTML element type to render as |
+| `fromFontVariationSettings` | `string` | `-` | Starting font variation settings value |
+| `toFontVariationSettings` | `string` | `-` | Ending font variation settings value |
+| `transition` | `Transition` | `{ duration: 1.5, ease: "easeInOut" }` | Motion transition configuration for the animation |
+| `staggerDuration` | `number` | `0.1` | Delay between each letter's animation start in seconds |
+| `staggerFrom` | `"first" \| "last" \| "center" \| number` | `"first"` | Direction from which the stagger effect originates |
+| `repeatDelay` | `number` | `0.1` | Delay between animation repetitions in seconds |
+| `className` | `string` | `-` | Additional CSS classes |

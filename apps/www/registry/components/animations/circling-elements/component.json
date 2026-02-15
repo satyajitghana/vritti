@@ -1,0 +1,12 @@
+{
+  "name": "circling-elements",
+  "type": "component",
+  "description": "Arrange child elements in a circular orbit with continuous rotation animation.",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["animation", "circular", "orbit", "rotation"],
+    "source": "fancy"
+  }
+}

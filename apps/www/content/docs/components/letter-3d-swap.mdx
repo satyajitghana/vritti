@@ -43,3 +43,19 @@ npx shadcn@latest add "https://vritti-ui.dev/r/letter-3d-swap.json"
 ```bash
 npm install motion
 ```
+
+## Props
+
+### Letter 3d Swap
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `children` | `React.ReactNode` | `-` | Text content to animate |
+| `as` | `ElementType` | `"p"` | HTML element type to render as |
+| `mainClassName` | `string` | `-` | CSS classes for the main container element |
+| `frontFaceClassName` | `string` | `-` | CSS classes for the front face of each letter |
+| `secondFaceClassName` | `string` | `-` | CSS classes for the second (reveal) face of each letter |
+| `staggerDuration` | `number` | `0.05` | Delay between each letter's animation in seconds |
+| `staggerFrom` | `"first" \| "last" \| "center" \| number \| "random"` | `"first"` | Direction from which the stagger effect originates |
+| `transition` | `ValueAnimationTransition \| AnimationOptions` | `{ type: "spring", damping: 30, stiffness: 300 }` | Motion transition configuration for the swap animation |
+| `rotateDirection` | `"top" \| "right" \| "bottom" \| "left"` | `"right"` | Direction of the 3D rotation on hover |

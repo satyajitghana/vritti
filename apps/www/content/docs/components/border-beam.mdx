@@ -43,3 +43,21 @@ npx shadcn@latest add "https://vritti-ui.dev/r/border-beam.json"
 ```bash
 npm install motion
 ```
+
+## Props
+
+### Border Beam
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `className` | `string` | `-` | Additional CSS classes for the beam element |
+| `size` | `number` | `50` | Size of the beam in pixels |
+| `delay` | `number` | `0` | Delay before the animation starts in seconds |
+| `duration` | `number` | `6` | Duration of one full animation cycle in seconds |
+| `colorFrom` | `string` | `"#ffaa40"` | Starting gradient color of the beam |
+| `colorTo` | `string` | `"#9c40ff"` | Ending gradient color of the beam |
+| `transition` | `Transition` | `-` | Custom motion transition overrides |
+| `style` | `React.CSSProperties` | `-` | Custom inline styles for the beam |
+| `reverse` | `boolean` | `false` | Whether to reverse the animation direction |
+| `initialOffset` | `number` | `0` | Initial offset position of the beam (0-100) |
+| `borderWidth` | `number` | `1` | Width of the border in pixels |
