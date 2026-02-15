@@ -4,10 +4,11 @@ import { useState, useCallback, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Copy, Check, RotateCcw, Sun, Moon, Palette, Type, SlidersHorizontal, Code, Upload } from 'lucide-react';
+import { Copy, Check, RotateCcw, Sun, Moon, Palette, Type, SlidersHorizontal, Code } from 'lucide-react';
 import { FontPicker } from '@/components/theme/font-picker';
 import { ContrastChecker } from '@/components/theme/contrast-checker';
 import { CSSImportDialog } from '@/components/theme/css-import-dialog';
+import { THEME_PRESETS, type ThemePreset } from '@/lib/theme-presets';
 
 // ============================================================
 // Types
@@ -53,208 +54,6 @@ interface ThemeConfig {
   dark: ThemeColors;
   radius: string;
 }
-
-interface ThemePreset {
-  name: string;
-  label: string;
-  config: ThemeConfig;
-}
-
-// ============================================================
-// Default Themes / Presets
-// ============================================================
-
-const defaultLight: ThemeColors = {
-  background: '#ffffff',
-  foreground: '#0a0a0a',
-  card: '#ffffff',
-  'card-foreground': '#0a0a0a',
-  popover: '#ffffff',
-  'popover-foreground': '#0a0a0a',
-  primary: '#171717',
-  'primary-foreground': '#fafafa',
-  secondary: '#f5f5f5',
-  'secondary-foreground': '#171717',
-  muted: '#f5f5f5',
-  'muted-foreground': '#737373',
-  accent: '#f5f5f5',
-  'accent-foreground': '#171717',
-  destructive: '#ef4444',
-  'destructive-foreground': '#fafafa',
-  border: '#e5e5e5',
-  input: '#e5e5e5',
-  ring: '#171717',
-  'chart-1': '#e76e50',
-  'chart-2': '#2a9d90',
-  'chart-3': '#274754',
-  'chart-4': '#e8c468',
-  'chart-5': '#f4a462',
-  'sidebar-background': '#fafafa',
-  'sidebar-foreground': '#0a0a0a',
-  'sidebar-primary': '#171717',
-  'sidebar-primary-foreground': '#fafafa',
-  'sidebar-accent': '#f5f5f5',
-  'sidebar-accent-foreground': '#171717',
-  'sidebar-border': '#e5e5e5',
-  'sidebar-ring': '#171717',
-};
-
-const defaultDark: ThemeColors = {
-  background: '#0a0a0a',
-  foreground: '#fafafa',
-  card: '#0a0a0a',
-  'card-foreground': '#fafafa',
-  popover: '#0a0a0a',
-  'popover-foreground': '#fafafa',
-  primary: '#fafafa',
-  'primary-foreground': '#171717',
-  secondary: '#262626',
-  'secondary-foreground': '#fafafa',
-  muted: '#262626',
-  'muted-foreground': '#a3a3a3',
-  accent: '#262626',
-  'accent-foreground': '#fafafa',
-  destructive: '#7f1d1d',
-  'destructive-foreground': '#fafafa',
-  border: '#262626',
-  input: '#262626',
-  ring: '#d4d4d4',
-  'chart-1': '#2563eb',
-  'chart-2': '#16a34a',
-  'chart-3': '#e5e7eb',
-  'chart-4': '#8b5cf6',
-  'chart-5': '#f59e0b',
-  'sidebar-background': '#171717',
-  'sidebar-foreground': '#fafafa',
-  'sidebar-primary': '#fafafa',
-  'sidebar-primary-foreground': '#171717',
-  'sidebar-accent': '#262626',
-  'sidebar-accent-foreground': '#fafafa',
-  'sidebar-border': '#262626',
-  'sidebar-ring': '#d4d4d4',
-};
-
-const PRESETS: ThemePreset[] = [
-  {
-    name: 'default',
-    label: 'Default',
-    config: { light: defaultLight, dark: defaultDark, radius: '0.625rem' },
-  },
-  {
-    name: 'blue',
-    label: 'Ocean Blue',
-    config: {
-      light: {
-        ...defaultLight,
-        primary: '#2563eb',
-        'primary-foreground': '#ffffff',
-        ring: '#2563eb',
-        'sidebar-primary': '#2563eb',
-      },
-      dark: {
-        ...defaultDark,
-        primary: '#3b82f6',
-        'primary-foreground': '#ffffff',
-        ring: '#3b82f6',
-        'sidebar-primary': '#3b82f6',
-      },
-      radius: '0.5rem',
-    },
-  },
-  {
-    name: 'violet',
-    label: 'Violet Bloom',
-    config: {
-      light: {
-        ...defaultLight,
-        primary: '#7c3aed',
-        'primary-foreground': '#ffffff',
-        ring: '#7c3aed',
-        accent: '#f3e8ff',
-        'accent-foreground': '#6b21a8',
-        'sidebar-primary': '#7c3aed',
-      },
-      dark: {
-        ...defaultDark,
-        primary: '#8b5cf6',
-        'primary-foreground': '#ffffff',
-        ring: '#8b5cf6',
-        accent: '#1e1b4b',
-        'accent-foreground': '#c4b5fd',
-        'sidebar-primary': '#8b5cf6',
-      },
-      radius: '0.75rem',
-    },
-  },
-  {
-    name: 'emerald',
-    label: 'Emerald',
-    config: {
-      light: {
-        ...defaultLight,
-        primary: '#059669',
-        'primary-foreground': '#ffffff',
-        ring: '#059669',
-        'sidebar-primary': '#059669',
-      },
-      dark: {
-        ...defaultDark,
-        primary: '#10b981',
-        'primary-foreground': '#ffffff',
-        ring: '#10b981',
-        'sidebar-primary': '#10b981',
-      },
-      radius: '0.5rem',
-    },
-  },
-  {
-    name: 'rose',
-    label: 'Rose',
-    config: {
-      light: {
-        ...defaultLight,
-        primary: '#e11d48',
-        'primary-foreground': '#ffffff',
-        ring: '#e11d48',
-        destructive: '#dc2626',
-        'sidebar-primary': '#e11d48',
-      },
-      dark: {
-        ...defaultDark,
-        primary: '#fb7185',
-        'primary-foreground': '#1c1917',
-        ring: '#fb7185',
-        'sidebar-primary': '#fb7185',
-      },
-      radius: '0.625rem',
-    },
-  },
-  {
-    name: 'amber',
-    label: 'Amber Warmth',
-    config: {
-      light: {
-        ...defaultLight,
-        primary: '#d97706',
-        'primary-foreground': '#ffffff',
-        ring: '#d97706',
-        accent: '#fef3c7',
-        'accent-foreground': '#92400e',
-        'sidebar-primary': '#d97706',
-      },
-      dark: {
-        ...defaultDark,
-        primary: '#f59e0b',
-        'primary-foreground': '#1c1917',
-        ring: '#f59e0b',
-        accent: '#451a03',
-        'accent-foreground': '#fbbf24',
-        'sidebar-primary': '#f59e0b',
-      },
-      radius: '0.75rem',
-    },
-  },
-];
 
 // ============================================================
 // Color Groups for the UI
@@ -577,7 +376,7 @@ function PreviewCard({ style }: { style: React.CSSProperties }) {
 // ============================================================
 
 export function ThemeEditor() {
-  const [config, setConfig] = useState<ThemeConfig>(PRESETS[0].config);
+  const [config, setConfig] = useState<ThemeConfig>(THEME_PRESETS[0].config);
   const [activeMode, setActiveMode] = useState<'light' | 'dark'>('light');
   const [activePreset, setActivePreset] = useState('default');
   const [copied, setCopied] = useState(false);
@@ -605,7 +404,7 @@ export function ThemeEditor() {
   }, []);
 
   const resetToDefault = useCallback(() => {
-    applyPreset(PRESETS[0]);
+    applyPreset(THEME_PRESETS[0]);
   }, [applyPreset]);
 
   const copyCSS = useCallback(() => {
@@ -713,14 +512,14 @@ export function ThemeEditor() {
             <TabsContent value="colors" className="space-y-4 mt-4">
               {/* Presets */}
               <div>
-                <label className="text-sm font-medium mb-2 block">Presets</label>
-                <div className="grid grid-cols-3 gap-2">
-                  {PRESETS.map((preset) => (
+                <label className="text-sm font-medium mb-2 block">Presets ({THEME_PRESETS.length})</label>
+                <div className="grid grid-cols-3 gap-2 max-h-[320px] overflow-y-auto pr-1">
+                  {THEME_PRESETS.map((preset) => (
                     <button
                       key={preset.name}
                       onClick={() => applyPreset(preset)}
                       className={cn(
-                        'rounded-lg border p-2 text-xs font-medium transition-all hover:border-primary',
+                        'rounded-lg border p-2 text-xs font-medium transition-all hover:border-primary text-left',
                         activePreset === preset.name
                           ? 'border-primary bg-primary/5'
                           : 'border-border'
@@ -740,7 +539,7 @@ export function ThemeEditor() {
                           style={{ backgroundColor: preset.config.light.accent }}
                         />
                       </div>
-                      {preset.label}
+                      <span className="truncate block">{preset.label}</span>
                     </button>
                   ))}
                 </div>
