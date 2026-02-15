@@ -1,0 +1,12 @@
+{
+  "name": "navbar-flow",
+  "type": "component",
+  "description": "An animated navigation bar with sequenced entry animations and dropdown menus",
+  "category": "layouts",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts", "navbar", "navigation", "animation", "dropdown"],
+    "source": "scrollx-ui"
+  }
+}

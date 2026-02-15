@@ -1,0 +1,12 @@
+{
+  "name": "billing-screen",
+  "type": "block",
+  "description": "A comprehensive billing dashboard with plan overview, payment method, and usage summary.",
+  "category": "billing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["billing", "dashboard", "overview", "plan", "payment"],
+    "source": "billingsdk"
+  }
+}

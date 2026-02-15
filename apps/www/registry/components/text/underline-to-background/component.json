@@ -1,0 +1,12 @@
+{
+  "name": "underline-to-background",
+  "type": "component",
+  "description": "Text underline that expands to fill as a background on hover, with text color transition.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "underline", "background", "hover", "animation"],
+    "source": "fancy"
+  }
+}

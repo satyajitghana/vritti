@@ -1,0 +1,12 @@
+{
+  "name": "social-orbit",
+  "type": "component",
+  "description": "Orbiting social icons with ripple rings and circular text",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["animations", "orbit", "social", "icons", "circular"],
+    "source": "scrollx-ui"
+  }
+}

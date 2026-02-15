@@ -1,0 +1,12 @@
+{
+  "name": "kbd",
+  "type": "component",
+  "description": "Keyboard shortcut display component with realistic key styling",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["keyboard", "shortcut", "kbd", "key"],
+    "source": "scrollx-ui"
+  }
+}

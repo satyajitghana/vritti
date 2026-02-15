@@ -1,0 +1,12 @@
+{
+  "name": "account-integrations",
+  "type": "block",
+  "description": "A third-party integrations management panel with toggle controls and verification.",
+  "category": "account",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["account", "integrations", "third-party", "settings"],
+    "source": "creative-tim"
+  }
+}

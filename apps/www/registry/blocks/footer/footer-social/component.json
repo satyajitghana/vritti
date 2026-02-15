@@ -1,0 +1,12 @@
+{
+  "name": "footer-social",
+  "type": "block",
+  "description": "A footer with newsletter CTA card, navigation links, and social icons.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "social", "newsletter", "cta", "icons"],
+    "source": "creative-tim"
+  }
+}

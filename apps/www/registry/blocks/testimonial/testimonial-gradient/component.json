@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-gradient",
+  "type": "block",
+  "description": "A testimonial section with gradient background.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "gradient", "background", "styled"],
+    "source": "creative-tim"
+  }
+}

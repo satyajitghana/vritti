@@ -1,0 +1,12 @@
+{
+  "name": "marquee-along-svg-path",
+  "type": "component",
+  "description": "Marquee elements that follow an SVG path with scroll velocity and drag support.",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["animation", "marquee", "svg", "path", "scroll"],
+    "source": "fancy"
+  }
+}

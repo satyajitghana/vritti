@@ -1,0 +1,12 @@
+{
+  "name": "status",
+  "type": "component",
+  "description": "Status indicator badge with multiple variants (online, offline, away, busy, etc.)",
+  "category": "special",
+  "dependencies": ["class-variance-authority"],
+  "files": [],
+  "meta": {
+    "tags": ["status", "badge", "indicator", "online", "offline"],
+    "source": "scrollx-ui"
+  }
+}

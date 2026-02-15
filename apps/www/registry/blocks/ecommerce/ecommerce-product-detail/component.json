@@ -1,0 +1,12 @@
+{
+  "name": "ecommerce-product-detail",
+  "type": "block",
+  "description": "A product detail page with thumbnail gallery, color selector, and expandable info.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "product", "detail", "gallery", "colors"],
+    "source": "creative-tim"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-masonry",
+  "type": "block",
+  "description": "A masonry-style testimonial layout with overlapping cards.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "masonry", "layout", "overlapping"],
+    "source": "creative-tim"
+  }
+}

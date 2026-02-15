@@ -1,0 +1,12 @@
+{
+  "name": "dualsparks",
+  "type": "component",
+  "description": "Canvas-based dual corner spark waves with inward and outward animation",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["background", "sparks", "canvas", "animation", "particles"],
+    "source": "scrollx-ui"
+  }
+}

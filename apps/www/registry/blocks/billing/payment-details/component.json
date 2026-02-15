@@ -1,0 +1,12 @@
+{
+  "name": "payment-details",
+  "type": "block",
+  "description": "A payment details form with card information, billing address, and save payment method.",
+  "category": "billing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["billing", "payment", "card", "form", "details"],
+    "source": "billingsdk"
+  }
+}

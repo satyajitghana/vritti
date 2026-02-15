@@ -1,0 +1,12 @@
+{
+  "name": "reveal-text",
+  "type": "component",
+  "description": "Directional text reveal with animated box overlay that slides away on scroll into view",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "reveal", "direction", "scroll", "animation"],
+    "source": "scrollx-ui"
+  }
+}

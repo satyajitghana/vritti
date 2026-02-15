@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-simple-grid",
+  "type": "block",
+  "description": "A simple testimonial grid with avatar and quote cards.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "simple", "grid", "quotes"],
+    "source": "creative-tim"
+  }
+}

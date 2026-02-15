@@ -1,0 +1,9 @@
+{
+  "name": "kokonut-loader",
+  "type": "component",
+  "title": "Loader",
+  "description": "An elegant monochrome loading spinner with multiple concentric rotating rings and breathing text animation.",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "source": "kokonutui"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "scroll-swap-text",
+  "type": "component",
+  "description": "Scroll-driven text swap animation where text slides vertically based on scroll progress",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "scroll", "swap", "animation", "spring"],
+    "source": "fancy"
+  },
+  "props": [
+    { "name": "children", "type": "React.ReactNode", "default": "-", "description": "Text content to animate" },
+    { "name": "as", "type": "ElementType", "default": "\"span\"", "description": "HTML element type to render as" },
+    { "name": "containerRef", "type": "React.RefObject<HTMLElement | null>", "default": "-", "description": "Ref to the scrollable container element" },
+    { "name": "offset", "type": "[string, string]", "default": "[\"0 0\", \"0 1\"]", "description": "Scroll offset range for the animation trigger" },
+    { "name": "className", "type": "string", "default": "-", "description": "Additional CSS classes" },
+    { "name": "springConfig", "type": "{ stiffness?: number; damping?: number; mass?: number }", "default": "{ stiffness: 200, damping: 30 }", "description": "Spring physics configuration for the scroll animation" }
+  ]
+}

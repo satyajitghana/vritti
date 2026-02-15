@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-bordered",
+  "type": "block",
+  "description": "A testimonial section with bordered card styling.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "bordered", "cards", "styled"],
+    "source": "creative-tim"
+  }
+}

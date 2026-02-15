@@ -1,0 +1,12 @@
+{
+  "name": "auth-forgot-password",
+  "type": "block",
+  "description": "A forgot password form with email input and success confirmation state.",
+  "category": "auth",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["auth", "forgot-password", "reset", "email", "form"],
+    "source": "creative-tim"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "invoice-list",
+  "type": "block",
+  "description": "An invoice listing section with status badges and download actions.",
+  "category": "billing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["billing", "invoices", "list", "payments"],
+    "source": "creative-tim"
+  }
+}

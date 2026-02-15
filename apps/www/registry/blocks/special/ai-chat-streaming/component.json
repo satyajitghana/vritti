@@ -1,0 +1,12 @@
+{
+  "name": "ai-chat-streaming",
+  "type": "block",
+  "description": "An AI chat interface with streaming responses, provider selection, and thinking process display.",
+  "category": "special",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ai", "chat", "streaming", "agents"],
+    "source": "creative-tim"
+  }
+}

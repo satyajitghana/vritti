@@ -1,0 +1,12 @@
+{
+  "name": "parallax-floating",
+  "type": "component",
+  "description": "Parallax floating effect where elements move at different depths based on cursor position.",
+  "category": "special",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["parallax", "floating", "cursor", "depth", "interactive"],
+    "source": "fancy"
+  }
+}

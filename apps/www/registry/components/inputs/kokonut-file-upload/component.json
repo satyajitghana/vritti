@@ -1,0 +1,9 @@
+{
+  "name": "kokonut-file-upload",
+  "type": "component",
+  "title": "File Upload",
+  "description": "A drag-and-drop file upload component with animated progress indicator and file validation.",
+  "category": "inputs",
+  "dependencies": ["motion", "lucide-react"],
+  "source": "kokonutui"
+}

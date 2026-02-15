@@ -1,0 +1,12 @@
+{
+  "name": "modal-settings",
+  "type": "block",
+  "description": "A quick settings modal with toggles and preferences.",
+  "category": "modal",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["modal", "settings", "preferences", "toggles"],
+    "source": "creative-tim"
+  }
+}

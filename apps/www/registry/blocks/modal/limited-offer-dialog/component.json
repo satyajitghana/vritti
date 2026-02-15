@@ -1,0 +1,12 @@
+{
+  "name": "limited-offer-dialog",
+  "type": "block",
+  "description": "A limited-time offer dialog with discount badge, feature list, urgency warning, and claim/decline actions.",
+  "category": "modal",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["modal", "dialog", "offer", "discount", "promotion", "billing"],
+    "source": "billingsdk"
+  }
+}

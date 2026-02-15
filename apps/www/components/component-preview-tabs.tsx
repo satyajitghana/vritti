@@ -7,11 +7,20 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
+const previewSizeClasses: Record<string, string> = {
+  sm: "min-h-[300px]",
+  md: "min-h-[450px]",
+  lg: "min-h-[650px]",
+  xl: "min-h-[850px]",
+  full: "min-h-[100vh]",
+}
+
 export function ComponentPreviewTabs({
   className,
   name,
   align = "center",
   hideCode = false,
+  previewSize,
   component,
   source,
   ...props
@@ -19,11 +28,16 @@ export function ComponentPreviewTabs({
   name: string
   align?: "center" | "start" | "end"
   hideCode?: boolean
+  previewSize?: string
   component: React.ReactNode
   source: React.ReactNode
 }) {
   const [key, setKey] = React.useState(0)
   const [tab, setTab] = React.useState("preview")
+
+  const heightClass = previewSize
+    ? previewSizeClasses[previewSize] || "min-h-[450px]"
+    : "min-h-[450px]"
 
   return (
     <div
@@ -76,7 +90,8 @@ export function ComponentPreviewTabs({
             key={key}
             data-align={align}
             className={cn(
-              "preview relative flex min-h-[450px] w-full justify-center overflow-hidden p-10 isolate [contain:layout_paint_size] data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start"
+              "preview relative flex w-full justify-center p-10 isolate [contain:layout_paint_size] data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start",
+              heightClass
             )}
           >
             {component}

@@ -1,0 +1,12 @@
+{
+  "name": "faq-grid",
+  "type": "block",
+  "description": "A FAQ section displayed in a responsive grid layout.",
+  "category": "faq",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["faq", "grid", "questions", "answers"],
+    "source": "creative-tim"
+  }
+}

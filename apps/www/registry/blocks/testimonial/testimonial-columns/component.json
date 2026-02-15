@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-columns",
+  "type": "block",
+  "description": "A multi-column testimonial layout with varied card sizes.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "columns", "layout", "cards"],
+    "source": "creative-tim"
+  }
+}

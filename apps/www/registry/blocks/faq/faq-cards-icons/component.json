@@ -1,0 +1,12 @@
+{
+  "name": "faq-cards-icons",
+  "type": "block",
+  "description": "A FAQ section with icon cards in a responsive grid layout.",
+  "category": "faq",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["faq", "cards", "icons", "grid"],
+    "source": "creative-tim"
+  }
+}

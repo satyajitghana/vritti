@@ -13,6 +13,7 @@ description: A meteor shower effect.
   <TabsTrigger value="cli">CLI</TabsTrigger>
   <TabsTrigger value="manual">Manual</TabsTrigger>
 </TabsList>
+
 <TabsContent value="cli">
 
 ```bash
@@ -36,3 +37,17 @@ npx shadcn@latest add "https://vritti-ui.dev/r/meteors.json"
 </TabsContent>
 
 </Tabs>
+
+## Props
+
+### Meteors
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `number` | `number` | `20` | Number of meteors to render |
+| `minDelay` | `number` | `0.2` | Minimum animation delay in seconds |
+| `maxDelay` | `number` | `1.2` | Maximum animation delay in seconds |
+| `minDuration` | `number` | `2` | Minimum animation duration in seconds |
+| `maxDuration` | `number` | `10` | Maximum animation duration in seconds |
+| `angle` | `number` | `215` | Angle of the meteor trail in degrees |
+| `className` | `string` | `-` | Additional CSS classes for each meteor |

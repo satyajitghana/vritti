@@ -1,0 +1,12 @@
+{
+  "name": "hold-button",
+  "type": "component",
+  "description": "Button that requires holding for a specified duration, with progress indicator and color variants",
+  "category": "buttons",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["button", "hold", "progress", "animation", "interactive"],
+    "source": "kokonutui"
+  }
+}

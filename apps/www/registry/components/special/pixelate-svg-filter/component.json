@@ -1,0 +1,12 @@
+{
+  "name": "pixelate-svg-filter",
+  "type": "component",
+  "description": "SVG pixelation filter with configurable pixel size and optional cross-layer rendering.",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["svg", "filter", "pixelate", "pixel"],
+    "source": "fancy"
+  }
+}

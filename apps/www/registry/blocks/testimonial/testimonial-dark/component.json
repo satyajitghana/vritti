@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-dark",
+  "type": "block",
+  "description": "A dark-themed testimonial section with rating stars.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "dark", "ratings", "stars"],
+    "source": "creative-tim"
+  }
+}

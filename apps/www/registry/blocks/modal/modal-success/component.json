@@ -1,0 +1,12 @@
+{
+  "name": "modal-success",
+  "type": "block",
+  "description": "A success state modal with checkmark animation.",
+  "category": "modal",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["modal", "success", "state", "confirmation"],
+    "source": "creative-tim"
+  }
+}

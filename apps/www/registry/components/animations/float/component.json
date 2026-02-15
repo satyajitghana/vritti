@@ -1,0 +1,12 @@
+{
+  "name": "float",
+  "type": "component",
+  "description": "3D floating animation with configurable speed, amplitude, and rotation.",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["animation", "float", "3d", "hover"],
+    "source": "fancy"
+  }
+}

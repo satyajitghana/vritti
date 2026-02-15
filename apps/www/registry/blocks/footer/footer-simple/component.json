@@ -1,0 +1,12 @@
+{
+  "name": "footer-simple",
+  "type": "block",
+  "description": "A simple footer with copyright text and social media icon links.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "simple", "social", "copyright"],
+    "source": "creative-tim"
+  }
+}

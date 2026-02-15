@@ -1,0 +1,61 @@
+---
+title: Breathing Text
+description: Variable font breathing animation with staggered letter-by-letter weight transitions
+---
+
+<ComponentPreview name="breathing-text-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://vritti-ui.dev/r/breathing-text.json"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="breathing-text" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Dependencies
+
+```bash
+npm install motion
+```
+
+## Props
+
+### Breathing Text
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `children` | `React.ReactNode` | `-` | Text content to animate |
+| `as` | `ElementType` | `"span"` | HTML element type to render as |
+| `fromFontVariationSettings` | `string` | `-` | Starting font variation settings value |
+| `toFontVariationSettings` | `string` | `-` | Ending font variation settings value |
+| `transition` | `Transition` | `{ duration: 1.5, ease: "easeInOut" }` | Motion transition configuration for the animation |
+| `staggerDuration` | `number` | `0.1` | Delay between each letter's animation start in seconds |
+| `staggerFrom` | `"first" \| "last" \| "center" \| number` | `"first"` | Direction from which the stagger effect originates |
+| `repeatDelay` | `number` | `0.1` | Delay between animation repetitions in seconds |
+| `className` | `string` | `-` | Additional CSS classes |

@@ -1,0 +1,12 @@
+{
+  "name": "stagger-chars",
+  "type": "component",
+  "description": "Staggered character animation that reveals alternate text on hover",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "stagger", "character", "hover", "animation"],
+    "source": "scrollx-ui"
+  }
+}

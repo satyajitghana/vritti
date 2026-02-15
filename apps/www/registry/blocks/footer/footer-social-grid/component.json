@@ -1,0 +1,12 @@
+{
+  "name": "footer-social-grid",
+  "type": "block",
+  "description": "A footer with social media grid and contact information.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "social", "grid", "contact"],
+    "source": "creative-tim"
+  }
+}

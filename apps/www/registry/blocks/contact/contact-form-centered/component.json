@@ -1,0 +1,12 @@
+{
+  "name": "contact-form-centered",
+  "type": "block",
+  "description": "A centered contact form with gradient background and send icon button.",
+  "category": "contact",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["contact", "form", "centered", "gradient"],
+    "source": "creative-tim"
+  }
+}

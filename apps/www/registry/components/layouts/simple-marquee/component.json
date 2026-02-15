@@ -1,0 +1,12 @@
+{
+  "name": "simple-marquee",
+  "type": "component",
+  "description": "Continuous scrolling marquee with drag, scroll velocity, and hover slowdown.",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["marquee", "scroll", "infinite", "drag"],
+    "source": "fancy"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "footer-app-download",
+  "type": "block",
+  "description": "A footer with app download buttons and store links.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "app", "download", "store"],
+    "source": "creative-tim"
+  }
+}

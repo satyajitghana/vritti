@@ -7,6 +7,7 @@
   "files": [],
   "meta": {
     "tags": ["animation", "glass", "filter"],
-    "source": "cult-ui"
+    "source": "cult-ui",
+    "previewSize": "lg"
   }
 }

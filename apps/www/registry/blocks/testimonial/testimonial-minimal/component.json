@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-minimal",
+  "type": "block",
+  "description": "A minimal testimonial section with clean styling.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "minimal", "clean", "simple"],
+    "source": "creative-tim"
+  }
+}

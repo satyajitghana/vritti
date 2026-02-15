@@ -1,0 +1,12 @@
+{
+  "name": "blog-rectangular",
+  "type": "block",
+  "description": "A blog grid with rectangular side-by-side image and content layout.",
+  "category": "blog",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["blog", "posts", "rectangular", "images"],
+    "source": "creative-tim"
+  }
+}

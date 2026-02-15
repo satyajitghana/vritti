@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-social",
+  "type": "block",
+  "description": "A testimonial section with social media integration.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "social", "media", "integration"],
+    "source": "creative-tim"
+  }
+}

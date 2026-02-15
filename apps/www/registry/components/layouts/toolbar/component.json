@@ -1,0 +1,9 @@
+{
+  "name": "toolbar",
+  "type": "component",
+  "title": "Toolbar",
+  "description": "An animated toolbar with expandable icon buttons that show labels on selection, featuring notification popups and a toggle switch.",
+  "category": "layouts",
+  "dependencies": ["motion", "lucide-react"],
+  "source": "kokonutui"
+}

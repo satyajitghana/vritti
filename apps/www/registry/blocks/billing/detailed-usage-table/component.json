@@ -1,0 +1,12 @@
+{
+  "name": "detailed-usage-table",
+  "type": "block",
+  "description": "A detailed usage table showing resource consumption with progress bars and percentage indicators.",
+  "category": "billing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["billing", "usage", "table", "resources", "progress"],
+    "source": "billingsdk"
+  }
+}

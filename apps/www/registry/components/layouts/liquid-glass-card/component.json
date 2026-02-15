@@ -1,0 +1,12 @@
+{
+  "name": "liquid-glass-card",
+  "type": "component",
+  "description": "Apple-style glassmorphism card with liquid distortion SVG filter effects",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["card", "glass", "glassmorphism", "blur", "apple"],
+    "source": "kokonutui"
+  }
+}

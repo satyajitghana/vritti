@@ -1,0 +1,12 @@
+{
+  "name": "glass-ripple",
+  "type": "component",
+  "description": "Glass surface component with SVG distortion, optional ripple on click, and cursor following",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["animations", "glass", "ripple", "blur", "distortion"],
+    "source": "scrollx-ui"
+  }
+}

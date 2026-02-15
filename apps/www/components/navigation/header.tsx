@@ -45,6 +45,17 @@ export function SiteHeader() {
               Components
             </Link>
             <Link
+              href="/docs/blocks"
+              className={cn(
+                'transition-colors hover:text-foreground/80',
+                pathname?.startsWith('/docs/blocks')
+                  ? 'text-brand font-medium'
+                  : 'text-foreground/60'
+              )}
+            >
+              Blocks
+            </Link>
+            <Link
               href="/theme"
               className={cn(
                 'transition-colors hover:text-foreground/80',

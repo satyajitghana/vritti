@@ -1,0 +1,12 @@
+{
+  "name": "cursor-attractor-and-gravity",
+  "type": "component",
+  "description": "Physics-based gravity simulation with cursor attractor and wall boundaries.",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["physics", "gravity", "cursor", "attractor", "interactive"],
+    "source": "fancy"
+  }
+}

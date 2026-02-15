@@ -1,0 +1,12 @@
+{
+  "name": "blog-content-cards",
+  "type": "block",
+  "description": "Simple blog content cards with images, tags, and author footers.",
+  "category": "blog",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["blog", "cards", "content", "simple"],
+    "source": "creative-tim"
+  }
+}

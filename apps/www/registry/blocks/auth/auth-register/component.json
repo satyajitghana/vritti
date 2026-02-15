@@ -1,0 +1,12 @@
+{
+  "name": "auth-register",
+  "type": "block",
+  "description": "A registration form with name, email, password with strength indicators, and confirm password.",
+  "category": "auth",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["auth", "register", "sign-up", "form", "password-strength"],
+    "source": "creative-tim"
+  }
+}

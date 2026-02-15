@@ -1,0 +1,12 @@
+{
+  "name": "order-history",
+  "type": "block",
+  "description": "An order history list with status badges and reorder actions.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "order", "history", "list"],
+    "source": "creative-tim"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "faq-left-title",
+  "type": "block",
+  "description": "A FAQ section with left-aligned title and right-side accordion items.",
+  "category": "faq",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["faq", "accordion", "left-title", "questions"],
+    "source": "creative-tim"
+  }
+}

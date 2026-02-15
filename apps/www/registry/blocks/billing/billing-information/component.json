@@ -1,0 +1,12 @@
+{
+  "name": "billing-information",
+  "type": "block",
+  "description": "A billing information management section with company cards and edit/delete actions.",
+  "category": "billing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["billing", "information", "company", "vat"],
+    "source": "creative-tim"
+  }
+}

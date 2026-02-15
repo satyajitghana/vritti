@@ -1,0 +1,12 @@
+{
+  "name": "contact-form-simple",
+  "type": "block",
+  "description": "A simple contact form with name, email, and message fields.",
+  "category": "contact",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["contact", "form", "simple", "email", "message"],
+    "source": "creative-tim"
+  }
+}

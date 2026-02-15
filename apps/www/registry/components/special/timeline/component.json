@@ -1,0 +1,13 @@
+{
+  "name": "timeline",
+  "type": "component",
+  "description": "Timeline visualization with dots, connectors, and status tracking",
+  "category": "special",
+  "dependencies": ["class-variance-authority"],
+  "files": [],
+  "meta": {
+    "tags": ["timeline", "visualization", "steps", "progress", "history"],
+    "source": "diceui",
+    "previewSize": "lg"
+  }
+}

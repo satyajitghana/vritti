@@ -1,0 +1,12 @@
+{
+  "name": "announcement",
+  "type": "component",
+  "description": "Expandable announcement banner with optional moving border, icons, and dropdown content",
+  "category": "layouts",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["announcement", "banner", "notification", "expandable"],
+    "source": "scrollx-ui"
+  }
+}

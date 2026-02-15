@@ -7,6 +7,7 @@
   "files": [],
   "meta": {
     "tags": ["display", "mockup", "browser"],
-    "source": "cult-ui"
+    "source": "cult-ui",
+    "previewSize": "lg"
   }
 }

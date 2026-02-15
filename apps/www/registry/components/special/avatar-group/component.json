@@ -1,0 +1,12 @@
+{
+  "name": "avatar-group",
+  "type": "component",
+  "description": "Avatar group with hover-to-expand name reveal and overlap layout",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["avatar", "group", "user", "profile"],
+    "source": "scrollx-ui"
+  }
+}

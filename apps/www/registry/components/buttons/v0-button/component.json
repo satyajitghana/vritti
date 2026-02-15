@@ -1,0 +1,9 @@
+{
+  "name": "v0-button",
+  "type": "component",
+  "title": "v0 Button",
+  "description": "A branded button linking to v0.dev with the v0 logo, styled for light and dark modes.",
+  "category": "buttons",
+  "dependencies": [],
+  "source": "kokonutui"
+}

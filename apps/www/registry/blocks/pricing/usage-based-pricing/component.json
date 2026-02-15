@@ -1,0 +1,12 @@
+{
+  "name": "usage-based-pricing",
+  "type": "block",
+  "description": "A usage-based pricing component with slider to select usage tiers and dynamic price calculation.",
+  "category": "pricing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["pricing", "usage", "slider", "tiers", "metered"],
+    "source": "billingsdk"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "seperatorpro",
+  "type": "component",
+  "description": "Enhanced separator with default, dotted, and wave variants",
+  "category": "layouts",
+  "dependencies": ["@radix-ui/react-separator"],
+  "files": [],
+  "meta": {
+    "tags": ["separator", "divider", "wave", "dots"],
+    "source": "scrollx-ui"
+  }
+}

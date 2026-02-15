@@ -1,0 +1,12 @@
+{
+  "name": "smooth-tab",
+  "type": "component",
+  "description": "Animated tab switcher with sliding background indicator and smooth content transitions",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["tabs", "animation", "smooth", "slide", "navigation"],
+    "source": "kokonutui"
+  }
+}

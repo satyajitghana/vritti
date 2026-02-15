@@ -1,0 +1,9 @@
+{
+  "name": "shape-hero",
+  "type": "component",
+  "title": "Shape Hero",
+  "description": "A full-screen hero section with floating translucent geometric shapes and animated gradient text.",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "source": "kokonutui"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "scramble-in",
+  "type": "component",
+  "description": "Text reveal animation with scrambled characters that progressively resolve.",
+  "category": "text",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation", "scramble", "reveal"],
+    "source": "fancy"
+  }
+}

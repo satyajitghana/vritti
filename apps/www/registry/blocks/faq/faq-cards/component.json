@@ -1,0 +1,12 @@
+{
+  "name": "faq-cards",
+  "type": "block",
+  "description": "A FAQ section with a left-aligned title and card-based question layout.",
+  "category": "faq",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["faq", "cards", "left-title", "grid"],
+    "source": "creative-tim"
+  }
+}

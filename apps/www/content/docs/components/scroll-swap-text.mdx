@@ -1,0 +1,58 @@
+---
+title: Scroll Swap Text
+description: Scroll-driven text swap animation where text slides vertically based on scroll progress
+---
+
+<ComponentPreview name="scroll-swap-text-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://vritti-ui.dev/r/scroll-swap-text.json"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="scroll-swap-text" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Dependencies
+
+```bash
+npm install motion
+```
+
+## Props
+
+### Scroll Swap Text
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `children` | `React.ReactNode` | `-` | Text content to animate |
+| `as` | `ElementType` | `"span"` | HTML element type to render as |
+| `containerRef` | `React.RefObject<HTMLElement \| null>` | `-` | Ref to the scrollable container element |
+| `offset` | `[string, string]` | `["0 0", "0 1"]` | Scroll offset range for the animation trigger |
+| `className` | `string` | `-` | Additional CSS classes |
+| `springConfig` | `{ stiffness?: number; damping?: number; mass?: number }` | `{ stiffness: 200, damping: 30 }` | Spring physics configuration for the scroll animation |

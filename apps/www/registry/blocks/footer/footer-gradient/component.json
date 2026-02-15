@@ -1,0 +1,12 @@
+{
+  "name": "footer-gradient",
+  "type": "block",
+  "description": "A footer with gradient background and modern styling.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "gradient", "modern", "styled"],
+    "source": "creative-tim"
+  }
+}

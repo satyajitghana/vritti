@@ -1,0 +1,12 @@
+{
+  "name": "promotional-cards",
+  "type": "block",
+  "description": "Promotional product cards with image overlays and call-to-action links.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "promotional", "cards", "marketing"],
+    "source": "creative-tim"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "crud-account-settings",
+  "type": "block",
+  "description": "A comprehensive account settings form with photo upload, role, and permissions.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "crud", "account", "settings", "form"],
+    "source": "creative-tim"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "text-spotlight",
+  "type": "component",
+  "description": "Text revealed through a cursor-following spotlight mask effect",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "spotlight", "cursor", "reveal", "mask"],
+    "source": "scrollx-ui"
+  }
+}

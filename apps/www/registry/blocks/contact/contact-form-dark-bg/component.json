@@ -1,0 +1,12 @@
+{
+  "name": "contact-form-dark-bg",
+  "type": "block",
+  "description": "A contact form on a dark background with address and phone information.",
+  "category": "contact",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["contact", "form", "dark", "background"],
+    "source": "creative-tim"
+  }
+}

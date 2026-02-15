@@ -1,0 +1,12 @@
+{
+  "name": "pricing-table-four",
+  "type": "block",
+  "description": "A feature-rich pricing table with plan icons, billing toggle, badge highlights, and feature lists.",
+  "category": "pricing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["pricing", "plans", "icons", "features", "toggle"],
+    "source": "billingsdk"
+  }
+}

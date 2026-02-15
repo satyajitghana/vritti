@@ -1,0 +1,12 @@
+{
+  "name": "contact-form-background",
+  "type": "block",
+  "description": "A contact form with background image overlay and card-style form.",
+  "category": "contact",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["contact", "form", "background", "image"],
+    "source": "creative-tim"
+  }
+}

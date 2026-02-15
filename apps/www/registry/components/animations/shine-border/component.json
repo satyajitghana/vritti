@@ -7,5 +7,12 @@
   "files": [],
   "meta": {
     "tags": ["animation"]
-  }
+  },
+  "props": [
+    { "name": "borderWidth", "type": "number", "default": "1", "description": "Width of the border in pixels" },
+    { "name": "duration", "type": "number", "default": "14", "description": "Duration of the shine animation in seconds" },
+    { "name": "shineColor", "type": "string | string[]", "default": "\"#000000\"", "description": "Color of the shine effect, can be a single color or an array of colors" },
+    { "name": "className", "type": "string", "default": "-", "description": "Additional CSS classes" },
+    { "name": "style", "type": "React.CSSProperties", "default": "-", "description": "Custom inline styles" }
+  ]
 }

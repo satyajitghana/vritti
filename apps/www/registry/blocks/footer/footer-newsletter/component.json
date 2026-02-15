@@ -1,0 +1,12 @@
+{
+  "name": "footer-newsletter",
+  "type": "block",
+  "description": "A dark primary-colored footer with language selector, link columns, and newsletter subscription.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "newsletter", "language", "currency", "dark"],
+    "source": "creative-tim"
+  }
+}

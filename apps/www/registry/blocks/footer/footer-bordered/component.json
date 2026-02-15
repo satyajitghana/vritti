@@ -1,0 +1,12 @@
+{
+  "name": "footer-bordered",
+  "type": "block",
+  "description": "A footer with bordered sections and clean separation.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "bordered", "sections", "clean"],
+    "source": "creative-tim"
+  }
+}

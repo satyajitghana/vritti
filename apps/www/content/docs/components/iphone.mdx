@@ -13,6 +13,7 @@ description: A mockup of the iPhone
   <TabsTrigger value="cli">CLI</TabsTrigger>
   <TabsTrigger value="manual">Manual</TabsTrigger>
 </TabsList>
+
 <TabsContent value="cli">
 
 ```bash
@@ -36,3 +37,14 @@ npx shadcn@latest add "https://vritti-ui.dev/r/iphone.json"
 </TabsContent>
 
 </Tabs>
+
+## Props
+
+### Iphone
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `src` | `string` | `-` | Image source URL to display on the phone screen |
+| `videoSrc` | `string` | `-` | Video source URL to display on the phone screen |
+| `className` | `string` | `-` | Additional CSS classes for the container |
+| `style` | `React.CSSProperties` | `-` | Custom inline styles for the container |

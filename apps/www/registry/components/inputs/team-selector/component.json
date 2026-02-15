@@ -1,0 +1,9 @@
+{
+  "name": "team-selector",
+  "type": "component",
+  "title": "Team Selector",
+  "description": "An animated team size selector with stacked avatar previews and increment/decrement controls with vibration feedback.",
+  "category": "inputs",
+  "dependencies": ["motion"],
+  "source": "kokonutui"
+}

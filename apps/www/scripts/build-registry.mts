@@ -2,8 +2,10 @@ import { promises as fs } from 'fs'
 import path from 'path'
 
 const REGISTRY_BASE = path.join(process.cwd(), 'registry', 'components')
+const BLOCKS_BASE = path.join(process.cwd(), 'registry', 'blocks')
 const INDEX_OUTPUT = path.join(process.cwd(), 'registry', '__index__.tsx')
-const LIST_OUTPUT = path.join(process.cwd(), 'registry', 'component-list.ts')
+const COMPONENT_LIST_OUTPUT = path.join(process.cwd(), 'registry', 'component-list.ts')
+const BLOCK_LIST_OUTPUT = path.join(process.cwd(), 'registry', 'block-list.ts')
 
 const CATEGORIES = [
   'animations',
@@ -11,6 +13,24 @@ const CATEGORIES = [
   'text',
   'buttons',
   'layouts',
+  'inputs',
+  'media',
+  'special',
+]
+
+const BLOCK_CATEGORIES = [
+  'hero',
+  'pricing',
+  'auth',
+  'testimonial',
+  'contact',
+  'faq',
+  'footer',
+  'blog',
+  'ecommerce',
+  'billing',
+  'modal',
+  'account',
   'special',
 ]
 
@@ -26,24 +46,25 @@ interface ComponentMeta {
   title: string
   description: string
   category: string
+  type: 'component' | 'block'
   dependencies?: string[]
   registryDependencies?: string[]
   meta?: Record<string, unknown>
 }
 
-async function scanComponents(): Promise<ComponentMeta[]> {
-  const components: ComponentMeta[] = []
+async function scanDirectory(basePath: string, categories: string[], itemType: 'component' | 'block'): Promise<ComponentMeta[]> {
+  const items: ComponentMeta[] = []
 
-  for (const category of CATEGORIES) {
-    const categoryPath = path.join(REGISTRY_BASE, category)
-    let items: string[]
+  for (const category of categories) {
+    const categoryPath = path.join(basePath, category)
+    let entries: string[]
     try {
-      items = await fs.readdir(categoryPath)
+      entries = await fs.readdir(categoryPath)
     } catch {
       continue
     }
 
-    for (const name of items) {
+    for (const name of entries) {
       const componentDir = path.join(categoryPath, name)
       const stat = await fs.stat(componentDir)
       if (!stat.isDirectory()) continue
@@ -68,11 +89,12 @@ async function scanComponents(): Promise<ComponentMeta[]> {
 
       if (!hasComponent) continue
 
-      components.push({
+      items.push({
         name,
         title: (metadata.title as string) || toTitleCase(name),
-        description: (metadata.description as string) || `${toTitleCase(name)} component.`,
+        description: (metadata.description as string) || `${toTitleCase(name)} ${itemType}.`,
         category,
+        type: itemType,
         dependencies: metadata.dependencies as string[] | undefined,
         registryDependencies: metadata.registryDependencies as string[] | undefined,
         meta: metadata.meta as Record<string, unknown> | undefined,
@@ -80,10 +102,10 @@ async function scanComponents(): Promise<ComponentMeta[]> {
     }
   }
 
-  return components.sort((a, b) => a.name.localeCompare(b.name))
+  return items.sort((a, b) => a.name.localeCompare(b.name))
 }
 
-async function buildRegistryIndex(components: ComponentMeta[]) {
+async function buildRegistryIndex(components: ComponentMeta[], blocks: ComponentMeta[]) {
   let index = `/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // @ts-nocheck
@@ -93,6 +115,7 @@ import * as React from "react"
 
 export const Index: Record<string, any> = {`
 
+  // Build component entries
   for (const comp of components) {
     const componentRelPath = `registry/components/${comp.category}/${comp.name}/component.tsx`
     const exampleRelPath = `registry/components/${comp.category}/${comp.name}/example.tsx`
@@ -106,7 +129,14 @@ export const Index: Record<string, any> = {`
       .then(() => true)
       .catch(() => false)
 
-    // Component entry (used by ComponentSource)
+    // Scan for additional example files (example-*.tsx)
+    const compDir = path.join(REGISTRY_BASE, comp.category, comp.name)
+    const compFiles = await fs.readdir(compDir)
+    const extraExamples = compFiles
+      .filter(f => f.startsWith('example-') && f.endsWith('.tsx'))
+      .map(f => f.replace('.tsx', ''))
+      .sort()
+
     index += `
   "${comp.name}": {
     name: "${comp.name}",
@@ -128,7 +158,6 @@ export const Index: Record<string, any> = {`
     meta: ${JSON.stringify(comp.meta)},
   },`
 
-    // Example/demo entry (used by ComponentPreview)
     if (hasExample) {
       index += `
   "${comp.name}-demo": {
@@ -146,6 +175,112 @@ export const Index: Record<string, any> = {`
     meta: ${JSON.stringify(comp.meta)},
   },`
     }
+
+    // Register additional examples
+    for (const exName of extraExamples) {
+      const exRelPath = `registry/components/${comp.category}/${comp.name}/${exName}.tsx`
+      const exImportPath = `@/registry/components/${comp.category}/${comp.name}/${exName}`
+      const registryKey = `${comp.name}-${exName.replace('example-', '')}`
+      index += `
+  "${registryKey}": {
+    name: "${registryKey}",
+    description: "${(comp.description || '').replace(/"/g, '\\"')} (${exName.replace('example-', '')})",
+    type: "registry:example",
+    category: "${comp.category}",
+    registryDependencies: ["${comp.name}"],
+    files: [{
+      path: "${exRelPath}",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("${exImportPath}")),
+    meta: ${JSON.stringify(comp.meta)},
+  },`
+    }
+  }
+
+  // Build block entries
+  for (const block of blocks) {
+    const componentRelPath = `registry/blocks/${block.category}/${block.name}/component.tsx`
+    const exampleRelPath = `registry/blocks/${block.category}/${block.name}/example.tsx`
+    const componentImportPath = `@/registry/blocks/${block.category}/${block.name}/component`
+    const exampleImportPath = `@/registry/blocks/${block.category}/${block.name}/example`
+
+    const hasExample = await fs
+      .access(
+        path.join(BLOCKS_BASE, block.category, block.name, 'example.tsx')
+      )
+      .then(() => true)
+      .catch(() => false)
+
+    // Scan for additional example files (example-*.tsx)
+    const blockDir = path.join(BLOCKS_BASE, block.category, block.name)
+    const blockFiles = await fs.readdir(blockDir)
+    const extraBlockExamples = blockFiles
+      .filter(f => f.startsWith('example-') && f.endsWith('.tsx'))
+      .map(f => f.replace('.tsx', ''))
+      .sort()
+
+    index += `
+  "${block.name}": {
+    name: "${block.name}",
+    description: "${(block.description || '').replace(/"/g, '\\"')}",
+    type: "registry:block",
+    category: "${block.category}",
+    registryDependencies: ${JSON.stringify(block.registryDependencies || undefined)},
+    dependencies: ${JSON.stringify(block.dependencies || [])},
+    files: [{
+      path: "${componentRelPath}",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("${componentImportPath}")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: ${JSON.stringify(block.meta)},
+  },`
+
+    if (hasExample) {
+      index += `
+  "${block.name}-demo": {
+    name: "${block.name}-demo",
+    description: "${(block.description || '').replace(/"/g, '\\"')} (demo)",
+    type: "registry:example",
+    category: "${block.category}",
+    registryDependencies: ["${block.name}"],
+    files: [{
+      path: "${exampleRelPath}",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("${exampleImportPath}")),
+    meta: ${JSON.stringify(block.meta)},
+  },`
+    }
+
+    // Register additional examples for blocks
+    for (const exName of extraBlockExamples) {
+      const exRelPath = `registry/blocks/${block.category}/${block.name}/${exName}.tsx`
+      const exImportPath = `@/registry/blocks/${block.category}/${block.name}/${exName}`
+      const registryKey = `${block.name}-${exName.replace('example-', '')}`
+      index += `
+  "${registryKey}": {
+    name: "${registryKey}",
+    description: "${(block.description || '').replace(/"/g, '\\"')} (${exName.replace('example-', '')})",
+    type: "registry:example",
+    category: "${block.category}",
+    registryDependencies: ["${block.name}"],
+    files: [{
+      path: "${exRelPath}",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("${exImportPath}")),
+    meta: ${JSON.stringify(block.meta)},
+  },`
+    }
   }
 
   index += `
@@ -154,7 +289,7 @@ export const Index: Record<string, any> = {`
 
   await fs.writeFile(INDEX_OUTPUT, index, 'utf-8')
   console.log(
-    `Registry index built: ${components.length} components + examples -> ${INDEX_OUTPUT}`
+    `Registry index built: ${components.length} components + ${blocks.length} blocks -> ${INDEX_OUTPUT}`
   )
 }
 
@@ -172,17 +307,40 @@ ${entries.join('\n')}
 ]
 `
 
-  await fs.writeFile(LIST_OUTPUT, content, 'utf-8')
-  console.log(`Component list built: ${components.length} entries -> ${LIST_OUTPUT}`)
+  await fs.writeFile(COMPONENT_LIST_OUTPUT, content, 'utf-8')
+  console.log(`Component list built: ${components.length} entries -> ${COMPONENT_LIST_OUTPUT}`)
+}
+
+async function buildBlockList(blocks: ComponentMeta[]) {
+  const entries = blocks.map(
+    (b) =>
+      `  { name: "${b.name}", title: "${b.title.replace(/"/g, '\\"')}", category: "${b.category}" },`
+  )
+
+  const content = `// This file is autogenerated by scripts/build-registry.mts
+// Do not edit this file directly.
+
+export const blockList: Array<{ name: string; title: string; category: string }> = [
+${entries.join('\n')}
+]
+`
+
+  await fs.writeFile(BLOCK_LIST_OUTPUT, content, 'utf-8')
+  console.log(`Block list built: ${blocks.length} entries -> ${BLOCK_LIST_OUTPUT}`)
 }
 
 async function main() {
   console.log('Scanning components...')
-  const components = await scanComponents()
+  const components = await scanDirectory(REGISTRY_BASE, CATEGORIES, 'component')
   console.log(`Found ${components.length} components across ${CATEGORIES.length} categories`)
 
-  await buildRegistryIndex(components)
+  console.log('Scanning blocks...')
+  const blocks = await scanDirectory(BLOCKS_BASE, BLOCK_CATEGORIES, 'block')
+  console.log(`Found ${blocks.length} blocks across ${BLOCK_CATEGORIES.length} categories`)
+
+  await buildRegistryIndex(components, blocks)
   await buildComponentList(components)
+  await buildBlockList(blocks)
 
   console.log('Done!')
 }

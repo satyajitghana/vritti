@@ -1,0 +1,12 @@
+{
+  "name": "faq-minimal",
+  "type": "block",
+  "description": "A minimal FAQ section with clean accordion styling.",
+  "category": "faq",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["faq", "minimal", "simple", "accordion"],
+    "source": "creative-tim"
+  }
+}

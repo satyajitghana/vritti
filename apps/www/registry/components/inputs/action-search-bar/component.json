@@ -1,0 +1,12 @@
+{
+  "name": "action-search-bar",
+  "type": "component",
+  "description": "Command palette-style search bar with keyboard navigation and action shortcuts",
+  "category": "inputs",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["search", "command", "palette", "keyboard", "shortcuts"],
+    "source": "kokonutui"
+  }
+}

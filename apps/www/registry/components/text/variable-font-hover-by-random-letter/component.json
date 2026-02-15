@@ -1,0 +1,12 @@
+{
+  "name": "variable-font-hover-by-random-letter",
+  "type": "component",
+  "description": "Animate variable font settings in random letter order on hover.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "variable-font", "hover", "random", "animation"],
+    "source": "fancy"
+  }
+}

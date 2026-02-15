@@ -1,0 +1,12 @@
+{
+  "name": "product-overview-digital",
+  "type": "block",
+  "description": "A digital product overview with version selection, ratings, and purchase options.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "product", "overview", "digital", "purchase"],
+    "source": "creative-tim"
+  }
+}

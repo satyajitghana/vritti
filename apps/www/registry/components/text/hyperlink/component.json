@@ -1,0 +1,12 @@
+{
+  "name": "hyperlink",
+  "type": "component",
+  "description": "Animated hyperlink with sliding underline effect on hover",
+  "category": "text",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["text", "link", "hyperlink", "underline", "hover"],
+    "source": "scrollx-ui"
+  }
+}

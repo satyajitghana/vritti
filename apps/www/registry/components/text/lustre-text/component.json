@@ -1,0 +1,12 @@
+{
+  "name": "lustre-text",
+  "type": "component",
+  "description": "Lustrous gradient text with a continuous shine animation",
+  "category": "text",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["text", "gradient", "shine", "lustre", "animation"],
+    "source": "scrollx-ui"
+  }
+}

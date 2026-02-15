@@ -1,0 +1,12 @@
+{
+  "name": "backgroundmeteors",
+  "type": "component",
+  "description": "Animated meteor beams falling through a grid background",
+  "category": "backgrounds",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["background", "meteors", "beams", "grid", "animation"],
+    "source": "scrollx-ui"
+  }
+}

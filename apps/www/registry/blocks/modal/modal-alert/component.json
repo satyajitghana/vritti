@@ -1,0 +1,12 @@
+{
+  "name": "modal-alert",
+  "type": "block",
+  "description": "An alert confirmation modal with warning icon and confirmation input.",
+  "category": "modal",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["modal", "alert", "confirmation", "warning", "dialog"],
+    "source": "creative-tim"
+  }
+}

@@ -1,0 +1,61 @@
+---
+title: Magicdock
+description: A macOS-style dock with magnification effect and tooltip variants
+---
+
+<ComponentPreview name="magicdock-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://vritti-ui.dev/r/magicdock.json"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="magicdock" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Dependencies
+
+```bash
+npm install motion
+```
+
+## Props
+
+### Magicdock
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `items` | `DockItemData[]` | `-` | Array of dock items to render |
+| `className` | `string` | `""` | Additional CSS classes for the dock container |
+| `distance` | `number` | `150` | Mouse distance threshold for magnification effect in pixels |
+| `panelHeight` | `number` | `64` | Height of the dock panel in pixels |
+| `baseItemSize` | `number` | `50` | Default size of each dock item in pixels |
+| `dockHeight` | `number` | `256` | Maximum height of the dock when expanded in pixels |
+| `magnification` | `number` | `70` | Maximum size of a dock item when magnified in pixels |
+| `spring` | `SpringOptions` | `{ mass: 0.1, stiffness: 150, damping: 12 }` | Spring physics configuration for the magnification animation |
+| `variant` | `"default" \| "gradient" \| "tooltip"` | `"default"` | Visual variant of the dock |

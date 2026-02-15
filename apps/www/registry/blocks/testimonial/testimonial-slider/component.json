@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-slider",
+  "type": "block",
+  "description": "A testimonial slider with navigation controls.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "slider", "navigation", "controls"],
+    "source": "creative-tim"
+  }
+}

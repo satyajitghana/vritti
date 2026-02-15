@@ -1,0 +1,12 @@
+{
+  "name": "showcase",
+  "type": "component",
+  "description": "Auto-cycling feature showcase with animated progress bar and image transitions",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["showcase", "feature", "gallery", "tabs", "carousel"],
+    "source": "scrollx-ui"
+  }
+}

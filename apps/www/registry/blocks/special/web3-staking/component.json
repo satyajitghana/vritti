@@ -1,0 +1,12 @@
+{
+  "name": "web3-staking",
+  "type": "block",
+  "description": "A Web3 staking interface with APY display and reward tracking.",
+  "category": "special",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["web3", "staking", "apy", "rewards"],
+    "source": "creative-tim"
+  }
+}

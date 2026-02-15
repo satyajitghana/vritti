@@ -1,0 +1,12 @@
+{
+  "name": "scrollx-text-highlighter",
+  "type": "component",
+  "description": "Animated text highlighter with wavy and zigzag SVG underline effects",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "highlight", "underline", "wavy", "zigzag", "animation"],
+    "source": "scrollx-ui"
+  }
+}

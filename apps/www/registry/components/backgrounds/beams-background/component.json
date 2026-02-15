@@ -1,0 +1,9 @@
+{
+  "name": "beams-background",
+  "type": "component",
+  "title": "Beams Background",
+  "description": "Canvas-based animated background with colorful light beams that float upward with pulsing opacity.",
+  "category": "backgrounds",
+  "dependencies": ["motion"],
+  "source": "kokonutui"
+}

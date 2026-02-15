@@ -7,5 +7,18 @@
   "files": [],
   "meta": {
     "tags": ["animation"]
-  }
+  },
+  "props": [
+    { "name": "className", "type": "string", "default": "-", "description": "Additional CSS classes for the beam element" },
+    { "name": "size", "type": "number", "default": "50", "description": "Size of the beam in pixels" },
+    { "name": "delay", "type": "number", "default": "0", "description": "Delay before the animation starts in seconds" },
+    { "name": "duration", "type": "number", "default": "6", "description": "Duration of one full animation cycle in seconds" },
+    { "name": "colorFrom", "type": "string", "default": "\"#ffaa40\"", "description": "Starting gradient color of the beam" },
+    { "name": "colorTo", "type": "string", "default": "\"#9c40ff\"", "description": "Ending gradient color of the beam" },
+    { "name": "transition", "type": "Transition", "default": "-", "description": "Custom motion transition overrides" },
+    { "name": "style", "type": "React.CSSProperties", "default": "-", "description": "Custom inline styles for the beam" },
+    { "name": "reverse", "type": "boolean", "default": "false", "description": "Whether to reverse the animation direction" },
+    { "name": "initialOffset", "type": "number", "default": "0", "description": "Initial offset position of the beam (0-100)" },
+    { "name": "borderWidth", "type": "number", "default": "1", "description": "Width of the border in pixels" }
+  ]
 }

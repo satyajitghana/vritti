@@ -1,0 +1,12 @@
+{
+  "name": "pricing-table-three",
+  "type": "block",
+  "description": "A card-based pricing table with elevated highlighted plan, billing toggle, and optional footer CTA.",
+  "category": "pricing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["pricing", "cards", "billing", "toggle", "plans"],
+    "source": "billingsdk"
+  }
+}

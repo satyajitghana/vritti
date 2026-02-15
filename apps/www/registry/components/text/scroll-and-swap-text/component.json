@@ -1,0 +1,12 @@
+{
+  "name": "scroll-and-swap-text",
+  "type": "component",
+  "description": "Scroll-triggered text swap animation where text slides vertically based on scroll progress.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation", "scroll", "swap"],
+    "source": "fancy"
+  }
+}

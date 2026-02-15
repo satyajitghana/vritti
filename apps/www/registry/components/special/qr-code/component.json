@@ -1,0 +1,12 @@
+{
+  "name": "qr-code",
+  "type": "component",
+  "description": "QR code generator with canvas, SVG, and image rendering options",
+  "category": "special",
+  "dependencies": ["qrcode"],
+  "files": [],
+  "meta": {
+    "tags": ["qr-code", "generator", "barcode", "encoding"],
+    "source": "diceui"
+  }
+}

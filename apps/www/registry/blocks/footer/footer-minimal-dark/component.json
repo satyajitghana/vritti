@@ -1,0 +1,12 @@
+{
+  "name": "footer-minimal-dark",
+  "type": "block",
+  "description": "A minimal dark-themed footer with essential links.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "minimal", "dark", "simple"],
+    "source": "creative-tim"
+  }
+}

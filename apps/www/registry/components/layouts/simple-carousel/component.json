@@ -1,0 +1,12 @@
+{
+  "name": "simple-carousel",
+  "type": "component",
+  "description": "Continuous scrolling carousel with drag, scroll velocity, and hover slowdown support.",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["carousel", "marquee", "scroll", "drag"],
+    "source": "fancy"
+  }
+}

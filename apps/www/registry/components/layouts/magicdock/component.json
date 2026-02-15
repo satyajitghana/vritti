@@ -1,0 +1,23 @@
+{
+  "name": "magicdock",
+  "type": "component",
+  "description": "A macOS-style dock with magnification effect and tooltip variants",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts", "dock", "macos", "magnification", "tooltip"],
+    "source": "scrollx-ui"
+  },
+  "props": [
+    { "name": "items", "type": "DockItemData[]", "default": "-", "description": "Array of dock items to render" },
+    { "name": "className", "type": "string", "default": "\"\"", "description": "Additional CSS classes for the dock container" },
+    { "name": "distance", "type": "number", "default": "150", "description": "Mouse distance threshold for magnification effect in pixels" },
+    { "name": "panelHeight", "type": "number", "default": "64", "description": "Height of the dock panel in pixels" },
+    { "name": "baseItemSize", "type": "number", "default": "50", "description": "Default size of each dock item in pixels" },
+    { "name": "dockHeight", "type": "number", "default": "256", "description": "Maximum height of the dock when expanded in pixels" },
+    { "name": "magnification", "type": "number", "default": "70", "description": "Maximum size of a dock item when magnified in pixels" },
+    { "name": "spring", "type": "SpringOptions", "default": "{ mass: 0.1, stiffness: 150, damping: 12 }", "description": "Spring physics configuration for the magnification animation" },
+    { "name": "variant", "type": "\"default\" | \"gradient\" | \"tooltip\"", "default": "\"default\"", "description": "Visual variant of the dock" }
+  ]
+}

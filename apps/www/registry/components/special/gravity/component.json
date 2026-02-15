@@ -1,0 +1,12 @@
+{
+  "name": "gravity",
+  "type": "component",
+  "description": "Matter.js physics gravity simulation where child elements become physical bodies with collision and dragging",
+  "category": "special",
+  "dependencies": ["matter-js"],
+  "files": [],
+  "meta": {
+    "tags": ["physics", "gravity", "matter-js", "interactive", "drag"],
+    "source": "fancy"
+  }
+}

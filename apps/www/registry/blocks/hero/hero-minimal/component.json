@@ -1,0 +1,12 @@
+{
+  "name": "hero-minimal",
+  "type": "block",
+  "description": "A minimal hero section with a large heading and a single CTA button.",
+  "category": "hero",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["hero", "minimal", "simple", "clean", "landing"],
+    "source": "creative-tim"
+  }
+}

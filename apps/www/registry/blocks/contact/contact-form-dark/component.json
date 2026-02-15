@@ -1,0 +1,12 @@
+{
+  "name": "contact-form-dark",
+  "type": "block",
+  "description": "A dark-themed contact form with gradient background and contact details.",
+  "category": "contact",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["contact", "form", "dark", "gradient"],
+    "source": "creative-tim"
+  }
+}

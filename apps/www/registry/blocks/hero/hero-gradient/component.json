@@ -1,0 +1,12 @@
+{
+  "name": "hero-gradient",
+  "type": "block",
+  "description": "A hero section with dark gradient background, animated floating orbs, terminal mockup, and CTA buttons.",
+  "category": "hero",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["hero", "gradient", "animated", "dark", "terminal", "landing"],
+    "source": "creative-tim"
+  }
+}

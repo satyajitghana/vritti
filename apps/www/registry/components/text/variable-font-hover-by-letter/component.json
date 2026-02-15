@@ -1,0 +1,12 @@
+{
+  "name": "variable-font-hover-by-letter",
+  "type": "component",
+  "description": "Animate variable font settings letter by letter on hover with stagger effect.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "variable-font", "hover", "animation", "stagger"],
+    "source": "fancy"
+  }
+}

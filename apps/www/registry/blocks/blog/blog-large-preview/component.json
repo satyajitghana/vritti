@@ -1,0 +1,12 @@
+{
+  "name": "blog-large-preview",
+  "type": "block",
+  "description": "A large blog post preview with full-width image and author details.",
+  "category": "blog",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["blog", "preview", "large", "featured"],
+    "source": "creative-tim"
+  }
+}

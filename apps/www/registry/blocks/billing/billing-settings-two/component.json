@@ -1,0 +1,12 @@
+{
+  "name": "billing-settings-two",
+  "type": "block",
+  "description": "An advanced billing settings form with input fields, currency selector, feature toggles, and validation.",
+  "category": "billing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["billing", "settings", "form", "validation", "currency"],
+    "source": "billingsdk"
+  }
+}

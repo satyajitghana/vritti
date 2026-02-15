@@ -1,0 +1,12 @@
+{
+  "name": "blog-highlighted-categories",
+  "type": "block",
+  "description": "A highlighted blog section with featured card and category image overlays.",
+  "category": "blog",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["blog", "highlighted", "categories", "featured"],
+    "source": "creative-tim"
+  }
+}

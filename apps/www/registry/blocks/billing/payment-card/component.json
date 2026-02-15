@@ -1,0 +1,12 @@
+{
+  "name": "payment-card",
+  "type": "block",
+  "description": "A visual credit card display component showing card number, expiry, and cardholder name.",
+  "category": "billing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["billing", "payment", "card", "credit-card", "display"],
+    "source": "billingsdk"
+  }
+}

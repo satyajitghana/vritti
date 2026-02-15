@@ -1,0 +1,12 @@
+{
+  "name": "footer-links",
+  "type": "block",
+  "description": "A footer with navigation links, sign-in button, and copyright notice.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "links", "navigation", "sign-in"],
+    "source": "creative-tim"
+  }
+}

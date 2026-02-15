@@ -1,0 +1,12 @@
+{
+  "name": "product-details-minimal",
+  "type": "block",
+  "description": "A minimal product details page with clean layout and basic options.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "product", "details", "minimal", "simple"],
+    "source": "creative-tim"
+  }
+}

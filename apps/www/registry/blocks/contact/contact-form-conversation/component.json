@@ -1,0 +1,12 @@
+{
+  "name": "contact-form-conversation",
+  "type": "block",
+  "description": "A contact section with conversation starters and quick contact form.",
+  "category": "contact",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["contact", "form", "conversation", "support"],
+    "source": "creative-tim"
+  }
+}

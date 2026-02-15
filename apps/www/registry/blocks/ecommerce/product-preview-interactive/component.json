@@ -1,0 +1,12 @@
+{
+  "name": "product-preview-interactive",
+  "type": "block",
+  "description": "An interactive product preview overlaid on a room photo with quantity selector.",
+  "category": "ecommerce",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ecommerce", "product", "preview", "interactive", "room"],
+    "source": "creative-tim"
+  }
+}

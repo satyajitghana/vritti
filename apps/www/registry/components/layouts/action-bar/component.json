@@ -1,0 +1,26 @@
+{
+  "name": "action-bar",
+  "type": "component",
+  "description": "Floating action toolbar for bulk actions on selected items",
+  "category": "layouts",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["layout", "action-bar", "toolbar", "floating", "bulk-actions"],
+    "source": "diceui"
+  },
+  "props": [
+    { "name": "open", "type": "boolean", "default": "false", "description": "Whether the action bar is visible" },
+    { "name": "onOpenChange", "type": "(open: boolean) => void", "default": "-", "description": "Callback when the open state changes" },
+    { "name": "onEscapeKeyDown", "type": "(event: KeyboardEvent) => void", "default": "-", "description": "Callback when the Escape key is pressed" },
+    { "name": "align", "type": "\"start\" | \"center\" | \"end\"", "default": "\"center\"", "description": "Horizontal alignment of the action bar" },
+    { "name": "alignOffset", "type": "number", "default": "0", "description": "Offset from the aligned edge in pixels" },
+    { "name": "side", "type": "\"top\" | \"bottom\"", "default": "\"bottom\"", "description": "Which side of the viewport to position the bar" },
+    { "name": "sideOffset", "type": "number", "default": "16", "description": "Offset from the side edge in pixels" },
+    { "name": "portalContainer", "type": "Element | DocumentFragment | null", "default": "document.body", "description": "Container element for the portal" },
+    { "name": "orientation", "type": "\"horizontal\" | \"vertical\"", "default": "\"horizontal\"", "description": "Layout orientation of toolbar items" },
+    { "name": "loop", "type": "boolean", "default": "true", "description": "Whether keyboard navigation loops around" },
+    { "name": "className", "type": "string", "default": "-", "description": "Additional CSS classes" },
+    { "name": "style", "type": "React.CSSProperties", "default": "-", "description": "Custom inline styles" }
+  ]
+}

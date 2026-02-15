@@ -1,0 +1,12 @@
+{
+  "name": "animated-button",
+  "type": "component",
+  "title": "Animated Button",
+  "description": "A button with shimmer, spin, and glow animations using CSS keyframes and custom properties",
+  "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+  "files": [],
+  "meta": {
+    "tags": ["animations", "button", "shimmer", "glow", "css-animation"],
+    "source": "scrollx-ui"
+  }
+}

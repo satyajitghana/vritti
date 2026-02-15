@@ -1,0 +1,12 @@
+{
+  "name": "footer-columns",
+  "type": "block",
+  "description": "A footer with multiple link columns and company branding.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "columns", "links", "branding"],
+    "source": "creative-tim"
+  }
+}

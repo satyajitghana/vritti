@@ -1,0 +1,12 @@
+{
+  "name": "testimonial-badge",
+  "type": "block",
+  "description": "A testimonial section with badges and verification indicators.",
+  "category": "testimonial",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["testimonial", "badge", "verified", "trust"],
+    "source": "creative-tim"
+  }
+}

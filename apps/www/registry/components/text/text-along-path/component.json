@@ -1,0 +1,12 @@
+{
+  "name": "text-along-path",
+  "type": "component",
+  "description": "Animated text flowing along an SVG path with auto or scroll-driven animation",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "svg", "path", "animation", "scroll"],
+    "source": "fancy"
+  }
+}

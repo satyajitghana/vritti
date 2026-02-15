@@ -1,0 +1,12 @@
+{
+  "name": "scroll-areapro",
+  "type": "component",
+  "description": "Enhanced scroll area with auto-hide scrollbars, progress indicators, and cross-directional scroll",
+  "category": "layouts",
+  "dependencies": ["motion", "@radix-ui/react-scroll-area"],
+  "files": [],
+  "meta": {
+    "tags": ["scroll", "area", "scrollbar", "progress"],
+    "source": "scrollx-ui"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "blog-cards-layout",
+  "type": "block",
+  "description": "A blog post grid layout with image cards, tags, and a view more button.",
+  "category": "blog",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["blog", "cards", "grid", "layout", "posts"],
+    "source": "creative-tim"
+  }
+}

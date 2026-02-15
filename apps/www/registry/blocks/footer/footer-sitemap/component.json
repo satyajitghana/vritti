@@ -1,0 +1,12 @@
+{
+  "name": "footer-sitemap",
+  "type": "block",
+  "description": "A comprehensive sitemap-style footer with organized link sections.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "sitemap", "links", "navigation"],
+    "source": "creative-tim"
+  }
+}

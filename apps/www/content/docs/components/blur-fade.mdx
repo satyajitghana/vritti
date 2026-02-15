@@ -13,6 +13,7 @@ description: Blur fade in and out animation.
   <TabsTrigger value="cli">CLI</TabsTrigger>
   <TabsTrigger value="manual">Manual</TabsTrigger>
 </TabsList>
+
 <TabsContent value="cli">
 
 ```bash
@@ -25,12 +26,6 @@ npx shadcn@latest add "https://vritti-ui.dev/r/blur-fade.json"
 
 <Steps>
 
-<Step>Install the following dependencies:</Step>
-
-```bash
-npm install motion
-```
-
 <Step>Copy and paste the following code into your project.</Step>
 
 <ComponentSource name="blur-fade" />
@@ -42,3 +37,26 @@ npm install motion
 </TabsContent>
 
 </Tabs>
+
+## Dependencies
+
+```bash
+npm install motion
+```
+
+## Props
+
+### Blur Fade
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `children` | `React.ReactNode` | `-` | Content to animate |
+| `className` | `string` | `-` | Additional CSS classes |
+| `variant` | `{ hidden: { y: number }; visible: { y: number } }` | `-` | Custom motion variants for hidden and visible states |
+| `duration` | `number` | `0.4` | Animation duration in seconds |
+| `delay` | `number` | `0` | Animation delay in seconds |
+| `offset` | `number` | `6` | Distance offset for the slide animation in pixels |
+| `direction` | `"up" \| "down" \| "left" \| "right"` | `"down"` | Direction of the fade-in slide animation |
+| `inView` | `boolean` | `false` | Whether to trigger animation only when element is in view |
+| `inViewMargin` | `MarginType` | `"-50px"` | Margin for the in-view intersection observer |
+| `blur` | `string` | `"6px"` | Amount of blur applied during the hidden state |

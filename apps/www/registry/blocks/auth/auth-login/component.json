@@ -1,0 +1,12 @@
+{
+  "name": "auth-login",
+  "type": "block",
+  "description": "A login form with email/password fields, social login buttons, and forgot password link.",
+  "category": "auth",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["auth", "login", "sign-in", "form", "social-login"],
+    "source": "creative-tim"
+  }
+}

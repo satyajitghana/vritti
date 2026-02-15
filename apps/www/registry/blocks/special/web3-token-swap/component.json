@@ -1,0 +1,12 @@
+{
+  "name": "web3-token-swap",
+  "type": "block",
+  "description": "A Web3 token swap interface with exchange rate display.",
+  "category": "special",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["web3", "token", "swap", "exchange"],
+    "source": "creative-tim"
+  }
+}

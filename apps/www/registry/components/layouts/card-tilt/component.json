@@ -1,0 +1,12 @@
+{
+  "name": "card-tilt",
+  "type": "component",
+  "description": "A card component with smooth 3D tilt effect on cursor movement",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts", "card", "tilt", "3d", "hover"],
+    "source": "scrollx-ui"
+  }
+}

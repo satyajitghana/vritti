@@ -1,0 +1,12 @@
+{
+  "name": "followcursor",
+  "type": "component",
+  "description": "Colorful polyline trails that follow the cursor with spring physics",
+  "category": "animations",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["cursor", "follow", "trail", "canvas", "animation", "physics"],
+    "source": "scrollx-ui"
+  }
+}

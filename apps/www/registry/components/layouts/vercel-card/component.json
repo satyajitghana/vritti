@@ -1,0 +1,12 @@
+{
+  "name": "vercel-card",
+  "type": "component",
+  "description": "A Vercel-inspired interactive card with corner icons and optional glow effect",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["layouts", "card", "vercel", "hover", "glow"],
+    "source": "scrollx-ui"
+  }
+}

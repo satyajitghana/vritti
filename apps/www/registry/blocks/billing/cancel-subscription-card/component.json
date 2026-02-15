@@ -1,0 +1,12 @@
+{
+  "name": "cancel-subscription-card",
+  "type": "block",
+  "description": "A cancellation flow card with plan details, warning section, and two-step confirmation.",
+  "category": "billing",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["billing", "cancel", "subscription", "card", "confirmation"],
+    "source": "billingsdk"
+  }
+}

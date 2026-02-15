@@ -6,6 +6,237 @@
 import * as React from "react"
 
 export const Index: Record<string, any> = {
+  "action-bar": {
+    name: "action-bar",
+    description: "Floating action toolbar for bulk actions on selected items",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/layouts/action-bar/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/action-bar/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["layout","action-bar","toolbar","floating","bulk-actions"],"source":"diceui"},
+  },
+  "action-bar-demo": {
+    name: "action-bar-demo",
+    description: "Floating action toolbar for bulk actions on selected items (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["action-bar"],
+    files: [{
+      path: "registry/components/layouts/action-bar/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/action-bar/example")),
+    meta: {"tags":["layout","action-bar","toolbar","floating","bulk-actions"],"source":"diceui"},
+  },
+  "action-search-bar": {
+    name: "action-search-bar",
+    description: "Command palette-style search bar with keyboard navigation and action shortcuts",
+    type: "registry:ui",
+    category: "inputs",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/components/inputs/action-search-bar/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/inputs/action-search-bar/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["search","command","palette","keyboard","shortcuts"],"source":"kokonutui"},
+  },
+  "action-search-bar-demo": {
+    name: "action-search-bar-demo",
+    description: "Command palette-style search bar with keyboard navigation and action shortcuts (demo)",
+    type: "registry:example",
+    category: "inputs",
+    registryDependencies: ["action-search-bar"],
+    files: [{
+      path: "registry/components/inputs/action-search-bar/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/inputs/action-search-bar/example")),
+    meta: {"tags":["search","command","palette","keyboard","shortcuts"],"source":"kokonutui"},
+  },
+  "ai-input-search": {
+    name: "ai-input-search",
+    description: "AI-powered search input with web search toggle, file attachment, and auto-resizing textarea",
+    type: "registry:ui",
+    category: "inputs",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/components/inputs/ai-input-search/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/inputs/ai-input-search/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["input","search","ai","web","toggle"],"source":"kokonutui"},
+  },
+  "ai-input-search-demo": {
+    name: "ai-input-search-demo",
+    description: "AI-powered search input with web search toggle, file attachment, and auto-resizing textarea (demo)",
+    type: "registry:example",
+    category: "inputs",
+    registryDependencies: ["ai-input-search"],
+    files: [{
+      path: "registry/components/inputs/ai-input-search/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/inputs/ai-input-search/example")),
+    meta: {"tags":["input","search","ai","web","toggle"],"source":"kokonutui"},
+  },
+  "ai-loading": {
+    name: "ai-loading",
+    description: "Code-style loading animation with rotating SVG spinner and scrolling task lines",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/animations/ai-loading/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/ai-loading/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["loading","ai","animation","spinner","code"],"source":"kokonutui"},
+  },
+  "ai-loading-demo": {
+    name: "ai-loading-demo",
+    description: "Code-style loading animation with rotating SVG spinner and scrolling task lines (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["ai-loading"],
+    files: [{
+      path: "registry/components/animations/ai-loading/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/ai-loading/example")),
+    meta: {"tags":["loading","ai","animation","spinner","code"],"source":"kokonutui"},
+  },
+  "ai-prompt": {
+    name: "ai-prompt",
+    description: "AI chat input with model selector dropdown, file attachment, and auto-resizing textarea",
+    type: "registry:ui",
+    category: "inputs",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/components/inputs/ai-prompt/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/inputs/ai-prompt/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["input","ai","chat","prompt","model-selector"],"source":"kokonutui"},
+  },
+  "ai-prompt-demo": {
+    name: "ai-prompt-demo",
+    description: "AI chat input with model selector dropdown, file attachment, and auto-resizing textarea (demo)",
+    type: "registry:example",
+    category: "inputs",
+    registryDependencies: ["ai-prompt"],
+    files: [{
+      path: "registry/components/inputs/ai-prompt/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/inputs/ai-prompt/example")),
+    meta: {"tags":["input","ai","chat","prompt","model-selector"],"source":"kokonutui"},
+  },
+  "ai-text-loading": {
+    name: "ai-text-loading",
+    description: "Animated thinking/loading text with gradient shimmer effect and cycling messages",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/animations/ai-text-loading/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/ai-text-loading/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["loading","text","animation","shimmer","thinking"],"source":"kokonutui"},
+  },
+  "ai-text-loading-demo": {
+    name: "ai-text-loading-demo",
+    description: "Animated thinking/loading text with gradient shimmer effect and cycling messages (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["ai-text-loading"],
+    files: [{
+      path: "registry/components/animations/ai-text-loading/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/ai-text-loading/example")),
+    meta: {"tags":["loading","text","animation","shimmer","thinking"],"source":"kokonutui"},
+  },
+  "ai-voice": {
+    name: "ai-voice",
+    description: "An AI voice recording interface with animated waveform bars, timer, and a spinning stop indicator.",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/components/animations/ai-voice/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/ai-voice/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "ai-voice-demo": {
+    name: "ai-voice-demo",
+    description: "An AI voice recording interface with animated waveform bars, timer, and a spinning stop indicator. (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["ai-voice"],
+    files: [{
+      path: "registry/components/animations/ai-voice/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/ai-voice/example")),
+    meta: undefined,
+  },
   "android": {
     name: "android",
     description: "A mockup of an Android device.",
@@ -39,6 +270,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/special/android/example")),
     meta: {"tags":["special"]},
   },
+  "angle-slider": {
+    name: "angle-slider",
+    description: "Circular angle picker with SVG track, range, and draggable thumb",
+    type: "registry:ui",
+    category: "inputs",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/inputs/angle-slider/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/inputs/angle-slider/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["input","slider","angle","circular","rotation","dial"],"source":"diceui"},
+  },
+  "angle-slider-demo": {
+    name: "angle-slider-demo",
+    description: "Circular angle picker with SVG track, range, and draggable thumb (demo)",
+    type: "registry:example",
+    category: "inputs",
+    registryDependencies: ["angle-slider"],
+    files: [{
+      path: "registry/components/inputs/angle-slider/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/inputs/angle-slider/example")),
+    meta: {"tags":["input","slider","angle","circular","rotation","dial"],"source":"diceui"},
+  },
   "animated-beam": {
     name: "animated-beam",
     description: "An animated beam of light which travels along a path.",
@@ -71,6 +335,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/animations/animated-beam/example")),
     meta: {"tags":["animation"]},
+  },
+  "animated-button": {
+    name: "animated-button",
+    description: "A button with shimmer, spin, and glow animations using CSS keyframes and custom properties",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: ["@radix-ui/react-slot","class-variance-authority"],
+    files: [{
+      path: "registry/components/animations/animated-button/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/animated-button/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["animations","button","shimmer","glow","css-animation"],"source":"scrollx-ui"},
+  },
+  "animated-button-demo": {
+    name: "animated-button-demo",
+    description: "A button with shimmer, spin, and glow animations using CSS keyframes and custom properties (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["animated-button"],
+    files: [{
+      path: "registry/components/animations/animated-button/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/animated-button/example")),
+    meta: {"tags":["animations","button","shimmer","glow","css-animation"],"source":"scrollx-ui"},
   },
   "animated-circular-progress-bar": {
     name: "animated-circular-progress-bar",
@@ -170,6 +467,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/text/animated-gradient-text/example")),
     meta: {"tags":["text","animation"]},
+  },
+  "animated-gradient-with-svg": {
+    name: "animated-gradient-with-svg",
+    description: "Animated gradient background using SVG circles with blur effects.",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/animations/animated-gradient-with-svg/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/animated-gradient-with-svg/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["animation","gradient","background","svg"],"source":"fancy"},
+  },
+  "animated-gradient-with-svg-demo": {
+    name: "animated-gradient-with-svg-demo",
+    description: "Animated gradient background using SVG circles with blur effects. (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["animated-gradient-with-svg"],
+    files: [{
+      path: "registry/components/animations/animated-gradient-with-svg/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/animated-gradient-with-svg/example")),
+    meta: {"tags":["animation","gradient","background","svg"],"source":"fancy"},
   },
   "animated-grid-pattern": {
     name: "animated-grid-pattern",
@@ -303,6 +633,72 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/text/animated-shiny-text/example")),
     meta: {"tags":["text","animation"]},
   },
+  "animated-tabs": {
+    name: "animated-tabs",
+    description: "Tabs component with smooth fill animation on active tab indicator",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/animations/animated-tabs/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/animated-tabs/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["animations","tabs","navigation","transition"],"source":"scrollx-ui"},
+  },
+  "animated-tabs-demo": {
+    name: "animated-tabs-demo",
+    description: "Tabs component with smooth fill animation on active tab indicator (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["animated-tabs"],
+    files: [{
+      path: "registry/components/animations/animated-tabs/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/animated-tabs/example")),
+    meta: {"tags":["animations","tabs","navigation","transition"],"source":"scrollx-ui"},
+  },
+  "animated-textgenerate": {
+    name: "animated-textgenerate",
+    description: "Word-by-word text generation with blur reveal and capsule placeholders",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/animated-textgenerate/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/animated-textgenerate/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","animation","generate","blur","reveal"],"source":"scrollx-ui"},
+  },
+  "animated-textgenerate-demo": {
+    name: "animated-textgenerate-demo",
+    description: "Word-by-word text generation with blur reveal and capsule placeholders (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["animated-textgenerate"],
+    files: [{
+      path: "registry/components/text/animated-textgenerate/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/animated-textgenerate/example")),
+    meta: {"tags":["text","animation","generate","blur","reveal"],"source":"scrollx-ui"},
+  },
   "animated-theme-toggler": {
     name: "animated-theme-toggler",
     description: "A component for theme changing animation.",
@@ -335,6 +731,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/animations/animated-theme-toggler/example")),
     meta: {"tags":["animation"]},
+  },
+  "announcement": {
+    name: "announcement",
+    description: "Expandable announcement banner with optional moving border, icons, and dropdown content",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/components/layouts/announcement/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/announcement/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["announcement","banner","notification","expandable"],"source":"scrollx-ui"},
+  },
+  "announcement-demo": {
+    name: "announcement-demo",
+    description: "Expandable announcement banner with optional moving border, icons, and dropdown content (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["announcement"],
+    files: [{
+      path: "registry/components/layouts/announcement/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/announcement/example")),
+    meta: {"tags":["announcement","banner","notification","expandable"],"source":"scrollx-ui"},
   },
   "antigravity": {
     name: "antigravity",
@@ -369,6 +798,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/animations/antigravity/example")),
     meta: {"tags":["animation"],"source":"react-bits"},
   },
+  "apple-activity-card": {
+    name: "apple-activity-card",
+    description: "Apple Watch-inspired activity rings card showing Move, Exercise, and Stand progress with animated circular progress indicators.",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/layouts/apple-activity-card/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/apple-activity-card/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "apple-activity-card-demo": {
+    name: "apple-activity-card-demo",
+    description: "Apple Watch-inspired activity rings card showing Move, Exercise, and Stand progress with animated circular progress indicators. (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["apple-activity-card"],
+    files: [{
+      path: "registry/components/layouts/apple-activity-card/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/apple-activity-card/example")),
+    meta: undefined,
+  },
   "ascii-text": {
     name: "ascii-text",
     description: "Renders text with an ASCII art style effect using Three.js.",
@@ -400,6 +862,39 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/text/ascii-text/example")),
+    meta: undefined,
+  },
+  "attract-button": {
+    name: "attract-button",
+    description: "A button with floating particles that magnetically attract to center on hover.",
+    type: "registry:ui",
+    category: "buttons",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/components/buttons/attract-button/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/buttons/attract-button/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "attract-button-demo": {
+    name: "attract-button-demo",
+    description: "A button with floating particles that magnetically attract to center on hover. (demo)",
+    type: "registry:example",
+    category: "buttons",
+    registryDependencies: ["attract-button"],
+    files: [{
+      path: "registry/components/buttons/attract-button/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/buttons/attract-button/example")),
     meta: undefined,
   },
   "aurora": {
@@ -434,6 +929,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/backgrounds/aurora/example")),
     meta: {"tags":["background"],"source":"react-bits"},
+  },
+  "aurora-dots": {
+    name: "aurora-dots",
+    description: "Glowing animated dot clusters with interactive cursor glow effect",
+    type: "registry:ui",
+    category: "backgrounds",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/backgrounds/aurora-dots/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/backgrounds/aurora-dots/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["backgrounds","aurora","dots","glow","interactive","canvas"],"source":"scrollx-ui"},
+  },
+  "aurora-dots-demo": {
+    name: "aurora-dots-demo",
+    description: "Glowing animated dot clusters with interactive cursor glow effect (demo)",
+    type: "registry:example",
+    category: "backgrounds",
+    registryDependencies: ["aurora-dots"],
+    files: [{
+      path: "registry/components/backgrounds/aurora-dots/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/backgrounds/aurora-dots/example")),
+    meta: {"tags":["backgrounds","aurora","dots","glow","interactive","canvas"],"source":"scrollx-ui"},
   },
   "aurora-text": {
     name: "aurora-text",
@@ -501,6 +1029,72 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/special/avatar-circles/example")),
     meta: {"tags":["special"]},
   },
+  "avatar-group": {
+    name: "avatar-group",
+    description: "Avatar group with hover-to-expand name reveal and overlap layout",
+    type: "registry:ui",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/special/avatar-group/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/special/avatar-group/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["avatar","group","user","profile"],"source":"scrollx-ui"},
+  },
+  "avatar-group-demo": {
+    name: "avatar-group-demo",
+    description: "Avatar group with hover-to-expand name reveal and overlap layout (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["avatar-group"],
+    files: [{
+      path: "registry/components/special/avatar-group/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/avatar-group/example")),
+    meta: {"tags":["avatar","group","user","profile"],"source":"scrollx-ui"},
+  },
+  "avatar-picker": {
+    name: "avatar-picker",
+    description: "A profile setup form with animated avatar selection grid, spinning avatar preview, and username input validation.",
+    type: "registry:ui",
+    category: "inputs",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/components/inputs/avatar-picker/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/inputs/avatar-picker/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "avatar-picker-demo": {
+    name: "avatar-picker-demo",
+    description: "A profile setup form with animated avatar selection grid, spinning avatar preview, and username input validation. (demo)",
+    type: "registry:example",
+    category: "inputs",
+    registryDependencies: ["avatar-picker"],
+    files: [{
+      path: "registry/components/inputs/avatar-picker/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/inputs/avatar-picker/example")),
+    meta: undefined,
+  },
   "avatar-stack": {
     name: "avatar-stack",
     description: "Overlapping avatar display for group representation",
@@ -533,6 +1127,72 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/special/avatar-stack/example")),
     meta: {"tags":["display","avatar","stack"],"source":"kibo-ui"},
+  },
+  "background-paths": {
+    name: "background-paths",
+    description: "Animated SVG background with elegant floating curved paths in primary, secondary and accent layers.",
+    type: "registry:ui",
+    category: "backgrounds",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/backgrounds/background-paths/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/backgrounds/background-paths/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "background-paths-demo": {
+    name: "background-paths-demo",
+    description: "Animated SVG background with elegant floating curved paths in primary, secondary and accent layers. (demo)",
+    type: "registry:example",
+    category: "backgrounds",
+    registryDependencies: ["background-paths"],
+    files: [{
+      path: "registry/components/backgrounds/background-paths/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/backgrounds/background-paths/example")),
+    meta: undefined,
+  },
+  "backgroundmeteors": {
+    name: "backgroundmeteors",
+    description: "Animated meteor beams falling through a grid background",
+    type: "registry:ui",
+    category: "backgrounds",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/backgrounds/backgroundmeteors/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/backgrounds/backgroundmeteors/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["background","meteors","beams","grid","animation"],"source":"scrollx-ui"},
+  },
+  "backgroundmeteors-demo": {
+    name: "backgroundmeteors-demo",
+    description: "Animated meteor beams falling through a grid background (demo)",
+    type: "registry:example",
+    category: "backgrounds",
+    registryDependencies: ["backgroundmeteors"],
+    files: [{
+      path: "registry/components/backgrounds/backgroundmeteors/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/backgrounds/backgroundmeteors/example")),
+    meta: {"tags":["background","meteors","beams","grid","animation"],"source":"scrollx-ui"},
   },
   "balatro": {
     name: "balatro",
@@ -665,6 +1325,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/backgrounds/beams/example")),
     meta: {"tags":["background"],"source":"react-bits"},
+  },
+  "beams-background": {
+    name: "beams-background",
+    description: "Canvas-based animated background with colorful light beams that float upward with pulsing opacity.",
+    type: "registry:ui",
+    category: "backgrounds",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/backgrounds/beams-background/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/backgrounds/beams-background/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "beams-background-demo": {
+    name: "beams-background-demo",
+    description: "Canvas-based animated background with colorful light beams that float upward with pulsing opacity. (demo)",
+    type: "registry:example",
+    category: "backgrounds",
+    registryDependencies: ["beams-background"],
+    files: [{
+      path: "registry/components/backgrounds/beams-background/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/backgrounds/beams-background/example")),
+    meta: undefined,
   },
   "bento-grid": {
     name: "bento-grid",
@@ -963,6 +1656,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/text/blur-text/example")),
     meta: undefined,
   },
+  "bolt-strike": {
+    name: "bolt-strike",
+    description: "Lightning bolt background effect with branching bolts, sparks, and particles",
+    type: "registry:ui",
+    category: "backgrounds",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/backgrounds/bolt-strike/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/backgrounds/bolt-strike/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["backgrounds","lightning","bolt","canvas","particles"],"source":"scrollx-ui"},
+  },
+  "bolt-strike-demo": {
+    name: "bolt-strike-demo",
+    description: "Lightning bolt background effect with branching bolts, sparks, and particles (demo)",
+    type: "registry:example",
+    category: "backgrounds",
+    registryDependencies: ["bolt-strike"],
+    files: [{
+      path: "registry/components/backgrounds/bolt-strike/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/backgrounds/bolt-strike/example")),
+    meta: {"tags":["backgrounds","lightning","bolt","canvas","particles"],"source":"scrollx-ui"},
+  },
   "border-beam": {
     name: "border-beam",
     description: "An animated beam of light which travels along the border of its container.",
@@ -996,6 +1722,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/animations/border-beam/example")),
     meta: {"tags":["animation"]},
   },
+  "border-glide": {
+    name: "border-glide",
+    description: "Cards with an animated gliding border effect and swipe carousel",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/layouts/border-glide/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/border-glide/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["layouts","card","border","animation","carousel"],"source":"scrollx-ui"},
+  },
+  "border-glide-demo": {
+    name: "border-glide-demo",
+    description: "Cards with an animated gliding border effect and swipe carousel (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["border-glide"],
+    files: [{
+      path: "registry/components/layouts/border-glide/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/border-glide/example")),
+    meta: {"tags":["layouts","card","border","animation","carousel"],"source":"scrollx-ui"},
+  },
   "bounce-cards": {
     name: "bounce-cards",
     description: "A layouts bounce cards component",
@@ -1028,6 +1787,72 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/layouts/bounce-cards/example")),
     meta: {"tags":["layouts"]},
+  },
+  "box-carousel": {
+    name: "box-carousel",
+    description: "3D box/cube carousel with drag, autoplay, and keyboard navigation support.",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/layouts/box-carousel/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/box-carousel/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["carousel","3d","cube","drag","autoplay"],"source":"fancy"},
+  },
+  "box-carousel-demo": {
+    name: "box-carousel-demo",
+    description: "3D box/cube carousel with drag, autoplay, and keyboard navigation support. (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["box-carousel"],
+    files: [{
+      path: "registry/components/layouts/box-carousel/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/box-carousel/example")),
+    meta: {"tags":["carousel","3d","cube","drag","autoplay"],"source":"fancy"},
+  },
+  "breathing-text": {
+    name: "breathing-text",
+    description: "Variable font breathing animation with staggered letter-by-letter weight transitions",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/breathing-text/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/breathing-text/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","animation","variable-font","breathing","stagger"],"source":"fancy"},
+  },
+  "breathing-text-demo": {
+    name: "breathing-text-demo",
+    description: "Variable font breathing animation with staggered letter-by-letter weight transitions (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["breathing-text"],
+    files: [{
+      path: "registry/components/text/breathing-text/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/breathing-text/example")),
+    meta: {"tags":["text","animation","variable-font","breathing","stagger"],"source":"fancy"},
   },
   "bubble-menu": {
     name: "bubble-menu",
@@ -1095,6 +1920,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/backgrounds/canvas-fractal-grid/example")),
     meta: {"tags":["background","canvas","interactive"],"source":"cult-ui"},
   },
+  "card-flip": {
+    name: "card-flip",
+    description: "3D card that flips on hover to reveal back content with staggered feature list",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/components/layouts/card-flip/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/card-flip/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["card","flip","3d","hover","animation"],"source":"kokonutui"},
+  },
+  "card-flip-demo": {
+    name: "card-flip-demo",
+    description: "3D card that flips on hover to reveal back content with staggered feature list (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["card-flip"],
+    files: [{
+      path: "registry/components/layouts/card-flip/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/card-flip/example")),
+    meta: {"tags":["card","flip","3d","hover","animation"],"source":"kokonutui"},
+  },
   "card-nav": {
     name: "card-nav",
     description: "A layouts card nav component",
@@ -1127,6 +1985,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/layouts/card-nav/example")),
     meta: {"tags":["layouts"]},
+  },
+  "card-stack": {
+    name: "card-stack",
+    description: "Expandable card stack that fans out on click with spring animations",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/layouts/card-stack/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/card-stack/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["card","stack","expand","animation","spring"],"source":"kokonutui"},
+  },
+  "card-stack-demo": {
+    name: "card-stack-demo",
+    description: "Expandable card stack that fans out on click with spring animations (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["card-stack"],
+    files: [{
+      path: "registry/components/layouts/card-stack/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/card-stack/example")),
+    meta: {"tags":["card","stack","expand","animation","spring"],"source":"kokonutui"},
   },
   "card-swap": {
     name: "card-swap",
@@ -1161,6 +2052,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/layouts/card-swap/example")),
     meta: {"tags":["layouts"]},
   },
+  "card-tilt": {
+    name: "card-tilt",
+    description: "A card component with smooth 3D tilt effect on cursor movement",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/layouts/card-tilt/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/card-tilt/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["layouts","card","tilt","3d","hover"],"source":"scrollx-ui"},
+  },
+  "card-tilt-demo": {
+    name: "card-tilt-demo",
+    description: "A card component with smooth 3D tilt effect on cursor movement (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["card-tilt"],
+    files: [{
+      path: "registry/components/layouts/card-tilt/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/card-tilt/example")),
+    meta: {"tags":["layouts","card","tilt","3d","hover"],"source":"scrollx-ui"},
+  },
   "carousel": {
     name: "carousel",
     description: "A layouts carousel component",
@@ -1193,6 +2117,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/layouts/carousel/example")),
     meta: {"tags":["layouts"]},
+  },
+  "carousel-cards": {
+    name: "carousel-cards",
+    description: "Airbnb-inspired horizontal scrolling carousel with experience cards featuring images, ratings, and pricing.",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/components/layouts/carousel-cards/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/carousel-cards/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "carousel-cards-demo": {
+    name: "carousel-cards-demo",
+    description: "Airbnb-inspired horizontal scrolling carousel with experience cards featuring images, ratings, and pricing. (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["carousel-cards"],
+    files: [{
+      path: "registry/components/layouts/carousel-cards/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/carousel-cards/example")),
+    meta: undefined,
   },
   "chroma-grid": {
     name: "chroma-grid",
@@ -1227,6 +2184,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/layouts/chroma-grid/example")),
     meta: {"tags":["layouts"]},
   },
+  "circling-elements": {
+    name: "circling-elements",
+    description: "Arrange child elements in a circular orbit with continuous rotation animation.",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/animations/circling-elements/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/circling-elements/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["animation","circular","orbit","rotation"],"source":"fancy"},
+  },
+  "circling-elements-demo": {
+    name: "circling-elements-demo",
+    description: "Arrange child elements in a circular orbit with continuous rotation animation. (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["circling-elements"],
+    files: [{
+      path: "registry/components/animations/circling-elements/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/circling-elements/example")),
+    meta: {"tags":["animation","circular","orbit","rotation"],"source":"fancy"},
+  },
   "circular-gallery": {
     name: "circular-gallery",
     description: "A layouts circular gallery component",
@@ -1244,7 +2234,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["layouts"]},
+    meta: {"tags":["layouts"],"previewSize":"lg"},
   },
   "circular-gallery-demo": {
     name: "circular-gallery-demo",
@@ -1258,7 +2248,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/layouts/circular-gallery/example")),
-    meta: {"tags":["layouts"]},
+    meta: {"tags":["layouts"],"previewSize":"lg"},
   },
   "circular-text": {
     name: "circular-text",
@@ -1491,6 +2481,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/text/comic-text/example")),
     meta: {"tags":["text","animation"]},
   },
+  "command-button": {
+    name: "command-button",
+    description: "A keyboard shortcut button with a shimmer hover effect, ideal for CMD+K style triggers.",
+    type: "registry:ui",
+    category: "buttons",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/components/buttons/command-button/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/buttons/command-button/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "command-button-demo": {
+    name: "command-button-demo",
+    description: "A keyboard shortcut button with a shimmer hover effect, ideal for CMD+K style triggers. (demo)",
+    type: "registry:example",
+    category: "buttons",
+    registryDependencies: ["command-button"],
+    files: [{
+      path: "registry/components/buttons/command-button/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/buttons/command-button/example")),
+    meta: undefined,
+  },
   "comparison": {
     name: "comparison",
     description: "Side-by-side image or content comparison slider",
@@ -1623,6 +2646,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/animations/cool-mode/example")),
     meta: {"tags":["animation"]},
   },
+  "cosmic-background": {
+    name: "cosmic-background",
+    description: "WebGL-powered cosmic background with aurora, cosmic, and neon shader variants",
+    type: "registry:ui",
+    category: "backgrounds",
+    registryDependencies: undefined,
+    dependencies: ["three"],
+    files: [{
+      path: "registry/components/backgrounds/cosmic-background/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/backgrounds/cosmic-background/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["backgrounds","cosmic","webgl","shader","three.js","aurora"],"source":"scrollx-ui"},
+  },
+  "cosmic-background-demo": {
+    name: "cosmic-background-demo",
+    description: "WebGL-powered cosmic background with aurora, cosmic, and neon shader variants (demo)",
+    type: "registry:example",
+    category: "backgrounds",
+    registryDependencies: ["cosmic-background"],
+    files: [{
+      path: "registry/components/backgrounds/cosmic-background/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/backgrounds/cosmic-background/example")),
+    meta: {"tags":["backgrounds","cosmic","webgl","shader","three.js","aurora"],"source":"scrollx-ui"},
+  },
   "count-up": {
     name: "count-up",
     description: "Animated number counting up effect.",
@@ -1722,6 +2778,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/animations/crosshair/example")),
     meta: {"tags":["animation"],"source":"react-bits"},
   },
+  "css-3d-box": {
+    name: "css-3d-box",
+    description: "Interactive 3D CSS cube with drag-to-rotate and spring physics, supporting custom face content",
+    type: "registry:ui",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/special/css-3d-box/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/special/css-3d-box/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["3d","cube","interactive","drag","css","transform"],"source":"fancy"},
+  },
+  "css-3d-box-demo": {
+    name: "css-3d-box-demo",
+    description: "Interactive 3D CSS cube with drag-to-rotate and spring physics, supporting custom face content (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["css-3d-box"],
+    files: [{
+      path: "registry/components/special/css-3d-box/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/css-3d-box/example")),
+    meta: {"tags":["3d","cube","interactive","drag","css","transform"],"source":"fancy"},
+  },
   "cubes": {
     name: "cubes",
     description: "3D cube animation effect.",
@@ -1755,6 +2844,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/animations/cubes/example")),
     meta: {"tags":["animation"],"source":"react-bits"},
   },
+  "currency-transfer": {
+    name: "currency-transfer",
+    description: "Multi-step currency transfer animation with progress indicator and exchange rate display",
+    type: "registry:ui",
+    category: "inputs",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/components/inputs/currency-transfer/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/inputs/currency-transfer/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["transfer","currency","animation","finance","progress"],"source":"kokonutui"},
+  },
+  "currency-transfer-demo": {
+    name: "currency-transfer-demo",
+    description: "Multi-step currency transfer animation with progress indicator and exchange rate display (demo)",
+    type: "registry:example",
+    category: "inputs",
+    registryDependencies: ["currency-transfer"],
+    files: [{
+      path: "registry/components/inputs/currency-transfer/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/inputs/currency-transfer/example")),
+    meta: {"tags":["transfer","currency","animation","finance","progress"],"source":"kokonutui"},
+  },
   "cursor": {
     name: "cursor",
     description: "Realtime cursor component for collaborative apps",
@@ -1787,6 +2909,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/special/cursor/example")),
     meta: {"tags":["interactive","cursor","realtime"],"source":"kibo-ui"},
+  },
+  "cursor-attractor-and-gravity": {
+    name: "cursor-attractor-and-gravity",
+    description: "Physics-based gravity simulation with cursor attractor and wall boundaries.",
+    type: "registry:ui",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/special/cursor-attractor-and-gravity/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/special/cursor-attractor-and-gravity/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["physics","gravity","cursor","attractor","interactive"],"source":"fancy"},
+  },
+  "cursor-attractor-and-gravity-demo": {
+    name: "cursor-attractor-and-gravity-demo",
+    description: "Physics-based gravity simulation with cursor attractor and wall boundaries. (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["cursor-attractor-and-gravity"],
+    files: [{
+      path: "registry/components/special/cursor-attractor-and-gravity/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/cursor-attractor-and-gravity/example")),
+    meta: {"tags":["physics","gravity","cursor","attractor","interactive"],"source":"fancy"},
   },
   "curved-loop": {
     name: "curved-loop",
@@ -2003,7 +3158,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["animation","glass","filter"],"source":"cult-ui"},
+    meta: {"tags":["animation","glass","filter"],"source":"cult-ui","previewSize":"lg"},
   },
   "distorted-glass-demo": {
     name: "distorted-glass-demo",
@@ -2017,7 +3172,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/animations/distorted-glass/example")),
-    meta: {"tags":["animation","glass","filter"],"source":"cult-ui"},
+    meta: {"tags":["animation","glass","filter"],"source":"cult-ui","previewSize":"lg"},
   },
   "dither": {
     name: "dither",
@@ -2217,6 +3372,72 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/special/dotted-map/example")),
     meta: {"tags":["special"]},
   },
+  "drag-elements": {
+    name: "drag-elements",
+    description: "Draggable elements with momentum, elastic constraints, and z-index management.",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/animations/drag-elements/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/drag-elements/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["animation","drag","interactive"],"source":"fancy"},
+  },
+  "drag-elements-demo": {
+    name: "drag-elements-demo",
+    description: "Draggable elements with momentum, elastic constraints, and z-index management. (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["drag-elements"],
+    files: [{
+      path: "registry/components/animations/drag-elements/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/drag-elements/example")),
+    meta: {"tags":["animation","drag","interactive"],"source":"fancy"},
+  },
+  "drift-card": {
+    name: "drift-card",
+    description: "A card with a smooth drift hover effect that follows cursor movement",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/layouts/drift-card/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/drift-card/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["layouts","card","hover","drift","interactive"],"source":"scrollx-ui"},
+  },
+  "drift-card-demo": {
+    name: "drift-card-demo",
+    description: "A card with a smooth drift hover effect that follows cursor movement (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["drift-card"],
+    files: [{
+      path: "registry/components/layouts/drift-card/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/drift-card/example")),
+    meta: {"tags":["layouts","card","hover","drift","interactive"],"source":"scrollx-ui"},
+  },
   "dropzone": {
     name: "dropzone",
     description: "Drag-and-drop file upload area",
@@ -2250,6 +3471,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/special/dropzone/example")),
     meta: {"tags":["interactive","upload","file"],"source":"kibo-ui"},
   },
+  "dualsparks": {
+    name: "dualsparks",
+    description: "Canvas-based dual corner spark waves with inward and outward animation",
+    type: "registry:ui",
+    category: "backgrounds",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/backgrounds/dualsparks/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/backgrounds/dualsparks/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["background","sparks","canvas","animation","particles"],"source":"scrollx-ui"},
+  },
+  "dualsparks-demo": {
+    name: "dualsparks-demo",
+    description: "Canvas-based dual corner spark waves with inward and outward animation (demo)",
+    type: "registry:example",
+    category: "backgrounds",
+    registryDependencies: ["dualsparks"],
+    files: [{
+      path: "registry/components/backgrounds/dualsparks/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/backgrounds/dualsparks/example")),
+    meta: {"tags":["background","sparks","canvas","animation","particles"],"source":"scrollx-ui"},
+  },
   "dynamic-island": {
     name: "dynamic-island",
     description: "iOS-style dynamic island with expandable content",
@@ -2282,6 +3536,72 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/layouts/dynamic-island/example")),
     meta: {"tags":["layout","animation","island"],"source":"cult-ui"},
+  },
+  "dynamic-text": {
+    name: "dynamic-text",
+    description: "Animated text that rapidly cycles through greetings in different languages before settling on the final one.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/dynamic-text/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/dynamic-text/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "dynamic-text-demo": {
+    name: "dynamic-text-demo",
+    description: "Animated text that rapidly cycles through greetings in different languages before settling on the final one. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["dynamic-text"],
+    files: [{
+      path: "registry/components/text/dynamic-text/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/dynamic-text/example")),
+    meta: undefined,
+  },
+  "elastic-line": {
+    name: "elastic-line",
+    description: "SVG quadratic curve that responds to cursor proximity with spring-based elastic snapping",
+    type: "registry:ui",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/special/elastic-line/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/special/elastic-line/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["svg","elastic","line","cursor","spring","interactive"],"source":"fancy"},
+  },
+  "elastic-line-demo": {
+    name: "elastic-line-demo",
+    description: "SVG quadratic curve that responds to cursor proximity with spring-based elastic snapping (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["elastic-line"],
+    files: [{
+      path: "registry/components/special/elastic-line/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/elastic-line/example")),
+    meta: {"tags":["svg","elastic","line","cursor","spring","interactive"],"source":"fancy"},
   },
   "elastic-slider": {
     name: "elastic-slider",
@@ -2349,6 +3669,72 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/animations/electric-border/example")),
     meta: {"tags":["animation"],"source":"react-bits"},
   },
+  "electric-text": {
+    name: "electric-text",
+    description: "Electric neon text effect with SVG turbulence filters and glow",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/text/electric-text/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/electric-text/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","electric","neon","glow","svg","animation"],"source":"scrollx-ui"},
+  },
+  "electric-text-demo": {
+    name: "electric-text-demo",
+    description: "Electric neon text effect with SVG turbulence filters and glow (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["electric-text"],
+    files: [{
+      path: "registry/components/text/electric-text/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/electric-text/example")),
+    meta: {"tags":["text","electric","neon","glow","svg","animation"],"source":"scrollx-ui"},
+  },
+  "element-along-svg-path": {
+    name: "element-along-svg-path",
+    description: "Animate elements along an SVG path with auto or scroll-based animation.",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/animations/element-along-svg-path/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/element-along-svg-path/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["animation","svg","path","scroll"],"source":"fancy"},
+  },
+  "element-along-svg-path-demo": {
+    name: "element-along-svg-path-demo",
+    description: "Animate elements along an SVG path with auto or scroll-based animation. (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["element-along-svg-path"],
+    files: [{
+      path: "registry/components/animations/element-along-svg-path/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/element-along-svg-path/example")),
+    meta: {"tags":["animation","svg","path","scroll"],"source":"fancy"},
+  },
   "expandable": {
     name: "expandable",
     description: "Expandable component system with smooth animations",
@@ -2399,7 +3785,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["layout","fullscreen","animation"],"source":"cult-ui"},
+    meta: {"tags":["layout","fullscreen","animation"],"source":"cult-ui","previewSize":"lg"},
   },
   "expandable-screen-demo": {
     name: "expandable-screen-demo",
@@ -2413,7 +3799,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/layouts/expandable-screen/example")),
-    meta: {"tags":["layout","fullscreen","animation"],"source":"cult-ui"},
+    meta: {"tags":["layout","fullscreen","animation"],"source":"cult-ui","previewSize":"lg"},
   },
   "fade-content": {
     name: "fade-content",
@@ -2597,7 +3983,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["layout","carousel","feature"],"source":"cult-ui"},
+    meta: {"tags":["layout","carousel","feature"],"source":"cult-ui","previewSize":"lg"},
   },
   "feature-carousel-demo": {
     name: "feature-carousel-demo",
@@ -2611,7 +3997,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/layouts/feature-carousel/example")),
-    meta: {"tags":["layout","carousel","feature"],"source":"cult-ui"},
+    meta: {"tags":["layout","carousel","feature"],"source":"cult-ui","previewSize":"lg"},
   },
   "file-tree": {
     name: "file-tree",
@@ -2646,6 +4032,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/special/file-tree/example")),
     meta: {"tags":["special"]},
   },
+  "flashy-card": {
+    name: "flashy-card",
+    description: "A card with animated activation toggle, glare effect, and ripple animation",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/layouts/flashy-card/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/flashy-card/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["layouts","card","animation","glare","toggle"],"source":"scrollx-ui"},
+  },
+  "flashy-card-demo": {
+    name: "flashy-card-demo",
+    description: "A card with animated activation toggle, glare effect, and ripple animation (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["flashy-card"],
+    files: [{
+      path: "registry/components/layouts/flashy-card/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/flashy-card/example")),
+    meta: {"tags":["layouts","card","animation","glare","toggle"],"source":"scrollx-ui"},
+  },
   "flickering-grid": {
     name: "flickering-grid",
     description: "A backgrounds flickering grid component",
@@ -2678,6 +4097,105 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/backgrounds/flickering-grid/example")),
     meta: {"tags":["backgrounds"]},
+  },
+  "flipflow": {
+    name: "flipflow",
+    description: "Infinite scrolling card flow with 3D flip on hover effect",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/animations/flipflow/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/flipflow/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["animation","scroll","flip","cards","marquee"],"source":"scrollx-ui"},
+  },
+  "flipflow-demo": {
+    name: "flipflow-demo",
+    description: "Infinite scrolling card flow with 3D flip on hover effect (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["flipflow"],
+    files: [{
+      path: "registry/components/animations/flipflow/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/flipflow/example")),
+    meta: {"tags":["animation","scroll","flip","cards","marquee"],"source":"scrollx-ui"},
+  },
+  "flipstack": {
+    name: "flipstack",
+    description: "An animated card stack that fans out with rotation on scroll into view",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/layouts/flipstack/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/flipstack/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["layouts","card","stack","animation","flip"],"source":"scrollx-ui"},
+  },
+  "flipstack-demo": {
+    name: "flipstack-demo",
+    description: "An animated card stack that fans out with rotation on scroll into view (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["flipstack"],
+    files: [{
+      path: "registry/components/layouts/flipstack/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/flipstack/example")),
+    meta: {"tags":["layouts","card","stack","animation","flip"],"source":"scrollx-ui"},
+  },
+  "float": {
+    name: "float",
+    description: "3D floating animation with configurable speed, amplitude, and rotation.",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/animations/float/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/float/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["animation","float","3d","hover"],"source":"fancy"},
+  },
+  "float-demo": {
+    name: "float-demo",
+    description: "3D floating animation with configurable speed, amplitude, and rotation. (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["float"],
+    files: [{
+      path: "registry/components/animations/float/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/float/example")),
+    meta: {"tags":["animation","float","3d","hover"],"source":"fancy"},
   },
   "floating-lines": {
     name: "floating-lines",
@@ -2828,7 +4346,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["layouts"]},
+    meta: {"tags":["layouts"],"previewSize":"lg"},
   },
   "flying-posters-demo": {
     name: "flying-posters-demo",
@@ -2842,7 +4360,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/layouts/flying-posters/example")),
-    meta: {"tags":["layouts"]},
+    meta: {"tags":["layouts"],"previewSize":"lg"},
   },
   "folder": {
     name: "folder",
@@ -2876,6 +4394,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/layouts/folder/example")),
     meta: {"tags":["layouts"]},
+  },
+  "followcursor": {
+    name: "followcursor",
+    description: "Colorful polyline trails that follow the cursor with spring physics",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/animations/followcursor/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/followcursor/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["cursor","follow","trail","canvas","animation","physics"],"source":"scrollx-ui"},
+  },
+  "followcursor-demo": {
+    name: "followcursor-demo",
+    description: "Colorful polyline trails that follow the cursor with spring physics (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["followcursor"],
+    files: [{
+      path: "registry/components/animations/followcursor/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/followcursor/example")),
+    meta: {"tags":["cursor","follow","trail","canvas","animation","physics"],"source":"scrollx-ui"},
   },
   "fuzzy-text": {
     name: "fuzzy-text",
@@ -3042,6 +4593,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/layouts/glass-icons/example")),
     meta: {"tags":["layouts"]},
   },
+  "glass-ripple": {
+    name: "glass-ripple",
+    description: "Glass surface component with SVG distortion, optional ripple on click, and cursor following",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/animations/glass-ripple/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/glass-ripple/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["animations","glass","ripple","blur","distortion"],"source":"scrollx-ui"},
+  },
+  "glass-ripple-demo": {
+    name: "glass-ripple-demo",
+    description: "Glass surface component with SVG distortion, optional ripple on click, and cursor following (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["glass-ripple"],
+    files: [{
+      path: "registry/components/animations/glass-ripple/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/glass-ripple/example")),
+    meta: {"tags":["animations","glass","ripple","blur","distortion"],"source":"scrollx-ui"},
+  },
   "glass-surface": {
     name: "glass-surface",
     description: "A layouts glass surface component",
@@ -3125,7 +4709,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["special"]},
+    meta: {"tags":["special"],"previewSize":"lg"},
   },
   "globe-demo": {
     name: "globe-demo",
@@ -3139,7 +4723,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/special/globe/example")),
-    meta: {"tags":["special"]},
+    meta: {"tags":["special"],"previewSize":"lg"},
   },
   "glow-button": {
     name: "glow-button",
@@ -3207,6 +4791,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/layouts/gooey-nav/example")),
     meta: {"tags":["layouts"]},
   },
+  "gooey-svg-filter": {
+    name: "gooey-svg-filter",
+    description: "SVG gooey filter effect that merges overlapping elements with a liquid-like appearance.",
+    type: "registry:ui",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/special/gooey-svg-filter/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/special/gooey-svg-filter/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["svg","filter","gooey","liquid"],"source":"fancy"},
+  },
+  "gooey-svg-filter-demo": {
+    name: "gooey-svg-filter-demo",
+    description: "SVG gooey filter effect that merges overlapping elements with a liquid-like appearance. (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["gooey-svg-filter"],
+    files: [{
+      path: "registry/components/special/gooey-svg-filter/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/gooey-svg-filter/example")),
+    meta: {"tags":["svg","filter","gooey","liquid"],"source":"fancy"},
+  },
   "gradient-blinds": {
     name: "gradient-blinds",
     description: "Animated gradient blinds background effect.",
@@ -3239,6 +4856,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/backgrounds/gradient-blinds/example")),
     meta: {"tags":["background"],"source":"react-bits"},
+  },
+  "gradient-button": {
+    name: "gradient-button",
+    description: "Button with animated gradient border and glow effects, supporting emerald, purple, and orange color variants",
+    type: "registry:ui",
+    category: "buttons",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/buttons/gradient-button/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/buttons/gradient-button/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["button","gradient","glow","animation"],"source":"kokonutui"},
+  },
+  "gradient-button-demo": {
+    name: "gradient-button-demo",
+    description: "Button with animated gradient border and glow effects, supporting emerald, purple, and orange color variants (demo)",
+    type: "registry:example",
+    category: "buttons",
+    registryDependencies: ["gradient-button"],
+    files: [{
+      path: "registry/components/buttons/gradient-button/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/buttons/gradient-button/example")),
+    meta: {"tags":["button","gradient","glow","animation"],"source":"kokonutui"},
   },
   "gradient-heading": {
     name: "gradient-heading",
@@ -3338,6 +4988,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/backgrounds/grainient/example")),
     meta: {"tags":["background"],"source":"react-bits"},
+  },
+  "gravity": {
+    name: "gravity",
+    description: "Matter.js physics gravity simulation where child elements become physical bodies with collision and dragging",
+    type: "registry:ui",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["matter-js"],
+    files: [{
+      path: "registry/components/special/gravity/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/special/gravity/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["physics","gravity","matter-js","interactive","drag"],"source":"fancy"},
+  },
+  "gravity-demo": {
+    name: "gravity-demo",
+    description: "Matter.js physics gravity simulation where child elements become physical bodies with collision and dragging (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["gravity"],
+    files: [{
+      path: "registry/components/special/gravity/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/gravity/example")),
+    meta: {"tags":["physics","gravity","matter-js","interactive","drag"],"source":"fancy"},
   },
   "grid-distortion": {
     name: "grid-distortion",
@@ -3471,6 +5154,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/backgrounds/grid-scan/example")),
     meta: {"tags":["background"],"source":"react-bits"},
   },
+  "gridbackground": {
+    name: "gridbackground",
+    description: "SVG perspective grid background with converging lines and fade overlay",
+    type: "registry:ui",
+    category: "backgrounds",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/backgrounds/gridbackground/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/backgrounds/gridbackground/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["background","grid","svg","perspective"],"source":"scrollx-ui"},
+  },
+  "gridbackground-demo": {
+    name: "gridbackground-demo",
+    description: "SVG perspective grid background with converging lines and fade overlay (demo)",
+    type: "registry:example",
+    category: "backgrounds",
+    registryDependencies: ["gridbackground"],
+    files: [{
+      path: "registry/components/backgrounds/gridbackground/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/backgrounds/gridbackground/example")),
+    meta: {"tags":["background","grid","svg","perspective"],"source":"scrollx-ui"},
+  },
   "hero-video-dialog": {
     name: "hero-video-dialog",
     description: "A hero video dialog component.",
@@ -3488,7 +5204,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["animation"]},
+    meta: {"tags":["animation"],"previewSize":"lg"},
   },
   "hero-video-dialog-demo": {
     name: "hero-video-dialog-demo",
@@ -3502,7 +5218,40 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/animations/hero-video-dialog/example")),
-    meta: {"tags":["animation"]},
+    meta: {"tags":["animation"],"previewSize":"lg"},
+  },
+  "heroui": {
+    name: "heroui",
+    description: "Animated hero section with parallax, gradient text, badge, CTA buttons, and feature tags",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/layouts/heroui/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/heroui/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["hero","landing","parallax","cta"],"source":"scrollx-ui"},
+  },
+  "heroui-demo": {
+    name: "heroui-demo",
+    description: "Animated hero section with parallax, gradient text, badge, CTA buttons, and feature tags (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["heroui"],
+    files: [{
+      path: "registry/components/layouts/heroui/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/heroui/example")),
+    meta: {"tags":["hero","landing","parallax","cta"],"source":"scrollx-ui"},
   },
   "highlighter": {
     name: "highlighter",
@@ -3536,6 +5285,72 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/text/highlighter/example")),
     meta: {"tags":["text","animation"]},
+  },
+  "hold-button": {
+    name: "hold-button",
+    description: "Button that requires holding for a specified duration, with progress indicator and color variants",
+    type: "registry:ui",
+    category: "buttons",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/components/buttons/hold-button/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/buttons/hold-button/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["button","hold","progress","animation","interactive"],"source":"kokonutui"},
+  },
+  "hold-button-demo": {
+    name: "hold-button-demo",
+    description: "Button that requires holding for a specified duration, with progress indicator and color variants (demo)",
+    type: "registry:example",
+    category: "buttons",
+    registryDependencies: ["hold-button"],
+    files: [{
+      path: "registry/components/buttons/hold-button/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/buttons/hold-button/example")),
+    meta: {"tags":["button","hold","progress","animation","interactive"],"source":"kokonutui"},
+  },
+  "hold-to-confirm": {
+    name: "hold-to-confirm",
+    description: "A button that requires holding to confirm an action with fill or border progress animation",
+    type: "registry:ui",
+    category: "buttons",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/buttons/hold-to-confirm/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/buttons/hold-to-confirm/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["buttons","hold","confirm","progress","animation"],"source":"scrollx-ui"},
+  },
+  "hold-to-confirm-demo": {
+    name: "hold-to-confirm-demo",
+    description: "A button that requires holding to confirm an action with fill or border progress animation (demo)",
+    type: "registry:example",
+    category: "buttons",
+    registryDependencies: ["hold-to-confirm"],
+    files: [{
+      path: "registry/components/buttons/hold-to-confirm/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/buttons/hold-to-confirm/example")),
+    meta: {"tags":["buttons","hold","confirm","progress","animation"],"source":"scrollx-ui"},
   },
   "hover-video-player": {
     name: "hover-video-player",
@@ -3602,6 +5417,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/text/hyper-text/example")),
     meta: {"tags":["text","animation"]},
+  },
+  "hyperlink": {
+    name: "hyperlink",
+    description: "Animated hyperlink with sliding underline effect on hover",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/text/hyperlink/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/hyperlink/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","link","hyperlink","underline","hover"],"source":"scrollx-ui"},
+  },
+  "hyperlink-demo": {
+    name: "hyperlink-demo",
+    description: "Animated hyperlink with sliding underline effect on hover (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["hyperlink"],
+    files: [{
+      path: "registry/components/text/hyperlink/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/hyperlink/example")),
+    meta: {"tags":["text","link","hyperlink","underline","hover"],"source":"scrollx-ui"},
   },
   "hyperspeed": {
     name: "hyperspeed",
@@ -3735,6 +5583,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/special/image-zoom/example")),
     meta: {"tags":["interactive","image","zoom"],"source":"kibo-ui"},
   },
+  "infinite-canvas": {
+    name: "infinite-canvas",
+    description: "An infinite draggable canvas that tiles child cards infinitely with zoom support",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/layouts/infinite-canvas/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/infinite-canvas/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["layouts","canvas","infinite","drag","zoom","interactive"],"source":"scrollx-ui"},
+  },
+  "infinite-canvas-demo": {
+    name: "infinite-canvas-demo",
+    description: "An infinite draggable canvas that tiles child cards infinitely with zoom support (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["infinite-canvas"],
+    files: [{
+      path: "registry/components/layouts/infinite-canvas/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/infinite-canvas/example")),
+    meta: {"tags":["layouts","canvas","infinite","drag","zoom","interactive"],"source":"scrollx-ui"},
+  },
   "infinite-menu": {
     name: "infinite-menu",
     description: "A layouts infinite menu component",
@@ -3752,7 +5633,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["layouts"]},
+    meta: {"tags":["layouts"],"previewSize":"lg"},
   },
   "infinite-menu-demo": {
     name: "infinite-menu-demo",
@@ -3766,7 +5647,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/layouts/infinite-menu/example")),
-    meta: {"tags":["layouts"]},
+    meta: {"tags":["layouts"],"previewSize":"lg"},
   },
   "interactive-grid-pattern": {
     name: "interactive-grid-pattern",
@@ -3834,6 +5715,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/buttons/interactive-hover-button/example")),
     meta: {"tags":["buttons"]},
   },
+  "interactive-input": {
+    name: "interactive-input",
+    description: "Sci-fi styled input with shimmer border animation and glow effects",
+    type: "registry:ui",
+    category: "inputs",
+    registryDependencies: undefined,
+    dependencies: ["class-variance-authority"],
+    files: [{
+      path: "registry/components/inputs/interactive-input/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/inputs/interactive-input/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["input","interactive","shimmer","glow","sci-fi"],"source":"scrollx-ui"},
+  },
+  "interactive-input-demo": {
+    name: "interactive-input-demo",
+    description: "Sci-fi styled input with shimmer border animation and glow effects (demo)",
+    type: "registry:example",
+    category: "inputs",
+    registryDependencies: ["interactive-input"],
+    files: [{
+      path: "registry/components/inputs/interactive-input/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/inputs/interactive-input/example")),
+    meta: {"tags":["input","interactive","shimmer","glow","sci-fi"],"source":"scrollx-ui"},
+  },
   "iphone": {
     name: "iphone",
     description: "A mockup of the iPhone",
@@ -3851,7 +5765,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["special"]},
+    meta: {"tags":["special"],"previewSize":"lg"},
   },
   "iphone-demo": {
     name: "iphone-demo",
@@ -3865,7 +5779,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/special/iphone/example")),
-    meta: {"tags":["special"]},
+    meta: {"tags":["special"],"previewSize":"lg"},
   },
   "iridescence": {
     name: "iridescence",
@@ -3899,6 +5813,138 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/backgrounds/iridescence/example")),
     meta: {"tags":["background"],"source":"react-bits"},
+  },
+  "kbd": {
+    name: "kbd",
+    description: "Keyboard shortcut display component with realistic key styling",
+    type: "registry:ui",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/special/kbd/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/special/kbd/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["keyboard","shortcut","kbd","key"],"source":"scrollx-ui"},
+  },
+  "kbd-demo": {
+    name: "kbd-demo",
+    description: "Keyboard shortcut display component with realistic key styling (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["kbd"],
+    files: [{
+      path: "registry/components/special/kbd/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/kbd/example")),
+    meta: {"tags":["keyboard","shortcut","kbd","key"],"source":"scrollx-ui"},
+  },
+  "kokonut-file-upload": {
+    name: "kokonut-file-upload",
+    description: "A drag-and-drop file upload component with animated progress indicator and file validation.",
+    type: "registry:ui",
+    category: "inputs",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/components/inputs/kokonut-file-upload/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/inputs/kokonut-file-upload/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "kokonut-file-upload-demo": {
+    name: "kokonut-file-upload-demo",
+    description: "A drag-and-drop file upload component with animated progress indicator and file validation. (demo)",
+    type: "registry:example",
+    category: "inputs",
+    registryDependencies: ["kokonut-file-upload"],
+    files: [{
+      path: "registry/components/inputs/kokonut-file-upload/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/inputs/kokonut-file-upload/example")),
+    meta: undefined,
+  },
+  "kokonut-loader": {
+    name: "kokonut-loader",
+    description: "An elegant monochrome loading spinner with multiple concentric rotating rings and breathing text animation.",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/animations/kokonut-loader/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/kokonut-loader/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "kokonut-loader-demo": {
+    name: "kokonut-loader-demo",
+    description: "An elegant monochrome loading spinner with multiple concentric rotating rings and breathing text animation. (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["kokonut-loader"],
+    files: [{
+      path: "registry/components/animations/kokonut-loader/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/kokonut-loader/example")),
+    meta: undefined,
+  },
+  "lamphome": {
+    name: "lamphome",
+    description: "Hero section with pull-chain lamp theme toggle, navbar, and animated glow",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/layouts/lamphome/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/lamphome/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["hero","navbar","lamp","theme-toggle","landing"],"source":"scrollx-ui"},
+  },
+  "lamphome-demo": {
+    name: "lamphome-demo",
+    description: "Hero section with pull-chain lamp theme toggle, navbar, and animated glow (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["lamphome"],
+    files: [{
+      path: "registry/components/layouts/lamphome/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/lamphome/example")),
+    meta: {"tags":["hero","navbar","lamp","theme-toggle","landing"],"source":"scrollx-ui"},
   },
   "lanyard": {
     name: "lanyard",
@@ -3966,6 +6012,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/animations/laser-flow/example")),
     meta: {"tags":["animation"],"source":"react-bits"},
   },
+  "layer-stack": {
+    name: "layer-stack",
+    description: "Interactive stacked cards with scroll/drag to reveal, with 3D depth effect",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/layouts/layer-stack/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/layer-stack/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["layouts","card","stack","scroll","interactive","3d"],"source":"scrollx-ui"},
+  },
+  "layer-stack-demo": {
+    name: "layer-stack-demo",
+    description: "Interactive stacked cards with scroll/drag to reveal, with 3D depth effect (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["layer-stack"],
+    files: [{
+      path: "registry/components/layouts/layer-stack/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/layer-stack/example")),
+    meta: {"tags":["layouts","card","stack","scroll","interactive","3d"],"source":"scrollx-ui"},
+  },
   "lens": {
     name: "lens",
     description: "A interactive component that enables zooming into images, videos and other elements.",
@@ -3999,6 +6078,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/special/lens/example")),
     meta: {"tags":["special"]},
   },
+  "letter-3d-swap": {
+    name: "letter-3d-swap",
+    description: "3D box letter swap animation on hover with configurable rotation direction and stagger",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/letter-3d-swap/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/letter-3d-swap/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","3d","animation","hover","swap","letter"],"source":"fancy"},
+  },
+  "letter-3d-swap-demo": {
+    name: "letter-3d-swap-demo",
+    description: "3D box letter swap animation on hover with configurable rotation direction and stagger (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["letter-3d-swap"],
+    files: [{
+      path: "registry/components/text/letter-3d-swap/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/letter-3d-swap/example")),
+    meta: {"tags":["text","3d","animation","hover","swap","letter"],"source":"fancy"},
+  },
   "letter-glitch": {
     name: "letter-glitch",
     description: "A glitchy letter animation background effect.",
@@ -4031,6 +6143,72 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/backgrounds/letter-glitch/example")),
     meta: {"tags":["background"],"source":"react-bits"},
+  },
+  "letter-swap-forward-anim": {
+    name: "letter-swap-forward-anim",
+    description: "Text animation that swaps letters forward with stagger on hover.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/letter-swap-forward-anim/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/letter-swap-forward-anim/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","animation","letter","swap","hover"],"source":"fancy"},
+  },
+  "letter-swap-forward-anim-demo": {
+    name: "letter-swap-forward-anim-demo",
+    description: "Text animation that swaps letters forward with stagger on hover. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["letter-swap-forward-anim"],
+    files: [{
+      path: "registry/components/text/letter-swap-forward-anim/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/letter-swap-forward-anim/example")),
+    meta: {"tags":["text","animation","letter","swap","hover"],"source":"fancy"},
+  },
+  "letter-swap-pingpong-anim": {
+    name: "letter-swap-pingpong-anim",
+    description: "Text animation that swaps letters with ping-pong effect on hover in/out.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/letter-swap-pingpong-anim/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/letter-swap-pingpong-anim/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","animation","letter","swap","hover","pingpong"],"source":"fancy"},
+  },
+  "letter-swap-pingpong-anim-demo": {
+    name: "letter-swap-pingpong-anim-demo",
+    description: "Text animation that swaps letters with ping-pong effect on hover in/out. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["letter-swap-pingpong-anim"],
+    files: [{
+      path: "registry/components/text/letter-swap-pingpong-anim/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/letter-swap-pingpong-anim/example")),
+    meta: {"tags":["text","animation","letter","swap","hover","pingpong"],"source":"fancy"},
   },
   "light-pillar": {
     name: "light-pillar",
@@ -4263,6 +6441,105 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/backgrounds/liquid-ether/example")),
     meta: {"tags":["background"],"source":"react-bits"},
   },
+  "liquid-glass-card": {
+    name: "liquid-glass-card",
+    description: "Apple-style glassmorphism card with liquid distortion SVG filter effects",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/layouts/liquid-glass-card/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/liquid-glass-card/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["card","glass","glassmorphism","blur","apple"],"source":"kokonutui"},
+  },
+  "liquid-glass-card-demo": {
+    name: "liquid-glass-card-demo",
+    description: "Apple-style glassmorphism card with liquid distortion SVG filter effects (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["liquid-glass-card"],
+    files: [{
+      path: "registry/components/layouts/liquid-glass-card/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/liquid-glass-card/example")),
+    meta: {"tags":["card","glass","glassmorphism","blur","apple"],"source":"kokonutui"},
+  },
+  "loader": {
+    name: "loader",
+    description: "Multi-variant animated loader with spinner, cube, dual-ring, and magnetic dots",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/animations/loader/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/loader/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["loader","spinner","loading","animation"],"source":"scrollx-ui"},
+  },
+  "loader-demo": {
+    name: "loader-demo",
+    description: "Multi-variant animated loader with spinner, cube, dual-ring, and magnetic dots (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["loader"],
+    files: [{
+      path: "registry/components/animations/loader/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/loader/example")),
+    meta: {"tags":["loader","spinner","loading","animation"],"source":"scrollx-ui"},
+  },
+  "loginform": {
+    name: "loginform",
+    description: "Styled login form with social auth buttons and split layout",
+    type: "registry:ui",
+    category: "inputs",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/inputs/loginform/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/inputs/loginform/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["form","login","auth","input"],"source":"scrollx-ui"},
+  },
+  "loginform-demo": {
+    name: "loginform-demo",
+    description: "Styled login form with social auth buttons and split layout (demo)",
+    type: "registry:example",
+    category: "inputs",
+    registryDependencies: ["loginform"],
+    files: [{
+      path: "registry/components/inputs/loginform/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/inputs/loginform/example")),
+    meta: {"tags":["form","login","auth","input"],"source":"scrollx-ui"},
+  },
   "logo-carousel": {
     name: "logo-carousel",
     description: "Animated logo carousel with staggered animations",
@@ -4329,6 +6606,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/animations/logo-loop/example")),
     meta: {"tags":["animation"],"source":"react-bits"},
   },
+  "lustre-text": {
+    name: "lustre-text",
+    description: "Lustrous gradient text with a continuous shine animation",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/text/lustre-text/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/lustre-text/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","gradient","shine","lustre","animation"],"source":"scrollx-ui"},
+  },
+  "lustre-text-demo": {
+    name: "lustre-text-demo",
+    description: "Lustrous gradient text with a continuous shine animation (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["lustre-text"],
+    files: [{
+      path: "registry/components/text/lustre-text/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/lustre-text/example")),
+    meta: {"tags":["text","gradient","shine","lustre","animation"],"source":"scrollx-ui"},
+  },
   "magic-bento": {
     name: "magic-bento",
     description: "A layouts magic bento component",
@@ -4394,6 +6704,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/animations/magic-card/example")),
     meta: {"tags":["animation"]},
+  },
+  "magicdock": {
+    name: "magicdock",
+    description: "A macOS-style dock with magnification effect and tooltip variants",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/layouts/magicdock/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/magicdock/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["layouts","dock","macos","magnification","tooltip"],"source":"scrollx-ui"},
+  },
+  "magicdock-demo": {
+    name: "magicdock-demo",
+    description: "A macOS-style dock with magnification effect and tooltip variants (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["magicdock"],
+    files: [{
+      path: "registry/components/layouts/magicdock/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/magicdock/example")),
+    meta: {"tags":["layouts","dock","macos","magnification","tooltip"],"source":"scrollx-ui"},
   },
   "magnet": {
     name: "magnet",
@@ -4494,6 +6837,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/layouts/marquee/example")),
     meta: {"tags":["layouts"]},
   },
+  "marquee-along-svg-path": {
+    name: "marquee-along-svg-path",
+    description: "Marquee elements that follow an SVG path with scroll velocity and drag support.",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/animations/marquee-along-svg-path/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/marquee-along-svg-path/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["animation","marquee","svg","path","scroll"],"source":"fancy"},
+  },
+  "marquee-along-svg-path-demo": {
+    name: "marquee-along-svg-path-demo",
+    description: "Marquee elements that follow an SVG path with scroll velocity and drag support. (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["marquee-along-svg-path"],
+    files: [{
+      path: "registry/components/animations/marquee-along-svg-path/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/marquee-along-svg-path/example")),
+    meta: {"tags":["animation","marquee","svg","path","scroll"],"source":"fancy"},
+  },
   "masonry": {
     name: "masonry",
     description: "A layouts masonry component",
@@ -4526,6 +6902,72 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/layouts/masonry/example")),
     meta: {"tags":["layouts"]},
+  },
+  "matrix-text": {
+    name: "matrix-text",
+    description: "Text animation that cycles through binary characters before revealing the final text, inspired by the Matrix movie effect.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/matrix-text/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/matrix-text/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "matrix-text-demo": {
+    name: "matrix-text-demo",
+    description: "Text animation that cycles through binary characters before revealing the final text, inspired by the Matrix movie effect. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["matrix-text"],
+    files: [{
+      path: "registry/components/text/matrix-text/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/matrix-text/example")),
+    meta: undefined,
+  },
+  "media-between-text": {
+    name: "media-between-text",
+    description: "Reveal an image or video between two text elements on hover, scroll, or programmatically.",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/animations/media-between-text/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/media-between-text/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["animation","text","media","hover","reveal"],"source":"fancy"},
+  },
+  "media-between-text-demo": {
+    name: "media-between-text-demo",
+    description: "Reveal an image or video between two text elements on hover, scroll, or programmatically. (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["media-between-text"],
+    files: [{
+      path: "registry/components/animations/media-between-text/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/media-between-text/example")),
+    meta: {"tags":["animation","text","media","hover","reveal"],"source":"fancy"},
   },
   "meta-balls": {
     name: "meta-balls",
@@ -4676,7 +7118,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["display","mockup","browser"],"source":"cult-ui"},
+    meta: {"tags":["display","mockup","browser"],"source":"cult-ui","previewSize":"lg"},
   },
   "mock-browser-window-demo": {
     name: "mock-browser-window-demo",
@@ -4690,7 +7132,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/special/mock-browser-window/example")),
-    meta: {"tags":["display","mockup","browser"],"source":"cult-ui"},
+    meta: {"tags":["display","mockup","browser"],"source":"cult-ui","previewSize":"lg"},
   },
   "model-viewer": {
     name: "model-viewer",
@@ -4758,6 +7200,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/animations/morph-surface/example")),
     meta: {"tags":["animation","morph","surface"],"source":"cult-ui"},
   },
+  "morphic-navbar": {
+    name: "morphic-navbar",
+    description: "Morphing navigation bar where active item separates from the group with rounded edges",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/layouts/morphic-navbar/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/morphic-navbar/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["navbar","navigation","morphing","animation"],"source":"kokonutui"},
+  },
+  "morphic-navbar-demo": {
+    name: "morphic-navbar-demo",
+    description: "Morphing navigation bar where active item separates from the group with rounded edges (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["morphic-navbar"],
+    files: [{
+      path: "registry/components/layouts/morphic-navbar/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/morphic-navbar/example")),
+    meta: {"tags":["navbar","navigation","morphing","animation"],"source":"kokonutui"},
+  },
   "morphing-text": {
     name: "morphing-text",
     description: "A dynamic text morphing component.",
@@ -4790,6 +7265,72 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/text/morphing-text/example")),
     meta: {"tags":["text","animation"]},
+  },
+  "mouse-effect-card": {
+    name: "mouse-effect-card",
+    description: "Interactive card with an animated dot pattern that repels dots away from the mouse cursor.",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/layouts/mouse-effect-card/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/mouse-effect-card/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "mouse-effect-card-demo": {
+    name: "mouse-effect-card-demo",
+    description: "Interactive card with an animated dot pattern that repels dots away from the mouse cursor. (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["mouse-effect-card"],
+    files: [{
+      path: "registry/components/layouts/mouse-effect-card/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/mouse-effect-card/example")),
+    meta: undefined,
+  },
+  "navbar-flow": {
+    name: "navbar-flow",
+    description: "An animated navigation bar with sequenced entry animations and dropdown menus",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/components/layouts/navbar-flow/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/navbar-flow/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["layouts","navbar","navigation","animation","dropdown"],"source":"scrollx-ui"},
+  },
+  "navbar-flow-demo": {
+    name: "navbar-flow-demo",
+    description: "An animated navigation bar with sequenced entry animations and dropdown menus (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["navbar-flow"],
+    files: [{
+      path: "registry/components/layouts/navbar-flow/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/navbar-flow/example")),
+    meta: {"tags":["layouts","navbar","navigation","animation","dropdown"],"source":"scrollx-ui"},
   },
   "neon-gradient-card": {
     name: "neon-gradient-card",
@@ -5055,6 +7596,105 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/animations/orbiting-circles/example")),
     meta: {"tags":["animation"]},
   },
+  "parallax-cards": {
+    name: "parallax-cards",
+    description: "Sticky scroll parallax cards that stack on top of each other as you scroll",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/layouts/parallax-cards/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/parallax-cards/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["layouts","parallax","scroll","sticky","cards"],"source":"scrollx-ui"},
+  },
+  "parallax-cards-demo": {
+    name: "parallax-cards-demo",
+    description: "Sticky scroll parallax cards that stack on top of each other as you scroll (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["parallax-cards"],
+    files: [{
+      path: "registry/components/layouts/parallax-cards/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/parallax-cards/example")),
+    meta: {"tags":["layouts","parallax","scroll","sticky","cards"],"source":"scrollx-ui"},
+  },
+  "parallax-floating": {
+    name: "parallax-floating",
+    description: "Parallax floating effect where elements move at different depths based on cursor position.",
+    type: "registry:ui",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/special/parallax-floating/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/special/parallax-floating/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["parallax","floating","cursor","depth","interactive"],"source":"fancy"},
+  },
+  "parallax-floating-demo": {
+    name: "parallax-floating-demo",
+    description: "Parallax floating effect where elements move at different depths based on cursor position. (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["parallax-floating"],
+    files: [{
+      path: "registry/components/special/parallax-floating/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/parallax-floating/example")),
+    meta: {"tags":["parallax","floating","cursor","depth","interactive"],"source":"fancy"},
+  },
+  "particle-button": {
+    name: "particle-button",
+    description: "Button that emits particle explosion animation on click",
+    type: "registry:ui",
+    category: "buttons",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/components/buttons/particle-button/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/buttons/particle-button/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["button","particles","animation","click","effect"],"source":"kokonutui"},
+  },
+  "particle-button-demo": {
+    name: "particle-button-demo",
+    description: "Button that emits particle explosion animation on click (demo)",
+    type: "registry:example",
+    category: "buttons",
+    registryDependencies: ["particle-button"],
+    files: [{
+      path: "registry/components/buttons/particle-button/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/buttons/particle-button/example")),
+    meta: {"tags":["button","particles","animation","click","effect"],"source":"kokonutui"},
+  },
   "particles": {
     name: "particles",
     description: "Particles for adding visual flair to your website.",
@@ -5319,6 +7959,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/animations/pixel-transition/example")),
     meta: {"tags":["animation"],"source":"react-bits"},
   },
+  "pixelate-svg-filter": {
+    name: "pixelate-svg-filter",
+    description: "SVG pixelation filter with configurable pixel size and optional cross-layer rendering.",
+    type: "registry:ui",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/special/pixelate-svg-filter/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/special/pixelate-svg-filter/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["svg","filter","pixelate","pixel"],"source":"fancy"},
+  },
+  "pixelate-svg-filter-demo": {
+    name: "pixelate-svg-filter-demo",
+    description: "SVG pixelation filter with configurable pixel size and optional cross-layer rendering. (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["pixelate-svg-filter"],
+    files: [{
+      path: "registry/components/special/pixelate-svg-filter/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/pixelate-svg-filter/example")),
+    meta: {"tags":["svg","filter","pixelate","pixel"],"source":"fancy"},
+  },
   "plasma": {
     name: "plasma",
     description: "An animated plasma fluid background effect.",
@@ -5517,6 +8190,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/layouts/profile-card/example")),
     meta: {"tags":["layouts"]},
   },
+  "profile-dropdown": {
+    name: "profile-dropdown",
+    description: "A user profile dropdown menu with avatar, user info, navigation items with badges, and sign out button.",
+    type: "registry:ui",
+    category: "inputs",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/components/inputs/profile-dropdown/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/inputs/profile-dropdown/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "profile-dropdown-demo": {
+    name: "profile-dropdown-demo",
+    description: "A user profile dropdown menu with avatar, user info, navigation items with badges, and sign out button. (demo)",
+    type: "registry:example",
+    category: "inputs",
+    registryDependencies: ["profile-dropdown"],
+    files: [{
+      path: "registry/components/inputs/profile-dropdown/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/inputs/profile-dropdown/example")),
+    meta: undefined,
+  },
   "progressive-blur": {
     name: "progressive-blur",
     description: "Adds a smooth blur gradient effect to scrollable content.",
@@ -5583,6 +8289,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/buttons/pulsating-button/example")),
     meta: {"tags":["buttons"]},
   },
+  "qr-code": {
+    name: "qr-code",
+    description: "QR code generator with canvas, SVG, and image rendering options",
+    type: "registry:ui",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["qrcode"],
+    files: [{
+      path: "registry/components/special/qr-code/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/special/qr-code/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["qr-code","generator","barcode","encoding"],"source":"diceui"},
+  },
+  "qr-code-demo": {
+    name: "qr-code-demo",
+    description: "QR code generator with canvas, SVG, and image rendering options (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["qr-code"],
+    files: [{
+      path: "registry/components/special/qr-code/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/qr-code/example")),
+    meta: {"tags":["qr-code","generator","barcode","encoding"],"source":"diceui"},
+  },
   "rainbow-button": {
     name: "rainbow-button",
     description: "A buttons rainbow button component",
@@ -5615,6 +8354,72 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/buttons/rainbow-button/example")),
     meta: {"tags":["buttons"]},
+  },
+  "random-letter-swap-forward-anim": {
+    name: "random-letter-swap-forward-anim",
+    description: "Text animation that swaps letters in random order forward on hover.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/random-letter-swap-forward-anim/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/random-letter-swap-forward-anim/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","animation","letter","swap","random","hover"],"source":"fancy"},
+  },
+  "random-letter-swap-forward-anim-demo": {
+    name: "random-letter-swap-forward-anim-demo",
+    description: "Text animation that swaps letters in random order forward on hover. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["random-letter-swap-forward-anim"],
+    files: [{
+      path: "registry/components/text/random-letter-swap-forward-anim/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/random-letter-swap-forward-anim/example")),
+    meta: {"tags":["text","animation","letter","swap","random","hover"],"source":"fancy"},
+  },
+  "random-letter-swap-pingpong-anim": {
+    name: "random-letter-swap-pingpong-anim",
+    description: "Text animation that swaps letters in random order with ping-pong on hover in/out.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/random-letter-swap-pingpong-anim/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/random-letter-swap-pingpong-anim/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","animation","letter","swap","random","pingpong"],"source":"fancy"},
+  },
+  "random-letter-swap-pingpong-anim-demo": {
+    name: "random-letter-swap-pingpong-anim-demo",
+    description: "Text animation that swaps letters in random order with ping-pong on hover in/out. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["random-letter-swap-pingpong-anim"],
+    files: [{
+      path: "registry/components/text/random-letter-swap-pingpong-anim/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/random-letter-swap-pingpong-anim/example")),
+    meta: {"tags":["text","animation","letter","swap","random","pingpong"],"source":"fancy"},
   },
   "rating": {
     name: "rating",
@@ -5747,6 +8552,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/backgrounds/retro-grid/example")),
     meta: {"tags":["backgrounds"]},
+  },
+  "reveal-text": {
+    name: "reveal-text",
+    description: "Directional text reveal with animated box overlay that slides away on scroll into view",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/reveal-text/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/reveal-text/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","reveal","direction","scroll","animation"],"source":"scrollx-ui"},
+  },
+  "reveal-text-demo": {
+    name: "reveal-text-demo",
+    description: "Directional text reveal with animated box overlay that slides away on scroll into view (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["reveal-text"],
+    files: [{
+      path: "registry/components/text/reveal-text/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/reveal-text/example")),
+    meta: {"tags":["text","reveal","direction","scroll","animation"],"source":"scrollx-ui"},
   },
   "ribbons": {
     name: "ribbons",
@@ -5946,6 +8784,72 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/special/safari/example")),
     meta: {"tags":["special"]},
   },
+  "scramble-hover": {
+    name: "scramble-hover",
+    description: "Text scramble effect on hover with configurable reveal direction and character set",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/scramble-hover/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/scramble-hover/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","scramble","hover","animation","reveal"],"source":"fancy"},
+  },
+  "scramble-hover-demo": {
+    name: "scramble-hover-demo",
+    description: "Text scramble effect on hover with configurable reveal direction and character set (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["scramble-hover"],
+    files: [{
+      path: "registry/components/text/scramble-hover/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/scramble-hover/example")),
+    meta: {"tags":["text","scramble","hover","animation","reveal"],"source":"fancy"},
+  },
+  "scramble-in": {
+    name: "scramble-in",
+    description: "Text reveal animation with scrambled characters that progressively resolve.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/text/scramble-in/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/scramble-in/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","animation","scramble","reveal"],"source":"fancy"},
+  },
+  "scramble-in-demo": {
+    name: "scramble-in-demo",
+    description: "Text reveal animation with scrambled characters that progressively resolve. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["scramble-in"],
+    files: [{
+      path: "registry/components/text/scramble-in/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/scramble-in/example")),
+    meta: {"tags":["text","animation","scramble","reveal"],"source":"fancy"},
+  },
   "scrambled-text": {
     name: "scrambled-text",
     description: "Text that scrambles on mouse proximity using GSAP.",
@@ -5978,6 +8882,105 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/text/scrambled-text/example")),
     meta: undefined,
+  },
+  "screensaver": {
+    name: "screensaver",
+    description: "DVD-style screensaver bounce animation that bounces off container walls.",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/animations/screensaver/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/screensaver/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["animation","screensaver","bounce","dvd"],"source":"fancy"},
+  },
+  "screensaver-demo": {
+    name: "screensaver-demo",
+    description: "DVD-style screensaver bounce animation that bounces off container walls. (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["screensaver"],
+    files: [{
+      path: "registry/components/animations/screensaver/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/screensaver/example")),
+    meta: {"tags":["animation","screensaver","bounce","dvd"],"source":"fancy"},
+  },
+  "scroll-and-swap-text": {
+    name: "scroll-and-swap-text",
+    description: "Scroll-triggered text swap animation where text slides vertically based on scroll progress.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/scroll-and-swap-text/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/scroll-and-swap-text/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","animation","scroll","swap"],"source":"fancy"},
+  },
+  "scroll-and-swap-text-demo": {
+    name: "scroll-and-swap-text-demo",
+    description: "Scroll-triggered text swap animation where text slides vertically based on scroll progress. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["scroll-and-swap-text"],
+    files: [{
+      path: "registry/components/text/scroll-and-swap-text/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/scroll-and-swap-text/example")),
+    meta: {"tags":["text","animation","scroll","swap"],"source":"fancy"},
+  },
+  "scroll-areapro": {
+    name: "scroll-areapro",
+    description: "Enhanced scroll area with auto-hide scrollbars, progress indicators, and cross-directional scroll",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion","@radix-ui/react-scroll-area"],
+    files: [{
+      path: "registry/components/layouts/scroll-areapro/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/scroll-areapro/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["scroll","area","scrollbar","progress"],"source":"scrollx-ui"},
+  },
+  "scroll-areapro-demo": {
+    name: "scroll-areapro-demo",
+    description: "Enhanced scroll area with auto-hide scrollbars, progress indicators, and cross-directional scroll (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["scroll-areapro"],
+    files: [{
+      path: "registry/components/layouts/scroll-areapro/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/scroll-areapro/example")),
+    meta: {"tags":["scroll","area","scrollbar","progress"],"source":"scrollx-ui"},
   },
   "scroll-based-velocity": {
     name: "scroll-based-velocity",
@@ -6144,6 +9147,204 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/layouts/scroll-stack/example")),
     meta: {"tags":["layouts"]},
   },
+  "scroll-swap-text": {
+    name: "scroll-swap-text",
+    description: "Scroll-driven text swap animation where text slides vertically based on scroll progress",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/scroll-swap-text/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/scroll-swap-text/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","scroll","swap","animation","spring"],"source":"fancy"},
+  },
+  "scroll-swap-text-demo": {
+    name: "scroll-swap-text-demo",
+    description: "Scroll-driven text swap animation where text slides vertically based on scroll progress (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["scroll-swap-text"],
+    files: [{
+      path: "registry/components/text/scroll-swap-text/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/scroll-swap-text/example")),
+    meta: {"tags":["text","scroll","swap","animation","spring"],"source":"fancy"},
+  },
+  "scroll-text": {
+    name: "scroll-text",
+    description: "A scrollable list of text items that highlights the currently visible item in the viewport.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/scroll-text/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/scroll-text/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "scroll-text-demo": {
+    name: "scroll-text-demo",
+    description: "A scrollable list of text items that highlights the currently visible item in the viewport. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["scroll-text"],
+    files: [{
+      path: "registry/components/text/scroll-text/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/scroll-text/example")),
+    meta: undefined,
+  },
+  "scrollx-text-highlighter": {
+    name: "scrollx-text-highlighter",
+    description: "Animated text highlighter with wavy and zigzag SVG underline effects",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/scrollx-text-highlighter/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/scrollx-text-highlighter/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","highlight","underline","wavy","zigzag","animation"],"source":"scrollx-ui"},
+  },
+  "scrollx-text-highlighter-demo": {
+    name: "scrollx-text-highlighter-demo",
+    description: "Animated text highlighter with wavy and zigzag SVG underline effects (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["scrollx-text-highlighter"],
+    files: [{
+      path: "registry/components/text/scrollx-text-highlighter/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/scrollx-text-highlighter/example")),
+    meta: {"tags":["text","highlight","underline","wavy","zigzag","animation"],"source":"scrollx-ui"},
+  },
+  "scrollx-type-animation": {
+    name: "scrollx-type-animation",
+    description: "Typewriter text animation cycling through words with gradient coloring",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/scrollx-type-animation/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/scrollx-type-animation/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","typewriter","animation","typing","gradient"],"source":"scrollx-ui"},
+  },
+  "scrollx-type-animation-demo": {
+    name: "scrollx-type-animation-demo",
+    description: "Typewriter text animation cycling through words with gradient coloring (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["scrollx-type-animation"],
+    files: [{
+      path: "registry/components/text/scrollx-type-animation/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/scrollx-type-animation/example")),
+    meta: {"tags":["text","typewriter","animation","typing","gradient"],"source":"scrollx-ui"},
+  },
+  "sensitive-text": {
+    name: "sensitive-text",
+    description: "Text that compresses or stretches characters based on cursor proximity",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/text/sensitive-text/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/sensitive-text/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","cursor","proximity","interactive","animation"],"source":"scrollx-ui"},
+  },
+  "sensitive-text-demo": {
+    name: "sensitive-text-demo",
+    description: "Text that compresses or stretches characters based on cursor proximity (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["sensitive-text"],
+    files: [{
+      path: "registry/components/text/sensitive-text/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/sensitive-text/example")),
+    meta: {"tags":["text","cursor","proximity","interactive","animation"],"source":"scrollx-ui"},
+  },
+  "seperatorpro": {
+    name: "seperatorpro",
+    description: "Enhanced separator with default, dotted, and wave variants",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["@radix-ui/react-separator"],
+    files: [{
+      path: "registry/components/layouts/seperatorpro/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/seperatorpro/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["separator","divider","wave","dots"],"source":"scrollx-ui"},
+  },
+  "seperatorpro-demo": {
+    name: "seperatorpro-demo",
+    description: "Enhanced separator with default, dotted, and wave variants (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["seperatorpro"],
+    files: [{
+      path: "registry/components/layouts/seperatorpro/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/seperatorpro/example")),
+    meta: {"tags":["separator","divider","wave","dots"],"source":"scrollx-ui"},
+  },
   "shader-lens-blur": {
     name: "shader-lens-blur",
     description: "WebGL shader with lens blur effects and mouse interaction",
@@ -6209,6 +9410,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/animations/shape-blur/example")),
     meta: {"tags":["animation"],"source":"react-bits"},
+  },
+  "shape-hero": {
+    name: "shape-hero",
+    description: "A full-screen hero section with floating translucent geometric shapes and animated gradient text.",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/layouts/shape-hero/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/shape-hero/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "shape-hero-demo": {
+    name: "shape-hero-demo",
+    description: "A full-screen hero section with floating translucent geometric shapes and animated gradient text. (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["shape-hero"],
+    files: [{
+      path: "registry/components/layouts/shape-hero/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/shape-hero/example")),
+    meta: undefined,
   },
   "shift-card": {
     name: "shift-card",
@@ -6276,6 +9510,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/buttons/shimmer-button/example")),
     meta: {"tags":["button","shimmer","animation","interactive"],"featured":true},
   },
+  "shimmer-text": {
+    name: "shimmer-text",
+    description: "Text with a shimmering gradient animation that continuously sweeps across the text.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/shimmer-text/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/shimmer-text/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "shimmer-text-demo": {
+    name: "shimmer-text-demo",
+    description: "Text with a shimmering gradient animation that continuously sweeps across the text. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["shimmer-text"],
+    files: [{
+      path: "registry/components/text/shimmer-text/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/shimmer-text/example")),
+    meta: undefined,
+  },
   "shine-border": {
     name: "shine-border",
     description: "Shine border is an animated background border effect.",
@@ -6341,6 +9608,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/buttons/shiny-button/example")),
     meta: {"tags":["buttons"]},
+  },
+  "showcase": {
+    name: "showcase",
+    description: "Auto-cycling feature showcase with animated progress bar and image transitions",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/layouts/showcase/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/showcase/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["showcase","feature","gallery","tabs","carousel"],"source":"scrollx-ui"},
+  },
+  "showcase-demo": {
+    name: "showcase-demo",
+    description: "Auto-cycling feature showcase with animated progress bar and image transitions (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["showcase"],
+    files: [{
+      path: "registry/components/layouts/showcase/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/showcase/example")),
+    meta: {"tags":["showcase","feature","gallery","tabs","carousel"],"source":"scrollx-ui"},
   },
   "shuffle": {
     name: "shuffle",
@@ -6408,6 +9708,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/layouts/side-panel/example")),
     meta: {"tags":["layout","panel","slide"],"source":"cult-ui"},
   },
+  "signupform": {
+    name: "signupform",
+    description: "Styled signup form with social auth buttons and split layout",
+    type: "registry:ui",
+    category: "inputs",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/inputs/signupform/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/inputs/signupform/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["form","signup","register","auth","input"],"source":"scrollx-ui"},
+  },
+  "signupform-demo": {
+    name: "signupform-demo",
+    description: "Styled signup form with social auth buttons and split layout (demo)",
+    type: "registry:example",
+    category: "inputs",
+    registryDependencies: ["signupform"],
+    files: [{
+      path: "registry/components/inputs/signupform/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/inputs/signupform/example")),
+    meta: {"tags":["form","signup","register","auth","input"],"source":"scrollx-ui"},
+  },
   "silk": {
     name: "silk",
     description: "A flowing silk fabric background effect.",
@@ -6440,6 +9773,171 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/backgrounds/silk/example")),
     meta: {"tags":["background"],"source":"react-bits"},
+  },
+  "simple-carousel": {
+    name: "simple-carousel",
+    description: "Continuous scrolling carousel with drag, scroll velocity, and hover slowdown support.",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/layouts/simple-carousel/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/simple-carousel/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["carousel","marquee","scroll","drag"],"source":"fancy"},
+  },
+  "simple-carousel-demo": {
+    name: "simple-carousel-demo",
+    description: "Continuous scrolling carousel with drag, scroll velocity, and hover slowdown support. (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["simple-carousel"],
+    files: [{
+      path: "registry/components/layouts/simple-carousel/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/simple-carousel/example")),
+    meta: {"tags":["carousel","marquee","scroll","drag"],"source":"fancy"},
+  },
+  "simple-marquee": {
+    name: "simple-marquee",
+    description: "Continuous scrolling marquee with drag, scroll velocity, and hover slowdown.",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/layouts/simple-marquee/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/simple-marquee/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["marquee","scroll","infinite","drag"],"source":"fancy"},
+  },
+  "simple-marquee-demo": {
+    name: "simple-marquee-demo",
+    description: "Continuous scrolling marquee with drag, scroll velocity, and hover slowdown. (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["simple-marquee"],
+    files: [{
+      path: "registry/components/layouts/simple-marquee/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/simple-marquee/example")),
+    meta: {"tags":["marquee","scroll","infinite","drag"],"source":"fancy"},
+  },
+  "sliced-text": {
+    name: "sliced-text",
+    description: "Text that appears split horizontally and merges back together on hover.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/sliced-text/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/sliced-text/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "sliced-text-demo": {
+    name: "sliced-text-demo",
+    description: "Text that appears split horizontally and merges back together on hover. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["sliced-text"],
+    files: [{
+      path: "registry/components/text/sliced-text/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/sliced-text/example")),
+    meta: undefined,
+  },
+  "slide-text": {
+    name: "slide-text",
+    description: "Per-character slide up/down text animation with stagger effect",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/slide-text/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/slide-text/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","slide","animation","stagger","character"],"source":"scrollx-ui"},
+  },
+  "slide-text-demo": {
+    name: "slide-text-demo",
+    description: "Per-character slide up/down text animation with stagger effect (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["slide-text"],
+    files: [{
+      path: "registry/components/text/slide-text/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/slide-text/example")),
+    meta: {"tags":["text","slide","animation","stagger","character"],"source":"scrollx-ui"},
+  },
+  "slide-text-button": {
+    name: "slide-text-button",
+    description: "Button with vertical sliding text transition on hover",
+    type: "registry:ui",
+    category: "buttons",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/buttons/slide-text-button/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/buttons/slide-text-button/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["button","text","slide","hover","animation"],"source":"kokonutui"},
+  },
+  "slide-text-button-demo": {
+    name: "slide-text-button-demo",
+    description: "Button with vertical sliding text transition on hover (demo)",
+    type: "registry:example",
+    category: "buttons",
+    registryDependencies: ["slide-text-button"],
+    files: [{
+      path: "registry/components/buttons/slide-text-button/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/buttons/slide-text-button/example")),
+    meta: {"tags":["button","text","slide","hover","animation"],"source":"kokonutui"},
   },
   "smooth-cursor": {
     name: "smooth-cursor",
@@ -6474,6 +9972,72 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/special/smooth-cursor/example")),
     meta: {"tags":["special"]},
   },
+  "smooth-drawer": {
+    name: "smooth-drawer",
+    description: "Smooth slide-in drawer with spring animations and staggered content reveal",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/components/layouts/smooth-drawer/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/smooth-drawer/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["drawer","modal","animation","spring","slide"],"source":"kokonutui"},
+  },
+  "smooth-drawer-demo": {
+    name: "smooth-drawer-demo",
+    description: "Smooth slide-in drawer with spring animations and staggered content reveal (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["smooth-drawer"],
+    files: [{
+      path: "registry/components/layouts/smooth-drawer/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/smooth-drawer/example")),
+    meta: {"tags":["drawer","modal","animation","spring","slide"],"source":"kokonutui"},
+  },
+  "smooth-tab": {
+    name: "smooth-tab",
+    description: "Animated tab switcher with sliding background indicator and smooth content transitions",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/layouts/smooth-tab/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/smooth-tab/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["tabs","animation","smooth","slide","navigation"],"source":"kokonutui"},
+  },
+  "smooth-tab-demo": {
+    name: "smooth-tab-demo",
+    description: "Animated tab switcher with sliding background indicator and smooth content transitions (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["smooth-tab"],
+    files: [{
+      path: "registry/components/layouts/smooth-tab/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/smooth-tab/example")),
+    meta: {"tags":["tabs","animation","smooth","slide","navigation"],"source":"kokonutui"},
+  },
   "snippet": {
     name: "snippet",
     description: "Tabbed code snippet display with copy",
@@ -6506,6 +10070,72 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/special/snippet/example")),
     meta: {"tags":["display","code","snippet"],"source":"kibo-ui"},
+  },
+  "social-button": {
+    name: "social-button",
+    description: "A share button that expands into a row of social media icons on hover.",
+    type: "registry:ui",
+    category: "buttons",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/components/buttons/social-button/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/buttons/social-button/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "social-button-demo": {
+    name: "social-button-demo",
+    description: "A share button that expands into a row of social media icons on hover. (demo)",
+    type: "registry:example",
+    category: "buttons",
+    registryDependencies: ["social-button"],
+    files: [{
+      path: "registry/components/buttons/social-button/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/buttons/social-button/example")),
+    meta: undefined,
+  },
+  "social-orbit": {
+    name: "social-orbit",
+    description: "Orbiting social icons with ripple rings and circular text",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/animations/social-orbit/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/social-orbit/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["animations","orbit","social","icons","circular"],"source":"scrollx-ui"},
+  },
+  "social-orbit-demo": {
+    name: "social-orbit-demo",
+    description: "Orbiting social icons with ripple rings and circular text (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["social-orbit"],
+    files: [{
+      path: "registry/components/animations/social-orbit/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/social-orbit/example")),
+    meta: {"tags":["animations","orbit","social","icons","circular"],"source":"scrollx-ui"},
   },
   "sortable-list": {
     name: "sortable-list",
@@ -6572,6 +10202,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/text/sparkles-text/example")),
     meta: {"tags":["text","animation"]},
+  },
+  "speed-dial": {
+    name: "speed-dial",
+    description: "Floating action menu that expands with labeled action buttons",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["class-variance-authority"],
+    files: [{
+      path: "registry/components/layouts/speed-dial/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/speed-dial/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["layout","speed-dial","fab","floating-action","menu"],"source":"diceui"},
+  },
+  "speed-dial-demo": {
+    name: "speed-dial-demo",
+    description: "Floating action menu that expands with labeled action buttons (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["speed-dial"],
+    files: [{
+      path: "registry/components/layouts/speed-dial/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/speed-dial/example")),
+    meta: {"tags":["layout","speed-dial","fab","floating-action","menu"],"source":"diceui"},
   },
   "spinning-text": {
     name: "spinning-text",
@@ -6671,6 +10334,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/text/split-text/example")),
     meta: undefined,
+  },
+  "splitter": {
+    name: "splitter",
+    description: "Resizable split panel layout with drag handle, snap-to-collapse, and smooth animations",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/components/layouts/splitter/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/splitter/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["splitter","panel","resize","layout","drag"],"source":"scrollx-ui"},
+  },
+  "splitter-demo": {
+    name: "splitter-demo",
+    description: "Resizable split panel layout with drag handle, snap-to-collapse, and smooth animations (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["splitter"],
+    files: [{
+      path: "registry/components/layouts/splitter/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/splitter/example")),
+    meta: {"tags":["splitter","panel","resize","layout","drag"],"source":"scrollx-ui"},
   },
   "spotlight-card": {
     name: "spotlight-card",
@@ -6804,6 +10500,72 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/layouts/stack/example")),
     meta: {"tags":["layouts"]},
   },
+  "stacking-cards": {
+    name: "stacking-cards",
+    description: "Scroll-driven stacking cards that scale down as they stack on top of each other",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/layouts/stacking-cards/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/stacking-cards/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["cards","scroll","stacking","animation","layout"],"source":"fancy","previewSize":"lg"},
+  },
+  "stacking-cards-demo": {
+    name: "stacking-cards-demo",
+    description: "Scroll-driven stacking cards that scale down as they stack on top of each other (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["stacking-cards"],
+    files: [{
+      path: "registry/components/layouts/stacking-cards/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/stacking-cards/example")),
+    meta: {"tags":["cards","scroll","stacking","animation","layout"],"source":"fancy","previewSize":"lg"},
+  },
+  "stagger-chars": {
+    name: "stagger-chars",
+    description: "Staggered character animation that reveals alternate text on hover",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/stagger-chars/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/stagger-chars/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","stagger","character","hover","animation"],"source":"scrollx-ui"},
+  },
+  "stagger-chars-demo": {
+    name: "stagger-chars-demo",
+    description: "Staggered character animation that reveals alternate text on hover (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["stagger-chars"],
+    files: [{
+      path: "registry/components/text/stagger-chars/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/stagger-chars/example")),
+    meta: {"tags":["text","stagger","character","hover","animation"],"source":"scrollx-ui"},
+  },
   "staggered-menu": {
     name: "staggered-menu",
     description: "A layouts staggered menu component",
@@ -6869,6 +10631,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/animations/star-border/example")),
     meta: {"tags":["animation"],"source":"react-bits"},
+  },
+  "status": {
+    name: "status",
+    description: "Status indicator badge with multiple variants (online, offline, away, busy, etc.)",
+    type: "registry:ui",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["class-variance-authority"],
+    files: [{
+      path: "registry/components/special/status/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/special/status/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["status","badge","indicator","online","offline"],"source":"scrollx-ui"},
+  },
+  "status-demo": {
+    name: "status-demo",
+    description: "Status indicator badge with multiple variants (online, offline, away, busy, etc.) (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["status"],
+    files: [{
+      path: "registry/components/special/status/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/status/example")),
+    meta: {"tags":["status","badge","indicator","online","offline"],"source":"scrollx-ui"},
   },
   "stepper": {
     name: "stepper",
@@ -7002,6 +10797,72 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/backgrounds/striped-pattern/example")),
     meta: {"tags":["backgrounds"]},
   },
+  "switch-button": {
+    name: "switch-button",
+    description: "An elegant theme toggle button with a spinning sun icon and shimmer hover effect.",
+    type: "registry:ui",
+    category: "buttons",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/components/buttons/switch-button/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/buttons/switch-button/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "switch-button-demo": {
+    name: "switch-button-demo",
+    description: "An elegant theme toggle button with a spinning sun icon and shimmer hover effect. (demo)",
+    type: "registry:example",
+    category: "buttons",
+    registryDependencies: ["switch-button"],
+    files: [{
+      path: "registry/components/buttons/switch-button/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/buttons/switch-button/example")),
+    meta: undefined,
+  },
+  "swoosh-text": {
+    name: "swoosh-text",
+    description: "Text with colorful cascading text-shadow layers that disappear on hover with a swoosh effect.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/swoosh-text/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/swoosh-text/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "swoosh-text-demo": {
+    name: "swoosh-text-demo",
+    description: "Text with colorful cascading text-shadow layers that disappear on hover with a swoosh effect. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["swoosh-text"],
+    files: [{
+      path: "registry/components/text/swoosh-text/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/swoosh-text/example")),
+    meta: undefined,
+  },
   "target-cursor": {
     name: "target-cursor",
     description: "A target-style cursor effect.",
@@ -7035,6 +10896,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/animations/target-cursor/example")),
     meta: {"tags":["animation"],"source":"react-bits"},
   },
+  "team-selector": {
+    name: "team-selector",
+    description: "An animated team size selector with stacked avatar previews and increment/decrement controls with vibration feedback.",
+    type: "registry:ui",
+    category: "inputs",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/inputs/team-selector/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/inputs/team-selector/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "team-selector-demo": {
+    name: "team-selector-demo",
+    description: "An animated team size selector with stacked avatar previews and increment/decrement controls with vibration feedback. (demo)",
+    type: "registry:example",
+    category: "inputs",
+    registryDependencies: ["team-selector"],
+    files: [{
+      path: "registry/components/inputs/team-selector/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/inputs/team-selector/example")),
+    meta: undefined,
+  },
   "terminal": {
     name: "terminal",
     description: "A terminal component",
@@ -7067,6 +10961,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/layouts/terminal/example")),
     meta: {"tags":["layouts"]},
+  },
+  "text-along-path": {
+    name: "text-along-path",
+    description: "Animated text flowing along an SVG path with auto or scroll-driven animation",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/text-along-path/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/text-along-path/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","svg","path","animation","scroll"],"source":"fancy"},
+  },
+  "text-along-path-demo": {
+    name: "text-along-path-demo",
+    description: "Animated text flowing along an SVG path with auto or scroll-driven animation (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["text-along-path"],
+    files: [{
+      path: "registry/components/text/text-along-path/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/text-along-path/example")),
+    meta: {"tags":["text","svg","path","animation","scroll"],"source":"fancy"},
   },
   "text-animate": {
     name: "text-animate",
@@ -7133,6 +11060,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/text/text-cursor/example")),
     meta: undefined,
+  },
+  "text-cursor-proximity": {
+    name: "text-cursor-proximity",
+    description: "Text that changes CSS properties based on cursor distance from each letter",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/text-cursor-proximity/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/text-cursor-proximity/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","cursor","proximity","interactive","animation"],"source":"fancy"},
+  },
+  "text-cursor-proximity-demo": {
+    name: "text-cursor-proximity-demo",
+    description: "Text that changes CSS properties based on cursor distance from each letter (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["text-cursor-proximity"],
+    files: [{
+      path: "registry/components/text/text-cursor-proximity/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/text-cursor-proximity/example")),
+    meta: {"tags":["text","cursor","proximity","interactive","animation"],"source":"fancy"},
   },
   "text-gif": {
     name: "text-gif",
@@ -7232,6 +11192,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/text/text-reveal/example")),
     meta: {"tags":["text","animation"]},
+  },
+  "text-spotlight": {
+    name: "text-spotlight",
+    description: "Text revealed through a cursor-following spotlight mask effect",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/text-spotlight/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/text-spotlight/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","spotlight","cursor","reveal","mask"],"source":"scrollx-ui"},
+  },
+  "text-spotlight-demo": {
+    name: "text-spotlight-demo",
+    description: "Text revealed through a cursor-following spotlight mask effect (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["text-spotlight"],
+    files: [{
+      path: "registry/components/text/text-spotlight/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/text-spotlight/example")),
+    meta: {"tags":["text","spotlight","cursor","reveal","mask"],"source":"scrollx-ui"},
   },
   "text-type": {
     name: "text-type",
@@ -7497,6 +11490,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/layouts/tilted-card/example")),
     meta: {"tags":["layouts"]},
   },
+  "timeline": {
+    name: "timeline",
+    description: "Timeline visualization with dots, connectors, and status tracking",
+    type: "registry:ui",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["class-variance-authority"],
+    files: [{
+      path: "registry/components/special/timeline/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/special/timeline/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["timeline","visualization","steps","progress","history"],"source":"diceui","previewSize":"lg"},
+  },
+  "timeline-demo": {
+    name: "timeline-demo",
+    description: "Timeline visualization with dots, connectors, and status tracking (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["timeline"],
+    files: [{
+      path: "registry/components/special/timeline/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/timeline/example")),
+    meta: {"tags":["timeline","visualization","steps","progress","history"],"source":"diceui","previewSize":"lg"},
+  },
   "timer": {
     name: "timer",
     description: "Countdown timer with customizable duration and styles",
@@ -7530,6 +11556,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/special/timer/example")),
     meta: {"tags":["interactive","timer"],"source":"cult-ui"},
   },
+  "toolbar": {
+    name: "toolbar",
+    description: "An animated toolbar with expandable icon buttons that show labels on selection, featuring notification popups and a toggle switch.",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/components/layouts/toolbar/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/toolbar/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "toolbar-demo": {
+    name: "toolbar-demo",
+    description: "An animated toolbar with expandable icon buttons that show labels on selection, featuring notification popups and a toggle switch. (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["toolbar"],
+    files: [{
+      path: "registry/components/layouts/toolbar/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/toolbar/example")),
+    meta: undefined,
+  },
   "toolbar-expandable": {
     name: "toolbar-expandable",
     description: "Expandable toolbar with step-based navigation",
@@ -7562,6 +11621,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/layouts/toolbar-expandable/example")),
     meta: {"tags":["layout","toolbar","expandable"],"source":"cult-ui"},
+  },
+  "transition": {
+    name: "transition",
+    description: "Page/section transition overlay with curved or slide reveal animations",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/animations/transition/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/transition/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["transition","reveal","animation","intro","overlay"],"source":"scrollx-ui"},
+  },
+  "transition-demo": {
+    name: "transition-demo",
+    description: "Page/section transition overlay with curved or slide reveal animations (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["transition"],
+    files: [{
+      path: "registry/components/animations/transition/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/transition/example")),
+    meta: {"tags":["transition","reveal","animation","intro","overlay"],"source":"scrollx-ui"},
   },
   "tree": {
     name: "tree",
@@ -7728,6 +11820,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/text/type-animate/example")),
     meta: {"tags":["text","typewriter","animation"],"source":"cult-ui"},
   },
+  "type-writer": {
+    name: "type-writer",
+    description: "A typewriter text animation that types, deletes, and cycles through a sequence of words with natural typing variance.",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/animations/type-writer/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/type-writer/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "type-writer-demo": {
+    name: "type-writer-demo",
+    description: "A typewriter text animation that types, deletes, and cycles through a sequence of words with natural typing variance. (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["type-writer"],
+    files: [{
+      path: "registry/components/animations/type-writer/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/type-writer/example")),
+    meta: undefined,
+  },
   "typewriter": {
     name: "typewriter",
     description: "Typewriter effect with customizable speed and cursor",
@@ -7794,6 +11919,270 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/text/typing-animation/example")),
     meta: {"tags":["text","animation"]},
   },
+  "underline-center": {
+    name: "underline-center",
+    description: "Text underline animation that expands from the center on hover.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/underline-center/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/underline-center/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","underline","hover","animation"],"source":"fancy"},
+  },
+  "underline-center-demo": {
+    name: "underline-center-demo",
+    description: "Text underline animation that expands from the center on hover. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["underline-center"],
+    files: [{
+      path: "registry/components/text/underline-center/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/underline-center/example")),
+    meta: {"tags":["text","underline","hover","animation"],"source":"fancy"},
+  },
+  "underline-comes-in-goes-out": {
+    name: "underline-comes-in-goes-out",
+    description: "Text underline animation that slides in from one direction and out from the other.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/underline-comes-in-goes-out/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/underline-comes-in-goes-out/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","underline","hover","animation"],"source":"fancy"},
+  },
+  "underline-comes-in-goes-out-demo": {
+    name: "underline-comes-in-goes-out-demo",
+    description: "Text underline animation that slides in from one direction and out from the other. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["underline-comes-in-goes-out"],
+    files: [{
+      path: "registry/components/text/underline-comes-in-goes-out/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/underline-comes-in-goes-out/example")),
+    meta: {"tags":["text","underline","hover","animation"],"source":"fancy"},
+  },
+  "underline-goes-out-comes-in": {
+    name: "underline-goes-out-comes-in",
+    description: "Text underline animation that slides out then comes back in from the same direction.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/underline-goes-out-comes-in/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/underline-goes-out-comes-in/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","underline","hover","animation"],"source":"fancy"},
+  },
+  "underline-goes-out-comes-in-demo": {
+    name: "underline-goes-out-comes-in-demo",
+    description: "Text underline animation that slides out then comes back in from the same direction. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["underline-goes-out-comes-in"],
+    files: [{
+      path: "registry/components/text/underline-goes-out-comes-in/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/underline-goes-out-comes-in/example")),
+    meta: {"tags":["text","underline","hover","animation"],"source":"fancy"},
+  },
+  "underline-to-background": {
+    name: "underline-to-background",
+    description: "Text underline that expands to fill as a background on hover, with text color transition.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/underline-to-background/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/underline-to-background/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","underline","background","hover","animation"],"source":"fancy"},
+  },
+  "underline-to-background-demo": {
+    name: "underline-to-background-demo",
+    description: "Text underline that expands to fill as a background on hover, with text color transition. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["underline-to-background"],
+    files: [{
+      path: "registry/components/text/underline-to-background/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/underline-to-background/example")),
+    meta: {"tags":["text","underline","background","hover","animation"],"source":"fancy"},
+  },
+  "v0-button": {
+    name: "v0-button",
+    description: "A branded button linking to v0.dev with the v0 logo, styled for light and dark modes.",
+    type: "registry:ui",
+    category: "buttons",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/buttons/v0-button/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/buttons/v0-button/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "v0-button-demo": {
+    name: "v0-button-demo",
+    description: "A branded button linking to v0.dev with the v0 logo, styled for light and dark modes. (demo)",
+    type: "registry:example",
+    category: "buttons",
+    registryDependencies: ["v0-button"],
+    files: [{
+      path: "registry/components/buttons/v0-button/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/buttons/v0-button/example")),
+    meta: undefined,
+  },
+  "variable-font-cursor": {
+    name: "variable-font-cursor",
+    description: "Variable font that changes weight and slant based on cursor position within container",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/variable-font-cursor/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/variable-font-cursor/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","variable-font","cursor","interactive","animation"],"source":"fancy"},
+  },
+  "variable-font-cursor-demo": {
+    name: "variable-font-cursor-demo",
+    description: "Variable font that changes weight and slant based on cursor position within container (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["variable-font-cursor"],
+    files: [{
+      path: "registry/components/text/variable-font-cursor/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/variable-font-cursor/example")),
+    meta: {"tags":["text","variable-font","cursor","interactive","animation"],"source":"fancy"},
+  },
+  "variable-font-hover-by-letter": {
+    name: "variable-font-hover-by-letter",
+    description: "Animate variable font settings letter by letter on hover with stagger effect.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/variable-font-hover-by-letter/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/variable-font-hover-by-letter/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","variable-font","hover","animation","stagger"],"source":"fancy"},
+  },
+  "variable-font-hover-by-letter-demo": {
+    name: "variable-font-hover-by-letter-demo",
+    description: "Animate variable font settings letter by letter on hover with stagger effect. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["variable-font-hover-by-letter"],
+    files: [{
+      path: "registry/components/text/variable-font-hover-by-letter/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/variable-font-hover-by-letter/example")),
+    meta: {"tags":["text","variable-font","hover","animation","stagger"],"source":"fancy"},
+  },
+  "variable-font-hover-by-random-letter": {
+    name: "variable-font-hover-by-random-letter",
+    description: "Animate variable font settings in random letter order on hover.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/variable-font-hover-by-random-letter/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/variable-font-hover-by-random-letter/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","variable-font","hover","random","animation"],"source":"fancy"},
+  },
+  "variable-font-hover-by-random-letter-demo": {
+    name: "variable-font-hover-by-random-letter-demo",
+    description: "Animate variable font settings in random letter order on hover. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["variable-font-hover-by-random-letter"],
+    files: [{
+      path: "registry/components/text/variable-font-hover-by-random-letter/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/variable-font-hover-by-random-letter/example")),
+    meta: {"tags":["text","variable-font","hover","random","animation"],"source":"fancy"},
+  },
   "variable-proximity": {
     name: "variable-proximity",
     description: "Variable font text that changes based on mouse proximity.",
@@ -7826,6 +12215,105 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/text/variable-proximity/example")),
     meta: undefined,
+  },
+  "venom-beam": {
+    name: "venom-beam",
+    description: "Interactive particle canvas with trails and cursor-attracted particles",
+    type: "registry:ui",
+    category: "backgrounds",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/backgrounds/venom-beam/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/backgrounds/venom-beam/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["backgrounds","particles","canvas","interactive","trails"],"source":"scrollx-ui"},
+  },
+  "venom-beam-demo": {
+    name: "venom-beam-demo",
+    description: "Interactive particle canvas with trails and cursor-attracted particles (demo)",
+    type: "registry:example",
+    category: "backgrounds",
+    registryDependencies: ["venom-beam"],
+    files: [{
+      path: "registry/components/backgrounds/venom-beam/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/backgrounds/venom-beam/example")),
+    meta: {"tags":["backgrounds","particles","canvas","interactive","trails"],"source":"scrollx-ui"},
+  },
+  "vercel-card": {
+    name: "vercel-card",
+    description: "A Vercel-inspired interactive card with corner icons and optional glow effect",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/layouts/vercel-card/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/vercel-card/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["layouts","card","vercel","hover","glow"],"source":"scrollx-ui"},
+  },
+  "vercel-card-demo": {
+    name: "vercel-card-demo",
+    description: "A Vercel-inspired interactive card with corner icons and optional glow effect (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["vercel-card"],
+    files: [{
+      path: "registry/components/layouts/vercel-card/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/vercel-card/example")),
+    meta: {"tags":["layouts","card","vercel","hover","glow"],"source":"scrollx-ui"},
+  },
+  "vertical-cut-reveal": {
+    name: "vertical-cut-reveal",
+    description: "Text reveal animation with vertical cut effect, supporting word, character, and line-level splitting",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/vertical-cut-reveal/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/vertical-cut-reveal/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","reveal","animation","stagger","split"],"source":"fancy"},
+  },
+  "vertical-cut-reveal-demo": {
+    name: "vertical-cut-reveal-demo",
+    description: "Text reveal animation with vertical cut effect, supporting word, character, and line-level splitting (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["vertical-cut-reveal"],
+    files: [{
+      path: "registry/components/text/vertical-cut-reveal/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/vertical-cut-reveal/example")),
+    meta: {"tags":["text","reveal","animation","stagger","split"],"source":"fancy"},
   },
   "video-text": {
     name: "video-text",
@@ -7991,5 +12479,5271 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/special/youtube-video-player/example")),
     meta: {"tags":["media","youtube"],"source":"cult-ui"},
+  },
+  "account-2fa": {
+    name: "account-2fa",
+    description: "A two-factor authentication settings panel with multiple 2FA method options.",
+    type: "registry:block",
+    category: "account",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/account/account-2fa/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/account/account-2fa/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["account","2fa","security","authentication","settings"],"source":"creative-tim"},
+  },
+  "account-2fa-demo": {
+    name: "account-2fa-demo",
+    description: "A two-factor authentication settings panel with multiple 2FA method options. (demo)",
+    type: "registry:example",
+    category: "account",
+    registryDependencies: ["account-2fa"],
+    files: [{
+      path: "registry/blocks/account/account-2fa/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/account/account-2fa/example")),
+    meta: {"tags":["account","2fa","security","authentication","settings"],"source":"creative-tim"},
+  },
+  "account-avatar-upload": {
+    name: "account-avatar-upload",
+    description: "A profile picture upload panel with avatar preview and availability status toggle.",
+    type: "registry:block",
+    category: "account",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/account/account-avatar-upload/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/account/account-avatar-upload/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["account","avatar","upload","profile","settings"],"source":"creative-tim"},
+  },
+  "account-avatar-upload-demo": {
+    name: "account-avatar-upload-demo",
+    description: "A profile picture upload panel with avatar preview and availability status toggle. (demo)",
+    type: "registry:example",
+    category: "account",
+    registryDependencies: ["account-avatar-upload"],
+    files: [{
+      path: "registry/blocks/account/account-avatar-upload/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/account/account-avatar-upload/example")),
+    meta: {"tags":["account","avatar","upload","profile","settings"],"source":"creative-tim"},
+  },
+  "account-basic-info": {
+    name: "account-basic-info",
+    description: "A personal information form with fields for name, profession, contact, and preferences.",
+    type: "registry:block",
+    category: "account",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/account/account-basic-info/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/account/account-basic-info/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["account","profile","personal-info","form","settings"],"source":"creative-tim"},
+  },
+  "account-basic-info-demo": {
+    name: "account-basic-info-demo",
+    description: "A personal information form with fields for name, profession, contact, and preferences. (demo)",
+    type: "registry:example",
+    category: "account",
+    registryDependencies: ["account-basic-info"],
+    files: [{
+      path: "registry/blocks/account/account-basic-info/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/account/account-basic-info/example")),
+    meta: {"tags":["account","profile","personal-info","form","settings"],"source":"creative-tim"},
+  },
+  "account-integrations": {
+    name: "account-integrations",
+    description: "A third-party integrations management panel with toggle controls and verification.",
+    type: "registry:block",
+    category: "account",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/account/account-integrations/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/account/account-integrations/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["account","integrations","third-party","settings"],"source":"creative-tim"},
+  },
+  "account-integrations-demo": {
+    name: "account-integrations-demo",
+    description: "A third-party integrations management panel with toggle controls and verification. (demo)",
+    type: "registry:example",
+    category: "account",
+    registryDependencies: ["account-integrations"],
+    files: [{
+      path: "registry/blocks/account/account-integrations/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/account/account-integrations/example")),
+    meta: {"tags":["account","integrations","third-party","settings"],"source":"creative-tim"},
+  },
+  "account-notifications": {
+    name: "account-notifications",
+    description: "A notification preferences table with email, push, and SMS toggle switches.",
+    type: "registry:block",
+    category: "account",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/account/account-notifications/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/account/account-notifications/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["account","notifications","preferences","settings","toggles"],"source":"creative-tim"},
+  },
+  "account-notifications-demo": {
+    name: "account-notifications-demo",
+    description: "A notification preferences table with email, push, and SMS toggle switches. (demo)",
+    type: "registry:example",
+    category: "account",
+    registryDependencies: ["account-notifications"],
+    files: [{
+      path: "registry/blocks/account/account-notifications/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/account/account-notifications/example")),
+    meta: {"tags":["account","notifications","preferences","settings","toggles"],"source":"creative-tim"},
+  },
+  "account-password": {
+    name: "account-password",
+    description: "A change password form with requirements checklist and security best practices.",
+    type: "registry:block",
+    category: "account",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/account/account-password/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/account/account-password/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["account","password","security","form","requirements"],"source":"creative-tim"},
+  },
+  "account-password-demo": {
+    name: "account-password-demo",
+    description: "A change password form with requirements checklist and security best practices. (demo)",
+    type: "registry:example",
+    category: "account",
+    registryDependencies: ["account-password"],
+    files: [{
+      path: "registry/blocks/account/account-password/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/account/account-password/example")),
+    meta: {"tags":["account","password","security","form","requirements"],"source":"creative-tim"},
+  },
+  "account-sessions": {
+    name: "account-sessions",
+    description: "An active sessions management panel showing device locations and browser details.",
+    type: "registry:block",
+    category: "account",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/account/account-sessions/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/account/account-sessions/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["account","sessions","security","devices"],"source":"creative-tim"},
+  },
+  "account-sessions-demo": {
+    name: "account-sessions-demo",
+    description: "An active sessions management panel showing device locations and browser details. (demo)",
+    type: "registry:example",
+    category: "account",
+    registryDependencies: ["account-sessions"],
+    files: [{
+      path: "registry/blocks/account/account-sessions/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/account/account-sessions/example")),
+    meta: {"tags":["account","sessions","security","devices"],"source":"creative-tim"},
+  },
+  "ai-chat-streaming": {
+    name: "ai-chat-streaming",
+    description: "An AI chat interface with streaming responses, provider selection, and thinking process display.",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/ai-chat-streaming/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/ai-chat-streaming/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ai","chat","streaming","agents"],"source":"creative-tim"},
+  },
+  "ai-chat-streaming-demo": {
+    name: "ai-chat-streaming-demo",
+    description: "An AI chat interface with streaming responses, provider selection, and thinking process display. (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["ai-chat-streaming"],
+    files: [{
+      path: "registry/blocks/special/ai-chat-streaming/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/ai-chat-streaming/example")),
+    meta: {"tags":["ai","chat","streaming","agents"],"source":"creative-tim"},
+  },
+  "ai-image-generator": {
+    name: "ai-image-generator",
+    description: "An AI image generator with provider selection, prompt input, and built-in image editor.",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/ai-image-generator/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/ai-image-generator/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ai","image","generator","editor"],"source":"creative-tim"},
+  },
+  "ai-image-generator-demo": {
+    name: "ai-image-generator-demo",
+    description: "An AI image generator with provider selection, prompt input, and built-in image editor. (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["ai-image-generator"],
+    files: [{
+      path: "registry/blocks/special/ai-image-generator/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/ai-image-generator/example")),
+    meta: {"tags":["ai","image","generator","editor"],"source":"creative-tim"},
+  },
+  "ai-video-generator": {
+    name: "ai-video-generator",
+    description: "An AI video generation agent with provider selection, progress tracking, and video preview.",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/ai-video-generator/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/ai-video-generator/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ai","video","generator","agents"],"source":"creative-tim"},
+  },
+  "ai-video-generator-demo": {
+    name: "ai-video-generator-demo",
+    description: "An AI video generation agent with provider selection, progress tracking, and video preview. (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["ai-video-generator"],
+    files: [{
+      path: "registry/blocks/special/ai-video-generator/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/ai-video-generator/example")),
+    meta: {"tags":["ai","video","generator","agents"],"source":"creative-tim"},
+  },
+  "auth-forgot-password": {
+    name: "auth-forgot-password",
+    description: "A forgot password form with email input and success confirmation state.",
+    type: "registry:block",
+    category: "auth",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/auth/auth-forgot-password/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/auth/auth-forgot-password/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["auth","forgot-password","reset","email","form"],"source":"creative-tim"},
+  },
+  "auth-forgot-password-demo": {
+    name: "auth-forgot-password-demo",
+    description: "A forgot password form with email input and success confirmation state. (demo)",
+    type: "registry:example",
+    category: "auth",
+    registryDependencies: ["auth-forgot-password"],
+    files: [{
+      path: "registry/blocks/auth/auth-forgot-password/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/auth/auth-forgot-password/example")),
+    meta: {"tags":["auth","forgot-password","reset","email","form"],"source":"creative-tim"},
+  },
+  "auth-login": {
+    name: "auth-login",
+    description: "A login form with email/password fields, social login buttons, and forgot password link.",
+    type: "registry:block",
+    category: "auth",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/auth/auth-login/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/auth/auth-login/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["auth","login","sign-in","form","social-login"],"source":"creative-tim"},
+  },
+  "auth-login-demo": {
+    name: "auth-login-demo",
+    description: "A login form with email/password fields, social login buttons, and forgot password link. (demo)",
+    type: "registry:example",
+    category: "auth",
+    registryDependencies: ["auth-login"],
+    files: [{
+      path: "registry/blocks/auth/auth-login/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/auth/auth-login/example")),
+    meta: {"tags":["auth","login","sign-in","form","social-login"],"source":"creative-tim"},
+  },
+  "auth-register": {
+    name: "auth-register",
+    description: "A registration form with name, email, password with strength indicators, and confirm password.",
+    type: "registry:block",
+    category: "auth",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/auth/auth-register/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/auth/auth-register/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["auth","register","sign-up","form","password-strength"],"source":"creative-tim"},
+  },
+  "auth-register-demo": {
+    name: "auth-register-demo",
+    description: "A registration form with name, email, password with strength indicators, and confirm password. (demo)",
+    type: "registry:example",
+    category: "auth",
+    registryDependencies: ["auth-register"],
+    files: [{
+      path: "registry/blocks/auth/auth-register/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/auth/auth-register/example")),
+    meta: {"tags":["auth","register","sign-up","form","password-strength"],"source":"creative-tim"},
+  },
+  "auth-two-factor": {
+    name: "auth-two-factor",
+    description: "A two-factor authentication form with numeric code input, paste support, and resend option.",
+    type: "registry:block",
+    category: "auth",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/auth/auth-two-factor/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/auth/auth-two-factor/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["auth","two-factor","2fa","otp","verification","security"],"source":"creative-tim"},
+  },
+  "auth-two-factor-demo": {
+    name: "auth-two-factor-demo",
+    description: "A two-factor authentication form with numeric code input, paste support, and resend option. (demo)",
+    type: "registry:example",
+    category: "auth",
+    registryDependencies: ["auth-two-factor"],
+    files: [{
+      path: "registry/blocks/auth/auth-two-factor/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/auth/auth-two-factor/example")),
+    meta: {"tags":["auth","two-factor","2fa","otp","verification","security"],"source":"creative-tim"},
+  },
+  "billing-information": {
+    name: "billing-information",
+    description: "A billing information management section with company cards and edit/delete actions.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/billing/billing-information/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/billing-information/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","information","company","vat"],"source":"creative-tim"},
+  },
+  "billing-information-demo": {
+    name: "billing-information-demo",
+    description: "A billing information management section with company cards and edit/delete actions. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["billing-information"],
+    files: [{
+      path: "registry/blocks/billing/billing-information/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/billing-information/example")),
+    meta: {"tags":["billing","information","company","vat"],"source":"creative-tim"},
+  },
+  "billing-screen": {
+    name: "billing-screen",
+    description: "A comprehensive billing dashboard with plan overview, payment method, and usage summary.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/billing/billing-screen/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/billing-screen/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","dashboard","overview","plan","payment"],"source":"billingsdk"},
+  },
+  "billing-screen-demo": {
+    name: "billing-screen-demo",
+    description: "A comprehensive billing dashboard with plan overview, payment method, and usage summary. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["billing-screen"],
+    files: [{
+      path: "registry/blocks/billing/billing-screen/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/billing-screen/example")),
+    meta: {"tags":["billing","dashboard","overview","plan","payment"],"source":"billingsdk"},
+  },
+  "billing-settings": {
+    name: "billing-settings",
+    description: "A tabbed billing settings component with general notifications, payment methods, invoice preferences, and usage limits.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/billing/billing-settings/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/billing-settings/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","settings","tabs","notifications","payment"],"source":"billingsdk"},
+  },
+  "billing-settings-demo": {
+    name: "billing-settings-demo",
+    description: "A tabbed billing settings component with general notifications, payment methods, invoice preferences, and usage limits. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["billing-settings"],
+    files: [{
+      path: "registry/blocks/billing/billing-settings/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/billing-settings/example")),
+    meta: {"tags":["billing","settings","tabs","notifications","payment"],"source":"billingsdk"},
+  },
+  "billing-settings-two": {
+    name: "billing-settings-two",
+    description: "An advanced billing settings form with input fields, currency selector, feature toggles, and validation.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/billing/billing-settings-two/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/billing-settings-two/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","settings","form","validation","currency"],"source":"billingsdk"},
+  },
+  "billing-settings-two-demo": {
+    name: "billing-settings-two-demo",
+    description: "An advanced billing settings form with input fields, currency selector, feature toggles, and validation. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["billing-settings-two"],
+    files: [{
+      path: "registry/blocks/billing/billing-settings-two/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/billing-settings-two/example")),
+    meta: {"tags":["billing","settings","form","validation","currency"],"source":"billingsdk"},
+  },
+  "blog-cards-layout": {
+    name: "blog-cards-layout",
+    description: "A blog post grid layout with image cards, tags, and a view more button.",
+    type: "registry:block",
+    category: "blog",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/blog/blog-cards-layout/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/blog/blog-cards-layout/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["blog","cards","grid","layout","posts"],"source":"creative-tim"},
+  },
+  "blog-cards-layout-demo": {
+    name: "blog-cards-layout-demo",
+    description: "A blog post grid layout with image cards, tags, and a view more button. (demo)",
+    type: "registry:example",
+    category: "blog",
+    registryDependencies: ["blog-cards-layout"],
+    files: [{
+      path: "registry/blocks/blog/blog-cards-layout/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/blog/blog-cards-layout/example")),
+    meta: {"tags":["blog","cards","grid","layout","posts"],"source":"creative-tim"},
+  },
+  "blog-cards-simple": {
+    name: "blog-cards-simple",
+    description: "Simple blog post cards with images, tags, descriptions, and author avatars.",
+    type: "registry:block",
+    category: "blog",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/blog/blog-cards-simple/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/blog/blog-cards-simple/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["blog","cards","simple","posts","authors"],"source":"creative-tim"},
+  },
+  "blog-cards-simple-demo": {
+    name: "blog-cards-simple-demo",
+    description: "Simple blog post cards with images, tags, descriptions, and author avatars. (demo)",
+    type: "registry:example",
+    category: "blog",
+    registryDependencies: ["blog-cards-simple"],
+    files: [{
+      path: "registry/blocks/blog/blog-cards-simple/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/blog/blog-cards-simple/example")),
+    meta: {"tags":["blog","cards","simple","posts","authors"],"source":"creative-tim"},
+  },
+  "blog-content-cards": {
+    name: "blog-content-cards",
+    description: "Simple blog content cards with images, tags, and author footers.",
+    type: "registry:block",
+    category: "blog",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/blog/blog-content-cards/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/blog/blog-content-cards/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["blog","cards","content","simple"],"source":"creative-tim"},
+  },
+  "blog-content-cards-demo": {
+    name: "blog-content-cards-demo",
+    description: "Simple blog content cards with images, tags, and author footers. (demo)",
+    type: "registry:example",
+    category: "blog",
+    registryDependencies: ["blog-content-cards"],
+    files: [{
+      path: "registry/blocks/blog/blog-content-cards/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/blog/blog-content-cards/example")),
+    meta: {"tags":["blog","cards","content","simple"],"source":"creative-tim"},
+  },
+  "blog-highlighted": {
+    name: "blog-highlighted",
+    description: "A highlighted blog section with featured card and image overlay post cards.",
+    type: "registry:block",
+    category: "blog",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/blog/blog-highlighted/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/blog/blog-highlighted/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["blog","highlighted","featured","overlay","cards"],"source":"creative-tim"},
+  },
+  "blog-highlighted-demo": {
+    name: "blog-highlighted-demo",
+    description: "A highlighted blog section with featured card and image overlay post cards. (demo)",
+    type: "registry:example",
+    category: "blog",
+    registryDependencies: ["blog-highlighted"],
+    files: [{
+      path: "registry/blocks/blog/blog-highlighted/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/blog/blog-highlighted/example")),
+    meta: {"tags":["blog","highlighted","featured","overlay","cards"],"source":"creative-tim"},
+  },
+  "blog-highlighted-categories": {
+    name: "blog-highlighted-categories",
+    description: "A highlighted blog section with featured card and category image overlays.",
+    type: "registry:block",
+    category: "blog",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/blog/blog-highlighted-categories/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/blog/blog-highlighted-categories/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["blog","highlighted","categories","featured"],"source":"creative-tim"},
+  },
+  "blog-highlighted-categories-demo": {
+    name: "blog-highlighted-categories-demo",
+    description: "A highlighted blog section with featured card and category image overlays. (demo)",
+    type: "registry:example",
+    category: "blog",
+    registryDependencies: ["blog-highlighted-categories"],
+    files: [{
+      path: "registry/blocks/blog/blog-highlighted-categories/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/blog/blog-highlighted-categories/example")),
+    meta: {"tags":["blog","highlighted","categories","featured"],"source":"creative-tim"},
+  },
+  "blog-large-preview": {
+    name: "blog-large-preview",
+    description: "A large blog post preview with full-width image and author details.",
+    type: "registry:block",
+    category: "blog",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/blog/blog-large-preview/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/blog/blog-large-preview/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["blog","preview","large","featured"],"source":"creative-tim"},
+  },
+  "blog-large-preview-demo": {
+    name: "blog-large-preview-demo",
+    description: "A large blog post preview with full-width image and author details. (demo)",
+    type: "registry:example",
+    category: "blog",
+    registryDependencies: ["blog-large-preview"],
+    files: [{
+      path: "registry/blocks/blog/blog-large-preview/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/blog/blog-large-preview/example")),
+    meta: {"tags":["blog","preview","large","featured"],"source":"creative-tim"},
+  },
+  "blog-post-tags": {
+    name: "blog-post-tags",
+    description: "A blog post grid with tag badges and author attributions.",
+    type: "registry:block",
+    category: "blog",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/blog/blog-post-tags/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/blog/blog-post-tags/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["blog","posts","tags","cards"],"source":"creative-tim"},
+  },
+  "blog-post-tags-demo": {
+    name: "blog-post-tags-demo",
+    description: "A blog post grid with tag badges and author attributions. (demo)",
+    type: "registry:example",
+    category: "blog",
+    registryDependencies: ["blog-post-tags"],
+    files: [{
+      path: "registry/blocks/blog/blog-post-tags/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/blog/blog-post-tags/example")),
+    meta: {"tags":["blog","posts","tags","cards"],"source":"creative-tim"},
+  },
+  "blog-rectangular": {
+    name: "blog-rectangular",
+    description: "A blog grid with rectangular side-by-side image and content layout.",
+    type: "registry:block",
+    category: "blog",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/blog/blog-rectangular/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/blog/blog-rectangular/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["blog","posts","rectangular","images"],"source":"creative-tim"},
+  },
+  "blog-rectangular-demo": {
+    name: "blog-rectangular-demo",
+    description: "A blog grid with rectangular side-by-side image and content layout. (demo)",
+    type: "registry:example",
+    category: "blog",
+    registryDependencies: ["blog-rectangular"],
+    files: [{
+      path: "registry/blocks/blog/blog-rectangular/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/blog/blog-rectangular/example")),
+    meta: {"tags":["blog","posts","rectangular","images"],"source":"creative-tim"},
+  },
+  "cancel-subscription-card": {
+    name: "cancel-subscription-card",
+    description: "A cancellation flow card with plan details, warning section, and two-step confirmation.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/billing/cancel-subscription-card/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/cancel-subscription-card/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","cancel","subscription","card","confirmation"],"source":"billingsdk"},
+  },
+  "cancel-subscription-card-demo": {
+    name: "cancel-subscription-card-demo",
+    description: "A cancellation flow card with plan details, warning section, and two-step confirmation. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["cancel-subscription-card"],
+    files: [{
+      path: "registry/blocks/billing/cancel-subscription-card/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/cancel-subscription-card/example")),
+    meta: {"tags":["billing","cancel","subscription","card","confirmation"],"source":"billingsdk"},
+  },
+  "cancel-subscription-dialog": {
+    name: "cancel-subscription-dialog",
+    description: "A dialog-based cancellation flow with plan details, warning section, and two-step confirmation.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/billing/cancel-subscription-dialog/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/cancel-subscription-dialog/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","cancel","subscription","dialog","confirmation"],"source":"billingsdk"},
+  },
+  "cancel-subscription-dialog-demo": {
+    name: "cancel-subscription-dialog-demo",
+    description: "A dialog-based cancellation flow with plan details, warning section, and two-step confirmation. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["cancel-subscription-dialog"],
+    files: [{
+      path: "registry/blocks/billing/cancel-subscription-dialog/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/cancel-subscription-dialog/example")),
+    meta: {"tags":["billing","cancel","subscription","dialog","confirmation"],"source":"billingsdk"},
+  },
+  "checkout-form": {
+    name: "checkout-form",
+    description: "A checkout form with contact, shipping, payment sections, and order summary sidebar.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/checkout-form/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/checkout-form/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","checkout","payment","shipping","form"],"source":"creative-tim"},
+  },
+  "checkout-form-demo": {
+    name: "checkout-form-demo",
+    description: "A checkout form with contact, shipping, payment sections, and order summary sidebar. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["checkout-form"],
+    files: [{
+      path: "registry/blocks/ecommerce/checkout-form/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/checkout-form/example")),
+    meta: {"tags":["ecommerce","checkout","payment","shipping","form"],"source":"creative-tim"},
+  },
+  "contact-form-background": {
+    name: "contact-form-background",
+    description: "A contact form with background image overlay and card-style form.",
+    type: "registry:block",
+    category: "contact",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-background/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/contact/contact-form-background/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["contact","form","background","image"],"source":"creative-tim"},
+  },
+  "contact-form-background-demo": {
+    name: "contact-form-background-demo",
+    description: "A contact form with background image overlay and card-style form. (demo)",
+    type: "registry:example",
+    category: "contact",
+    registryDependencies: ["contact-form-background"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-background/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/contact/contact-form-background/example")),
+    meta: {"tags":["contact","form","background","image"],"source":"creative-tim"},
+  },
+  "contact-form-centered": {
+    name: "contact-form-centered",
+    description: "A centered contact form with gradient background and send icon button.",
+    type: "registry:block",
+    category: "contact",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-centered/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/contact/contact-form-centered/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["contact","form","centered","gradient"],"source":"creative-tim"},
+  },
+  "contact-form-centered-demo": {
+    name: "contact-form-centered-demo",
+    description: "A centered contact form with gradient background and send icon button. (demo)",
+    type: "registry:example",
+    category: "contact",
+    registryDependencies: ["contact-form-centered"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-centered/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/contact/contact-form-centered/example")),
+    meta: {"tags":["contact","form","centered","gradient"],"source":"creative-tim"},
+  },
+  "contact-form-conversation": {
+    name: "contact-form-conversation",
+    description: "A contact section with conversation starters and quick contact form.",
+    type: "registry:block",
+    category: "contact",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-conversation/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/contact/contact-form-conversation/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["contact","form","conversation","support"],"source":"creative-tim"},
+  },
+  "contact-form-conversation-demo": {
+    name: "contact-form-conversation-demo",
+    description: "A contact section with conversation starters and quick contact form. (demo)",
+    type: "registry:example",
+    category: "contact",
+    registryDependencies: ["contact-form-conversation"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-conversation/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/contact/contact-form-conversation/example")),
+    meta: {"tags":["contact","form","conversation","support"],"source":"creative-tim"},
+  },
+  "contact-form-dark": {
+    name: "contact-form-dark",
+    description: "A dark-themed contact form with gradient background and contact details.",
+    type: "registry:block",
+    category: "contact",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-dark/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/contact/contact-form-dark/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["contact","form","dark","gradient"],"source":"creative-tim"},
+  },
+  "contact-form-dark-demo": {
+    name: "contact-form-dark-demo",
+    description: "A dark-themed contact form with gradient background and contact details. (demo)",
+    type: "registry:example",
+    category: "contact",
+    registryDependencies: ["contact-form-dark"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-dark/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/contact/contact-form-dark/example")),
+    meta: {"tags":["contact","form","dark","gradient"],"source":"creative-tim"},
+  },
+  "contact-form-dark-bg": {
+    name: "contact-form-dark-bg",
+    description: "A contact form on a dark background with address and phone information.",
+    type: "registry:block",
+    category: "contact",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-dark-bg/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/contact/contact-form-dark-bg/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["contact","form","dark","background"],"source":"creative-tim"},
+  },
+  "contact-form-dark-bg-demo": {
+    name: "contact-form-dark-bg-demo",
+    description: "A contact form on a dark background with address and phone information. (demo)",
+    type: "registry:example",
+    category: "contact",
+    registryDependencies: ["contact-form-dark-bg"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-dark-bg/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/contact/contact-form-dark-bg/example")),
+    meta: {"tags":["contact","form","dark","background"],"source":"creative-tim"},
+  },
+  "contact-form-gradient": {
+    name: "contact-form-gradient",
+    description: "A contact form with gradient dark background and glassmorphism styling.",
+    type: "registry:block",
+    category: "contact",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-gradient/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/contact/contact-form-gradient/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["contact","form","gradient","glassmorphism"],"source":"creative-tim"},
+  },
+  "contact-form-gradient-demo": {
+    name: "contact-form-gradient-demo",
+    description: "A contact form with gradient dark background and glassmorphism styling. (demo)",
+    type: "registry:example",
+    category: "contact",
+    registryDependencies: ["contact-form-gradient"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-gradient/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/contact/contact-form-gradient/example")),
+    meta: {"tags":["contact","form","gradient","glassmorphism"],"source":"creative-tim"},
+  },
+  "contact-form-image": {
+    name: "contact-form-image",
+    description: "A contact form with a side image and contact information details.",
+    type: "registry:block",
+    category: "contact",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-image/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/contact/contact-form-image/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["contact","form","image","split-layout"],"source":"creative-tim"},
+  },
+  "contact-form-image-demo": {
+    name: "contact-form-image-demo",
+    description: "A contact form with a side image and contact information details. (demo)",
+    type: "registry:example",
+    category: "contact",
+    registryDependencies: ["contact-form-image"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-image/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/contact/contact-form-image/example")),
+    meta: {"tags":["contact","form","image","split-layout"],"source":"creative-tim"},
+  },
+  "contact-form-info-grid": {
+    name: "contact-form-info-grid",
+    description: "A contact section with info cards grid and centered message form.",
+    type: "registry:block",
+    category: "contact",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-info-grid/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/contact/contact-form-info-grid/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["contact","form","info","grid","cards"],"source":"creative-tim"},
+  },
+  "contact-form-info-grid-demo": {
+    name: "contact-form-info-grid-demo",
+    description: "A contact section with info cards grid and centered message form. (demo)",
+    type: "registry:example",
+    category: "contact",
+    registryDependencies: ["contact-form-info-grid"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-info-grid/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/contact/contact-form-info-grid/example")),
+    meta: {"tags":["contact","form","info","grid","cards"],"source":"creative-tim"},
+  },
+  "contact-form-map": {
+    name: "contact-form-map",
+    description: "A contact form with an embedded map and location details.",
+    type: "registry:block",
+    category: "contact",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-map/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/contact/contact-form-map/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["contact","form","map","location"],"source":"creative-tim"},
+  },
+  "contact-form-map-demo": {
+    name: "contact-form-map-demo",
+    description: "A contact form with an embedded map and location details. (demo)",
+    type: "registry:example",
+    category: "contact",
+    registryDependencies: ["contact-form-map"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-map/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/contact/contact-form-map/example")),
+    meta: {"tags":["contact","form","map","location"],"source":"creative-tim"},
+  },
+  "contact-form-minimal": {
+    name: "contact-form-minimal",
+    description: "A minimal contact form with clean design and essential fields.",
+    type: "registry:block",
+    category: "contact",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-minimal/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/contact/contact-form-minimal/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["contact","form","minimal","clean"],"source":"creative-tim"},
+  },
+  "contact-form-minimal-demo": {
+    name: "contact-form-minimal-demo",
+    description: "A minimal contact form with clean design and essential fields. (demo)",
+    type: "registry:example",
+    category: "contact",
+    registryDependencies: ["contact-form-minimal"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-minimal/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/contact/contact-form-minimal/example")),
+    meta: {"tags":["contact","form","minimal","clean"],"source":"creative-tim"},
+  },
+  "contact-form-sidebar": {
+    name: "contact-form-sidebar",
+    description: "A contact form with sidebar showing address and phone details.",
+    type: "registry:block",
+    category: "contact",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-sidebar/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/contact/contact-form-sidebar/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["contact","form","sidebar","details"],"source":"creative-tim"},
+  },
+  "contact-form-sidebar-demo": {
+    name: "contact-form-sidebar-demo",
+    description: "A contact form with sidebar showing address and phone details. (demo)",
+    type: "registry:example",
+    category: "contact",
+    registryDependencies: ["contact-form-sidebar"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-sidebar/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/contact/contact-form-sidebar/example")),
+    meta: {"tags":["contact","form","sidebar","details"],"source":"creative-tim"},
+  },
+  "contact-form-simple": {
+    name: "contact-form-simple",
+    description: "A simple contact form with name, email, and message fields.",
+    type: "registry:block",
+    category: "contact",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-simple/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/contact/contact-form-simple/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["contact","form","simple","email","message"],"source":"creative-tim"},
+  },
+  "contact-form-simple-demo": {
+    name: "contact-form-simple-demo",
+    description: "A simple contact form with name, email, and message fields. (demo)",
+    type: "registry:example",
+    category: "contact",
+    registryDependencies: ["contact-form-simple"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-simple/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/contact/contact-form-simple/example")),
+    meta: {"tags":["contact","form","simple","email","message"],"source":"creative-tim"},
+  },
+  "contact-form-split-dark": {
+    name: "contact-form-split-dark",
+    description: "A split contact form with dark sidebar showing contact info and social links.",
+    type: "registry:block",
+    category: "contact",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-split-dark/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/contact/contact-form-split-dark/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["contact","form","split","dark","social"],"source":"creative-tim"},
+  },
+  "contact-form-split-dark-demo": {
+    name: "contact-form-split-dark-demo",
+    description: "A split contact form with dark sidebar showing contact info and social links. (demo)",
+    type: "registry:example",
+    category: "contact",
+    registryDependencies: ["contact-form-split-dark"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-split-dark/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/contact/contact-form-split-dark/example")),
+    meta: {"tags":["contact","form","split","dark","social"],"source":"creative-tim"},
+  },
+  "contact-form-two-column": {
+    name: "contact-form-two-column",
+    description: "A two-column contact layout with form and contact details side by side.",
+    type: "registry:block",
+    category: "contact",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-two-column/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/contact/contact-form-two-column/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["contact","form","two-column","layout"],"source":"creative-tim"},
+  },
+  "contact-form-two-column-demo": {
+    name: "contact-form-two-column-demo",
+    description: "A two-column contact layout with form and contact details side by side. (demo)",
+    type: "registry:example",
+    category: "contact",
+    registryDependencies: ["contact-form-two-column"],
+    files: [{
+      path: "registry/blocks/contact/contact-form-two-column/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/contact/contact-form-two-column/example")),
+    meta: {"tags":["contact","form","two-column","layout"],"source":"creative-tim"},
+  },
+  "contact-info-cards": {
+    name: "contact-info-cards",
+    description: "A contact information section with icon cards for address, email, and phone.",
+    type: "registry:block",
+    category: "contact",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/contact/contact-info-cards/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/contact/contact-info-cards/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["contact","information","cards","icons"],"source":"creative-tim"},
+  },
+  "contact-info-cards-demo": {
+    name: "contact-info-cards-demo",
+    description: "A contact information section with icon cards for address, email, and phone. (demo)",
+    type: "registry:example",
+    category: "contact",
+    registryDependencies: ["contact-info-cards"],
+    files: [{
+      path: "registry/blocks/contact/contact-info-cards/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/contact/contact-info-cards/example")),
+    meta: {"tags":["contact","information","cards","icons"],"source":"creative-tim"},
+  },
+  "credit-card-display": {
+    name: "credit-card-display",
+    description: "A credit card display component with dark and light variants.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/credit-card-display/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/credit-card-display/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","credit-card","display","payment"],"source":"creative-tim"},
+  },
+  "credit-card-display-demo": {
+    name: "credit-card-display-demo",
+    description: "A credit card display component with dark and light variants. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["credit-card-display"],
+    files: [{
+      path: "registry/blocks/ecommerce/credit-card-display/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/credit-card-display/example")),
+    meta: {"tags":["ecommerce","credit-card","display","payment"],"source":"creative-tim"},
+  },
+  "crud-account-settings": {
+    name: "crud-account-settings",
+    description: "A comprehensive account settings form with photo upload, role, and permissions.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/crud-account-settings/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/crud-account-settings/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","crud","account","settings","form"],"source":"creative-tim"},
+  },
+  "crud-account-settings-demo": {
+    name: "crud-account-settings-demo",
+    description: "A comprehensive account settings form with photo upload, role, and permissions. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["crud-account-settings"],
+    files: [{
+      path: "registry/blocks/ecommerce/crud-account-settings/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/crud-account-settings/example")),
+    meta: {"tags":["ecommerce","crud","account","settings","form"],"source":"creative-tim"},
+  },
+  "crud-edit-product": {
+    name: "crud-edit-product",
+    description: "A product editing form with category selection and pricing fields.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/crud-edit-product/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/crud-edit-product/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","crud","edit","product","form"],"source":"creative-tim"},
+  },
+  "crud-edit-product-demo": {
+    name: "crud-edit-product-demo",
+    description: "A product editing form with category selection and pricing fields. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["crud-edit-product"],
+    files: [{
+      path: "registry/blocks/ecommerce/crud-edit-product/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/crud-edit-product/example")),
+    meta: {"tags":["ecommerce","crud","edit","product","form"],"source":"creative-tim"},
+  },
+  "crud-edit-profile": {
+    name: "crud-edit-profile",
+    description: "A staff profile update form with username, email, and password fields.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/crud-edit-profile/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/crud-edit-profile/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","crud","edit","profile","form"],"source":"creative-tim"},
+  },
+  "crud-edit-profile-demo": {
+    name: "crud-edit-profile-demo",
+    description: "A staff profile update form with username, email, and password fields. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["crud-edit-profile"],
+    files: [{
+      path: "registry/blocks/ecommerce/crud-edit-profile/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/crud-edit-profile/example")),
+    meta: {"tags":["ecommerce","crud","edit","profile","form"],"source":"creative-tim"},
+  },
+  "detailed-usage-table": {
+    name: "detailed-usage-table",
+    description: "A detailed usage table showing resource consumption with progress bars and percentage indicators.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/billing/detailed-usage-table/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/detailed-usage-table/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","usage","table","resources","progress"],"source":"billingsdk"},
+  },
+  "detailed-usage-table-demo": {
+    name: "detailed-usage-table-demo",
+    description: "A detailed usage table showing resource consumption with progress bars and percentage indicators. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["detailed-usage-table"],
+    files: [{
+      path: "registry/blocks/billing/detailed-usage-table/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/detailed-usage-table/example")),
+    meta: {"tags":["billing","usage","table","resources","progress"],"source":"billingsdk"},
+  },
+  "ecommerce-grid": {
+    name: "ecommerce-grid",
+    description: "An ecommerce product grid with image cards and promotional banner.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/ecommerce-grid/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/ecommerce-grid/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","grid","cards","promotional"],"source":"creative-tim"},
+  },
+  "ecommerce-grid-demo": {
+    name: "ecommerce-grid-demo",
+    description: "An ecommerce product grid with image cards and promotional banner. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["ecommerce-grid"],
+    files: [{
+      path: "registry/blocks/ecommerce/ecommerce-grid/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/ecommerce-grid/example")),
+    meta: {"tags":["ecommerce","grid","cards","promotional"],"source":"creative-tim"},
+  },
+  "ecommerce-product-detail": {
+    name: "ecommerce-product-detail",
+    description: "A product detail page with thumbnail gallery, color selector, and expandable info.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/ecommerce-product-detail/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/ecommerce-product-detail/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","product","detail","gallery","colors"],"source":"creative-tim"},
+  },
+  "ecommerce-product-detail-demo": {
+    name: "ecommerce-product-detail-demo",
+    description: "A product detail page with thumbnail gallery, color selector, and expandable info. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["ecommerce-product-detail"],
+    files: [{
+      path: "registry/blocks/ecommerce/ecommerce-product-detail/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/ecommerce-product-detail/example")),
+    meta: {"tags":["ecommerce","product","detail","gallery","colors"],"source":"creative-tim"},
+  },
+  "ecommerce-video-hero": {
+    name: "ecommerce-video-hero",
+    description: "An ecommerce hero section with YouTube video background and product cards overlay.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/ecommerce-video-hero/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/ecommerce-video-hero/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","hero","video","products","overlay"],"source":"creative-tim"},
+  },
+  "ecommerce-video-hero-demo": {
+    name: "ecommerce-video-hero-demo",
+    description: "An ecommerce hero section with YouTube video background and product cards overlay. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["ecommerce-video-hero"],
+    files: [{
+      path: "registry/blocks/ecommerce/ecommerce-video-hero/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/ecommerce-video-hero/example")),
+    meta: {"tags":["ecommerce","hero","video","products","overlay"],"source":"creative-tim"},
+  },
+  "empty-cart": {
+    name: "empty-cart",
+    description: "An empty shopping cart state with illustration and back-to-store button.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/empty-cart/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/empty-cart/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","cart","empty","state"],"source":"creative-tim"},
+  },
+  "empty-cart-demo": {
+    name: "empty-cart-demo",
+    description: "An empty shopping cart state with illustration and back-to-store button. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["empty-cart"],
+    files: [{
+      path: "registry/blocks/ecommerce/empty-cart/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/empty-cart/example")),
+    meta: {"tags":["ecommerce","cart","empty","state"],"source":"creative-tim"},
+  },
+  "faq-accordion": {
+    name: "faq-accordion",
+    description: "An accordion-style FAQ section with collapsible question panels.",
+    type: "registry:block",
+    category: "faq",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/faq/faq-accordion/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/faq/faq-accordion/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["faq","accordion","collapsible","expandable"],"source":"creative-tim"},
+  },
+  "faq-accordion-demo": {
+    name: "faq-accordion-demo",
+    description: "An accordion-style FAQ section with collapsible question panels. (demo)",
+    type: "registry:example",
+    category: "faq",
+    registryDependencies: ["faq-accordion"],
+    files: [{
+      path: "registry/blocks/faq/faq-accordion/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/faq/faq-accordion/example")),
+    meta: {"tags":["faq","accordion","collapsible","expandable"],"source":"creative-tim"},
+  },
+  "faq-cards": {
+    name: "faq-cards",
+    description: "A FAQ section with a left-aligned title and card-based question layout.",
+    type: "registry:block",
+    category: "faq",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/faq/faq-cards/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/faq/faq-cards/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["faq","cards","left-title","grid"],"source":"creative-tim"},
+  },
+  "faq-cards-demo": {
+    name: "faq-cards-demo",
+    description: "A FAQ section with a left-aligned title and card-based question layout. (demo)",
+    type: "registry:example",
+    category: "faq",
+    registryDependencies: ["faq-cards"],
+    files: [{
+      path: "registry/blocks/faq/faq-cards/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/faq/faq-cards/example")),
+    meta: {"tags":["faq","cards","left-title","grid"],"source":"creative-tim"},
+  },
+  "faq-cards-icons": {
+    name: "faq-cards-icons",
+    description: "A FAQ section with icon cards in a responsive grid layout.",
+    type: "registry:block",
+    category: "faq",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/faq/faq-cards-icons/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/faq/faq-cards-icons/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["faq","cards","icons","grid"],"source":"creative-tim"},
+  },
+  "faq-cards-icons-demo": {
+    name: "faq-cards-icons-demo",
+    description: "A FAQ section with icon cards in a responsive grid layout. (demo)",
+    type: "registry:example",
+    category: "faq",
+    registryDependencies: ["faq-cards-icons"],
+    files: [{
+      path: "registry/blocks/faq/faq-cards-icons/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/faq/faq-cards-icons/example")),
+    meta: {"tags":["faq","cards","icons","grid"],"source":"creative-tim"},
+  },
+  "faq-grid": {
+    name: "faq-grid",
+    description: "A FAQ section displayed in a responsive grid layout.",
+    type: "registry:block",
+    category: "faq",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/faq/faq-grid/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/faq/faq-grid/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["faq","grid","questions","answers"],"source":"creative-tim"},
+  },
+  "faq-grid-demo": {
+    name: "faq-grid-demo",
+    description: "A FAQ section displayed in a responsive grid layout. (demo)",
+    type: "registry:example",
+    category: "faq",
+    registryDependencies: ["faq-grid"],
+    files: [{
+      path: "registry/blocks/faq/faq-grid/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/faq/faq-grid/example")),
+    meta: {"tags":["faq","grid","questions","answers"],"source":"creative-tim"},
+  },
+  "faq-grid-cta": {
+    name: "faq-grid-cta",
+    description: "A FAQ grid section with a call-to-action support card.",
+    type: "registry:block",
+    category: "faq",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/faq/faq-grid-cta/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/faq/faq-grid-cta/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["faq","grid","cta","support"],"source":"creative-tim"},
+  },
+  "faq-grid-cta-demo": {
+    name: "faq-grid-cta-demo",
+    description: "A FAQ grid section with a call-to-action support card. (demo)",
+    type: "registry:example",
+    category: "faq",
+    registryDependencies: ["faq-grid-cta"],
+    files: [{
+      path: "registry/blocks/faq/faq-grid-cta/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/faq/faq-grid-cta/example")),
+    meta: {"tags":["faq","grid","cta","support"],"source":"creative-tim"},
+  },
+  "faq-left-title": {
+    name: "faq-left-title",
+    description: "A FAQ section with left-aligned title and right-side accordion items.",
+    type: "registry:block",
+    category: "faq",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/faq/faq-left-title/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/faq/faq-left-title/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["faq","accordion","left-title","questions"],"source":"creative-tim"},
+  },
+  "faq-left-title-demo": {
+    name: "faq-left-title-demo",
+    description: "A FAQ section with left-aligned title and right-side accordion items. (demo)",
+    type: "registry:example",
+    category: "faq",
+    registryDependencies: ["faq-left-title"],
+    files: [{
+      path: "registry/blocks/faq/faq-left-title/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/faq/faq-left-title/example")),
+    meta: {"tags":["faq","accordion","left-title","questions"],"source":"creative-tim"},
+  },
+  "faq-list": {
+    name: "faq-list",
+    description: "A FAQ section in a simple list format with accordion items.",
+    type: "registry:block",
+    category: "faq",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/faq/faq-list/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/faq/faq-list/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["faq","list","accordion","questions"],"source":"creative-tim"},
+  },
+  "faq-list-demo": {
+    name: "faq-list-demo",
+    description: "A FAQ section in a simple list format with accordion items. (demo)",
+    type: "registry:example",
+    category: "faq",
+    registryDependencies: ["faq-list"],
+    files: [{
+      path: "registry/blocks/faq/faq-list/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/faq/faq-list/example")),
+    meta: {"tags":["faq","list","accordion","questions"],"source":"creative-tim"},
+  },
+  "faq-minimal": {
+    name: "faq-minimal",
+    description: "A minimal FAQ section with clean accordion styling.",
+    type: "registry:block",
+    category: "faq",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/faq/faq-minimal/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/faq/faq-minimal/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["faq","minimal","simple","accordion"],"source":"creative-tim"},
+  },
+  "faq-minimal-demo": {
+    name: "faq-minimal-demo",
+    description: "A minimal FAQ section with clean accordion styling. (demo)",
+    type: "registry:example",
+    category: "faq",
+    registryDependencies: ["faq-minimal"],
+    files: [{
+      path: "registry/blocks/faq/faq-minimal/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/faq/faq-minimal/example")),
+    meta: {"tags":["faq","minimal","simple","accordion"],"source":"creative-tim"},
+  },
+  "faq-simple": {
+    name: "faq-simple",
+    description: "A simple FAQ section with question and answer pairs in a clean layout.",
+    type: "registry:block",
+    category: "faq",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/faq/faq-simple/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/faq/faq-simple/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["faq","simple","questions","answers"],"source":"creative-tim"},
+  },
+  "faq-simple-demo": {
+    name: "faq-simple-demo",
+    description: "A simple FAQ section with question and answer pairs in a clean layout. (demo)",
+    type: "registry:example",
+    category: "faq",
+    registryDependencies: ["faq-simple"],
+    files: [{
+      path: "registry/blocks/faq/faq-simple/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/faq/faq-simple/example")),
+    meta: {"tags":["faq","simple","questions","answers"],"source":"creative-tim"},
+  },
+  "footer-app-download": {
+    name: "footer-app-download",
+    description: "A footer with app download buttons and store links.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-app-download/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-app-download/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","app","download","store"],"source":"creative-tim"},
+  },
+  "footer-app-download-demo": {
+    name: "footer-app-download-demo",
+    description: "A footer with app download buttons and store links. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-app-download"],
+    files: [{
+      path: "registry/blocks/footer/footer-app-download/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-app-download/example")),
+    meta: {"tags":["footer","app","download","store"],"source":"creative-tim"},
+  },
+  "footer-bordered": {
+    name: "footer-bordered",
+    description: "A footer with bordered sections and clean separation.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-bordered/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-bordered/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","bordered","sections","clean"],"source":"creative-tim"},
+  },
+  "footer-bordered-demo": {
+    name: "footer-bordered-demo",
+    description: "A footer with bordered sections and clean separation. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-bordered"],
+    files: [{
+      path: "registry/blocks/footer/footer-bordered/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-bordered/example")),
+    meta: {"tags":["footer","bordered","sections","clean"],"source":"creative-tim"},
+  },
+  "footer-branded": {
+    name: "footer-branded",
+    description: "A branded footer with logo, description, and social media links.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-branded/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-branded/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","branded","logo","social"],"source":"creative-tim"},
+  },
+  "footer-branded-demo": {
+    name: "footer-branded-demo",
+    description: "A branded footer with logo, description, and social media links. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-branded"],
+    files: [{
+      path: "registry/blocks/footer/footer-branded/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-branded/example")),
+    meta: {"tags":["footer","branded","logo","social"],"source":"creative-tim"},
+  },
+  "footer-centered-links": {
+    name: "footer-centered-links",
+    description: "A centered footer with navigation links and social icons.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-centered-links/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-centered-links/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","centered","links","social"],"source":"creative-tim"},
+  },
+  "footer-centered-links-demo": {
+    name: "footer-centered-links-demo",
+    description: "A centered footer with navigation links and social icons. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-centered-links"],
+    files: [{
+      path: "registry/blocks/footer/footer-centered-links/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-centered-links/example")),
+    meta: {"tags":["footer","centered","links","social"],"source":"creative-tim"},
+  },
+  "footer-columns": {
+    name: "footer-columns",
+    description: "A footer with multiple link columns and company branding.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-columns/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-columns/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","columns","links","branding"],"source":"creative-tim"},
+  },
+  "footer-columns-demo": {
+    name: "footer-columns-demo",
+    description: "A footer with multiple link columns and company branding. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-columns"],
+    files: [{
+      path: "registry/blocks/footer/footer-columns/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-columns/example")),
+    meta: {"tags":["footer","columns","links","branding"],"source":"creative-tim"},
+  },
+  "footer-compact": {
+    name: "footer-compact",
+    description: "A compact footer with minimal links and copyright.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-compact/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-compact/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","compact","minimal","copyright"],"source":"creative-tim"},
+  },
+  "footer-compact-demo": {
+    name: "footer-compact-demo",
+    description: "A compact footer with minimal links and copyright. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-compact"],
+    files: [{
+      path: "registry/blocks/footer/footer-compact/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-compact/example")),
+    meta: {"tags":["footer","compact","minimal","copyright"],"source":"creative-tim"},
+  },
+  "footer-cta": {
+    name: "footer-cta",
+    description: "A footer with call-to-action section and subscription form.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-cta/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-cta/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","cta","subscription","action"],"source":"creative-tim"},
+  },
+  "footer-cta-demo": {
+    name: "footer-cta-demo",
+    description: "A footer with call-to-action section and subscription form. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-cta"],
+    files: [{
+      path: "registry/blocks/footer/footer-cta/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-cta/example")),
+    meta: {"tags":["footer","cta","subscription","action"],"source":"creative-tim"},
+  },
+  "footer-dark": {
+    name: "footer-dark",
+    description: "A footer with navigation links, email subscription, and dark styling.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-dark/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-dark/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","dark","subscribe","newsletter","links"],"source":"creative-tim"},
+  },
+  "footer-dark-demo": {
+    name: "footer-dark-demo",
+    description: "A footer with navigation links, email subscription, and dark styling. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-dark"],
+    files: [{
+      path: "registry/blocks/footer/footer-dark/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-dark/example")),
+    meta: {"tags":["footer","dark","subscribe","newsletter","links"],"source":"creative-tim"},
+  },
+  "footer-gradient": {
+    name: "footer-gradient",
+    description: "A footer with gradient background and modern styling.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-gradient/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-gradient/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","gradient","modern","styled"],"source":"creative-tim"},
+  },
+  "footer-gradient-demo": {
+    name: "footer-gradient-demo",
+    description: "A footer with gradient background and modern styling. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-gradient"],
+    files: [{
+      path: "registry/blocks/footer/footer-gradient/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-gradient/example")),
+    meta: {"tags":["footer","gradient","modern","styled"],"source":"creative-tim"},
+  },
+  "footer-links": {
+    name: "footer-links",
+    description: "A footer with navigation links, sign-in button, and copyright notice.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-links/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-links/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","links","navigation","sign-in"],"source":"creative-tim"},
+  },
+  "footer-links-demo": {
+    name: "footer-links-demo",
+    description: "A footer with navigation links, sign-in button, and copyright notice. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-links"],
+    files: [{
+      path: "registry/blocks/footer/footer-links/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-links/example")),
+    meta: {"tags":["footer","links","navigation","sign-in"],"source":"creative-tim"},
+  },
+  "footer-logo-cloud": {
+    name: "footer-logo-cloud",
+    description: "A footer with partner logo cloud and navigation.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-logo-cloud/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-logo-cloud/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","logos","partners","cloud"],"source":"creative-tim"},
+  },
+  "footer-logo-cloud-demo": {
+    name: "footer-logo-cloud-demo",
+    description: "A footer with partner logo cloud and navigation. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-logo-cloud"],
+    files: [{
+      path: "registry/blocks/footer/footer-logo-cloud/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-logo-cloud/example")),
+    meta: {"tags":["footer","logos","partners","cloud"],"source":"creative-tim"},
+  },
+  "footer-minimal-dark": {
+    name: "footer-minimal-dark",
+    description: "A minimal dark-themed footer with essential links.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-minimal-dark/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-minimal-dark/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","minimal","dark","simple"],"source":"creative-tim"},
+  },
+  "footer-minimal-dark-demo": {
+    name: "footer-minimal-dark-demo",
+    description: "A minimal dark-themed footer with essential links. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-minimal-dark"],
+    files: [{
+      path: "registry/blocks/footer/footer-minimal-dark/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-minimal-dark/example")),
+    meta: {"tags":["footer","minimal","dark","simple"],"source":"creative-tim"},
+  },
+  "footer-multi-column": {
+    name: "footer-multi-column",
+    description: "A multi-column footer with comprehensive navigation links.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-multi-column/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-multi-column/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","multi-column","navigation","links"],"source":"creative-tim"},
+  },
+  "footer-multi-column-demo": {
+    name: "footer-multi-column-demo",
+    description: "A multi-column footer with comprehensive navigation links. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-multi-column"],
+    files: [{
+      path: "registry/blocks/footer/footer-multi-column/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-multi-column/example")),
+    meta: {"tags":["footer","multi-column","navigation","links"],"source":"creative-tim"},
+  },
+  "footer-newsletter": {
+    name: "footer-newsletter",
+    description: "A dark primary-colored footer with language selector, link columns, and newsletter subscription.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-newsletter/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-newsletter/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","newsletter","language","currency","dark"],"source":"creative-tim"},
+  },
+  "footer-newsletter-demo": {
+    name: "footer-newsletter-demo",
+    description: "A dark primary-colored footer with language selector, link columns, and newsletter subscription. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-newsletter"],
+    files: [{
+      path: "registry/blocks/footer/footer-newsletter/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-newsletter/example")),
+    meta: {"tags":["footer","newsletter","language","currency","dark"],"source":"creative-tim"},
+  },
+  "footer-simple": {
+    name: "footer-simple",
+    description: "A simple footer with copyright text and social media icon links.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-simple/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-simple/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","simple","social","copyright"],"source":"creative-tim"},
+  },
+  "footer-simple-demo": {
+    name: "footer-simple-demo",
+    description: "A simple footer with copyright text and social media icon links. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-simple"],
+    files: [{
+      path: "registry/blocks/footer/footer-simple/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-simple/example")),
+    meta: {"tags":["footer","simple","social","copyright"],"source":"creative-tim"},
+  },
+  "footer-sitemap": {
+    name: "footer-sitemap",
+    description: "A comprehensive sitemap-style footer with organized link sections.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-sitemap/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-sitemap/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","sitemap","links","navigation"],"source":"creative-tim"},
+  },
+  "footer-sitemap-demo": {
+    name: "footer-sitemap-demo",
+    description: "A comprehensive sitemap-style footer with organized link sections. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-sitemap"],
+    files: [{
+      path: "registry/blocks/footer/footer-sitemap/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-sitemap/example")),
+    meta: {"tags":["footer","sitemap","links","navigation"],"source":"creative-tim"},
+  },
+  "footer-social": {
+    name: "footer-social",
+    description: "A footer with newsletter CTA card, navigation links, and social icons.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-social/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-social/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","social","newsletter","cta","icons"],"source":"creative-tim"},
+  },
+  "footer-social-demo": {
+    name: "footer-social-demo",
+    description: "A footer with newsletter CTA card, navigation links, and social icons. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-social"],
+    files: [{
+      path: "registry/blocks/footer/footer-social/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-social/example")),
+    meta: {"tags":["footer","social","newsletter","cta","icons"],"source":"creative-tim"},
+  },
+  "footer-social-grid": {
+    name: "footer-social-grid",
+    description: "A footer with social media grid and contact information.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-social-grid/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-social-grid/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","social","grid","contact"],"source":"creative-tim"},
+  },
+  "footer-social-grid-demo": {
+    name: "footer-social-grid-demo",
+    description: "A footer with social media grid and contact information. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-social-grid"],
+    files: [{
+      path: "registry/blocks/footer/footer-social-grid/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-social-grid/example")),
+    meta: {"tags":["footer","social","grid","contact"],"source":"creative-tim"},
+  },
+  "footer-stacked": {
+    name: "footer-stacked",
+    description: "A stacked footer with centered content blocks.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-stacked/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-stacked/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","stacked","centered","blocks"],"source":"creative-tim"},
+  },
+  "footer-stacked-demo": {
+    name: "footer-stacked-demo",
+    description: "A stacked footer with centered content blocks. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-stacked"],
+    files: [{
+      path: "registry/blocks/footer/footer-stacked/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-stacked/example")),
+    meta: {"tags":["footer","stacked","centered","blocks"],"source":"creative-tim"},
+  },
+  "footer-with-form": {
+    name: "footer-with-form",
+    description: "A footer with a newsletter subscription form and link columns.",
+    type: "registry:block",
+    category: "footer",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/footer/footer-with-form/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/footer/footer-with-form/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["footer","form","newsletter","subscription"],"source":"creative-tim"},
+  },
+  "footer-with-form-demo": {
+    name: "footer-with-form-demo",
+    description: "A footer with a newsletter subscription form and link columns. (demo)",
+    type: "registry:example",
+    category: "footer",
+    registryDependencies: ["footer-with-form"],
+    files: [{
+      path: "registry/blocks/footer/footer-with-form/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/footer/footer-with-form/example")),
+    meta: {"tags":["footer","form","newsletter","subscription"],"source":"creative-tim"},
+  },
+  "hero-centered": {
+    name: "hero-centered",
+    description: "A centered hero section with headline, gradient highlight, subtext, and dual CTA buttons.",
+    type: "registry:block",
+    category: "hero",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/hero/hero-centered/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/hero/hero-centered/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["hero","centered","landing","cta","headline"],"source":"creative-tim"},
+  },
+  "hero-centered-demo": {
+    name: "hero-centered-demo",
+    description: "A centered hero section with headline, gradient highlight, subtext, and dual CTA buttons. (demo)",
+    type: "registry:example",
+    category: "hero",
+    registryDependencies: ["hero-centered"],
+    files: [{
+      path: "registry/blocks/hero/hero-centered/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/hero/hero-centered/example")),
+    meta: {"tags":["hero","centered","landing","cta","headline"],"source":"creative-tim"},
+  },
+  "hero-gradient": {
+    name: "hero-gradient",
+    description: "A hero section with dark gradient background, animated floating orbs, terminal mockup, and CTA buttons.",
+    type: "registry:block",
+    category: "hero",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/hero/hero-gradient/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/hero/hero-gradient/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["hero","gradient","animated","dark","terminal","landing"],"source":"creative-tim"},
+  },
+  "hero-gradient-demo": {
+    name: "hero-gradient-demo",
+    description: "A hero section with dark gradient background, animated floating orbs, terminal mockup, and CTA buttons. (demo)",
+    type: "registry:example",
+    category: "hero",
+    registryDependencies: ["hero-gradient"],
+    files: [{
+      path: "registry/blocks/hero/hero-gradient/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/hero/hero-gradient/example")),
+    meta: {"tags":["hero","gradient","animated","dark","terminal","landing"],"source":"creative-tim"},
+  },
+  "hero-minimal": {
+    name: "hero-minimal",
+    description: "A minimal hero section with a large heading and a single CTA button.",
+    type: "registry:block",
+    category: "hero",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/hero/hero-minimal/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/hero/hero-minimal/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["hero","minimal","simple","clean","landing"],"source":"creative-tim"},
+  },
+  "hero-minimal-demo": {
+    name: "hero-minimal-demo",
+    description: "A minimal hero section with a large heading and a single CTA button. (demo)",
+    type: "registry:example",
+    category: "hero",
+    registryDependencies: ["hero-minimal"],
+    files: [{
+      path: "registry/blocks/hero/hero-minimal/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/hero/hero-minimal/example")),
+    meta: {"tags":["hero","minimal","simple","clean","landing"],"source":"creative-tim"},
+  },
+  "hero-split": {
+    name: "hero-split",
+    description: "A split hero section with text on the left, image placeholder on the right, and stat counters.",
+    type: "registry:block",
+    category: "hero",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/hero/hero-split/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/hero/hero-split/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["hero","split","landing","image","stats"],"source":"creative-tim"},
+  },
+  "hero-split-demo": {
+    name: "hero-split-demo",
+    description: "A split hero section with text on the left, image placeholder on the right, and stat counters. (demo)",
+    type: "registry:example",
+    category: "hero",
+    registryDependencies: ["hero-split"],
+    files: [{
+      path: "registry/blocks/hero/hero-split/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/hero/hero-split/example")),
+    meta: {"tags":["hero","split","landing","image","stats"],"source":"creative-tim"},
+  },
+  "invoice-history": {
+    name: "invoice-history",
+    description: "An invoice history table showing past invoices with dates, amounts, and download links.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/billing/invoice-history/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/invoice-history/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","invoice","history","table","download"],"source":"billingsdk"},
+  },
+  "invoice-history-demo": {
+    name: "invoice-history-demo",
+    description: "An invoice history table showing past invoices with dates, amounts, and download links. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["invoice-history"],
+    files: [{
+      path: "registry/blocks/billing/invoice-history/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/invoice-history/example")),
+    meta: {"tags":["billing","invoice","history","table","download"],"source":"billingsdk"},
+  },
+  "invoice-list": {
+    name: "invoice-list",
+    description: "An invoice listing section with status badges and download actions.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/billing/invoice-list/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/invoice-list/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","invoices","list","payments"],"source":"creative-tim"},
+  },
+  "invoice-list-demo": {
+    name: "invoice-list-demo",
+    description: "An invoice listing section with status badges and download actions. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["invoice-list"],
+    files: [{
+      path: "registry/blocks/billing/invoice-list/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/invoice-list/example")),
+    meta: {"tags":["billing","invoices","list","payments"],"source":"creative-tim"},
+  },
+  "limited-offer-dialog": {
+    name: "limited-offer-dialog",
+    description: "A limited-time offer dialog with discount badge, feature list, urgency warning, and claim/decline actions.",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/limited-offer-dialog/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/limited-offer-dialog/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","dialog","offer","discount","promotion","billing"],"source":"billingsdk"},
+  },
+  "limited-offer-dialog-demo": {
+    name: "limited-offer-dialog-demo",
+    description: "A limited-time offer dialog with discount badge, feature list, urgency warning, and claim/decline actions. (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["limited-offer-dialog"],
+    files: [{
+      path: "registry/blocks/modal/limited-offer-dialog/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/limited-offer-dialog/example")),
+    meta: {"tags":["modal","dialog","offer","discount","promotion","billing"],"source":"billingsdk"},
+  },
+  "modal-alert": {
+    name: "modal-alert",
+    description: "An alert confirmation modal with warning icon and confirmation input.",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/modal-alert/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/modal-alert/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","alert","confirmation","warning","dialog"],"source":"creative-tim"},
+  },
+  "modal-alert-demo": {
+    name: "modal-alert-demo",
+    description: "An alert confirmation modal with warning icon and confirmation input. (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["modal-alert"],
+    files: [{
+      path: "registry/blocks/modal/modal-alert/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/modal-alert/example")),
+    meta: {"tags":["modal","alert","confirmation","warning","dialog"],"source":"creative-tim"},
+  },
+  "modal-confirmation": {
+    name: "modal-confirmation",
+    description: "A confirmation dialog modal with action buttons.",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/modal-confirmation/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/modal-confirmation/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","confirmation","dialog","action"],"source":"creative-tim"},
+  },
+  "modal-confirmation-demo": {
+    name: "modal-confirmation-demo",
+    description: "A confirmation dialog modal with action buttons. (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["modal-confirmation"],
+    files: [{
+      path: "registry/blocks/modal/modal-confirmation/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/modal-confirmation/example")),
+    meta: {"tags":["modal","confirmation","dialog","action"],"source":"creative-tim"},
+  },
+  "modal-cookie": {
+    name: "modal-cookie",
+    description: "A cookie consent modal with preference options.",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/modal-cookie/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/modal-cookie/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","cookie","consent","preferences"],"source":"creative-tim"},
+  },
+  "modal-cookie-demo": {
+    name: "modal-cookie-demo",
+    description: "A cookie consent modal with preference options. (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["modal-cookie"],
+    files: [{
+      path: "registry/blocks/modal/modal-cookie/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/modal-cookie/example")),
+    meta: {"tags":["modal","cookie","consent","preferences"],"source":"creative-tim"},
+  },
+  "modal-delete": {
+    name: "modal-delete",
+    description: "A delete confirmation modal with warning state.",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/modal-delete/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/modal-delete/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","delete","warning","confirmation"],"source":"creative-tim"},
+  },
+  "modal-delete-demo": {
+    name: "modal-delete-demo",
+    description: "A delete confirmation modal with warning state. (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["modal-delete"],
+    files: [{
+      path: "registry/blocks/modal/modal-delete/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/modal-delete/example")),
+    meta: {"tags":["modal","delete","warning","confirmation"],"source":"creative-tim"},
+  },
+  "modal-feedback": {
+    name: "modal-feedback",
+    description: "A feedback collection modal with rating and text input.",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/modal-feedback/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/modal-feedback/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","feedback","rating","review"],"source":"creative-tim"},
+  },
+  "modal-feedback-demo": {
+    name: "modal-feedback-demo",
+    description: "A feedback collection modal with rating and text input. (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["modal-feedback"],
+    files: [{
+      path: "registry/blocks/modal/modal-feedback/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/modal-feedback/example")),
+    meta: {"tags":["modal","feedback","rating","review"],"source":"creative-tim"},
+  },
+  "modal-form": {
+    name: "modal-form",
+    description: "A modal with an embedded form for data collection.",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/modal-form/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/modal-form/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","form","input","data"],"source":"creative-tim"},
+  },
+  "modal-form-demo": {
+    name: "modal-form-demo",
+    description: "A modal with an embedded form for data collection. (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["modal-form"],
+    files: [{
+      path: "registry/blocks/modal/modal-form/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/modal-form/example")),
+    meta: {"tags":["modal","form","input","data"],"source":"creative-tim"},
+  },
+  "modal-invite": {
+    name: "modal-invite",
+    description: "A team invite modal with email input, member list, and permission controls.",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/modal-invite/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/modal-invite/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","invite","team","permissions","share"],"source":"creative-tim"},
+  },
+  "modal-invite-demo": {
+    name: "modal-invite-demo",
+    description: "A team invite modal with email input, member list, and permission controls. (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["modal-invite"],
+    files: [{
+      path: "registry/blocks/modal/modal-invite/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/modal-invite/example")),
+    meta: {"tags":["modal","invite","team","permissions","share"],"source":"creative-tim"},
+  },
+  "modal-newsletter": {
+    name: "modal-newsletter",
+    description: "A newsletter subscription modal with email input.",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/modal-newsletter/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/modal-newsletter/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","newsletter","subscription","email"],"source":"creative-tim"},
+  },
+  "modal-newsletter-demo": {
+    name: "modal-newsletter-demo",
+    description: "A newsletter subscription modal with email input. (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["modal-newsletter"],
+    files: [{
+      path: "registry/blocks/modal/modal-newsletter/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/modal-newsletter/example")),
+    meta: {"tags":["modal","newsletter","subscription","email"],"source":"creative-tim"},
+  },
+  "modal-notification": {
+    name: "modal-notification",
+    description: "A notification modal with icon and message display.",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/modal-notification/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/modal-notification/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","notification","message","icon"],"source":"creative-tim"},
+  },
+  "modal-notification-demo": {
+    name: "modal-notification-demo",
+    description: "A notification modal with icon and message display. (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["modal-notification"],
+    files: [{
+      path: "registry/blocks/modal/modal-notification/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/modal-notification/example")),
+    meta: {"tags":["modal","notification","message","icon"],"source":"creative-tim"},
+  },
+  "modal-pricing": {
+    name: "modal-pricing",
+    description: "A pricing plan selection modal with tier comparison.",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/modal-pricing/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/modal-pricing/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","pricing","plans","selection"],"source":"creative-tim"},
+  },
+  "modal-pricing-demo": {
+    name: "modal-pricing-demo",
+    description: "A pricing plan selection modal with tier comparison. (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["modal-pricing"],
+    files: [{
+      path: "registry/blocks/modal/modal-pricing/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/modal-pricing/example")),
+    meta: {"tags":["modal","pricing","plans","selection"],"source":"creative-tim"},
+  },
+  "modal-profile": {
+    name: "modal-profile",
+    description: "An edit profile modal with form fields, technology preferences, and notification settings.",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/modal-profile/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/modal-profile/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","profile","edit","form","settings"],"source":"creative-tim"},
+  },
+  "modal-profile-demo": {
+    name: "modal-profile-demo",
+    description: "An edit profile modal with form fields, technology preferences, and notification settings. (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["modal-profile"],
+    files: [{
+      path: "registry/blocks/modal/modal-profile/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/modal-profile/example")),
+    meta: {"tags":["modal","profile","edit","form","settings"],"source":"creative-tim"},
+  },
+  "modal-settings": {
+    name: "modal-settings",
+    description: "A quick settings modal with toggles and preferences.",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/modal-settings/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/modal-settings/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","settings","preferences","toggles"],"source":"creative-tim"},
+  },
+  "modal-settings-demo": {
+    name: "modal-settings-demo",
+    description: "A quick settings modal with toggles and preferences. (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["modal-settings"],
+    files: [{
+      path: "registry/blocks/modal/modal-settings/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/modal-settings/example")),
+    meta: {"tags":["modal","settings","preferences","toggles"],"source":"creative-tim"},
+  },
+  "modal-share": {
+    name: "modal-share",
+    description: "A content sharing modal with social media links.",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/modal-share/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/modal-share/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","share","social","links"],"source":"creative-tim"},
+  },
+  "modal-share-demo": {
+    name: "modal-share-demo",
+    description: "A content sharing modal with social media links. (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["modal-share"],
+    files: [{
+      path: "registry/blocks/modal/modal-share/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/modal-share/example")),
+    meta: {"tags":["modal","share","social","links"],"source":"creative-tim"},
+  },
+  "modal-success": {
+    name: "modal-success",
+    description: "A success state modal with checkmark animation.",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/modal-success/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/modal-success/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","success","state","confirmation"],"source":"creative-tim"},
+  },
+  "modal-success-demo": {
+    name: "modal-success-demo",
+    description: "A success state modal with checkmark animation. (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["modal-success"],
+    files: [{
+      path: "registry/blocks/modal/modal-success/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/modal-success/example")),
+    meta: {"tags":["modal","success","state","confirmation"],"source":"creative-tim"},
+  },
+  "order-details": {
+    name: "order-details",
+    description: "An order details page with timeline tracking, shipping info, and order summary.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/order-details/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/order-details/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","order","details","timeline","tracking"],"source":"creative-tim"},
+  },
+  "order-details-demo": {
+    name: "order-details-demo",
+    description: "An order details page with timeline tracking, shipping info, and order summary. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["order-details"],
+    files: [{
+      path: "registry/blocks/ecommerce/order-details/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/order-details/example")),
+    meta: {"tags":["ecommerce","order","details","timeline","tracking"],"source":"creative-tim"},
+  },
+  "order-history": {
+    name: "order-history",
+    description: "An order history list with status badges and reorder actions.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/order-history/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/order-history/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","order","history","list"],"source":"creative-tim"},
+  },
+  "order-history-demo": {
+    name: "order-history-demo",
+    description: "An order history list with status badges and reorder actions. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["order-history"],
+    files: [{
+      path: "registry/blocks/ecommerce/order-history/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/order-history/example")),
+    meta: {"tags":["ecommerce","order","history","list"],"source":"creative-tim"},
+  },
+  "payment-card": {
+    name: "payment-card",
+    description: "A visual credit card display component showing card number, expiry, and cardholder name.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/billing/payment-card/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/payment-card/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","payment","card","credit-card","display"],"source":"billingsdk"},
+  },
+  "payment-card-demo": {
+    name: "payment-card-demo",
+    description: "A visual credit card display component showing card number, expiry, and cardholder name. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["payment-card"],
+    files: [{
+      path: "registry/blocks/billing/payment-card/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/payment-card/example")),
+    meta: {"tags":["billing","payment","card","credit-card","display"],"source":"billingsdk"},
+  },
+  "payment-details": {
+    name: "payment-details",
+    description: "A payment details form with card information, billing address, and save payment method.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/billing/payment-details/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/payment-details/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","payment","card","form","details"],"source":"billingsdk"},
+  },
+  "payment-details-demo": {
+    name: "payment-details-demo",
+    description: "A payment details form with card information, billing address, and save payment method. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["payment-details"],
+    files: [{
+      path: "registry/blocks/billing/payment-details/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/payment-details/example")),
+    meta: {"tags":["billing","payment","card","form","details"],"source":"billingsdk"},
+  },
+  "payment-details-two": {
+    name: "payment-details-two",
+    description: "A two-step payment form with card details, card type detection, billing address, and animated transitions.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react","motion"],
+    files: [{
+      path: "registry/blocks/billing/payment-details-two/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/payment-details-two/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","payment","form","card","multi-step"],"source":"billingsdk"},
+  },
+  "payment-details-two-demo": {
+    name: "payment-details-two-demo",
+    description: "A two-step payment form with card details, card type detection, billing address, and animated transitions. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["payment-details-two"],
+    files: [{
+      path: "registry/blocks/billing/payment-details-two/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/payment-details-two/example")),
+    meta: {"tags":["billing","payment","form","card","multi-step"],"source":"billingsdk"},
+  },
+  "payment-failure": {
+    name: "payment-failure",
+    description: "A payment failure notification card with error details and retry options.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/billing/payment-failure/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/payment-failure/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","payment","failure","error","retry"],"source":"billingsdk"},
+  },
+  "payment-failure-demo": {
+    name: "payment-failure-demo",
+    description: "A payment failure notification card with error details and retry options. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["payment-failure"],
+    files: [{
+      path: "registry/blocks/billing/payment-failure/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/payment-failure/example")),
+    meta: {"tags":["billing","payment","failure","error","retry"],"source":"billingsdk"},
+  },
+  "payment-method": {
+    name: "payment-method",
+    description: "A payment method selection form with credit card and billing address fields.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/billing/payment-method/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/payment-method/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","payment","credit-card","method"],"source":"creative-tim"},
+  },
+  "payment-method-demo": {
+    name: "payment-method-demo",
+    description: "A payment method selection form with credit card and billing address fields. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["payment-method"],
+    files: [{
+      path: "registry/blocks/billing/payment-method/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/payment-method/example")),
+    meta: {"tags":["billing","payment","credit-card","method"],"source":"creative-tim"},
+  },
+  "payment-method-selector": {
+    name: "payment-method-selector",
+    description: "Payment Method Selector block.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/billing/payment-method-selector/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/payment-method-selector/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "pricing-table-five": {
+    name: "pricing-table-five",
+    description: "A minimal pricing table with horizontal plan layout, billing toggle, and clean feature lists.",
+    type: "registry:block",
+    category: "pricing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/pricing/pricing-table-five/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/pricing/pricing-table-five/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["pricing","minimal","horizontal","plans","billing"],"source":"billingsdk"},
+  },
+  "pricing-table-five-demo": {
+    name: "pricing-table-five-demo",
+    description: "A minimal pricing table with horizontal plan layout, billing toggle, and clean feature lists. (demo)",
+    type: "registry:example",
+    category: "pricing",
+    registryDependencies: ["pricing-table-five"],
+    files: [{
+      path: "registry/blocks/pricing/pricing-table-five/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/pricing/pricing-table-five/example")),
+    meta: {"tags":["pricing","minimal","horizontal","plans","billing"],"source":"billingsdk"},
+  },
+  "pricing-table-four": {
+    name: "pricing-table-four",
+    description: "A feature-rich pricing table with plan icons, billing toggle, badge highlights, and feature lists.",
+    type: "registry:block",
+    category: "pricing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/pricing/pricing-table-four/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/pricing/pricing-table-four/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["pricing","plans","icons","features","toggle"],"source":"billingsdk"},
+  },
+  "pricing-table-four-demo": {
+    name: "pricing-table-four-demo",
+    description: "A feature-rich pricing table with plan icons, billing toggle, badge highlights, and feature lists. (demo)",
+    type: "registry:example",
+    category: "pricing",
+    registryDependencies: ["pricing-table-four"],
+    files: [{
+      path: "registry/blocks/pricing/pricing-table-four/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/pricing/pricing-table-four/example")),
+    meta: {"tags":["pricing","plans","icons","features","toggle"],"source":"billingsdk"},
+  },
+  "pricing-table-one": {
+    name: "pricing-table-one",
+    description: "A pricing table with monthly/yearly toggle, three-tier plan cards with feature lists and CTA buttons.",
+    type: "registry:block",
+    category: "pricing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/pricing/pricing-table-one/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/pricing/pricing-table-one/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["pricing","plans","billing","subscription","toggle"],"source":"billingsdk"},
+  },
+  "pricing-table-one-demo": {
+    name: "pricing-table-one-demo",
+    description: "A pricing table with monthly/yearly toggle, three-tier plan cards with feature lists and CTA buttons. (demo)",
+    type: "registry:example",
+    category: "pricing",
+    registryDependencies: ["pricing-table-one"],
+    files: [{
+      path: "registry/blocks/pricing/pricing-table-one/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/pricing/pricing-table-one/example")),
+    meta: {"tags":["pricing","plans","billing","subscription","toggle"],"source":"billingsdk"},
+  },
+  "pricing-table-three": {
+    name: "pricing-table-three",
+    description: "A card-based pricing table with elevated highlighted plan, billing toggle, and optional footer CTA.",
+    type: "registry:block",
+    category: "pricing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/pricing/pricing-table-three/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/pricing/pricing-table-three/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["pricing","cards","billing","toggle","plans"],"source":"billingsdk"},
+  },
+  "pricing-table-three-demo": {
+    name: "pricing-table-three-demo",
+    description: "A card-based pricing table with elevated highlighted plan, billing toggle, and optional footer CTA. (demo)",
+    type: "registry:example",
+    category: "pricing",
+    registryDependencies: ["pricing-table-three"],
+    files: [{
+      path: "registry/blocks/pricing/pricing-table-three/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/pricing/pricing-table-three/example")),
+    meta: {"tags":["pricing","cards","billing","toggle","plans"],"source":"billingsdk"},
+  },
+  "pricing-table-two": {
+    name: "pricing-table-two",
+    description: "A comparison pricing table with monthly/yearly toggle, plan cards, and feature comparison grid.",
+    type: "registry:block",
+    category: "pricing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/pricing/pricing-table-two/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/pricing/pricing-table-two/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["pricing","comparison","table","plans","features"],"source":"billingsdk"},
+  },
+  "pricing-table-two-demo": {
+    name: "pricing-table-two-demo",
+    description: "A comparison pricing table with monthly/yearly toggle, plan cards, and feature comparison grid. (demo)",
+    type: "registry:example",
+    category: "pricing",
+    registryDependencies: ["pricing-table-two"],
+    files: [{
+      path: "registry/blocks/pricing/pricing-table-two/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/pricing/pricing-table-two/example")),
+    meta: {"tags":["pricing","comparison","table","plans","features"],"source":"billingsdk"},
+  },
+  "product-description": {
+    name: "product-description",
+    description: "A product description page with image gallery and detailed specifications.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/product-description/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/product-description/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","product","description","specifications"],"source":"creative-tim"},
+  },
+  "product-description-demo": {
+    name: "product-description-demo",
+    description: "A product description page with image gallery and detailed specifications. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["product-description"],
+    files: [{
+      path: "registry/blocks/ecommerce/product-description/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/product-description/example")),
+    meta: {"tags":["ecommerce","product","description","specifications"],"source":"creative-tim"},
+  },
+  "product-description-complex": {
+    name: "product-description-complex",
+    description: "A detailed product page with image gallery, color/size selectors, and accordion details.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/product-description-complex/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/product-description-complex/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","product","description","gallery","details"],"source":"creative-tim"},
+  },
+  "product-description-complex-demo": {
+    name: "product-description-complex-demo",
+    description: "A detailed product page with image gallery, color/size selectors, and accordion details. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["product-description-complex"],
+    files: [{
+      path: "registry/blocks/ecommerce/product-description-complex/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/product-description-complex/example")),
+    meta: {"tags":["ecommerce","product","description","gallery","details"],"source":"creative-tim"},
+  },
+  "product-details-advanced": {
+    name: "product-details-advanced",
+    description: "An advanced product details page with color and size selectors.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/product-details-advanced/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/product-details-advanced/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","product","details","colors","sizes"],"source":"creative-tim"},
+  },
+  "product-details-advanced-demo": {
+    name: "product-details-advanced-demo",
+    description: "An advanced product details page with color and size selectors. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["product-details-advanced"],
+    files: [{
+      path: "registry/blocks/ecommerce/product-details-advanced/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/product-details-advanced/example")),
+    meta: {"tags":["ecommerce","product","details","colors","sizes"],"source":"creative-tim"},
+  },
+  "product-details-minimal": {
+    name: "product-details-minimal",
+    description: "A minimal product details page with clean layout and basic options.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/product-details-minimal/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/product-details-minimal/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","product","details","minimal","simple"],"source":"creative-tim"},
+  },
+  "product-details-minimal-demo": {
+    name: "product-details-minimal-demo",
+    description: "A minimal product details page with clean layout and basic options. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["product-details-minimal"],
+    files: [{
+      path: "registry/blocks/ecommerce/product-details-minimal/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/product-details-minimal/example")),
+    meta: {"tags":["ecommerce","product","details","minimal","simple"],"source":"creative-tim"},
+  },
+  "product-details-simple": {
+    name: "product-details-simple",
+    description: "A product details page with image, size selector, color options, and similar items.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/product-details-simple/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/product-details-simple/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","product","details","size-selector","cart"],"source":"creative-tim"},
+  },
+  "product-details-simple-demo": {
+    name: "product-details-simple-demo",
+    description: "A product details page with image, size selector, color options, and similar items. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["product-details-simple"],
+    files: [{
+      path: "registry/blocks/ecommerce/product-details-simple/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/product-details-simple/example")),
+    meta: {"tags":["ecommerce","product","details","size-selector","cart"],"source":"creative-tim"},
+  },
+  "product-listing-filters": {
+    name: "product-listing-filters",
+    description: "A product listing page with sidebar filters and grid layout.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/product-listing-filters/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/product-listing-filters/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","products","listing","filters","grid"],"source":"creative-tim"},
+  },
+  "product-listing-filters-demo": {
+    name: "product-listing-filters-demo",
+    description: "A product listing page with sidebar filters and grid layout. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["product-listing-filters"],
+    files: [{
+      path: "registry/blocks/ecommerce/product-listing-filters/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/product-listing-filters/example")),
+    meta: {"tags":["ecommerce","products","listing","filters","grid"],"source":"creative-tim"},
+  },
+  "product-overview-dark": {
+    name: "product-overview-dark",
+    description: "A dark-themed product overview with ratings, pricing, tabs, and add-to-cart.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/product-overview-dark/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/product-overview-dark/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","product","overview","dark","tabs"],"source":"creative-tim"},
+  },
+  "product-overview-dark-demo": {
+    name: "product-overview-dark-demo",
+    description: "A dark-themed product overview with ratings, pricing, tabs, and add-to-cart. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["product-overview-dark"],
+    files: [{
+      path: "registry/blocks/ecommerce/product-overview-dark/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/product-overview-dark/example")),
+    meta: {"tags":["ecommerce","product","overview","dark","tabs"],"source":"creative-tim"},
+  },
+  "product-overview-digital": {
+    name: "product-overview-digital",
+    description: "A digital product overview with version selection, ratings, and purchase options.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/product-overview-digital/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/product-overview-digital/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","product","overview","digital","purchase"],"source":"creative-tim"},
+  },
+  "product-overview-digital-demo": {
+    name: "product-overview-digital-demo",
+    description: "A digital product overview with version selection, ratings, and purchase options. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["product-overview-digital"],
+    files: [{
+      path: "registry/blocks/ecommerce/product-overview-digital/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/product-overview-digital/example")),
+    meta: {"tags":["ecommerce","product","overview","digital","purchase"],"source":"creative-tim"},
+  },
+  "product-preview-interactive": {
+    name: "product-preview-interactive",
+    description: "An interactive product preview overlaid on a room photo with quantity selector.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/product-preview-interactive/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/product-preview-interactive/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","product","preview","interactive","room"],"source":"creative-tim"},
+  },
+  "product-preview-interactive-demo": {
+    name: "product-preview-interactive-demo",
+    description: "An interactive product preview overlaid on a room photo with quantity selector. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["product-preview-interactive"],
+    files: [{
+      path: "registry/blocks/ecommerce/product-preview-interactive/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/product-preview-interactive/example")),
+    meta: {"tags":["ecommerce","product","preview","interactive","room"],"source":"creative-tim"},
+  },
+  "promotional-cards": {
+    name: "promotional-cards",
+    description: "Promotional product cards with image overlays and call-to-action links.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/promotional-cards/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/promotional-cards/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","promotional","cards","marketing"],"source":"creative-tim"},
+  },
+  "promotional-cards-demo": {
+    name: "promotional-cards-demo",
+    description: "Promotional product cards with image overlays and call-to-action links. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["promotional-cards"],
+    files: [{
+      path: "registry/blocks/ecommerce/promotional-cards/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/promotional-cards/example")),
+    meta: {"tags":["ecommerce","promotional","cards","marketing"],"source":"creative-tim"},
+  },
+  "shopping-cart": {
+    name: "shopping-cart",
+    description: "A shopping cart with product list, quantity selectors, promo code, and order summary.",
+    type: "registry:block",
+    category: "ecommerce",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/ecommerce/shopping-cart/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/ecommerce/shopping-cart/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ecommerce","cart","shopping","order-summary","checkout"],"source":"creative-tim"},
+  },
+  "shopping-cart-demo": {
+    name: "shopping-cart-demo",
+    description: "A shopping cart with product list, quantity selectors, promo code, and order summary. (demo)",
+    type: "registry:example",
+    category: "ecommerce",
+    registryDependencies: ["shopping-cart"],
+    files: [{
+      path: "registry/blocks/ecommerce/shopping-cart/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/ecommerce/shopping-cart/example")),
+    meta: {"tags":["ecommerce","cart","shopping","order-summary","checkout"],"source":"creative-tim"},
+  },
+  "software-purchase": {
+    name: "software-purchase",
+    description: "A software purchase checkout form with plan selection and payment details.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/billing/software-purchase/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/software-purchase/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","purchase","software","checkout"],"source":"creative-tim"},
+  },
+  "software-purchase-demo": {
+    name: "software-purchase-demo",
+    description: "A software purchase checkout form with plan selection and payment details. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["software-purchase"],
+    files: [{
+      path: "registry/blocks/billing/software-purchase/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/software-purchase/example")),
+    meta: {"tags":["billing","purchase","software","checkout"],"source":"creative-tim"},
+  },
+  "subscription-management": {
+    name: "subscription-management",
+    description: "A subscription management card showing current plan details, billing cycle, and upgrade options.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/billing/subscription-management/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/subscription-management/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","subscription","management","plan","upgrade"],"source":"billingsdk"},
+  },
+  "subscription-management-demo": {
+    name: "subscription-management-demo",
+    description: "A subscription management card showing current plan details, billing cycle, and upgrade options. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["subscription-management"],
+    files: [{
+      path: "registry/blocks/billing/subscription-management/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/subscription-management/example")),
+    meta: {"tags":["billing","subscription","management","plan","upgrade"],"source":"billingsdk"},
+  },
+  "testimonial-avatars": {
+    name: "testimonial-avatars",
+    description: "A testimonial section with prominent avatar displays.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-avatars/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-avatars/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","avatars","profiles","display"],"source":"creative-tim"},
+  },
+  "testimonial-avatars-demo": {
+    name: "testimonial-avatars-demo",
+    description: "A testimonial section with prominent avatar displays. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-avatars"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-avatars/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-avatars/example")),
+    meta: {"tags":["testimonial","avatars","profiles","display"],"source":"creative-tim"},
+  },
+  "testimonial-badge": {
+    name: "testimonial-badge",
+    description: "A testimonial section with badges and verification indicators.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-badge/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-badge/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","badge","verified","trust"],"source":"creative-tim"},
+  },
+  "testimonial-badge-demo": {
+    name: "testimonial-badge-demo",
+    description: "A testimonial section with badges and verification indicators. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-badge"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-badge/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-badge/example")),
+    meta: {"tags":["testimonial","badge","verified","trust"],"source":"creative-tim"},
+  },
+  "testimonial-bordered": {
+    name: "testimonial-bordered",
+    description: "A testimonial section with bordered card styling.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-bordered/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-bordered/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","bordered","cards","styled"],"source":"creative-tim"},
+  },
+  "testimonial-bordered-demo": {
+    name: "testimonial-bordered-demo",
+    description: "A testimonial section with bordered card styling. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-bordered"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-bordered/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-bordered/example")),
+    meta: {"tags":["testimonial","bordered","cards","styled"],"source":"creative-tim"},
+  },
+  "testimonial-cards": {
+    name: "testimonial-cards",
+    description: "A grid of testimonial cards with avatars, quotes, and social links.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-cards/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-cards/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","cards","grid","social"],"source":"creative-tim"},
+  },
+  "testimonial-cards-demo": {
+    name: "testimonial-cards-demo",
+    description: "A grid of testimonial cards with avatars, quotes, and social links. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-cards"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-cards/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-cards/example")),
+    meta: {"tags":["testimonial","cards","grid","social"],"source":"creative-tim"},
+  },
+  "testimonial-carousel": {
+    name: "testimonial-carousel",
+    description: "A dark-themed testimonial carousel with avatars and star ratings.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-carousel/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-carousel/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","carousel","dark","ratings"],"source":"creative-tim"},
+  },
+  "testimonial-carousel-demo": {
+    name: "testimonial-carousel-demo",
+    description: "A dark-themed testimonial carousel with avatars and star ratings. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-carousel"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-carousel/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-carousel/example")),
+    meta: {"tags":["testimonial","carousel","dark","ratings"],"source":"creative-tim"},
+  },
+  "testimonial-centered": {
+    name: "testimonial-centered",
+    description: "A centered testimonial section with a large quote and author details.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-centered/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-centered/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","centered","quote","review"],"source":"creative-tim"},
+  },
+  "testimonial-centered-demo": {
+    name: "testimonial-centered-demo",
+    description: "A centered testimonial section with a large quote and author details. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-centered"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-centered/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-centered/example")),
+    meta: {"tags":["testimonial","centered","quote","review"],"source":"creative-tim"},
+  },
+  "testimonial-columns": {
+    name: "testimonial-columns",
+    description: "A multi-column testimonial layout with varied card sizes.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-columns/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-columns/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","columns","layout","cards"],"source":"creative-tim"},
+  },
+  "testimonial-columns-demo": {
+    name: "testimonial-columns-demo",
+    description: "A multi-column testimonial layout with varied card sizes. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-columns"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-columns/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-columns/example")),
+    meta: {"tags":["testimonial","columns","layout","cards"],"source":"creative-tim"},
+  },
+  "testimonial-company": {
+    name: "testimonial-company",
+    description: "A company testimonial section with logo and attribution.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-company/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-company/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","company","logo","business"],"source":"creative-tim"},
+  },
+  "testimonial-company-demo": {
+    name: "testimonial-company-demo",
+    description: "A company testimonial section with logo and attribution. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-company"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-company/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-company/example")),
+    meta: {"tags":["testimonial","company","logo","business"],"source":"creative-tim"},
+  },
+  "testimonial-dark": {
+    name: "testimonial-dark",
+    description: "A dark-themed testimonial section with rating stars.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-dark/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-dark/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","dark","ratings","stars"],"source":"creative-tim"},
+  },
+  "testimonial-dark-demo": {
+    name: "testimonial-dark-demo",
+    description: "A dark-themed testimonial section with rating stars. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-dark"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-dark/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-dark/example")),
+    meta: {"tags":["testimonial","dark","ratings","stars"],"source":"creative-tim"},
+  },
+  "testimonial-featured": {
+    name: "testimonial-featured",
+    description: "A featured testimonial with large quote and author details.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-featured/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-featured/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","featured","large","quote"],"source":"creative-tim"},
+  },
+  "testimonial-featured-demo": {
+    name: "testimonial-featured-demo",
+    description: "A featured testimonial with large quote and author details. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-featured"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-featured/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-featured/example")),
+    meta: {"tags":["testimonial","featured","large","quote"],"source":"creative-tim"},
+  },
+  "testimonial-gradient": {
+    name: "testimonial-gradient",
+    description: "A testimonial section with gradient background.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-gradient/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-gradient/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","gradient","background","styled"],"source":"creative-tim"},
+  },
+  "testimonial-gradient-demo": {
+    name: "testimonial-gradient-demo",
+    description: "A testimonial section with gradient background. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-gradient"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-gradient/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-gradient/example")),
+    meta: {"tags":["testimonial","gradient","background","styled"],"source":"creative-tim"},
+  },
+  "testimonial-highlight": {
+    name: "testimonial-highlight",
+    description: "A highlighted testimonial with emphasis on key quote.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-highlight/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-highlight/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","highlight","emphasis","key-quote"],"source":"creative-tim"},
+  },
+  "testimonial-highlight-demo": {
+    name: "testimonial-highlight-demo",
+    description: "A highlighted testimonial with emphasis on key quote. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-highlight"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-highlight/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-highlight/example")),
+    meta: {"tags":["testimonial","highlight","emphasis","key-quote"],"source":"creative-tim"},
+  },
+  "testimonial-masonry": {
+    name: "testimonial-masonry",
+    description: "A masonry-style testimonial layout with overlapping cards.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-masonry/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-masonry/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","masonry","layout","overlapping"],"source":"creative-tim"},
+  },
+  "testimonial-masonry-demo": {
+    name: "testimonial-masonry-demo",
+    description: "A masonry-style testimonial layout with overlapping cards. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-masonry"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-masonry/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-masonry/example")),
+    meta: {"tags":["testimonial","masonry","layout","overlapping"],"source":"creative-tim"},
+  },
+  "testimonial-minimal": {
+    name: "testimonial-minimal",
+    description: "A minimal testimonial section with clean styling.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-minimal/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-minimal/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","minimal","clean","simple"],"source":"creative-tim"},
+  },
+  "testimonial-minimal-demo": {
+    name: "testimonial-minimal-demo",
+    description: "A minimal testimonial section with clean styling. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-minimal"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-minimal/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-minimal/example")),
+    meta: {"tags":["testimonial","minimal","clean","simple"],"source":"creative-tim"},
+  },
+  "testimonial-ratings": {
+    name: "testimonial-ratings",
+    description: "A testimonial section with profile images, star ratings, and centered quotes.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-ratings/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-ratings/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","ratings","profile","stars"],"source":"creative-tim"},
+  },
+  "testimonial-ratings-demo": {
+    name: "testimonial-ratings-demo",
+    description: "A testimonial section with profile images, star ratings, and centered quotes. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-ratings"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-ratings/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-ratings/example")),
+    meta: {"tags":["testimonial","ratings","profile","stars"],"source":"creative-tim"},
+  },
+  "testimonial-side-image": {
+    name: "testimonial-side-image",
+    description: "A testimonial with side image and quote layout.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-side-image/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-side-image/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","image","side","quote"],"source":"creative-tim"},
+  },
+  "testimonial-side-image-demo": {
+    name: "testimonial-side-image-demo",
+    description: "A testimonial with side image and quote layout. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-side-image"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-side-image/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-side-image/example")),
+    meta: {"tags":["testimonial","image","side","quote"],"source":"creative-tim"},
+  },
+  "testimonial-simple-grid": {
+    name: "testimonial-simple-grid",
+    description: "A simple testimonial grid with avatar and quote cards.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-simple-grid/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-simple-grid/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","simple","grid","quotes"],"source":"creative-tim"},
+  },
+  "testimonial-simple-grid-demo": {
+    name: "testimonial-simple-grid-demo",
+    description: "A simple testimonial grid with avatar and quote cards. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-simple-grid"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-simple-grid/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-simple-grid/example")),
+    meta: {"tags":["testimonial","simple","grid","quotes"],"source":"creative-tim"},
+  },
+  "testimonial-slider": {
+    name: "testimonial-slider",
+    description: "A testimonial slider with navigation controls.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-slider/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-slider/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","slider","navigation","controls"],"source":"creative-tim"},
+  },
+  "testimonial-slider-demo": {
+    name: "testimonial-slider-demo",
+    description: "A testimonial slider with navigation controls. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-slider"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-slider/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-slider/example")),
+    meta: {"tags":["testimonial","slider","navigation","controls"],"source":"creative-tim"},
+  },
+  "testimonial-social": {
+    name: "testimonial-social",
+    description: "A testimonial section with social media integration.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-social/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-social/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","social","media","integration"],"source":"creative-tim"},
+  },
+  "testimonial-social-demo": {
+    name: "testimonial-social-demo",
+    description: "A testimonial section with social media integration. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-social"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-social/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-social/example")),
+    meta: {"tags":["testimonial","social","media","integration"],"source":"creative-tim"},
+  },
+  "testimonial-split": {
+    name: "testimonial-split",
+    description: "A split-layout testimonial with image and quote sides.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-split/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-split/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","split","layout","image"],"source":"creative-tim"},
+  },
+  "testimonial-split-demo": {
+    name: "testimonial-split-demo",
+    description: "A split-layout testimonial with image and quote sides. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-split"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-split/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-split/example")),
+    meta: {"tags":["testimonial","split","layout","image"],"source":"creative-tim"},
+  },
+  "testimonial-stats": {
+    name: "testimonial-stats",
+    description: "A testimonial section with star ratings, quotes, and company stats.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-stats/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-stats/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","stats","ratings","stars"],"source":"creative-tim"},
+  },
+  "testimonial-stats-demo": {
+    name: "testimonial-stats-demo",
+    description: "A testimonial section with star ratings, quotes, and company stats. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-stats"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-stats/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-stats/example")),
+    meta: {"tags":["testimonial","stats","ratings","stars"],"source":"creative-tim"},
+  },
+  "testimonial-video": {
+    name: "testimonial-video",
+    description: "A testimonial section with video integration.",
+    type: "registry:block",
+    category: "testimonial",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-video/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/testimonial/testimonial-video/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["testimonial","video","media","play"],"source":"creative-tim"},
+  },
+  "testimonial-video-demo": {
+    name: "testimonial-video-demo",
+    description: "A testimonial section with video integration. (demo)",
+    type: "registry:example",
+    category: "testimonial",
+    registryDependencies: ["testimonial-video"],
+    files: [{
+      path: "registry/blocks/testimonial/testimonial-video/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/testimonial/testimonial-video/example")),
+    meta: {"tags":["testimonial","video","media","play"],"source":"creative-tim"},
+  },
+  "transaction-history": {
+    name: "transaction-history",
+    description: "A transaction history table with status indicators and date filtering.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/billing/transaction-history/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/transaction-history/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","transactions","history","payments"],"source":"creative-tim"},
+  },
+  "transaction-history-demo": {
+    name: "transaction-history-demo",
+    description: "A transaction history table with status indicators and date filtering. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["transaction-history"],
+    files: [{
+      path: "registry/blocks/billing/transaction-history/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/transaction-history/example")),
+    meta: {"tags":["billing","transactions","history","payments"],"source":"creative-tim"},
+  },
+  "trial-expiry-card": {
+    name: "trial-expiry-card",
+    description: "A trial expiry notification card with countdown, upgrade CTA, and plan comparison.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/billing/trial-expiry-card/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/trial-expiry-card/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","trial","expiry","countdown","upgrade"],"source":"billingsdk"},
+  },
+  "trial-expiry-card-demo": {
+    name: "trial-expiry-card-demo",
+    description: "A trial expiry notification card with countdown, upgrade CTA, and plan comparison. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["trial-expiry-card"],
+    files: [{
+      path: "registry/blocks/billing/trial-expiry-card/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/trial-expiry-card/example")),
+    meta: {"tags":["billing","trial","expiry","countdown","upgrade"],"source":"billingsdk"},
+  },
+  "usage-based-pricing": {
+    name: "usage-based-pricing",
+    description: "A usage-based pricing component with slider to select usage tiers and dynamic price calculation.",
+    type: "registry:block",
+    category: "pricing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/pricing/usage-based-pricing/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/pricing/usage-based-pricing/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["pricing","usage","slider","tiers","metered"],"source":"billingsdk"},
+  },
+  "usage-based-pricing-demo": {
+    name: "usage-based-pricing-demo",
+    description: "A usage-based pricing component with slider to select usage tiers and dynamic price calculation. (demo)",
+    type: "registry:example",
+    category: "pricing",
+    registryDependencies: ["usage-based-pricing"],
+    files: [{
+      path: "registry/blocks/pricing/usage-based-pricing/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/pricing/usage-based-pricing/example")),
+    meta: {"tags":["pricing","usage","slider","tiers","metered"],"source":"billingsdk"},
+  },
+  "usage-meter": {
+    name: "usage-meter",
+    description: "A usage meter component showing resource consumption with progress bars and limits.",
+    type: "registry:block",
+    category: "billing",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/billing/usage-meter/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/billing/usage-meter/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["billing","usage","meter","progress","limits"],"source":"billingsdk"},
+  },
+  "usage-meter-demo": {
+    name: "usage-meter-demo",
+    description: "A usage meter component showing resource consumption with progress bars and limits. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["usage-meter"],
+    files: [{
+      path: "registry/blocks/billing/usage-meter/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/usage-meter/example")),
+    meta: {"tags":["billing","usage","meter","progress","limits"],"source":"billingsdk"},
+  },
+  "web3-dashboard": {
+    name: "web3-dashboard",
+    description: "A Web3 dashboard with portfolio overview and transaction history.",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/web3-dashboard/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/web3-dashboard/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["web3","dashboard","portfolio","transactions"],"source":"creative-tim"},
+  },
+  "web3-dashboard-demo": {
+    name: "web3-dashboard-demo",
+    description: "A Web3 dashboard with portfolio overview and transaction history. (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["web3-dashboard"],
+    files: [{
+      path: "registry/blocks/special/web3-dashboard/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/web3-dashboard/example")),
+    meta: {"tags":["web3","dashboard","portfolio","transactions"],"source":"creative-tim"},
+  },
+  "web3-nft-gallery": {
+    name: "web3-nft-gallery",
+    description: "A Web3 NFT gallery with card display and collection details.",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/web3-nft-gallery/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/web3-nft-gallery/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["web3","nft","gallery","collection"],"source":"creative-tim"},
+  },
+  "web3-nft-gallery-demo": {
+    name: "web3-nft-gallery-demo",
+    description: "A Web3 NFT gallery with card display and collection details. (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["web3-nft-gallery"],
+    files: [{
+      path: "registry/blocks/special/web3-nft-gallery/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/web3-nft-gallery/example")),
+    meta: {"tags":["web3","nft","gallery","collection"],"source":"creative-tim"},
+  },
+  "web3-staking": {
+    name: "web3-staking",
+    description: "A Web3 staking interface with APY display and reward tracking.",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/web3-staking/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/web3-staking/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["web3","staking","apy","rewards"],"source":"creative-tim"},
+  },
+  "web3-staking-demo": {
+    name: "web3-staking-demo",
+    description: "A Web3 staking interface with APY display and reward tracking. (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["web3-staking"],
+    files: [{
+      path: "registry/blocks/special/web3-staking/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/web3-staking/example")),
+    meta: {"tags":["web3","staking","apy","rewards"],"source":"creative-tim"},
+  },
+  "web3-token-swap": {
+    name: "web3-token-swap",
+    description: "A Web3 token swap interface with exchange rate display.",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/web3-token-swap/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/web3-token-swap/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["web3","token","swap","exchange"],"source":"creative-tim"},
+  },
+  "web3-token-swap-demo": {
+    name: "web3-token-swap-demo",
+    description: "A Web3 token swap interface with exchange rate display. (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["web3-token-swap"],
+    files: [{
+      path: "registry/blocks/special/web3-token-swap/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/web3-token-swap/example")),
+    meta: {"tags":["web3","token","swap","exchange"],"source":"creative-tim"},
+  },
+  "web3-wallet": {
+    name: "web3-wallet",
+    description: "A Web3 wallet connection interface with provider selection.",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/web3-wallet/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/web3-wallet/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["web3","wallet","connection","blockchain"],"source":"creative-tim"},
+  },
+  "web3-wallet-demo": {
+    name: "web3-wallet-demo",
+    description: "A Web3 wallet connection interface with provider selection. (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["web3-wallet"],
+    files: [{
+      path: "registry/blocks/special/web3-wallet/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/web3-wallet/example")),
+    meta: {"tags":["web3","wallet","connection","blockchain"],"source":"creative-tim"},
   },
 }

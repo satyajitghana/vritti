@@ -1,0 +1,12 @@
+{
+  "name": "interactive-input",
+  "type": "component",
+  "description": "Sci-fi styled input with shimmer border animation and glow effects",
+  "category": "inputs",
+  "dependencies": ["class-variance-authority"],
+  "files": [],
+  "meta": {
+    "tags": ["input", "interactive", "shimmer", "glow", "sci-fi"],
+    "source": "scrollx-ui"
+  }
+}

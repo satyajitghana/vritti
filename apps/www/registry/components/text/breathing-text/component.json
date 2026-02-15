@@ -1,0 +1,23 @@
+{
+  "name": "breathing-text",
+  "type": "component",
+  "description": "Variable font breathing animation with staggered letter-by-letter weight transitions",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "animation", "variable-font", "breathing", "stagger"],
+    "source": "fancy"
+  },
+  "props": [
+    { "name": "children", "type": "React.ReactNode", "default": "-", "description": "Text content to animate" },
+    { "name": "as", "type": "ElementType", "default": "\"span\"", "description": "HTML element type to render as" },
+    { "name": "fromFontVariationSettings", "type": "string", "default": "-", "description": "Starting font variation settings value" },
+    { "name": "toFontVariationSettings", "type": "string", "default": "-", "description": "Ending font variation settings value" },
+    { "name": "transition", "type": "Transition", "default": "{ duration: 1.5, ease: \"easeInOut\" }", "description": "Motion transition configuration for the animation" },
+    { "name": "staggerDuration", "type": "number", "default": "0.1", "description": "Delay between each letter's animation start in seconds" },
+    { "name": "staggerFrom", "type": "\"first\" | \"last\" | \"center\" | number", "default": "\"first\"", "description": "Direction from which the stagger effect originates" },
+    { "name": "repeatDelay", "type": "number", "default": "0.1", "description": "Delay between animation repetitions in seconds" },
+    { "name": "className", "type": "string", "default": "-", "description": "Additional CSS classes" }
+  ]
+}

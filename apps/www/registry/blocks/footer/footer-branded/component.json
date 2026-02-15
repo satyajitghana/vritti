@@ -1,0 +1,12 @@
+{
+  "name": "footer-branded",
+  "type": "block",
+  "description": "A branded footer with logo, description, and social media links.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "branded", "logo", "social"],
+    "source": "creative-tim"
+  }
+}

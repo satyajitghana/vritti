@@ -1,0 +1,12 @@
+{
+  "name": "modal-share",
+  "type": "block",
+  "description": "A content sharing modal with social media links.",
+  "category": "modal",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["modal", "share", "social", "links"],
+    "source": "creative-tim"
+  }
+}

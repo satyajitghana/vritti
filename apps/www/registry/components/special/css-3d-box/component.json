@@ -1,0 +1,12 @@
+{
+  "name": "css-3d-box",
+  "type": "component",
+  "description": "Interactive 3D CSS cube with drag-to-rotate and spring physics, supporting custom face content",
+  "category": "special",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["3d", "cube", "interactive", "drag", "css", "transform"],
+    "source": "fancy"
+  }
+}

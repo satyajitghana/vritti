@@ -1,0 +1,12 @@
+{
+  "name": "modal-invite",
+  "type": "block",
+  "description": "A team invite modal with email input, member list, and permission controls.",
+  "category": "modal",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["modal", "invite", "team", "permissions", "share"],
+    "source": "creative-tim"
+  }
+}

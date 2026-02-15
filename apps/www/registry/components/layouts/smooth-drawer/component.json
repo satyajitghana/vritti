@@ -1,0 +1,12 @@
+{
+  "name": "smooth-drawer",
+  "type": "component",
+  "description": "Smooth slide-in drawer with spring animations and staggered content reveal",
+  "category": "layouts",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["drawer", "modal", "animation", "spring", "slide"],
+    "source": "kokonutui"
+  }
+}

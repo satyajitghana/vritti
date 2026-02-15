@@ -1,0 +1,12 @@
+{
+  "name": "footer-multi-column",
+  "type": "block",
+  "description": "A multi-column footer with comprehensive navigation links.",
+  "category": "footer",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["footer", "multi-column", "navigation", "links"],
+    "source": "creative-tim"
+  }
+}

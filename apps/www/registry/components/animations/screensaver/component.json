@@ -1,0 +1,12 @@
+{
+  "name": "screensaver",
+  "type": "component",
+  "description": "DVD-style screensaver bounce animation that bounces off container walls.",
+  "category": "animations",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["animation", "screensaver", "bounce", "dvd"],
+    "source": "fancy"
+  }
+}

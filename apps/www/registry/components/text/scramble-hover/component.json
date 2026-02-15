@@ -1,0 +1,12 @@
+{
+  "name": "scramble-hover",
+  "type": "component",
+  "description": "Text scramble effect on hover with configurable reveal direction and character set",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "scramble", "hover", "animation", "reveal"],
+    "source": "fancy"
+  }
+}

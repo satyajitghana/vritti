@@ -1,0 +1,12 @@
+{
+  "name": "account-2fa",
+  "type": "block",
+  "description": "A two-factor authentication settings panel with multiple 2FA method options.",
+  "category": "account",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["account", "2fa", "security", "authentication", "settings"],
+    "source": "creative-tim"
+  }
+}

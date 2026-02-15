@@ -1,0 +1,12 @@
+{
+  "name": "card-stack",
+  "type": "component",
+  "description": "Expandable card stack that fans out on click with spring animations",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["card", "stack", "expand", "animation", "spring"],
+    "source": "kokonutui"
+  }
+}

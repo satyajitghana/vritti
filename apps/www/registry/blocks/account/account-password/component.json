@@ -1,0 +1,12 @@
+{
+  "name": "account-password",
+  "type": "block",
+  "description": "A change password form with requirements checklist and security best practices.",
+  "category": "account",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["account", "password", "security", "form", "requirements"],
+    "source": "creative-tim"
+  }
+}
