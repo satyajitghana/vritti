@@ -1,0 +1,19 @@
+{
+  "name": "stats-10",
+  "type": "block",
+  "description": "Analytics dashboard with area chart",
+  "category": "special",
+  "dependencies": [
+    "recharts"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "chart",
+      "stats",
+      "analytics"
+    ],
+    "source": "blocks.so"
+  }
+}

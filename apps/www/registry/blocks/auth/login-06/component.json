@@ -1,0 +1,16 @@
+{
+  "name": "login-06",
+  "type": "block",
+  "description": "Login form with OTP verification",
+  "category": "auth",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "auth",
+      "login",
+      "authentication"
+    ],
+    "source": "blocks.so"
+  }
+}

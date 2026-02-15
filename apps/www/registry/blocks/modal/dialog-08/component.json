@@ -1,0 +1,18 @@
+{
+  "name": "dialog-08",
+  "type": "block",
+  "description": "Invite members dialog with member list",
+  "category": "modal",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "modal",
+      "dialog",
+      "form"
+    ],
+    "source": "blocks.so"
+  }
+}

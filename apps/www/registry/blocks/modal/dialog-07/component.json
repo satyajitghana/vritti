@@ -1,0 +1,18 @@
+{
+  "name": "dialog-07",
+  "type": "block",
+  "description": "Deactivate 2FA alert dialog with email and password fields",
+  "category": "modal",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "modal",
+      "dialog",
+      "form"
+    ],
+    "source": "blocks.so"
+  }
+}

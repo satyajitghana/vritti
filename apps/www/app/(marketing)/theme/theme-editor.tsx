@@ -4,7 +4,10 @@ import { useState, useCallback, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Copy, Check, RotateCcw, Sun, Moon, Palette, Type, SlidersHorizontal, Code } from 'lucide-react';
+import { Copy, Check, RotateCcw, Sun, Moon, Palette, Type, SlidersHorizontal, Code, Upload } from 'lucide-react';
+import { FontPicker } from '@/components/theme/font-picker';
+import { ContrastChecker } from '@/components/theme/contrast-checker';
+import { CSSImportDialog } from '@/components/theme/css-import-dialog';
 
 // ============================================================
 // Types
@@ -579,6 +582,9 @@ export function ThemeEditor() {
   const [activePreset, setActivePreset] = useState('default');
   const [copied, setCopied] = useState(false);
   const previewRef = useRef<HTMLDivElement>(null);
+  const [fontSans, setFontSans] = useState('Geist Sans');
+  const [fontMono, setFontMono] = useState('Geist Mono');
+  const [fontSerif, setFontSerif] = useState('Georgia');
 
   const currentColors = activeMode === 'light' ? config.light : config.dark;
 
@@ -607,6 +613,15 @@ export function ThemeEditor() {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   }, [config]);
+
+  const handleCSSImport = useCallback((imported: { light: Record<string, string>; dark: Record<string, string> }) => {
+    setConfig((prev) => ({
+      ...prev,
+      light: { ...prev.light, ...imported.light as Partial<ThemeColors> } as ThemeColors,
+      dark: { ...prev.dark, ...imported.dark as Partial<ThemeColors> } as ThemeColors,
+    }));
+    setActivePreset('custom');
+  }, []);
 
   // Apply theme to preview container
   useEffect(() => {
@@ -638,6 +653,7 @@ export function ThemeEditor() {
             <RotateCcw className="mr-2 h-4 w-4" />
             Reset
           </Button>
+          <CSSImportDialog onImport={handleCSSImport} className="hidden md:flex" />
           <Button size="sm" onClick={copyCSS}>
             {copied ? (
               <Check className="mr-2 h-4 w-4" />
@@ -750,25 +766,40 @@ export function ThemeEditor() {
 
             <TabsContent value="typography" className="space-y-4 mt-4">
               <div className="rounded-lg border p-4 space-y-4">
-                <h4 className="text-sm font-semibold">Font Family</h4>
-                <p className="text-xs text-muted-foreground">
-                  Font configuration is handled via your Tailwind CSS config and CSS imports.
-                  The theme editor focuses on color customization.
-                </p>
-                <div className="space-y-2">
+                <h4 className="text-sm font-semibold">Font Families</h4>
+                <FontPicker label="Sans Serif (--font-sans)" value={fontSans} onChange={setFontSans} />
+                <FontPicker label="Serif (--font-serif)" value={fontSerif} onChange={setFontSerif} />
+                <FontPicker label="Monospace (--font-mono)" value={fontMono} onChange={setFontMono} />
+
+                <div className="space-y-2 pt-2">
+                  <h4 className="text-sm font-semibold">Preview</h4>
                   <div className="rounded-md border p-3">
-                    <p className="text-xs text-muted-foreground mb-1">Sans (default)</p>
-                    <p className="text-lg font-sans">The quick brown fox jumps over the lazy dog</p>
+                    <p className="text-xs text-muted-foreground mb-1">Sans</p>
+                    <p className="text-lg" style={{ fontFamily: fontSans }}>The quick brown fox jumps over the lazy dog</p>
+                  </div>
+                  <div className="rounded-md border p-3">
+                    <p className="text-xs text-muted-foreground mb-1">Serif</p>
+                    <p className="text-lg" style={{ fontFamily: fontSerif }}>The quick brown fox jumps over the lazy dog</p>
                   </div>
                   <div className="rounded-md border p-3">
                     <p className="text-xs text-muted-foreground mb-1">Mono</p>
-                    <p className="text-lg font-mono">The quick brown fox jumps over the lazy dog</p>
+                    <p className="text-lg" style={{ fontFamily: fontMono }}>The quick brown fox jumps over the lazy dog</p>
                   </div>
                 </div>
               </div>
             </TabsContent>
 
             <TabsContent value="other" className="space-y-4 mt-4">
+              {/* Contrast Checker */}
+              <div className="rounded-lg border p-4">
+                <ContrastChecker colors={currentColors} />
+              </div>
+
+              {/* CSS Import */}
+              <div className="rounded-lg border p-4">
+                <CSSImportDialog onImport={handleCSSImport} />
+              </div>
+
               <div className="rounded-lg border p-4 space-y-4">
                 <h4 className="text-sm font-semibold">Border Radius</h4>
                 <div className="flex items-center gap-3">

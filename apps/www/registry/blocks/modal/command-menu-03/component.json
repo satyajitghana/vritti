@@ -1,0 +1,19 @@
+{
+  "name": "command-menu-03",
+  "type": "block",
+  "description": "Command menu with documentation search and color palette",
+  "category": "modal",
+  "dependencies": [
+    "@tabler/icons-react",
+    "next/navigation"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "modal",
+      "dialog",
+      "command"
+    ],
+    "source": "blocks.so"
+  }
+}

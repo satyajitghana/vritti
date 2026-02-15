@@ -1,0 +1,18 @@
+{
+  "name": "login-07",
+  "type": "block",
+  "description": "Two-column login with feature highlights",
+  "category": "auth",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "auth",
+      "login",
+      "authentication"
+    ],
+    "source": "blocks.so"
+  }
+}

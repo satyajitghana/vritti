@@ -1,0 +1,19 @@
+{
+  "name": "login-08",
+  "type": "block",
+  "description": "Login form with magic link option",
+  "category": "auth",
+  "dependencies": [
+    "lucide-react",
+    "next/link"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "auth",
+      "login",
+      "authentication"
+    ],
+    "source": "blocks.so"
+  }
+}

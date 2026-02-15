@@ -1,0 +1,15 @@
+{
+  "name": "form-layout-03",
+  "type": "block",
+  "description": "Settings page with profile and password sections",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "form"
+    ],
+    "source": "blocks.so"
+  }
+}

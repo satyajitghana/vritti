@@ -9,6 +9,7 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { CommandMenu } from '@/components/command-menu';
+import { Logo } from '@/components/logo';
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -18,7 +19,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <div className="mr-4 flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
+          <Link href="/" className="mr-6 flex items-center gap-2">
+            <Logo variant="triangle" size="sm" />
             <span className="font-bold sm:inline-block">{siteConfig.name}</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -45,10 +47,10 @@ export function SiteHeader() {
               Components
             </Link>
             <Link
-              href="/docs/blocks"
+              href="/blocks"
               className={cn(
                 'transition-colors hover:text-foreground/80',
-                pathname?.startsWith('/docs/blocks')
+                pathname === '/blocks' || pathname?.startsWith('/docs/blocks')
                   ? 'text-brand font-medium'
                   : 'text-foreground/60'
               )}

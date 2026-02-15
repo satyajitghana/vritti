@@ -1,0 +1,15 @@
+{
+  "name": "dialog-04",
+  "type": "block",
+  "description": "Edit profile dialog with input field",
+  "category": "modal",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "modal",
+      "dialog"
+    ],
+    "source": "blocks.so"
+  }
+}

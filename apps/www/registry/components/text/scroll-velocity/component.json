@@ -1,0 +1,12 @@
+{
+  "name": "scroll-velocity",
+  "type": "component",
+  "description": "Scroll-driven velocity text marquee that changes speed and direction based on scroll velocity.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "scroll", "velocity", "marquee", "animation"],
+    "source": "react-bits"
+  }
+}

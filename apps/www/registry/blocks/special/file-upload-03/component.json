@@ -1,0 +1,19 @@
+{
+  "name": "file-upload-03",
+  "type": "block",
+  "description": "Cloud storage setup with dropzone file upload",
+  "category": "special",
+  "dependencies": [
+    "lucide-react",
+    "react-dropzone"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "form",
+      "upload"
+    ],
+    "source": "blocks.so"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "stats-05",
+  "type": "block",
+  "description": "Stat card with spark line chart",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "stats",
+      "analytics"
+    ],
+    "source": "blocks.so"
+  }
+}

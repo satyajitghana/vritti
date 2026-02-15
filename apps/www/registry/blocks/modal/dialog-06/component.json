@@ -1,0 +1,16 @@
+{
+  "name": "dialog-06",
+  "type": "block",
+  "description": "Create workspace dialog with privacy toggle",
+  "category": "modal",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "modal",
+      "dialog",
+      "form"
+    ],
+    "source": "blocks.so"
+  }
+}

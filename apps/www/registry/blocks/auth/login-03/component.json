@@ -1,0 +1,17 @@
+{
+  "name": "login-03",
+  "type": "block",
+  "description": "Minimal centered login form",
+  "category": "auth",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "auth",
+      "form",
+      "login",
+      "authentication"
+    ],
+    "source": "blocks.so"
+  }
+}

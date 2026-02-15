@@ -1,0 +1,19 @@
+{
+  "name": "file-upload-04",
+  "type": "block",
+  "description": "File upload with drag-and-drop and progress bar",
+  "category": "special",
+  "dependencies": [
+    "lucide-react",
+    "sonner"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "form",
+      "upload"
+    ],
+    "source": "blocks.so"
+  }
+}

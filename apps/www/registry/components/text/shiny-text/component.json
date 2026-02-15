@@ -1,0 +1,12 @@
+{
+  "name": "shiny-text",
+  "type": "component",
+  "description": "Text with an animated shine/highlight sweep effect with customizable colors, speed, direction, and yoyo mode.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "shine", "highlight", "animation"],
+    "source": "react-bits"
+  }
+}

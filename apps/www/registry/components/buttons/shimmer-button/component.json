@@ -5,6 +5,13 @@
   "category": "buttons",
   "dependencies": [],
   "files": [],
+  "props": [
+    { "name": "shimmerColor", "type": "color", "default": "#ffffff", "description": "Color of the shimmer effect" },
+    { "name": "shimmerSize", "type": "string", "default": "0.05em", "description": "Size of the shimmer gradient" },
+    { "name": "shimmerDuration", "type": "string", "default": "3s", "description": "Duration of the shimmer animation" },
+    { "name": "borderRadius", "type": "string", "default": "100px", "description": "Border radius of the button" },
+    { "name": "background", "type": "color", "default": "#000000", "description": "Background color of the button" }
+  ],
   "meta": {
     "tags": ["button", "shimmer", "animation", "interactive"],
     "featured": true

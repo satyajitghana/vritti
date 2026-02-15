@@ -1,0 +1,15 @@
+{
+  "name": "form-layout-02",
+  "type": "block",
+  "description": "Personal information form with grid layout",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "form"
+    ],
+    "source": "blocks.so"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "stats-01",
+  "type": "block",
+  "description": "Simple stat card with label and value",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "stats",
+      "analytics"
+    ],
+    "source": "blocks.so"
+  }
+}

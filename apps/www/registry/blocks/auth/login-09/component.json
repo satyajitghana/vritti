@@ -1,0 +1,21 @@
+{
+  "name": "login-09",
+  "type": "block",
+  "description": "Full-page login with brand sidebar",
+  "category": "auth",
+  "dependencies": [
+    "lucide-react",
+    "next/link"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "auth",
+      "chart",
+      "form",
+      "login",
+      "authentication"
+    ],
+    "source": "blocks.so"
+  }
+}

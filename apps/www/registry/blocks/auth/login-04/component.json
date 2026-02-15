@@ -1,0 +1,17 @@
+{
+  "name": "login-04",
+  "type": "block",
+  "description": "Login page with side illustration panel",
+  "category": "auth",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "auth",
+      "form",
+      "login",
+      "authentication"
+    ],
+    "source": "blocks.so"
+  }
+}

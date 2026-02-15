@@ -1,0 +1,18 @@
+{
+  "name": "ai-02",
+  "type": "block",
+  "description": "AI prompt input with model selector and suggestion buttons",
+  "category": "special",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "form",
+      "ai"
+    ],
+    "source": "blocks.so"
+  }
+}

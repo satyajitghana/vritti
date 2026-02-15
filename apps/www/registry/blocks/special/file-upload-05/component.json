@@ -1,0 +1,18 @@
+{
+  "name": "file-upload-05",
+  "type": "block",
+  "description": "Minimal file upload with completed state display",
+  "category": "special",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "form",
+      "upload"
+    ],
+    "source": "blocks.so"
+  }
+}

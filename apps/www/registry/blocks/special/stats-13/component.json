@@ -1,0 +1,16 @@
+{
+  "name": "stats-13",
+  "type": "block",
+  "description": "KPI cards with trend arrows",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "stats",
+      "analytics"
+    ],
+    "source": "blocks.so"
+  }
+}

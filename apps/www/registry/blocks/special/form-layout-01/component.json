@@ -1,0 +1,15 @@
+{
+  "name": "form-layout-01",
+  "type": "block",
+  "description": "Notification settings form with radio group",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "form"
+    ],
+    "source": "blocks.so"
+  }
+}

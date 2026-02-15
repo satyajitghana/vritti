@@ -1,0 +1,19 @@
+{
+  "name": "stats-08",
+  "type": "block",
+  "description": "Stat cards with progress bars",
+  "category": "special",
+  "dependencies": [
+    "recharts"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "chart",
+      "stats",
+      "analytics"
+    ],
+    "source": "blocks.so"
+  }
+}

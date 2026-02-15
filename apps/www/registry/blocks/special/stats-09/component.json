@@ -1,0 +1,16 @@
+{
+  "name": "stats-09",
+  "type": "block",
+  "description": "Compact stat badges row",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "stats",
+      "analytics"
+    ],
+    "source": "blocks.so"
+  }
+}

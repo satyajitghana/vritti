@@ -11,8 +11,26 @@ import {
   BookOpen,
   Download,
   Blocks,
+  Sparkles,
 } from 'lucide-react';
 import { useState } from 'react';
+
+// AI components to group together (pulled from various categories)
+const AI_COMPONENT_NAMES = [
+  'ai-prompt',
+  'ai-input-search',
+  'action-search-bar',
+  'ai-loading',
+  'ai-text-loading',
+  'ai-voice',
+];
+
+// AI blocks to group together
+const AI_BLOCK_NAMES = [
+  'ai-chat-streaming',
+  'ai-image-generator',
+  'ai-video-generator',
+];
 
 interface NavSection {
   title: string;
@@ -108,9 +126,6 @@ const SUB_GROUPS: Record<string, Record<string, string[]>> = {
     ],
   },
   inputs: {
-    'Search & AI': [
-      'ai-prompt', 'ai-input-search', 'action-search-bar',
-    ],
     'Selection & Pickers': [
       'color-picker', 'tags-input', 'combobox', 'mention',
       'angle-slider', 'currency-transfer',
@@ -152,8 +167,24 @@ function buildComponentSections(): NavSection[] {
     },
   ];
 
+  // Add AI section pulling components from various categories
+  const allComponents = componentList;
+  const aiItems = AI_COMPONENT_NAMES
+    .map((name) => allComponents.find((c) => c.name === name))
+    .filter(Boolean)
+    .map((c) => ({
+      title: c!.title,
+      href: `/docs/components/${c!.name}`,
+      icon: Sparkles,
+    }));
+  if (aiItems.length > 0) {
+    sections.push({ title: 'AI', items: aiItems });
+  }
+
   for (const category of CATEGORIES) {
-    const categoryComponents = componentList.filter((c) => c.category === category.name);
+    const categoryComponents = componentList.filter(
+      (c) => c.category === category.name && !AI_COMPONENT_NAMES.includes(c.name)
+    );
     if (categoryComponents.length === 0) continue;
 
     const subGroups = SUB_GROUPS[category.name];
@@ -201,8 +232,23 @@ function buildComponentSections(): NavSection[] {
 function buildBlockSections(): NavSection[] {
   const sections: NavSection[] = [];
 
+  // Add AI blocks section at the top
+  const aiBlockItems = AI_BLOCK_NAMES
+    .map((name) => blockList.find((b) => b.name === name))
+    .filter(Boolean)
+    .map((b) => ({
+      title: b!.title,
+      href: `/docs/blocks/${b!.name}`,
+      icon: Sparkles,
+    }));
+  if (aiBlockItems.length > 0) {
+    sections.push({ title: 'AI', items: aiBlockItems });
+  }
+
   for (const category of BLOCK_CATEGORIES) {
-    const categoryBlocks = blockList.filter((b) => b.category === category.name);
+    const categoryBlocks = blockList.filter(
+      (b) => b.category === category.name && !AI_BLOCK_NAMES.includes(b.name)
+    );
     if (categoryBlocks.length === 0) continue;
 
     sections.push({

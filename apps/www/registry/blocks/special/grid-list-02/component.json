@@ -1,0 +1,16 @@
+{
+  "name": "grid-list-02",
+  "type": "block",
+  "description": "Pricing feature comparison grid",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "grid",
+      "list"
+    ],
+    "source": "blocks.so"
+  }
+}

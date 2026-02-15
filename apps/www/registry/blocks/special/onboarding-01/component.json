@@ -1,0 +1,19 @@
+{
+  "name": "onboarding-01",
+  "type": "block",
+  "description": "Multi-step onboarding wizard with progress indicator",
+  "category": "special",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "upload",
+      "onboarding",
+      "wizard"
+    ],
+    "source": "blocks.so"
+  }
+}

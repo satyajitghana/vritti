@@ -1,0 +1,19 @@
+{
+  "name": "stats-12",
+  "type": "block",
+  "description": "Stats grid with donut charts",
+  "category": "special",
+  "dependencies": [
+    "recharts"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "chart",
+      "stats",
+      "analytics"
+    ],
+    "source": "blocks.so"
+  }
+}

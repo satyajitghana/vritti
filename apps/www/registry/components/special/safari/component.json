@@ -6,6 +6,7 @@
   "dependencies": [],
   "files": [],
   "meta": {
-    "tags": ["special"]
+    "tags": ["special"],
+    "previewSize": "lg"
   }
 }
