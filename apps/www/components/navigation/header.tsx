@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import { Sun, Moon } from 'lucide-react';
+import { GeistPixelLine } from 'geist/font/pixel';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -19,7 +20,7 @@ export function SiteHeader() {
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center gap-2">
-            <span className="font-pixel-line font-extrabold text-lg tracking-wider sm:inline-block">{siteConfig.name}</span>
+            <span className={cn(GeistPixelLine.className, "font-extrabold text-lg tracking-wider sm:inline-block")}>{siteConfig.name}</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <Link
