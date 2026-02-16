@@ -413,12 +413,26 @@ export function ThemeEditor() {
 
         {/* Desktop: Resizable Panels */}
         <div className="hidden lg:block h-[calc(100vh-200px)]">
-          <ResizablePanelGroup orientation="horizontal" className="h-full rounded-lg border">
-            <ResizablePanel defaultSize={30} minSize={20} maxSize={50}>
+          <ResizablePanelGroup
+            orientation="horizontal"
+            className="h-full rounded-lg border"
+            autoSaveId="theme-editor-panels"
+          >
+            <ResizablePanel
+              id="controls"
+              defaultSize={35}
+              minSize={25}
+              maxSize={60}
+              order={1}
+            >
               <div className="h-full overflow-y-auto p-4 bg-background">{controlsPanel}</div>
             </ResizablePanel>
             <ResizableHandle className="w-1 bg-border hover:bg-primary transition-colors" />
-            <ResizablePanel defaultSize={70}>
+            <ResizablePanel
+              id="preview"
+              defaultSize={65}
+              order={2}
+            >
               <div className="h-full overflow-hidden">{previewPanel}</div>
             </ResizablePanel>
           </ResizablePanelGroup>
