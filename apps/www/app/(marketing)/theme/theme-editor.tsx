@@ -124,7 +124,7 @@ export function ThemeEditor() {
   const controlsPanel = (
     <div className="space-y-4">
       {/* Mode Toggle */}
-      <div className="flex items-center gap-2 rounded-lg border p-2">
+      <div className="flex items-center gap-2 rounded-lg border bg-card p-2 shadow-sm">
         <Button
           variant={activeMode === 'light' ? 'default' : 'ghost'}
           size="sm"
@@ -146,20 +146,20 @@ export function ThemeEditor() {
       </div>
 
       <Tabs defaultValue="colors">
-        <TabsList className="w-full">
-          <TabsTrigger value="colors" className="flex-1">
+        <TabsList className="w-full grid grid-cols-4">
+          <TabsTrigger value="colors" className="text-xs">
             <Palette className="mr-1.5 h-3.5 w-3.5" />
             Colors
           </TabsTrigger>
-          <TabsTrigger value="typography" className="flex-1">
+          <TabsTrigger value="typography" className="text-xs">
             <Type className="mr-1.5 h-3.5 w-3.5" />
-            Typography
+            Type
           </TabsTrigger>
-          <TabsTrigger value="other" className="flex-1">
+          <TabsTrigger value="other" className="text-xs">
             <SlidersHorizontal className="mr-1.5 h-3.5 w-3.5" />
             Other
           </TabsTrigger>
-          <TabsTrigger value="code" className="flex-1">
+          <TabsTrigger value="code" className="text-xs">
             <Code className="mr-1.5 h-3.5 w-3.5" />
             Code
           </TabsTrigger>
@@ -203,7 +203,7 @@ export function ThemeEditor() {
 
           {/* Color Groups */}
           {COLOR_GROUPS.map((group) => (
-            <div key={group.label} className="rounded-lg border p-3">
+            <div key={group.label} className="rounded-lg border bg-card shadow-sm p-3">
               <h4 className="text-sm font-semibold mb-2">{group.label}</h4>
               <div className="space-y-1">
                 {group.keys.map((key) => (
@@ -221,7 +221,7 @@ export function ThemeEditor() {
         </TabsContent>
 
         <TabsContent value="typography" className="space-y-4 mt-4">
-          <div className="rounded-lg border p-4 space-y-4">
+          <div className="rounded-lg border bg-card shadow-sm p-4 space-y-4">
             <h4 className="text-sm font-semibold">Font Families</h4>
             <FontPicker
               label="Sans Serif (--font-sans)"
@@ -265,16 +265,16 @@ export function ThemeEditor() {
 
         <TabsContent value="other" className="space-y-4 mt-4">
           {/* Contrast Checker */}
-          <div className="rounded-lg border p-4">
+          <div className="rounded-lg border bg-card shadow-sm p-4">
             <ContrastChecker colors={currentColors as unknown as Record<string, string>} />
           </div>
 
           {/* CSS Import */}
-          <div className="rounded-lg border p-4">
+          <div className="rounded-lg border bg-card shadow-sm p-4">
             <CSSImportDialog onImport={handleCSSImport} />
           </div>
 
-          <div className="rounded-lg border p-4 space-y-4">
+          <div className="rounded-lg border bg-card shadow-sm p-4 space-y-4">
             <h4 className="text-sm font-semibold">Border Radius</h4>
             <div className="flex items-center gap-3">
               <input
@@ -318,14 +318,14 @@ export function ThemeEditor() {
         </TabsContent>
 
         <TabsContent value="code" className="mt-4">
-          <div className="rounded-lg border">
-            <div className="flex items-center justify-between border-b px-4 py-2">
+          <div className="rounded-lg border bg-card shadow-sm">
+            <div className="flex items-center justify-between border-b bg-muted/50 px-4 py-2">
               <span className="text-sm font-medium">globals.css</span>
               <Button variant="ghost" size="sm" onClick={copyCSS}>
                 {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
               </Button>
             </div>
-            <pre className="overflow-auto p-4 text-xs font-mono max-h-[60vh]">
+            <pre className="overflow-auto p-4 text-xs font-mono max-h-[60vh] bg-muted/20">
               {generateCSS(config)}
             </pre>
           </div>
@@ -336,8 +336,8 @@ export function ThemeEditor() {
 
   // Preview Panel Content
   const previewPanel = (
-    <div ref={previewRef} className="rounded-lg border overflow-hidden">
-      <div className="flex items-center justify-between border-b px-4 py-2">
+    <div ref={previewRef} className="rounded-lg border overflow-hidden bg-background">
+      <div className="flex items-center justify-between border-b bg-card px-4 py-2">
         <span className="text-sm font-medium">Preview</span>
         <Button
           variant="ghost"
@@ -347,7 +347,7 @@ export function ThemeEditor() {
           {activeMode === 'light' ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
         </Button>
       </div>
-      <div className="p-6 min-h-[600px] overflow-auto">
+      <div className="p-6 min-h-[600px] overflow-auto bg-background text-foreground">
         <PreviewContainer />
       </div>
     </div>

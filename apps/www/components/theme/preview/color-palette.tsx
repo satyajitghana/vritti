@@ -85,19 +85,12 @@ export function ColorPalette() {
               return (
                 <div
                   key={colorKey}
-                  className="group rounded-lg border p-4 transition-all hover:shadow-md"
-                  style={{
-                    backgroundColor: 'hsl(var(--card))',
-                    borderColor: 'hsl(var(--border))',
-                  }}
+                  className="group rounded-xl border bg-card shadow-sm p-4 transition-all hover:shadow-md hover:bg-muted/60"
                 >
                   <div className="flex items-start gap-3">
                     <div
-                      className="h-12 w-12 rounded-md border flex-shrink-0"
-                      style={{
-                        backgroundColor: hexColor,
-                        borderColor: 'hsl(var(--border))',
-                      }}
+                      className="h-12 w-12 rounded-md border flex-shrink-0 shadow-sm"
+                      style={{ backgroundColor: hexColor }}
                     />
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between gap-2">
