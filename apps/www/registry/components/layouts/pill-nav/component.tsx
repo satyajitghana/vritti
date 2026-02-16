@@ -41,6 +41,7 @@ const PillNav: React.FC<PillNavProps> = ({
 }) => {
   const resolvedPillTextColor = pillTextColor ?? baseColor;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [imageError, setImageError] = useState(false);
   const circleRefs = useRef<Array<HTMLSpanElement | null>>([]);
   const tlRefs = useRef<Array<gsap.core.Timeline | null>>([]);
   const activeTweenRefs = useRef<Array<gsap.core.Tween | null>>([]);
@@ -271,7 +272,19 @@ const PillNav: React.FC<PillNavProps> = ({
               background: 'var(--base, #000)'
             }}
           >
-            <img src={logo} alt={logoAlt} ref={logoImgRef} className="w-full h-full object-cover block" />
+            {!imageError ? (
+              <img
+                src={logo}
+                alt={logoAlt}
+                ref={logoImgRef}
+                className="w-full h-full object-cover block"
+                onError={() => setImageError(true)}
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-xs font-semibold">
+                {logoAlt}
+              </div>
+            )}
           </Link>
         ) : (
           <a
@@ -288,7 +301,19 @@ const PillNav: React.FC<PillNavProps> = ({
               background: 'var(--base, #000)'
             }}
           >
-            <img src={logo} alt={logoAlt} ref={logoImgRef} className="w-full h-full object-cover block" />
+            {!imageError ? (
+              <img
+                src={logo}
+                alt={logoAlt}
+                ref={logoImgRef}
+                className="w-full h-full object-cover block"
+                onError={() => setImageError(true)}
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-xs font-semibold">
+                {logoAlt}
+              </div>
+            )}
           </a>
         )}
 

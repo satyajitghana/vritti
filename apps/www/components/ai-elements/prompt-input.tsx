@@ -33,7 +33,7 @@ const PromptInput = React.forwardRef<HTMLFormElement, PromptInputProps>(
       <PromptInputContext.Provider value={{ text, setText, submit }}>
         <form
           ref={ref}
-          className={cn("relative", className)}
+          className={cn("relative w-full max-w-3xl mx-auto", className)}
           onSubmit={(e) => {
             e.preventDefault()
             submit()

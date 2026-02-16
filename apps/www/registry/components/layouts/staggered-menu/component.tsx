@@ -39,7 +39,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   displaySocials = true,
   displayItemNumbering = true,
   className,
-  logoUrl = '/src/assets/logos/reactbits-gh-white.svg',
+  logoUrl = '',
   menuButtonColor = '#fff',
   openMenuButtonColor = '#fff',
   changeMenuColorOnOpen = true,
@@ -51,6 +51,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 }: StaggeredMenuProps) => {
   const [open, setOpen] = useState(false);
   const openRef = useRef(false);
+  const [imageError, setImageError] = useState(false);
 
   const panelRef = useRef<HTMLDivElement | null>(null);
   const preLayersRef = useRef<HTMLDivElement | null>(null);
@@ -419,14 +420,21 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           aria-label="Main navigation header"
         >
           <div className="sm-logo flex items-center select-none pointer-events-auto" aria-label="Logo">
-            <img
-              src={logoUrl || '/src/assets/logos/reactbits-gh-white.svg'}
-              alt="Logo"
-              className="sm-logo-img block h-8 w-auto object-contain"
-              draggable={false}
-              width={110}
-              height={24}
-            />
+            {!imageError && logoUrl ? (
+              <img
+                src={logoUrl}
+                alt="Logo"
+                className="sm-logo-img block h-8 w-auto object-contain"
+                draggable={false}
+                width={110}
+                height={24}
+                onError={() => setImageError(true)}
+              />
+            ) : (
+              <div className="h-8 flex items-center text-sm font-semibold">
+                Logo
+              </div>
+            )}
           </div>
 
           <button
