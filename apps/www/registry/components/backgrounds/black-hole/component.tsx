@@ -312,7 +312,7 @@ export default function BlackHole({
   outerColor = '#3633ff',
   quality = 'medium',
   particleCount,
-  particleSize = 0.015,
+  particleSize = 0.025,
   rotationSpeed = 0.3,
   orbitSpeed = 1.0,
   disableAnimation = false,
@@ -350,6 +350,9 @@ export default function BlackHole({
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(config.pixelRatio);
     renderer.setClearColor(0x000000, 0);
+    renderer.domElement.style.display = 'block';
+    renderer.domElement.style.width = '100%';
+    renderer.domElement.style.height = '100%';
     container.appendChild(renderer.domElement);
 
     // Check for WebGL errors
@@ -359,7 +362,7 @@ export default function BlackHole({
 
     // Camera for space and distortion scenes
     const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 100);
-    camera.position.set(0, 4, 8); // Position camera above and back to view the disc
+    camera.position.set(0, 6, 3); // Position camera above to view the disc from an angle
     camera.lookAt(0, 0, 0); // Look at center of black hole
 
     // Orthographic camera for final composition
@@ -371,8 +374,9 @@ export default function BlackHole({
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
       controls.dampingFactor = 0.05;
-      controls.minDistance = 3;
-      controls.maxDistance = 15;
+      controls.minDistance = 4;
+      controls.maxDistance = 12;
+      controls.maxPolarAngle = Math.PI / 2.2; // Limit how low you can go
       controls.enablePan = false;
     }
 
@@ -406,8 +410,9 @@ export default function BlackHole({
     // SPACE SCENE: Disc + Particles
     // ==================================================
 
-    // Accretion Disc (Cylinder Geometry)
-    const discGeometry = new THREE.CylinderGeometry(5, 1, 0, 64, 10, true);
+    // Accretion Disc (Cylinder Geometry rotated to be horizontal)
+    const discGeometry = new THREE.CylinderGeometry(5, 1, 0.1, 64, 10, true);
+    discGeometry.rotateX(Math.PI / 2); // Rotate to lay flat (face up)
     const discMaterial = new THREE.ShaderMaterial({
       vertexShader: discVertexShader,
       fragmentShader: discFragmentShader,
@@ -541,11 +546,11 @@ export default function BlackHole({
 
         // Camera animation (slow orbit around the black hole)
         if (enableCameraAnimation && !controls) {
-          const radius = 8;
-          const speed = 0.1;
-          camera.position.x = Math.sin(elapsed * speed) * radius;
-          camera.position.z = Math.cos(elapsed * speed) * radius;
-          camera.position.y = 4 + Math.sin(elapsed * speed * 0.5) * 1;
+          const radius = 6;
+          const speed = 0.05;
+          camera.position.x = Math.sin(elapsed * speed) * radius * 0.5;
+          camera.position.z = Math.cos(elapsed * speed) * radius * 0.5;
+          camera.position.y = 6;
           camera.lookAt(0, 0, 0);
         }
 
