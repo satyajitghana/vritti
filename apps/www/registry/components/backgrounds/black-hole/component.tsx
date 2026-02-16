@@ -309,18 +309,18 @@ void main() {
 // ============================================================================
 
 export default function BlackHole({
-  innerColor = '#ff8080',
-  outerColor = '#3633ff',
+  innerColor = '#ff1a75',  // Vibrant neon pink/magenta
+  outerColor = '#00d4ff',  // Bright cyan
   quality = 'medium',
   particleCount,
-  particleSize = 0.025,
+  particleSize = 0.03,
   rotationSpeed = 0.3,
   orbitSpeed = 1.0,
   disableAnimation = false,
   enableCameraAnimation = true,
   enableOrbitControls = true,
-  rgbShiftRadius = 0.002,
-  distortionStrength = 3.0,
+  rgbShiftRadius = 0.01,     // 5x stronger chromatic aberration
+  distortionStrength = 8.0,  // Much stronger distortion
   className = '',
 }: BlackHoleProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -363,7 +363,7 @@ export default function BlackHole({
 
     // Camera for space and distortion scenes
     const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 100);
-    camera.position.set(0, 2.5, 5.5); // Position camera to view disc at optimal angle
+    camera.position.set(0, 0.3, 6); // View disc almost horizontally (edge-on)
     camera.lookAt(0, 0, 0); // Look at center of black hole
 
     // Orthographic camera for final composition
@@ -553,9 +553,9 @@ export default function BlackHole({
         if (enableCameraAnimation && !controls) {
           const radius = 6;
           const speed = 0.05;
-          camera.position.x = Math.sin(elapsed * speed) * 3;
-          camera.position.z = Math.cos(elapsed * speed) * 3;
-          camera.position.y = 2.5;
+          camera.position.x = Math.sin(elapsed * speed) * radius;
+          camera.position.z = Math.cos(elapsed * speed) * radius;
+          camera.position.y = 0.3;  // Keep low for edge-on view
           camera.lookAt(0, 0, 0);
         }
 
