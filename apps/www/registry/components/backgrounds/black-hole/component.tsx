@@ -114,8 +114,6 @@ float perlin3dPeriodic(vec3 P, vec3 rep) {
 
 // Disc Shaders
 const discVertexShader = `
-uniform mat4 projectionMatrix;
-uniform mat4 modelViewMatrix;
 varying vec2 vUv;
 
 void main() {
@@ -179,15 +177,12 @@ void main() {
 const particleVertexShader = `
 #define PI 3.1415926538
 
-uniform mat4 projectionMatrix;
-uniform mat4 modelViewMatrix;
 uniform float uTime;
 uniform vec3 uInnerColor;
 uniform vec3 uOuterColor;
 uniform float uViewHeight;
 uniform float uSize;
 
-attribute vec3 position;
 attribute float aSize;
 attribute float aRandom;
 
@@ -230,8 +225,6 @@ void main() {
 
 // Distortion Mask Shader
 const distortionMaskVertexShader = `
-uniform mat4 projectionMatrix;
-uniform mat4 modelViewMatrix;
 varying vec2 vUv;
 
 void main() {
@@ -266,8 +259,6 @@ void main() {
 
 // Final Composition Shader
 const finalVertexShader = `
-uniform mat4 projectionMatrix;
-uniform mat4 modelViewMatrix;
 varying vec2 vUv;
 
 void main() {
