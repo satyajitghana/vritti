@@ -1605,7 +1605,7 @@ export const Index: Record<string, any> = {
     type: "registry:ui",
     category: "backgrounds",
     registryDependencies: undefined,
-    dependencies: ["ogl"],
+    dependencies: ["three","@types/three"],
     files: [{
       path: "registry/components/backgrounds/black-hole/component.tsx",
       type: "registry:ui",

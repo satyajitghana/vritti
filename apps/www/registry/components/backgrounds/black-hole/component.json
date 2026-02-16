@@ -3,7 +3,7 @@
   "type": "component",
   "description": "A WebGL black hole effect with accretion disc, orbiting particles, gravitational lensing distortion, and chromatic aberration.",
   "category": "backgrounds",
-  "dependencies": ["ogl"],
+  "dependencies": ["three", "@types/three"],
   "files": [],
   "meta": {
     "tags": ["background", "3d", "webgl", "space", "physics", "particles"],
