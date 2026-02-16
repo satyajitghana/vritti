@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -12,7 +12,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Copy, Check } from 'lucide-react';
-import { useThemeStore } from '@/lib/stores/theme-store';
+import { useThemeUrlState } from '@/lib/theme/use-theme-url-state';
 
 interface ShareDialogProps {
   open?: boolean;
@@ -21,19 +21,10 @@ interface ShareDialogProps {
 }
 
 export function ShareDialog({ open, onOpenChange, trigger }: ShareDialogProps) {
-  const { config } = useThemeStore();
-  const [shareUrl, setShareUrl] = useState('');
+  const { generateShareableUrl } = useThemeUrlState();
   const [copied, setCopied] = useState(false);
 
-  useEffect(() => {
-    // Generate shareable URL with encoded theme config
-    if (typeof window !== 'undefined') {
-      const baseUrl = window.location.origin + window.location.pathname;
-      const encodedConfig = encodeURIComponent(JSON.stringify(config));
-      const url = `${baseUrl}?theme=${encodedConfig}`;
-      setShareUrl(url);
-    }
-  }, [config]);
+  const shareUrl = generateShareableUrl();
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(shareUrl);

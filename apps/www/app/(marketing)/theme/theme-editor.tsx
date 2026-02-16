@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Copy, Check, Sun, Moon, Palette, Type, SlidersHorizontal, Code } from 'lucide-react';
+import { Group as ResizablePanelGroup, Panel as ResizablePanel, Separator as ResizableHandle } from 'react-resizable-panels';
 import { FontPicker } from '@/components/theme/font-picker';
 import { ContrastChecker } from '@/components/theme/contrast-checker';
 import { CSSImportDialog } from '@/components/theme/css-import-dialog';
@@ -21,6 +22,9 @@ import { ExportDialog } from '@/components/theme/export-dialog';
 import { ShareDialog } from '@/components/theme/share-dialog';
 import { SavedThemesManager } from '@/components/theme/saved-themes-manager';
 import { MobileThemeSwitcher } from '@/components/theme/mobile-theme-switcher';
+import { InspectorPanel, InspectorOverlay, InspectorToggle } from '@/components/theme/inspector';
+import { useThemeUrlState } from '@/lib/theme/use-theme-url-state';
+import { motion, AnimatePresence } from 'motion/react';
 
 // ============================================================
 // Color Groups for the UI
@@ -85,6 +89,7 @@ export function ThemeEditor() {
   const { config, activeMode, activePreset, fontSans, fontMono, fontSerif } = useThemeStore();
   const currentColors = useThemeStore(selectCurrentColors);
   const { setActiveMode, updateColor, updateRadius, applyPreset, setFont } = useThemeStore();
+  const { syncToUrl } = useThemeUrlState();
 
   const [copied, setCopied] = useState(false);
   const [isExportOpen, setIsExportOpen] = useState(false);
@@ -119,6 +124,11 @@ export function ThemeEditor() {
     if (!el) return;
     applyThemeToElement(config, el, activeMode);
   }, [config, activeMode]);
+
+  // Sync theme to URL when it changes
+  useEffect(() => {
+    syncToUrl();
+  }, [config, fontSans, fontMono, fontSerif, syncToUrl]);
 
   // Controls Panel Content
   const controlsPanel = (
@@ -170,9 +180,14 @@ export function ThemeEditor() {
           <div>
             <label className="text-sm font-medium mb-2 block">Presets ({THEME_PRESETS.length})</label>
             <div className="grid grid-cols-3 gap-2 max-h-[320px] overflow-y-auto pr-1">
-              {THEME_PRESETS.map((preset) => (
-                <button
+              {THEME_PRESETS.map((preset, idx) => (
+                <motion.button
                   key={preset.name}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.02, duration: 0.2 }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   onClick={() => handleApplyPreset(preset)}
                   className={cn(
                     'rounded-lg border p-2 text-xs font-medium transition-all hover:border-primary text-left',
@@ -182,42 +197,57 @@ export function ThemeEditor() {
                   )}
                 >
                   <div className="flex gap-1 mb-1.5">
-                    <div
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 180 }}
+                      transition={{ duration: 0.3 }}
                       className="h-4 w-4 rounded-full border"
                       style={{ backgroundColor: preset.config.light.primary }}
                     />
-                    <div
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 180 }}
+                      transition={{ duration: 0.3, delay: 0.05 }}
                       className="h-4 w-4 rounded-full border"
                       style={{ backgroundColor: preset.config.light.secondary }}
                     />
-                    <div
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 180 }}
+                      transition={{ duration: 0.3, delay: 0.1 }}
                       className="h-4 w-4 rounded-full border"
                       style={{ backgroundColor: preset.config.light.accent }}
                     />
                   </div>
                   <span className="truncate block">{preset.label}</span>
-                </button>
+                </motion.button>
               ))}
             </div>
           </div>
 
           {/* Color Groups */}
-          {COLOR_GROUPS.map((group) => (
-            <div key={group.label} className="rounded-lg border bg-card shadow-sm p-3">
-              <h4 className="text-sm font-semibold mb-2">{group.label}</h4>
-              <div className="space-y-1">
-                {group.keys.map((key) => (
-                  <ColorFocusIndicator key={key} colorKey={key}>
-                    <ColorPickerEnhanced
-                      label={toLabel(key)}
-                      value={currentColors[key]}
-                      onChange={(val) => updateColor(activeMode, key, val)}
-                    />
-                  </ColorFocusIndicator>
-                ))}
-              </div>
-            </div>
-          ))}
+          <AnimatePresence mode="wait">
+            {COLOR_GROUPS.map((group, idx) => (
+              <motion.div
+                key={group.label}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                transition={{ delay: idx * 0.05, duration: 0.3 }}
+                className="rounded-lg border bg-card shadow-sm p-3"
+              >
+                <h4 className="text-sm font-semibold mb-2">{group.label}</h4>
+                <div className="space-y-1">
+                  {group.keys.map((key) => (
+                    <ColorFocusIndicator key={key} colorKey={key}>
+                      <ColorPickerEnhanced
+                        label={toLabel(key)}
+                        value={currentColors[key]}
+                        onChange={(val) => updateColor(activeMode, key, val)}
+                      />
+                    </ColorFocusIndicator>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </TabsContent>
 
         <TabsContent value="typography" className="space-y-4 mt-4">
@@ -336,19 +366,28 @@ export function ThemeEditor() {
 
   // Preview Panel Content
   const previewPanel = (
-    <div ref={previewRef} className="rounded-lg border overflow-hidden bg-background">
-      <div className="flex items-center justify-between border-b bg-card px-4 py-2">
+    <div className="rounded-lg border overflow-hidden bg-background h-full flex flex-col">
+      <div className="flex items-center justify-between border-b bg-card px-4 py-2 shrink-0">
         <span className="text-sm font-medium">Preview</span>
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => setActiveMode(activeMode === 'light' ? 'dark' : 'light')}
-        >
-          {activeMode === 'light' ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
-        </Button>
+        <div className="flex items-center gap-2">
+          <InspectorToggle />
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setActiveMode(activeMode === 'light' ? 'dark' : 'light')}
+          >
+            {activeMode === 'light' ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+          </Button>
+        </div>
       </div>
-      <div className="p-6 min-h-[600px] overflow-auto bg-background text-foreground">
-        <PreviewContainer />
+      <div className="flex-1 overflow-hidden flex">
+        <div ref={previewRef} className="flex-1 p-6 overflow-auto bg-background text-foreground relative">
+          <PreviewContainer />
+          <InspectorOverlay containerRef={previewRef} />
+        </div>
+        <div className="w-80 border-l bg-background overflow-auto p-4">
+          <InspectorPanel />
+        </div>
       </div>
     </div>
   );
@@ -372,10 +411,17 @@ export function ThemeEditor() {
           </p>
         </div>
 
-        {/* Desktop: Grid Layout */}
-        <div className="hidden lg:grid lg:grid-cols-[380px_1fr] gap-6 h-[calc(100vh-200px)]">
-          <div className="h-full overflow-y-auto">{controlsPanel}</div>
-          <div className="h-full overflow-hidden">{previewPanel}</div>
+        {/* Desktop: Resizable Panels */}
+        <div className="hidden lg:block h-[calc(100vh-200px)]">
+          <ResizablePanelGroup orientation="horizontal" className="h-full rounded-lg border">
+            <ResizablePanel defaultSize={30} minSize={20} maxSize={50}>
+              <div className="h-full overflow-y-auto p-4 bg-background">{controlsPanel}</div>
+            </ResizablePanel>
+            <ResizableHandle className="w-1 bg-border hover:bg-primary transition-colors" />
+            <ResizablePanel defaultSize={70}>
+              <div className="h-full overflow-hidden">{previewPanel}</div>
+            </ResizablePanel>
+          </ResizablePanelGroup>
         </div>
 
         {/* Mobile: Tab Switcher */}
