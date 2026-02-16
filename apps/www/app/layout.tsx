@@ -51,9 +51,6 @@ export const metadata: Metadata = {
     images: [siteConfig.ogImage],
     creator: '@vritti-ui',
   },
-  icons: {
-    icon: '/favicon.ico',
-  },
 };
 
 export default function RootLayout({

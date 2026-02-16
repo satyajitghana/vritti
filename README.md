@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>V</h1>
+  <img src="./public/logo.svg" alt="Vritti UI" width="80" height="80" />
   <p><strong>Vritti UI</strong></p>
 </div>
 

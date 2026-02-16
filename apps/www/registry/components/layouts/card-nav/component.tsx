@@ -43,6 +43,7 @@ const CardNav: React.FC<CardNavProps> = ({
 }) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [imageError, setImageError] = useState(false);
   const navRef = useRef<HTMLDivElement | null>(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
   const tlRef = useRef<gsap.core.Timeline | null>(null);
@@ -188,7 +189,18 @@ const CardNav: React.FC<CardNavProps> = ({
           </div>
 
           <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none">
-            <img src={logo} alt={logoAlt} className="logo h-[28px]" />
+            {!imageError ? (
+              <img
+                src={logo}
+                alt={logoAlt}
+                className="logo h-[28px]"
+                onError={() => setImageError(true)}
+              />
+            ) : (
+              <div className="h-[28px] flex items-center text-sm font-semibold">
+                {logoAlt}
+              </div>
+            )}
           </div>
 
           <button

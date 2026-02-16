@@ -86,6 +86,11 @@ const LoadingAnimation = ({ progress }: { progress: number }) => (
           .g-spin circle:nth-child(6) { animation: rotate-ccw 8s linear infinite; }
           .g-spin circle:nth-child(2n) { animation-delay: 0.2s; }
           .g-spin circle:nth-child(3n) { animation-delay: 0.3s; }
+          @media (prefers-reduced-motion: reduce) {
+            .g-spin circle {
+              animation: none !important;
+            }
+          }
         `}
       </style>
       <g
@@ -176,7 +181,7 @@ export default function AILoading() {
         <div className="relative">
           <div
             ref={codeContainerRef}
-            className="font-mono text-xs overflow-hidden w-full h-[84px] relative rounded-lg"
+            className="font-mono text-xs overflow-hidden w-full min-h-[84px] h-auto max-h-[120px] relative rounded-lg"
             style={{ scrollBehavior: "smooth" }}
           >
             <div>
@@ -200,7 +205,7 @@ export default function AILoading() {
             className="absolute top-0 left-0 right-0 bottom-0 pointer-events-none rounded-lg"
             style={{
               background:
-                "linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.5) 30%, transparent 100%)",
+                "linear-gradient(to bottom, oklch(var(--background) / 0.9) 0%, oklch(var(--background) / 0.5) 30%, transparent 100%)",
             }}
           />
         </div>

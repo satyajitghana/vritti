@@ -6,7 +6,7 @@ export default function HighlighterExample() {
       <p className="leading-relaxed">
         The{" "}
         <Highlighter action="underline" color="#FF9800">
-          Magic UI Highlighter
+          Vritti UI Highlighter
         </Highlighter>{" "}
         makes important{" "}
         <Highlighter action="highlight" color="#87CEFA">
