@@ -251,10 +251,10 @@ float remap(float v, float inMin, float inMax, float outMin, float outMax) {
 
 void main() {
   float distanceToCenter = length(vUv - 0.5);
-  float radialStrength = remap(distanceToCenter, 0.0, 0.15, 1.0, 0.0);
+  float radialStrength = remap(distanceToCenter, 0.0, 0.35, 1.0, 0.0); // Larger black sphere for spherical wrapping
   radialStrength = smoothstep(0.0, 1.0, radialStrength);
 
-  float alpha = smoothstep(0.0, 1.0, remap(distanceToCenter, 0.4, 0.5, 1.0, 0.0));
+  float alpha = smoothstep(0.0, 1.0, remap(distanceToCenter, 0.5, 0.6, 1.0, 0.0)); // Extended fade range
 
   gl_FragColor = vec4(radialStrength, 0.0, 0.0, alpha);
 }
@@ -294,8 +294,19 @@ vec3 getRGBShiftedColor(sampler2D _texture, vec2 _uv, float _radius) {
 void main() {
   vec4 distortionColor = texture2D(uDistortionTexture, vUv);
   float distortionIntensity = distortionColor.r;
+
   vec2 towardCenter = vUv - uBlackHolePosition;
-  towardCenter *= - distortionIntensity * uDistortionStrength * 2.0;
+  float distanceToCenter = length(towardCenter);
+
+  // Non-linear distortion curve for gravitational lensing (photon sphere effect)
+  float distortionCurve = distortionIntensity;
+  if (distanceToCenter > 0.01) {
+    // Power curve creates stronger distortion at intermediate radii
+    // Simulates light bending around the black hole's photon sphere
+    distortionCurve *= (1.0 + pow(distortionIntensity, 2.0) * 2.0);
+  }
+
+  towardCenter *= -distortionCurve * uDistortionStrength * 2.0;
 
   vec2 distoredUv = vUv + towardCenter;
   vec3 outColor = getRGBShiftedColor(uSpaceTexture, distoredUv, uRGBShiftRadius);
@@ -363,7 +374,7 @@ export default function BlackHole({
 
     // Camera for space and distortion scenes
     const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 100);
-    camera.position.set(0, 0.3, 6); // View disc almost horizontally (edge-on)
+    camera.position.set(0, 0.0, 6); // Perfect edge-on equator view for Einstein ring effect
     camera.lookAt(0, 0, 0); // Look at center of black hole
 
     // Orthographic camera for final composition
@@ -415,7 +426,7 @@ export default function BlackHole({
     // ==================================================
 
     // Accretion Disc (Cylinder Geometry - vertical orientation for edge-on view)
-    const discGeometry = new THREE.CylinderGeometry(5, 1, 0.1, 64, 10, true);
+    const discGeometry = new THREE.CylinderGeometry(6, 0.8, 0.12, 64, 10, true); // Larger for better lensing wrap
     // Keep default vertical orientation (no rotation needed)
     const discMaterial = new THREE.ShaderMaterial({
       vertexShader: discVertexShader,
@@ -555,7 +566,7 @@ export default function BlackHole({
           const speed = 0.05;
           camera.position.x = Math.sin(elapsed * speed) * radius;
           camera.position.z = Math.cos(elapsed * speed) * radius;
-          camera.position.y = 0.3;  // Keep low for edge-on view
+          camera.position.y = 0.0;  // Perfect equator view for Einstein ring
           camera.lookAt(0, 0, 0);
         }
 
