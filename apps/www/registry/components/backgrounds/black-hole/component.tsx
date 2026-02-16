@@ -374,10 +374,6 @@ export default function BlackHole({
       distortionGeometry.remove();
       finalGeometry.remove();
 
-      // Dispose render targets
-      spaceTarget.texture?.delete?.();
-      distortionTarget.texture?.delete?.();
-
       // Remove canvas
       if (container.contains(gl.canvas)) {
         container.removeChild(gl.canvas);

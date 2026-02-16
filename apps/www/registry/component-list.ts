@@ -49,6 +49,7 @@ export const componentList: Array<{ name: string; title: string; category: strin
   { name: "bg-animated-gradient", title: "Bg Animated Gradient", category: "backgrounds" },
   { name: "bg-image-texture", title: "Bg Image Texture", category: "backgrounds" },
   { name: "bg-media", title: "Bg Media", category: "backgrounds" },
+  { name: "black-hole", title: "Black Hole", category: "backgrounds" },
   { name: "blob-cursor", title: "Blob Cursor", category: "animations" },
   { name: "blur-fade", title: "Blur Fade", category: "animations" },
   { name: "blur-text", title: "Blur Text", category: "text" },

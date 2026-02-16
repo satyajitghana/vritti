@@ -1599,6 +1599,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/backgrounds/bg-media/example")),
     meta: {"tags":["background","media","video"],"source":"cult-ui"},
   },
+  "black-hole": {
+    name: "black-hole",
+    description: "Black Hole component.",
+    type: "registry:ui",
+    category: "backgrounds",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/components/backgrounds/black-hole/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/backgrounds/black-hole/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "black-hole-demo": {
+    name: "black-hole-demo",
+    description: "Black Hole component. (demo)",
+    type: "registry:example",
+    category: "backgrounds",
+    registryDependencies: ["black-hole"],
+    files: [{
+      path: "registry/components/backgrounds/black-hole/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/backgrounds/black-hole/example")),
+    meta: undefined,
+  },
   "blob-cursor": {
     name: "blob-cursor",
     description: "An organic blob cursor that follows the pointer.",
