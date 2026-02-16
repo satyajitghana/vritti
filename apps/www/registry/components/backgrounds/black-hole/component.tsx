@@ -356,9 +356,17 @@ export default function BlackHole({
     renderer.setClearColor(0x000000, 0);
     container.appendChild(renderer.domElement);
 
-    // Camera
+    // Check for WebGL errors
+    const gl = renderer.getContext();
+    console.log('[BlackHole] WebGL initialized:', gl !== null);
+    console.log('[BlackHole] Particle count:', effectiveParticleCount);
+
+    // Camera for space and distortion scenes
     const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 100);
     camera.position.set(0, 0, 5);
+
+    // Orthographic camera for final composition
+    const orthoCamera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 
     // Scenes
     const spaceScene = new THREE.Scene();
@@ -377,8 +385,6 @@ export default function BlackHole({
       {
         minFilter: THREE.LinearFilter,
         magFilter: THREE.LinearFilter,
-        format: THREE.RedFormat,
-        type: THREE.FloatType,
       }
     );
 
@@ -541,7 +547,7 @@ export default function BlackHole({
       renderer.render(distortionScene, camera);
 
       renderer.setRenderTarget(null);
-      renderer.render(finalScene, camera);
+      renderer.render(finalScene, orthoCamera);
     };
 
     animate();
