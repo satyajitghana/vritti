@@ -280,6 +280,7 @@ uniform sampler2D uSpaceTexture;
 uniform sampler2D uDistortionTexture;
 uniform vec2 uBlackHolePosition;
 uniform float uRGBShiftRadius;
+uniform float uDistortionStrength;
 
 vec3 getRGBShiftedColor(sampler2D _texture, vec2 _uv, float _radius) {
   vec3 angle = vec3(PI * 2.0 / 3.0, PI * 4.0 / 3.0, 0.0);
@@ -294,7 +295,7 @@ void main() {
   vec4 distortionColor = texture2D(uDistortionTexture, vUv);
   float distortionIntensity = distortionColor.r;
   vec2 towardCenter = vUv - uBlackHolePosition;
-  towardCenter *= - distortionIntensity * 2.0;
+  towardCenter *= - distortionIntensity * uDistortionStrength * 2.0;
 
   vec2 distoredUv = vUv + towardCenter;
   vec3 outColor = getRGBShiftedColor(uSpaceTexture, distoredUv, uRGBShiftRadius);
@@ -318,8 +319,8 @@ export default function BlackHole({
   disableAnimation = false,
   enableCameraAnimation = true,
   enableOrbitControls = true,
-  rgbShiftRadius = 0.00001,
-  distortionStrength = 1.0,
+  rgbShiftRadius = 0.002,
+  distortionStrength = 3.0,
   className = '',
 }: BlackHoleProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -362,7 +363,7 @@ export default function BlackHole({
 
     // Camera for space and distortion scenes
     const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 100);
-    camera.position.set(0, 6, 3); // Position camera above to view the disc from an angle
+    camera.position.set(0, 2.5, 5.5); // Position camera to view disc at optimal angle
     camera.lookAt(0, 0, 0); // Look at center of black hole
 
     // Orthographic camera for final composition
@@ -374,9 +375,10 @@ export default function BlackHole({
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
       controls.dampingFactor = 0.05;
-      controls.minDistance = 4;
-      controls.maxDistance = 12;
-      controls.maxPolarAngle = Math.PI / 2.2; // Limit how low you can go
+      controls.minDistance = 3;
+      controls.maxDistance = 10;
+      controls.minPolarAngle = Math.PI / 6; // Prevent viewing from too high
+      controls.maxPolarAngle = Math.PI / 2.1; // Limit how low you can go
       controls.enablePan = false;
     }
 
@@ -397,6 +399,8 @@ export default function BlackHole({
       {
         minFilter: THREE.LinearFilter,
         magFilter: THREE.LinearFilter,
+        format: THREE.RedFormat,
+        type: THREE.FloatType,
       }
     );
 
@@ -499,6 +503,7 @@ export default function BlackHole({
         uDistortionTexture: { value: distortionTarget.texture },
         uBlackHolePosition: { value: new THREE.Vector2(0.5, 0.5) },
         uRGBShiftRadius: { value: rgbShiftRadius },
+        uDistortionStrength: { value: distortionStrength },
       },
       depthWrite: false,
       depthTest: false,
@@ -548,9 +553,9 @@ export default function BlackHole({
         if (enableCameraAnimation && !controls) {
           const radius = 6;
           const speed = 0.05;
-          camera.position.x = Math.sin(elapsed * speed) * radius * 0.5;
-          camera.position.z = Math.cos(elapsed * speed) * radius * 0.5;
-          camera.position.y = 6;
+          camera.position.x = Math.sin(elapsed * speed) * 3;
+          camera.position.z = Math.cos(elapsed * speed) * 3;
+          camera.position.y = 2.5;
           camera.lookAt(0, 0, 0);
         }
 
