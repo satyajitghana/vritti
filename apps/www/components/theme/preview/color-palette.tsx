@@ -56,7 +56,7 @@ export function ColorPalette() {
     {
       label: 'Sidebar',
       colors: [
-        'sidebar-background',
+        'sidebar',
         'sidebar-foreground',
         'sidebar-primary',
         'sidebar-primary-foreground',
@@ -79,7 +79,7 @@ export function ColorPalette() {
           <h3 className="text-sm font-semibold mb-3">{group.label}</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {group.colors.map((colorKey) => {
-              const hexColor = currentColors[colorKey];
+              const hexColor = currentColors[colorKey] || '#000000';
               const hslColor = hexToHsl(hexColor);
 
               return (

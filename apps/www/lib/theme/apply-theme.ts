@@ -1,3 +1,4 @@
+import * as culori from 'culori';
 import type { ThemeColors } from '@/lib/theme-presets';
 
 export interface ThemeConfig {
@@ -7,110 +8,107 @@ export interface ThemeConfig {
 }
 
 // ============================================================
-// Color Conversion
+// Color Conversion (using culori for accurate conversions)
 // ============================================================
 
 /**
- * Converts a hex color to HSL format
- * Reused from original theme-editor.tsx
+ * Universal color formatter using culori for proper color conversion
+ * @param colorValue - Input color (hex, hsl, oklch, rgb, etc.)
+ * @param format - Output format ('hsl' | 'oklch' | 'hex' | 'rgb')
+ * @param tailwindVersion - For HSL: '3' returns "h s% l%", '4' returns "hsl(h s% l%)"
+ */
+export function colorFormatter(
+  colorValue: string,
+  format: 'hsl' | 'oklch' | 'hex' | 'rgb' = 'hsl',
+  tailwindVersion: '3' | '4' = '4'
+): string {
+  const color = culori.parse(colorValue);
+  if (!color) {
+    console.warn(`Unable to parse color: ${colorValue}`);
+    return colorValue;
+  }
+
+  switch (format) {
+    case 'hsl': {
+      const hsl = culori.converter('hsl')(color);
+      if (!hsl || hsl.h === undefined || hsl.s === undefined || hsl.l === undefined) {
+        return tailwindVersion === '4' ? 'hsl(0 0% 0%)' : '0 0% 0%';
+      }
+      const h = Math.round(hsl.h || 0);
+      const s = Math.round((hsl.s || 0) * 100);
+      const l = Math.round((hsl.l || 0) * 100);
+
+      if (tailwindVersion === '4') {
+        return `hsl(${h} ${s}% ${l}%)`;
+      }
+      return `${h} ${s}% ${l}%`;
+    }
+    case 'oklch': {
+      const oklch = culori.converter('oklch')(color);
+      if (!oklch || oklch.l === undefined) {
+        return 'oklch(0 0 0)';
+      }
+      const l = (oklch.l || 0).toFixed(3);
+      const c = (oklch.c || 0).toFixed(3);
+      const h = Math.round(oklch.h || 0);
+      return `oklch(${l} ${c} ${h})`;
+    }
+    case 'hex':
+      return culori.formatHex(color);
+    case 'rgb': {
+      const rgb = culori.converter('rgb')(color);
+      if (!rgb) return 'rgb(0 0 0)';
+      return `rgb(${Math.round(rgb.r * 255)} ${Math.round(rgb.g * 255)} ${Math.round(rgb.b * 255)})`;
+    }
+    default:
+      return colorValue;
+  }
+}
+
+/**
+ * Converts a hex color to HSL format (backward compatible)
+ * @deprecated Use colorFormatter() instead for accurate conversion
  */
 export function hexToHsl(hex: string): string {
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  if (!result) return '0 0% 0%';
-
-  let r = parseInt(result[1], 16) / 255;
-  let g = parseInt(result[2], 16) / 255;
-  let b = parseInt(result[3], 16) / 255;
-
-  const max = Math.max(r, g, b);
-  const min = Math.min(r, g, b);
-  let h = 0,
-    s = 0,
-    l = (max + min) / 2;
-
-  if (max !== min) {
-    const d = max - min;
-    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-    switch (max) {
-      case r:
-        h = ((g - b) / d + (g < b ? 6 : 0)) / 6;
-        break;
-      case g:
-        h = ((b - r) / d + 2) / 6;
-        break;
-      case b:
-        h = ((r - g) / d + 4) / 6;
-        break;
-    }
-  }
-
-  return `${Math.round(h * 360)} ${Math.round(s * 100)}% ${Math.round(l * 100)}%`;
+  return colorFormatter(hex, 'hsl', '3');
 }
 
 /**
- * Converts HSL to hex color
+ * Converts HSL to hex color (backward compatible)
+ * @deprecated Use colorFormatter() instead for accurate conversion
  */
 export function hslToHex(hsl: string): string {
-  const match = hsl.match(/(\d+)\s+(\d+)%\s+(\d+)%/);
-  if (!match) return '#000000';
-
-  const h = parseInt(match[1]) / 360;
-  const s = parseInt(match[2]) / 100;
-  const l = parseInt(match[3]) / 100;
-
-  let r, g, b;
-
-  if (s === 0) {
-    r = g = b = l;
-  } else {
-    const hue2rgb = (p: number, q: number, t: number) => {
-      if (t < 0) t += 1;
-      if (t > 1) t -= 1;
-      if (t < 1 / 6) return p + (q - p) * 6 * t;
-      if (t < 1 / 2) return q;
-      if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-      return p;
-    };
-
-    const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-    const p = 2 * l - q;
-    r = hue2rgb(p, q, h + 1 / 3);
-    g = hue2rgb(p, q, h);
-    b = hue2rgb(p, q, h - 1 / 3);
-  }
-
-  const toHex = (x: number) => {
-    const hex = Math.round(x * 255).toString(16);
-    return hex.length === 1 ? '0' + hex : hex;
-  };
-
-  return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+  return colorFormatter(hsl, 'hex');
 }
 
 /**
- * Converts hex to OKLCH format (approximate)
+ * Converts hex to OKLCH format (backward compatible)
+ * @deprecated Use colorFormatter() instead for accurate conversion
  */
 export function hexToOklch(hex: string): string {
-  // Simplified conversion - for more accurate conversion, would need a color library
-  const hsl = hexToHsl(hex);
-  const match = hsl.match(/(\d+)\s+(\d+)%\s+(\d+)%/);
-  if (!match) return 'oklch(0 0 0)';
-
-  const h = parseInt(match[1]);
-  const s = parseInt(match[2]) / 100;
-  const l = parseInt(match[3]) / 100;
-
-  // Approximate OKLCH values
-  const lightness = l;
-  const chroma = s * 0.4; // Rough approximation
-  const hue = h;
-
-  return `oklch(${lightness.toFixed(3)} ${chroma.toFixed(3)} ${hue})`;
+  return colorFormatter(hex, 'oklch');
 }
 
 // ============================================================
 // Theme Application
 // ============================================================
+
+import { isCommonStyle, extractCommonStyles } from './common-styles';
+import { generateShadowVariables } from './shadows';
+
+/**
+ * Apply common styles from light mode to the element
+ * Common styles include fonts, radius, shadows, spacing, etc.
+ */
+function applyCommonStyles(element: HTMLElement, colors: ThemeColors): void {
+  const commonStyles = extractCommonStyles(colors as unknown as Record<string, string>);
+
+  Object.entries(commonStyles).forEach(([key, value]) => {
+    if (value) {
+      element.style.setProperty(`--${key}`, value);
+    }
+  });
+}
 
 /**
  * Apply theme configuration to a DOM element
@@ -122,13 +120,25 @@ export function applyThemeToElement(
 ): void {
   const colors = mode === 'light' ? config.light : config.dark;
 
-  // Apply color variables
+  // Apply common styles from light mode (fonts, radius, shadows apply to both modes)
+  applyCommonStyles(element, config.light);
+
+  // Apply color variables (excluding common styles)
   for (const [key, value] of Object.entries(colors)) {
-    element.style.setProperty(`--${key}`, hexToHsl(value));
+    if (!isCommonStyle(key) && typeof value === 'string') {
+      element.style.setProperty(`--${key}`, colorFormatter(value, 'hsl', '3'));
+    }
   }
 
-  // Apply radius
-  element.style.setProperty('--radius', config.radius);
+  // Apply radius (backward compatibility - check both locations)
+  const radius = config.radius || config.light.radius || '0.5rem';
+  element.style.setProperty('--radius', radius);
+
+  // Generate and apply shadow variables
+  const shadows = generateShadowVariables(config, mode);
+  Object.entries(shadows).forEach(([key, value]) => {
+    element.style.setProperty(`--${key}`, value);
+  });
 
   // Toggle dark class
   if (mode === 'dark') {

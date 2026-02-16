@@ -74,7 +74,7 @@ const COLOR_GROUPS = [
   {
     label: 'Sidebar',
     keys: [
-      'sidebar-background', 'sidebar-foreground', 'sidebar-primary',
+      'sidebar', 'sidebar-foreground', 'sidebar-primary',
       'sidebar-primary-foreground', 'sidebar-accent', 'sidebar-accent-foreground',
       'sidebar-border', 'sidebar-ring',
     ] as (keyof ThemeColors)[],
@@ -239,7 +239,7 @@ export function ThemeEditor() {
                     <ColorFocusIndicator key={key} colorKey={key}>
                       <ColorPickerEnhanced
                         label={toLabel(key)}
-                        value={currentColors[key]}
+                        value={currentColors[key] || '#000000'}
                         onChange={(val) => updateColor(activeMode, key, val)}
                       />
                     </ColorFocusIndicator>

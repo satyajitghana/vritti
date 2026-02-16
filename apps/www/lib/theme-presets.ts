@@ -2,6 +2,7 @@
 // All colors are in hex (#rrggbb) format for the Vritti theme editor.
 
 export interface ThemeColors {
+  // Color properties
   background: string;
   foreground: string;
   card: string;
@@ -26,8 +27,8 @@ export interface ThemeColors {
   'chart-3': string;
   'chart-4': string;
   'chart-5': string;
-  // Note: tweakcn uses 'sidebar' but we maintain backward compatibility with 'sidebar-background'
-  'sidebar-background': string;
+  // Sidebar properties (matching tweakcn naming)
+  sidebar: string;
   'sidebar-foreground': string;
   'sidebar-primary': string;
   'sidebar-primary-foreground': string;
@@ -35,6 +36,20 @@ export interface ThemeColors {
   'sidebar-accent-foreground': string;
   'sidebar-border': string;
   'sidebar-ring': string;
+
+  // Common style properties (can be in light/dark or only in light)
+  'font-sans'?: string;
+  'font-serif'?: string;
+  'font-mono'?: string;
+  radius?: string;
+  'shadow-color'?: string;
+  'shadow-opacity'?: string;
+  'shadow-blur'?: string;
+  'shadow-spread'?: string;
+  'shadow-offset-x'?: string;
+  'shadow-offset-y'?: string;
+  'letter-spacing'?: string;
+  spacing?: string;
 }
 
 export interface ThemePreset {
@@ -44,53 +59,8 @@ export interface ThemePreset {
   config: {
     light: ThemeColors;
     dark: ThemeColors;
-    radius: string;
+    radius: string; // Keep for backward compatibility
   };
-  // Store fonts separately in our structure
-  fonts?: {
-    sans?: string;
-    serif?: string;
-    mono?: string;
-  };
-  // Optional shadow properties from tweakcn
-  shadow?: {
-    color?: string;
-    opacity?: string;
-    blur?: string;
-    spread?: string;
-    offsetX?: string;
-    offsetY?: string;
-  };
-  // Optional letter spacing and spacing
-  letterSpacing?: string;
-  spacing?: string;
-}
-
-// Helper function to convert tweakcn format (with 'sidebar') to our format (with 'sidebar-background')
-function convertTweakcnToVritti(tweakcnColors: Record<string, string>): ThemeColors {
-  const {
-    sidebar,
-    'sidebar-foreground': sidebarForeground,
-    'sidebar-primary': sidebarPrimary,
-    'sidebar-primary-foreground': sidebarPrimaryForeground,
-    'sidebar-accent': sidebarAccent,
-    'sidebar-accent-foreground': sidebarAccentForeground,
-    'sidebar-border': sidebarBorder,
-    'sidebar-ring': sidebarRing,
-    ...rest
-  } = tweakcnColors;
-
-  return {
-    'sidebar-background': sidebar || '#ffffff',
-    'sidebar-foreground': sidebarForeground || '#000000',
-    'sidebar-primary': sidebarPrimary || '#000000',
-    'sidebar-primary-foreground': sidebarPrimaryForeground || '#ffffff',
-    'sidebar-accent': sidebarAccent || '#f0f0f0',
-    'sidebar-accent-foreground': sidebarAccentForeground || '#000000',
-    'sidebar-border': sidebarBorder || '#e5e5e5',
-    'sidebar-ring': sidebarRing || '#000000',
-    ...rest,
-  } as ThemeColors;
 }
 
 export const THEME_PRESETS: ThemePreset[] = [
@@ -98,7 +68,7 @@ export const THEME_PRESETS: ThemePreset[] = [
     name: 'modern-minimal',
     label: 'Modern Minimal',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         background: '#ffffff',
         foreground: '#333333',
         card: '#ffffff',
@@ -131,8 +101,12 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-accent-foreground': '#1e3a8a',
         'sidebar-border': '#e5e7eb',
         'sidebar-ring': '#3b82f6',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.375rem',
+      'font-sans': 'Inter, sans-serif',
+      'font-serif': 'Source Serif 4, serif',
+      'font-mono': 'JetBrains Mono, monospace',
+      },
+      dark: {
         background: '#171717',
         foreground: '#e5e5e5',
         card: '#262626',
@@ -165,13 +139,11 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-accent-foreground': '#bfdbfe',
         'sidebar-border': '#404040',
         'sidebar-ring': '#3b82f6',
-      }),
+      'font-sans': 'Inter, sans-serif',
+      'font-serif': 'Source Serif 4, serif',
+      'font-mono': 'JetBrains Mono, monospace',
+      },
       radius: '0.375rem',
-    },
-    fonts: {
-      sans: 'Inter, sans-serif',
-      serif: 'Source Serif 4, serif',
-      mono: 'JetBrains Mono, monospace',
     },
   },
   {
@@ -179,7 +151,7 @@ export const THEME_PRESETS: ThemePreset[] = [
     label: 'Violet Bloom',
     createdAt: '2025-06-26',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         background: '#fdfdfd',
         foreground: '#000000',
         card: '#fdfdfd',
@@ -212,8 +184,20 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-accent-foreground': '#000000',
         'sidebar-border': '#ebebeb',
         'sidebar-ring': '#000000',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '1.4rem',
+      'font-sans': 'Plus Jakarta Sans, sans-serif',
+      'font-serif': 'Lora, serif',
+      'font-mono': 'IBM Plex Mono, monospace',
+      'shadow-color': 'hsl(0 0% 0%)',
+      'shadow-opacity': '0.16',
+      'shadow-blur': '3px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '2px',
+      'letter-spacing': '-0.025em',
+      spacing: '0.27rem',
+      },
+      dark: {
         background: '#1a1b1e',
         foreground: '#f0f0f0',
         card: '#222327',
@@ -246,31 +230,25 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-accent-foreground': '#8c5cff',
         'sidebar-border': '#33353a',
         'sidebar-ring': '#8c5cff',
-      }),
+      'font-sans': 'Plus Jakarta Sans, sans-serif',
+      'font-serif': 'Lora, serif',
+      'font-mono': 'IBM Plex Mono, monospace',
+      'shadow-color': 'hsl(0 0% 0%)',
+      'shadow-opacity': '0.16',
+      'shadow-blur': '3px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '2px',
+      },
       radius: '1.4rem',
     },
-    fonts: {
-      sans: 'Plus Jakarta Sans, sans-serif',
-      serif: 'Lora, serif',
-      mono: 'IBM Plex Mono, monospace',
-    },
-    shadow: {
-      color: 'hsl(0 0% 0%)',
-      opacity: '0.16',
-      blur: '3px',
-      spread: '0px',
-      offsetX: '0px',
-      offsetY: '2px',
-    },
-    letterSpacing: '-0.025em',
-    spacing: '0.27rem',
   },
   {
     name: 't3-chat',
     label: 'T3 Chat',
     createdAt: '2025-04-19',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         background: '#faf5fa',
         foreground: '#501854',
         card: '#faf5fa',
@@ -303,8 +281,9 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-accent-foreground': '#454554',
         'sidebar-border': '#eceae9',
         'sidebar-ring': '#db2777',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.5rem',
+      },
+      dark: {
         background: '#221d27',
         foreground: '#d2c4de',
         card: '#2c2632',
@@ -336,8 +315,8 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-accent': '#261922',
         'sidebar-accent-foreground': '#f4f4f5',
         'sidebar-border': '#000000',
-        'sidebar-ring': '#db2777',
-      }),
+        'sidebar-ring': '#db2777'
+      },
       radius: '0.5rem',
     },
   },
@@ -346,7 +325,7 @@ export const THEME_PRESETS: ThemePreset[] = [
     label: 'Twitter',
     createdAt: '2025-04-24',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         background: '#ffffff',
         foreground: '#0f1419',
         card: '#f7f8f8',
@@ -379,8 +358,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-accent-foreground': '#1e9df1',
         'sidebar-border': '#e1e8ed',
         'sidebar-ring': '#1da1f2',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '1.3rem',
+      'font-sans': 'Open Sans, sans-serif',
+      'font-serif': 'Georgia, serif',
+      'font-mono': 'Menlo, monospace',
+      'shadow-color': 'rgba(29,161,242,0.15)',
+      'shadow-opacity': '0',
+      'shadow-blur': '0px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '2px',
+      },
+      dark: {
         background: '#000000',
         foreground: '#e7e9ea',
         card: '#17181c',
@@ -413,21 +402,17 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-accent-foreground': '#1c9cf0',
         'sidebar-border': '#38444d',
         'sidebar-ring': '#1da1f2',
-      }),
+      'font-sans': 'Open Sans, sans-serif',
+      'font-serif': 'Georgia, serif',
+      'font-mono': 'Menlo, monospace',
+      'shadow-color': 'rgba(29,161,242,0.15)',
+      'shadow-opacity': '0',
+      'shadow-blur': '0px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '2px',
+      },
       radius: '1.3rem',
-    },
-    fonts: {
-      sans: 'Open Sans, sans-serif',
-      serif: 'Georgia, serif',
-      mono: 'Menlo, monospace',
-    },
-    shadow: {
-      color: 'rgba(29,161,242,0.15)',
-      opacity: '0',
-      blur: '0px',
-      spread: '0px',
-      offsetX: '0px',
-      offsetY: '2px',
     },
   },
   {
@@ -435,7 +420,7 @@ export const THEME_PRESETS: ThemePreset[] = [
     label: 'Mocha Mousse',
     createdAt: '2025-04-24',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         background: '#F1F0E5',
         foreground: '#56453F',
         card: '#F1F0E5',
@@ -468,8 +453,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-accent-foreground': '#ffffff',
         'sidebar-border': '#A28777',
         'sidebar-ring': '#A37764',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.5rem',
+      'font-sans': 'DM Sans, sans-serif',
+      'font-serif': 'Georgia, serif',
+      'font-mono': 'Menlo, monospace',
+      'shadow-color': 'hsl(20 18% 51% / 0.4)',
+      'shadow-opacity': '0.11',
+      'shadow-blur': '0px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '2px',
+      'shadow-offset-y': '2px',
+      },
+      dark: {
         background: '#2d2521',
         foreground: '#F1F0E5',
         card: '#3c332e',
@@ -502,21 +497,17 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-accent-foreground': '#E4C7B8',
         'sidebar-border': '#5c4f47',
         'sidebar-ring': '#C39E88',
-      }),
+      'font-sans': 'DM Sans, sans-serif',
+      'font-serif': 'Georgia, serif',
+      'font-mono': 'Menlo, monospace',
+      'shadow-color': 'hsl(20 18% 51% / 0.4)',
+      'shadow-opacity': '0.11',
+      'shadow-blur': '0px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '2px',
+      'shadow-offset-y': '2px',
+      },
       radius: '0.5rem',
-    },
-    fonts: {
-      sans: 'DM Sans, sans-serif',
-      serif: 'Georgia, serif',
-      mono: 'Menlo, monospace',
-    },
-    shadow: {
-      color: 'hsl(20 18% 51% / 0.4)',
-      opacity: '0.11',
-      blur: '0px',
-      spread: '0px',
-      offsetX: '2px',
-      offsetY: '2px',
     },
   },
   {
@@ -524,7 +515,7 @@ export const THEME_PRESETS: ThemePreset[] = [
     label: 'Amethyst Haze',
     createdAt: '2025-05-08',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#e6a5b8',
         'accent-foreground': '#4b2e36',
         'background': '#f8f7fa',
@@ -557,8 +548,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#8a79ab',
         'sidebar-primary-foreground': '#f8f7fa',
         'sidebar-ring': '#8a79ab',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.5rem',
+      'font-sans': 'Manrope, sans-serif',
+      'font-serif': 'Merriweather, serif',
+      'font-mono': 'Fira Code, monospace',
+      'shadow-color': 'hsl(270 50% 40% / 0.3)',
+      'shadow-opacity': '0.5',
+      'shadow-blur': '8px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '4px',
+      },
+      dark: {
         'accent': '#372e3f',
         'accent-foreground': '#f2b8c6',
         'background': '#1a1823',
@@ -591,31 +592,25 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#a995c9',
         'sidebar-primary-foreground': '#1a1823',
         'sidebar-ring': '#a995c9',
-      }),
+      'font-sans': 'Manrope, sans-serif',
+      'font-serif': 'Merriweather, serif',
+      'font-mono': 'Fira Code, monospace',
+      'shadow-color': 'hsl(270 50% 40% / 0.3)',
+      'shadow-opacity': '0.5',
+      'shadow-blur': '8px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '4px',
+      },
       radius: '0.5rem',
     },
-    fonts: {
-      sans: 'Geist, sans-serif',
-      serif: '\"Lora\", Georgia, serif',
-      mono: '\"Fira Code\", \"Courier New\", monospace',
-    },
-    shadow: {
-      color: 'hsl(0 0% 0%)',
-      opacity: '0.06',
-      blur: '5px',
-      spread: '1px',
-      offsetX: '1px',
-      offsetY: '2px',
-    },
-    letterSpacing: '0em',
-    spacing: '0.25rem',
   },
   {
     name: 'doom-64',
     label: 'Doom 64',
     createdAt: '2025-04-28',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#4682b4',
         'accent-foreground': '#ffffff',
         'background': '#cccccc',
@@ -648,8 +643,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#b71c1c',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#b71c1c',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0px',
+      'font-sans': 'Press Start 2P, system-ui',
+      'font-serif': 'Georgia, serif',
+      'font-mono': 'Courier New, monospace',
+      'shadow-color': 'hsl(0 85% 40% / 0.6)',
+      'shadow-opacity': '0.8',
+      'shadow-blur': '4px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '2px',
+      'shadow-offset-y': '2px',
+      },
+      dark: {
         'accent': '#64b5f6',
         'accent-foreground': '#000000',
         'background': '#1a1a1a',
@@ -682,30 +687,24 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#e53935',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#e53935',
-      }),
+      'font-sans': 'Press Start 2P, system-ui',
+      'font-serif': 'Georgia, serif',
+      'font-mono': 'Courier New, monospace',
+      'shadow-color': 'hsl(0 85% 40% / 0.6)',
+      'shadow-opacity': '0.8',
+      'shadow-blur': '4px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '2px',
+      'shadow-offset-y': '2px',
+      },
       radius: '0px',
     },
-    fonts: {
-      sans: '\"Oxanium\", sans-serif',
-      serif: 'ui-serif, Georgia, Cambria, ',
-      mono: '\"Source Code Pro\", monospace',
-    },
-    shadow: {
-      color: 'hsl(0 0% 0%)',
-      opacity: '0.4',
-      blur: '4px',
-      spread: '0px',
-      offsetX: '0px',
-      offsetY: '2px',
-    },
-    letterSpacing: '0em',
-    spacing: '0.25rem',
   },
   {
     name: 'kodama-grove',
     label: 'Kodama Grove',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#dbc894',
         'accent-foreground': '#5c4b3e',
         'background': '#e4d7b0',
@@ -738,8 +737,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#9db18c',
         'sidebar-primary-foreground': '#fdfbf6',
         'sidebar-ring': '#9db18c',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.425rem',
+      'font-sans': 'Nunito, sans-serif',
+      'font-serif': 'Lora, serif',
+      'font-mono': 'Source Code Pro, monospace',
+      'shadow-color': 'hsl(85 30% 25% / 0.2)',
+      'shadow-opacity': '0.3',
+      'shadow-blur': '12px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '4px',
+      },
+      dark: {
         'accent': '#a18f5c',
         'accent-foreground': '#2a2521',
         'background': '#3a3529',
@@ -772,21 +781,17 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#8a9f7b',
         'sidebar-primary-foreground': '#2a2521',
         'sidebar-ring': '#8a9f7b',
-      }),
+      'font-sans': 'Nunito, sans-serif',
+      'font-serif': 'Lora, serif',
+      'font-mono': 'Source Code Pro, monospace',
+      'shadow-color': 'hsl(85 30% 25% / 0.2)',
+      'shadow-opacity': '0.3',
+      'shadow-blur': '12px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '4px',
+      },
       radius: '0.425rem',
-    },
-    fonts: {
-      sans: 'Merriweather, serif',
-      serif: 'Source Serif 4, serif',
-      mono: 'JetBrains Mono, monospace',
-    },
-    shadow: {
-      color: 'hsl(88 22% 35% / 0.15)',
-      opacity: '0.15',
-      blur: '2px',
-      spread: '0px',
-      offsetX: '3px',
-      offsetY: '3px',
     },
   },
   {
@@ -794,7 +799,7 @@ export const THEME_PRESETS: ThemePreset[] = [
     label: 'Cosmic Night',
     createdAt: '2025-04-04',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#d8e6ff',
         'accent-foreground': '#2a2a4a',
         'background': '#f5f5ff',
@@ -827,8 +832,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#6e56cf',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#6e56cf',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.5rem',
+      'font-sans': 'Outfit, sans-serif',
+      'font-serif': 'Crimson Pro, serif',
+      'font-mono': 'IBM Plex Mono, monospace',
+      'shadow-color': 'hsl(250 60% 30% / 0.4)',
+      'shadow-opacity': '0.6',
+      'shadow-blur': '16px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '8px',
+      },
+      dark: {
         'accent': '#303060',
         'accent-foreground': '#e2e2f5',
         'background': '#0f0f1a',
@@ -861,21 +876,17 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#a48fff',
         'sidebar-primary-foreground': '#0f0f1a',
         'sidebar-ring': '#a48fff',
-      }),
+      'font-sans': 'Outfit, sans-serif',
+      'font-serif': 'Crimson Pro, serif',
+      'font-mono': 'IBM Plex Mono, monospace',
+      'shadow-color': 'hsl(250 60% 30% / 0.4)',
+      'shadow-opacity': '0.6',
+      'shadow-blur': '16px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '8px',
+      },
       radius: '0.5rem',
-    },
-    fonts: {
-      sans: 'Inter, sans-serif',
-      serif: 'Georgia, serif',
-      mono: 'JetBrains Mono, monospace',
-    },
-    shadow: {
-      color: 'hsl(240 30% 25%)',
-      opacity: '0.12',
-      blur: '10px',
-      spread: '0px',
-      offsetX: '0px',
-      offsetY: '4px',
     },
   },
   {
@@ -883,7 +894,7 @@ export const THEME_PRESETS: ThemePreset[] = [
     label: 'Quantum Rose',
     createdAt: '2025-04-03',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#ffc1e3',
         'accent-foreground': '#91185c',
         'background': '#fff0f8',
@@ -916,8 +927,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#e6067a',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#e6067a',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.5rem',
+      'font-sans': 'Space Grotesk, sans-serif',
+      'font-serif': 'Spectral, serif',
+      'font-mono': 'JetBrains Mono, monospace',
+      'shadow-color': 'hsl(330 70% 50% / 0.25)',
+      'shadow-opacity': '0.4',
+      'shadow-blur': '20px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '10px',
+      },
+      dark: {
         'accent': '#5a1f5d',
         'accent-foreground': '#ffb3ff',
         'background': '#1a0922',
@@ -950,28 +971,24 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#ff6bef',
         'sidebar-primary-foreground': '#180518',
         'sidebar-ring': '#ff6bef',
-      }),
+      'font-sans': 'Space Grotesk, sans-serif',
+      'font-serif': 'Spectral, serif',
+      'font-mono': 'JetBrains Mono, monospace',
+      'shadow-color': 'hsl(330 70% 50% / 0.25)',
+      'shadow-opacity': '0.4',
+      'shadow-blur': '20px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '10px',
+      },
       radius: '0.5rem',
-    },
-    fonts: {
-      sans: 'Poppins, sans-serif',
-      serif: 'Playfair Display, serif',
-      mono: 'Space Mono, monospace',
-    },
-    shadow: {
-      color: 'hsl(330 70% 30% / 0.12)',
-      opacity: '0.18',
-      blur: '0px',
-      spread: '0px',
-      offsetX: '0px',
-      offsetY: '3px',
     },
   },
   {
     name: 'bold-tech',
     label: 'Bold Tech',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#dbeafe',
         'accent-foreground': '#1e40af',
         'background': '#ffffff',
@@ -1004,8 +1021,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#8b5cf6',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#8b5cf6',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.625rem',
+      'font-sans': 'IBM Plex Sans, sans-serif',
+      'font-serif': 'IBM Plex Serif, serif',
+      'font-mono': 'IBM Plex Mono, monospace',
+      'shadow-color': 'hsl(210 100% 40% / 0.3)',
+      'shadow-opacity': '0.5',
+      'shadow-blur': '6px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '3px',
+      },
+      dark: {
         'accent': '#4338ca',
         'accent-foreground': '#e0e7ff',
         'background': '#0f172a',
@@ -1038,28 +1065,24 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#8b5cf6',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#8b5cf6',
-      }),
+      'font-sans': 'IBM Plex Sans, sans-serif',
+      'font-serif': 'IBM Plex Serif, serif',
+      'font-mono': 'IBM Plex Mono, monospace',
+      'shadow-color': 'hsl(210 100% 40% / 0.3)',
+      'shadow-opacity': '0.5',
+      'shadow-blur': '6px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '3px',
+      },
       radius: '0.625rem',
-    },
-    fonts: {
-      sans: 'Roboto, sans-serif',
-      serif: 'Playfair Display, serif',
-      mono: 'Fira Code, monospace',
-    },
-    shadow: {
-      color: 'hsl(255 86% 66%)',
-      opacity: '0.2',
-      blur: '4px',
-      spread: '0px',
-      offsetX: '2px',
-      offsetY: '2px',
     },
   },
   {
     name: 'elegant-luxury',
     label: 'Elegant Luxury',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#fef3c7',
         'accent-foreground': '#7f1d1d',
         'background': '#faf7f5',
@@ -1092,8 +1115,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#9b2c2c',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#9b2c2c',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.375rem',
+      'font-sans': 'Montserrat, sans-serif',
+      'font-serif': 'Playfair Display, serif',
+      'font-mono': 'Courier Prime, monospace',
+      'shadow-color': 'hsl(25 45% 20% / 0.15)',
+      'shadow-opacity': '0.3',
+      'shadow-blur': '24px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '12px',
+      },
+      dark: {
         'accent': '#b45309',
         'accent-foreground': '#fef3c7',
         'background': '#1c1917',
@@ -1126,21 +1159,17 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#b91c1c',
         'sidebar-primary-foreground': '#faf7f5',
         'sidebar-ring': '#b91c1c',
-      }),
+      'font-sans': 'Montserrat, sans-serif',
+      'font-serif': 'Playfair Display, serif',
+      'font-mono': 'Courier Prime, monospace',
+      'shadow-color': 'hsl(25 45% 20% / 0.15)',
+      'shadow-opacity': '0.3',
+      'shadow-blur': '24px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '12px',
+      },
       radius: '0.375rem',
-    },
-    fonts: {
-      sans: 'Poppins, sans-serif',
-      serif: 'Libre Baskerville, serif',
-      mono: 'IBM Plex Mono, monospace',
-    },
-    shadow: {
-      color: 'hsl(0 63% 18%)',
-      opacity: '0.12',
-      blur: '16px',
-      spread: '-2px',
-      offsetX: '1px',
-      offsetY: '1px',
     },
   },
   {
@@ -1148,7 +1177,7 @@ export const THEME_PRESETS: ThemePreset[] = [
     label: 'Amber Minimal',
     createdAt: '2025-04-27',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#fffbeb',
         'accent-foreground': '#92400e',
         'background': '#ffffff',
@@ -1181,8 +1210,20 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#f59e0b',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#f59e0b',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.375rem',
+      'font-sans': 'Inter, sans-serif',
+      'font-serif': 'Lora, serif',
+      'font-mono': 'Fira Code, monospace',
+      'shadow-color': 'hsl(45 80% 50% / 0.2)',
+      'shadow-opacity': '0.3',
+      'shadow-blur': '8px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '4px',
+      'letter-spacing': '-0.01em',
+      spacing: '0.25rem',
+      },
+      dark: {
         'accent': '#92400e',
         'accent-foreground': '#fde68a',
         'background': '#171717',
@@ -1215,30 +1256,24 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#f59e0b',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#f59e0b',
-      }),
+      'font-sans': 'Inter, sans-serif',
+      'font-serif': 'Lora, serif',
+      'font-mono': 'Fira Code, monospace',
+      'shadow-color': 'hsl(45 80% 50% / 0.2)',
+      'shadow-opacity': '0.3',
+      'shadow-blur': '8px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '4px',
+      },
       radius: '0.375rem',
     },
-    fonts: {
-      sans: 'Inter, sans-serif',
-      serif: 'Source Serif 4, serif',
-      mono: 'JetBrains Mono, monospace',
-    },
-    shadow: {
-      color: 'hsl(0 0% 0%)',
-      opacity: '0.1',
-      blur: '8px',
-      spread: '-1px',
-      offsetX: '0px',
-      offsetY: '4px',
-    },
-    letterSpacing: '0em',
-    spacing: '0.25rem',
   },
   {
     name: 'neo-brutalism',
     label: 'Neo Brutalism',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#0066ff',
         'accent-foreground': '#ffffff',
         'background': '#ffffff',
@@ -1271,8 +1306,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#ff3333',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#ff3333',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0px',
+      'font-sans': 'Space Mono, monospace',
+      'font-serif': 'Courier New, monospace',
+      'font-mono': 'Space Mono, monospace',
+      'shadow-color': '#000000',
+      'shadow-opacity': '1',
+      'shadow-blur': '0px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '4px',
+      'shadow-offset-y': '4px',
+      },
+      dark: {
         'accent': '#3399ff',
         'accent-foreground': '#000000',
         'background': '#000000',
@@ -1305,20 +1350,17 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#ff6666',
         'sidebar-primary-foreground': '#000000',
         'sidebar-ring': '#ff6666',
-      }),
+      'font-sans': 'Space Mono, monospace',
+      'font-serif': 'Courier New, monospace',
+      'font-mono': 'Space Mono, monospace',
+      'shadow-color': '#000000',
+      'shadow-opacity': '1',
+      'shadow-blur': '0px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '4px',
+      'shadow-offset-y': '4px',
+      },
       radius: '0px',
-    },
-    fonts: {
-      sans: 'DM Sans, sans-serif',
-      mono: 'Space Mono, monospace',
-    },
-    shadow: {
-      color: 'hsl(0 0% 0%)',
-      opacity: '1',
-      blur: '0px',
-      spread: '0px',
-      offsetX: '4px',
-      offsetY: '4px',
     },
   },
   {
@@ -1326,7 +1368,7 @@ export const THEME_PRESETS: ThemePreset[] = [
     label: 'Solar Dusk',
     createdAt: '2025-04-12',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#f2daba',
         'accent-foreground': '#57534E',
         'background': '#FDFBF7',
@@ -1359,8 +1401,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#B45309',
         'sidebar-primary-foreground': '#FFFFFF',
         'sidebar-ring': '#B45309',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.3rem',
+      'font-sans': 'Raleway, sans-serif',
+      'font-serif': 'Merriweather, serif',
+      'font-mono': 'Source Code Pro, monospace',
+      'shadow-color': 'hsl(15 70% 40% / 0.25)',
+      'shadow-opacity': '0.4',
+      'shadow-blur': '16px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '8px',
+      },
+      dark: {
         'accent': '#1e4252',
         'accent-foreground': '#E7E5E4',
         'background': '#1C1917',
@@ -1393,28 +1445,24 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#F97316',
         'sidebar-primary-foreground': '#FFFFFF',
         'sidebar-ring': '#F97316',
-      }),
+      'font-sans': 'Raleway, sans-serif',
+      'font-serif': 'Merriweather, serif',
+      'font-mono': 'Source Code Pro, monospace',
+      'shadow-color': 'hsl(15 70% 40% / 0.25)',
+      'shadow-opacity': '0.4',
+      'shadow-blur': '16px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '8px',
+      },
       radius: '0.3rem',
-    },
-    fonts: {
-      sans: 'Oxanium, sans-serif',
-      serif: 'Merriweather, serif',
-      mono: 'Fira Code, monospace',
-    },
-    shadow: {
-      color: 'hsl(28 18% 25%)',
-      opacity: '0.18',
-      blur: '3px',
-      spread: '0px',
-      offsetX: '0px',
-      offsetY: '2px',
     },
   },
   {
     name: 'pastel-dreams',
     label: 'Pastel Dreams',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#f3e5f5',
         'accent-foreground': '#374151',
         'background': '#f7f3f9',
@@ -1447,8 +1495,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#a78bfa',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#a78bfa',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '1.5rem',
+      'font-sans': 'Quicksand, sans-serif',
+      'font-serif': 'Libre Baskerville, serif',
+      'font-mono': 'Roboto Mono, monospace',
+      'shadow-color': 'hsl(320 60% 70% / 0.3)',
+      'shadow-opacity': '0.4',
+      'shadow-blur': '12px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '6px',
+      },
+      dark: {
         'accent': '#4a3d5a',
         'accent-foreground': '#d1d5db',
         'background': '#1c1917',
@@ -1481,28 +1539,24 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#c0aafd',
         'sidebar-primary-foreground': '#1c1917',
         'sidebar-ring': '#c0aafd',
-      }),
+      'font-sans': 'Quicksand, sans-serif',
+      'font-serif': 'Libre Baskerville, serif',
+      'font-mono': 'Roboto Mono, monospace',
+      'shadow-color': 'hsl(320 60% 70% / 0.3)',
+      'shadow-opacity': '0.4',
+      'shadow-blur': '12px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '6px',
+      },
       radius: '1.5rem',
-    },
-    fonts: {
-      sans: 'Open Sans, sans-serif',
-      serif: 'Source Serif 4, serif',
-      mono: 'IBM Plex Mono, monospace',
-    },
-    shadow: {
-      color: 'hsl(0 0% 0%)',
-      opacity: '0.08',
-      blur: '16px',
-      spread: '-4px',
-      offsetX: '0px',
-      offsetY: '8px',
     },
   },
   {
     name: 'clean-slate',
     label: 'Clean Slate',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#e0e7ff',
         'accent-foreground': '#374151',
         'background': '#f8fafc',
@@ -1535,8 +1589,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#6366f1',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#6366f1',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.5rem',
+      'font-sans': 'Inter, sans-serif',
+      'font-serif': 'Georgia, serif',
+      'font-mono': 'Menlo, monospace',
+      'shadow-color': 'hsl(220 10% 40% / 0.1)',
+      'shadow-opacity': '0.2',
+      'shadow-blur': '4px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '2px',
+      },
+      dark: {
         'accent': '#374151',
         'accent-foreground': '#d1d5db',
         'background': '#0f172a',
@@ -1569,28 +1633,24 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#818cf8',
         'sidebar-primary-foreground': '#0f172a',
         'sidebar-ring': '#818cf8',
-      }),
+      'font-sans': 'Inter, sans-serif',
+      'font-serif': 'Georgia, serif',
+      'font-mono': 'Menlo, monospace',
+      'shadow-color': 'hsl(220 10% 40% / 0.1)',
+      'shadow-opacity': '0.2',
+      'shadow-blur': '4px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '2px',
+      },
       radius: '0.5rem',
-    },
-    fonts: {
-      sans: 'Inter, sans-serif',
-      serif: 'Merriweather, serif',
-      mono: 'JetBrains Mono, monospace',
-    },
-    shadow: {
-      color: 'hsl(0 0% 0%)',
-      opacity: '0.1',
-      blur: '8px',
-      spread: '-1px',
-      offsetX: '0px',
-      offsetY: '4px',
     },
   },
   {
     name: 'ocean-breeze',
     label: 'Ocean Breeze',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#d1fae5',
         'accent-foreground': '#374151',
         'background': '#f0f8ff',
@@ -1623,8 +1683,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#22c55e',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#22c55e',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.5rem',
+      'font-sans': 'Poppins, sans-serif',
+      'font-serif': 'Lora, serif',
+      'font-mono': 'Fira Code, monospace',
+      'shadow-color': 'hsl(200 70% 45% / 0.25)',
+      'shadow-opacity': '0.4',
+      'shadow-blur': '16px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '8px',
+      },
+      dark: {
         'accent': '#374151',
         'accent-foreground': '#a1a1aa',
         'background': '#0f172a',
@@ -1657,28 +1727,24 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#34d399',
         'sidebar-primary-foreground': '#0f172a',
         'sidebar-ring': '#34d399',
-      }),
+      'font-sans': 'Poppins, sans-serif',
+      'font-serif': 'Lora, serif',
+      'font-mono': 'Fira Code, monospace',
+      'shadow-color': 'hsl(200 70% 45% / 0.25)',
+      'shadow-opacity': '0.4',
+      'shadow-blur': '16px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '8px',
+      },
       radius: '0.5rem',
-    },
-    fonts: {
-      sans: 'DM Sans, sans-serif',
-      serif: 'Lora, serif',
-      mono: 'IBM Plex Mono, monospace',
-    },
-    shadow: {
-      color: 'hsl(0 0% 0%)',
-      opacity: '0.1',
-      blur: '8px',
-      spread: '-1px',
-      offsetX: '0px',
-      offsetY: '4px',
     },
   },
   {
     name: 'retro-arcade',
     label: 'Retro Arcade',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#cb4b16',
         'accent-foreground': '#ffffff',
         'background': '#fdf6e3',
@@ -1711,8 +1777,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#d33682',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#d33682',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.25rem',
+      'font-sans': 'VT323, monospace',
+      'font-serif': 'Georgia, serif',
+      'font-mono': 'VT323, monospace',
+      'shadow-color': '#cb4b16',
+      'shadow-opacity': '0.6',
+      'shadow-blur': '0px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '3px',
+      'shadow-offset-y': '3px',
+      },
+      dark: {
         'accent': '#cb4b16',
         'accent-foreground': '#ffffff',
         'background': '#002b36',
@@ -1745,27 +1821,24 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#d33682',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#d33682',
-      }),
+      'font-sans': 'VT323, monospace',
+      'font-serif': 'Georgia, serif',
+      'font-mono': 'VT323, monospace',
+      'shadow-color': '#cb4b16',
+      'shadow-opacity': '0.6',
+      'shadow-blur': '0px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '3px',
+      'shadow-offset-y': '3px',
+      },
       radius: '0.25rem',
-    },
-    fonts: {
-      sans: 'Outfit, sans-serif',
-      mono: 'Space Mono, monospace',
-    },
-    shadow: {
-      color: 'hsl(196 83% 10%)',
-      opacity: '0.15',
-      blur: '4px',
-      spread: '0px',
-      offsetX: '2px',
-      offsetY: '2px',
     },
   },
   {
     name: 'midnight-bloom',
     label: 'Midnight Bloom',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#8b9467',
         'accent-foreground': '#ffffff',
         'background': '#f9f9f9',
@@ -1798,8 +1871,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#6c5ce7',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#6c5ce7',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.5rem',
+      'font-sans': 'Rubik, sans-serif',
+      'font-serif': 'Crimson Pro, serif',
+      'font-mono': 'Inconsolata, monospace',
+      'shadow-color': 'hsl(260 60% 30% / 0.3)',
+      'shadow-opacity': '0.5',
+      'shadow-blur': '12px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '6px',
+      },
+      dark: {
         'accent': '#6495ed',
         'accent-foreground': '#e5e5e5',
         'background': '#1a1d23',
@@ -1832,28 +1915,24 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#6c5ce7',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#6c5ce7',
-      }),
+      'font-sans': 'Rubik, sans-serif',
+      'font-serif': 'Crimson Pro, serif',
+      'font-mono': 'Inconsolata, monospace',
+      'shadow-color': 'hsl(260 60% 30% / 0.3)',
+      'shadow-opacity': '0.5',
+      'shadow-blur': '12px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '6px',
+      },
       radius: '0.5rem',
-    },
-    fonts: {
-      sans: 'Montserrat, sans-serif',
-      serif: 'Playfair Display, serif',
-      mono: 'Source Code Pro, monospace',
-    },
-    shadow: {
-      color: 'hsl(0 0% 0%)',
-      opacity: '0.1',
-      blur: '10px',
-      spread: '-2px',
-      offsetX: '0px',
-      offsetY: '5px',
     },
   },
   {
     name: 'northern-lights',
     label: 'Northern Lights',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#66d9ef',
         'accent-foreground': '#333333',
         'background': '#f9f9fa',
@@ -1886,8 +1965,12 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#34a85a',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#34a85a',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.5rem',
+      'font-sans': 'Nunito Sans, sans-serif',
+      'font-serif': 'Lora, serif',
+      'font-mono': 'Source Code Pro, monospace',
+      },
+      dark: {
         'accent': '#6495ed',
         'accent-foreground': '#e5e5e5',
         'background': '#1a1d23',
@@ -1920,20 +2003,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#34a85a',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#34a85a',
-      }),
+      'font-sans': 'Nunito Sans, sans-serif',
+      'font-serif': 'Lora, serif',
+      'font-mono': 'Source Code Pro, monospace',
+      },
       radius: '0.5rem',
-    },
-    fonts: {
-      sans: 'Plus Jakarta Sans, sans-serif',
-      serif: 'Source Serif 4, serif',
-      mono: 'JetBrains Mono, monospace',
     },
   },
   {
     name: 'vintage-paper',
     label: 'Vintage Paper',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#d4c8aa',
         'accent-foreground': '#4a3f35',
         'background': '#f5f1e6',
@@ -1966,8 +2047,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#a67c52',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#a67c52',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.25rem',
+      'font-sans': 'Crimson Pro, serif',
+      'font-serif': 'Crimson Pro, serif',
+      'font-mono': 'Courier Prime, monospace',
+      'shadow-color': 'hsl(40 20% 30% / 0.15)',
+      'shadow-opacity': '0.25',
+      'shadow-blur': '8px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '4px',
+      },
+      dark: {
         'accent': '#59493e',
         'accent-foreground': '#ece5d8',
         'background': '#2d2621',
@@ -2000,28 +2091,24 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#c0a080',
         'sidebar-primary-foreground': '#2d2621',
         'sidebar-ring': '#c0a080',
-      }),
+      'font-sans': 'Crimson Pro, serif',
+      'font-serif': 'Crimson Pro, serif',
+      'font-mono': 'Courier Prime, monospace',
+      'shadow-color': 'hsl(40 20% 30% / 0.15)',
+      'shadow-opacity': '0.25',
+      'shadow-blur': '8px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '4px',
+      },
       radius: '0.25rem',
-    },
-    fonts: {
-      sans: 'Libre Baskerville, serif',
-      serif: 'Lora, serif',
-      mono: 'IBM Plex Mono, monospace',
-    },
-    shadow: {
-      color: 'hsl(28 13% 20%)',
-      opacity: '0.12',
-      blur: '5px',
-      spread: '0px',
-      offsetX: '2px',
-      offsetY: '3px',
     },
   },
   {
     name: 'sunset-horizon',
     label: 'Sunset Horizon',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#feb47b',
         'accent-foreground': '#3d3436',
         'background': '#fff9f5',
@@ -2054,8 +2141,18 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#ff7e5f',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#ff7e5f',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.625rem',
+      'font-sans': 'Comfortaa, sans-serif',
+      'font-serif': 'Lora, serif',
+      'font-mono': 'Fira Code, monospace',
+      'shadow-color': 'hsl(15 80% 60% / 0.3)',
+      'shadow-opacity': '0.5',
+      'shadow-blur': '16px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '8px',
+      },
+      dark: {
         'accent': '#feb47b',
         'accent-foreground': '#2a2024',
         'background': '#2a2024',
@@ -2088,21 +2185,17 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#ff7e5f',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#ff7e5f',
-      }),
+      'font-sans': 'Comfortaa, sans-serif',
+      'font-serif': 'Lora, serif',
+      'font-mono': 'Fira Code, monospace',
+      'shadow-color': 'hsl(15 80% 60% / 0.3)',
+      'shadow-opacity': '0.5',
+      'shadow-blur': '16px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '8px',
+      },
       radius: '0.625rem',
-    },
-    fonts: {
-      sans: 'Montserrat, sans-serif',
-      serif: 'Merriweather, serif',
-      mono: 'Ubuntu Mono, monospace',
-    },
-    shadow: {
-      color: 'hsl(0 0% 0%)',
-      opacity: '0.09',
-      blur: '12px',
-      spread: '-3px',
-      offsetX: '0px',
-      offsetY: '6px',
     },
   },
   {
@@ -2110,7 +2203,7 @@ export const THEME_PRESETS: ThemePreset[] = [
     label: 'Starry Night',
     createdAt: '2025-04-16',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#6ea3c1',
         'accent-foreground': '#fffbe6',
         'background': '#f5f7fa',
@@ -2143,8 +2236,10 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#3a5ba0',
         'sidebar-primary-foreground': '#fffbe6',
         'sidebar-ring': '#f7c873',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.5rem',
+      'shadow-color': '#f7c873',
+      },
+      dark: {
         'accent': '#bccdf0',
         'accent-foreground': '#181a24',
         'background': '#181a24',
@@ -2177,11 +2272,9 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#3a5ba0',
         'sidebar-primary-foreground': '#ffe066',
         'sidebar-ring': '#ffe066',
-      }),
+      'shadow-color': '#f7c873',
+      },
       radius: '0.5rem',
-    },
-    fonts: {
-      sans: 'Libre Baskerville, serif',
     },
   },
   {
@@ -2189,7 +2282,7 @@ export const THEME_PRESETS: ThemePreset[] = [
     label: 'Soft Pop',
     createdAt: '2025-07-08',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#f59e0b',
         'accent-foreground': '#000000',
         'background': '#f7f9f3',
@@ -2222,8 +2315,20 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#4f46e5',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#a5b4fc',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '1rem',
+      'font-sans': 'Poppins, sans-serif',
+      'font-serif': 'Lora, serif',
+      'font-mono': 'Fira Code, monospace',
+      'shadow-color': 'hsl(220 40% 50% / 0.2)',
+      'shadow-opacity': '0.3',
+      'shadow-blur': '12px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '6px',
+      'letter-spacing': '-0.015em',
+      spacing: '0.25rem',
+      },
+      dark: {
         'accent': '#fcd34d',
         'accent-foreground': '#000000',
         'background': '#000000',
@@ -2256,31 +2361,25 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#818cf8',
         'sidebar-primary-foreground': '#000000',
         'sidebar-ring': '#818cf8',
-      }),
+      'font-sans': 'Poppins, sans-serif',
+      'font-serif': 'Lora, serif',
+      'font-mono': 'Fira Code, monospace',
+      'shadow-color': 'hsl(220 40% 50% / 0.2)',
+      'shadow-opacity': '0.3',
+      'shadow-blur': '12px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '6px',
+      },
       radius: '1rem',
     },
-    fonts: {
-      sans: 'DM Sans, sans-serif',
-      serif: 'DM Sans, sans-serif',
-      mono: 'Space Mono, monospace',
-    },
-    shadow: {
-      color: '#1a1a1a',
-      opacity: '0.05',
-      blur: '0px',
-      spread: '0px',
-      offsetX: '0px',
-      offsetY: '0px',
-    },
-    letterSpacing: 'normal',
-    spacing: '0.25rem',
   },
   {
     name: 'sage-garden',
     label: 'Sage Garden',
     createdAt: '2025-11-08',
     config: {
-      light: convertTweakcnToVritti({
+      light: {
         'accent': '#bfc9bb',
         'accent-foreground': '#1a1f2e',
         'background': '#f8f7f4',
@@ -2313,8 +2412,20 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#7c9082',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#7c9082',
-      }),
-      dark: convertTweakcnToVritti({
+      radius: '0.35rem',
+      'font-sans': 'Antic, ui-sans-serif, sans-serif, system-ui',
+      'font-serif': 'Signifier, Georgia, serif',
+      'font-mono': 'JetBrains Mono, Courier New, monospace',
+      'shadow-color': '#1a1f2e',
+      'shadow-opacity': '0.04',
+      'shadow-blur': '2px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '1px',
+      'letter-spacing': '0em',
+      spacing: '0.23rem',
+      },
+      dark: {
         'accent': '#36443a',
         'accent-foreground': '#f5f5f5',
         'background': '#0a0a0a',
@@ -2347,23 +2458,17 @@ export const THEME_PRESETS: ThemePreset[] = [
         'sidebar-primary': '#7c9082',
         'sidebar-primary-foreground': '#ffffff',
         'sidebar-ring': '#7c9082',
-      }),
+      'font-sans': 'Antic, ui-sans-serif, sans-serif, system-ui',
+      'font-serif': 'Signifier, Georgia, serif',
+      'font-mono': 'JetBrains Mono, Courier New, monospace',
+      'shadow-color': '#1a1f2e',
+      'shadow-opacity': '0.04',
+      'shadow-blur': '2px',
+      'shadow-spread': '0px',
+      'shadow-offset-x': '0px',
+      'shadow-offset-y': '1px',
+      },
       radius: '0.35rem',
     },
-    fonts: {
-      sans: 'Antic, ui-sans-serif, sans-serif, system-ui',
-      serif: 'Signifier, Georgia, serif',
-      mono: 'JetBrains Mono, Courier New, monospace',
-    },
-    shadow: {
-      color: '#1a1f2e',
-      opacity: '0.04',
-      blur: '2px',
-      spread: '0px',
-      offsetX: '0px',
-      offsetY: '1px',
-    },
-    letterSpacing: '0em',
-    spacing: '0.23rem',
   },
 ];

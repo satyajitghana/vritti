@@ -1,4 +1,5 @@
-import { hexToHsl, hexToOklch, type ThemeConfig } from './apply-theme';
+import { hexToHsl, hexToOklch, colorFormatter, type ThemeConfig } from './apply-theme';
+import { isCommonStyle } from './common-styles';
 
 // ============================================================
 // CSS Variables Generation
@@ -11,16 +12,31 @@ import { hexToHsl, hexToOklch, type ThemeConfig } from './apply-theme';
 export function generateCSS(config: ThemeConfig): string {
   const lines: string[] = ['@layer base {', '  :root {'];
 
-  // Light mode colors
+  // Light mode colors (skip common styles - they'll be added separately)
   for (const [key, value] of Object.entries(config.light)) {
-    lines.push(`    --${key}: ${hexToHsl(value)};`);
+    if (typeof value === 'string' && !isCommonStyle(key)) {
+      lines.push(`    --${key}: ${colorFormatter(value, 'hsl', '3')};`);
+    }
   }
-  lines.push(`    --radius: ${config.radius};`);
+
+  // Add radius (check both locations)
+  const radius = config.radius || config.light.radius || '0.5rem';
+  lines.push(`    --radius: ${radius};`);
+
+  // Add common styles from light mode
+  if (config.light['font-sans']) lines.push(`    --font-sans: ${config.light['font-sans']};`);
+  if (config.light['font-serif']) lines.push(`    --font-serif: ${config.light['font-serif']};`);
+  if (config.light['font-mono']) lines.push(`    --font-mono: ${config.light['font-mono']};`);
+  if (config.light['letter-spacing']) lines.push(`    --letter-spacing: ${config.light['letter-spacing']};`);
+  if (config.light.spacing) lines.push(`    --spacing: ${config.light.spacing};`);
+
   lines.push('  }', '', '  .dark {');
 
-  // Dark mode colors
+  // Dark mode colors (skip common styles)
   for (const [key, value] of Object.entries(config.dark)) {
-    lines.push(`    --${key}: ${hexToHsl(value)};`);
+    if (typeof value === 'string' && !isCommonStyle(key)) {
+      lines.push(`    --${key}: ${colorFormatter(value, 'hsl', '3')};`);
+    }
   }
   lines.push('  }', '}');
 
@@ -28,21 +44,36 @@ export function generateCSS(config: ThemeConfig): string {
 }
 
 /**
- * Generate CSS with OKLCH color format
+ * Generate CSS with OKLCH color format (Tailwind v4)
  */
 export function generateCSSWithOKLCH(config: ThemeConfig): string {
   const lines: string[] = ['@layer base {', '  :root {'];
 
-  // Light mode colors
+  // Light mode colors (skip common styles)
   for (const [key, value] of Object.entries(config.light)) {
-    lines.push(`    --${key}: ${hexToOklch(value)};`);
+    if (typeof value === 'string' && !isCommonStyle(key)) {
+      lines.push(`    --${key}: ${colorFormatter(value, 'oklch')};`);
+    }
   }
-  lines.push(`    --radius: ${config.radius};`);
+
+  // Add radius
+  const radius = config.radius || config.light.radius || '0.5rem';
+  lines.push(`    --radius: ${radius};`);
+
+  // Add common styles
+  if (config.light['font-sans']) lines.push(`    --font-sans: ${config.light['font-sans']};`);
+  if (config.light['font-serif']) lines.push(`    --font-serif: ${config.light['font-serif']};`);
+  if (config.light['font-mono']) lines.push(`    --font-mono: ${config.light['font-mono']};`);
+  if (config.light['letter-spacing']) lines.push(`    --letter-spacing: ${config.light['letter-spacing']};`);
+  if (config.light.spacing) lines.push(`    --spacing: ${config.light.spacing};`);
+
   lines.push('  }', '', '  .dark {');
 
-  // Dark mode colors
+  // Dark mode colors (skip common styles)
   for (const [key, value] of Object.entries(config.dark)) {
-    lines.push(`    --${key}: ${hexToOklch(value)};`);
+    if (typeof value === 'string' && !isCommonStyle(key)) {
+      lines.push(`    --${key}: ${colorFormatter(value, 'oklch')};`);
+    }
   }
   lines.push('  }', '}');
 
@@ -110,7 +141,7 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
         sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
+          DEFAULT: "hsl(var(--sidebar))",
           foreground: "hsl(var(--sidebar-foreground))",
           primary: "hsl(var(--sidebar-primary))",
           "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
