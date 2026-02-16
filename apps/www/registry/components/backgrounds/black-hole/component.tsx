@@ -187,7 +187,7 @@ uniform vec3 uOuterColor;
 uniform float uViewHeight;
 uniform float uSize;
 
-attribute float position;
+attribute vec3 position;
 attribute float aSize;
 attribute float aRandom;
 
@@ -195,7 +195,7 @@ varying vec3 vColor;
 
 void main() {
   float concentration = 0.05;
-  float outerProgress = smoothstep(0.0, 1.0, position);
+  float outerProgress = smoothstep(0.0, 1.0, position.x);
   outerProgress = mix(concentration, outerProgress, pow(aRandom, 1.7));
   float radius = 1.0 + outerProgress * 5.0;
 
@@ -412,18 +412,21 @@ export default function BlackHole({
     spaceScene.add(discMesh);
 
     // Particle System
-    const distanceArray = new Float32Array(effectiveParticleCount);
+    const positionArray = new Float32Array(effectiveParticleCount * 3);
     const sizeArray = new Float32Array(effectiveParticleCount);
     const randomArray = new Float32Array(effectiveParticleCount);
 
     for (let i = 0; i < effectiveParticleCount; i++) {
-      distanceArray[i] = Math.random();
+      // Store distance in position.x, y and z are unused
+      positionArray[i * 3 + 0] = Math.random(); // distance
+      positionArray[i * 3 + 1] = 0;
+      positionArray[i * 3 + 2] = 0;
       sizeArray[i] = Math.random();
       randomArray[i] = Math.random();
     }
 
     const particlesGeometry = new THREE.BufferGeometry();
-    particlesGeometry.setAttribute('position', new THREE.Float32BufferAttribute(distanceArray, 1));
+    particlesGeometry.setAttribute('position', new THREE.Float32BufferAttribute(positionArray, 3));
     particlesGeometry.setAttribute('aSize', new THREE.Float32BufferAttribute(sizeArray, 1));
     particlesGeometry.setAttribute('aRandom', new THREE.Float32BufferAttribute(randomArray, 1));
 
