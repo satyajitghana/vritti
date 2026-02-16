@@ -1,0 +1,17 @@
+{
+  "name": "login-05",
+  "type": "block",
+  "description": "Login page with background image and card overlay",
+  "category": "auth",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "auth",
+      "form",
+      "login",
+      "authentication"
+    ],
+    "source": "blocks.so"
+  }
+}

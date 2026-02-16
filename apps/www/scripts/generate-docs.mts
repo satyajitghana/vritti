@@ -175,8 +175,13 @@ function generateItemMDX(item: ItemInfo): string {
   lines.push('<TabsContent value="cli">')
   lines.push('')
   lines.push('```bash')
-  lines.push(`npx shadcn@latest add "https://vritti-ui.dev/r/${item.name}.json"`)
+  lines.push(`npx shadcn@latest add @vritti/${item.name}`)
   lines.push('```')
+  lines.push('')
+  lines.push('> First-time setup? Add the Vritti registry to your `components.json`:')
+  lines.push('> ```json')
+  lines.push('> { "registries": { "@vritti": { "url": "https://vritti-ui.dev/r" } } }')
+  lines.push('> ```')
   lines.push('')
   lines.push('</TabsContent>')
   lines.push('')
@@ -218,6 +223,8 @@ function generateItemMDX(item: ItemInfo): string {
       lines.push(`### ${ex.title}`)
       lines.push('')
       lines.push(`<ComponentPreview name="${item.name}-${ex.name}" />`)
+      lines.push('')
+      lines.push(`<ComponentSource name="${item.name}-${ex.name}" />`)
       lines.push('')
     }
   }

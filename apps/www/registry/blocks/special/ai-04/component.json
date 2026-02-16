@@ -1,0 +1,20 @@
+{
+  "name": "ai-04",
+  "type": "block",
+  "description": "AI prompt builder with file attachments and drag-and-drop",
+  "category": "special",
+  "dependencies": [
+    "@tabler/icons-react",
+    "next/image"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "form",
+      "upload",
+      "ai"
+    ],
+    "source": "blocks.so"
+  }
+}

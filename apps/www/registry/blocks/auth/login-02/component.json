@@ -1,0 +1,17 @@
+{
+  "name": "login-02",
+  "type": "block",
+  "description": "Login form with social OAuth buttons",
+  "category": "auth",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "auth",
+      "form",
+      "login",
+      "authentication"
+    ],
+    "source": "blocks.so"
+  }
+}

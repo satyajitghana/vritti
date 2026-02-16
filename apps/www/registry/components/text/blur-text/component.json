@@ -3,5 +3,16 @@
   "type": "component",
   "description": "Text animation with a blur reveal effect.",
   "category": "text",
-  "dependencies": ["motion"]
+  "dependencies": ["motion"],
+  "files": [],
+  "props": [
+    { "name": "text", "type": "string", "default": "Hello World", "description": "Text to animate" },
+    { "name": "delay", "type": "number", "default": 200, "description": "Delay between each word/letter in ms", "min": 0, "max": 1000, "step": 50 },
+    { "name": "animateBy", "type": "select", "default": "words", "description": "Animate by words or letters", "options": ["words", "letters"] },
+    { "name": "direction", "type": "select", "default": "top", "description": "Direction of the blur animation", "options": ["top", "bottom"] }
+  ],
+  "meta": {
+    "tags": ["text", "blur", "animation", "reveal"],
+    "source": "react-bits"
+  }
 }

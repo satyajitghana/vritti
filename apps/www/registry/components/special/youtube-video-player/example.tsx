@@ -108,7 +108,7 @@ export default function YouTubeVideoPlayerDemo() {
           {/* Small */}
           <div>
             <h3 className="text-lg font-medium mb-3">Small (300px)</h3>
-            <div className="w-[300px]">
+            <div className="w-full max-w-[300px]">
               <YouTubePlayer
                 videoId="2yJgwwDcgV8"
                 title="Nyan Cat [original]"
@@ -119,7 +119,7 @@ export default function YouTubeVideoPlayerDemo() {
           {/* Medium */}
           <div>
             <h3 className="text-lg font-medium mb-3">Medium (500px)</h3>
-            <div className="w-[500px]">
+            <div className="w-full max-w-[500px]">
               <YouTubePlayer videoId="oHg5SJYRHA0" title="RickRoll'D" />
             </div>
           </div>
@@ -127,7 +127,7 @@ export default function YouTubeVideoPlayerDemo() {
           {/* Large */}
           <div>
             <h3 className="text-lg font-medium mb-3">Large (800px)</h3>
-            <div className="w-[800px]">
+            <div className="w-full max-w-[800px]">
               <YouTubePlayer videoId="y6120QOlsfU" title="Darude - Sandstorm" />
             </div>
           </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
+import { GeistPixelLine, GeistPixelTriangle, GeistPixelCircle } from 'geist/font/pixel';
 import '../styles/globals.css';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { siteConfig } from '@/config/site';
@@ -61,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable} ${GeistPixelLine.variable} ${GeistPixelTriangle.variable} ${GeistPixelCircle.variable}`}>
       <body className="font-sans antialiased">
         <ThemeProvider
           attribute="class"

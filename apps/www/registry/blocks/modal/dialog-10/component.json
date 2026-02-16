@@ -1,0 +1,19 @@
+{
+  "name": "dialog-10",
+  "type": "block",
+  "description": "Schedule meeting dialog with date and time pickers",
+  "category": "modal",
+  "dependencies": [
+    "lucide-react",
+    "date-fns"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "modal",
+      "dialog",
+      "form"
+    ],
+    "source": "blocks.so"
+  }
+}

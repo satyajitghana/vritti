@@ -1,0 +1,20 @@
+{
+  "name": "command-menu-01",
+  "type": "block",
+  "description": "Command menu dialog with grouped workspace items",
+  "category": "modal",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "modal",
+      "chart",
+      "dialog",
+      "form",
+      "command"
+    ],
+    "source": "blocks.so"
+  }
+}

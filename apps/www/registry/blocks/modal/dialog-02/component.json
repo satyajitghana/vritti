@@ -1,0 +1,17 @@
+{
+  "name": "dialog-02",
+  "type": "block",
+  "description": "Success dialog with two-button footer layout",
+  "category": "modal",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "modal",
+      "dialog"
+    ],
+    "source": "blocks.so"
+  }
+}

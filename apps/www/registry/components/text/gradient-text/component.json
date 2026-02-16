@@ -1,0 +1,12 @@
+{
+  "name": "gradient-text",
+  "type": "component",
+  "description": "Animated gradient text with customizable colors, direction, yoyo mode, and optional gradient border.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "gradient", "animation"],
+    "source": "react-bits"
+  }
+}

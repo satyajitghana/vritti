@@ -1,0 +1,12 @@
+{
+  "name": "particles",
+  "type": "component",
+  "description": "A 3D WebGL particle field background with customizable colors, mouse interaction, and rotation.",
+  "category": "backgrounds",
+  "dependencies": ["ogl"],
+  "files": [],
+  "meta": {
+    "tags": ["background", "particles", "webgl", "3d"],
+    "source": "react-bits"
+  }
+}

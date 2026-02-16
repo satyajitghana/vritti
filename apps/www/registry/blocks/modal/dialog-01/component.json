@@ -1,0 +1,17 @@
+{
+  "name": "dialog-01",
+  "type": "block",
+  "description": "Success dialog with centered icon and action button",
+  "category": "modal",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "modal",
+      "dialog"
+    ],
+    "source": "blocks.so"
+  }
+}

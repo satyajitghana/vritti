@@ -254,7 +254,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["special"]},
+    meta: {"tags":["special"],"previewSize":"lg"},
   },
   "android-demo": {
     name: "android-demo",
@@ -268,7 +268,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/special/android/example")),
-    meta: {"tags":["special"]},
+    meta: {"tags":["special"],"previewSize":"lg"},
   },
   "angle-slider": {
     name: "angle-slider",
@@ -334,6 +334,34 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/animations/animated-beam/example")),
+    meta: {"tags":["animation"]},
+  },
+  "animated-beam-bidirectional": {
+    name: "animated-beam-bidirectional",
+    description: "An animated beam of light which travels along a path. (bidirectional)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["animated-beam"],
+    files: [{
+      path: "registry/components/animations/animated-beam/example-bidirectional.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/animated-beam/example-bidirectional")),
+    meta: {"tags":["animation"]},
+  },
+  "animated-beam-multiple-inputs": {
+    name: "animated-beam-multiple-inputs",
+    description: "An animated beam of light which travels along a path. (multiple-inputs)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["animated-beam"],
+    files: [{
+      path: "registry/components/animations/animated-beam/example-multiple-inputs.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/animated-beam/example-multiple-inputs")),
     meta: {"tags":["animation"]},
   },
   "animated-button": {
@@ -1392,6 +1420,20 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/layouts/bento-grid/example")),
     meta: {"tags":["layouts"]},
   },
+  "bento-grid-feature": {
+    name: "bento-grid-feature",
+    description: "Bento grid is a layout used to showcase the features of a product. (feature)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["bento-grid"],
+    files: [{
+      path: "registry/components/layouts/bento-grid/example-feature.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/bento-grid/example-feature")),
+    meta: {"tags":["layouts"]},
+  },
   "bg-animate-button": {
     name: "bg-animate-button",
     description: "Button with animated background effects and gradient transitions",
@@ -1640,7 +1682,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: undefined,
+    meta: {"tags":["text","blur","animation","reveal"],"source":"react-bits"},
   },
   "blur-text-demo": {
     name: "blur-text-demo",
@@ -1654,7 +1696,35 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/text/blur-text/example")),
-    meta: undefined,
+    meta: {"tags":["text","blur","animation","reveal"],"source":"react-bits"},
+  },
+  "blur-text-direction": {
+    name: "blur-text-direction",
+    description: "Text animation with a blur reveal effect. (direction)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["blur-text"],
+    files: [{
+      path: "registry/components/text/blur-text/example-direction.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/blur-text/example-direction")),
+    meta: {"tags":["text","blur","animation","reveal"],"source":"react-bits"},
+  },
+  "blur-text-letters": {
+    name: "blur-text-letters",
+    description: "Text animation with a blur reveal effect. (letters)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["blur-text"],
+    files: [{
+      path: "registry/components/text/blur-text/example-letters.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/blur-text/example-letters")),
+    meta: {"tags":["text","blur","animation","reveal"],"source":"react-bits"},
   },
   "bolt-strike": {
     name: "bolt-strike",
@@ -3339,6 +3409,34 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/backgrounds/dot-pattern/example")),
     meta: {"tags":["background","pattern","svg","dots"],"featured":true},
   },
+  "dot-pattern-gradient": {
+    name: "dot-pattern-gradient",
+    description: "A background dot pattern made with SVGs, fully customizable using Tailwind CSS. (gradient)",
+    type: "registry:example",
+    category: "backgrounds",
+    registryDependencies: ["dot-pattern"],
+    files: [{
+      path: "registry/components/backgrounds/dot-pattern/example-gradient.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/backgrounds/dot-pattern/example-gradient")),
+    meta: {"tags":["background","pattern","svg","dots"],"featured":true},
+  },
+  "dot-pattern-linear": {
+    name: "dot-pattern-linear",
+    description: "A background dot pattern made with SVGs, fully customizable using Tailwind CSS. (linear)",
+    type: "registry:example",
+    category: "backgrounds",
+    registryDependencies: ["dot-pattern"],
+    files: [{
+      path: "registry/components/backgrounds/dot-pattern/example-linear.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/backgrounds/dot-pattern/example-linear")),
+    meta: {"tags":["background","pattern","svg","dots"],"featured":true},
+  },
   "dotted-map": {
     name: "dotted-map",
     description: "A component with a dotted map.",
@@ -4923,6 +5021,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/text/gradient-heading/example")),
     meta: {"tags":["text","gradient","heading"],"source":"cult-ui"},
   },
+  "gradient-text": {
+    name: "gradient-text",
+    description: "Animated gradient text with customizable colors, direction, yoyo mode, and optional gradient border.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/gradient-text/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/gradient-text/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","gradient","animation"],"source":"react-bits"},
+  },
+  "gradient-text-demo": {
+    name: "gradient-text-demo",
+    description: "Animated gradient text with customizable colors, direction, yoyo mode, and optional gradient border. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["gradient-text"],
+    files: [{
+      path: "registry/components/text/gradient-text/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/gradient-text/example")),
+    meta: {"tags":["text","gradient","animation"],"source":"react-bits"},
+  },
   "gradual-blur": {
     name: "gradual-blur",
     description: "Gradual blur animation effect.",
@@ -5779,6 +5910,20 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/special/iphone/example")),
+    meta: {"tags":["special"],"previewSize":"lg"},
+  },
+  "iphone-with-content": {
+    name: "iphone-with-content",
+    description: "A mockup of the iPhone (with-content)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["iphone"],
+    files: [{
+      path: "registry/components/special/iphone/example-with-content.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/iphone/example-with-content")),
     meta: {"tags":["special"],"previewSize":"lg"},
   },
   "iridescence": {
@@ -7728,6 +7873,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/animations/particles/example")),
     meta: {"tags":["animation"]},
   },
+  "particles": {
+    name: "particles",
+    description: "A 3D WebGL particle field background with customizable colors, mouse interaction, and rotation.",
+    type: "registry:ui",
+    category: "backgrounds",
+    registryDependencies: undefined,
+    dependencies: ["ogl"],
+    files: [{
+      path: "registry/components/backgrounds/particles/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/backgrounds/particles/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["background","particles","webgl","3d"],"source":"react-bits"},
+  },
+  "particles-demo": {
+    name: "particles-demo",
+    description: "A 3D WebGL particle field background with customizable colors, mouse interaction, and rotation. (demo)",
+    type: "registry:example",
+    category: "backgrounds",
+    registryDependencies: ["particles"],
+    files: [{
+      path: "registry/components/backgrounds/particles/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/backgrounds/particles/example")),
+    meta: {"tags":["background","particles","webgl","3d"],"source":"react-bits"},
+  },
   "pill-nav": {
     name: "pill-nav",
     description: "A layouts pill nav component",
@@ -8768,7 +8946,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["special"]},
+    meta: {"tags":["special"],"previewSize":"lg"},
   },
   "safari-demo": {
     name: "safari-demo",
@@ -8782,7 +8960,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/special/safari/example")),
-    meta: {"tags":["special"]},
+    meta: {"tags":["special"],"previewSize":"lg"},
   },
   "scramble-hover": {
     name: "scramble-hover",
@@ -9213,6 +9391,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/text/scroll-text/example")),
     meta: undefined,
   },
+  "scroll-velocity": {
+    name: "scroll-velocity",
+    description: "Scroll-driven velocity text marquee that changes speed and direction based on scroll velocity.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/scroll-velocity/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/scroll-velocity/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","scroll","velocity","marquee","animation"],"source":"react-bits"},
+  },
+  "scroll-velocity-demo": {
+    name: "scroll-velocity-demo",
+    description: "Scroll-driven velocity text marquee that changes speed and direction based on scroll velocity. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["scroll-velocity"],
+    files: [{
+      path: "registry/components/text/scroll-velocity/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/scroll-velocity/example")),
+    meta: {"tags":["text","scroll","velocity","marquee","animation"],"source":"react-bits"},
+  },
   "scrollx-text-highlighter": {
     name: "scrollx-text-highlighter",
     description: "Animated text highlighter with wavy and zigzag SVG underline effects",
@@ -9510,6 +9721,34 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/buttons/shimmer-button/example")),
     meta: {"tags":["button","shimmer","animation","interactive"],"featured":true},
   },
+  "shimmer-button-colors": {
+    name: "shimmer-button-colors",
+    description: "A button with a shimmering light which travels around the perimeter. (colors)",
+    type: "registry:example",
+    category: "buttons",
+    registryDependencies: ["shimmer-button"],
+    files: [{
+      path: "registry/components/buttons/shimmer-button/example-colors.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/buttons/shimmer-button/example-colors")),
+    meta: {"tags":["button","shimmer","animation","interactive"],"featured":true},
+  },
+  "shimmer-button-sizes": {
+    name: "shimmer-button-sizes",
+    description: "A button with a shimmering light which travels around the perimeter. (sizes)",
+    type: "registry:example",
+    category: "buttons",
+    registryDependencies: ["shimmer-button"],
+    files: [{
+      path: "registry/components/buttons/shimmer-button/example-sizes.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/buttons/shimmer-button/example-sizes")),
+    meta: {"tags":["button","shimmer","animation","interactive"],"featured":true},
+  },
   "shimmer-text": {
     name: "shimmer-text",
     description: "Text with a shimmering gradient animation that continuously sweeps across the text.",
@@ -9608,6 +9847,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/buttons/shiny-button/example")),
     meta: {"tags":["buttons"]},
+  },
+  "shiny-text": {
+    name: "shiny-text",
+    description: "Text with an animated shine/highlight sweep effect with customizable colors, speed, direction, and yoyo mode.",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/shiny-text/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/shiny-text/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","shine","highlight","animation"],"source":"react-bits"},
+  },
+  "shiny-text-demo": {
+    name: "shiny-text-demo",
+    description: "Text with an animated shine/highlight sweep effect with customizable colors, speed, direction, and yoyo mode. (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["shiny-text"],
+    files: [{
+      path: "registry/components/text/shiny-text/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/shiny-text/example")),
+    meta: {"tags":["text","shine","highlight","animation"],"source":"react-bits"},
   },
   "showcase": {
     name: "showcase",
@@ -12464,7 +12736,7 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["media","youtube"],"source":"cult-ui"},
+    meta: {"tags":["media","youtube"],"source":"cult-ui","previewSize":"lg"},
   },
   "youtube-video-player-demo": {
     name: "youtube-video-player-demo",
@@ -12478,7 +12750,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/special/youtube-video-player/example")),
-    meta: {"tags":["media","youtube"],"source":"cult-ui"},
+    meta: {"tags":["media","youtube"],"source":"cult-ui","previewSize":"lg"},
   },
   "account-2fa": {
     name: "account-2fa",
@@ -12710,6 +12982,171 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/blocks/account/account-sessions/example")),
     meta: {"tags":["account","sessions","security","devices"],"source":"creative-tim"},
+  },
+  "ai-01": {
+    name: "ai-01",
+    description: "AI chat input with expandable textarea and attachment dropdown",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["@tabler/icons-react"],
+    files: [{
+      path: "registry/blocks/special/ai-01/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/ai-01/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","form","ai"],"source":"blocks.so"},
+  },
+  "ai-01-demo": {
+    name: "ai-01-demo",
+    description: "AI chat input with expandable textarea and attachment dropdown (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["ai-01"],
+    files: [{
+      path: "registry/blocks/special/ai-01/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/ai-01/example")),
+    meta: {"tags":["special","form","ai"],"source":"blocks.so"},
+  },
+  "ai-02": {
+    name: "ai-02",
+    description: "AI prompt input with model selector and suggestion buttons",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["@tabler/icons-react"],
+    files: [{
+      path: "registry/blocks/special/ai-02/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/ai-02/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","form","ai"],"source":"blocks.so"},
+  },
+  "ai-02-demo": {
+    name: "ai-02-demo",
+    description: "AI prompt input with model selector and suggestion buttons (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["ai-02"],
+    files: [{
+      path: "registry/blocks/special/ai-02/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/ai-02/example")),
+    meta: {"tags":["special","form","ai"],"source":"blocks.so"},
+  },
+  "ai-03": {
+    name: "ai-03",
+    description: "AI chat input with model, agent, and performance dropdowns",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["@tabler/icons-react"],
+    files: [{
+      path: "registry/blocks/special/ai-03/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/ai-03/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","form","ai"],"source":"blocks.so"},
+  },
+  "ai-03-demo": {
+    name: "ai-03-demo",
+    description: "AI chat input with model, agent, and performance dropdowns (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["ai-03"],
+    files: [{
+      path: "registry/blocks/special/ai-03/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/ai-03/example")),
+    meta: {"tags":["special","form","ai"],"source":"blocks.so"},
+  },
+  "ai-04": {
+    name: "ai-04",
+    description: "AI prompt builder with file attachments and drag-and-drop",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["@tabler/icons-react","next/image"],
+    files: [{
+      path: "registry/blocks/special/ai-04/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/ai-04/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","form","upload","ai"],"source":"blocks.so"},
+  },
+  "ai-04-demo": {
+    name: "ai-04-demo",
+    description: "AI prompt builder with file attachments and drag-and-drop (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["ai-04"],
+    files: [{
+      path: "registry/blocks/special/ai-04/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/ai-04/example")),
+    meta: {"tags":["special","form","upload","ai"],"source":"blocks.so"},
+  },
+  "ai-05": {
+    name: "ai-05",
+    description: "AI chat conversation with message history and prompt input",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["@tabler/icons-react","ai","ai-elements"],
+    files: [{
+      path: "registry/blocks/special/ai-05/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/ai-05/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","upload","ai"],"source":"blocks.so"},
+  },
+  "ai-05-demo": {
+    name: "ai-05-demo",
+    description: "AI chat conversation with message history and prompt input (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["ai-05"],
+    files: [{
+      path: "registry/blocks/special/ai-05/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/ai-05/example")),
+    meta: {"tags":["special","upload","ai"],"source":"blocks.so"},
   },
   "ai-chat-streaming": {
     name: "ai-chat-streaming",
@@ -13437,6 +13874,105 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/blocks/ecommerce/checkout-form/example")),
     meta: {"tags":["ecommerce","checkout","payment","shipping","form"],"source":"creative-tim"},
   },
+  "command-menu-01": {
+    name: "command-menu-01",
+    description: "Command menu dialog with grouped workspace items",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["@tabler/icons-react"],
+    files: [{
+      path: "registry/blocks/modal/command-menu-01/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/command-menu-01/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","chart","dialog","form","command"],"source":"blocks.so"},
+  },
+  "command-menu-01-demo": {
+    name: "command-menu-01-demo",
+    description: "Command menu dialog with grouped workspace items (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["command-menu-01"],
+    files: [{
+      path: "registry/blocks/modal/command-menu-01/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/command-menu-01/example")),
+    meta: {"tags":["modal","chart","dialog","form","command"],"source":"blocks.so"},
+  },
+  "command-menu-02": {
+    name: "command-menu-02",
+    description: "Command menu with keyboard shortcuts and document navigation",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["@tabler/icons-react"],
+    files: [{
+      path: "registry/blocks/modal/command-menu-02/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/command-menu-02/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","dialog","upload","command"],"source":"blocks.so"},
+  },
+  "command-menu-02-demo": {
+    name: "command-menu-02-demo",
+    description: "Command menu with keyboard shortcuts and document navigation (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["command-menu-02"],
+    files: [{
+      path: "registry/blocks/modal/command-menu-02/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/command-menu-02/example")),
+    meta: {"tags":["modal","dialog","upload","command"],"source":"blocks.so"},
+  },
+  "command-menu-03": {
+    name: "command-menu-03",
+    description: "Command menu with documentation search and color palette",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["@tabler/icons-react","next/navigation"],
+    files: [{
+      path: "registry/blocks/modal/command-menu-03/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/command-menu-03/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","dialog","command"],"source":"blocks.so"},
+  },
+  "command-menu-03-demo": {
+    name: "command-menu-03-demo",
+    description: "Command menu with documentation search and color palette (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["command-menu-03"],
+    files: [{
+      path: "registry/blocks/modal/command-menu-03/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/command-menu-03/example")),
+    meta: {"tags":["modal","dialog","command"],"source":"blocks.so"},
+  },
   "contact-form-background": {
     name: "contact-form-background",
     description: "A contact form with background image overlay and card-style form.",
@@ -14097,6 +14633,402 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/blocks/billing/detailed-usage-table/example")),
     meta: {"tags":["billing","usage","table","resources","progress"],"source":"billingsdk"},
   },
+  "dialog-01": {
+    name: "dialog-01",
+    description: "Success dialog with centered icon and action button",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/dialog-01/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/dialog-01/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","dialog"],"source":"blocks.so"},
+  },
+  "dialog-01-demo": {
+    name: "dialog-01-demo",
+    description: "Success dialog with centered icon and action button (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["dialog-01"],
+    files: [{
+      path: "registry/blocks/modal/dialog-01/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/dialog-01/example")),
+    meta: {"tags":["modal","dialog"],"source":"blocks.so"},
+  },
+  "dialog-02": {
+    name: "dialog-02",
+    description: "Success dialog with two-button footer layout",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/dialog-02/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/dialog-02/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","dialog"],"source":"blocks.so"},
+  },
+  "dialog-02-demo": {
+    name: "dialog-02-demo",
+    description: "Success dialog with two-button footer layout (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["dialog-02"],
+    files: [{
+      path: "registry/blocks/modal/dialog-02/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/dialog-02/example")),
+    meta: {"tags":["modal","dialog"],"source":"blocks.so"},
+  },
+  "dialog-03": {
+    name: "dialog-03",
+    description: "Destructive confirmation dialog with warning icon",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/dialog-03/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/dialog-03/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","dialog"],"source":"blocks.so"},
+  },
+  "dialog-03-demo": {
+    name: "dialog-03-demo",
+    description: "Destructive confirmation dialog with warning icon (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["dialog-03"],
+    files: [{
+      path: "registry/blocks/modal/dialog-03/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/dialog-03/example")),
+    meta: {"tags":["modal","dialog"],"source":"blocks.so"},
+  },
+  "dialog-04": {
+    name: "dialog-04",
+    description: "Edit profile dialog with input field",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/modal/dialog-04/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/dialog-04/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","dialog"],"source":"blocks.so"},
+  },
+  "dialog-04-demo": {
+    name: "dialog-04-demo",
+    description: "Edit profile dialog with input field (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["dialog-04"],
+    files: [{
+      path: "registry/blocks/modal/dialog-04/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/dialog-04/example")),
+    meta: {"tags":["modal","dialog"],"source":"blocks.so"},
+  },
+  "dialog-05": {
+    name: "dialog-05",
+    description: "Delete workspace alert dialog with password confirmation",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/dialog-05/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/dialog-05/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","dialog","form"],"source":"blocks.so"},
+  },
+  "dialog-05-demo": {
+    name: "dialog-05-demo",
+    description: "Delete workspace alert dialog with password confirmation (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["dialog-05"],
+    files: [{
+      path: "registry/blocks/modal/dialog-05/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/dialog-05/example")),
+    meta: {"tags":["modal","dialog","form"],"source":"blocks.so"},
+  },
+  "dialog-06": {
+    name: "dialog-06",
+    description: "Create workspace dialog with privacy toggle",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/modal/dialog-06/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/dialog-06/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","dialog","form"],"source":"blocks.so"},
+  },
+  "dialog-06-demo": {
+    name: "dialog-06-demo",
+    description: "Create workspace dialog with privacy toggle (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["dialog-06"],
+    files: [{
+      path: "registry/blocks/modal/dialog-06/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/dialog-06/example")),
+    meta: {"tags":["modal","dialog","form"],"source":"blocks.so"},
+  },
+  "dialog-07": {
+    name: "dialog-07",
+    description: "Deactivate 2FA alert dialog with email and password fields",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/dialog-07/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/dialog-07/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","dialog","form"],"source":"blocks.so"},
+  },
+  "dialog-07-demo": {
+    name: "dialog-07-demo",
+    description: "Deactivate 2FA alert dialog with email and password fields (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["dialog-07"],
+    files: [{
+      path: "registry/blocks/modal/dialog-07/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/dialog-07/example")),
+    meta: {"tags":["modal","dialog","form"],"source":"blocks.so"},
+  },
+  "dialog-08": {
+    name: "dialog-08",
+    description: "Invite members dialog with member list",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/dialog-08/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/dialog-08/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","dialog","form"],"source":"blocks.so"},
+  },
+  "dialog-08-demo": {
+    name: "dialog-08-demo",
+    description: "Invite members dialog with member list (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["dialog-08"],
+    files: [{
+      path: "registry/blocks/modal/dialog-08/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/dialog-08/example")),
+    meta: {"tags":["modal","dialog","form"],"source":"blocks.so"},
+  },
+  "dialog-09": {
+    name: "dialog-09",
+    description: "Share and collaborate dialog with copy link",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/dialog-09/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/dialog-09/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","dialog","form"],"source":"blocks.so"},
+  },
+  "dialog-09-demo": {
+    name: "dialog-09-demo",
+    description: "Share and collaborate dialog with copy link (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["dialog-09"],
+    files: [{
+      path: "registry/blocks/modal/dialog-09/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/dialog-09/example")),
+    meta: {"tags":["modal","dialog","form"],"source":"blocks.so"},
+  },
+  "dialog-10": {
+    name: "dialog-10",
+    description: "Schedule meeting dialog with date and time pickers",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react","date-fns"],
+    files: [{
+      path: "registry/blocks/modal/dialog-10/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/dialog-10/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","dialog","form"],"source":"blocks.so"},
+  },
+  "dialog-10-demo": {
+    name: "dialog-10-demo",
+    description: "Schedule meeting dialog with date and time pickers (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["dialog-10"],
+    files: [{
+      path: "registry/blocks/modal/dialog-10/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/dialog-10/example")),
+    meta: {"tags":["modal","dialog","form"],"source":"blocks.so"},
+  },
+  "dialog-11": {
+    name: "dialog-11",
+    description: "Initialize project dialog with multi-step configuration",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/dialog-11/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/dialog-11/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","dialog","form"],"source":"blocks.so"},
+  },
+  "dialog-11-demo": {
+    name: "dialog-11-demo",
+    description: "Initialize project dialog with multi-step configuration (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["dialog-11"],
+    files: [{
+      path: "registry/blocks/modal/dialog-11/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/dialog-11/example")),
+    meta: {"tags":["modal","dialog","form"],"source":"blocks.so"},
+  },
+  "dialog-12": {
+    name: "dialog-12",
+    description: "Add writer dialog with avatar upload and form fields",
+    type: "registry:block",
+    category: "modal",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/modal/dialog-12/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/modal/dialog-12/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["modal","dialog","upload"],"source":"blocks.so"},
+  },
+  "dialog-12-demo": {
+    name: "dialog-12-demo",
+    description: "Add writer dialog with avatar upload and form fields (demo)",
+    type: "registry:example",
+    category: "modal",
+    registryDependencies: ["dialog-12"],
+    files: [{
+      path: "registry/blocks/modal/dialog-12/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/modal/dialog-12/example")),
+    meta: {"tags":["modal","dialog","upload"],"source":"blocks.so"},
+  },
   "ecommerce-grid": {
     name: "ecommerce-grid",
     description: "An ecommerce product grid with image cards and promotional banner.",
@@ -14525,6 +15457,204 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/blocks/faq/faq-simple/example")),
     meta: {"tags":["faq","simple","questions","answers"],"source":"creative-tim"},
+  },
+  "file-upload-01": {
+    name: "file-upload-01",
+    description: "File upload card with drag-and-drop and progress tracking",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/file-upload-01/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/file-upload-01/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","form","upload"],"source":"blocks.so"},
+  },
+  "file-upload-01-demo": {
+    name: "file-upload-01-demo",
+    description: "File upload card with drag-and-drop and progress tracking (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["file-upload-01"],
+    files: [{
+      path: "registry/blocks/special/file-upload-01/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/file-upload-01/example")),
+    meta: {"tags":["special","form","upload"],"source":"blocks.so"},
+  },
+  "file-upload-02": {
+    name: "file-upload-02",
+    description: "Simple workspace setup form with file input",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/special/file-upload-02/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/file-upload-02/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","form","upload"],"source":"blocks.so"},
+  },
+  "file-upload-02-demo": {
+    name: "file-upload-02-demo",
+    description: "Simple workspace setup form with file input (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["file-upload-02"],
+    files: [{
+      path: "registry/blocks/special/file-upload-02/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/file-upload-02/example")),
+    meta: {"tags":["special","form","upload"],"source":"blocks.so"},
+  },
+  "file-upload-03": {
+    name: "file-upload-03",
+    description: "Cloud storage setup with dropzone file upload",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react","react-dropzone"],
+    files: [{
+      path: "registry/blocks/special/file-upload-03/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/file-upload-03/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","form","upload"],"source":"blocks.so"},
+  },
+  "file-upload-03-demo": {
+    name: "file-upload-03-demo",
+    description: "Cloud storage setup with dropzone file upload (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["file-upload-03"],
+    files: [{
+      path: "registry/blocks/special/file-upload-03/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/file-upload-03/example")),
+    meta: {"tags":["special","form","upload"],"source":"blocks.so"},
+  },
+  "file-upload-04": {
+    name: "file-upload-04",
+    description: "File upload with drag-and-drop and progress bar",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react","sonner"],
+    files: [{
+      path: "registry/blocks/special/file-upload-04/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/file-upload-04/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","form","upload"],"source":"blocks.so"},
+  },
+  "file-upload-04-demo": {
+    name: "file-upload-04-demo",
+    description: "File upload with drag-and-drop and progress bar (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["file-upload-04"],
+    files: [{
+      path: "registry/blocks/special/file-upload-04/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/file-upload-04/example")),
+    meta: {"tags":["special","form","upload"],"source":"blocks.so"},
+  },
+  "file-upload-05": {
+    name: "file-upload-05",
+    description: "Minimal file upload with completed state display",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/file-upload-05/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/file-upload-05/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","form","upload"],"source":"blocks.so"},
+  },
+  "file-upload-05-demo": {
+    name: "file-upload-05-demo",
+    description: "Minimal file upload with completed state display (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["file-upload-05"],
+    files: [{
+      path: "registry/blocks/special/file-upload-05/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/file-upload-05/example")),
+    meta: {"tags":["special","form","upload"],"source":"blocks.so"},
+  },
+  "file-upload-06": {
+    name: "file-upload-06",
+    description: "File upload manager with active and completed upload lists",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/file-upload-06/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/file-upload-06/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","upload"],"source":"blocks.so"},
+  },
+  "file-upload-06-demo": {
+    name: "file-upload-06-demo",
+    description: "File upload manager with active and completed upload lists (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["file-upload-06"],
+    files: [{
+      path: "registry/blocks/special/file-upload-06/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/file-upload-06/example")),
+    meta: {"tags":["special","upload"],"source":"blocks.so"},
   },
   "footer-app-download": {
     name: "footer-app-download",
@@ -15186,6 +16316,270 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/blocks/footer/footer-with-form/example")),
     meta: {"tags":["footer","form","newsletter","subscription"],"source":"creative-tim"},
   },
+  "form-layout-01": {
+    name: "form-layout-01",
+    description: "Notification settings form with radio group",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/special/form-layout-01/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/form-layout-01/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","form"],"source":"blocks.so"},
+  },
+  "form-layout-01-demo": {
+    name: "form-layout-01-demo",
+    description: "Notification settings form with radio group (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["form-layout-01"],
+    files: [{
+      path: "registry/blocks/special/form-layout-01/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/form-layout-01/example")),
+    meta: {"tags":["special","form"],"source":"blocks.so"},
+  },
+  "form-layout-02": {
+    name: "form-layout-02",
+    description: "Personal information form with grid layout",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/special/form-layout-02/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/form-layout-02/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","form"],"source":"blocks.so"},
+  },
+  "form-layout-02-demo": {
+    name: "form-layout-02-demo",
+    description: "Personal information form with grid layout (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["form-layout-02"],
+    files: [{
+      path: "registry/blocks/special/form-layout-02/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/form-layout-02/example")),
+    meta: {"tags":["special","form"],"source":"blocks.so"},
+  },
+  "form-layout-03": {
+    name: "form-layout-03",
+    description: "Settings page with profile and password sections",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/special/form-layout-03/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/form-layout-03/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","form"],"source":"blocks.so"},
+  },
+  "form-layout-03-demo": {
+    name: "form-layout-03-demo",
+    description: "Settings page with profile and password sections (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["form-layout-03"],
+    files: [{
+      path: "registry/blocks/special/form-layout-03/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/form-layout-03/example")),
+    meta: {"tags":["special","form"],"source":"blocks.so"},
+  },
+  "form-layout-04": {
+    name: "form-layout-04",
+    description: "Account settings form with avatar upload",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/special/form-layout-04/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/form-layout-04/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","form"],"source":"blocks.so"},
+  },
+  "form-layout-04-demo": {
+    name: "form-layout-04-demo",
+    description: "Account settings form with avatar upload (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["form-layout-04"],
+    files: [{
+      path: "registry/blocks/special/form-layout-04/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/form-layout-04/example")),
+    meta: {"tags":["special","form"],"source":"blocks.so"},
+  },
+  "form-layout-05": {
+    name: "form-layout-05",
+    description: "Multi-section settings form with toggles and selects",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/form-layout-05/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/form-layout-05/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","form"],"source":"blocks.so"},
+  },
+  "form-layout-05-demo": {
+    name: "form-layout-05-demo",
+    description: "Multi-section settings form with toggles and selects (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["form-layout-05"],
+    files: [{
+      path: "registry/blocks/special/form-layout-05/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/form-layout-05/example")),
+    meta: {"tags":["special","form"],"source":"blocks.so"},
+  },
+  "grid-list-01": {
+    name: "grid-list-01",
+    description: "Integration cards grid with enable toggles",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/grid-list-01/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/grid-list-01/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","grid","list"],"source":"blocks.so"},
+  },
+  "grid-list-01-demo": {
+    name: "grid-list-01-demo",
+    description: "Integration cards grid with enable toggles (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["grid-list-01"],
+    files: [{
+      path: "registry/blocks/special/grid-list-01/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/grid-list-01/example")),
+    meta: {"tags":["special","grid","list"],"source":"blocks.so"},
+  },
+  "grid-list-02": {
+    name: "grid-list-02",
+    description: "Pricing feature comparison grid",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/special/grid-list-02/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/grid-list-02/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","grid","list"],"source":"blocks.so"},
+  },
+  "grid-list-02-demo": {
+    name: "grid-list-02-demo",
+    description: "Pricing feature comparison grid (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["grid-list-02"],
+    files: [{
+      path: "registry/blocks/special/grid-list-02/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/grid-list-02/example")),
+    meta: {"tags":["special","grid","list"],"source":"blocks.so"},
+  },
+  "grid-list-03": {
+    name: "grid-list-03",
+    description: "Team member cards grid with roles and actions",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/grid-list-03/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/grid-list-03/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","grid","list"],"source":"blocks.so"},
+  },
+  "grid-list-03-demo": {
+    name: "grid-list-03-demo",
+    description: "Team member cards grid with roles and actions (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["grid-list-03"],
+    files: [{
+      path: "registry/blocks/special/grid-list-03/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/grid-list-03/example")),
+    meta: {"tags":["special","grid","list"],"source":"blocks.so"},
+  },
   "hero-centered": {
     name: "hero-centered",
     description: "A centered hero section with headline, gradient highlight, subtext, and dual CTA buttons.",
@@ -15416,6 +16810,303 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/blocks/modal/limited-offer-dialog/example")),
     meta: {"tags":["modal","dialog","offer","discount","promotion","billing"],"source":"billingsdk"},
+  },
+  "login-01": {
+    name: "login-01",
+    description: "Simple login form with email and password",
+    type: "registry:block",
+    category: "auth",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/auth/login-01/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/auth/login-01/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["auth","form","login","authentication"],"source":"blocks.so"},
+  },
+  "login-01-demo": {
+    name: "login-01-demo",
+    description: "Simple login form with email and password (demo)",
+    type: "registry:example",
+    category: "auth",
+    registryDependencies: ["login-01"],
+    files: [{
+      path: "registry/blocks/auth/login-01/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/auth/login-01/example")),
+    meta: {"tags":["auth","form","login","authentication"],"source":"blocks.so"},
+  },
+  "login-02": {
+    name: "login-02",
+    description: "Login form with social OAuth buttons",
+    type: "registry:block",
+    category: "auth",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/auth/login-02/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/auth/login-02/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["auth","form","login","authentication"],"source":"blocks.so"},
+  },
+  "login-02-demo": {
+    name: "login-02-demo",
+    description: "Login form with social OAuth buttons (demo)",
+    type: "registry:example",
+    category: "auth",
+    registryDependencies: ["login-02"],
+    files: [{
+      path: "registry/blocks/auth/login-02/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/auth/login-02/example")),
+    meta: {"tags":["auth","form","login","authentication"],"source":"blocks.so"},
+  },
+  "login-03": {
+    name: "login-03",
+    description: "Minimal centered login form",
+    type: "registry:block",
+    category: "auth",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/auth/login-03/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/auth/login-03/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["auth","form","login","authentication"],"source":"blocks.so"},
+  },
+  "login-03-demo": {
+    name: "login-03-demo",
+    description: "Minimal centered login form (demo)",
+    type: "registry:example",
+    category: "auth",
+    registryDependencies: ["login-03"],
+    files: [{
+      path: "registry/blocks/auth/login-03/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/auth/login-03/example")),
+    meta: {"tags":["auth","form","login","authentication"],"source":"blocks.so"},
+  },
+  "login-04": {
+    name: "login-04",
+    description: "Login page with side illustration panel",
+    type: "registry:block",
+    category: "auth",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/auth/login-04/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/auth/login-04/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["auth","form","login","authentication"],"source":"blocks.so"},
+  },
+  "login-04-demo": {
+    name: "login-04-demo",
+    description: "Login page with side illustration panel (demo)",
+    type: "registry:example",
+    category: "auth",
+    registryDependencies: ["login-04"],
+    files: [{
+      path: "registry/blocks/auth/login-04/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/auth/login-04/example")),
+    meta: {"tags":["auth","form","login","authentication"],"source":"blocks.so"},
+  },
+  "login-05": {
+    name: "login-05",
+    description: "Login page with background image and card overlay",
+    type: "registry:block",
+    category: "auth",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/auth/login-05/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/auth/login-05/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["auth","form","login","authentication"],"source":"blocks.so"},
+  },
+  "login-05-demo": {
+    name: "login-05-demo",
+    description: "Login page with background image and card overlay (demo)",
+    type: "registry:example",
+    category: "auth",
+    registryDependencies: ["login-05"],
+    files: [{
+      path: "registry/blocks/auth/login-05/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/auth/login-05/example")),
+    meta: {"tags":["auth","form","login","authentication"],"source":"blocks.so"},
+  },
+  "login-06": {
+    name: "login-06",
+    description: "Login form with OTP verification",
+    type: "registry:block",
+    category: "auth",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/auth/login-06/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/auth/login-06/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["auth","login","authentication"],"source":"blocks.so"},
+  },
+  "login-06-demo": {
+    name: "login-06-demo",
+    description: "Login form with OTP verification (demo)",
+    type: "registry:example",
+    category: "auth",
+    registryDependencies: ["login-06"],
+    files: [{
+      path: "registry/blocks/auth/login-06/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/auth/login-06/example")),
+    meta: {"tags":["auth","login","authentication"],"source":"blocks.so"},
+  },
+  "login-07": {
+    name: "login-07",
+    description: "Two-column login with feature highlights",
+    type: "registry:block",
+    category: "auth",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/auth/login-07/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/auth/login-07/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["auth","login","authentication"],"source":"blocks.so"},
+  },
+  "login-07-demo": {
+    name: "login-07-demo",
+    description: "Two-column login with feature highlights (demo)",
+    type: "registry:example",
+    category: "auth",
+    registryDependencies: ["login-07"],
+    files: [{
+      path: "registry/blocks/auth/login-07/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/auth/login-07/example")),
+    meta: {"tags":["auth","login","authentication"],"source":"blocks.so"},
+  },
+  "login-08": {
+    name: "login-08",
+    description: "Login form with magic link option",
+    type: "registry:block",
+    category: "auth",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react","next/link"],
+    files: [{
+      path: "registry/blocks/auth/login-08/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/auth/login-08/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["auth","login","authentication"],"source":"blocks.so"},
+  },
+  "login-08-demo": {
+    name: "login-08-demo",
+    description: "Login form with magic link option (demo)",
+    type: "registry:example",
+    category: "auth",
+    registryDependencies: ["login-08"],
+    files: [{
+      path: "registry/blocks/auth/login-08/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/auth/login-08/example")),
+    meta: {"tags":["auth","login","authentication"],"source":"blocks.so"},
+  },
+  "login-09": {
+    name: "login-09",
+    description: "Full-page login with brand sidebar",
+    type: "registry:block",
+    category: "auth",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react","next/link"],
+    files: [{
+      path: "registry/blocks/auth/login-09/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/auth/login-09/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["auth","chart","form","login","authentication"],"source":"blocks.so"},
+  },
+  "login-09-demo": {
+    name: "login-09-demo",
+    description: "Full-page login with brand sidebar (demo)",
+    type: "registry:example",
+    category: "auth",
+    registryDependencies: ["login-09"],
+    files: [{
+      path: "registry/blocks/auth/login-09/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/auth/login-09/example")),
+    meta: {"tags":["auth","chart","form","login","authentication"],"source":"blocks.so"},
   },
   "modal-alert": {
     name: "modal-alert",
@@ -15878,6 +17569,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/blocks/modal/modal-success/example")),
     meta: {"tags":["modal","success","state","confirmation"],"source":"creative-tim"},
+  },
+  "onboarding-01": {
+    name: "onboarding-01",
+    description: "Multi-step onboarding wizard with progress indicator",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["@tabler/icons-react"],
+    files: [{
+      path: "registry/blocks/special/onboarding-01/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/onboarding-01/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","upload","onboarding","wizard"],"source":"blocks.so"},
+  },
+  "onboarding-01-demo": {
+    name: "onboarding-01-demo",
+    description: "Multi-step onboarding wizard with progress indicator (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["onboarding-01"],
+    files: [{
+      path: "registry/blocks/special/onboarding-01/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/onboarding-01/example")),
+    meta: {"tags":["special","upload","onboarding","wizard"],"source":"blocks.so"},
   },
   "order-details": {
     name: "order-details",
@@ -16690,6 +18414,501 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/blocks/billing/software-purchase/example")),
     meta: {"tags":["billing","purchase","software","checkout"],"source":"creative-tim"},
   },
+  "stats-01": {
+    name: "stats-01",
+    description: "Simple stat card with label and value",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/special/stats-01/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/stats-01/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-01-demo": {
+    name: "stats-01-demo",
+    description: "Simple stat card with label and value (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["stats-01"],
+    files: [{
+      path: "registry/blocks/special/stats-01/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/stats-01/example")),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-02": {
+    name: "stats-02",
+    description: "Stat card with trend indicator",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/stats-02/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/stats-02/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-02-demo": {
+    name: "stats-02-demo",
+    description: "Stat card with trend indicator (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["stats-02"],
+    files: [{
+      path: "registry/blocks/special/stats-02/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/stats-02/example")),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-03": {
+    name: "stats-03",
+    description: "Stat card with icon and description",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/special/stats-03/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/stats-03/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-03-demo": {
+    name: "stats-03-demo",
+    description: "Stat card with icon and description (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["stats-03"],
+    files: [{
+      path: "registry/blocks/special/stats-03/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/stats-03/example")),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-04": {
+    name: "stats-04",
+    description: "Stat card with change percentage badge",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/stats-04/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/stats-04/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-04-demo": {
+    name: "stats-04-demo",
+    description: "Stat card with change percentage badge (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["stats-04"],
+    files: [{
+      path: "registry/blocks/special/stats-04/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/stats-04/example")),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-05": {
+    name: "stats-05",
+    description: "Stat card with spark line chart",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/special/stats-05/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/stats-05/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-05-demo": {
+    name: "stats-05-demo",
+    description: "Stat card with spark line chart (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["stats-05"],
+    files: [{
+      path: "registry/blocks/special/stats-05/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/stats-05/example")),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-06": {
+    name: "stats-06",
+    description: "Stat cards row with category icons",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react","next/link"],
+    files: [{
+      path: "registry/blocks/special/stats-06/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/stats-06/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-06-demo": {
+    name: "stats-06-demo",
+    description: "Stat cards row with category icons (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["stats-06"],
+    files: [{
+      path: "registry/blocks/special/stats-06/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/stats-06/example")),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-07": {
+    name: "stats-07",
+    description: "Stat cards with mini bar charts",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react","recharts","next/link"],
+    files: [{
+      path: "registry/blocks/special/stats-07/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/stats-07/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","chart","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-07-demo": {
+    name: "stats-07-demo",
+    description: "Stat cards with mini bar charts (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["stats-07"],
+    files: [{
+      path: "registry/blocks/special/stats-07/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/stats-07/example")),
+    meta: {"tags":["special","chart","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-08": {
+    name: "stats-08",
+    description: "Stat cards with progress bars",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["recharts"],
+    files: [{
+      path: "registry/blocks/special/stats-08/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/stats-08/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","chart","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-08-demo": {
+    name: "stats-08-demo",
+    description: "Stat cards with progress bars (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["stats-08"],
+    files: [{
+      path: "registry/blocks/special/stats-08/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/stats-08/example")),
+    meta: {"tags":["special","chart","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-09": {
+    name: "stats-09",
+    description: "Compact stat badges row",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/special/stats-09/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/stats-09/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-09-demo": {
+    name: "stats-09-demo",
+    description: "Compact stat badges row (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["stats-09"],
+    files: [{
+      path: "registry/blocks/special/stats-09/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/stats-09/example")),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-10": {
+    name: "stats-10",
+    description: "Analytics dashboard with area chart",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["recharts"],
+    files: [{
+      path: "registry/blocks/special/stats-10/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/stats-10/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","chart","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-10-demo": {
+    name: "stats-10-demo",
+    description: "Analytics dashboard with area chart (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["stats-10"],
+    files: [{
+      path: "registry/blocks/special/stats-10/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/stats-10/example")),
+    meta: {"tags":["special","chart","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-11": {
+    name: "stats-11",
+    description: "Revenue dashboard with bar chart and metrics",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/stats-11/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/stats-11/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","dialog","form","command","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-11-demo": {
+    name: "stats-11-demo",
+    description: "Revenue dashboard with bar chart and metrics (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["stats-11"],
+    files: [{
+      path: "registry/blocks/special/stats-11/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/stats-11/example")),
+    meta: {"tags":["special","dialog","form","command","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-12": {
+    name: "stats-12",
+    description: "Stats grid with donut charts",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["recharts"],
+    files: [{
+      path: "registry/blocks/special/stats-12/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/stats-12/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","chart","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-12-demo": {
+    name: "stats-12-demo",
+    description: "Stats grid with donut charts (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["stats-12"],
+    files: [{
+      path: "registry/blocks/special/stats-12/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/stats-12/example")),
+    meta: {"tags":["special","chart","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-13": {
+    name: "stats-13",
+    description: "KPI cards with trend arrows",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/special/stats-13/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/stats-13/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-13-demo": {
+    name: "stats-13-demo",
+    description: "KPI cards with trend arrows (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["stats-13"],
+    files: [{
+      path: "registry/blocks/special/stats-13/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/stats-13/example")),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-14": {
+    name: "stats-14",
+    description: "Stat cards with circular progress indicators",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/special/stats-14/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/stats-14/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-14-demo": {
+    name: "stats-14-demo",
+    description: "Stat cards with circular progress indicators (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["stats-14"],
+    files: [{
+      path: "registry/blocks/special/stats-14/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/stats-14/example")),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-15": {
+    name: "stats-15",
+    description: "Simple inline stat display",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/special/stats-15/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/stats-15/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
+  "stats-15-demo": {
+    name: "stats-15-demo",
+    description: "Simple inline stat display (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["stats-15"],
+    files: [{
+      path: "registry/blocks/special/stats-15/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/stats-15/example")),
+    meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
+  },
   "subscription-management": {
     name: "subscription-management",
     description: "A subscription management card showing current plan details, billing cycle, and upgrade options.",
@@ -16722,6 +18941,171 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/blocks/billing/subscription-management/example")),
     meta: {"tags":["billing","subscription","management","plan","upgrade"],"source":"billingsdk"},
+  },
+  "table-01": {
+    name: "table-01",
+    description: "Data table with sorting and pagination",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/table-01/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/table-01/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","table","form"],"source":"blocks.so"},
+  },
+  "table-01-demo": {
+    name: "table-01-demo",
+    description: "Data table with sorting and pagination (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["table-01"],
+    files: [{
+      path: "registry/blocks/special/table-01/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/table-01/example")),
+    meta: {"tags":["special","table","form"],"source":"blocks.so"},
+  },
+  "table-02": {
+    name: "table-02",
+    description: "Data table with row selection and filters",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/table-02/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/table-02/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","table","form"],"source":"blocks.so"},
+  },
+  "table-02-demo": {
+    name: "table-02-demo",
+    description: "Data table with row selection and filters (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["table-02"],
+    files: [{
+      path: "registry/blocks/special/table-02/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/table-02/example")),
+    meta: {"tags":["special","table","form"],"source":"blocks.so"},
+  },
+  "table-03": {
+    name: "table-03",
+    description: "Data table with inline editing",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/special/table-03/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/table-03/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","table"],"source":"blocks.so"},
+  },
+  "table-03-demo": {
+    name: "table-03-demo",
+    description: "Data table with inline editing (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["table-03"],
+    files: [{
+      path: "registry/blocks/special/table-03/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/table-03/example")),
+    meta: {"tags":["special","table"],"source":"blocks.so"},
+  },
+  "table-04": {
+    name: "table-04",
+    description: "Data table with expandable rows",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: [],
+    files: [{
+      path: "registry/blocks/special/table-04/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/table-04/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","table"],"source":"blocks.so"},
+  },
+  "table-04-demo": {
+    name: "table-04-demo",
+    description: "Data table with expandable rows (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["table-04"],
+    files: [{
+      path: "registry/blocks/special/table-04/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/table-04/example")),
+    meta: {"tags":["special","table"],"source":"blocks.so"},
+  },
+  "table-05": {
+    name: "table-05",
+    description: "Data table with column visibility and search",
+    type: "registry:block",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/blocks/special/table-05/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/special/table-05/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["special","table","form"],"source":"blocks.so"},
+  },
+  "table-05-demo": {
+    name: "table-05-demo",
+    description: "Data table with column visibility and search (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["table-05"],
+    files: [{
+      path: "registry/blocks/special/table-05/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/special/table-05/example")),
+    meta: {"tags":["special","table","form"],"source":"blocks.so"},
   },
   "testimonial-avatars": {
     name: "testimonial-avatars",

@@ -1,0 +1,21 @@
+{
+  "name": "stats-11",
+  "type": "block",
+  "description": "Revenue dashboard with bar chart and metrics",
+  "category": "special",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "dialog",
+      "form",
+      "command",
+      "stats",
+      "analytics"
+    ],
+    "source": "blocks.so"
+  }
+}

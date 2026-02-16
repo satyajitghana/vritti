@@ -1,0 +1,18 @@
+{
+  "name": "table-01",
+  "type": "block",
+  "description": "Data table with sorting and pagination",
+  "category": "special",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "table",
+      "form"
+    ],
+    "source": "blocks.so"
+  }
+}

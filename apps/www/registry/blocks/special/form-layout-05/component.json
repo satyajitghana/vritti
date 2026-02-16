@@ -1,0 +1,17 @@
+{
+  "name": "form-layout-05",
+  "type": "block",
+  "description": "Multi-section settings form with toggles and selects",
+  "category": "special",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "form"
+    ],
+    "source": "blocks.so"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "ai-05",
+  "type": "block",
+  "description": "AI chat conversation with message history and prompt input",
+  "category": "special",
+  "dependencies": [
+    "@tabler/icons-react",
+    "ai",
+    "ai-elements"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "upload",
+      "ai"
+    ],
+    "source": "blocks.so"
+  }
+}

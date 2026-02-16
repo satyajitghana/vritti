@@ -1,0 +1,15 @@
+{
+  "name": "table-03",
+  "type": "block",
+  "description": "Data table with inline editing",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "table"
+    ],
+    "source": "blocks.so"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "table-04",
+  "type": "block",
+  "description": "Data table with expandable rows",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "table"
+    ],
+    "source": "blocks.so"
+  }
+}

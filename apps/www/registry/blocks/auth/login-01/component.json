@@ -1,0 +1,17 @@
+{
+  "name": "login-01",
+  "type": "block",
+  "description": "Simple login form with email and password",
+  "category": "auth",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "auth",
+      "form",
+      "login",
+      "authentication"
+    ],
+    "source": "blocks.so"
+  }
+}

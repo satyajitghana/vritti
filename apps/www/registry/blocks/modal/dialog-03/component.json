@@ -1,0 +1,17 @@
+{
+  "name": "dialog-03",
+  "type": "block",
+  "description": "Destructive confirmation dialog with warning icon",
+  "category": "modal",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "modal",
+      "dialog"
+    ],
+    "source": "blocks.so"
+  }
+}

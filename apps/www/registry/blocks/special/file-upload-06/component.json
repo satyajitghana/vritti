@@ -1,0 +1,17 @@
+{
+  "name": "file-upload-06",
+  "type": "block",
+  "description": "File upload manager with active and completed upload lists",
+  "category": "special",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "upload"
+    ],
+    "source": "blocks.so"
+  }
+}

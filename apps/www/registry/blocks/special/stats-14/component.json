@@ -1,0 +1,16 @@
+{
+  "name": "stats-14",
+  "type": "block",
+  "description": "Stat cards with circular progress indicators",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "stats",
+      "analytics"
+    ],
+    "source": "blocks.so"
+  }
+}

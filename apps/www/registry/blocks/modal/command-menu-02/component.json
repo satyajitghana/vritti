@@ -1,0 +1,19 @@
+{
+  "name": "command-menu-02",
+  "type": "block",
+  "description": "Command menu with keyboard shortcuts and document navigation",
+  "category": "modal",
+  "dependencies": [
+    "@tabler/icons-react"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "modal",
+      "dialog",
+      "upload",
+      "command"
+    ],
+    "source": "blocks.so"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "stats-15",
+  "type": "block",
+  "description": "Simple inline stat display",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "stats",
+      "analytics"
+    ],
+    "source": "blocks.so"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "file-upload-02",
+  "type": "block",
+  "description": "Simple workspace setup form with file input",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "form",
+      "upload"
+    ],
+    "source": "blocks.so"
+  }
+}

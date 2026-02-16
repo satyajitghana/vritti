@@ -1,0 +1,15 @@
+{
+  "name": "form-layout-04",
+  "type": "block",
+  "description": "Account settings form with avatar upload",
+  "category": "special",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "form"
+    ],
+    "source": "blocks.so"
+  }
+}

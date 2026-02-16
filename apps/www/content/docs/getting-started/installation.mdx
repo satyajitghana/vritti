@@ -16,18 +16,32 @@ Make sure you have the following installed:
 - Tailwind CSS v4
 - React 19+
 
+## Registry Setup
+
+Add the Vritti registry to your project's `components.json`:
+
+```json
+{
+  "registries": {
+    "@vritti": {
+      "url": "https://vritti-ui.dev/r"
+    }
+  }
+}
+```
+
 ## Using the CLI (Recommended)
 
-The easiest way to add components is using the shadcn CLI:
+Install any component with the shadcn CLI:
 
 ```bash
-npx shadcn add [component-name]
+npx shadcn@latest add @vritti/[component-name]
 ```
 
 For example, to add the blur-fade component:
 
 ```bash
-npx shadcn add blur-fade
+npx shadcn@latest add @vritti/blur-fade
 ```
 
 ## Manual Installation

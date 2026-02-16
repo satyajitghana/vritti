@@ -1,0 +1,21 @@
+{
+  "name": "stats-07",
+  "type": "block",
+  "description": "Stat cards with mini bar charts",
+  "category": "special",
+  "dependencies": [
+    "lucide-react",
+    "recharts",
+    "next/link"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "chart",
+      "stats",
+      "analytics"
+    ],
+    "source": "blocks.so"
+  }
+}

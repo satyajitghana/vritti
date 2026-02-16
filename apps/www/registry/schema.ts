@@ -29,6 +29,25 @@ export type BlockCategory =
   | 'account'
   | 'special';
 
+export interface PropDefinition {
+  /** Prop name */
+  name: string;
+  /** Prop type for rendering controls */
+  type: 'number' | 'boolean' | 'string' | 'color' | 'select';
+  /** Default value */
+  default: string | number | boolean;
+  /** Human-readable description */
+  description: string;
+  /** Options for select type */
+  options?: string[];
+  /** Min value for number type */
+  min?: number;
+  /** Max value for number type */
+  max?: number;
+  /** Step for number type */
+  step?: number;
+}
+
 export interface RegistryComponent {
   /** Component name in kebab-case (e.g., "dot-pattern") */
   name: string;
@@ -44,6 +63,8 @@ export interface RegistryComponent {
   registryDependencies?: string[];
   /** Component files (code, examples, docs) */
   files: RegistryFile[];
+  /** Configurable props for interactive playground */
+  props?: PropDefinition[];
   /** Additional metadata */
   meta?: {
     /** Searchable tags */

@@ -1,0 +1,19 @@
+{
+  "name": "stats-06",
+  "type": "block",
+  "description": "Stat cards row with category icons",
+  "category": "special",
+  "dependencies": [
+    "lucide-react",
+    "next/link"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "special",
+      "stats",
+      "analytics"
+    ],
+    "source": "blocks.so"
+  }
+}
