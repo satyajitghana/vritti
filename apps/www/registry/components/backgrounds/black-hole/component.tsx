@@ -414,9 +414,9 @@ export default function BlackHole({
     // SPACE SCENE: Disc + Particles
     // ==================================================
 
-    // Accretion Disc (Cylinder Geometry rotated to be horizontal)
+    // Accretion Disc (Cylinder Geometry - vertical orientation for edge-on view)
     const discGeometry = new THREE.CylinderGeometry(5, 1, 0.1, 64, 10, true);
-    discGeometry.rotateX(Math.PI / 2); // Rotate to lay flat (face up)
+    // Keep default vertical orientation (no rotation needed)
     const discMaterial = new THREE.ShaderMaterial({
       vertexShader: discVertexShader,
       fragmentShader: discFragmentShader,
