@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Copy, Check, Sun, Moon, Palette, Type, SlidersHorizontal, Code } from 'lucide-react';
-import { PanelGroup as ResizablePanelGroup, Panel as ResizablePanel, PanelResizeHandle as ResizableHandle } from 'react-resizable-panels';
+import { Group as ResizablePanelGroup, Panel as ResizablePanel, Separator as ResizableHandle } from 'react-resizable-panels';
 import { FontPicker } from '@/components/theme/font-picker';
 import { ContrastChecker } from '@/components/theme/contrast-checker';
 import { CSSImportDialog } from '@/components/theme/css-import-dialog';
@@ -414,7 +414,7 @@ export function ThemeEditor() {
         {/* Desktop: Resizable Panels */}
         <div className="hidden lg:block h-[calc(100vh-200px)]">
           <ResizablePanelGroup
-            direction="horizontal"
+            orientation="horizontal"
             id="theme-editor-panels"
             className="h-full rounded-lg border"
           >
