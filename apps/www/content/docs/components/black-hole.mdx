@@ -1,0 +1,138 @@
+---
+title: Black Hole
+description: A WebGL black hole effect with accretion disc, orbiting particles, gravitational lensing distortion, and chromatic aberration.
+---
+
+<ComponentPreview name="black-hole-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://vritti-ui.dev/r/black-hole.json"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="black-hole" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Dependencies
+
+```bash
+npm install ogl
+```
+
+## Features
+
+- **Accretion Disc**: Animated with Perlin 3D noise for realistic texture
+- **Particle System**: Up to 50,000 orbiting particles with parametric orbital mechanics
+- **Gravitational Lensing**: Screen-space distortion effect around the black hole
+- **Chromatic Aberration**: RGB color split at 120° intervals for light bending effect
+- **Three-Pass Rendering**: High-quality multi-pass rendering pipeline
+- **Quality Presets**: Low (10k particles), Medium (25k), High (50k)
+
+## Usage
+
+```tsx
+import BlackHole from '@/components/backgrounds/black-hole'
+
+export default function Page() {
+  return (
+    <div className="relative h-screen w-full">
+      <BlackHole
+        innerColor="#ff8080"
+        outerColor="#3633ff"
+        quality="medium"
+      />
+
+      {/* Your content here */}
+      <div className="relative z-10">
+        <h1>Your Content</h1>
+      </div>
+    </div>
+  )
+}
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `innerColor` | `string` | `"#ff8080"` | Inner color of the accretion disc (closest to black hole) |
+| `outerColor` | `string` | `"#3633ff"` | Outer color of the accretion disc (edge) |
+| `quality` | `"low" \| "medium" \| "high"` | `"medium"` | Quality preset affecting particle count and render resolution |
+| `particleCount` | `number` | Quality-based | Number of orbiting particles (overrides quality preset) |
+| `particleSize` | `number` | `0.015` | Size multiplier for particles |
+| `rotationSpeed` | `number` | `0.3` | Speed multiplier for disc rotation |
+| `orbitSpeed` | `number` | `1.0` | Speed multiplier for particle orbital motion |
+| `disableAnimation` | `boolean` | `false` | Disable all animation (static render) |
+| `rgbShiftRadius` | `number` | `0.00001` | Intensity of chromatic aberration (RGB color split) |
+| `distortionStrength` | `number` | `1.0` | Strength of gravitational lensing distortion effect |
+| `className` | `string` | `""` | Additional CSS classes for the container |
+
+## Examples
+
+### Custom Colors
+
+```tsx
+<BlackHole
+  innerColor="#ff0000"
+  outerColor="#0000ff"
+  quality="high"
+/>
+```
+
+### High Performance Mode
+
+```tsx
+<BlackHole
+  quality="low"
+  particleCount={5000}
+  rotationSpeed={0.5}
+/>
+```
+
+### Static Render
+
+```tsx
+<BlackHole
+  disableAnimation={true}
+  quality="high"
+/>
+```
+
+## Technical Details
+
+The black hole effect uses a three-pass rendering pipeline:
+
+1. **Space Scene Pass**: Renders the accretion disc and particle system to a high-resolution texture
+2. **Distortion Mask Pass**: Renders a radial distortion field to a low-resolution texture
+3. **Final Composition Pass**: Combines both textures with gravitational lensing distortion and chromatic aberration
+
+The component uses OGL (Open Graphics Library) for direct WebGL control, providing excellent performance and visual quality. Based on Bruno Simon's webgl-black-hole reference implementation.
+
+## Credits
+
+Based on [Bruno Simon's webgl-black-hole](https://github.com/brunosimon/webgl-black-hole).

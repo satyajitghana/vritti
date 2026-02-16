@@ -1601,11 +1601,11 @@ export const Index: Record<string, any> = {
   },
   "black-hole": {
     name: "black-hole",
-    description: "Black Hole component.",
+    description: "A WebGL black hole effect with accretion disc, orbiting particles, gravitational lensing distortion, and chromatic aberration.",
     type: "registry:ui",
     category: "backgrounds",
     registryDependencies: undefined,
-    dependencies: [],
+    dependencies: ["ogl"],
     files: [{
       path: "registry/components/backgrounds/black-hole/component.tsx",
       type: "registry:ui",
@@ -1616,11 +1616,11 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: undefined,
+    meta: {"tags":["background","3d","webgl","space","physics","particles"],"source":"bruno-simon"},
   },
   "black-hole-demo": {
     name: "black-hole-demo",
-    description: "Black Hole component. (demo)",
+    description: "A WebGL black hole effect with accretion disc, orbiting particles, gravitational lensing distortion, and chromatic aberration. (demo)",
     type: "registry:example",
     category: "backgrounds",
     registryDependencies: ["black-hole"],
@@ -1630,7 +1630,7 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/backgrounds/black-hole/example")),
-    meta: undefined,
+    meta: {"tags":["background","3d","webgl","space","physics","particles"],"source":"bruno-simon"},
   },
   "blob-cursor": {
     name: "blob-cursor",
