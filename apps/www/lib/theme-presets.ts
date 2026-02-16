@@ -1,7 +1,7 @@
 // Theme presets extracted from tweakcn (https://tweakcn.com)
 // All colors are in hex (#rrggbb) format for the Vritti theme editor.
 
-interface ThemeColors {
+export interface ThemeColors {
   background: string;
   foreground: string;
   card: string;
@@ -36,7 +36,7 @@ interface ThemeColors {
   'sidebar-ring': string;
 }
 
-interface ThemePreset {
+export interface ThemePreset {
   name: string;
   label: string;
   config: {
