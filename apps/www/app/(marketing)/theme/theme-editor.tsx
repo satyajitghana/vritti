@@ -1,24 +1,30 @@
 'use client';
 
-import { useState, useCallback, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Copy, Check, RotateCcw, Sun, Moon, Palette, Type, SlidersHorizontal, Code } from 'lucide-react';
+import { Copy, Check, Sun, Moon, Palette, Type, SlidersHorizontal, Code } from 'lucide-react';
+import { Group as ResizablePanelGroup, Panel as ResizablePanel, Separator as ResizableHandle } from 'react-resizable-panels';
 import { FontPicker } from '@/components/theme/font-picker';
 import { ContrastChecker } from '@/components/theme/contrast-checker';
 import { CSSImportDialog } from '@/components/theme/css-import-dialog';
 import { THEME_PRESETS, type ThemePreset, type ThemeColors } from '@/lib/theme-presets';
-
-// ============================================================
-// Types
-// ============================================================
-
-interface ThemeConfig {
-  light: ThemeColors;
-  dark: ThemeColors;
-  radius: string;
-}
+import { useThemeStore, selectCurrentColors } from '@/lib/stores/theme-store';
+import { applyThemeToElement } from '@/lib/theme/apply-theme';
+import { toLabel } from '@/lib/theme/color-utils';
+import { generateCSS } from '@/lib/theme/code-generator';
+import { ActionBar } from '@/components/theme/action-bar';
+import { ColorPickerEnhanced } from '@/components/theme/color-picker/color-picker-enhanced';
+import { ColorFocusIndicator } from '@/components/theme/color-picker/color-focus-indicator';
+import { PreviewContainer } from '@/components/theme/preview/preview-container';
+import { ExportDialog } from '@/components/theme/export-dialog';
+import { ShareDialog } from '@/components/theme/share-dialog';
+import { SavedThemesManager } from '@/components/theme/saved-themes-manager';
+import { MobileThemeSwitcher } from '@/components/theme/mobile-theme-switcher';
+import { InspectorPanel, InspectorOverlay, InspectorToggle } from '@/components/theme/inspector';
+import { useThemeUrlState } from '@/lib/theme/use-theme-url-state';
+import { motion, AnimatePresence } from 'motion/react';
 
 // ============================================================
 // Color Groups for the UI
@@ -68,7 +74,7 @@ const COLOR_GROUPS = [
   {
     label: 'Sidebar',
     keys: [
-      'sidebar-background', 'sidebar-foreground', 'sidebar-primary',
+      'sidebar', 'sidebar-foreground', 'sidebar-primary',
       'sidebar-primary-foreground', 'sidebar-accent', 'sidebar-accent-foreground',
       'sidebar-border', 'sidebar-ring',
     ] as (keyof ThemeColors)[],
@@ -76,596 +82,373 @@ const COLOR_GROUPS = [
 ];
 
 // ============================================================
-// Helpers
-// ============================================================
-
-function hexToHsl(hex: string): string {
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  if (!result) return '0 0% 0%';
-  let r = parseInt(result[1], 16) / 255;
-  let g = parseInt(result[2], 16) / 255;
-  let b = parseInt(result[3], 16) / 255;
-  const max = Math.max(r, g, b);
-  const min = Math.min(r, g, b);
-  let h = 0, s = 0, l = (max + min) / 2;
-  if (max !== min) {
-    const d = max - min;
-    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-    switch (max) {
-      case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
-      case g: h = ((b - r) / d + 2) / 6; break;
-      case b: h = ((r - g) / d + 4) / 6; break;
-    }
-  }
-  return `${Math.round(h * 360)} ${Math.round(s * 100)}% ${Math.round(l * 100)}%`;
-}
-
-function toLabel(key: string): string {
-  return key
-    .split('-')
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(' ');
-}
-
-function generateCSS(config: ThemeConfig): string {
-  const lines: string[] = ['@layer base {', '  :root {'];
-  for (const [key, value] of Object.entries(config.light)) {
-    lines.push(`    --${key}: ${hexToHsl(value)};`);
-  }
-  lines.push(`    --radius: ${config.radius};`);
-  lines.push('  }', '', '  .dark {');
-  for (const [key, value] of Object.entries(config.dark)) {
-    lines.push(`    --${key}: ${hexToHsl(value)};`);
-  }
-  lines.push('  }', '}');
-  return lines.join('\n');
-}
-
-// ============================================================
-// Color Picker Input
-// ============================================================
-
-function ColorInput({
-  label,
-  value,
-  onChange,
-}: {
-  label: string;
-  value: string;
-  onChange: (val: string) => void;
-}) {
-  return (
-    <div className="flex items-center gap-3 py-1">
-      <div className="relative">
-        <input
-          type="color"
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          className="h-8 w-8 cursor-pointer rounded-md border border-border bg-transparent p-0.5"
-        />
-      </div>
-      <div className="flex-1 min-w-0">
-        <div className="text-xs font-medium text-foreground truncate">{label}</div>
-        <input
-          type="text"
-          value={value}
-          onChange={(e) => {
-            const v = e.target.value;
-            if (/^#[0-9a-fA-F]{6}$/.test(v)) onChange(v);
-          }}
-          className="w-full text-xs text-muted-foreground bg-transparent border-none p-0 font-mono focus:outline-none"
-          placeholder="#000000"
-        />
-      </div>
-    </div>
-  );
-}
-
-// ============================================================
-// Preview Components
-// ============================================================
-
-function PreviewCard({ style }: { style: React.CSSProperties }) {
-  return (
-    <div style={style} className="space-y-6">
-      {/* Card */}
-      <div
-        className="rounded-lg border p-6"
-        style={{
-          backgroundColor: 'hsl(var(--card))',
-          color: 'hsl(var(--card-foreground))',
-          borderColor: 'hsl(var(--border))',
-        }}
-      >
-        <h3 className="text-lg font-semibold">Card Title</h3>
-        <p className="text-sm" style={{ color: 'hsl(var(--muted-foreground))' }}>
-          This is a card description to show how your theme looks.
-        </p>
-        <div className="mt-4 flex gap-2">
-          <button
-            className="rounded-md px-4 py-2 text-sm font-medium"
-            style={{
-              backgroundColor: 'hsl(var(--primary))',
-              color: 'hsl(var(--primary-foreground))',
-            }}
-          >
-            Primary
-          </button>
-          <button
-            className="rounded-md px-4 py-2 text-sm font-medium"
-            style={{
-              backgroundColor: 'hsl(var(--secondary))',
-              color: 'hsl(var(--secondary-foreground))',
-            }}
-          >
-            Secondary
-          </button>
-          <button
-            className="rounded-md px-4 py-2 text-sm font-medium"
-            style={{
-              backgroundColor: 'hsl(var(--destructive))',
-              color: 'hsl(var(--destructive-foreground))',
-            }}
-          >
-            Destructive
-          </button>
-        </div>
-      </div>
-
-      {/* Form Elements */}
-      <div
-        className="rounded-lg border p-6"
-        style={{
-          backgroundColor: 'hsl(var(--card))',
-          color: 'hsl(var(--card-foreground))',
-          borderColor: 'hsl(var(--border))',
-        }}
-      >
-        <h3 className="text-lg font-semibold mb-4">Form Elements</h3>
-        <div className="space-y-3">
-          <div>
-            <label className="text-sm font-medium">Email</label>
-            <input
-              type="email"
-              placeholder="hello@example.com"
-              className="mt-1 w-full rounded-md border px-3 py-2 text-sm"
-              style={{
-                backgroundColor: 'hsl(var(--background))',
-                borderColor: 'hsl(var(--input))',
-                color: 'hsl(var(--foreground))',
-              }}
-            />
-          </div>
-          <div className="flex items-center gap-2">
-            <div
-              className="h-5 w-5 rounded-md border"
-              style={{
-                backgroundColor: 'hsl(var(--primary))',
-                borderColor: 'hsl(var(--primary))',
-              }}
-            />
-            <span className="text-sm">Accept terms and conditions</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Badges & Alerts */}
-      <div
-        className="rounded-lg border p-6"
-        style={{
-          backgroundColor: 'hsl(var(--card))',
-          borderColor: 'hsl(var(--border))',
-        }}
-      >
-        <h3 className="text-lg font-semibold mb-4" style={{ color: 'hsl(var(--card-foreground))' }}>
-          Badges & Alerts
-        </h3>
-        <div className="flex flex-wrap gap-2 mb-4">
-          <span
-            className="rounded-full px-3 py-1 text-xs font-medium"
-            style={{ backgroundColor: 'hsl(var(--primary))', color: 'hsl(var(--primary-foreground))' }}
-          >
-            Primary
-          </span>
-          <span
-            className="rounded-full px-3 py-1 text-xs font-medium"
-            style={{ backgroundColor: 'hsl(var(--secondary))', color: 'hsl(var(--secondary-foreground))' }}
-          >
-            Secondary
-          </span>
-          <span
-            className="rounded-full px-3 py-1 text-xs font-medium"
-            style={{ backgroundColor: 'hsl(var(--accent))', color: 'hsl(var(--accent-foreground))' }}
-          >
-            Accent
-          </span>
-          <span
-            className="rounded-full px-3 py-1 text-xs font-medium"
-            style={{ backgroundColor: 'hsl(var(--destructive))', color: 'hsl(var(--destructive-foreground))' }}
-          >
-            Destructive
-          </span>
-          <span
-            className="rounded-full border px-3 py-1 text-xs font-medium"
-            style={{ borderColor: 'hsl(var(--border))', color: 'hsl(var(--foreground))' }}
-          >
-            Outline
-          </span>
-        </div>
-        <div
-          className="rounded-md border p-4"
-          style={{
-            backgroundColor: 'hsl(var(--muted))',
-            borderColor: 'hsl(var(--border))',
-            color: 'hsl(var(--muted-foreground))',
-          }}
-        >
-          <p className="text-sm font-medium" style={{ color: 'hsl(var(--foreground))' }}>
-            Muted Alert
-          </p>
-          <p className="text-sm">This is an informational alert using muted colors.</p>
-        </div>
-      </div>
-
-      {/* Color Palette */}
-      <div
-        className="rounded-lg border p-6"
-        style={{
-          backgroundColor: 'hsl(var(--card))',
-          borderColor: 'hsl(var(--border))',
-        }}
-      >
-        <h3 className="text-lg font-semibold mb-4" style={{ color: 'hsl(var(--card-foreground))' }}>
-          Color Palette
-        </h3>
-        <div className="grid grid-cols-5 gap-2">
-          {['chart-1', 'chart-2', 'chart-3', 'chart-4', 'chart-5'].map((c) => (
-            <div key={c} className="space-y-1">
-              <div
-                className="h-12 w-full rounded-md"
-                style={{ backgroundColor: `hsl(var(--${c}))` }}
-              />
-              <p className="text-xs text-center" style={{ color: 'hsl(var(--muted-foreground))' }}>
-                {c.replace('chart-', 'Chart ')}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ============================================================
 // Main Theme Editor
 // ============================================================
 
 export function ThemeEditor() {
-  const [config, setConfig] = useState<ThemeConfig>(THEME_PRESETS[0].config);
-  const [activeMode, setActiveMode] = useState<'light' | 'dark'>('light');
-  const [activePreset, setActivePreset] = useState('default');
+  const { config, activeMode, activePreset, fontSans, fontMono, fontSerif } = useThemeStore();
+  const currentColors = useThemeStore(selectCurrentColors);
+  const { setActiveMode, updateColor, updateRadius, applyPreset, setFont } = useThemeStore();
+  const { syncToUrl } = useThemeUrlState();
+
   const [copied, setCopied] = useState(false);
+  const [isExportOpen, setIsExportOpen] = useState(false);
+  const [isShareOpen, setIsShareOpen] = useState(false);
+  const [isSavedThemesOpen, setIsSavedThemesOpen] = useState(false);
   const previewRef = useRef<HTMLDivElement>(null);
-  const [fontSans, setFontSans] = useState('Geist Sans');
-  const [fontMono, setFontMono] = useState('Geist Mono');
-  const [fontSerif, setFontSerif] = useState('Georgia');
 
-  const currentColors = activeMode === 'light' ? config.light : config.dark;
+  const handleApplyPreset = (preset: ThemePreset) => {
+    applyPreset(preset);
+  };
 
-  const updateColor = useCallback(
-    (key: keyof ThemeColors, value: string) => {
-      setConfig((prev) => ({
-        ...prev,
-        [activeMode]: { ...prev[activeMode], [key]: value },
-      }));
-      setActivePreset('custom');
-    },
-    [activeMode]
-  );
-
-  const applyPreset = useCallback((preset: ThemePreset) => {
-    setConfig(preset.config);
-    setActivePreset(preset.name);
-  }, []);
-
-  const resetToDefault = useCallback(() => {
-    applyPreset(THEME_PRESETS[0]);
-  }, [applyPreset]);
-
-  const copyCSS = useCallback(() => {
+  const copyCSS = () => {
     navigator.clipboard.writeText(generateCSS(config));
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-  }, [config]);
+  };
 
-  const handleCSSImport = useCallback((imported: { light: Record<string, string>; dark: Record<string, string> }) => {
-    setConfig((prev) => ({
-      ...prev,
-      light: { ...prev.light, ...imported.light as Partial<ThemeColors> } as ThemeColors,
-      dark: { ...prev.dark, ...imported.dark as Partial<ThemeColors> } as ThemeColors,
-    }));
-    setActivePreset('custom');
-  }, []);
+  const handleCSSImport = (imported: { light: Record<string, string>; dark: Record<string, string> }) => {
+    // For simplicity, we'll use setConfig through the store
+    // In a real implementation, you'd want to add a method to the store for this
+    const newConfig = {
+      ...config,
+      light: { ...config.light, ...imported.light as Partial<ThemeColors> } as ThemeColors,
+      dark: { ...config.dark, ...imported.dark as Partial<ThemeColors> } as ThemeColors,
+    };
+    useThemeStore.setState({ config: newConfig, activePreset: 'custom' });
+  };
 
   // Apply theme to preview container
   useEffect(() => {
     const el = previewRef.current;
     if (!el) return;
-    const colors = activeMode === 'light' ? config.light : config.dark;
-    for (const [key, value] of Object.entries(colors)) {
-      el.style.setProperty(`--${key}`, hexToHsl(value));
-    }
-    el.style.setProperty('--radius', config.radius);
-    if (activeMode === 'dark') {
-      el.classList.add('dark');
-    } else {
-      el.classList.remove('dark');
-    }
+    applyThemeToElement(config, el, activeMode);
   }, [config, activeMode]);
 
+  // Sync theme to URL when it changes
+  useEffect(() => {
+    syncToUrl();
+  }, [config, fontSans, fontMono, fontSerif, syncToUrl]);
+
+  // Controls Panel Content
+  const controlsPanel = (
+    <div className="space-y-4">
+      {/* Mode Toggle */}
+      <div className="flex items-center gap-2 rounded-lg border bg-card p-2 shadow-sm">
+        <Button
+          variant={activeMode === 'light' ? 'default' : 'ghost'}
+          size="sm"
+          onClick={() => setActiveMode('light')}
+          className="flex-1"
+        >
+          <Sun className="mr-2 h-4 w-4" />
+          Light
+        </Button>
+        <Button
+          variant={activeMode === 'dark' ? 'default' : 'ghost'}
+          size="sm"
+          onClick={() => setActiveMode('dark')}
+          className="flex-1"
+        >
+          <Moon className="mr-2 h-4 w-4" />
+          Dark
+        </Button>
+      </div>
+
+      <Tabs defaultValue="colors">
+        <TabsList className="w-full grid grid-cols-4">
+          <TabsTrigger value="colors" className="text-xs">
+            <Palette className="mr-1.5 h-3.5 w-3.5" />
+            Colors
+          </TabsTrigger>
+          <TabsTrigger value="typography" className="text-xs">
+            <Type className="mr-1.5 h-3.5 w-3.5" />
+            Type
+          </TabsTrigger>
+          <TabsTrigger value="other" className="text-xs">
+            <SlidersHorizontal className="mr-1.5 h-3.5 w-3.5" />
+            Other
+          </TabsTrigger>
+          <TabsTrigger value="code" className="text-xs">
+            <Code className="mr-1.5 h-3.5 w-3.5" />
+            Code
+          </TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="colors" className="space-y-4 mt-4">
+          {/* Presets */}
+          <div>
+            <label className="text-sm font-medium mb-2 block">Presets ({THEME_PRESETS.length})</label>
+            <div className="grid grid-cols-3 gap-2 max-h-[320px] overflow-y-auto pr-1">
+              {THEME_PRESETS.map((preset, idx) => (
+                <motion.button
+                  key={preset.name}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.02, duration: 0.2 }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => handleApplyPreset(preset)}
+                  className={cn(
+                    'rounded-lg border p-2 text-xs font-medium transition-all hover:border-primary text-left',
+                    activePreset === preset.name
+                      ? 'border-primary bg-primary/5'
+                      : 'border-border'
+                  )}
+                >
+                  <div className="flex gap-1 mb-1.5">
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 180 }}
+                      transition={{ duration: 0.3 }}
+                      className="h-4 w-4 rounded-full border"
+                      style={{ backgroundColor: preset.config.light.primary }}
+                    />
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 180 }}
+                      transition={{ duration: 0.3, delay: 0.05 }}
+                      className="h-4 w-4 rounded-full border"
+                      style={{ backgroundColor: preset.config.light.secondary }}
+                    />
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 180 }}
+                      transition={{ duration: 0.3, delay: 0.1 }}
+                      className="h-4 w-4 rounded-full border"
+                      style={{ backgroundColor: preset.config.light.accent }}
+                    />
+                  </div>
+                  <span className="truncate block">{preset.label}</span>
+                </motion.button>
+              ))}
+            </div>
+          </div>
+
+          {/* Color Groups */}
+          <AnimatePresence mode="wait">
+            {COLOR_GROUPS.map((group, idx) => (
+              <motion.div
+                key={group.label}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                transition={{ delay: idx * 0.05, duration: 0.3 }}
+                className="rounded-lg border bg-card shadow-sm p-3"
+              >
+                <h4 className="text-sm font-semibold mb-2">{group.label}</h4>
+                <div className="space-y-1">
+                  {group.keys.map((key) => (
+                    <ColorFocusIndicator key={key} colorKey={key}>
+                      <ColorPickerEnhanced
+                        label={toLabel(key)}
+                        value={currentColors[key] || '#000000'}
+                        onChange={(val) => updateColor(activeMode, key, val)}
+                      />
+                    </ColorFocusIndicator>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </TabsContent>
+
+        <TabsContent value="typography" className="space-y-4 mt-4">
+          <div className="rounded-lg border bg-card shadow-sm p-4 space-y-4">
+            <h4 className="text-sm font-semibold">Font Families</h4>
+            <FontPicker
+              label="Sans Serif (--font-sans)"
+              value={fontSans}
+              onChange={(val) => setFont('sans', val)}
+            />
+            <FontPicker
+              label="Serif (--font-serif)"
+              value={fontSerif}
+              onChange={(val) => setFont('serif', val)}
+            />
+            <FontPicker
+              label="Monospace (--font-mono)"
+              value={fontMono}
+              onChange={(val) => setFont('mono', val)}
+            />
+
+            <div className="space-y-2 pt-2">
+              <h4 className="text-sm font-semibold">Preview</h4>
+              <div className="rounded-md border p-3">
+                <p className="text-xs text-muted-foreground mb-1">Sans</p>
+                <p className="text-lg" style={{ fontFamily: fontSans }}>
+                  The quick brown fox jumps over the lazy dog
+                </p>
+              </div>
+              <div className="rounded-md border p-3">
+                <p className="text-xs text-muted-foreground mb-1">Serif</p>
+                <p className="text-lg" style={{ fontFamily: fontSerif }}>
+                  The quick brown fox jumps over the lazy dog
+                </p>
+              </div>
+              <div className="rounded-md border p-3">
+                <p className="text-xs text-muted-foreground mb-1">Mono</p>
+                <p className="text-lg" style={{ fontFamily: fontMono }}>
+                  The quick brown fox jumps over the lazy dog
+                </p>
+              </div>
+            </div>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="other" className="space-y-4 mt-4">
+          {/* Contrast Checker */}
+          <div className="rounded-lg border bg-card shadow-sm p-4">
+            <ContrastChecker colors={currentColors as unknown as Record<string, string>} />
+          </div>
+
+          {/* CSS Import */}
+          <div className="rounded-lg border bg-card shadow-sm p-4">
+            <CSSImportDialog onImport={handleCSSImport} />
+          </div>
+
+          <div className="rounded-lg border bg-card shadow-sm p-4 space-y-4">
+            <h4 className="text-sm font-semibold">Border Radius</h4>
+            <div className="flex items-center gap-3">
+              <input
+                type="range"
+                min="0"
+                max="1.5"
+                step="0.125"
+                value={parseFloat(config.radius)}
+                onChange={(e) => updateRadius(`${e.target.value}rem`)}
+                className="flex-1"
+              />
+              <span className="text-sm font-mono w-16 text-right">{config.radius}</span>
+            </div>
+            <div className="flex gap-2">
+              {['0rem', '0.375rem', '0.5rem', '0.625rem', '0.75rem', '1rem'].map((r) => (
+                <button
+                  key={r}
+                  onClick={() => updateRadius(r)}
+                  className={cn(
+                    'rounded border px-2.5 py-1 text-xs',
+                    config.radius === r
+                      ? 'border-primary bg-primary/10'
+                      : 'border-border hover:border-primary/50'
+                  )}
+                >
+                  {r}
+                </button>
+              ))}
+            </div>
+            <div className="flex gap-2 mt-2">
+              <div
+                className="h-16 w-16 border-2 border-primary bg-primary/10"
+                style={{ borderRadius: config.radius }}
+              />
+              <div
+                className="h-16 flex-1 border-2 border-primary bg-primary/10"
+                style={{ borderRadius: config.radius }}
+              />
+            </div>
+          </div>
+        </TabsContent>
+
+        <TabsContent value="code" className="mt-4">
+          <div className="rounded-lg border bg-card shadow-sm">
+            <div className="flex items-center justify-between border-b bg-muted/50 px-4 py-2">
+              <span className="text-sm font-medium">globals.css</span>
+              <Button variant="ghost" size="sm" onClick={copyCSS}>
+                {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+              </Button>
+            </div>
+            <pre className="overflow-auto p-4 text-xs font-mono max-h-[60vh] bg-muted/20">
+              {generateCSS(config)}
+            </pre>
+          </div>
+        </TabsContent>
+      </Tabs>
+    </div>
+  );
+
+  // Preview Panel Content
+  const previewPanel = (
+    <div className="rounded-lg border overflow-hidden bg-background h-full flex flex-col">
+      <div className="flex items-center justify-between border-b bg-card px-4 py-2 shrink-0">
+        <span className="text-sm font-medium">Preview</span>
+        <div className="flex items-center gap-2">
+          <InspectorToggle />
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setActiveMode(activeMode === 'light' ? 'dark' : 'light')}
+          >
+            {activeMode === 'light' ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+          </Button>
+        </div>
+      </div>
+      <div className="flex-1 overflow-hidden flex">
+        <div ref={previewRef} className="flex-1 p-6 overflow-auto bg-background text-foreground relative">
+          <PreviewContainer />
+          <InspectorOverlay containerRef={previewRef} />
+        </div>
+        <div className="w-80 border-l bg-background overflow-auto p-4">
+          <InspectorPanel />
+        </div>
+      </div>
+    </div>
+  );
+
   return (
-    <div className="container max-w-screen-2xl py-6">
-      <div className="mb-6 flex items-center justify-between">
-        <div>
+    <div className="flex flex-col h-screen">
+      <ActionBar
+        onExport={() => setIsExportOpen(true)}
+        onShare={() => setIsShareOpen(true)}
+        onSave={() => setIsSavedThemesOpen(true)}
+        onImport={() => {
+          // Trigger CSS import dialog
+        }}
+      />
+
+      <div className="container max-w-screen-2xl py-6 flex-1 overflow-hidden">
+        <div className="mb-6">
           <h1 className="text-3xl font-bold">Theme Editor</h1>
           <p className="text-muted-foreground mt-1">
             Customize your shadcn/ui theme with real-time preview. Export as CSS variables.
           </p>
         </div>
-        <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" onClick={resetToDefault}>
-            <RotateCcw className="mr-2 h-4 w-4" />
-            Reset
-          </Button>
-          <CSSImportDialog onImport={handleCSSImport} className="hidden md:flex" />
-          <Button size="sm" onClick={copyCSS}>
-            {copied ? (
-              <Check className="mr-2 h-4 w-4" />
-            ) : (
-              <Copy className="mr-2 h-4 w-4" />
-            )}
-            {copied ? 'Copied!' : 'Copy CSS'}
-          </Button>
-        </div>
-      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-6">
-        {/* Controls Panel */}
-        <div className="space-y-4 overflow-y-auto max-h-[calc(100vh-12rem)]">
-          {/* Mode Toggle */}
-          <div className="flex items-center gap-2 rounded-lg border p-2">
-            <Button
-              variant={activeMode === 'light' ? 'default' : 'ghost'}
-              size="sm"
-              onClick={() => setActiveMode('light')}
-              className="flex-1"
-            >
-              <Sun className="mr-2 h-4 w-4" />
-              Light
-            </Button>
-            <Button
-              variant={activeMode === 'dark' ? 'default' : 'ghost'}
-              size="sm"
-              onClick={() => setActiveMode('dark')}
-              className="flex-1"
-            >
-              <Moon className="mr-2 h-4 w-4" />
-              Dark
-            </Button>
-          </div>
-
-          <Tabs defaultValue="colors">
-            <TabsList className="w-full">
-              <TabsTrigger value="colors" className="flex-1">
-                <Palette className="mr-1.5 h-3.5 w-3.5" />
-                Colors
-              </TabsTrigger>
-              <TabsTrigger value="typography" className="flex-1">
-                <Type className="mr-1.5 h-3.5 w-3.5" />
-                Typography
-              </TabsTrigger>
-              <TabsTrigger value="other" className="flex-1">
-                <SlidersHorizontal className="mr-1.5 h-3.5 w-3.5" />
-                Other
-              </TabsTrigger>
-              <TabsTrigger value="code" className="flex-1">
-                <Code className="mr-1.5 h-3.5 w-3.5" />
-                Code
-              </TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="colors" className="space-y-4 mt-4">
-              {/* Presets */}
-              <div>
-                <label className="text-sm font-medium mb-2 block">Presets ({THEME_PRESETS.length})</label>
-                <div className="grid grid-cols-3 gap-2 max-h-[320px] overflow-y-auto pr-1">
-                  {THEME_PRESETS.map((preset) => (
-                    <button
-                      key={preset.name}
-                      onClick={() => applyPreset(preset)}
-                      className={cn(
-                        'rounded-lg border p-2 text-xs font-medium transition-all hover:border-primary text-left',
-                        activePreset === preset.name
-                          ? 'border-primary bg-primary/5'
-                          : 'border-border'
-                      )}
-                    >
-                      <div className="flex gap-1 mb-1.5">
-                        <div
-                          className="h-4 w-4 rounded-full border"
-                          style={{ backgroundColor: preset.config.light.primary }}
-                        />
-                        <div
-                          className="h-4 w-4 rounded-full border"
-                          style={{ backgroundColor: preset.config.light.secondary }}
-                        />
-                        <div
-                          className="h-4 w-4 rounded-full border"
-                          style={{ backgroundColor: preset.config.light.accent }}
-                        />
-                      </div>
-                      <span className="truncate block">{preset.label}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Color Groups */}
-              {COLOR_GROUPS.map((group) => (
-                <div key={group.label} className="rounded-lg border p-3">
-                  <h4 className="text-sm font-semibold mb-2">{group.label}</h4>
-                  <div className="space-y-1">
-                    {group.keys.map((key) => (
-                      <ColorInput
-                        key={key}
-                        label={toLabel(key)}
-                        value={currentColors[key]}
-                        onChange={(val) => updateColor(key, val)}
-                      />
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </TabsContent>
-
-            <TabsContent value="typography" className="space-y-4 mt-4">
-              <div className="rounded-lg border p-4 space-y-4">
-                <h4 className="text-sm font-semibold">Font Families</h4>
-                <FontPicker label="Sans Serif (--font-sans)" value={fontSans} onChange={setFontSans} />
-                <FontPicker label="Serif (--font-serif)" value={fontSerif} onChange={setFontSerif} />
-                <FontPicker label="Monospace (--font-mono)" value={fontMono} onChange={setFontMono} />
-
-                <div className="space-y-2 pt-2">
-                  <h4 className="text-sm font-semibold">Preview</h4>
-                  <div className="rounded-md border p-3">
-                    <p className="text-xs text-muted-foreground mb-1">Sans</p>
-                    <p className="text-lg" style={{ fontFamily: fontSans }}>The quick brown fox jumps over the lazy dog</p>
-                  </div>
-                  <div className="rounded-md border p-3">
-                    <p className="text-xs text-muted-foreground mb-1">Serif</p>
-                    <p className="text-lg" style={{ fontFamily: fontSerif }}>The quick brown fox jumps over the lazy dog</p>
-                  </div>
-                  <div className="rounded-md border p-3">
-                    <p className="text-xs text-muted-foreground mb-1">Mono</p>
-                    <p className="text-lg" style={{ fontFamily: fontMono }}>The quick brown fox jumps over the lazy dog</p>
-                  </div>
-                </div>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="other" className="space-y-4 mt-4">
-              {/* Contrast Checker */}
-              <div className="rounded-lg border p-4">
-                <ContrastChecker colors={currentColors as unknown as Record<string, string>} />
-              </div>
-
-              {/* CSS Import */}
-              <div className="rounded-lg border p-4">
-                <CSSImportDialog onImport={handleCSSImport} />
-              </div>
-
-              <div className="rounded-lg border p-4 space-y-4">
-                <h4 className="text-sm font-semibold">Border Radius</h4>
-                <div className="flex items-center gap-3">
-                  <input
-                    type="range"
-                    min="0"
-                    max="1.5"
-                    step="0.125"
-                    value={parseFloat(config.radius)}
-                    onChange={(e) => {
-                      setConfig((prev) => ({
-                        ...prev,
-                        radius: `${e.target.value}rem`,
-                      }));
-                      setActivePreset('custom');
-                    }}
-                    className="flex-1"
-                  />
-                  <span className="text-sm font-mono w-16 text-right">{config.radius}</span>
-                </div>
-                <div className="flex gap-2">
-                  {['0rem', '0.375rem', '0.5rem', '0.625rem', '0.75rem', '1rem'].map((r) => (
-                    <button
-                      key={r}
-                      onClick={() => {
-                        setConfig((prev) => ({ ...prev, radius: r }));
-                        setActivePreset('custom');
-                      }}
-                      className={cn(
-                        'rounded border px-2.5 py-1 text-xs',
-                        config.radius === r
-                          ? 'border-primary bg-primary/10'
-                          : 'border-border hover:border-primary/50'
-                      )}
-                    >
-                      {r}
-                    </button>
-                  ))}
-                </div>
-                <div className="flex gap-2 mt-2">
-                  <div
-                    className="h-16 w-16 border-2 border-primary bg-primary/10"
-                    style={{ borderRadius: config.radius }}
-                  />
-                  <div
-                    className="h-16 flex-1 border-2 border-primary bg-primary/10"
-                    style={{ borderRadius: config.radius }}
-                  />
-                </div>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="code" className="mt-4">
-              <div className="rounded-lg border">
-                <div className="flex items-center justify-between border-b px-4 py-2">
-                  <span className="text-sm font-medium">globals.css</span>
-                  <Button variant="ghost" size="sm" onClick={copyCSS}>
-                    {copied ? (
-                      <Check className="h-4 w-4" />
-                    ) : (
-                      <Copy className="h-4 w-4" />
-                    )}
-                  </Button>
-                </div>
-                <pre className="overflow-auto p-4 text-xs font-mono max-h-[60vh]">
-                  {generateCSS(config)}
-                </pre>
-              </div>
-            </TabsContent>
-          </Tabs>
-        </div>
-
-        {/* Preview Panel */}
-        <div className="rounded-lg border overflow-hidden">
-          <div className="flex items-center justify-between border-b px-4 py-2">
-            <span className="text-sm font-medium">Preview</span>
-            <div className="flex items-center gap-2">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setActiveMode(activeMode === 'light' ? 'dark' : 'light')}
-              >
-                {activeMode === 'light' ? (
-                  <Moon className="h-4 w-4" />
-                ) : (
-                  <Sun className="h-4 w-4" />
-                )}
-              </Button>
-            </div>
-          </div>
-          <div
-            ref={previewRef}
-            className="p-6 min-h-[600px] overflow-auto"
-            style={{
-              backgroundColor: `hsl(${hexToHsl(currentColors.background)})`,
-              color: `hsl(${hexToHsl(currentColors.foreground)})`,
-            }}
+        {/* Desktop: Resizable Panels */}
+        <div className="hidden lg:block h-[calc(100vh-200px)]">
+          <ResizablePanelGroup
+            orientation="horizontal"
+            id="theme-editor-panels"
+            className="h-full rounded-lg border"
           >
-            <PreviewCard style={{}} />
-          </div>
+            <ResizablePanel
+              id="controls"
+              defaultSize={35}
+              minSize={25}
+              maxSize={60}
+            >
+              <div className="h-full overflow-y-auto p-4 bg-background">{controlsPanel}</div>
+            </ResizablePanel>
+            <ResizableHandle className="w-1 bg-border hover:bg-primary transition-colors" />
+            <ResizablePanel
+              id="preview"
+              defaultSize={65}
+            >
+              <div className="h-full overflow-hidden">{previewPanel}</div>
+            </ResizablePanel>
+          </ResizablePanelGroup>
+        </div>
+
+        {/* Mobile: Tab Switcher */}
+        <div className="lg:hidden">
+          <MobileThemeSwitcher
+            controlsPanel={<div className="overflow-y-auto max-h-[calc(100vh-300px)]">{controlsPanel}</div>}
+            previewPanel={previewPanel}
+          />
         </div>
       </div>
+
+      {/* Dialogs */}
+      <ExportDialog open={isExportOpen} onOpenChange={setIsExportOpen} />
+      <ShareDialog open={isShareOpen} onOpenChange={setIsShareOpen} />
+      <SavedThemesManager open={isSavedThemesOpen} onOpenChange={setIsSavedThemesOpen} />
     </div>
   );
 }

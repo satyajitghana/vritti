@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import { ThemeEditor } from './theme-editor';
 
 export const metadata: Metadata = {
@@ -7,5 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function ThemePage() {
-  return <ThemeEditor />;
+  return (
+    <Suspense fallback={<div className="flex items-center justify-center h-screen">Loading theme editor...</div>}>
+      <ThemeEditor />
+    </Suspense>
+  );
 }

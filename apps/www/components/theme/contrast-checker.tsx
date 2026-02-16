@@ -20,7 +20,7 @@ const CONTRAST_PAIRS: ContrastPair[] = [
   { label: "Popover Text", fgKey: "popover-foreground", bgKey: "popover" },
   { label: "Destructive Text", fgKey: "destructive-foreground", bgKey: "destructive" },
   { label: "Muted on Background", fgKey: "muted-foreground", bgKey: "background" },
-  { label: "Sidebar Text", fgKey: "sidebar-foreground", bgKey: "sidebar-background" },
+  { label: "Sidebar Text", fgKey: "sidebar-foreground", bgKey: "sidebar" },
   { label: "Sidebar Primary", fgKey: "sidebar-primary-foreground", bgKey: "sidebar-primary" },
   { label: "Sidebar Accent", fgKey: "sidebar-accent-foreground", bgKey: "sidebar-accent" },
   { label: "Border on Background", fgKey: "border", bgKey: "background" },
