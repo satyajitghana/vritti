@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 export interface BlackHoleProps {
   innerColor?: string;
@@ -12,6 +13,8 @@ export interface BlackHoleProps {
   rotationSpeed?: number;
   orbitSpeed?: number;
   disableAnimation?: boolean;
+  enableCameraAnimation?: boolean;
+  enableOrbitControls?: boolean;
   rgbShiftRadius?: number;
   distortionStrength?: number;
   className?: string;
@@ -313,6 +316,8 @@ export default function BlackHole({
   rotationSpeed = 0.3,
   orbitSpeed = 1.0,
   disableAnimation = false,
+  enableCameraAnimation = true,
+  enableOrbitControls = true,
   rgbShiftRadius = 0.00001,
   distortionStrength = 1.0,
   className = '',
@@ -354,10 +359,22 @@ export default function BlackHole({
 
     // Camera for space and distortion scenes
     const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 100);
-    camera.position.set(0, 0, 5);
+    camera.position.set(0, 4, 8); // Position camera above and back to view the disc
+    camera.lookAt(0, 0, 0); // Look at center of black hole
 
     // Orthographic camera for final composition
     const orthoCamera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+
+    // Orbit Controls for interactive camera
+    let controls: OrbitControls | null = null;
+    if (enableOrbitControls) {
+      controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.minDistance = 3;
+      controls.maxDistance = 15;
+      controls.enablePan = false;
+    }
 
     // Scenes
     const spaceScene = new THREE.Scene();
@@ -522,12 +539,27 @@ export default function BlackHole({
         discMaterial.uniforms.uTime.value = elapsed * rotationSpeed;
         particlesMaterial.uniforms.uTime.value = elapsed * orbitSpeed + 9999.0;
 
+        // Camera animation (slow orbit around the black hole)
+        if (enableCameraAnimation && !controls) {
+          const radius = 8;
+          const speed = 0.1;
+          camera.position.x = Math.sin(elapsed * speed) * radius;
+          camera.position.z = Math.cos(elapsed * speed) * radius;
+          camera.position.y = 4 + Math.sin(elapsed * speed * 0.5) * 1;
+          camera.lookAt(0, 0, 0);
+        }
+
         // Update black hole position in screen space
         const screenPosition = new THREE.Vector3(0, 0, 0);
         screenPosition.project(camera);
         const x = screenPosition.x * 0.5 + 0.5;
         const y = screenPosition.y * 0.5 + 0.5;
         finalMaterial.uniforms.uBlackHolePosition.value.set(x, y);
+      }
+
+      // Update orbit controls
+      if (controls) {
+        controls.update();
       }
 
       // Multi-pass rendering
@@ -562,6 +594,10 @@ export default function BlackHole({
       spaceTarget.dispose();
       distortionTarget.dispose();
 
+      if (controls) {
+        controls.dispose();
+      }
+
       renderer.dispose();
       container.removeChild(renderer.domElement);
     };
@@ -574,6 +610,8 @@ export default function BlackHole({
     rotationSpeed,
     orbitSpeed,
     disableAnimation,
+    enableCameraAnimation,
+    enableOrbitControls,
     rgbShiftRadius,
     distortionStrength,
   ]);
