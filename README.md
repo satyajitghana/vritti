@@ -7,7 +7,7 @@
 
 UI Library for Design Engineers.
 
-[Documentation](https://vritti-ui.dev) · [Components](https://vritti-ui.dev/docs/components) · [Blocks](https://vritti-ui.dev/blocks) · [Theme Editor](https://vritti-ui.dev/theme)
+[Documentation](https://vritti-ui.vercel.app) · [Components](https://vritti-ui.vercel.app/docs/components) · [Blocks](https://vritti-ui.vercel.app/blocks) · [Theme Editor](https://vritti-ui.vercel.app/theme)
 
 </div>
 

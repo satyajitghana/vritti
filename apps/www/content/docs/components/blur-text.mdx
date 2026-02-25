@@ -17,8 +17,13 @@ description: Text animation with a blur reveal effect.
 <TabsContent value="cli">
 
 ```bash
-npx shadcn@latest add "https://vritti-ui.dev/r/blur-text.json"
+npx shadcn@latest add @vritti/blur-text
 ```
+
+> First-time setup? Add the Vritti registry to your `components.json`:
+> ```json
+> { "registries": { "@vritti": { "url": "https://vritti-ui.vercel.app/r" } } }
+> ```
 
 </TabsContent>
 
@@ -43,3 +48,29 @@ npx shadcn@latest add "https://vritti-ui.dev/r/blur-text.json"
 ```bash
 npm install motion
 ```
+
+## Examples
+
+### Direction
+
+<ComponentPreview name="blur-text-direction" />
+
+<ComponentSource name="blur-text-direction" />
+
+### Letters
+
+<ComponentPreview name="blur-text-letters" />
+
+<ComponentSource name="blur-text-letters" />
+
+
+## Props
+
+### Blur Text
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| `text` | `string` | `Hello World` | Text to animate |
+| `delay` | `number` | `200` | Delay between each word/letter in ms |
+| `animateBy` | `select` | `words` | Animate by words or letters |
+| `direction` | `select` | `top` | Direction of the blur animation |

@@ -126,7 +126,7 @@ export function applyThemeToElement(
   // Apply color variables (excluding common styles)
   for (const [key, value] of Object.entries(colors)) {
     if (!isCommonStyle(key) && typeof value === 'string') {
-      element.style.setProperty(`--${key}`, colorFormatter(value, 'hsl', '3'));
+      element.style.setProperty(`--${key}`, colorFormatter(value, 'hsl', '4'));
     }
   }
 

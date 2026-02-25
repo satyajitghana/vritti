@@ -1,6 +1,6 @@
 ---
 title: Particles
-description: Particles for adding visual flair to your website.
+description: A 3D WebGL particle field background with customizable colors, mouse interaction, and rotation.
 ---
 
 <ComponentPreview name="particles-demo" />
@@ -17,8 +17,13 @@ description: Particles for adding visual flair to your website.
 <TabsContent value="cli">
 
 ```bash
-npx shadcn@latest add "https://vritti-ui.dev/r/particles.json"
+npx shadcn@latest add @vritti/particles
 ```
+
+> First-time setup? Add the Vritti registry to your `components.json`:
+> ```json
+> { "registries": { "@vritti": { "url": "https://vritti-ui.vercel.app/r" } } }
+> ```
 
 </TabsContent>
 
@@ -37,3 +42,9 @@ npx shadcn@latest add "https://vritti-ui.dev/r/particles.json"
 </TabsContent>
 
 </Tabs>
+
+## Dependencies
+
+```bash
+npm install ogl
+```
