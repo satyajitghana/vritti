@@ -11,7 +11,7 @@ import { ContrastChecker } from '@/components/theme/contrast-checker';
 import { CSSImportDialog } from '@/components/theme/css-import-dialog';
 import { THEME_PRESETS, type ThemePreset, type ThemeColors } from '@/lib/theme-presets';
 import { useThemeStore, selectCurrentColors } from '@/lib/stores/theme-store';
-import { applyThemeToElement, applyFontsToElement } from '@/lib/theme/apply-theme';
+// Theme is now applied globally via ThemeStyleApplier in root layout
 import { toLabel } from '@/lib/theme/color-utils';
 import { generateCSS } from '@/lib/theme/code-generator';
 import { ActionBar } from '@/components/theme/action-bar';
@@ -110,8 +110,6 @@ export function ThemeEditor() {
   };
 
   const handleCSSImport = (imported: { light: Record<string, string>; dark: Record<string, string> }) => {
-    // For simplicity, we'll use setConfig through the store
-    // In a real implementation, you'd want to add a method to the store for this
     const newConfig = {
       ...config,
       light: { ...config.light, ...imported.light as Partial<ThemeColors> } as ThemeColors,
@@ -119,14 +117,6 @@ export function ThemeEditor() {
     };
     useThemeStore.setState({ config: newConfig, activePreset: 'custom' });
   };
-
-  // Apply theme to preview container
-  useEffect(() => {
-    const el = previewRef.current;
-    if (!el) return;
-    applyThemeToElement(config, el, activeMode);
-    applyFontsToElement(el, { sans: fontSans, mono: fontMono, serif: fontSerif });
-  }, [config, activeMode, fontSans, fontMono, fontSerif]);
 
   // Sync theme to URL when it changes
   useEffect(() => {
@@ -384,7 +374,7 @@ export function ThemeEditor() {
         </div>
       </div>
       <div className="flex-1 overflow-hidden flex">
-        <div ref={previewRef} className="flex-1 p-6 overflow-auto bg-background text-foreground relative">
+        <div ref={previewRef} className="flex-1 p-6 overflow-auto relative">
           <PreviewContainer />
           <InspectorOverlay containerRef={previewRef} />
         </div>
@@ -425,16 +415,17 @@ export function ThemeEditor() {
           >
             <ResizablePanel
               id="controls"
-              defaultSize={35}
-              minSize={25}
-              maxSize={60}
+              defaultSize="30"
+              minSize="20"
+              maxSize="40"
+              className="min-w-[max(20%,22rem)]"
             >
               <div className="h-full overflow-y-auto p-4 bg-background">{controlsPanel}</div>
             </ResizablePanel>
             <ResizableHandle className="w-1 bg-border hover:bg-primary transition-colors" />
             <ResizablePanel
               id="preview"
-              defaultSize={65}
+              defaultSize="70"
             >
               <div className="h-full overflow-hidden">{previewPanel}</div>
             </ResizablePanel>

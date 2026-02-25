@@ -31,7 +31,8 @@ export function colorFormatter(
   switch (format) {
     case 'hsl': {
       const hsl = culori.converter('hsl')(color);
-      if (!hsl || hsl.h === undefined || hsl.s === undefined || hsl.l === undefined) {
+      // Note: hsl.h can be undefined for achromatic colors (grays, black, white)
+      if (!hsl || hsl.l === undefined) {
         return tailwindVersion === '4' ? 'hsl(0 0% 0%)' : '0 0% 0%';
       }
       const h = Math.round(hsl.h || 0);

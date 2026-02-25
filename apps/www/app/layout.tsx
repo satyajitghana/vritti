@@ -5,6 +5,7 @@ import { GeistPixelLine, GeistPixelTriangle, GeistPixelCircle } from 'geist/font
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import '../styles/globals.css';
 import { ThemeProvider } from '@/components/providers/theme-provider';
+import { ThemeStyleApplier } from '@/components/providers/theme-style-applier';
 import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
@@ -68,6 +69,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <ThemeStyleApplier />
           <NuqsAdapter>
             {children}
           </NuqsAdapter>
