@@ -1,5 +1,5 @@
 {
-  "name": "particles",
+  "name": "particles-3d",
   "type": "component",
   "description": "A 3D WebGL particle field background with customizable colors, mouse interaction, and rotation.",
   "category": "backgrounds",

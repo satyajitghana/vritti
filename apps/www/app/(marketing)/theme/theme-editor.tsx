@@ -11,7 +11,7 @@ import { ContrastChecker } from '@/components/theme/contrast-checker';
 import { CSSImportDialog } from '@/components/theme/css-import-dialog';
 import { THEME_PRESETS, type ThemePreset, type ThemeColors } from '@/lib/theme-presets';
 import { useThemeStore, selectCurrentColors } from '@/lib/stores/theme-store';
-import { applyThemeToElement } from '@/lib/theme/apply-theme';
+import { applyThemeToElement, applyFontsToElement } from '@/lib/theme/apply-theme';
 import { toLabel } from '@/lib/theme/color-utils';
 import { generateCSS } from '@/lib/theme/code-generator';
 import { ActionBar } from '@/components/theme/action-bar';
@@ -23,6 +23,7 @@ import { ShareDialog } from '@/components/theme/share-dialog';
 import { SavedThemesManager } from '@/components/theme/saved-themes-manager';
 import { MobileThemeSwitcher } from '@/components/theme/mobile-theme-switcher';
 import { InspectorPanel, InspectorOverlay, InspectorToggle } from '@/components/theme/inspector';
+import { useInspectorStore } from '@/lib/stores/inspector-store';
 import { useThemeUrlState } from '@/lib/theme/use-theme-url-state';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -90,6 +91,7 @@ export function ThemeEditor() {
   const currentColors = useThemeStore(selectCurrentColors);
   const { setActiveMode, updateColor, updateRadius, applyPreset, setFont } = useThemeStore();
   const { syncToUrl } = useThemeUrlState();
+  const isInspectorActive = useInspectorStore((s) => s.isActive);
 
   const [copied, setCopied] = useState(false);
   const [isExportOpen, setIsExportOpen] = useState(false);
@@ -123,7 +125,8 @@ export function ThemeEditor() {
     const el = previewRef.current;
     if (!el) return;
     applyThemeToElement(config, el, activeMode);
-  }, [config, activeMode]);
+    applyFontsToElement(el, { sans: fontSans, mono: fontMono, serif: fontSerif });
+  }, [config, activeMode, fontSans, fontMono, fontSerif]);
 
   // Sync theme to URL when it changes
   useEffect(() => {
@@ -385,9 +388,11 @@ export function ThemeEditor() {
           <PreviewContainer />
           <InspectorOverlay containerRef={previewRef} />
         </div>
-        <div className="w-80 border-l bg-background overflow-auto p-4">
-          <InspectorPanel />
-        </div>
+        {isInspectorActive && (
+          <div className="w-80 border-l bg-background overflow-auto p-4">
+            <InspectorPanel />
+          </div>
+        )}
       </div>
     </div>
   );

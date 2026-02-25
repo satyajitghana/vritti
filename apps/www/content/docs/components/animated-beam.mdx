@@ -17,8 +17,13 @@ description: An animated beam of light which travels along a path.
 <TabsContent value="cli">
 
 ```bash
-npx shadcn@latest add "https://vritti-ui.dev/r/animated-beam.json"
+npx shadcn@latest add @vritti/animated-beam
 ```
+
+> First-time setup? Add the Vritti registry to your `components.json`:
+> ```json
+> { "registries": { "@vritti": { "url": "https://vritti-ui.vercel.app/r" } } }
+> ```
 
 </TabsContent>
 
@@ -43,6 +48,21 @@ npx shadcn@latest add "https://vritti-ui.dev/r/animated-beam.json"
 ```bash
 npm install motion
 ```
+
+## Examples
+
+### Bidirectional
+
+<ComponentPreview name="animated-beam-bidirectional" />
+
+<ComponentSource name="animated-beam-bidirectional" />
+
+### Multiple Inputs
+
+<ComponentPreview name="animated-beam-multiple-inputs" />
+
+<ComponentSource name="animated-beam-multiple-inputs" />
+
 
 ## Props
 

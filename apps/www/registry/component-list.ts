@@ -238,7 +238,7 @@ export const componentList: Array<{ name: string; title: string; category: strin
   { name: "parallax-floating", title: "Parallax Floating", category: "special" },
   { name: "particle-button", title: "Particle Button", category: "buttons" },
   { name: "particles", title: "Particles", category: "animations" },
-  { name: "particles", title: "Particles", category: "backgrounds" },
+  { name: "particles-3d", title: "Particles 3d", category: "backgrounds" },
   { name: "pill-nav", title: "Pill Nav", category: "layouts" },
   { name: "pixel-blast", title: "Pixel Blast", category: "backgrounds" },
   { name: "pixel-card", title: "Pixel Card", category: "layouts" },

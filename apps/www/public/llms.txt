@@ -6,190 +6,190 @@ This file provides LLM-friendly entry points to documentation and examples.
 
 ## Components
 
-- [Android](https://vritti-ui.dev/docs/components/android): A mockup of an Android device.
-- [Animated Beam](https://vritti-ui.dev/docs/components/animated-beam): An animated beam of light which travels along a path.
-- [Animated Circular Progress Bar](https://vritti-ui.dev/docs/components/animated-circular-progress-bar): Animated Circular Progress Bar with a percentage value.
-- [Animated Content](https://vritti-ui.dev/docs/components/animated-content): Animates content with entrance effects.
-- [Animated Gradient Text](https://vritti-ui.dev/docs/components/animated-gradient-text): An animated gradient background which transitions between colors for text.
-- [Animated Grid Pattern](https://vritti-ui.dev/docs/components/animated-grid-pattern): A backgrounds animated grid pattern component
-- [Animated List](https://vritti-ui.dev/docs/components/animated-list): A list that animates each item in sequence with a delay.
-- [Animated Shiny Text](https://vritti-ui.dev/docs/components/animated-shiny-text): A light glare effect which pans across text making it appear as if it is shimmering.
-- [Animated Theme Toggler](https://vritti-ui.dev/docs/components/animated-theme-toggler): A component for theme changing animation.
-- [Antigravity](https://vritti-ui.dev/docs/components/antigravity): Anti-gravity floating animation.
-- [Ascii Text](https://vritti-ui.dev/docs/components/ascii-text): Renders text with an ASCII art style effect using Three.js.
-- [Aurora](https://vritti-ui.dev/docs/components/aurora): An aurora borealis background effect with animated light bands.
-- [Aurora Text](https://vritti-ui.dev/docs/components/aurora-text): A beautiful aurora text effect
-- [Avatar Circles](https://vritti-ui.dev/docs/components/avatar-circles): Overlapping circles of avatars.
-- [Balatro](https://vritti-ui.dev/docs/components/balatro): A psychedelic warping background effect inspired by the game Balatro.
-- [Ballpit](https://vritti-ui.dev/docs/components/ballpit): An interactive 3D ball pit physics simulation background.
-- [Beams](https://vritti-ui.dev/docs/components/beams): Animated volumetric light beams background effect.
-- [Bento Grid](https://vritti-ui.dev/docs/components/bento-grid): Bento grid is a layout used to showcase the features of a product.
-- [Blob Cursor](https://vritti-ui.dev/docs/components/blob-cursor): An organic blob cursor that follows the pointer.
-- [Blur Fade](https://vritti-ui.dev/docs/components/blur-fade): Blur fade in and out animation.
-- [Blur Text](https://vritti-ui.dev/docs/components/blur-text): Text animation with a blur reveal effect.
-- [Border Beam](https://vritti-ui.dev/docs/components/border-beam): An animated beam of light which travels along the border of its container.
-- [Bounce Cards](https://vritti-ui.dev/docs/components/bounce-cards): A layouts bounce cards component
-- [Bubble Menu](https://vritti-ui.dev/docs/components/bubble-menu): A layouts bubble menu component
-- [Card Nav](https://vritti-ui.dev/docs/components/card-nav): A layouts card nav component
-- [Card Swap](https://vritti-ui.dev/docs/components/card-swap): A layouts card swap component
-- [Carousel](https://vritti-ui.dev/docs/components/carousel): A layouts carousel component
-- [Chroma Grid](https://vritti-ui.dev/docs/components/chroma-grid): A layouts chroma grid component
-- [Circular Gallery](https://vritti-ui.dev/docs/components/circular-gallery): A layouts circular gallery component
-- [Circular Text](https://vritti-ui.dev/docs/components/circular-text): Text arranged and animated in a circular path.
-- [Click Spark](https://vritti-ui.dev/docs/components/click-spark): Spark effect on click events.
-- [Client Tweet Card](https://vritti-ui.dev/docs/components/client-tweet-card): A client-side version of the tweet card.
-- [Code Comparison](https://vritti-ui.dev/docs/components/code-comparison): A component which compares two code snippets.
-- [Color Bends](https://vritti-ui.dev/docs/components/color-bends): A colorful bending gradient background effect.
-- [Comic Text](https://vritti-ui.dev/docs/components/comic-text): Comic text animation
-- [Confetti](https://vritti-ui.dev/docs/components/confetti): Confetti animations for delightful user experiences
-- [Cool Mode](https://vritti-ui.dev/docs/components/cool-mode): Cool mode effect for buttons, links, and other DOMs
-- [Count Up](https://vritti-ui.dev/docs/components/count-up): Animated number counting up effect.
-- [Counter](https://vritti-ui.dev/docs/components/counter): A layouts counter component
-- [Crosshair](https://vritti-ui.dev/docs/components/crosshair): A crosshair cursor effect.
-- [Cubes](https://vritti-ui.dev/docs/components/cubes): 3D cube animation effect.
-- [Curved Loop](https://vritti-ui.dev/docs/components/curved-loop): Marquee text that flows along a curved SVG path.
-- [Dark Veil](https://vritti-ui.dev/docs/components/dark-veil): A dark translucent veil overlay background effect.
-- [Decay Card](https://vritti-ui.dev/docs/components/decay-card): A layouts decay card component
-- [Decrypted Text](https://vritti-ui.dev/docs/components/decrypted-text): Text that decrypts itself with a scrambling animation.
-- [Dither](https://vritti-ui.dev/docs/components/dither): A dithered gradient background effect with post-processing.
-- [Dock](https://vritti-ui.dev/docs/components/dock): An implementation of the MacOS dock using react + tailwindcss + motion
-- [Dome Gallery](https://vritti-ui.dev/docs/components/dome-gallery): A layouts dome gallery component
-- [Dot Grid](https://vritti-ui.dev/docs/components/dot-grid): An interactive animated dot grid background.
-- [Dot Pattern](https://vritti-ui.dev/docs/components/dot-pattern): A background dot pattern made with SVGs, fully customizable using Tailwind CSS.
-- [Dotted Map](https://vritti-ui.dev/docs/components/dotted-map): A component with a dotted map.
-- [Elastic Slider](https://vritti-ui.dev/docs/components/elastic-slider): A layouts elastic slider component
-- [Electric Border](https://vritti-ui.dev/docs/components/electric-border): An electric border animation effect.
-- [Fade Content](https://vritti-ui.dev/docs/components/fade-content): Content with fade animation.
-- [Falling Text](https://vritti-ui.dev/docs/components/falling-text): Physics-based falling text effect using Matter.js.
-- [Faulty Terminal](https://vritti-ui.dev/docs/components/faulty-terminal): A glitchy terminal-style background effect.
-- [File Tree](https://vritti-ui.dev/docs/components/file-tree): A component used to showcase the folder and file structure of a directory.
-- [Flickering Grid](https://vritti-ui.dev/docs/components/flickering-grid): A backgrounds flickering grid component
-- [Floating Lines](https://vritti-ui.dev/docs/components/floating-lines): Animated floating lines background effect.
-- [Flowing Menu](https://vritti-ui.dev/docs/components/flowing-menu): A layouts flowing menu component
-- [Fluid Glass](https://vritti-ui.dev/docs/components/fluid-glass): A layouts fluid glass component
-- [Flying Posters](https://vritti-ui.dev/docs/components/flying-posters): A layouts flying posters component
-- [Folder](https://vritti-ui.dev/docs/components/folder): A layouts folder component
-- [Fuzzy Text](https://vritti-ui.dev/docs/components/fuzzy-text): Text rendered with a fuzzy, vibrating canvas effect.
-- [Galaxy](https://vritti-ui.dev/docs/components/galaxy): A swirling galaxy background effect.
-- [Ghost Cursor](https://vritti-ui.dev/docs/components/ghost-cursor): A ghost trail cursor effect.
-- [Glare Hover](https://vritti-ui.dev/docs/components/glare-hover): A glare effect on hover.
-- [Glass Icons](https://vritti-ui.dev/docs/components/glass-icons): A layouts glass icons component
-- [Glass Surface](https://vritti-ui.dev/docs/components/glass-surface): A layouts glass surface component
-- [Glitch Text](https://vritti-ui.dev/docs/components/glitch-text): Text with a glitch distortion animation effect.
-- [Globe](https://vritti-ui.dev/docs/components/globe): An autorotating, interactive, and highly performant globe made using WebGL.
-- [Gooey Nav](https://vritti-ui.dev/docs/components/gooey-nav): A layouts gooey nav component
-- [Gradient Blinds](https://vritti-ui.dev/docs/components/gradient-blinds): Animated gradient blinds background effect.
-- [Gradual Blur](https://vritti-ui.dev/docs/components/gradual-blur): Gradual blur animation effect.
-- [Grainient](https://vritti-ui.dev/docs/components/grainient): A grainy gradient background effect.
-- [Grid Distortion](https://vritti-ui.dev/docs/components/grid-distortion): An interactive grid distortion background effect.
-- [Grid Motion](https://vritti-ui.dev/docs/components/grid-motion): An animated grid motion background with content cells.
-- [Grid Pattern](https://vritti-ui.dev/docs/components/grid-pattern): A background grid pattern made with SVGs, fully customizable using Tailwind CSS.
-- [Grid Scan](https://vritti-ui.dev/docs/components/grid-scan): A grid scanning background effect with optional face detection.
-- [Hero Video Dialog](https://vritti-ui.dev/docs/components/hero-video-dialog): A hero video dialog component.
-- [Highlighter](https://vritti-ui.dev/docs/components/highlighter): A text highlighter that mimics the effect of a human-drawn marker stroke.
-- [Hyper Text](https://vritti-ui.dev/docs/components/hyper-text): A text animation that scrambles letters before revealing the final text.
-- [Hyperspeed](https://vritti-ui.dev/docs/components/hyperspeed): A hyperspeed driving simulation background effect.
-- [Icon Cloud](https://vritti-ui.dev/docs/components/icon-cloud): An interactive 3D tag cloud component
-- [Image Trail](https://vritti-ui.dev/docs/components/image-trail): Trail of images following the cursor.
-- [Infinite Menu](https://vritti-ui.dev/docs/components/infinite-menu): A layouts infinite menu component
-- [Interactive Grid Pattern](https://vritti-ui.dev/docs/components/interactive-grid-pattern): A backgrounds interactive grid pattern component
-- [Interactive Hover Button](https://vritti-ui.dev/docs/components/interactive-hover-button): A buttons interactive hover button component
-- [Iphone](https://vritti-ui.dev/docs/components/iphone): A mockup of the iPhone
-- [Iridescence](https://vritti-ui.dev/docs/components/iridescence): An iridescent shimmering background effect.
-- [Lanyard](https://vritti-ui.dev/docs/components/lanyard): A layouts lanyard component
-- [Laser Flow](https://vritti-ui.dev/docs/components/laser-flow): Flowing laser animation effect.
-- [Lens](https://vritti-ui.dev/docs/components/lens): A interactive component that enables zooming into images, videos and other elements.
-- [Letter Glitch](https://vritti-ui.dev/docs/components/letter-glitch): A glitchy letter animation background effect.
-- [Light Pillar](https://vritti-ui.dev/docs/components/light-pillar): An animated light pillar background effect.
-- [Light Rays](https://vritti-ui.dev/docs/components/light-rays): A backgrounds light rays component
-- [Lightning](https://vritti-ui.dev/docs/components/lightning): An animated lightning bolt background effect.
-- [Line Shadow Text](https://vritti-ui.dev/docs/components/line-shadow-text): A text component with a moving line shadow.
-- [Liquid Chrome](https://vritti-ui.dev/docs/components/liquid-chrome): A liquid chrome metallic background effect.
-- [Liquid Ether](https://vritti-ui.dev/docs/components/liquid-ether): A liquid ethereal fluid background effect.
-- [Logo Loop](https://vritti-ui.dev/docs/components/logo-loop): Looping logo animation.
-- [Magic Bento](https://vritti-ui.dev/docs/components/magic-bento): A layouts magic bento component
-- [Magic Card](https://vritti-ui.dev/docs/components/magic-card): A spotlight effect that follows your mouse cursor and highlights borders on hover.
-- [Magnet](https://vritti-ui.dev/docs/components/magnet): Magnetic attraction effect on hover.
-- [Magnet Lines](https://vritti-ui.dev/docs/components/magnet-lines): Magnetic lines animation effect.
-- [Marquee](https://vritti-ui.dev/docs/components/marquee): An infinite scrolling component that can be used to display text, images, or videos.
-- [Masonry](https://vritti-ui.dev/docs/components/masonry): A layouts masonry component
-- [Meta Balls](https://vritti-ui.dev/docs/components/meta-balls): Metaballs animation effect.
-- [Metallic Paint](https://vritti-ui.dev/docs/components/metallic-paint): Metallic paint animation effect.
-- [Meteors](https://vritti-ui.dev/docs/components/meteors): A meteor shower effect.
-- [Model Viewer](https://vritti-ui.dev/docs/components/model-viewer): A layouts model viewer component
-- [Morphing Text](https://vritti-ui.dev/docs/components/morphing-text): A dynamic text morphing component.
-- [Neon Gradient Card](https://vritti-ui.dev/docs/components/neon-gradient-card): A beautiful neon card effect
-- [Noise](https://vritti-ui.dev/docs/components/noise): Visual noise overlay effect.
-- [Number Ticker](https://vritti-ui.dev/docs/components/number-ticker): Animate numbers to count up or down to a target number
-- [Orb](https://vritti-ui.dev/docs/components/orb): An animated glowing orb background effect.
-- [Orbit Images](https://vritti-ui.dev/docs/components/orbit-images): Images orbiting in a circular path.
-- [Orbiting Circles](https://vritti-ui.dev/docs/components/orbiting-circles): A collection of circles which move in orbit along a circular path
-- [Particles](https://vritti-ui.dev/docs/components/particles): Particles for adding visual flair to your website.
-- [Pill Nav](https://vritti-ui.dev/docs/components/pill-nav): A layouts pill nav component
-- [Pixel Blast](https://vritti-ui.dev/docs/components/pixel-blast): A pixelated blast particle background effect.
-- [Pixel Card](https://vritti-ui.dev/docs/components/pixel-card): A layouts pixel card component
-- [Pixel Image](https://vritti-ui.dev/docs/components/pixel-image): A component that displays an image with a pixelated effect.
-- [Pixel Snow](https://vritti-ui.dev/docs/components/pixel-snow): An animated pixel snow falling background effect.
-- [Pixel Trail](https://vritti-ui.dev/docs/components/pixel-trail): Pixelated trail following the cursor.
-- [Pixel Transition](https://vritti-ui.dev/docs/components/pixel-transition): Pixel-based transition effect.
-- [Plasma](https://vritti-ui.dev/docs/components/plasma): An animated plasma fluid background effect.
-- [Pointer](https://vritti-ui.dev/docs/components/pointer): A component that displays a pointer when hovering over an element
-- [Prism](https://vritti-ui.dev/docs/components/prism): A prismatic light refraction background effect.
-- [Prismatic Burst](https://vritti-ui.dev/docs/components/prismatic-burst): A prismatic burst of colorful light rays background.
-- [Profile Card](https://vritti-ui.dev/docs/components/profile-card): A layouts profile card component
-- [Progressive Blur](https://vritti-ui.dev/docs/components/progressive-blur): Adds a smooth blur gradient effect to scrollable content.
-- [Pulsating Button](https://vritti-ui.dev/docs/components/pulsating-button): A buttons pulsating button component
-- [Rainbow Button](https://vritti-ui.dev/docs/components/rainbow-button): A buttons rainbow button component
-- [Reflective Card](https://vritti-ui.dev/docs/components/reflective-card): A layouts reflective card component
-- [Retro Grid](https://vritti-ui.dev/docs/components/retro-grid): A backgrounds retro grid component
-- [Ribbons](https://vritti-ui.dev/docs/components/ribbons): Animated ribbons effect.
-- [Ripple](https://vritti-ui.dev/docs/components/ripple): A backgrounds ripple component
-- [Ripple Button](https://vritti-ui.dev/docs/components/ripple-button): A buttons ripple button component
-- [Ripple Grid](https://vritti-ui.dev/docs/components/ripple-grid): An animated ripple grid background effect.
-- [Rotating Text](https://vritti-ui.dev/docs/components/rotating-text): Animated text that rotates through a list of strings.
-- [Safari](https://vritti-ui.dev/docs/components/safari): A safari browser mockup to showcase your website.
-- [Scrambled Text](https://vritti-ui.dev/docs/components/scrambled-text): Text that scrambles on mouse proximity using GSAP.
-- [Scroll Based Velocity](https://vritti-ui.dev/docs/components/scroll-based-velocity): Scrolling text whose speed changes based on scroll speed
-- [Scroll Float](https://vritti-ui.dev/docs/components/scroll-float): Characters float into view on scroll using GSAP ScrollTrigger.
-- [Scroll Progress](https://vritti-ui.dev/docs/components/scroll-progress): Animated Scroll Progress for your pages
-- [Scroll Reveal](https://vritti-ui.dev/docs/components/scroll-reveal): Words reveal with opacity and blur on scroll using GSAP.
-- [Scroll Stack](https://vritti-ui.dev/docs/components/scroll-stack): A layouts scroll stack component
-- [Shape Blur](https://vritti-ui.dev/docs/components/shape-blur): Blurred shape animation.
-- [Shimmer Button](https://vritti-ui.dev/docs/components/shimmer-button): A button with a shimmering light which travels around the perimeter.
-- [Shine Border](https://vritti-ui.dev/docs/components/shine-border): Shine border is an animated background border effect.
-- [Shiny Button](https://vritti-ui.dev/docs/components/shiny-button): A buttons shiny button component
-- [Shuffle](https://vritti-ui.dev/docs/components/shuffle): Text characters shuffle and rearrange with a GSAP animation.
-- [Silk](https://vritti-ui.dev/docs/components/silk): A flowing silk fabric background effect.
-- [Smooth Cursor](https://vritti-ui.dev/docs/components/smooth-cursor): A customizable, physics-based smooth cursor animation component
-- [Sparkles Text](https://vritti-ui.dev/docs/components/sparkles-text): A dynamic text that generates continuous sparkles with smooth transitions.
-- [Spinning Text](https://vritti-ui.dev/docs/components/spinning-text): The Spinning Text component animates text in a circular motion.
-- [Splash Cursor](https://vritti-ui.dev/docs/components/splash-cursor): Splash effect cursor.
-- [Split Text](https://vritti-ui.dev/docs/components/split-text): Animated text splitting into characters or words with GSAP.
-- [Spotlight Card](https://vritti-ui.dev/docs/components/spotlight-card): A layouts spotlight card component
-- [Squares](https://vritti-ui.dev/docs/components/squares): An animated squares pattern background effect.
-- [Stack](https://vritti-ui.dev/docs/components/stack): A layouts stack component
-- [Staggered Menu](https://vritti-ui.dev/docs/components/staggered-menu): A layouts staggered menu component
-- [Star Border](https://vritti-ui.dev/docs/components/star-border): Animated star border effect.
-- [Stepper](https://vritti-ui.dev/docs/components/stepper): A layouts stepper component
-- [Sticker Peel](https://vritti-ui.dev/docs/components/sticker-peel): Sticker peel animation.
-- [Striped Pattern](https://vritti-ui.dev/docs/components/striped-pattern): A backgrounds striped pattern component
-- [Target Cursor](https://vritti-ui.dev/docs/components/target-cursor): A target-style cursor effect.
-- [Terminal](https://vritti-ui.dev/docs/components/terminal): A terminal component
-- [Text Animate](https://vritti-ui.dev/docs/components/text-animate): A text animation component that animates text using a variety of different animations.
-- [Text Cursor](https://vritti-ui.dev/docs/components/text-cursor): Text elements that trail behind the mouse cursor.
-- [Text Pressure](https://vritti-ui.dev/docs/components/text-pressure): Variable font text that reacts to mouse proximity with pressure.
-- [Text Reveal](https://vritti-ui.dev/docs/components/text-reveal): Fade in text as you scroll down the page.
-- [Text Type](https://vritti-ui.dev/docs/components/text-type): Typewriter effect that types and deletes text with a blinking cursor.
-- [Threads](https://vritti-ui.dev/docs/components/threads): Animated flowing threads background effect.
-- [Tilted Card](https://vritti-ui.dev/docs/components/tilted-card): A layouts tilted card component
-- [True Focus](https://vritti-ui.dev/docs/components/true-focus): Text with an animated focus border that highlights words sequentially.
-- [Tweet Card](https://vritti-ui.dev/docs/components/tweet-card): A card that displays a tweet with the author's name, handle, and profile picture.
-- [Typing Animation](https://vritti-ui.dev/docs/components/typing-animation): Characters appearing in typed animation
-- [Variable Proximity](https://vritti-ui.dev/docs/components/variable-proximity): Variable font text that changes based on mouse proximity.
-- [Video Text](https://vritti-ui.dev/docs/components/video-text): A component that displays text with a video playing in the background.
-- [Warp Background](https://vritti-ui.dev/docs/components/warp-background): A backgrounds warp background component
-- [Waves](https://vritti-ui.dev/docs/components/waves): An animated waves background effect.
-- [Word Rotate](https://vritti-ui.dev/docs/components/word-rotate): A vertical rotation of words
+- [Android](https://vritti-ui.vercel.app/docs/components/android): A mockup of an Android device.
+- [Animated Beam](https://vritti-ui.vercel.app/docs/components/animated-beam): An animated beam of light which travels along a path.
+- [Animated Circular Progress Bar](https://vritti-ui.vercel.app/docs/components/animated-circular-progress-bar): Animated Circular Progress Bar with a percentage value.
+- [Animated Content](https://vritti-ui.vercel.app/docs/components/animated-content): Animates content with entrance effects.
+- [Animated Gradient Text](https://vritti-ui.vercel.app/docs/components/animated-gradient-text): An animated gradient background which transitions between colors for text.
+- [Animated Grid Pattern](https://vritti-ui.vercel.app/docs/components/animated-grid-pattern): A backgrounds animated grid pattern component
+- [Animated List](https://vritti-ui.vercel.app/docs/components/animated-list): A list that animates each item in sequence with a delay.
+- [Animated Shiny Text](https://vritti-ui.vercel.app/docs/components/animated-shiny-text): A light glare effect which pans across text making it appear as if it is shimmering.
+- [Animated Theme Toggler](https://vritti-ui.vercel.app/docs/components/animated-theme-toggler): A component for theme changing animation.
+- [Antigravity](https://vritti-ui.vercel.app/docs/components/antigravity): Anti-gravity floating animation.
+- [Ascii Text](https://vritti-ui.vercel.app/docs/components/ascii-text): Renders text with an ASCII art style effect using Three.js.
+- [Aurora](https://vritti-ui.vercel.app/docs/components/aurora): An aurora borealis background effect with animated light bands.
+- [Aurora Text](https://vritti-ui.vercel.app/docs/components/aurora-text): A beautiful aurora text effect
+- [Avatar Circles](https://vritti-ui.vercel.app/docs/components/avatar-circles): Overlapping circles of avatars.
+- [Balatro](https://vritti-ui.vercel.app/docs/components/balatro): A psychedelic warping background effect inspired by the game Balatro.
+- [Ballpit](https://vritti-ui.vercel.app/docs/components/ballpit): An interactive 3D ball pit physics simulation background.
+- [Beams](https://vritti-ui.vercel.app/docs/components/beams): Animated volumetric light beams background effect.
+- [Bento Grid](https://vritti-ui.vercel.app/docs/components/bento-grid): Bento grid is a layout used to showcase the features of a product.
+- [Blob Cursor](https://vritti-ui.vercel.app/docs/components/blob-cursor): An organic blob cursor that follows the pointer.
+- [Blur Fade](https://vritti-ui.vercel.app/docs/components/blur-fade): Blur fade in and out animation.
+- [Blur Text](https://vritti-ui.vercel.app/docs/components/blur-text): Text animation with a blur reveal effect.
+- [Border Beam](https://vritti-ui.vercel.app/docs/components/border-beam): An animated beam of light which travels along the border of its container.
+- [Bounce Cards](https://vritti-ui.vercel.app/docs/components/bounce-cards): A layouts bounce cards component
+- [Bubble Menu](https://vritti-ui.vercel.app/docs/components/bubble-menu): A layouts bubble menu component
+- [Card Nav](https://vritti-ui.vercel.app/docs/components/card-nav): A layouts card nav component
+- [Card Swap](https://vritti-ui.vercel.app/docs/components/card-swap): A layouts card swap component
+- [Carousel](https://vritti-ui.vercel.app/docs/components/carousel): A layouts carousel component
+- [Chroma Grid](https://vritti-ui.vercel.app/docs/components/chroma-grid): A layouts chroma grid component
+- [Circular Gallery](https://vritti-ui.vercel.app/docs/components/circular-gallery): A layouts circular gallery component
+- [Circular Text](https://vritti-ui.vercel.app/docs/components/circular-text): Text arranged and animated in a circular path.
+- [Click Spark](https://vritti-ui.vercel.app/docs/components/click-spark): Spark effect on click events.
+- [Client Tweet Card](https://vritti-ui.vercel.app/docs/components/client-tweet-card): A client-side version of the tweet card.
+- [Code Comparison](https://vritti-ui.vercel.app/docs/components/code-comparison): A component which compares two code snippets.
+- [Color Bends](https://vritti-ui.vercel.app/docs/components/color-bends): A colorful bending gradient background effect.
+- [Comic Text](https://vritti-ui.vercel.app/docs/components/comic-text): Comic text animation
+- [Confetti](https://vritti-ui.vercel.app/docs/components/confetti): Confetti animations for delightful user experiences
+- [Cool Mode](https://vritti-ui.vercel.app/docs/components/cool-mode): Cool mode effect for buttons, links, and other DOMs
+- [Count Up](https://vritti-ui.vercel.app/docs/components/count-up): Animated number counting up effect.
+- [Counter](https://vritti-ui.vercel.app/docs/components/counter): A layouts counter component
+- [Crosshair](https://vritti-ui.vercel.app/docs/components/crosshair): A crosshair cursor effect.
+- [Cubes](https://vritti-ui.vercel.app/docs/components/cubes): 3D cube animation effect.
+- [Curved Loop](https://vritti-ui.vercel.app/docs/components/curved-loop): Marquee text that flows along a curved SVG path.
+- [Dark Veil](https://vritti-ui.vercel.app/docs/components/dark-veil): A dark translucent veil overlay background effect.
+- [Decay Card](https://vritti-ui.vercel.app/docs/components/decay-card): A layouts decay card component
+- [Decrypted Text](https://vritti-ui.vercel.app/docs/components/decrypted-text): Text that decrypts itself with a scrambling animation.
+- [Dither](https://vritti-ui.vercel.app/docs/components/dither): A dithered gradient background effect with post-processing.
+- [Dock](https://vritti-ui.vercel.app/docs/components/dock): An implementation of the MacOS dock using react + tailwindcss + motion
+- [Dome Gallery](https://vritti-ui.vercel.app/docs/components/dome-gallery): A layouts dome gallery component
+- [Dot Grid](https://vritti-ui.vercel.app/docs/components/dot-grid): An interactive animated dot grid background.
+- [Dot Pattern](https://vritti-ui.vercel.app/docs/components/dot-pattern): A background dot pattern made with SVGs, fully customizable using Tailwind CSS.
+- [Dotted Map](https://vritti-ui.vercel.app/docs/components/dotted-map): A component with a dotted map.
+- [Elastic Slider](https://vritti-ui.vercel.app/docs/components/elastic-slider): A layouts elastic slider component
+- [Electric Border](https://vritti-ui.vercel.app/docs/components/electric-border): An electric border animation effect.
+- [Fade Content](https://vritti-ui.vercel.app/docs/components/fade-content): Content with fade animation.
+- [Falling Text](https://vritti-ui.vercel.app/docs/components/falling-text): Physics-based falling text effect using Matter.js.
+- [Faulty Terminal](https://vritti-ui.vercel.app/docs/components/faulty-terminal): A glitchy terminal-style background effect.
+- [File Tree](https://vritti-ui.vercel.app/docs/components/file-tree): A component used to showcase the folder and file structure of a directory.
+- [Flickering Grid](https://vritti-ui.vercel.app/docs/components/flickering-grid): A backgrounds flickering grid component
+- [Floating Lines](https://vritti-ui.vercel.app/docs/components/floating-lines): Animated floating lines background effect.
+- [Flowing Menu](https://vritti-ui.vercel.app/docs/components/flowing-menu): A layouts flowing menu component
+- [Fluid Glass](https://vritti-ui.vercel.app/docs/components/fluid-glass): A layouts fluid glass component
+- [Flying Posters](https://vritti-ui.vercel.app/docs/components/flying-posters): A layouts flying posters component
+- [Folder](https://vritti-ui.vercel.app/docs/components/folder): A layouts folder component
+- [Fuzzy Text](https://vritti-ui.vercel.app/docs/components/fuzzy-text): Text rendered with a fuzzy, vibrating canvas effect.
+- [Galaxy](https://vritti-ui.vercel.app/docs/components/galaxy): A swirling galaxy background effect.
+- [Ghost Cursor](https://vritti-ui.vercel.app/docs/components/ghost-cursor): A ghost trail cursor effect.
+- [Glare Hover](https://vritti-ui.vercel.app/docs/components/glare-hover): A glare effect on hover.
+- [Glass Icons](https://vritti-ui.vercel.app/docs/components/glass-icons): A layouts glass icons component
+- [Glass Surface](https://vritti-ui.vercel.app/docs/components/glass-surface): A layouts glass surface component
+- [Glitch Text](https://vritti-ui.vercel.app/docs/components/glitch-text): Text with a glitch distortion animation effect.
+- [Globe](https://vritti-ui.vercel.app/docs/components/globe): An autorotating, interactive, and highly performant globe made using WebGL.
+- [Gooey Nav](https://vritti-ui.vercel.app/docs/components/gooey-nav): A layouts gooey nav component
+- [Gradient Blinds](https://vritti-ui.vercel.app/docs/components/gradient-blinds): Animated gradient blinds background effect.
+- [Gradual Blur](https://vritti-ui.vercel.app/docs/components/gradual-blur): Gradual blur animation effect.
+- [Grainient](https://vritti-ui.vercel.app/docs/components/grainient): A grainy gradient background effect.
+- [Grid Distortion](https://vritti-ui.vercel.app/docs/components/grid-distortion): An interactive grid distortion background effect.
+- [Grid Motion](https://vritti-ui.vercel.app/docs/components/grid-motion): An animated grid motion background with content cells.
+- [Grid Pattern](https://vritti-ui.vercel.app/docs/components/grid-pattern): A background grid pattern made with SVGs, fully customizable using Tailwind CSS.
+- [Grid Scan](https://vritti-ui.vercel.app/docs/components/grid-scan): A grid scanning background effect with optional face detection.
+- [Hero Video Dialog](https://vritti-ui.vercel.app/docs/components/hero-video-dialog): A hero video dialog component.
+- [Highlighter](https://vritti-ui.vercel.app/docs/components/highlighter): A text highlighter that mimics the effect of a human-drawn marker stroke.
+- [Hyper Text](https://vritti-ui.vercel.app/docs/components/hyper-text): A text animation that scrambles letters before revealing the final text.
+- [Hyperspeed](https://vritti-ui.vercel.app/docs/components/hyperspeed): A hyperspeed driving simulation background effect.
+- [Icon Cloud](https://vritti-ui.vercel.app/docs/components/icon-cloud): An interactive 3D tag cloud component
+- [Image Trail](https://vritti-ui.vercel.app/docs/components/image-trail): Trail of images following the cursor.
+- [Infinite Menu](https://vritti-ui.vercel.app/docs/components/infinite-menu): A layouts infinite menu component
+- [Interactive Grid Pattern](https://vritti-ui.vercel.app/docs/components/interactive-grid-pattern): A backgrounds interactive grid pattern component
+- [Interactive Hover Button](https://vritti-ui.vercel.app/docs/components/interactive-hover-button): A buttons interactive hover button component
+- [Iphone](https://vritti-ui.vercel.app/docs/components/iphone): A mockup of the iPhone
+- [Iridescence](https://vritti-ui.vercel.app/docs/components/iridescence): An iridescent shimmering background effect.
+- [Lanyard](https://vritti-ui.vercel.app/docs/components/lanyard): A layouts lanyard component
+- [Laser Flow](https://vritti-ui.vercel.app/docs/components/laser-flow): Flowing laser animation effect.
+- [Lens](https://vritti-ui.vercel.app/docs/components/lens): A interactive component that enables zooming into images, videos and other elements.
+- [Letter Glitch](https://vritti-ui.vercel.app/docs/components/letter-glitch): A glitchy letter animation background effect.
+- [Light Pillar](https://vritti-ui.vercel.app/docs/components/light-pillar): An animated light pillar background effect.
+- [Light Rays](https://vritti-ui.vercel.app/docs/components/light-rays): A backgrounds light rays component
+- [Lightning](https://vritti-ui.vercel.app/docs/components/lightning): An animated lightning bolt background effect.
+- [Line Shadow Text](https://vritti-ui.vercel.app/docs/components/line-shadow-text): A text component with a moving line shadow.
+- [Liquid Chrome](https://vritti-ui.vercel.app/docs/components/liquid-chrome): A liquid chrome metallic background effect.
+- [Liquid Ether](https://vritti-ui.vercel.app/docs/components/liquid-ether): A liquid ethereal fluid background effect.
+- [Logo Loop](https://vritti-ui.vercel.app/docs/components/logo-loop): Looping logo animation.
+- [Magic Bento](https://vritti-ui.vercel.app/docs/components/magic-bento): A layouts magic bento component
+- [Magic Card](https://vritti-ui.vercel.app/docs/components/magic-card): A spotlight effect that follows your mouse cursor and highlights borders on hover.
+- [Magnet](https://vritti-ui.vercel.app/docs/components/magnet): Magnetic attraction effect on hover.
+- [Magnet Lines](https://vritti-ui.vercel.app/docs/components/magnet-lines): Magnetic lines animation effect.
+- [Marquee](https://vritti-ui.vercel.app/docs/components/marquee): An infinite scrolling component that can be used to display text, images, or videos.
+- [Masonry](https://vritti-ui.vercel.app/docs/components/masonry): A layouts masonry component
+- [Meta Balls](https://vritti-ui.vercel.app/docs/components/meta-balls): Metaballs animation effect.
+- [Metallic Paint](https://vritti-ui.vercel.app/docs/components/metallic-paint): Metallic paint animation effect.
+- [Meteors](https://vritti-ui.vercel.app/docs/components/meteors): A meteor shower effect.
+- [Model Viewer](https://vritti-ui.vercel.app/docs/components/model-viewer): A layouts model viewer component
+- [Morphing Text](https://vritti-ui.vercel.app/docs/components/morphing-text): A dynamic text morphing component.
+- [Neon Gradient Card](https://vritti-ui.vercel.app/docs/components/neon-gradient-card): A beautiful neon card effect
+- [Noise](https://vritti-ui.vercel.app/docs/components/noise): Visual noise overlay effect.
+- [Number Ticker](https://vritti-ui.vercel.app/docs/components/number-ticker): Animate numbers to count up or down to a target number
+- [Orb](https://vritti-ui.vercel.app/docs/components/orb): An animated glowing orb background effect.
+- [Orbit Images](https://vritti-ui.vercel.app/docs/components/orbit-images): Images orbiting in a circular path.
+- [Orbiting Circles](https://vritti-ui.vercel.app/docs/components/orbiting-circles): A collection of circles which move in orbit along a circular path
+- [Particles](https://vritti-ui.vercel.app/docs/components/particles): Particles for adding visual flair to your website.
+- [Pill Nav](https://vritti-ui.vercel.app/docs/components/pill-nav): A layouts pill nav component
+- [Pixel Blast](https://vritti-ui.vercel.app/docs/components/pixel-blast): A pixelated blast particle background effect.
+- [Pixel Card](https://vritti-ui.vercel.app/docs/components/pixel-card): A layouts pixel card component
+- [Pixel Image](https://vritti-ui.vercel.app/docs/components/pixel-image): A component that displays an image with a pixelated effect.
+- [Pixel Snow](https://vritti-ui.vercel.app/docs/components/pixel-snow): An animated pixel snow falling background effect.
+- [Pixel Trail](https://vritti-ui.vercel.app/docs/components/pixel-trail): Pixelated trail following the cursor.
+- [Pixel Transition](https://vritti-ui.vercel.app/docs/components/pixel-transition): Pixel-based transition effect.
+- [Plasma](https://vritti-ui.vercel.app/docs/components/plasma): An animated plasma fluid background effect.
+- [Pointer](https://vritti-ui.vercel.app/docs/components/pointer): A component that displays a pointer when hovering over an element
+- [Prism](https://vritti-ui.vercel.app/docs/components/prism): A prismatic light refraction background effect.
+- [Prismatic Burst](https://vritti-ui.vercel.app/docs/components/prismatic-burst): A prismatic burst of colorful light rays background.
+- [Profile Card](https://vritti-ui.vercel.app/docs/components/profile-card): A layouts profile card component
+- [Progressive Blur](https://vritti-ui.vercel.app/docs/components/progressive-blur): Adds a smooth blur gradient effect to scrollable content.
+- [Pulsating Button](https://vritti-ui.vercel.app/docs/components/pulsating-button): A buttons pulsating button component
+- [Rainbow Button](https://vritti-ui.vercel.app/docs/components/rainbow-button): A buttons rainbow button component
+- [Reflective Card](https://vritti-ui.vercel.app/docs/components/reflective-card): A layouts reflective card component
+- [Retro Grid](https://vritti-ui.vercel.app/docs/components/retro-grid): A backgrounds retro grid component
+- [Ribbons](https://vritti-ui.vercel.app/docs/components/ribbons): Animated ribbons effect.
+- [Ripple](https://vritti-ui.vercel.app/docs/components/ripple): A backgrounds ripple component
+- [Ripple Button](https://vritti-ui.vercel.app/docs/components/ripple-button): A buttons ripple button component
+- [Ripple Grid](https://vritti-ui.vercel.app/docs/components/ripple-grid): An animated ripple grid background effect.
+- [Rotating Text](https://vritti-ui.vercel.app/docs/components/rotating-text): Animated text that rotates through a list of strings.
+- [Safari](https://vritti-ui.vercel.app/docs/components/safari): A safari browser mockup to showcase your website.
+- [Scrambled Text](https://vritti-ui.vercel.app/docs/components/scrambled-text): Text that scrambles on mouse proximity using GSAP.
+- [Scroll Based Velocity](https://vritti-ui.vercel.app/docs/components/scroll-based-velocity): Scrolling text whose speed changes based on scroll speed
+- [Scroll Float](https://vritti-ui.vercel.app/docs/components/scroll-float): Characters float into view on scroll using GSAP ScrollTrigger.
+- [Scroll Progress](https://vritti-ui.vercel.app/docs/components/scroll-progress): Animated Scroll Progress for your pages
+- [Scroll Reveal](https://vritti-ui.vercel.app/docs/components/scroll-reveal): Words reveal with opacity and blur on scroll using GSAP.
+- [Scroll Stack](https://vritti-ui.vercel.app/docs/components/scroll-stack): A layouts scroll stack component
+- [Shape Blur](https://vritti-ui.vercel.app/docs/components/shape-blur): Blurred shape animation.
+- [Shimmer Button](https://vritti-ui.vercel.app/docs/components/shimmer-button): A button with a shimmering light which travels around the perimeter.
+- [Shine Border](https://vritti-ui.vercel.app/docs/components/shine-border): Shine border is an animated background border effect.
+- [Shiny Button](https://vritti-ui.vercel.app/docs/components/shiny-button): A buttons shiny button component
+- [Shuffle](https://vritti-ui.vercel.app/docs/components/shuffle): Text characters shuffle and rearrange with a GSAP animation.
+- [Silk](https://vritti-ui.vercel.app/docs/components/silk): A flowing silk fabric background effect.
+- [Smooth Cursor](https://vritti-ui.vercel.app/docs/components/smooth-cursor): A customizable, physics-based smooth cursor animation component
+- [Sparkles Text](https://vritti-ui.vercel.app/docs/components/sparkles-text): A dynamic text that generates continuous sparkles with smooth transitions.
+- [Spinning Text](https://vritti-ui.vercel.app/docs/components/spinning-text): The Spinning Text component animates text in a circular motion.
+- [Splash Cursor](https://vritti-ui.vercel.app/docs/components/splash-cursor): Splash effect cursor.
+- [Split Text](https://vritti-ui.vercel.app/docs/components/split-text): Animated text splitting into characters or words with GSAP.
+- [Spotlight Card](https://vritti-ui.vercel.app/docs/components/spotlight-card): A layouts spotlight card component
+- [Squares](https://vritti-ui.vercel.app/docs/components/squares): An animated squares pattern background effect.
+- [Stack](https://vritti-ui.vercel.app/docs/components/stack): A layouts stack component
+- [Staggered Menu](https://vritti-ui.vercel.app/docs/components/staggered-menu): A layouts staggered menu component
+- [Star Border](https://vritti-ui.vercel.app/docs/components/star-border): Animated star border effect.
+- [Stepper](https://vritti-ui.vercel.app/docs/components/stepper): A layouts stepper component
+- [Sticker Peel](https://vritti-ui.vercel.app/docs/components/sticker-peel): Sticker peel animation.
+- [Striped Pattern](https://vritti-ui.vercel.app/docs/components/striped-pattern): A backgrounds striped pattern component
+- [Target Cursor](https://vritti-ui.vercel.app/docs/components/target-cursor): A target-style cursor effect.
+- [Terminal](https://vritti-ui.vercel.app/docs/components/terminal): A terminal component
+- [Text Animate](https://vritti-ui.vercel.app/docs/components/text-animate): A text animation component that animates text using a variety of different animations.
+- [Text Cursor](https://vritti-ui.vercel.app/docs/components/text-cursor): Text elements that trail behind the mouse cursor.
+- [Text Pressure](https://vritti-ui.vercel.app/docs/components/text-pressure): Variable font text that reacts to mouse proximity with pressure.
+- [Text Reveal](https://vritti-ui.vercel.app/docs/components/text-reveal): Fade in text as you scroll down the page.
+- [Text Type](https://vritti-ui.vercel.app/docs/components/text-type): Typewriter effect that types and deletes text with a blinking cursor.
+- [Threads](https://vritti-ui.vercel.app/docs/components/threads): Animated flowing threads background effect.
+- [Tilted Card](https://vritti-ui.vercel.app/docs/components/tilted-card): A layouts tilted card component
+- [True Focus](https://vritti-ui.vercel.app/docs/components/true-focus): Text with an animated focus border that highlights words sequentially.
+- [Tweet Card](https://vritti-ui.vercel.app/docs/components/tweet-card): A card that displays a tweet with the author's name, handle, and profile picture.
+- [Typing Animation](https://vritti-ui.vercel.app/docs/components/typing-animation): Characters appearing in typed animation
+- [Variable Proximity](https://vritti-ui.vercel.app/docs/components/variable-proximity): Variable font text that changes based on mouse proximity.
+- [Video Text](https://vritti-ui.vercel.app/docs/components/video-text): A component that displays text with a video playing in the background.
+- [Warp Background](https://vritti-ui.vercel.app/docs/components/warp-background): A backgrounds warp background component
+- [Waves](https://vritti-ui.vercel.app/docs/components/waves): An animated waves background effect.
+- [Word Rotate](https://vritti-ui.vercel.app/docs/components/word-rotate): A vertical rotation of words
 
 ## Examples
 
@@ -381,4 +381,4 @@ This file provides LLM-friendly entry points to documentation and examples.
 ## Optional
 
 - [Repository](https://github.com/satyajitghana/vritti): Source code and issues
-- [Sitemap](https://vritti-ui.dev/sitemap.xml): Indexable pages
+- [Sitemap](https://vritti-ui.vercel.app/sitemap.xml): Indexable pages
