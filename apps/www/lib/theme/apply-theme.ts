@@ -141,6 +141,33 @@ export function applyThemeToElement(
     element.style.setProperty(`--${key}`, value);
   });
 
+  // Derive additional site-wide variables from theme colors
+  // These are used by docs, code blocks, and other components
+  const muted = colors.muted;
+  const mutedFg = colors['muted-foreground'];
+  const card = colors.card;
+  const bg = colors.background;
+  const fg = colors.foreground;
+  const primary = colors.primary;
+  if (muted) {
+    element.style.setProperty('--surface', colorFormatter(muted, 'hsl', '4'));
+    element.style.setProperty('--surface-foreground', mutedFg ? colorFormatter(mutedFg, 'hsl', '4') : colorFormatter(fg, 'hsl', '4'));
+    element.style.setProperty('--code', colorFormatter(muted, 'hsl', '4'));
+    element.style.setProperty('--code-foreground', mutedFg ? colorFormatter(mutedFg, 'hsl', '4') : colorFormatter(fg, 'hsl', '4'));
+  }
+  if (primary) {
+    element.style.setProperty('--brand', colorFormatter(primary, 'hsl', '4'));
+    element.style.setProperty('--brand-foreground', colors['primary-foreground'] ? colorFormatter(colors['primary-foreground'], 'hsl', '4') : colorFormatter(bg, 'hsl', '4'));
+  }
+  // Derive code-highlight and selection from card/accent
+  if (card) {
+    element.style.setProperty('--code-highlight', colorFormatter(card, 'hsl', '4'));
+  }
+  if (colors.accent) {
+    element.style.setProperty('--selection', colorFormatter(fg, 'hsl', '4'));
+    element.style.setProperty('--selection-foreground', colorFormatter(bg, 'hsl', '4'));
+  }
+
   // Toggle dark class
   if (mode === 'dark') {
     element.classList.add('dark');

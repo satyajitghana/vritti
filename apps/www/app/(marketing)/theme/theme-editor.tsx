@@ -422,7 +422,7 @@ export function ThemeEditor() {
             >
               <div className="h-full overflow-y-auto p-4 bg-background">{controlsPanel}</div>
             </ResizablePanel>
-            <ResizableHandle className="w-1 bg-border hover:bg-primary transition-colors" />
+            <ResizableHandle className="w-px bg-border after:absolute after:inset-y-0 after:left-1/2 after:w-1 after:-translate-x-1/2 hover:bg-primary/50 transition-colors" />
             <ResizablePanel
               id="preview"
               defaultSize="70"
