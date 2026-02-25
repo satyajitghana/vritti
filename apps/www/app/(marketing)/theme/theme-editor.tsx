@@ -416,7 +416,7 @@ export function ThemeEditor() {
           <ResizablePanelGroup
             orientation="horizontal"
             id="theme-editor-panels"
-            className="h-full rounded-lg overflow-hidden"
+            className="h-full isolate"
           >
             <ResizablePanel
               id="controls"
