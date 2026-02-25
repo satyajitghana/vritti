@@ -229,10 +229,10 @@ export function ThemeEditor() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 20 }}
                 transition={{ delay: idx * 0.05, duration: 0.3 }}
-                className="rounded-lg border bg-card shadow-sm p-3"
+                className="rounded-lg border p-3"
               >
                 <h4 className="text-sm font-semibold mb-2">{group.label}</h4>
-                <div className="space-y-1">
+                <div>
                   {group.keys.map((key) => (
                     <ColorFocusIndicator key={key} colorKey={key}>
                       <ColorPickerEnhanced
