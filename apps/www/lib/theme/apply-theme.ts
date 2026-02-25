@@ -125,9 +125,13 @@ export function applyThemeToElement(
   applyCommonStyles(element, config.light);
 
   // Apply color variables (excluding common styles)
+  // Set both raw vars (--primary) and Tailwind theme vars (--color-primary)
+  // to ensure @theme inline var() references resolve correctly
   for (const [key, value] of Object.entries(colors)) {
     if (!isCommonStyle(key) && typeof value === 'string') {
-      element.style.setProperty(`--${key}`, colorFormatter(value, 'hsl', '4'));
+      const formatted = colorFormatter(value, 'hsl', '4');
+      element.style.setProperty(`--${key}`, formatted);
+      element.style.setProperty(`--color-${key}`, formatted);
     }
   }
 
