@@ -7906,37 +7906,37 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/animations/particles/example")),
     meta: {"tags":["animation"]},
   },
-  "particles": {
-    name: "particles",
+  "particles-3d": {
+    name: "particles-3d",
     description: "A 3D WebGL particle field background with customizable colors, mouse interaction, and rotation.",
     type: "registry:ui",
     category: "backgrounds",
     registryDependencies: undefined,
     dependencies: ["ogl"],
     files: [{
-      path: "registry/components/backgrounds/particles/component.tsx",
+      path: "registry/components/backgrounds/particles-3d/component.tsx",
       type: "registry:ui",
       target: ""
     }],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/components/backgrounds/particles/component")
+      const mod = await import("@/registry/components/backgrounds/particles-3d/component")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
     meta: {"tags":["background","particles","webgl","3d"],"source":"react-bits"},
   },
-  "particles-demo": {
-    name: "particles-demo",
+  "particles-3d-demo": {
+    name: "particles-3d-demo",
     description: "A 3D WebGL particle field background with customizable colors, mouse interaction, and rotation. (demo)",
     type: "registry:example",
     category: "backgrounds",
-    registryDependencies: ["particles"],
+    registryDependencies: ["particles-3d"],
     files: [{
-      path: "registry/components/backgrounds/particles/example.tsx",
+      path: "registry/components/backgrounds/particles-3d/example.tsx",
       type: "registry:example",
       target: ""
     }],
-    component: React.lazy(() => import("@/registry/components/backgrounds/particles/example")),
+    component: React.lazy(() => import("@/registry/components/backgrounds/particles-3d/example")),
     meta: {"tags":["background","particles","webgl","3d"],"source":"react-bits"},
   },
   "pill-nav": {
@@ -17884,6 +17884,20 @@ export const Index: Record<string, any> = {
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
+    meta: undefined,
+  },
+  "payment-method-selector-demo": {
+    name: "payment-method-selector-demo",
+    description: "Payment Method Selector block. (demo)",
+    type: "registry:example",
+    category: "billing",
+    registryDependencies: ["payment-method-selector"],
+    files: [{
+      path: "registry/blocks/billing/payment-method-selector/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/billing/payment-method-selector/example")),
     meta: undefined,
   },
   "pricing-table-five": {

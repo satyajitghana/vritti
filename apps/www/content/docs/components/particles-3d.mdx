@@ -1,9 +1,9 @@
 ---
-title: Particles
-description: Particles for adding visual flair to your website.
+title: Particles 3d
+description: A 3D WebGL particle field background with customizable colors, mouse interaction, and rotation.
 ---
 
-<ComponentPreview name="particles-demo" />
+<ComponentPreview name="particles-3d-demo" />
 
 ## Installation
 
@@ -17,7 +17,7 @@ description: Particles for adding visual flair to your website.
 <TabsContent value="cli">
 
 ```bash
-npx shadcn@latest add @vritti/particles
+npx shadcn@latest add @vritti/particles-3d
 ```
 
 > First-time setup? Add the Vritti registry to your `components.json`:
@@ -33,7 +33,7 @@ npx shadcn@latest add @vritti/particles
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="particles" />
+<ComponentSource name="particles-3d" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
@@ -42,3 +42,9 @@ npx shadcn@latest add @vritti/particles
 </TabsContent>
 
 </Tabs>
+
+## Dependencies
+
+```bash
+npm install ogl
+```
