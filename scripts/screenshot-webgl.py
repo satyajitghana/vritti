@@ -45,19 +45,14 @@ WEBGL_COMPONENTS = [
     {"name": "bg-animated-fractal-dot-grid", "category": "backgrounds", "type": "component"},
     {"name": "canvas-fractal-grid", "category": "backgrounds", "type": "component"},
     {"name": "color-bends", "category": "backgrounds", "type": "component"},
-    {"name": "fluid-cursor", "category": "animations", "type": "component"},
-    {"name": "gradient-background", "category": "backgrounds", "type": "component"},
-    {"name": "iridescent", "category": "backgrounds", "type": "component"},
+    {"name": "iridescence", "category": "backgrounds", "type": "component"},
     {"name": "lightning", "category": "backgrounds", "type": "component"},
-    {"name": "noise-gradient", "category": "backgrounds", "type": "component"},
     {"name": "orb", "category": "backgrounds", "type": "component"},
     {"name": "particles", "category": "backgrounds", "type": "component"},
     {"name": "pixel-trail", "category": "animations", "type": "component"},
-    {"name": "silk-shader", "category": "backgrounds", "type": "component"},
     {"name": "splash-cursor", "category": "animations", "type": "component"},
     {"name": "star-border", "category": "animations", "type": "component"},
     {"name": "threads", "category": "backgrounds", "type": "component"},
-    {"name": "wobble", "category": "backgrounds", "type": "component"},
 ]
 
 results = {"success": [], "error": []}
