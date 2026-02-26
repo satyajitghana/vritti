@@ -141,7 +141,7 @@ export default function CardFlip({
         </div>
       </div>
 
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes cardFlipScale {
           0% {
             transform: scale(2);
@@ -159,7 +159,7 @@ export default function CardFlip({
             box-shadow: 0px 10px 20px rgba(255, 165, 0, 0);
           }
         }
-      `}</style>
+      `}} />
     </div>
   )
 }

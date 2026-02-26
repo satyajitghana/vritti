@@ -5,7 +5,7 @@ import { Comparison, ComparisonHandle, ComparisonItem } from "./component";
 export default function ComparisonExample() {
   return (
     <div className="flex items-center justify-center p-8">
-      <Comparison className="aspect-video w-full max-w-lg rounded-lg border">
+      <Comparison className="aspect-video w-full max-w-lg min-h-[200px] rounded-lg border">
         <ComparisonItem position="left">
           <div className="flex size-full items-center justify-center bg-zinc-200 dark:bg-zinc-800">
             <p className="text-lg font-semibold text-zinc-600 dark:text-zinc-300">Before</p>

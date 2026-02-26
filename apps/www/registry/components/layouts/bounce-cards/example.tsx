@@ -1,11 +1,11 @@
 import BounceCards from "./component";
 
 const images = [
-  "https://picsum.photos/seed/bounce1/400/400",
-  "https://picsum.photos/seed/bounce2/400/400",
-  "https://picsum.photos/seed/bounce3/400/400",
-  "https://picsum.photos/seed/bounce4/400/400",
-  "https://picsum.photos/seed/bounce5/400/400",
+  "/assets/demo/cs1.webp",
+  "/assets/demo/cs2.webp",
+  "/assets/demo/cs3.webp",
+  "/assets/demo/poster.webp",
+  "/assets/demo/person.webp",
 ];
 
 export default function BounceCardsExample() {

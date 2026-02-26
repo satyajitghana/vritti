@@ -196,10 +196,10 @@ export const ComparisonHandle = ({
     >
       {children ?? (
         <>
-          <div className="-translate-x-1/2 absolute left-1/2 h-full w-1 bg-background" />
+          <div className="-translate-x-1/2 absolute left-1/2 h-full w-1 bg-white shadow-sm" />
           {mode === "drag" && (
-            <div className="z-50 flex items-center justify-center rounded-sm bg-background px-0.5 py-1">
-              <GripVerticalIcon className="h-4 w-4 select-none text-muted-foreground" />
+            <div className="z-50 flex items-center justify-center rounded-sm bg-white shadow-md px-0.5 py-1">
+              <GripVerticalIcon className="h-4 w-4 select-none text-zinc-500" />
             </div>
           )}
         </>
