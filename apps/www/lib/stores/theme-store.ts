@@ -110,10 +110,28 @@ export const useThemeStore = create<ThemeState>()(
       },
 
       applyPreset: (preset) => {
-        set({
+        // Extract font settings from preset's common styles if available
+        const lightStyles = preset.config.light;
+        const updates: Partial<ThemeState> = {
           config: preset.config,
-          activePreset: preset.name
-        });
+          activePreset: preset.name,
+        };
+
+        if (lightStyles['font-sans']) {
+          // Extract the primary font name from the preset font string
+          const fontSans = lightStyles['font-sans'].split(',')[0].trim().replace(/['"]/g, '');
+          updates.fontSans = fontSans;
+        }
+        if (lightStyles['font-mono']) {
+          const fontMono = lightStyles['font-mono'].split(',')[0].trim().replace(/['"]/g, '');
+          updates.fontMono = fontMono;
+        }
+        if (lightStyles['font-serif']) {
+          const fontSerif = lightStyles['font-serif'].split(',')[0].trim().replace(/['"]/g, '');
+          updates.fontSerif = fontSerif;
+        }
+
+        set(updates);
         get()._addToHistory(preset.config);
       },
 

@@ -31,7 +31,8 @@ export function colorFormatter(
   switch (format) {
     case 'hsl': {
       const hsl = culori.converter('hsl')(color);
-      if (!hsl || hsl.h === undefined || hsl.s === undefined || hsl.l === undefined) {
+      // Note: hsl.h can be undefined for achromatic colors (grays, black, white)
+      if (!hsl || hsl.l === undefined) {
         return tailwindVersion === '4' ? 'hsl(0 0% 0%)' : '0 0% 0%';
       }
       const h = Math.round(hsl.h || 0);
@@ -124,9 +125,13 @@ export function applyThemeToElement(
   applyCommonStyles(element, config.light);
 
   // Apply color variables (excluding common styles)
+  // Set both raw vars (--primary) and Tailwind theme vars (--color-primary)
+  // to ensure @theme inline var() references resolve correctly
   for (const [key, value] of Object.entries(colors)) {
     if (!isCommonStyle(key) && typeof value === 'string') {
-      element.style.setProperty(`--${key}`, colorFormatter(value, 'hsl', '4'));
+      const formatted = colorFormatter(value, 'hsl', '4');
+      element.style.setProperty(`--${key}`, formatted);
+      element.style.setProperty(`--color-${key}`, formatted);
     }
   }
 
@@ -139,6 +144,33 @@ export function applyThemeToElement(
   Object.entries(shadows).forEach(([key, value]) => {
     element.style.setProperty(`--${key}`, value);
   });
+
+  // Derive additional site-wide variables from theme colors
+  // These are used by docs, code blocks, and other components
+  const muted = colors.muted;
+  const mutedFg = colors['muted-foreground'];
+  const card = colors.card;
+  const bg = colors.background;
+  const fg = colors.foreground;
+  const primary = colors.primary;
+  if (muted) {
+    element.style.setProperty('--surface', colorFormatter(muted, 'hsl', '4'));
+    element.style.setProperty('--surface-foreground', mutedFg ? colorFormatter(mutedFg, 'hsl', '4') : colorFormatter(fg, 'hsl', '4'));
+    element.style.setProperty('--code', colorFormatter(muted, 'hsl', '4'));
+    element.style.setProperty('--code-foreground', mutedFg ? colorFormatter(mutedFg, 'hsl', '4') : colorFormatter(fg, 'hsl', '4'));
+  }
+  if (primary) {
+    element.style.setProperty('--brand', colorFormatter(primary, 'hsl', '4'));
+    element.style.setProperty('--brand-foreground', colors['primary-foreground'] ? colorFormatter(colors['primary-foreground'], 'hsl', '4') : colorFormatter(bg, 'hsl', '4'));
+  }
+  // Derive code-highlight and selection from card/accent
+  if (card) {
+    element.style.setProperty('--code-highlight', colorFormatter(card, 'hsl', '4'));
+  }
+  if (colors.accent) {
+    element.style.setProperty('--selection', colorFormatter(fg, 'hsl', '4'));
+    element.style.setProperty('--selection-foreground', colorFormatter(bg, 'hsl', '4'));
+  }
 
   // Toggle dark class
   if (mode === 'dark') {

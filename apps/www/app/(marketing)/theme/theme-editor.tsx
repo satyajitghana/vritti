@@ -11,7 +11,7 @@ import { ContrastChecker } from '@/components/theme/contrast-checker';
 import { CSSImportDialog } from '@/components/theme/css-import-dialog';
 import { THEME_PRESETS, type ThemePreset, type ThemeColors } from '@/lib/theme-presets';
 import { useThemeStore, selectCurrentColors } from '@/lib/stores/theme-store';
-import { applyThemeToElement, applyFontsToElement } from '@/lib/theme/apply-theme';
+// Theme is now applied globally via ThemeStyleApplier in root layout
 import { toLabel } from '@/lib/theme/color-utils';
 import { generateCSS } from '@/lib/theme/code-generator';
 import { ActionBar } from '@/components/theme/action-bar';
@@ -110,8 +110,6 @@ export function ThemeEditor() {
   };
 
   const handleCSSImport = (imported: { light: Record<string, string>; dark: Record<string, string> }) => {
-    // For simplicity, we'll use setConfig through the store
-    // In a real implementation, you'd want to add a method to the store for this
     const newConfig = {
       ...config,
       light: { ...config.light, ...imported.light as Partial<ThemeColors> } as ThemeColors,
@@ -120,14 +118,6 @@ export function ThemeEditor() {
     useThemeStore.setState({ config: newConfig, activePreset: 'custom' });
   };
 
-  // Apply theme to preview container
-  useEffect(() => {
-    const el = previewRef.current;
-    if (!el) return;
-    applyThemeToElement(config, el, activeMode);
-    applyFontsToElement(el, { sans: fontSans, mono: fontMono, serif: fontSerif });
-  }, [config, activeMode, fontSans, fontMono, fontSerif]);
-
   // Sync theme to URL when it changes
   useEffect(() => {
     syncToUrl();
@@ -135,93 +125,98 @@ export function ThemeEditor() {
 
   // Controls Panel Content
   const controlsPanel = (
-    <div className="space-y-4">
-      {/* Mode Toggle */}
-      <div className="flex items-center gap-2 rounded-lg border bg-card p-2 shadow-sm">
-        <Button
-          variant={activeMode === 'light' ? 'default' : 'ghost'}
-          size="sm"
-          onClick={() => setActiveMode('light')}
-          className="flex-1"
-        >
-          <Sun className="mr-2 h-4 w-4" />
-          Light
-        </Button>
-        <Button
-          variant={activeMode === 'dark' ? 'default' : 'ghost'}
-          size="sm"
-          onClick={() => setActiveMode('dark')}
-          className="flex-1"
-        >
-          <Moon className="mr-2 h-4 w-4" />
-          Dark
-        </Button>
+    <div className="space-y-3">
+      {/* Mode Toggle - compact inline */}
+      <div className="flex items-center justify-between">
+        <span className="text-sm font-medium">Mode</span>
+        <div className="inline-flex items-center rounded-full border p-0.5 text-xs">
+          <button
+            onClick={() => setActiveMode('light')}
+            className={cn(
+              'inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium transition-colors',
+              activeMode === 'light'
+                ? 'bg-secondary text-secondary-foreground'
+                : 'text-muted-foreground hover:text-foreground'
+            )}
+          >
+            <Sun className="h-3 w-3" />
+            Light
+          </button>
+          <button
+            onClick={() => setActiveMode('dark')}
+            className={cn(
+              'inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium transition-colors',
+              activeMode === 'dark'
+                ? 'bg-secondary text-secondary-foreground'
+                : 'text-muted-foreground hover:text-foreground'
+            )}
+          >
+            <Moon className="h-3 w-3" />
+            Dark
+          </button>
+        </div>
       </div>
 
       <Tabs defaultValue="colors">
-        <TabsList className="w-full grid grid-cols-4">
-          <TabsTrigger value="colors" className="text-xs">
+        <TabsList className="h-auto w-fit bg-transparent p-0 text-muted-foreground">
+          <TabsTrigger value="colors" className="rounded-full px-3 py-1 text-xs data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground data-[state=active]:shadow-none">
             <Palette className="mr-1.5 h-3.5 w-3.5" />
             Colors
           </TabsTrigger>
-          <TabsTrigger value="typography" className="text-xs">
+          <TabsTrigger value="typography" className="rounded-full px-3 py-1 text-xs data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground data-[state=active]:shadow-none">
             <Type className="mr-1.5 h-3.5 w-3.5" />
             Type
           </TabsTrigger>
-          <TabsTrigger value="other" className="text-xs">
+          <TabsTrigger value="other" className="rounded-full px-3 py-1 text-xs data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground data-[state=active]:shadow-none">
             <SlidersHorizontal className="mr-1.5 h-3.5 w-3.5" />
             Other
           </TabsTrigger>
-          <TabsTrigger value="code" className="text-xs">
+          <TabsTrigger value="code" className="rounded-full px-3 py-1 text-xs data-[state=active]:bg-secondary data-[state=active]:text-secondary-foreground data-[state=active]:shadow-none">
             <Code className="mr-1.5 h-3.5 w-3.5" />
             Code
           </TabsTrigger>
         </TabsList>
 
-        <TabsContent value="colors" className="space-y-4 mt-4">
+        <TabsContent value="colors" className="space-y-3 mt-3">
           {/* Presets */}
           <div>
             <label className="text-sm font-medium mb-2 block">Presets ({THEME_PRESETS.length})</label>
-            <div className="grid grid-cols-3 gap-2 max-h-[320px] overflow-y-auto pr-1">
-              {THEME_PRESETS.map((preset, idx) => (
-                <motion.button
-                  key={preset.name}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.02, duration: 0.2 }}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => handleApplyPreset(preset)}
-                  className={cn(
-                    'rounded-lg border p-2 text-xs font-medium transition-all hover:border-primary text-left',
-                    activePreset === preset.name
-                      ? 'border-primary bg-primary/5'
-                      : 'border-border'
-                  )}
-                >
-                  <div className="flex gap-1 mb-1.5">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 180 }}
-                      transition={{ duration: 0.3 }}
-                      className="h-4 w-4 rounded-full border"
-                      style={{ backgroundColor: preset.config.light.primary }}
-                    />
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 180 }}
-                      transition={{ duration: 0.3, delay: 0.05 }}
-                      className="h-4 w-4 rounded-full border"
-                      style={{ backgroundColor: preset.config.light.secondary }}
-                    />
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 180 }}
-                      transition={{ duration: 0.3, delay: 0.1 }}
-                      className="h-4 w-4 rounded-full border"
-                      style={{ backgroundColor: preset.config.light.accent }}
-                    />
-                  </div>
-                  <span className="truncate block">{preset.label}</span>
-                </motion.button>
-              ))}
+            <div className="max-h-[320px] overflow-y-auto pr-1">
+              <div className="grid grid-cols-3 gap-2 p-0.5">
+                {THEME_PRESETS.map((preset, idx) => (
+                  <motion.button
+                    key={preset.name}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.02, duration: 0.2 }}
+                    whileHover={{ y: -1 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => handleApplyPreset(preset)}
+                    className={cn(
+                      'rounded-lg border p-2 text-xs font-medium transition-all hover:border-primary hover:shadow-sm text-left',
+                      activePreset === preset.name
+                        ? 'border-primary bg-primary/5 shadow-sm'
+                        : 'border-border'
+                    )}
+                  >
+                    <div className="flex gap-1 mb-1.5">
+                      <div
+                        className="h-4 w-4 rounded-full border"
+                        style={{ backgroundColor: preset.config.light.primary }}
+                      />
+                      <div
+                        className="h-4 w-4 rounded-full border"
+                        style={{ backgroundColor: preset.config.light.secondary }}
+                      />
+                      <div
+                        className="h-4 w-4 rounded-full border"
+                        style={{ backgroundColor: preset.config.light.accent }}
+                      />
+                    </div>
+                    <span className="truncate block">{preset.label}</span>
+                  </motion.button>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -234,10 +229,10 @@ export function ThemeEditor() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 20 }}
                 transition={{ delay: idx * 0.05, duration: 0.3 }}
-                className="rounded-lg border bg-card shadow-sm p-3"
+                className="rounded-lg border p-3"
               >
                 <h4 className="text-sm font-semibold mb-2">{group.label}</h4>
-                <div className="space-y-1">
+                <div>
                   {group.keys.map((key) => (
                     <ColorFocusIndicator key={key} colorKey={key}>
                       <ColorPickerEnhanced
@@ -253,8 +248,8 @@ export function ThemeEditor() {
           </AnimatePresence>
         </TabsContent>
 
-        <TabsContent value="typography" className="space-y-4 mt-4">
-          <div className="rounded-lg border bg-card shadow-sm p-4 space-y-4">
+        <TabsContent value="typography" className="space-y-3 mt-3">
+          <div className="rounded-lg border bg-card p-3 space-y-3">
             <h4 className="text-sm font-semibold">Font Families</h4>
             <FontPicker
               label="Sans Serif (--font-sans)"
@@ -296,18 +291,18 @@ export function ThemeEditor() {
           </div>
         </TabsContent>
 
-        <TabsContent value="other" className="space-y-4 mt-4">
+        <TabsContent value="other" className="space-y-3 mt-3">
           {/* Contrast Checker */}
-          <div className="rounded-lg border bg-card shadow-sm p-4">
+          <div className="rounded-lg border bg-card p-3">
             <ContrastChecker colors={currentColors as unknown as Record<string, string>} />
           </div>
 
           {/* CSS Import */}
-          <div className="rounded-lg border bg-card shadow-sm p-4">
+          <div className="rounded-lg border bg-card p-3">
             <CSSImportDialog onImport={handleCSSImport} />
           </div>
 
-          <div className="rounded-lg border bg-card shadow-sm p-4 space-y-4">
+          <div className="rounded-lg border bg-card p-3 space-y-3">
             <h4 className="text-sm font-semibold">Border Radius</h4>
             <div className="flex items-center gap-3">
               <input
@@ -350,7 +345,7 @@ export function ThemeEditor() {
           </div>
         </TabsContent>
 
-        <TabsContent value="code" className="mt-4">
+        <TabsContent value="code" className="mt-3">
           <div className="rounded-lg border bg-card shadow-sm">
             <div className="flex items-center justify-between border-b bg-muted/50 px-4 py-2">
               <span className="text-sm font-medium">globals.css</span>
@@ -369,7 +364,7 @@ export function ThemeEditor() {
 
   // Preview Panel Content
   const previewPanel = (
-    <div className="rounded-lg border overflow-hidden bg-background h-full flex flex-col">
+    <div className="overflow-hidden bg-background h-full flex flex-col">
       <div className="flex items-center justify-between border-b bg-card px-4 py-2 shrink-0">
         <span className="text-sm font-medium">Preview</span>
         <div className="flex items-center gap-2">
@@ -384,7 +379,7 @@ export function ThemeEditor() {
         </div>
       </div>
       <div className="flex-1 overflow-hidden flex">
-        <div ref={previewRef} className="flex-1 p-6 overflow-auto bg-background text-foreground relative">
+        <div ref={previewRef} className="flex-1 p-6 overflow-auto relative">
           <PreviewContainer />
           <InspectorOverlay containerRef={previewRef} />
         </div>
@@ -421,20 +416,21 @@ export function ThemeEditor() {
           <ResizablePanelGroup
             orientation="horizontal"
             id="theme-editor-panels"
-            className="h-full rounded-lg border"
+            className="h-full isolate"
           >
             <ResizablePanel
               id="controls"
-              defaultSize={35}
-              minSize={25}
-              maxSize={60}
+              defaultSize="30"
+              minSize="20"
+              maxSize="40"
+              className="min-w-[max(20%,22rem)]"
             >
               <div className="h-full overflow-y-auto p-4 bg-background">{controlsPanel}</div>
             </ResizablePanel>
-            <ResizableHandle className="w-1 bg-border hover:bg-primary transition-colors" />
+            <ResizableHandle className="w-px bg-border after:absolute after:inset-y-0 after:left-1/2 after:w-1 after:-translate-x-1/2 hover:bg-primary/50 transition-colors" />
             <ResizablePanel
               id="preview"
-              defaultSize={65}
+              defaultSize="70"
             >
               <div className="h-full overflow-hidden">{previewPanel}</div>
             </ResizablePanel>

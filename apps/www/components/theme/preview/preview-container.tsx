@@ -26,6 +26,12 @@ const EcommercePreview = lazy(() =>
 const PricingPreview = lazy(() =>
   import('./pricing-preview').then((mod) => ({ default: mod.PricingPreview }))
 );
+const ChartsPreview = lazy(() =>
+  import('./charts-preview').then((mod) => ({ default: mod.ChartsPreview }))
+);
+const MarkdownPreview = lazy(() =>
+  import('./markdown-preview').then((mod) => ({ default: mod.MarkdownPreview }))
+);
 
 function LoadingFallback() {
   return (
@@ -70,6 +76,18 @@ export function PreviewContainer() {
           Pricing
         </TabsTrigger>
         <TabsTrigger
+          value="charts"
+          className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
+        >
+          Charts
+        </TabsTrigger>
+        <TabsTrigger
+          value="markdown"
+          className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
+        >
+          Markdown
+        </TabsTrigger>
+        <TabsTrigger
           value="colors"
           className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent"
         >
@@ -111,6 +129,18 @@ export function PreviewContainer() {
         <TabsContent value="pricing" className="mt-0">
           <Suspense fallback={<LoadingFallback />}>
             <PricingPreview />
+          </Suspense>
+        </TabsContent>
+
+        <TabsContent value="charts" className="mt-0">
+          <Suspense fallback={<LoadingFallback />}>
+            <ChartsPreview />
+          </Suspense>
+        </TabsContent>
+
+        <TabsContent value="markdown" className="mt-0">
+          <Suspense fallback={<LoadingFallback />}>
+            <MarkdownPreview />
           </Suspense>
         </TabsContent>
 
