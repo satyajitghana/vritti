@@ -182,7 +182,6 @@ export const componentList: Array<{ name: string; title: string; category: strin
   { name: "iphone", title: "Iphone", category: "special" },
   { name: "iridescence", title: "Iridescence", category: "backgrounds" },
   { name: "kbd", title: "Kbd", category: "special" },
-  { name: "dropzone-upload", title: "Dropzone Upload", category: "inputs" },
   { name: "lamphome", title: "Lamphome", category: "layouts" },
   { name: "lanyard", title: "Lanyard", category: "layouts" },
   { name: "laser-flow", title: "Laser Flow", category: "animations" },

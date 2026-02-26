@@ -6058,39 +6058,6 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/special/kbd/example")),
     meta: {"tags":["keyboard","shortcut","kbd","key"],"source":"scrollx-ui"},
   },
-  "dropzone-upload": {
-    name: "dropzone-upload",
-    description: "A drag-and-drop file upload component with animated progress indicator and file validation.",
-    type: "registry:ui",
-    category: "inputs",
-    registryDependencies: undefined,
-    dependencies: ["motion","lucide-react"],
-    files: [{
-      path: "registry/components/inputs/dropzone-upload/component.tsx",
-      type: "registry:ui",
-      target: ""
-    }],
-    component: React.lazy(async () => {
-      const mod = await import("@/registry/components/inputs/dropzone-upload/component")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
-      return { default: mod.default || mod[exportName] }
-    }),
-    meta: undefined,
-  },
-  "dropzone-upload-demo": {
-    name: "dropzone-upload-demo",
-    description: "A drag-and-drop file upload component with animated progress indicator and file validation. (demo)",
-    type: "registry:example",
-    category: "inputs",
-    registryDependencies: ["dropzone-upload"],
-    files: [{
-      path: "registry/components/inputs/dropzone-upload/example.tsx",
-      type: "registry:example",
-      target: ""
-    }],
-    component: React.lazy(() => import("@/registry/components/inputs/dropzone-upload/example")),
-    meta: undefined,
-  },
   "lamphome": {
     name: "lamphome",
     description: "Hero section with pull-chain lamp theme toggle, navbar, and animated glow",

@@ -56,10 +56,10 @@ const FlashyCard = React.forwardRef<HTMLDivElement, FlashyCardProps>(
     const childArray = React.Children.toArray(children);
     const defaultContentChild = childArray.find(
       (child) =>
-        React.isValidElement(child) && ((child.type as any)?.displayName === 'FlashyCardDefault' || child.type === FlashyCardDefault),
+        React.isValidElement(child) && ((child.type as React.ComponentType & { displayName?: string })?.displayName === 'FlashyCardDefault' || child.type === FlashyCardDefault),
     );
     const activeContentChild = childArray.find(
-      (child) => React.isValidElement(child) && ((child.type as any)?.displayName === 'FlashyCardActive' || child.type === FlashyCardActive),
+      (child) => React.isValidElement(child) && ((child.type as React.ComponentType & { displayName?: string })?.displayName === 'FlashyCardActive' || child.type === FlashyCardActive),
     );
 
     const defaultContent =

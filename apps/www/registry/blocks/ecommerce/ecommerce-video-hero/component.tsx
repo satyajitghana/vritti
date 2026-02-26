@@ -43,7 +43,7 @@ const PRODUCTS = [
 
 export default function EcommerceVideoHero() {
   const [isPlaying, setIsPlaying] = useState(true)
-  const playerRef = useRef<any>(null)
+  const playerRef = useRef<YT.Player | null>(null)
   const [playerReady, setPlayerReady] = useState(false)
 
   useEffect(() => {
@@ -51,8 +51,8 @@ export default function EcommerceVideoHero() {
     tag.src = "https://www.youtube.com/iframe_api"
     const firstScriptTag = document.getElementsByTagName("script")[0]
     firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag)
-    ;(window as any).onYouTubeIframeAPIReady = () => {
-      playerRef.current = new (window as any).YT.Player("youtube-player", {
+    ;(window as unknown as { onYouTubeIframeAPIReady: () => void }).onYouTubeIframeAPIReady = () => {
+      playerRef.current = new YT.Player("youtube-player", {
         videoId: "YCIuEU2y8XI",
         playerVars: {
           autoplay: 1,

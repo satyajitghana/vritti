@@ -113,6 +113,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/three": "^0.182.0",
+    "@types/youtube": "^0.1.2",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "postcss": "^8",

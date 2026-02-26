@@ -91,7 +91,7 @@ const Carousel = memo(
     isCarouselActive,
   }: {
     handleClick: (imgUrl: string, index: number) => void
-    controls: any
+    controls: ReturnType<typeof useAnimation>
     cards: string[]
     isCarouselActive: boolean
   }) => {
