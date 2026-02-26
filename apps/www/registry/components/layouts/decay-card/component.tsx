@@ -13,7 +13,7 @@ interface DecayCardProps {
 const DecayCard: React.FC<DecayCardProps> = ({
   width = 300,
   height = 400,
-  image = 'https://picsum.photos/300/400?grayscale',
+  image = '/placeholder.jpg',
   children
 }) => {
   const svgRef = useRef<HTMLDivElement | null>(null);

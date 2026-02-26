@@ -7,7 +7,7 @@ export default function BlogLargePreview() {
     <div className="container mx-auto grid h-full w-full grid-cols-1 items-center gap-x-16 gap-y-6 py-16 lg:grid-cols-2">
       <img
         alt="blog preview"
-        src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&auto=format&fit=crop"
+        src="/placeholder.jpg"
         className="h-full w-full rounded-lg object-cover object-center shadow-lg"
       />
       <div>
@@ -30,7 +30,7 @@ export default function BlogLargePreview() {
         <div className="flex items-center gap-3">
           <Avatar>
             <AvatarImage
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&auto=format&fit=crop"
+              src="/basic-img.png"
               alt="Otto Gonzalez"
             />
             <AvatarFallback>OG</AvatarFallback>

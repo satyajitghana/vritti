@@ -24,7 +24,7 @@ export default function IconCloudExample() {
   )
 
   return (
-    <div className="relative flex h-[400px] w-full max-w-lg items-center justify-center overflow-hidden">
+    <div className="relative flex h-[400px] w-full max-w-lg items-center justify-center overflow-hidden bg-zinc-50 dark:bg-zinc-900 rounded-lg">
       <IconCloud images={images} />
     </div>
   )

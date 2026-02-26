@@ -36,7 +36,7 @@ export default function Web3NftGallery() {
           <div>
             <Avatar className="h-10 w-10">
               <AvatarImage
-                src="https://images.unsplash.com/photo-1623853434105-8e7a72898180?auto=format&fit=crop&q=80&w=400&h=400"
+                src="/basic-img.png"
                 alt="emma"
               />
               <AvatarFallback>EM</AvatarFallback>

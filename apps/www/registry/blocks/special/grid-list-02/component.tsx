@@ -6,25 +6,25 @@ const people = [
     name: "Timur Ercan",
     email: "timur@documenso.com",
     role: "Co-Founder / CEO",
-    imageUrl: "https://blocks.so/avatar-02.png",
+    imageUrl: "/basic-img.png",
   },
   {
     name: "Lucas Smith",
     email: "lucas@documenso.com",
     role: "Co-Founder / CTO",
-    imageUrl: "https://blocks.so/avatar-03.png",
+    imageUrl: "/basic-img.png",
   },
   {
     name: "Ephraim Duncan",
     email: "ephraim@documenso.com",
     role: "Software Engineer",
-    imageUrl: "https://blocks.so/avatar-01.png",
+    imageUrl: "/basic-img.png",
   },
   {
     name: "Catalin Pit",
     email: "catalin@documenso.com",
     role: "Software Engineer",
-    imageUrl: "https://blocks.so/avatar-04.png",
+    imageUrl: "/basic-img.png",
   },
 ];
 

@@ -29,7 +29,7 @@ export default function TestimonialSplit() {
             <div className="col-span-full grid justify-items-center md:col-span-4 md:justify-items-end">
               <Avatar className="h-24 w-24 md:h-64 md:w-64">
                 <AvatarImage
-                  src="https://images.unsplash.com/photo-1623853434105-8e7a72898180?auto=format&fit=crop&q=80&w=400&h=400"
+                  src="/basic-img.png"
                   alt="user profile"
                 />
                 <AvatarFallback>MG</AvatarFallback>

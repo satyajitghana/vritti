@@ -8,9 +8,9 @@ import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 
 const INITIAL_ITEMS = [
-  { id: 1, name: "Premium Cotton T-Shirt", size: "M", color: "Black", price: 49.99, quantity: 2, image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=200" },
-  { id: 2, name: "Slim Fit Jeans", size: "32", color: "Blue", price: 89.99, quantity: 1, image: "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&q=80&w=200" },
-  { id: 3, name: "Canvas Sneakers", size: "10", color: "White", price: 65.00, quantity: 1, image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&q=80&w=200" },
+  { id: 1, name: "Premium Cotton T-Shirt", size: "M", color: "Black", price: 49.99, quantity: 2, image: "/placeholder.jpg" },
+  { id: 2, name: "Slim Fit Jeans", size: "32", color: "Blue", price: 89.99, quantity: 1, image: "/placeholder.jpg" },
+  { id: 3, name: "Canvas Sneakers", size: "10", color: "White", price: 65.00, quantity: 1, image: "/placeholder.jpg" },
 ];
 
 export default function ShoppingCart() {

@@ -7,22 +7,22 @@ export default function AvatarStackExample() {
         <img
           alt="User 1"
           className="rounded-full"
-          src="https://i.pravatar.cc/40?img=1"
+          src="/basic-img.png"
         />
         <img
           alt="User 2"
           className="rounded-full"
-          src="https://i.pravatar.cc/40?img=2"
+          src="/basic-img.png"
         />
         <img
           alt="User 3"
           className="rounded-full"
-          src="https://i.pravatar.cc/40?img=3"
+          src="/basic-img.png"
         />
         <img
           alt="User 4"
           className="rounded-full"
-          src="https://i.pravatar.cc/40?img=4"
+          src="/basic-img.png"
         />
       </AvatarStack>
     </div>

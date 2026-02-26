@@ -114,7 +114,7 @@ export default function Ai05() {
 
   return (
     <div className="w-full px-4">
-      <div className="mx-auto flex h-96 w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-lg sm:w-3/5">
+      <div className="mx-auto flex h-96 w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
         <header className="flex items-center justify-between gap-4 border-b border-border/80 px-4 py-3">
           <div className="flex items-center gap-3">
             

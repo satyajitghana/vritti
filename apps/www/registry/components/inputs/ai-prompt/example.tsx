@@ -4,7 +4,7 @@ import AIPrompt from "./component"
 
 export default function AIPromptExample() {
   return (
-    <div className="flex items-center justify-center p-8">
+    <div className="flex w-full items-center justify-center p-8">
       <AIPrompt
         placeholder="What can I do for you?"
         onSubmit={(value, model) =>

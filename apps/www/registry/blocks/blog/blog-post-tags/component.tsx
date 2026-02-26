@@ -5,21 +5,21 @@ import { Button } from "@/components/ui/button"
 
 const POSTS = [
   {
-    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop",
+    img: "/placeholder.jpg",
     category: "Otto Gonzalez",
     title: "Autodesk looks to future of 3D printing with Project",
     desc: "Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens bed design but the back is too high for the beams and angle of the ceiling.",
     tags: ["Product", "Design", "UX"],
   },
   {
-    img: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&auto=format&fit=crop",
+    img: "/placeholder.jpg",
     category: "Ryan Samuel",
     title: "Lyft launching cross-platform service this week",
     desc: "Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens bed design but the back is too high for the beams and angle of the ceiling.",
     tags: ["Product", "Design", "UX"],
   },
   {
-    img: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&auto=format&fit=crop",
+    img: "/placeholder.jpg",
     category: "Nora Hazel",
     title: "6 insights into the French Fashion landscape",
     desc: "Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens bed design but the back is too high for the beams and angle of the ceiling.",

@@ -17,7 +17,7 @@ export default function SimpleCarouselExample() {
             className="w-48 h-32 mx-4 rounded-lg overflow-hidden shrink-0"
           >
             <img
-              src={`https://picsum.photos/seed/${i}/300/200`}
+              src="/placeholder.jpg"
               alt={`Slide ${i}`}
               className="w-full h-full object-cover"
             />

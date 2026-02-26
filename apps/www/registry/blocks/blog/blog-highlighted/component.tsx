@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 
 const FEATURED = {
-  image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200",
+  image: "/placeholder.jpg",
   tag: "Featured",
   title: "The Complete Guide to Modern Web Development in 2025",
   description: "Everything you need to know about building modern web applications, from frameworks to deployment strategies.",
@@ -15,19 +15,19 @@ const FEATURED = {
 
 const POSTS = [
   {
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=600",
+    image: "/placeholder.jpg",
     tag: "Design",
     title: "Component-Driven Development",
     date: "Dec 10, 2024",
   },
   {
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600",
+    image: "/placeholder.jpg",
     tag: "Analytics",
     title: "Measuring What Matters",
     date: "Dec 5, 2024",
   },
   {
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
+    image: "/placeholder.jpg",
     tag: "Engineering",
     title: "Performance Optimization Tips",
     date: "Nov 28, 2024",

@@ -8,7 +8,7 @@ export default function FloatExample() {
       <Float>
         <div className="w-40 h-40 shadow-2xl relative overflow-hidden hover:scale-105 duration-200 cursor-pointer transition-transform rounded-lg">
           <img
-            src="https://picsum.photos/seed/float/300/300"
+            src="/placeholder.jpg"
             className="w-full h-full object-cover absolute top-0 left-0"
             alt="Floating element"
           />

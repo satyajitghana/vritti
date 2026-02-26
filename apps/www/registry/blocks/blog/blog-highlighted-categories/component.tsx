@@ -14,25 +14,25 @@ import {
 
 const POSTS = [
   {
-    img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop",
+    img: "/placeholder.jpg",
     icon: Heart,
     title: "Cultural",
     desc: "257 spots",
   },
   {
-    img: "https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?w=800&auto=format&fit=crop",
+    img: "/placeholder.jpg",
     icon: Puzzle,
     title: "Modern Life",
     desc: "117 spots",
   },
   {
-    img: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&auto=format&fit=crop",
+    img: "/placeholder.jpg",
     icon: Globe,
     title: "Popularity",
     desc: "363 spots",
   },
   {
-    img: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop",
+    img: "/placeholder.jpg",
     icon: Mic,
     title: "Good Vibes",
     desc: "215 spots",

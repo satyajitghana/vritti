@@ -116,7 +116,7 @@ export default function PixelateSvgFilter({
               </feMerge>
             </>
           )}
-          {!crossLayers && <feMergeNode in="NORMAL" />}
+          {!crossLayers && <feMerge><feMergeNode in="NORMAL" /></feMerge>}
         </filter>
       </defs>
     </svg>

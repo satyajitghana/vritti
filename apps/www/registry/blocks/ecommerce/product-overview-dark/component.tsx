@@ -153,7 +153,7 @@ export default function ProductOverviewDark() {
           <div className="w-full lg:w-auto lg:max-w-lg">
             <div className="group relative overflow-hidden rounded-2xl border-2 border-white/20 bg-white/5 p-4 shadow-2xl backdrop-blur-sm">
               <img
-                src="https://images.unsplash.com/photo-1574015974293-817f0ebebb74?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=973"
+                src="/placeholder.jpg"
                 alt="Elegant Suite"
                 className="w-full rounded-xl transition-transform duration-500 group-hover:scale-105"
               />

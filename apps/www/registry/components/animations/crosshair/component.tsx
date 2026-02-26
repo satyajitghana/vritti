@@ -60,7 +60,17 @@ const Crosshair: React.FC<CrosshairProps> = ({ color = 'white', containerRef = n
       ty: { previous: 0, current: 0, amt: 0.15 }
     };
 
-    gsap.set([lineHorizontalRef.current, lineVerticalRef.current].filter(Boolean), { opacity: 0 });
+    gsap.set([lineHorizontalRef.current, lineVerticalRef.current].filter(Boolean), { opacity: 0.3 });
+
+    // Set initial centered position so lines are visible without mouse interaction
+    if (containerRef?.current) {
+      const bounds = containerRef.current.getBoundingClientRect();
+      if (lineVerticalRef.current) gsap.set(lineVerticalRef.current, { x: bounds.width / 2 });
+      if (lineHorizontalRef.current) gsap.set(lineHorizontalRef.current, { y: bounds.height / 2 });
+    } else {
+      if (lineVerticalRef.current) gsap.set(lineVerticalRef.current, { x: typeof window !== 'undefined' ? window.innerWidth / 2 : 0 });
+      if (lineHorizontalRef.current) gsap.set(lineHorizontalRef.current, { y: typeof window !== 'undefined' ? window.innerHeight / 2 : 0 });
+    }
 
     const onMouseMove = (_ev: Event) => {
       renderedStyles.tx.previous = renderedStyles.tx.current = mouse.x;
@@ -172,12 +182,12 @@ const Crosshair: React.FC<CrosshairProps> = ({ color = 'white', containerRef = n
       </svg>
       <div
         ref={lineHorizontalRef}
-        className={`absolute w-full h-px pointer-events-none opacity-0 transform translate-y-1/2`}
+        className={`absolute w-full h-px pointer-events-none opacity-30 transform translate-y-1/2`}
         style={{ background: color }}
       ></div>
       <div
         ref={lineVerticalRef}
-        className={`absolute h-full w-px pointer-events-none opacity-0 transform translate-x-1/2`}
+        className={`absolute h-full w-px pointer-events-none opacity-30 transform translate-x-1/2`}
         style={{ background: color }}
       ></div>
     </div>

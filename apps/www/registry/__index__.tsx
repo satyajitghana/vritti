@@ -3602,6 +3602,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/special/dropzone/example")),
     meta: {"tags":["interactive","upload","file"],"source":"kibo-ui"},
   },
+  "dropzone-upload": {
+    name: "dropzone-upload",
+    description: "A drag-and-drop file upload component with animated progress indicator and file validation.",
+    type: "registry:ui",
+    category: "inputs",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/components/inputs/dropzone-upload/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/inputs/dropzone-upload/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "dropzone-upload-demo": {
+    name: "dropzone-upload-demo",
+    description: "A drag-and-drop file upload component with animated progress indicator and file validation. (demo)",
+    type: "registry:example",
+    category: "inputs",
+    registryDependencies: ["dropzone-upload"],
+    files: [{
+      path: "registry/components/inputs/dropzone-upload/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/inputs/dropzone-upload/example")),
+    meta: undefined,
+  },
   "dualsparks": {
     name: "dualsparks",
     description: "Canvas-based dual corner spark waves with inward and outward animation",
@@ -6025,70 +6058,37 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/special/kbd/example")),
     meta: {"tags":["keyboard","shortcut","kbd","key"],"source":"scrollx-ui"},
   },
-  "kokonut-file-upload": {
-    name: "kokonut-file-upload",
+  "dropzone-upload": {
+    name: "dropzone-upload",
     description: "A drag-and-drop file upload component with animated progress indicator and file validation.",
     type: "registry:ui",
     category: "inputs",
     registryDependencies: undefined,
     dependencies: ["motion","lucide-react"],
     files: [{
-      path: "registry/components/inputs/kokonut-file-upload/component.tsx",
+      path: "registry/components/inputs/dropzone-upload/component.tsx",
       type: "registry:ui",
       target: ""
     }],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/components/inputs/kokonut-file-upload/component")
+      const mod = await import("@/registry/components/inputs/dropzone-upload/component")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
     meta: undefined,
   },
-  "kokonut-file-upload-demo": {
-    name: "kokonut-file-upload-demo",
+  "dropzone-upload-demo": {
+    name: "dropzone-upload-demo",
     description: "A drag-and-drop file upload component with animated progress indicator and file validation. (demo)",
     type: "registry:example",
     category: "inputs",
-    registryDependencies: ["kokonut-file-upload"],
+    registryDependencies: ["dropzone-upload"],
     files: [{
-      path: "registry/components/inputs/kokonut-file-upload/example.tsx",
+      path: "registry/components/inputs/dropzone-upload/example.tsx",
       type: "registry:example",
       target: ""
     }],
-    component: React.lazy(() => import("@/registry/components/inputs/kokonut-file-upload/example")),
-    meta: undefined,
-  },
-  "kokonut-loader": {
-    name: "kokonut-loader",
-    description: "An elegant monochrome loading spinner with multiple concentric rotating rings and breathing text animation.",
-    type: "registry:ui",
-    category: "animations",
-    registryDependencies: undefined,
-    dependencies: ["motion"],
-    files: [{
-      path: "registry/components/animations/kokonut-loader/component.tsx",
-      type: "registry:ui",
-      target: ""
-    }],
-    component: React.lazy(async () => {
-      const mod = await import("@/registry/components/animations/kokonut-loader/component")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
-      return { default: mod.default || mod[exportName] }
-    }),
-    meta: undefined,
-  },
-  "kokonut-loader-demo": {
-    name: "kokonut-loader-demo",
-    description: "An elegant monochrome loading spinner with multiple concentric rotating rings and breathing text animation. (demo)",
-    type: "registry:example",
-    category: "animations",
-    registryDependencies: ["kokonut-loader"],
-    files: [{
-      path: "registry/components/animations/kokonut-loader/example.tsx",
-      type: "registry:example",
-      target: ""
-    }],
-    component: React.lazy(() => import("@/registry/components/animations/kokonut-loader/example")),
+    component: React.lazy(() => import("@/registry/components/inputs/dropzone-upload/example")),
     meta: undefined,
   },
   "lamphome": {
@@ -7740,6 +7740,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/animations/orbit-images/example")),
     meta: {"tags":["animation"],"source":"react-bits"},
+  },
+  "orbit-loader": {
+    name: "orbit-loader",
+    description: "An elegant monochrome loading spinner with multiple concentric rotating rings and breathing text animation.",
+    type: "registry:ui",
+    category: "animations",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/animations/orbit-loader/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/animations/orbit-loader/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: undefined,
+  },
+  "orbit-loader-demo": {
+    name: "orbit-loader-demo",
+    description: "An elegant monochrome loading spinner with multiple concentric rotating rings and breathing text animation. (demo)",
+    type: "registry:example",
+    category: "animations",
+    registryDependencies: ["orbit-loader"],
+    files: [{
+      path: "registry/components/animations/orbit-loader/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/animations/orbit-loader/example")),
+    meta: undefined,
   },
   "orbiting-circles": {
     name: "orbiting-circles",

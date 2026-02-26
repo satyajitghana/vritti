@@ -15,7 +15,7 @@ interface ScrollTextProps {
 export default function ScrollText({
   texts = [
     "TailwindCSS",
-    "Kokonut UI",
+    "Vritti UI",
     "shadcn/ui",
     "Next.js",
     "Vercel",

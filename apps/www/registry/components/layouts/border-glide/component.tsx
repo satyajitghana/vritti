@@ -271,7 +271,7 @@ const BorderGlide: React.FC<BorderGlideProps> = ({
 
   return (
     <BorderGlideContext.Provider value={contextValue}>
-      <div className={cn('relative w-full', className)}>
+      <div className={cn('relative w-full h-full', className)}>
         <div className='relative w-full h-full overflow-hidden rounded-xl bg-transparent p-0.5'>
           <div className='absolute inset-0 pointer-events-none'>
             <MovingBorder

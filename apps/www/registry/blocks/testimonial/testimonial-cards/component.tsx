@@ -7,42 +7,42 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 
 const TESTIMONIALS = [
   {
-    image: "https://images.unsplash.com/photo-1641906840000-4b88f1d44de6?auto=format&fit=crop&q=80&w=400&h=400",
+    image: "/basic-img.png",
     name: "Jessica Devis",
     username: "@jessicadevis",
     quote: "The utility-first approach and extensive component library make it a breeze to create beautiful and responsive interfaces.",
     date: "Jan 17, 2024",
   },
   {
-    image: "https://images.unsplash.com/photo-1716662318479-a9c0f1cd1a0e?auto=format&fit=crop&q=80&w=400&h=400",
+    image: "/basic-img.png",
     name: "Lucian Eurel",
     username: "@lucianeurel",
     quote: "It's like having a superpower in your toolkit. The ability to craft custom designs quickly and efficiently with simple classes is unparalleled.",
     date: "Jan 18, 2024",
   },
   {
-    image: "https://images.unsplash.com/photo-1623853434105-8e7a72898180?auto=format&fit=crop&q=80&w=400&h=400",
+    image: "/basic-img.png",
     name: "Marcell Glock",
     username: "@marcelglock",
     quote: "The utility-first approach and extensive component library make it a breeze to create beautiful and responsive interfaces.",
     date: "Jan 19, 2024",
   },
   {
-    image: "https://images.unsplash.com/photo-1716662318479-a9c0f1cd1a0e?auto=format&fit=crop&q=80&w=400&h=400",
+    image: "/basic-img.png",
     name: "Linde Michele",
     username: "@lindemichele",
     quote: "With its clear and concise classes, I can easily communicate design intentions to my colleagues. It's a must-have tool for any web developer.",
     date: "Jan 20, 2024",
   },
   {
-    image: "https://images.unsplash.com/photo-1623853434105-8e7a72898180?auto=format&fit=crop&q=80&w=400&h=400",
+    image: "/basic-img.png",
     name: "Mary Joshiash",
     username: "@maryjoshiash",
     quote: "I've tried several CSS frameworks, but this is on a whole different level. It strikes the perfect balance between flexibility and design.",
     date: "Jan 21, 2024",
   },
   {
-    image: "https://images.unsplash.com/photo-1641906840000-4b88f1d44de6?auto=format&fit=crop&q=80&w=400&h=400",
+    image: "/basic-img.png",
     name: "Misha Stam",
     username: "@mishastam",
     quote: "Active community support makes it easy to get started. It's the ideal framework for achieving design excellence in web applications.",

@@ -9,7 +9,7 @@ import { Card, CardContent } from "@/components/ui/card"
 const SLIDES = [
   {
     image:
-      "https://images.unsplash.com/photo-1641906840000-4b88f1d44de6?auto=format&fit=crop&q=80&w=400&h=400",
+      "/basic-img.png",
     companyLogo: "https://v3.material-tailwind.com/logo/netflix.svg",
     name: "Linde Michel",
     role: "Social Media Executive, Netflix",
@@ -18,7 +18,7 @@ const SLIDES = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1716662318479-a9c0f1cd1a0e?auto=format&fit=crop&q=80&w=400&h=400",
+      "/basic-img.png",
     companyLogo: "https://v3.material-tailwind.com/logo/coinbase.svg",
     name: "John Down",
     role: "Visionary, Coinbase",
@@ -27,7 +27,7 @@ const SLIDES = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1623853434105-8e7a72898180?auto=format&fit=crop&q=80&w=400&h=400",
+      "/basic-img.png",
     companyLogo: "https://v3.material-tailwind.com/logo/spotify.svg",
     name: "Marcell Glock",
     role: "Chief Executive, Spotify",

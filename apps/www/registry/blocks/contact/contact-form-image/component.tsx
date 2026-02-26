@@ -64,7 +64,7 @@ export default function ContactFormImage() {
         </form>
       </div>
       <img
-        src="https://images.unsplash.com/photo-1658246944389-9e9ac0a85dda?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=1064"
+        src="/placeholder.jpg"
         alt="contact"
         className="hidden h-full w-full object-cover object-center md:block"
       />

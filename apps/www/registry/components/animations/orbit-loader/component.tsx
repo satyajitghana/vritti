@@ -12,7 +12,7 @@ interface LoaderProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: "sm" | "md" | "lg";
 }
 
-export default function KokonutLoader({
+export default function OrbitLoader({
   title = "Configuring your account...",
   subtitle = "Please wait while we prepare everything for you",
   size = "md",

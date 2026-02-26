@@ -6,19 +6,19 @@ import { Card } from "@/components/ui/card"
 const CARDS = [
   {
     image:
-      "https://images.unsplash.com/photo-1574015974293-817f0ebebb74?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=973",
+      "/placeholder.jpg",
     title: "New",
     subtitle: "Urban Chick Collection",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1661327930345-9c6714b603b3?auto=format&fit=crop&q=80&w=400&h=400",
+      "/placeholder.jpg",
     title: "Shop Sales",
     subtitle: "Urban Chick Collection",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1535220459927-c8428851fd45?auto=format&fit=crop&q=80&w=400&h=400",
+      "/placeholder.jpg",
     title: "50% off",
     subtitle: "Urban Chick Collection",
   },
@@ -57,7 +57,7 @@ export default function EcommerceGrid() {
         </div>
         <Card className="group relative mt-6 h-96 overflow-hidden border-0 p-0 shadow-lg transition-all hover:shadow-xl">
           <img
-            src="https://images.unsplash.com/photo-1559745482-57bfa9ca5a8a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1481"
+            src="/placeholder.jpg"
             alt="Formal Elegance"
             className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
           />
