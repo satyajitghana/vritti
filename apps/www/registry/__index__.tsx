@@ -859,6 +859,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/layouts/apple-activity-card/example")),
     meta: undefined,
   },
+  "apple-play-button": {
+    name: "apple-play-button",
+    description: "Elegant play button with Apple-inspired design and smooth expanding hover animation",
+    type: "registry:ui",
+    category: "buttons",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/buttons/apple-play-button/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/buttons/apple-play-button/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["button","play","apple","animation","toggle"],"source":"skiper-ui"},
+  },
+  "apple-play-button-demo": {
+    name: "apple-play-button-demo",
+    description: "Elegant play button with Apple-inspired design and smooth expanding hover animation (demo)",
+    type: "registry:example",
+    category: "buttons",
+    registryDependencies: ["apple-play-button"],
+    files: [{
+      path: "registry/components/buttons/apple-play-button/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/buttons/apple-play-button/example")),
+    meta: {"tags":["button","play","apple","animation","toggle"],"source":"skiper-ui"},
+  },
   "ascii-text": {
     name: "ascii-text",
     description: "Renders text with an ASCII art style effect using Three.js.",
@@ -4196,6 +4229,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/special/file-tree/example")),
     meta: {"tags":["special"]},
   },
+  "file-upload": {
+    name: "file-upload",
+    description: "Animated file upload dropzone with drag-and-drop, progress indicator, and file validation",
+    type: "registry:ui",
+    category: "inputs",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react","motion"],
+    files: [{
+      path: "registry/components/inputs/file-upload/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/inputs/file-upload/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["upload","file","dropzone","drag-and-drop","progress"],"source":"kokonutui"},
+  },
+  "file-upload-demo": {
+    name: "file-upload-demo",
+    description: "Animated file upload dropzone with drag-and-drop, progress indicator, and file validation (demo)",
+    type: "registry:example",
+    category: "inputs",
+    registryDependencies: ["file-upload"],
+    files: [{
+      path: "registry/components/inputs/file-upload/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/inputs/file-upload/example")),
+    meta: {"tags":["upload","file","dropzone","drag-and-drop","progress"],"source":"kokonutui"},
+  },
   "flashy-card": {
     name: "flashy-card",
     description: "A card with animated activation toggle, glare effect, and ripple animation",
@@ -4426,6 +4492,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/layouts/floating-panel/example")),
     meta: {"tags":["layout","panel","floating"],"source":"cult-ui"},
+  },
+  "flow-field": {
+    name: "flow-field",
+    description: "Canvas particle flow field background with organic noise-driven streams of glowing light",
+    type: "registry:ui",
+    category: "backgrounds",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/backgrounds/flow-field/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/backgrounds/flow-field/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["canvas","particles","flow","noise","background","animation"],"source":"kokonutui"},
+  },
+  "flow-field-demo": {
+    name: "flow-field-demo",
+    description: "Canvas particle flow field background with organic noise-driven streams of glowing light (demo)",
+    type: "registry:example",
+    category: "backgrounds",
+    registryDependencies: ["flow-field"],
+    files: [{
+      path: "registry/components/backgrounds/flow-field/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/backgrounds/flow-field/example")),
+    meta: {"tags":["canvas","particles","flow","noise","background","animation"],"source":"kokonutui"},
   },
   "flowing-menu": {
     name: "flowing-menu",
@@ -10706,6 +10805,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/layouts/spotlight-card/example")),
     meta: {"tags":["layouts"]},
   },
+  "spotlight-cards": {
+    name: "spotlight-cards",
+    description: "Feature grid with aurora ambient glow, magnetic 3D tilt, and focus-dim sibling cards",
+    type: "registry:ui",
+    category: "layouts",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react","motion"],
+    files: [{
+      path: "registry/components/layouts/spotlight-cards/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/layouts/spotlight-cards/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["cards","grid","spotlight","tilt","3d","hover","features"],"source":"kokonutui"},
+  },
+  "spotlight-cards-demo": {
+    name: "spotlight-cards-demo",
+    description: "Feature grid with aurora ambient glow, magnetic 3D tilt, and focus-dim sibling cards (demo)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["spotlight-cards"],
+    files: [{
+      path: "registry/components/layouts/spotlight-cards/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/spotlight-cards/example")),
+    meta: {"tags":["cards","grid","spotlight","tilt","3d","hover","features"],"source":"kokonutui"},
+  },
   "squares": {
     name: "squares",
     description: "An animated squares pattern background effect.",
@@ -11497,6 +11629,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/text/text-reveal/example")),
     meta: {"tags":["text","animation"]},
+  },
+  "text-roll": {
+    name: "text-roll",
+    description: "Text roll hover effect with staggered character animations that reveal text from below",
+    type: "registry:ui",
+    category: "text",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/text/text-roll/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/text/text-roll/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["text","roll","hover","animation","stagger","navigation"],"source":"skiper-ui"},
+  },
+  "text-roll-demo": {
+    name: "text-roll-demo",
+    description: "Text roll hover effect with staggered character animations that reveal text from below (demo)",
+    type: "registry:example",
+    category: "text",
+    registryDependencies: ["text-roll"],
+    files: [{
+      path: "registry/components/text/text-roll/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/text/text-roll/example")),
+    meta: {"tags":["text","roll","hover","animation","stagger","navigation"],"source":"skiper-ui"},
   },
   "text-spotlight": {
     name: "text-spotlight",

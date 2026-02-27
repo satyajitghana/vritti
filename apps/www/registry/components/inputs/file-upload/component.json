@@ -1,0 +1,12 @@
+{
+  "name": "file-upload",
+  "type": "component",
+  "description": "Animated file upload dropzone with drag-and-drop, progress indicator, and file validation",
+  "category": "inputs",
+  "dependencies": ["lucide-react", "motion"],
+  "files": [],
+  "meta": {
+    "tags": ["upload", "file", "dropzone", "drag-and-drop", "progress"],
+    "source": "kokonutui"
+  }
+}
