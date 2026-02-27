@@ -13,6 +13,7 @@ import { THEME_PRESETS, type ThemePreset, type ThemeColors } from '@/lib/theme-p
 import { useThemeStore, selectCurrentColors } from '@/lib/stores/theme-store';
 // Theme is now applied globally via ThemeStyleApplier in root layout
 import { toLabel } from '@/lib/theme/color-utils';
+import { resolveFontFamily } from '@/lib/theme/apply-theme';
 import { generateCSS } from '@/lib/theme/code-generator';
 import { ActionBar } from '@/components/theme/action-bar';
 import { ColorPickerEnhanced } from '@/components/theme/color-picker/color-picker-enhanced';
@@ -271,19 +272,19 @@ export function ThemeEditor() {
               <h4 className="text-sm font-semibold">Preview</h4>
               <div className="rounded-md border p-3">
                 <p className="text-xs text-muted-foreground mb-1">Sans</p>
-                <p className="text-lg" style={{ fontFamily: fontSans }}>
+                <p className="text-lg" style={{ fontFamily: resolveFontFamily(fontSans) }}>
                   The quick brown fox jumps over the lazy dog
                 </p>
               </div>
               <div className="rounded-md border p-3">
                 <p className="text-xs text-muted-foreground mb-1">Serif</p>
-                <p className="text-lg" style={{ fontFamily: fontSerif }}>
+                <p className="text-lg" style={{ fontFamily: resolveFontFamily(fontSerif, 'serif') }}>
                   The quick brown fox jumps over the lazy dog
                 </p>
               </div>
               <div className="rounded-md border p-3">
                 <p className="text-xs text-muted-foreground mb-1">Mono</p>
-                <p className="text-lg" style={{ fontFamily: fontMono }}>
+                <p className="text-lg" style={{ fontFamily: resolveFontFamily(fontMono, 'monospace') }}>
                   The quick brown fox jumps over the lazy dog
                 </p>
               </div>
