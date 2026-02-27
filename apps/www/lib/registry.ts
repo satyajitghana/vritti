@@ -110,10 +110,18 @@ async function getFileContent(file: RegistryFileInput) {
 
   let code = sourceFile.getFullText()
 
-  // Some registry items uses default export.
+  // Some registry items use default export.
   // We want to use named export instead.
   if (file.type !== "registry:page") {
-    code = code.replaceAll("export default", "export")
+    // "export default <Identifier>" → "export { <Identifier> }"
+    code = code.replace(
+      /export\s+default\s+(?!(function|class)\b)(\w+)/g,
+      "export { $2 }"
+    )
+    // "export default function" → "export function"
+    code = code.replaceAll("export default function", "export function")
+    // "export default class" → "export class"
+    code = code.replaceAll("export default class", "export class")
   }
 
   // Fix imports.
