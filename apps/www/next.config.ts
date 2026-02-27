@@ -4,7 +4,9 @@ import { createMDX } from 'fumadocs-mdx/next';
 const withMDX = createMDX();
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  outputFileTracingIncludes: {
+    '/r/*': ['./registry/**/*'],
+  },
 };
 
 export default withMDX(nextConfig);
