@@ -26,13 +26,34 @@ pnpm --filter @vritti/www tsx apps/www/scripts/generate-docs.mts
 
 ## Testing with Playwright
 
-Use Python Playwright to take screenshots and verify the site visually. Install and use it like this:
+Use Python Playwright to take screenshots and verify the site visually.
+
+### Setup
 
 ```bash
-# Install (already available in the environment)
+# 1. Install Python Playwright
 pip install playwright
+
+# 2. Try the normal browser install first
 python3 -m playwright install chromium
 
+# 3. If DNS for storage.googleapis.com is blocked, download manually:
+#    Check browsers.json for the required version:
+#    cat /usr/local/lib/python3.11/dist-packages/playwright/driver/package/browsers.json
+#    Then download via curl (cdn.playwright.dev usually works):
+CHROME_VERSION="145.0.7632.6"  # Update from browsers.json browserVersion
+mkdir -p /root/.cache/ms-playwright/chromium-1208
+curl -L -o /tmp/chrome-linux64.zip "https://cdn.playwright.dev/chrome-for-testing-public/${CHROME_VERSION}/linux64/chrome-linux64.zip"
+cd /root/.cache/ms-playwright/chromium-1208 && unzip -q -o /tmp/chrome-linux64.zip
+
+mkdir -p /root/.cache/ms-playwright/chromium_headless_shell-1208
+curl -L -o /tmp/chrome-headless-shell-linux64.zip "https://cdn.playwright.dev/chrome-for-testing-public/${CHROME_VERSION}/linux64/chrome-headless-shell-linux64.zip"
+cd /root/.cache/ms-playwright/chromium_headless_shell-1208 && unzip -q -o /tmp/chrome-headless-shell-linux64.zip
+```
+
+### Usage
+
+```bash
 # Take a screenshot
 python3 -c "
 from playwright.sync_api import sync_playwright
