@@ -172,12 +172,9 @@ export function applyThemeToElement(
     element.style.setProperty('--selection-foreground', colorFormatter(bg, 'hsl', '4'));
   }
 
-  // Toggle dark class
-  if (mode === 'dark') {
-    element.classList.add('dark');
-  } else {
-    element.classList.remove('dark');
-  }
+  // Note: dark class is managed exclusively by next-themes (via ThemeStyleApplier
+  // forward sync). Do NOT toggle it here — doing so would fight with next-themes'
+  // MutationObserver and cause an infinite re-render loop.
 }
 
 /**
