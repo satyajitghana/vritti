@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useTheme } from 'next-themes';
 import { useThemeStore } from '@/lib/stores/theme-store';
 import { applyThemeToElement, applyFontsToElement } from '@/lib/theme/apply-theme';
@@ -21,17 +21,26 @@ export function ThemeStyleApplier() {
   const fontSerif = useThemeStore((s) => s.fontSerif);
   const { setTheme: setNextTheme, resolvedTheme } = useTheme();
 
+  // Refs for unstable function references to avoid infinite effect loops.
+  // next-themes' setTheme is recreated on every context update, so including
+  // it directly in effect deps would cause the forward sync to re-fire endlessly.
+  const setNextThemeRef = useRef(setNextTheme);
+  setNextThemeRef.current = setNextTheme;
+  const activeModeRef = useRef(activeMode);
+  activeModeRef.current = activeMode;
+
   // Reverse sync: when next-themes changes (e.g. navbar toggle, command menu),
-  // update Zustand store so CSS variables are applied for the correct mode
+  // update Zustand store so CSS variables are applied for the correct mode.
+  // Only depends on resolvedTheme to avoid ping-pong with forward sync.
   useEffect(() => {
     if (
       resolvedTheme &&
       (resolvedTheme === 'light' || resolvedTheme === 'dark') &&
-      resolvedTheme !== activeMode
+      resolvedTheme !== activeModeRef.current
     ) {
       setActiveMode(resolvedTheme);
     }
-  }, [resolvedTheme, activeMode, setActiveMode]);
+  }, [resolvedTheme, setActiveMode]);
 
   // Apply theme CSS variables to root element
   useEffect(() => {
@@ -41,10 +50,11 @@ export function ThemeStyleApplier() {
     applyFontsToElement(root, { sans: fontSans, mono: fontMono, serif: fontSerif });
   }, [config, activeMode, fontSans, fontMono, fontSerif]);
 
-  // Forward sync: keep next-themes in sync with Zustand store
+  // Forward sync: keep next-themes in sync with Zustand store.
+  // Uses ref for setNextTheme to avoid re-firing when the function reference changes.
   useEffect(() => {
-    setNextTheme(activeMode);
-  }, [activeMode, setNextTheme]);
+    setNextThemeRef.current(activeMode);
+  }, [activeMode]);
 
   return null;
 }
