@@ -20,7 +20,7 @@ const DATA = [
     name: "@thedreamytrees",
     desc: "Owner",
     profileImg:
-      "https://images.unsplash.com/photo-1623853434105-8e7a72898180?auto=format&fit=crop&q=80&w=400&h=400",
+      "/basic-img.png",
     price: "1,3 BTC",
     time: "23h:03m:33s",
   },
@@ -29,7 +29,7 @@ const DATA = [
     name: "@lindemichael",
     desc: "Creator",
     profileImg:
-      "https://images.unsplash.com/photo-1716662318479-a9c0f1cd1a0e?auto=format&fit=crop&q=80&w=400&h=400",
+      "/basic-img.png",
     price: "0,4 BTC",
     time: "23h:03m:33s",
   },

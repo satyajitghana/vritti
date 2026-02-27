@@ -42,14 +42,14 @@ export default function CardFlip({
             "[backface-visibility:hidden] [transform:rotateY(0deg)]",
             "overflow-hidden rounded-2xl",
             "bg-zinc-50 dark:bg-zinc-900",
-            "border border-zinc-200 dark:border-zinc-800/50",
-            "shadow-sm dark:shadow-lg",
+            "border border-zinc-300 dark:border-zinc-800/50",
+            "shadow-md dark:shadow-lg",
             "transition-all duration-700",
             "group-hover:shadow-lg dark:group-hover:shadow-xl",
             isFlipped ? "opacity-0" : "opacity-100"
           )}
         >
-          <div className="relative h-full overflow-hidden bg-gradient-to-b from-zinc-100 to-white dark:from-zinc-900 dark:to-black">
+          <div className="relative h-full overflow-hidden bg-gradient-to-b from-zinc-200 to-zinc-50 dark:from-zinc-900 dark:to-black">
             <div className="absolute inset-0 flex items-start justify-center pt-24">
               <div className="relative flex h-[100px] w-[200px] items-center justify-center">
                 {[...Array(10)].map((_, i) => (
@@ -141,7 +141,7 @@ export default function CardFlip({
         </div>
       </div>
 
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes cardFlipScale {
           0% {
             transform: scale(2);
@@ -159,7 +159,7 @@ export default function CardFlip({
             box-shadow: 0px 10px 20px rgba(255, 165, 0, 0);
           }
         }
-      `}</style>
+      `}} />
     </div>
   )
 }

@@ -73,7 +73,7 @@ export default function ModalDelete() {
                   <CardContent className="flex items-start justify-between p-3">
                     <div className="flex items-center gap-4">
                       <img
-                        src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100&h=100&fit=crop&crop=center&q=80"
+                        src="/placeholder.jpg"
                         alt={name}
                         className="h-12 w-12 rounded object-cover object-center"
                       />

@@ -22,7 +22,7 @@ export default function AccountBasicInfo() {
               <div className="flex items-center gap-6">
                 <div className="relative">
                   <Avatar className="h-20 w-20">
-                    <AvatarImage src="https://images.unsplash.com/photo-1716662318479-a9c0f1cd1a0e?auto=format&fit=crop&q=80&w=200" />
+                    <AvatarImage src="/basic-img.png" />
                     <AvatarFallback>JD</AvatarFallback>
                   </Avatar>
                   <button className="bg-primary text-primary-foreground absolute -bottom-1 -right-1 flex h-7 w-7 items-center justify-center rounded-full">

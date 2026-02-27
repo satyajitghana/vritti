@@ -108,17 +108,17 @@ export default function ModalForm() {
 
           <div className="space-y-6">
             <User
-              img="https://i.pravatar.cc/150?img=1"
+              img="/basic-img.png"
               name="Emma Roberts"
               email="emma@mail.com"
             />
             <User
-              img="https://i.pravatar.cc/150?img=2"
+              img="/basic-img.png"
               name="John Smith"
               email="john@mail.com"
             />
             <User
-              img="https://i.pravatar.cc/150?img=3"
+              img="/basic-img.png"
               name="Sarah Johnson"
               email="sarah@mail.com"
             />

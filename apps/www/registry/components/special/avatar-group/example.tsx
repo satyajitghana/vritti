@@ -1,10 +1,10 @@
 import { AvatarGroup } from "./component";
 
 const avatars = [
-  { imageUrl: "https://i.pravatar.cc/150?img=1", name: "Alice" },
-  { imageUrl: "https://i.pravatar.cc/150?img=2", name: "Bob" },
-  { imageUrl: "https://i.pravatar.cc/150?img=3", name: "Charlie" },
-  { imageUrl: "https://i.pravatar.cc/150?img=4", name: "Diana" },
+  { imageUrl: "/basic-img.png", name: "Alice" },
+  { imageUrl: "/basic-img.png", name: "Bob" },
+  { imageUrl: "/basic-img.png", name: "Charlie" },
+  { imageUrl: "/basic-img.png", name: "Diana" },
 ];
 
 export default function AvatarGroupExample() {

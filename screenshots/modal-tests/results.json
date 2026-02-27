@@ -1,0 +1,76 @@
+{
+  "modal-alert": {
+    "status": "error",
+    "message": "Page.goto: Timeout 20000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/preview/modal-alert-demo\", waiting until \"networkidle\"\n"
+  },
+  "modal-confirmation": {
+    "status": "pass",
+    "message": "Modal opened successfully (trigger: 'Open Modal')",
+    "dialog_elements": 3
+  },
+  "modal-cookie": {
+    "status": "pass",
+    "message": "Modal opened successfully (trigger: 'Open Modal')",
+    "dialog_elements": 3
+  },
+  "modal-delete": {
+    "status": "pass",
+    "message": "Modal opened successfully (trigger: 'Open Modal')",
+    "dialog_elements": 3
+  },
+  "modal-feedback": {
+    "status": "pass",
+    "message": "Modal opened successfully (trigger: 'Open Modal')",
+    "dialog_elements": 3
+  },
+  "modal-form": {
+    "status": "pass",
+    "message": "Modal opened successfully (trigger: 'Open Modal')",
+    "dialog_elements": 3
+  },
+  "modal-invite": {
+    "status": "pass",
+    "message": "Modal opened successfully (trigger: 'Invite Team Members')",
+    "dialog_elements": 3
+  },
+  "modal-newsletter": {
+    "status": "pass",
+    "message": "Modal opened successfully (trigger: 'Open Modal')",
+    "dialog_elements": 3
+  },
+  "modal-notification": {
+    "status": "pass",
+    "message": "Modal opened successfully (trigger: 'Open Modal')",
+    "dialog_elements": 3
+  },
+  "modal-pricing": {
+    "status": "pass",
+    "message": "Modal opened successfully (trigger: 'Open Modal')",
+    "dialog_elements": 3
+  },
+  "modal-profile": {
+    "status": "pass",
+    "message": "Modal opened successfully (trigger: 'Edit Profile')",
+    "dialog_elements": 3
+  },
+  "modal-settings": {
+    "status": "pass",
+    "message": "Modal opened successfully (trigger: 'Open Modal')",
+    "dialog_elements": 3
+  },
+  "modal-share": {
+    "status": "pass",
+    "message": "Modal opened successfully (trigger: 'Open Modal')",
+    "dialog_elements": 3
+  },
+  "modal-success": {
+    "status": "pass",
+    "message": "Modal opened successfully (trigger: 'Open Modal')",
+    "dialog_elements": 3
+  },
+  "limited-offer-dialog": {
+    "status": "pass",
+    "message": "Modal opened successfully (trigger: 'Open Offer Dialog')",
+    "dialog_elements": 3
+  }
+}

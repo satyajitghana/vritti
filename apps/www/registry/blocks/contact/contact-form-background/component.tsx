@@ -12,7 +12,7 @@ export default function ContactFormBackground() {
         className="absolute inset-0 bg-cover bg-center opacity-20"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&auto=format&fit=crop')",
+            "url('/placeholder.jpg')",
         }}
       />
       <div className="relative z-10 container mx-auto">

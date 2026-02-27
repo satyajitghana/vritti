@@ -45,7 +45,7 @@ const PRODUCTS = [
   {
     id: 1,
     image:
-      "https://images.unsplash.com/photo-1574015974293-817f0ebebb74?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=973",
+      "/placeholder.jpg",
     brand: "Zegna",
     name: "Cable-knit cashmere cardigan",
     price: "€3,450",
@@ -54,7 +54,7 @@ const PRODUCTS = [
   {
     id: 2,
     image:
-      "https://images.unsplash.com/photo-1559745482-57bfa9ca5a8a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1481",
+      "/placeholder.jpg",
     brand: "Zegna",
     name: "Cotton and cashmere shirt",
     price: "€675",
@@ -63,7 +63,7 @@ const PRODUCTS = [
   {
     id: 3,
     image:
-      "https://images.unsplash.com/photo-1737608734653-d1eaad541d46?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1027",
+      "/placeholder.jpg",
     brand: "Zegna",
     name: "Wool straight pants",
     price: "€1,450",
@@ -72,7 +72,7 @@ const PRODUCTS = [
   {
     id: 4,
     image:
-      "https://images.unsplash.com/photo-1661327930345-9c6714b603b3?auto=format&fit=crop&q=80&w=400&h=400",
+      "/placeholder.jpg",
     brand: "Zegna",
     name: "Cashmere sweater",
     price: "€1,950",

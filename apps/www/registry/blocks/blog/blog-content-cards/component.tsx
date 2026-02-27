@@ -13,35 +13,35 @@ import {
 
 const POSTS = [
   {
-    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop",
+    img: "/placeholder.jpg",
     tag: "House",
     title: "Shared Coworking",
     desc: "Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons.",
     date: "Posted on 26 May",
     author: {
-      img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&auto=format&fit=crop",
+      img: "/basic-img.png",
       name: "Otto Gonzalez",
     },
   },
   {
-    img: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&auto=format&fit=crop",
+    img: "/placeholder.jpg",
     tag: "Office",
     title: "Really Housekeeping",
     desc: "Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons.",
     date: "Posted on 03 May",
     author: {
-      img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&auto=format&fit=crop",
+      img: "/basic-img.png",
       name: "Chriss Smahos",
     },
   },
   {
-    img: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&auto=format&fit=crop",
+    img: "/placeholder.jpg",
     tag: "Hub",
     title: "Coworking Office",
     desc: "Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons.",
     date: "Posted on 12 April",
     author: {
-      img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&auto=format&fit=crop",
+      img: "/basic-img.png",
       name: "Elijah Miller",
     },
   },

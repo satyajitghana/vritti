@@ -4,11 +4,11 @@ import { useRef } from "react";
 import BoxCarousel, { type BoxCarouselRef, type CarouselItem } from "./component";
 
 const items: CarouselItem[] = [
-  { id: "1", type: "image", src: "https://picsum.photos/seed/box1/400/300", alt: "Image 1" },
-  { id: "2", type: "image", src: "https://picsum.photos/seed/box2/400/300", alt: "Image 2" },
-  { id: "3", type: "image", src: "https://picsum.photos/seed/box3/400/300", alt: "Image 3" },
-  { id: "4", type: "image", src: "https://picsum.photos/seed/box4/400/300", alt: "Image 4" },
-  { id: "5", type: "image", src: "https://picsum.photos/seed/box5/400/300", alt: "Image 5" },
+  { id: "1", type: "image", src: "/placeholder.jpg", alt: "Image 1" },
+  { id: "2", type: "image", src: "/placeholder.jpg", alt: "Image 2" },
+  { id: "3", type: "image", src: "/placeholder.jpg", alt: "Image 3" },
+  { id: "4", type: "image", src: "/placeholder.jpg", alt: "Image 4" },
+  { id: "5", type: "image", src: "/placeholder.jpg", alt: "Image 5" },
 ];
 
 export default function BoxCarouselExample() {

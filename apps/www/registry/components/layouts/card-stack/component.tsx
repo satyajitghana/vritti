@@ -23,7 +23,7 @@ const defaultProducts: Product[] = [
     title: "Quick Pay",
     subtitle: "Instant Transfers",
     image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop&q=80",
+      "/placeholder.jpg",
     specs: [
       { label: "Speed", value: "Instant" },
       { label: "Security", value: "256-bit" },
@@ -36,7 +36,7 @@ const defaultProducts: Product[] = [
     title: "Crypto Pay",
     subtitle: "Web3 Payments",
     image:
-      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&auto=format&fit=crop&q=80",
+      "/placeholder.jpg",
     specs: [
       { label: "Network", value: "Multi-chain" },
       { label: "Gas", value: "Optimized" },
@@ -49,7 +49,7 @@ const defaultProducts: Product[] = [
     title: "Business Pay",
     subtitle: "Enterprise Solutions",
     image:
-      "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=800&auto=format&fit=crop&q=80",
+      "/placeholder.jpg",
     specs: [
       { label: "Volume", value: "Unlimited" },
       { label: "API", value: "REST/SDK" },
@@ -62,7 +62,7 @@ const defaultProducts: Product[] = [
     title: "Global Pay",
     subtitle: "International Transfers",
     image:
-      "https://images.unsplash.com/photo-1629131726692-1accd0c53ce0?w=800&auto=format&fit=crop&q=80",
+      "/placeholder.jpg",
     specs: [
       { label: "Countries", value: "180+" },
       { label: "FX Rate", value: "Real-time" },

@@ -7,7 +7,7 @@ export default function LensExample() {
     <div className="relative max-w-md rounded-lg border p-4">
       <Lens zoomFactor={2} lensSize={150} isStatic={false} ariaLabel="Zoom Area">
         <img
-          src="https://images.unsplash.com/photo-1736606355698-5efdb410fe93?q=80&w=500&auto=format"
+          src="/placeholder.jpg"
           alt="Example image"
           width={500}
           height={300}

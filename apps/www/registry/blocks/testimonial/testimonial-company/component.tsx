@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card"
 const TESTIMONIALS = [
   {
     image:
-      "https://images.unsplash.com/photo-1716662318479-a9c0f1cd1a0e?auto=format&fit=crop&q=80&w=400&h=400",
+      "/basic-img.png",
     name: "Lucian Eurel",
     date: "Posted on 27 February",
     quote:
@@ -18,7 +18,7 @@ const TESTIMONIALS = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1623853434105-8e7a72898180?auto=format&fit=crop&q=80&w=400&h=400",
+      "/basic-img.png",
     name: "Lucian Eurel",
     date: "Posted on 28 February",
     quote:
@@ -28,7 +28,7 @@ const TESTIMONIALS = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1641906840000-4b88f1d44de6?auto=format&fit=crop&q=80&w=400&h=400",
+      "/basic-img.png",
     name: "Mathew Glock",
     date: "Posted on 29 February",
     quote:

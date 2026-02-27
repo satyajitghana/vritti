@@ -1,0 +1,46 @@
+{
+  "success": [
+    "black-hole",
+    "ballpit",
+    "balatro",
+    "particles-3d",
+    "galaxy",
+    "hyperspeed",
+    "liquid-chrome",
+    "liquid-ether",
+    "grid-distortion",
+    "silk",
+    "lanyard",
+    "antigravity",
+    "gravity",
+    "aurora",
+    "aurora-dots",
+    "beams",
+    "beams-background",
+    "bolt-strike",
+    "waves",
+    "warp-background",
+    "bg-animated-fractal-dot-grid",
+    "canvas-fractal-grid",
+    "color-bends",
+    "fluid-cursor",
+    "gradient-background",
+    "iridescent",
+    "lightning",
+    "noise-gradient",
+    "orb",
+    "particles",
+    "pixel-trail",
+    "silk-shader",
+    "splash-cursor",
+    "star-border",
+    "threads",
+    "wobble"
+  ],
+  "error": [
+    {
+      "name": "model-viewer",
+      "error": "Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3000/preview/model-viewer-demo\", waiting until \"networkidle\"\n"
+    }
+  ]
+}

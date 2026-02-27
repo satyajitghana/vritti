@@ -10,7 +10,7 @@ export default function TestimonialGradient() {
         <Card className="grid grid-cols-1 items-center gap-4 border-0 bg-transparent shadow-none md:grid-cols-12 md:gap-6">
           <div className="md:col-span-4">
             <img
-              src="https://images.unsplash.com/photo-1716662318479-a9c0f1cd1a0e?auto=format&fit=crop&q=80&w=400&h=400"
+              src="/basic-img.png"
               alt="user profile"
               className="h-40 w-full rounded-lg object-cover md:h-56"
             />

@@ -6,7 +6,6 @@ import { useRef, useState, useEffect, memo, ReactNode } from 'react';
 import { Canvas, createPortal, useFrame, useThree, ThreeElements } from '@react-three/fiber';
 import {
   useFBO,
-  useGLTF,
   useScroll,
   Image,
   Scroll,
@@ -16,6 +15,24 @@ import {
   Text
 } from '@react-three/drei';
 import { easing } from 'maath';
+
+/**
+ * Procedural geometry lookup used in place of loading external .glb files.
+ * Each key matches the `geometryKey` the mode components expect.
+ */
+const PROCEDURAL_GEOMETRIES: Record<string, () => THREE.BufferGeometry> = {
+  Cylinder: () => new THREE.CylinderGeometry(1, 1, 0.4, 64),
+  Cube: () => new THREE.BoxGeometry(1, 1, 1),
+};
+
+function useProceduralGeometry(geometryKey: string) {
+  const [geo] = useState(() => {
+    const factory = PROCEDURAL_GEOMETRIES[geometryKey];
+    if (!factory) throw new Error(`Unknown geometry key: ${geometryKey}`);
+    return factory();
+  });
+  return geo;
+}
 
 type Mode = 'lens' | 'bar' | 'cube';
 
@@ -67,7 +84,6 @@ type MeshProps = ThreeElements['mesh'];
 
 interface ModeWrapperProps extends MeshProps {
   children?: ReactNode;
-  glb: string;
   geometryKey: string;
   lockToBottom?: boolean;
   followPointer?: boolean;
@@ -84,7 +100,6 @@ type ZoomGroup = THREE.Group & { children: ZoomMesh[] };
 
 const ModeWrapper = memo(function ModeWrapper({
   children,
-  glb,
   geometryKey,
   lockToBottom = false,
   followPointer = true,
@@ -92,17 +107,16 @@ const ModeWrapper = memo(function ModeWrapper({
   ...props
 }: ModeWrapperProps) {
   const ref = useRef<THREE.Mesh>(null!);
-  const { nodes } = useGLTF(glb);
+  const geometry = useProceduralGeometry(geometryKey);
   const buffer = useFBO();
   const { viewport: vp } = useThree();
   const [scene] = useState<THREE.Scene>(() => new THREE.Scene());
   const geoWidthRef = useRef<number>(1);
 
   useEffect(() => {
-    const geo = (nodes[geometryKey] as THREE.Mesh)?.geometry;
-    geo.computeBoundingBox();
-    geoWidthRef.current = geo.boundingBox!.max.x - geo.boundingBox!.min.x || 1;
-  }, [nodes, geometryKey]);
+    geometry.computeBoundingBox();
+    geoWidthRef.current = geometry.boundingBox!.max.x - geometry.boundingBox!.min.x || 1;
+  }, [geometry]);
 
   useFrame((state, delta) => {
     const { gl, viewport, pointer, camera } = state;
@@ -144,7 +158,7 @@ const ModeWrapper = memo(function ModeWrapper({
         ref={ref}
         scale={scale ?? 0.15}
         rotation-x={Math.PI / 2}
-        geometry={(nodes[geometryKey] as THREE.Mesh)?.geometry}
+        geometry={geometry}
         {...props}
       >
         <MeshTransmissionMaterial
@@ -161,11 +175,11 @@ const ModeWrapper = memo(function ModeWrapper({
 });
 
 function Lens({ modeProps, ...p }: { modeProps?: ModeProps } & MeshProps) {
-  return <ModeWrapper glb="/assets/3d/lens.glb" geometryKey="Cylinder" followPointer modeProps={modeProps} {...p} />;
+  return <ModeWrapper geometryKey="Cylinder" followPointer modeProps={modeProps} {...p} />;
 }
 
 function Cube({ modeProps, ...p }: { modeProps?: ModeProps } & MeshProps) {
-  return <ModeWrapper glb="/assets/3d/cube.glb" geometryKey="Cube" followPointer modeProps={modeProps} {...p} />;
+  return <ModeWrapper geometryKey="Cube" followPointer modeProps={modeProps} {...p} />;
 }
 
 function Bar({ modeProps = {}, ...p }: { modeProps?: ModeProps } & MeshProps) {
@@ -181,7 +195,6 @@ function Bar({ modeProps = {}, ...p }: { modeProps?: ModeProps } & MeshProps) {
 
   return (
     <ModeWrapper
-      glb="/assets/3d/bar.glb"
       geometryKey="Cube"
       lockToBottom
       followPointer={false}

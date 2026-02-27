@@ -49,8 +49,8 @@ interface MenuItem {
 }
 
 const SAMPLE_PROFILE_DATA: Profile = {
-  name: "Eugene An",
-  email: "eugene@kokonutui.com",
+  name: "Satyajit Ghana",
+  email: "me@thesatyajit.com",
   avatar: "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/profile-mjss82WnWBRO86MHHGxvJ2TVZuyrDv.jpeg",
   subscription: "PRO",
   model: "Gemini 2.0 Flash",
@@ -91,7 +91,7 @@ export default function ProfileDropdown({
       <div className="group relative">
         <button
           type="button"
-          className="flex items-center gap-16 p-3 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800/60 hover:border-zinc-300 dark:hover:border-zinc-700 hover:bg-zinc-50/80 dark:hover:bg-zinc-800/40 hover:shadow-sm transition-all duration-200 focus:outline-none"
+          className="flex items-center gap-3 p-3 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800/60 hover:border-zinc-300 dark:hover:border-zinc-700 hover:bg-zinc-50/80 dark:hover:bg-zinc-800/40 hover:shadow-sm transition-all duration-200 focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
         >
           <div className="text-left flex-1">
@@ -102,7 +102,7 @@ export default function ProfileDropdown({
               {data.email}
             </div>
           </div>
-          <div className="relative">
+          <div className="relative flex-shrink-0">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 p-0.5">
               <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-zinc-900">
                 <img

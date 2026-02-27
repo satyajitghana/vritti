@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 const TESTIMONIALS = [
   {
     image:
-      "https://images.unsplash.com/photo-1641906840000-4b88f1d44de6?auto=format&fit=crop&q=80&w=400&h=400",
+      "/basic-img.png",
     name: "Jessica Devis",
     role: "CEO @ Marketing Digital LTD",
     quote:
@@ -14,7 +14,7 @@ const TESTIMONIALS = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1716662318479-a9c0f1cd1a0e?auto=format&fit=crop&q=80&w=400&h=400",
+      "/basic-img.png",
     name: "Mary Joshiash",
     role: "Marketing @ Apple INC",
     quote:
@@ -22,7 +22,7 @@ const TESTIMONIALS = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1641906840000-4b88f1d44de6?auto=format&fit=crop&q=80&w=400&h=400",
+      "/basic-img.png",
     name: "Marcell Glock",
     role: "CFO @ Apple INC",
     quote:

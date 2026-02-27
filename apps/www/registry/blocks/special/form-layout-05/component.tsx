@@ -157,9 +157,8 @@ export default function FormLayout05() {
               className="mt-4 space-y-4"
             >
               {plans.map((plan) => (
-                <label
+                <div
                   key={plan.name}
-                  htmlFor={plan.name}
                   className={cn(
                     "relative block cursor-pointer rounded-md border bg-background transition",
                     selected.name === plan.name
@@ -169,19 +168,19 @@ export default function FormLayout05() {
                 >
                   <div className="flex items-start space-x-4 px-6 py-4">
                     <div className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center">
-                      <RadioGroupItem value={plan.name} id={plan.name} />
+                      <RadioGroupItem value={plan.name} id={plan.name} className="after:absolute after:inset-0" />
                     </div>
                     <div className="w-full">
-                      <p className="text-pretty leading-6">
-                        <span className="font-semibold text-foreground">
+                      <div className="text-pretty leading-6">
+                        <label htmlFor={plan.name} className="font-semibold text-foreground">
                           {plan.name}
-                        </span>
+                        </label>
                         {plan.isRecommended && (
                           <Badge variant="secondary" className="ml-2">
                             recommended
                           </Badge>
                         )}
-                      </p>
+                      </div>
                       <ul className="mt-2 space-y-1">
                         {plan.features.map((feature, index) => (
                           <li
@@ -190,7 +189,7 @@ export default function FormLayout05() {
                           >
                             <Check
                               className="h-4 w-4 text-muted-foreground"
-                              aria-hidden={true}
+                              aria-hidden="true"
                             />
                             {feature.feature}
                           </li>
@@ -201,10 +200,10 @@ export default function FormLayout05() {
                   <div className="flex items-center justify-between rounded-b-md border-t border-border bg-muted px-6 py-3">
                     <a
                       href={plan.href}
-                      className="inline-flex items-center gap-1 text-sm text-primary hover:underline hover:underline-offset-4"
+                      className="relative z-10 inline-flex items-center gap-1 text-sm text-primary hover:underline hover:underline-offset-4"
                     >
                       Learn more
-                      <ExternalLink className="h-4 w-4" aria-hidden={true} />
+                      <ExternalLink className="h-4 w-4" aria-hidden="true" />
                     </a>
                     <div>
                       <span className="text-lg font-semibold text-foreground">
@@ -213,7 +212,7 @@ export default function FormLayout05() {
                       <span className="text-sm text-muted-foreground">/mo</span>
                     </div>
                   </div>
-                </label>
+                </div>
               ))}
             </RadioGroup>
           </div>
@@ -244,7 +243,7 @@ export default function FormLayout05() {
                   className="mt-4 inline-flex items-center gap-1 text-sm text-primary"
                 >
                   Learn more
-                  <ExternalLink className="h-4 w-4" aria-hidden={true} />
+                  <ExternalLink className="h-4 w-4" aria-hidden="true" />
                 </a>
               </CardContent>
             </Card>

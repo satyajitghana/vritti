@@ -6,30 +6,30 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const POSTS = [
   {
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+    image: "/placeholder.jpg",
     tag: "Development",
     title: "Building Scalable Web Applications",
     description: "Learn the best practices for building scalable and maintainable web applications using modern frameworks.",
     author: "Sarah Johnson",
-    avatar: "https://images.unsplash.com/photo-1716662318479-a9c0f1cd1a0e?auto=format&fit=crop&q=80&w=100",
+    avatar: "/basic-img.png",
     date: "Dec 15, 2024",
   },
   {
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800",
+    image: "/placeholder.jpg",
     tag: "Design",
     title: "The Future of UI Design Systems",
     description: "Explore how design systems are evolving and what this means for the future of digital product design.",
     author: "Michael Chen",
-    avatar: "https://images.unsplash.com/photo-1623853434105-8e7a72898180?auto=format&fit=crop&q=80&w=100",
+    avatar: "/basic-img.png",
     date: "Dec 10, 2024",
   },
   {
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    image: "/placeholder.jpg",
     tag: "Analytics",
     title: "Data-Driven Decision Making",
     description: "How to leverage analytics and data insights to make better business decisions and improve product outcomes.",
     author: "Emma Rodriguez",
-    avatar: "https://images.unsplash.com/photo-1641906840000-4b88f1d44de6?auto=format&fit=crop&q=80&w=100",
+    avatar: "/basic-img.png",
     date: "Dec 5, 2024",
   },
 ];

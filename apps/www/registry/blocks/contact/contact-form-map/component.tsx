@@ -29,7 +29,7 @@ export default function ContactFormMap() {
         </div>
         <div className="grid grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-2">
           <img
-            src="https://images.unsplash.com/photo-1638438134099-a91e5373aaf0?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=2070"
+            src="/placeholder.jpg"
             alt="Contact"
             className="h-full min-h-[400px] w-full rounded-2xl object-cover"
           />

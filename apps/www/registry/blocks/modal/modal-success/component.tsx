@@ -55,7 +55,7 @@ export default function ModalSuccess() {
                 className="bg-muted relative h-44 w-full overflow-hidden rounded-md"
               >
                 <img
-                  src={`https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&h=400&fit=crop&crop=center&q=80`}
+                  src={`/placeholder.jpg`}
                   alt={`Product ${i + 1}`}
                   className="h-full w-full object-cover object-center"
                 />

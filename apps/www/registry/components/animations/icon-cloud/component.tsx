@@ -75,6 +75,20 @@ export function IconCloud({ icons, images }: IconCloudProps) {
 
             imagesLoadedRef.current[index] = true
           }
+          img.onerror = () => {
+            // Fallback: draw a colored circle with index number
+            offCtx.clearRect(0, 0, offscreen.width, offscreen.height)
+            offCtx.beginPath()
+            offCtx.arc(20, 20, 20, 0, Math.PI * 2)
+            offCtx.fillStyle = `hsl(${(index * 360) / (items.length || 1)}, 70%, 60%)`
+            offCtx.fill()
+            offCtx.fillStyle = "white"
+            offCtx.textAlign = "center"
+            offCtx.textBaseline = "middle"
+            offCtx.font = "bold 14px Arial"
+            offCtx.fillText(`${index + 1}`, 20, 20)
+            imagesLoadedRef.current[index] = true
+          }
         } else {
           // Handle SVG icons
           offCtx.scale(0.4, 0.4)

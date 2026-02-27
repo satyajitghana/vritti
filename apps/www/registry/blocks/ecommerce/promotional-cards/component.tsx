@@ -7,19 +7,19 @@ const PRODUCTS = [
     name: "Active toning essence",
     price: "$59.00",
     image:
-      "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=800",
+      "/placeholder.jpg",
   },
   {
     name: "Hydrating face serum",
     price: "$49.00",
     image:
-      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=800",
+      "/placeholder.jpg",
   },
   {
     name: "Vitamin C moisturizer",
     price: "$65.00",
     image:
-      "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=800",
+      "/placeholder.jpg",
   },
 ]
 
@@ -64,7 +64,7 @@ export default function PromotionalCards() {
           {/* Right: Hero Image with Text */}
           <div className="relative flex min-h-[500px] items-center justify-center lg:min-h-[600px]">
             <img
-              src="https://images.unsplash.com/photo-1581182815808-b6eb627a8798?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1065"
+              src="/placeholder.jpg"
               alt="Beauty model"
               className="absolute inset-0 h-full w-full object-cover"
             />

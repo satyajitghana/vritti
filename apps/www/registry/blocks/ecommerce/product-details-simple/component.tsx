@@ -27,7 +27,7 @@ export default function ProductDetailsSimple() {
           <div className="space-y-4">
             <div className="aspect-square overflow-hidden rounded-lg">
               <img
-                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=800"
+                src="/placeholder.jpg"
                 alt="Product"
                 className="h-full w-full object-cover"
               />

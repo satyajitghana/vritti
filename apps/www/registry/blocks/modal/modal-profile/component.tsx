@@ -31,7 +31,7 @@ export default function ModalProfile() {
           <div className="space-y-6 py-4">
             <div className="flex items-center gap-4">
               <Avatar className="h-16 w-16">
-                <AvatarImage src="https://images.unsplash.com/photo-1716662318479-a9c0f1cd1a0e?auto=format&fit=crop&q=80&w=200" />
+                <AvatarImage src="/basic-img.png" />
                 <AvatarFallback>JD</AvatarFallback>
               </Avatar>
               <Button variant="outline" size="sm">Change Photo</Button>

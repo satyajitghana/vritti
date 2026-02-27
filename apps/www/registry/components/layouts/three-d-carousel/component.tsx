@@ -91,7 +91,7 @@ const Carousel = memo(
     isCarouselActive,
   }: {
     handleClick: (imgUrl: string, index: number) => void
-    controls: any
+    controls: ReturnType<typeof useAnimation>
     cards: string[]
     isCarouselActive: boolean
   }) => {
@@ -179,7 +179,7 @@ function ThreeDPhotoCarousel() {
   const [isCarouselActive, setIsCarouselActive] = useState(true)
   const controls = useAnimation()
   const cards = useMemo(
-    () => keywords.map((keyword) => `https://picsum.photos/200/300?${keyword}`),
+    () => keywords.map(() => `/placeholder.jpg`),
     []
   )
 

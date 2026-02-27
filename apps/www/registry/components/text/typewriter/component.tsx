@@ -110,7 +110,7 @@ const cursorVariants = {
 
 function BlinkingCursor() {
   return (
-    <motion.div
+    <motion.span
       variants={cursorVariants}
       animate="blinking"
       className="inline-block h-5 w-[1px] translate-y-1 bg-neutral-900"

@@ -9,7 +9,7 @@ const PRODUCTS = [
   {
     id: "card-1",
     media: {
-      src: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=400&h=400&auto=format&fit=crop",
+      src: "/placeholder.jpg",
       alt: "Satin Wrap Dress product thumbnail",
     },
     eyebrow: "Maison Aurore",
@@ -20,7 +20,7 @@ const PRODUCTS = [
   {
     id: "card-2",
     media: {
-      src: "https://images.unsplash.com/photo-1591369822096-ffd140ec948f?q=80&w=400&h=400&auto=format&fit=crop",
+      src: "/placeholder.jpg",
       alt: "Structured Blazer product thumbnail",
     },
     eyebrow: "Atelier No. 9",
@@ -31,7 +31,7 @@ const PRODUCTS = [
   {
     id: "card-3",
     media: {
-      src: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=400&h=400&auto=format&fit=crop",
+      src: "/placeholder.jpg",
       alt: "Chunky Chelsea Boots product thumbnail",
     },
     eyebrow: "Linea Forte",
@@ -43,7 +43,7 @@ const PRODUCTS = [
 
 export default function EcommerceVideoHero() {
   const [isPlaying, setIsPlaying] = useState(true)
-  const playerRef = useRef<any>(null)
+  const playerRef = useRef<YT.Player | null>(null)
   const [playerReady, setPlayerReady] = useState(false)
 
   useEffect(() => {
@@ -51,8 +51,8 @@ export default function EcommerceVideoHero() {
     tag.src = "https://www.youtube.com/iframe_api"
     const firstScriptTag = document.getElementsByTagName("script")[0]
     firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag)
-    ;(window as any).onYouTubeIframeAPIReady = () => {
-      playerRef.current = new (window as any).YT.Player("youtube-player", {
+    ;(window as unknown as { onYouTubeIframeAPIReady: () => void }).onYouTubeIframeAPIReady = () => {
+      playerRef.current = new YT.Player("youtube-player", {
         videoId: "YCIuEU2y8XI",
         playerVars: {
           autoplay: 1,

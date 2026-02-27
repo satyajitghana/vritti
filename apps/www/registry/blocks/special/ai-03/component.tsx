@@ -45,7 +45,7 @@ export default function Ai03() {
   };
 
   return (
-    <div className="w-xl">
+    <div className="w-full max-w-xl">
       <div className="bg-background border border-border rounded-2xl overflow-hidden">
         <input
           ref={fileInputRef}

@@ -20,14 +20,14 @@ const SIMILAR_ITEMS = [
     name: "Black Bustier Top",
     price: "€49.95",
     image:
-      "https://images.unsplash.com/photo-1661327930345-9c6714b603b3?auto=format&fit=crop&q=80&w=400&h=400",
+      "/placeholder.jpg",
     sizes: "Available in 5 size",
   },
   {
     name: "Black High-Waist Jeans",
     price: "€49.95",
     image:
-      "https://images.unsplash.com/photo-1578508637199-240a8f25eff6?auto=format&fit=crop&q=80&w=400&h=400",
+      "/placeholder.jpg",
     sizes: "Available in 8 taille",
   },
 ]
@@ -44,7 +44,7 @@ export default function ProductDetailsMinimal() {
           <div className="bg-muted/30 h-full max-h-[32rem] w-full overflow-hidden rounded-xl border">
             <img
               alt="Pink Blouse"
-              src="https://images.unsplash.com/photo-1574015974293-817f0ebebb74?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=973"
+              src="/placeholder.jpg"
               className="h-full w-full object-cover"
             />
           </div>

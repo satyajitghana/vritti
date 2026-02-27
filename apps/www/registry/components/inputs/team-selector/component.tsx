@@ -11,25 +11,32 @@ type TeamMember = {
   name: string;
 };
 
+const AVATAR_COLORS = ["#6366f1", "#f59e0b", "#10b981", "#ef4444"];
+
+function generateAvatarSvg(initials: string, color: string): string {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96"><circle cx="48" cy="48" r="48" fill="${color}"/><text x="48" y="48" dy=".35em" text-anchor="middle" fill="white" font-family="system-ui,sans-serif" font-size="36" font-weight="600">${initials}</text></svg>`;
+  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
+}
+
 const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "member-1",
-    avatarUrl: "https://bykuknqwpctcjrowysyf.supabase.co/storage/v1/object/public/assets/avatar-01.png",
+    avatarUrl: generateAvatarSvg("T1", AVATAR_COLORS[0]),
     name: "Team Member 1",
   },
   {
     id: "member-2",
-    avatarUrl: "https://bykuknqwpctcjrowysyf.supabase.co/storage/v1/object/public/assets/avatar-02.png",
+    avatarUrl: generateAvatarSvg("T2", AVATAR_COLORS[1]),
     name: "Team Member 2",
   },
   {
     id: "member-3",
-    avatarUrl: "https://bykuknqwpctcjrowysyf.supabase.co/storage/v1/object/public/assets/avatar-03.png",
+    avatarUrl: generateAvatarSvg("T3", AVATAR_COLORS[2]),
     name: "Team Member 3",
   },
   {
     id: "member-4",
-    avatarUrl: "https://bykuknqwpctcjrowysyf.supabase.co/storage/v1/object/public/assets/avatar-04.png",
+    avatarUrl: generateAvatarSvg("T4", AVATAR_COLORS[3]),
     name: "Team Member 4",
   },
 ];
@@ -110,7 +117,7 @@ export default function TeamSelector({
     TEAM_MEMBERS.slice(0, peopleCount).map((member, index) => (
       <motion.div
         animate="animate"
-        className="flex items-center justify-center"
+        className="flex items-center justify-center overflow-hidden rounded-full"
         exit="exit"
         initial="initial"
         key={member.id}

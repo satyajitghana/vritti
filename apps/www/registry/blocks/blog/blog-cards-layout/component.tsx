@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 
 const POSTS = [
   {
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
+    image: "/placeholder.jpg",
     tag: "Engineering",
     title: "Scaling Our Infrastructure to 1M Users",
     description: "The journey of scaling our platform from thousands to millions of users while maintaining performance.",
@@ -15,7 +15,7 @@ const POSTS = [
     readTime: "8 min read",
   },
   {
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800",
+    image: "/placeholder.jpg",
     tag: "Product",
     title: "Introducing Our New Design System",
     description: "We rebuilt our design system from the ground up to improve consistency and developer experience.",
@@ -23,7 +23,7 @@ const POSTS = [
     readTime: "5 min read",
   },
   {
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    image: "/placeholder.jpg",
     tag: "Company",
     title: "Our Series B and What It Means",
     description: "We raised $50M in Series B funding. Here is what we plan to do with it.",
@@ -31,7 +31,7 @@ const POSTS = [
     readTime: "4 min read",
   },
   {
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    image: "/placeholder.jpg",
     tag: "Tutorial",
     title: "Getting Started with Our API",
     description: "A comprehensive guide to integrating with our REST API in under 10 minutes.",

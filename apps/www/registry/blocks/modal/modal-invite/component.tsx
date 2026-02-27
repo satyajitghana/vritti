@@ -10,9 +10,9 @@ import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const MEMBERS = [
-  { name: "Sarah Johnson", email: "sarah@example.com", role: "Admin", image: "https://images.unsplash.com/photo-1716662318479-a9c0f1cd1a0e?auto=format&fit=crop&q=80&w=100" },
-  { name: "Michael Chen", email: "michael@example.com", role: "Editor", image: "https://images.unsplash.com/photo-1623853434105-8e7a72898180?auto=format&fit=crop&q=80&w=100" },
-  { name: "Emma Rodriguez", email: "emma@example.com", role: "Viewer", image: "https://images.unsplash.com/photo-1641906840000-4b88f1d44de6?auto=format&fit=crop&q=80&w=100" },
+  { name: "Sarah Johnson", email: "sarah@example.com", role: "Admin", image: "/basic-img.png" },
+  { name: "Michael Chen", email: "michael@example.com", role: "Editor", image: "/basic-img.png" },
+  { name: "Emma Rodriguez", email: "emma@example.com", role: "Viewer", image: "/basic-img.png" },
 ];
 
 export default function ModalInvite() {

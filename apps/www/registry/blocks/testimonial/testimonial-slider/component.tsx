@@ -33,7 +33,7 @@ export default function TestimonialSlider() {
               <Avatar className="h-12 w-12">
                 <AvatarImage
                   alt="Alexandra Martinez"
-                  src="https://images.unsplash.com/photo-1623853434105-8e7a72898180?auto=format&fit=crop&q=80&w=400&h=400"
+                  src="/basic-img.png"
                 />
                 <AvatarFallback>AM</AvatarFallback>
               </Avatar>

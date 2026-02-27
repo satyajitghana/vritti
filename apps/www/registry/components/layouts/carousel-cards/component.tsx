@@ -30,7 +30,7 @@ const sampleExperiences: ExperienceItem[] = [
   {
     id: "1",
     title: "Become an Otaku Hottie with Megan Thee Stallion",
-    image: "https://images.unsplash.com/photo-1615571022219-eb45cf7faa9d",
+    image: "/placeholder.jpg",
     location: "Los Angeles, United States",
     price: 120,
     currency: "\u20AC",
@@ -42,7 +42,7 @@ const sampleExperiences: ExperienceItem[] = [
   {
     id: "2",
     title: "Spend a Sunday Funday with Patrick Mahomes",
-    image: "https://images.unsplash.com/photo-1622127922040-13cab637ee78",
+    image: "/placeholder.jpg",
     location: "Kansas City, United States",
     price: 150,
     currency: "\u20AC",
@@ -54,7 +54,7 @@ const sampleExperiences: ExperienceItem[] = [
   {
     id: "3",
     title: "Celebrate with SEVENTEEN on their 10th anniversary",
-    image: "https://images.unsplash.com/photo-1534430480872-3498386e7856",
+    image: "/placeholder.jpg",
     location: "Seoul, South Korea",
     price: 200,
     currency: "\u20AC",
@@ -66,7 +66,7 @@ const sampleExperiences: ExperienceItem[] = [
   {
     id: "4",
     title: "Learn the secrets of French pastry with nonnas",
-    image: "https://images.unsplash.com/photo-1604999333679-b86d54738315",
+    image: "/placeholder.jpg",
     location: "Paris, France",
     price: 70,
     currency: "\u20AC",
@@ -77,7 +77,7 @@ const sampleExperiences: ExperienceItem[] = [
   {
     id: "5",
     title: "Uncover the world of cabaret with a burlesque show",
-    image: "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b",
+    image: "/placeholder.jpg",
     location: "Paris, France",
     price: 92,
     currency: "\u20AC",
@@ -91,7 +91,7 @@ const popularExperiences: ExperienceItem[] = [
   {
     id: "p1",
     title: "Learn to bake the French Croissant",
-    image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a",
+    image: "/placeholder.jpg",
     location: "Paris, France",
     price: 95,
     currency: "\u20AC",
@@ -102,7 +102,7 @@ const popularExperiences: ExperienceItem[] = [
   {
     id: "p2",
     title: "Seek out hidden speakeasy bars in the city",
-    image: "https://images.unsplash.com/photo-1470337458703-46ad1756a187",
+    image: "/placeholder.jpg",
     location: "Paris, France",
     price: 74,
     currency: "\u20AC",
@@ -113,7 +113,7 @@ const popularExperiences: ExperienceItem[] = [
   {
     id: "p3",
     title: "Versailles Food and Palace Bike Tour",
-    image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a",
+    image: "/placeholder.jpg",
     location: "Versailles, France",
     price: 122,
     currency: "\u20AC",
@@ -124,7 +124,7 @@ const popularExperiences: ExperienceItem[] = [
   {
     id: "p4",
     title: "Haunted Paris Tour - Ghosts, Legends, True Crime",
-    image: "https://images.unsplash.com/photo-1549144511-f099e773c147",
+    image: "/placeholder.jpg",
     location: "Paris, France",
     price: 25,
     currency: "\u20AC",
@@ -135,7 +135,7 @@ const popularExperiences: ExperienceItem[] = [
   {
     id: "p5",
     title: "Learn to make the French macarons with a chef",
-    image: "https://images.unsplash.com/photo-1558326567-98ae2405596b",
+    image: "/placeholder.jpg",
     location: "Paris, France",
     price: 110,
     currency: "\u20AC",

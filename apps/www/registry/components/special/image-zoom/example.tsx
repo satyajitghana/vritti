@@ -10,7 +10,7 @@ export default function ImageZoomExample() {
         <img
           alt="Zoomable landscape"
           className="max-w-sm rounded-lg"
-          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop"
+          src="/placeholder.jpg"
         />
       </ImageZoom>
     </div>

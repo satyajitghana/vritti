@@ -312,6 +312,9 @@ importers:
       '@types/three':
         specifier: ^0.182.0
         version: 0.182.0
+      '@types/youtube':
+        specifier: ^0.1.2
+        version: 0.1.2
       eslint:
         specifier: ^9
         version: 9.39.2(jiti@2.6.1)
@@ -2038,6 +2041,9 @@ packages:
 
   '@types/webxr@0.5.24':
     resolution: {integrity: sha512-h8fgEd/DpoS9CBrjEQXR+dIDraopAEfu4wYVNY2tEPwk60stPWhvZMf4Foo5FakuQ7HFZoa8WceaWFervK2Ovg==}
+
+  '@types/youtube@0.1.2':
+    resolution: {integrity: sha512-n1/KqusanheyQRWHamNZv8K3kydlRqyEsZEKxMTeNWXQTC15lZprITCUt+WgL1vAIvKHCjPBIWz/gf/KQLsB3g==}
 
   '@typescript-eslint/eslint-plugin@8.55.0':
     resolution: {integrity: sha512-1y/MVSz0NglV1ijHC8OT49mPJ4qhPYjiK08YUQVbIOyu+5k862LKUHFkpKHWu//zmr7hDR2rhwUm6gnCGNmGBQ==}
@@ -7283,6 +7289,8 @@ snapshots:
   '@types/webgl2@0.0.4': {}
 
   '@types/webxr@0.5.24': {}
+
+  '@types/youtube@0.1.2': {}
 
   '@typescript-eslint/eslint-plugin@8.55.0(@typescript-eslint/parser@8.55.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)':
     dependencies:

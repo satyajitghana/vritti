@@ -26,7 +26,7 @@ export default function YouTubeVideoPlayerDemo() {
           <YouTubePlayer
             videoId="jNQXAC9IVRw"
             title="Me at the zoo - First YouTube Video"
-            customThumbnail="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=450&fit=crop&crop=center"
+            customThumbnail="/placeholder.jpg"
           />
         </div>
       </section>

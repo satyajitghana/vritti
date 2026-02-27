@@ -2,17 +2,18 @@ import ImageTrail from "./component";
 
 export default function ImageTrailExample() {
   return (
-    <div className="w-full h-[400px]">
+    <div className="w-full h-[400px] relative">
       <ImageTrail
         items={[
-          "https://picsum.photos/seed/1/300/300",
-          "https://picsum.photos/seed/2/300/300",
-          "https://picsum.photos/seed/3/300/300",
-          "https://picsum.photos/seed/4/300/300",
-          "https://picsum.photos/seed/5/300/300",
+          "/assets/demo/cs1.webp",
+          "/assets/demo/cs2.webp",
+          "/assets/demo/cs3.webp",
+          "/assets/demo/poster.webp",
+          "/assets/demo/person.webp",
         ]}
         variant={1}
       />
+      <p className="absolute inset-0 flex items-center justify-center text-sm text-zinc-400 pointer-events-none select-none">Move your cursor to reveal images</p>
     </div>
   );
 }

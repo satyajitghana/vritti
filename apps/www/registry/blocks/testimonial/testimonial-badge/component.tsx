@@ -37,7 +37,7 @@ export default function TestimonialBadge() {
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
-        <Card className="relative overflow-hidden rounded-2xl bg-[url('https://images.unsplash.com/photo-1638438134099-a91e5373aaf0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070')] bg-cover bg-center p-6">
+        <Card className="relative overflow-hidden rounded-2xl bg-[url('/placeholder.jpg')] bg-cover bg-center p-6">
           <span className="absolute inset-0 h-full w-full bg-gradient-to-br from-black/80 to-black/60 backdrop-blur-sm" />
 
           <CardContent className="relative grid w-full grid-cols-1 items-center gap-8 px-6 py-12 md:grid-cols-12 md:px-12 md:py-16">

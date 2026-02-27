@@ -101,7 +101,7 @@ export default function AIVideoGenerator() {
       id: Date.now().toString(),
       prompt: prompt,
       url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      thumbnail: `https://picsum.photos/seed/${Math.floor(Math.random() * 1000)}/640/360`,
+      thumbnail: `/placeholder.jpg`,
       duration: duration,
       style: style,
       timestamp: new Date(),

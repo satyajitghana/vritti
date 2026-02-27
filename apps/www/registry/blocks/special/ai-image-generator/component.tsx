@@ -79,7 +79,7 @@ export default function AIImageGenerator() {
     // Use a placeholder image service
     const seed = Math.floor(Math.random() * 1000)
     const [width, height] = imageSize.split("x")
-    setGeneratedImage(`https://picsum.photos/seed/${seed}/${width}/${height}`)
+    setGeneratedImage(`/placeholder.jpg`)
 
     setIsGenerating(false)
   }

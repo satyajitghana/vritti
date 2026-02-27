@@ -4,9 +4,9 @@ import { Deck, DeckCards, DeckEmpty, DeckItem } from "./component";
 
 export default function DeckExample() {
   return (
-    <div className="flex items-center justify-center p-8">
+    <div className="relative flex h-[400px] w-full items-center justify-center overflow-hidden rounded-lg border p-8">
       <div className="relative h-64 w-72">
-        <Deck>
+        <Deck className="h-full w-full">
           <DeckEmpty />
           <DeckCards>
             <DeckItem className="bg-gradient-to-br from-blue-500 to-blue-600 text-white">
