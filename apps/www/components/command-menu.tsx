@@ -10,7 +10,7 @@ import {
   MoonIcon,
   SunIcon,
 } from "@radix-ui/react-icons"
-import { useTheme } from "next-themes"
+import { useThemeStore } from "@/lib/stores/theme-store"
 
 import { docsConfig } from "@/config/docs"
 import { cn } from "@/lib/utils"
@@ -28,7 +28,7 @@ import {
 export function CommandMenu({ ...props }: DialogProps) {
   const router = useRouter()
   const [open, setOpen] = React.useState(false)
-  const { setTheme } = useTheme()
+  const setActiveMode = useThemeStore((s) => s.setActiveMode)
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -112,15 +112,18 @@ export function CommandMenu({ ...props }: DialogProps) {
           ))}
           <CommandSeparator />
           <CommandGroup heading="Theme">
-            <CommandItem onSelect={() => runCommand(() => setTheme("light"))}>
+            <CommandItem onSelect={() => runCommand(() => setActiveMode("light"))}>
               <SunIcon className="mr-2 size-4" />
               Light
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => setTheme("dark"))}>
+            <CommandItem onSelect={() => runCommand(() => setActiveMode("dark"))}>
               <MoonIcon className="mr-2 size-4" />
               Dark
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => setTheme("system"))}>
+            <CommandItem onSelect={() => runCommand(() => {
+              const mode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+              setActiveMode(mode);
+            })}>
               <LaptopIcon className="mr-2 size-4" />
               System
             </CommandItem>

@@ -89,6 +89,7 @@ export function SmoothCursor({
     restDelta: 0.001,
   },
 }: SmoothCursorProps) {
+  const containerRef = useRef<HTMLDivElement>(null)
   const [isMoving, setIsMoving] = useState(false)
   const lastMousePos = useRef<Position>({ x: 0, y: 0 })
   const velocity = useRef<Position>({ x: 0, y: 0 })
@@ -126,7 +127,12 @@ export function SmoothCursor({
     }
 
     const smoothMouseMove = (e: MouseEvent) => {
-      const currentPos = { x: e.clientX, y: e.clientY }
+      const container = containerRef.current
+      const rect = container?.getBoundingClientRect()
+      const currentPos = {
+        x: rect ? e.clientX - rect.left : e.clientX,
+        y: rect ? e.clientY - rect.top : e.clientY,
+      }
       updateVelocity(currentPos)
 
       const speed = Math.sqrt(
@@ -170,39 +176,43 @@ export function SmoothCursor({
       })
     }
 
-    document.body.style.cursor = "none"
-    window.addEventListener("mousemove", throttledMouseMove)
+    const container = containerRef.current
+    if (container) container.style.cursor = "none"
+    const eventTarget = container || window
+    eventTarget.addEventListener("mousemove", throttledMouseMove as EventListener)
 
     return () => {
-      window.removeEventListener("mousemove", throttledMouseMove)
-      document.body.style.cursor = "auto"
+      eventTarget.removeEventListener("mousemove", throttledMouseMove as EventListener)
+      if (container) container.style.cursor = ""
       if (rafId) cancelAnimationFrame(rafId)
     }
   }, [cursorX, cursorY, rotation, scale])
 
   return (
-    <motion.div
-      style={{
-        position: "fixed",
-        left: cursorX,
-        top: cursorY,
-        translateX: "-50%",
-        translateY: "-50%",
-        rotate: rotation,
-        scale: scale,
-        zIndex: 100,
-        pointerEvents: "none",
-        willChange: "transform",
-      }}
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-      transition={{
-        type: "spring",
-        stiffness: 400,
-        damping: 30,
-      }}
-    >
-      {cursor}
-    </motion.div>
+    <div ref={containerRef} className="absolute inset-0" style={{ cursor: "none" }}>
+      <motion.div
+        style={{
+          position: "absolute",
+          left: cursorX,
+          top: cursorY,
+          translateX: "-50%",
+          translateY: "-50%",
+          rotate: rotation,
+          scale: scale,
+          zIndex: 100,
+          pointerEvents: "none",
+          willChange: "transform",
+        }}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{
+          type: "spring",
+          stiffness: 400,
+          damping: 30,
+        }}
+      >
+        {cursor}
+      </motion.div>
+    </div>
   )
 }

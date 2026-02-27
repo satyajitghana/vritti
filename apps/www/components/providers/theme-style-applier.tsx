@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useTheme } from 'next-themes';
 import { useThemeStore } from '@/lib/stores/theme-store';
 import { applyThemeToElement, applyFontsToElement } from '@/lib/theme/apply-theme';
@@ -10,7 +10,10 @@ import { applyThemeToElement, applyFontsToElement } from '@/lib/theme/apply-them
  * CSS variables to document.documentElement so the entire
  * website reflects the theme editor's current configuration.
  *
- * Inspired by tweakcn's ThemeProvider pattern.
+ * Architecture: Zustand is the single source of truth for theme mode.
+ * This component does forward-only sync: Zustand → next-themes.
+ * All theme toggles (header, command menu, theme editor) must update
+ * Zustand directly via setActiveMode, NOT next-themes' setTheme.
  */
 export function ThemeStyleApplier() {
   const config = useThemeStore((s) => s.config);
@@ -20,6 +23,11 @@ export function ThemeStyleApplier() {
   const fontSerif = useThemeStore((s) => s.fontSerif);
   const { setTheme: setNextTheme } = useTheme();
 
+  // Stable ref for setNextTheme — next-themes does not memoize it,
+  // so including it directly in effect deps would cause infinite re-renders.
+  const setNextThemeRef = useRef(setNextTheme);
+  setNextThemeRef.current = setNextTheme;
+
   // Apply theme CSS variables to root element
   useEffect(() => {
     const root = document.documentElement;
@@ -28,10 +36,11 @@ export function ThemeStyleApplier() {
     applyFontsToElement(root, { sans: fontSans, mono: fontMono, serif: fontSerif });
   }, [config, activeMode, fontSans, fontMono, fontSerif]);
 
-  // Sync dark/light mode with next-themes to prevent conflicts
+  // Forward sync only: Zustand → next-themes.
+  // next-themes manages the dark class on <html> via attribute="class".
   useEffect(() => {
-    setNextTheme(activeMode);
-  }, [activeMode, setNextTheme]);
+    setNextThemeRef.current(activeMode);
+  }, [activeMode]);
 
   return null;
 }

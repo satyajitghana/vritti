@@ -1,0 +1,12 @@
+{
+  "name": "text-roll",
+  "type": "component",
+  "description": "Text roll hover effect with staggered character animations that reveal text from below",
+  "category": "text",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["text", "roll", "hover", "animation", "stagger", "navigation"],
+    "source": "skiper-ui"
+  }
+}

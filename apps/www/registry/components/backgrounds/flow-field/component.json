@@ -1,0 +1,12 @@
+{
+  "name": "flow-field",
+  "type": "component",
+  "description": "Canvas particle flow field background with organic noise-driven streams of glowing light",
+  "category": "backgrounds",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["canvas", "particles", "flow", "noise", "background", "animation"],
+    "source": "kokonutui"
+  }
+}

@@ -66,9 +66,10 @@ export default function BlobCursor({
       blobsRef.current.forEach((el, i) => {
         if (!el) return;
         const isLead = i === 0;
+        const halfSize = (sizes[i] || 60) / 2;
         gsap.to(el, {
-          x: x - left,
-          y: y - top,
+          x: x - left - halfSize,
+          y: y - top - halfSize,
           duration: isLead ? fastDuration : slowDuration,
           ease: isLead ? fastEase : slowEase
         });
@@ -110,7 +111,7 @@ export default function BlobCursor({
             ref={el => {
               blobsRef.current[i] = el;
             }}
-            className="absolute will-change-transform transform -translate-x-1/2 -translate-y-1/2"
+            className="absolute will-change-transform"
             style={{
               width: sizes[i],
               height: sizes[i],

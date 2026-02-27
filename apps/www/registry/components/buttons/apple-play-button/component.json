@@ -1,0 +1,12 @@
+{
+  "name": "apple-play-button",
+  "type": "component",
+  "description": "Elegant play button with Apple-inspired design and smooth expanding hover animation",
+  "category": "buttons",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["button", "play", "apple", "animation", "toggle"],
+    "source": "skiper-ui"
+  }
+}

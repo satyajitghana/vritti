@@ -3,7 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useTheme } from 'next-themes';
+import { useThemeStore } from '@/lib/stores/theme-store';
 import { Sun, Moon } from 'lucide-react';
 import { GeistPixelLine } from 'geist/font/pixel';
 import { siteConfig } from '@/config/site';
@@ -13,7 +13,8 @@ import { CommandMenu } from '@/components/command-menu';
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const { setTheme, resolvedTheme } = useTheme();
+  const activeMode = useThemeStore((s) => s.activeMode);
+  const setActiveMode = useThemeStore((s) => s.setActiveMode);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -76,7 +77,7 @@ export function SiteHeader() {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+              onClick={() => setActiveMode(activeMode === 'dark' ? 'light' : 'dark')}
               aria-label="Toggle theme"
             >
               <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

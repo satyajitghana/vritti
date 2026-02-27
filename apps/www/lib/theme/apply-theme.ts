@@ -172,12 +172,9 @@ export function applyThemeToElement(
     element.style.setProperty('--selection-foreground', colorFormatter(bg, 'hsl', '4'));
   }
 
-  // Toggle dark class
-  if (mode === 'dark') {
-    element.classList.add('dark');
-  } else {
-    element.classList.remove('dark');
-  }
+  // Note: dark class is managed exclusively by next-themes (via ThemeStyleApplier
+  // forward sync). Do NOT toggle it here — doing so would fight with next-themes'
+  // MutationObserver and cause an infinite re-render loop.
 }
 
 /**
@@ -245,6 +242,25 @@ export async function waitForFont(
   }
 }
 
+// Bundled next/font fonts use hashed @font-face names, so we must
+// reference them via their CSS variables rather than plain font names.
+const BUNDLED_FONT_CSS: Record<string, string> = {
+  'Geist Sans': 'var(--font-geist-sans)',
+  'Geist Mono': 'var(--font-geist-mono)',
+};
+
+/**
+ * Resolve a font name to a CSS font-family value.
+ * Bundled (next/font) fonts are returned as var() references;
+ * everything else as a quoted name with a generic fallback.
+ */
+export function resolveFontFamily(
+  font: string,
+  fallback: string = 'sans-serif'
+): string {
+  return BUNDLED_FONT_CSS[font] ?? `"${font}", ${fallback}`;
+}
+
 /**
  * Apply font families to an element
  */
@@ -253,12 +269,12 @@ export function applyFontsToElement(
   fonts: { sans?: string; mono?: string; serif?: string }
 ): void {
   if (fonts.sans) {
-    element.style.setProperty('--font-sans', `"${fonts.sans}", sans-serif`);
+    element.style.setProperty('--font-sans', resolveFontFamily(fonts.sans, 'sans-serif'));
   }
   if (fonts.mono) {
-    element.style.setProperty('--font-mono', `"${fonts.mono}", monospace`);
+    element.style.setProperty('--font-mono', resolveFontFamily(fonts.mono, 'monospace'));
   }
   if (fonts.serif) {
-    element.style.setProperty('--font-serif', `"${fonts.serif}", serif`);
+    element.style.setProperty('--font-serif', resolveFontFamily(fonts.serif, 'serif'));
   }
 }

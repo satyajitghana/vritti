@@ -4,6 +4,7 @@ import { useState, useMemo, useCallback } from "react"
 import { Search } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Input } from "@/components/ui/input"
+import { resolveFontFamily } from "@/lib/theme/apply-theme"
 
 const FONT_CATEGORIES = [
   "All",
@@ -106,7 +107,7 @@ export function FontPicker({ value, onChange, label, className }: FontPickerProp
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full items-center justify-between rounded-md border px-3 py-2 text-sm"
       >
-        <span style={{ fontFamily: value }}>{value || "Select font..."}</span>
+        <span style={{ fontFamily: resolveFontFamily(value) }}>{value || "Select font..."}</span>
         <span className="text-muted-foreground text-xs">Change</span>
       </button>
 
@@ -155,7 +156,7 @@ export function FontPicker({ value, onChange, label, className }: FontPickerProp
                     ? "bg-primary/10 text-primary"
                     : "hover:bg-muted"
                 )}
-                style={{ fontFamily: font.family }}
+                style={{ fontFamily: resolveFontFamily(font.family) }}
               >
                 <span>{font.family}</span>
                 <span className="text-xs text-muted-foreground">{font.category}</span>

@@ -1,9 +1,14 @@
 'use client';
 
 import { useThemeStore } from '@/lib/stores/theme-store';
+import { resolveFontFamily } from '@/lib/theme/apply-theme';
 
 export function TypographyPreview() {
   const { fontSans, fontMono, fontSerif } = useThemeStore();
+
+  const sansFamily = resolveFontFamily(fontSans);
+  const serifFamily = resolveFontFamily(fontSerif, 'serif');
+  const monoFamily = resolveFontFamily(fontMono, 'monospace');
 
   return (
     <div className="space-y-8">
@@ -12,7 +17,7 @@ export function TypographyPreview() {
         <h4 className="text-sm font-semibold mb-4 text-muted-foreground uppercase tracking-wide">
           Headings
         </h4>
-        <div className="space-y-4" style={{ fontFamily: fontSans }}>
+        <div className="space-y-4" style={{ fontFamily: sansFamily }}>
           <h1 className="text-4xl font-bold tracking-tight">Heading 1</h1>
           <h2 className="text-3xl font-semibold tracking-tight">Heading 2</h2>
           <h3 className="text-2xl font-semibold tracking-tight">Heading 3</h3>
@@ -27,7 +32,7 @@ export function TypographyPreview() {
         <h4 className="text-sm font-semibold mb-4 text-muted-foreground uppercase tracking-wide">
           Body Text
         </h4>
-        <div className="space-y-4" style={{ fontFamily: fontSans }}>
+        <div className="space-y-4" style={{ fontFamily: sansFamily }}>
           <p className="text-base">
             The quick brown fox jumps over the lazy dog. This is a paragraph of regular body text to show
             how the font appears in normal reading content.
@@ -50,19 +55,19 @@ export function TypographyPreview() {
         <div className="space-y-4">
           <div>
             <p className="text-xs text-muted-foreground mb-1 font-mono">{fontSans}</p>
-            <p className="text-lg" style={{ fontFamily: fontSans }}>
+            <p className="text-lg" style={{ fontFamily: sansFamily }}>
               The quick brown fox jumps over the lazy dog. 0123456789
             </p>
           </div>
           <div>
             <p className="text-xs text-muted-foreground mb-1 font-mono">{fontSerif}</p>
-            <p className="text-lg" style={{ fontFamily: fontSerif }}>
+            <p className="text-lg" style={{ fontFamily: serifFamily }}>
               The quick brown fox jumps over the lazy dog. 0123456789
             </p>
           </div>
           <div>
             <p className="text-xs text-muted-foreground mb-1 font-mono">{fontMono}</p>
-            <p className="text-lg" style={{ fontFamily: fontMono }}>
+            <p className="text-lg" style={{ fontFamily: monoFamily }}>
               The quick brown fox jumps over the lazy dog. 0123456789
             </p>
           </div>
@@ -79,7 +84,7 @@ export function TypographyPreview() {
           style={{
             backgroundColor: 'hsl(var(--muted))',
             borderColor: 'hsl(var(--border))',
-            fontFamily: fontMono,
+            fontFamily: monoFamily,
           }}
         >
           <code style={{ color: 'hsl(var(--foreground))' }}>
