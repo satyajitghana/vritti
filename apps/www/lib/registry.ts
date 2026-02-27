@@ -69,9 +69,23 @@ export async function getRegistryItem(name: string) {
   // Fix file paths.
   const fixedFiles = fixFilePaths(files)
 
+  // Rename generic "component.tsx" files to use the component name
+  // so they install as e.g. "blur-fade.tsx" instead of "component.tsx"
+  const renamedFiles = fixedFiles.map((file) => {
+    const fileName = file.path.split("/").pop()
+    if (fileName === "component.tsx") {
+      return {
+        ...file,
+        path: file.path.replace("component.tsx", `${name}.tsx`),
+        target: file.target?.replace("component.tsx", `${name}.tsx`) ?? "",
+      }
+    }
+    return file
+  })
+
   const parsed = registryItemSchema.safeParse({
     ...result.data,
-    files: fixedFiles,
+    files: renamedFiles,
   })
 
   if (!parsed.success) {
