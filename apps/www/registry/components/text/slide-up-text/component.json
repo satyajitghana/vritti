@@ -1,0 +1,11 @@
+{
+  "name": "slide-up-text",
+  "type": "component",
+  "description": "Text animation that slides up from bottom with stagger effect.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "meta": {
+    "tags": ["text", "animation", "slide", "stagger"],
+    "source": "spell-ui"
+  }
+}

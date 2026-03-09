@@ -1,0 +1,11 @@
+{
+  "name": "gradient-wave-text",
+  "type": "component",
+  "description": "Apple-style animated gradient text with wave effect.",
+  "category": "text",
+  "dependencies": [],
+  "meta": {
+    "tags": ["text", "animation", "gradient", "wave"],
+    "source": "spell-ui"
+  }
+}

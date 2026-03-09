@@ -1,0 +1,11 @@
+{
+  "name": "slide-to-unlock",
+  "type": "component",
+  "description": "iOS-style slide to unlock gesture component with drag interaction.",
+  "category": "special",
+  "dependencies": ["motion"],
+  "meta": {
+    "tags": ["interaction", "gesture", "slide", "unlock", "apple", "ios"],
+    "source": "chanhdai"
+  }
+}

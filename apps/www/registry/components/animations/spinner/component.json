@@ -1,0 +1,11 @@
+{
+  "name": "spinner",
+  "type": "component",
+  "description": "A loading spinner component with customizable size and speed.",
+  "category": "animations",
+  "dependencies": [],
+  "meta": {
+    "tags": ["spinner", "loading", "animation"],
+    "source": "spell-ui"
+  }
+}

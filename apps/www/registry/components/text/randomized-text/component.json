@@ -1,0 +1,11 @@
+{
+  "name": "randomized-text",
+  "type": "component",
+  "description": "Text component with randomized character reveal animation.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "meta": {
+    "tags": ["text", "animation", "random", "reveal"],
+    "source": "spell-ui"
+  }
+}

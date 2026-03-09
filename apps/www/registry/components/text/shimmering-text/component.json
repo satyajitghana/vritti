@@ -1,0 +1,11 @@
+{
+  "name": "shimmering-text",
+  "type": "component",
+  "description": "Character-by-character shimmering text animation with CSS variable colors.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "meta": {
+    "tags": ["text", "animation", "shimmer", "character"],
+    "source": "chanhdai"
+  }
+}

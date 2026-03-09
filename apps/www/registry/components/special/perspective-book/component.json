@@ -1,0 +1,11 @@
+{
+  "name": "perspective-book",
+  "type": "component",
+  "description": "A 3D book component with hover animation and customizable appearance.",
+  "category": "special",
+  "dependencies": [],
+  "meta": {
+    "tags": ["3d", "book", "perspective", "hover"],
+    "source": "spell-ui"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "color-selector",
+  "type": "component",
+  "description": "Interactive color picker component with multiple sizes.",
+  "category": "inputs",
+  "dependencies": [],
+  "meta": {
+    "tags": ["input", "color", "picker", "selector"],
+    "source": "spell-ui"
+  }
+}

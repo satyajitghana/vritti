@@ -1,0 +1,11 @@
+{
+  "name": "logos-carousel",
+  "type": "component",
+  "description": "Animated carousel that cycles through sets of logos with staggered animations.",
+  "category": "layouts",
+  "dependencies": [],
+  "meta": {
+    "tags": ["carousel", "logos", "animation", "stagger"],
+    "source": "spell-ui"
+  }
+}

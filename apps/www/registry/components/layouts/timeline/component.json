@@ -1,0 +1,7 @@
+{
+  "name": "timeline",
+  "type": "component",
+  "description": "Scroll-animated timeline with gradient progress line",
+  "category": "layouts",
+  "dependencies": ["motion"]
+}

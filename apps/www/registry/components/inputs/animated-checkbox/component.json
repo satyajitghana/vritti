@@ -1,0 +1,11 @@
+{
+  "name": "animated-checkbox",
+  "type": "component",
+  "description": "Animated checkbox with spring transitions and strike-through text effect.",
+  "category": "inputs",
+  "dependencies": ["motion"],
+  "meta": {
+    "tags": ["input", "checkbox", "animation", "spring"],
+    "source": "spell-ui"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "rich-button",
+  "type": "component",
+  "description": "A button component with rich gradient styling and multiple color variants.",
+  "category": "buttons",
+  "dependencies": ["@radix-ui/react-slot"],
+  "meta": {
+    "tags": ["button", "gradient", "variant"],
+    "source": "spell-ui"
+  }
+}

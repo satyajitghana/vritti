@@ -1,0 +1,11 @@
+{
+  "name": "web-haptics",
+  "type": "component",
+  "description": "Mobile web haptic feedback with 11 built-in patterns. Uses the Vibration API for native haptics on Android devices.",
+  "category": "special",
+  "dependencies": [],
+  "meta": {
+    "tags": ["haptics", "mobile", "vibration", "feedback", "touch"],
+    "source": "web-haptics"
+  }
+}

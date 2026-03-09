@@ -1,0 +1,11 @@
+{
+  "name": "label-input",
+  "type": "component",
+  "description": "Input field with floating label and password visibility toggle.",
+  "category": "inputs",
+  "dependencies": ["lucide-react"],
+  "meta": {
+    "tags": ["input", "label", "floating", "form"],
+    "source": "spell-ui"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "animated-modal",
+  "type": "component",
+  "description": "Animated modal with spring animations, 3D transforms, and outside click detection",
+  "category": "special",
+  "dependencies": ["motion"]
+}
