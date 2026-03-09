@@ -87,7 +87,7 @@ export function VideoText({
     const updateSvgMask = () => {
       const responsiveFontSize =
         typeof fontSize === "number" ? `${fontSize}vw` : fontSize
-      const newSvgMask = `<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><text x='50%' y='50%' font-size='${responsiveFontSize}' font-weight='${fontWeight}' text-anchor='${textAnchor}' dominant-baseline='${dominantBaseline}' font-family='${fontFamily}'>${content}</text></svg>`
+      const newSvgMask = `<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' overflow='visible'><text x='50%' y='50%' font-size='${responsiveFontSize}' font-weight='${fontWeight}' text-anchor='${textAnchor}' dominant-baseline='${dominantBaseline}' font-family='${fontFamily}'>${content}</text></svg>`
       setSvgMask(newSvgMask)
     }
 

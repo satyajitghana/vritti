@@ -261,14 +261,14 @@ export function SpotifyCard({ url, className }: SpotifyCardProps) {
             rel="noopener noreferrer"
             className="cursor-pointer"
           >
-            <SiSpotify size={18} className="text-[#BAAEBA]" />
+            <SiSpotify size={18} className="text-white/60" />
           </a>
         </div>
         <div className="pl-6 text-end">
-          <h2 className="whitespace-nowrap text-sm font-semibold tracking-[-.006em] text-[#D6D1D4]">
+          <h2 className="whitespace-nowrap text-sm font-semibold tracking-[-.006em] text-white/90">
             {data.title}
           </h2>
-          <h2 className="whitespace-nowrap text-sm font-medium tracking-[-.006em] text-[#BAAEBA]">
+          <h2 className="whitespace-nowrap text-sm font-medium tracking-[-.006em] text-white/70">
             {data.artist}
           </h2>
         </div>

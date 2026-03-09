@@ -39,8 +39,13 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
     if (sparkColorProp) {
       setResolvedColor(sparkColorProp);
     } else {
-      const fg = getComputedStyle(document.documentElement).getPropertyValue('--foreground').trim();
-      setResolvedColor(fg || '#000000');
+      // Resolve CSS variable to rgb() format for canvas compatibility
+      const el = document.createElement('div');
+      el.style.color = 'var(--foreground)';
+      document.body.appendChild(el);
+      const resolved = getComputedStyle(el).color;
+      el.remove();
+      setResolvedColor(resolved || '#000000');
     }
   }, [sparkColorProp]);
 

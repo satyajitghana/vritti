@@ -10,7 +10,7 @@ import {
 
 export default function AnimatedModalExample() {
   return (
-    <div className="flex items-center justify-center p-8">
+    <div className="flex items-center justify-center p-8" style={{ transform: 'translateZ(0)' }}>
       <Modal>
         <ModalTrigger className="bg-primary text-primary-foreground rounded-lg px-6 py-3">
           Open Modal

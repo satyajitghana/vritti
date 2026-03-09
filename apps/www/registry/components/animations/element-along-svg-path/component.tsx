@@ -151,6 +151,7 @@ const ElementAlongPath = ({
 }: ElementAlongPathProps) => {
   const container = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [viewBoxTransform, setViewBoxTransform] = useState({ scale: 1, tx: 0, ty: 0 });
 
   const timeScale = useMotionValue(1);
 
@@ -193,6 +194,27 @@ const ElementAlongPath = ({
 
   const finalProgress = animationType === "auto" ? progress : scrollProgress;
 
+  // Compute the SVG viewBox → container transform so children align with the rendered path
+  const vbParts = viewBox.split(/\s+/).map(Number);
+  const vbWidth = vbParts[2] || 100;
+  const vbHeight = vbParts[3] || 100;
+
+  useEffect(() => {
+    const el = container.current;
+    if (!el) return;
+
+    const ro = new ResizeObserver(([entry]) => {
+      const { width: cW, height: cH } = entry.contentRect;
+      if (cW === 0 || cH === 0) return;
+      const scale = Math.min(cW / vbWidth, cH / vbHeight);
+      const tx = (cW - vbWidth * scale) / 2;
+      const ty = (cH - vbHeight * scale) / 2;
+      setViewBoxTransform({ scale, tx, ty });
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [vbWidth, vbHeight]);
+
   return (
     <ElementAlongPathContext.Provider
       value={{
@@ -225,7 +247,20 @@ const ElementAlongPath = ({
             transition={transition}
           />
         </svg>
-        {children}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: vbWidth,
+            height: vbHeight,
+            transformOrigin: '0 0',
+            transform: `translate(${viewBoxTransform.tx}px, ${viewBoxTransform.ty}px) scale(${viewBoxTransform.scale})`,
+            pointerEvents: 'none',
+          }}
+        >
+          {children}
+        </div>
       </div>
     </ElementAlongPathContext.Provider>
   );

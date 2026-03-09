@@ -4,8 +4,8 @@ import { ProgressiveBlur } from "./component";
 
 export default function ProgressiveBlurExample() {
   return (
-    <div className="relative w-full rounded-xl border">
-      <div className="relative h-[300px] overflow-auto">
+    <div className="relative w-full rounded-xl border h-[300px]">
+      <div className="h-full overflow-auto">
         <div className="flex flex-col gap-2 p-4">
           {Array.from({ length: 15 }).map((_, index) => (
             <div
@@ -16,8 +16,8 @@ export default function ProgressiveBlurExample() {
             </div>
           ))}
         </div>
-        <ProgressiveBlur position="bottom" height="40%" />
       </div>
+      <ProgressiveBlur position="bottom" height="40%" />
     </div>
   );
 }

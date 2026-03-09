@@ -429,10 +429,6 @@
 }
 
 @layer base {
-  :root {
-    @apply overflow-x-hidden overscroll-none;
-  }
-
   * {
     @apply border-border outline-ring/50;
   }
@@ -444,7 +440,7 @@
   }
 
   body {
-    @apply bg-background text-foreground overscroll-none;
+    @apply bg-background text-foreground overflow-x-hidden overscroll-none;
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
   }
