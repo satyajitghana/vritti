@@ -91,20 +91,20 @@ export default function ProfileDropdown({
       <div className="group relative">
         <button
           type="button"
-          className="flex items-center gap-3 p-3 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800/60 hover:border-zinc-300 dark:hover:border-zinc-700 hover:bg-zinc-50/80 dark:hover:bg-zinc-800/40 hover:shadow-sm transition-all duration-200 focus:outline-none"
+          className="flex items-center gap-3 p-3 rounded-2xl bg-card border border-border hover:border-border/80 hover:bg-muted/80 hover:shadow-sm transition-all duration-200 focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
         >
           <div className="text-left flex-1">
-            <div className="text-sm font-medium text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight">
+            <div className="text-sm font-medium text-foreground tracking-tight leading-tight">
               {data.name}
             </div>
-            <div className="text-xs text-zinc-500 dark:text-zinc-400 tracking-tight leading-tight">
+            <div className="text-xs text-muted-foreground tracking-tight leading-tight">
               {data.email}
             </div>
           </div>
           <div className="relative flex-shrink-0">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 p-0.5">
-              <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-zinc-900">
+              <div className="w-full h-full rounded-full overflow-hidden bg-card">
                 <img
                   src={data.avatar}
                   alt={data.name}
@@ -118,18 +118,18 @@ export default function ProfileDropdown({
         </button>
 
         {isOpen && (
-          <div className="absolute right-0 top-full mt-1 w-64 p-2 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-sm border border-zinc-200/60 dark:border-zinc-800/60 rounded-2xl shadow-xl shadow-zinc-900/5 dark:shadow-zinc-950/20 z-50">
+          <div className="absolute right-0 top-full mt-1 w-64 p-2 bg-card/95 backdrop-blur-sm border border-border rounded-2xl shadow-xl shadow-foreground/5 z-50">
             <div className="space-y-1">
               {menuItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="flex items-center p-3 hover:bg-zinc-100/80 dark:hover:bg-zinc-800/60 rounded-xl transition-all duration-200 cursor-pointer group/item hover:shadow-sm border border-transparent hover:border-zinc-200/50 dark:hover:border-zinc-700/50"
+                  className="flex items-center p-3 hover:bg-muted rounded-xl transition-all duration-200 cursor-pointer group/item hover:shadow-sm border border-transparent hover:border-border/50"
                   onClick={(e) => e.preventDefault()}
                 >
                   <div className="flex items-center gap-2 flex-1">
                     {item.icon}
-                    <span className="text-sm font-medium text-zinc-900 dark:text-zinc-100 tracking-tight leading-tight whitespace-nowrap">
+                    <span className="text-sm font-medium text-foreground tracking-tight leading-tight whitespace-nowrap">
                       {item.label}
                     </span>
                   </div>
@@ -151,7 +151,7 @@ export default function ProfileDropdown({
               ))}
             </div>
 
-            <div className="my-3 h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent dark:via-zinc-800" />
+            <div className="my-3 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
             <button
               type="button"

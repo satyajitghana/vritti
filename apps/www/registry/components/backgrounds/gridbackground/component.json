@@ -1,5 +1,6 @@
 {
   "name": "gridbackground",
+  "title": "Grid Background",
   "type": "component",
   "description": "SVG perspective grid background with converging lines and fade overlay",
   "category": "backgrounds",

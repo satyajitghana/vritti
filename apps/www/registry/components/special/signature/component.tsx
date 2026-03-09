@@ -38,9 +38,8 @@ export function Signature({
         // Try multiple paths to ensure font loads correctly
         let font;
         const fontPaths = [
-          "/LastoriaBoldRegular.otf",
-          "./LastoriaBoldRegular.otf",
-          `${window.location.origin}/LastoriaBoldRegular.otf`,
+          "/fonts/LastoriaBoldRegular.otf",
+          `${window.location.origin}/fonts/LastoriaBoldRegular.otf`,
         ];
 
         for (const path of fontPaths) {

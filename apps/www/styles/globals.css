@@ -429,10 +429,6 @@
 }
 
 @layer base {
-  :root {
-    @apply overflow-x-hidden overscroll-none;
-  }
-
   * {
     @apply border-border outline-ring/50;
   }
@@ -444,7 +440,7 @@
   }
 
   body {
-    @apply bg-background text-foreground overscroll-none;
+    @apply bg-background text-foreground overflow-x-hidden overscroll-none;
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
   }
@@ -638,4 +634,13 @@
     @apply mt-6 rounded-lg overflow-hidden;
   }
 
+}
+
+@keyframes circling {
+  0% {
+    transform: rotate(calc(var(--circling-offset) * 1deg)) translateY(calc(var(--circling-radius) * -1px)) rotate(calc(var(--circling-offset) * -1deg)) translate(-50%, -50%);
+  }
+  100% {
+    transform: rotate(calc(var(--circling-offset) * 1deg + var(--circling-direction) * 360deg)) translateY(calc(var(--circling-radius) * -1px)) rotate(calc((var(--circling-offset) * 1deg + var(--circling-direction) * 360deg) * -1)) translate(-50%, -50%);
+  }
 }

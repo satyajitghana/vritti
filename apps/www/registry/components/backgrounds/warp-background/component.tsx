@@ -28,7 +28,7 @@ const Beam = ({
   duration: number
 }) => {
   const hue = Math.floor(Math.random() * 360)
-  const ar = Math.floor(Math.random() * 10) + 1
+  const ar = Math.floor(Math.random() * 3) + 3
 
   return (
     <motion.div

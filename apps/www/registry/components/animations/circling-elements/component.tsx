@@ -46,7 +46,7 @@ const CirclingElements: React.FC<CirclingElementsProps> = ({
             key={index}
             style={animationProps}
             className={cn(
-              "transform-gpu animate-circling absolute -translate-x-1/2 -translate-y-1/2",
+              "transform-gpu absolute top-1/2 left-1/2",
               pauseOnHover &&
                 "group-hover/circling:![animation-play-state:paused]"
             )}

@@ -68,7 +68,17 @@ export function SiteHeader() {
             >
               Theme Editor
             </Link>
-
+            <Link
+              href="/haptics"
+              className={cn(
+                'transition-colors hover:text-foreground/80',
+                pathname?.startsWith('/haptics')
+                  ? 'text-brand font-medium'
+                  : 'text-foreground/60'
+              )}
+            >
+              Haptics
+            </Link>
           </nav>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-2">

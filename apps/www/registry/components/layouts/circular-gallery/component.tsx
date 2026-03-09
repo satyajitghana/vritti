@@ -660,7 +660,7 @@ interface CircularGalleryProps {
 export default function CircularGallery({
   items,
   bend = 3,
-  textColor = '#ffffff',
+  textColor: textColorProp,
   borderRadius = 0.05,
   font = 'bold 30px Figtree',
   scrollSpeed = 2,
@@ -669,10 +669,11 @@ export default function CircularGallery({
   const containerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (!containerRef.current) return;
+    const resolvedTextColor = textColorProp || getComputedStyle(document.documentElement).getPropertyValue('--foreground').trim() || '#000000';
     const app = new App(containerRef.current, {
       items,
       bend,
-      textColor,
+      textColor: resolvedTextColor,
       borderRadius,
       font,
       scrollSpeed,
@@ -681,6 +682,6 @@ export default function CircularGallery({
     return () => {
       app.destroy();
     };
-  }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase]);
+  }, [items, bend, textColorProp, borderRadius, font, scrollSpeed, scrollEase]);
   return <div className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing" ref={containerRef} />;
 }

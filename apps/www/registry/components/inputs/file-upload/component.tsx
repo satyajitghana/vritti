@@ -425,13 +425,13 @@ export default function FileUpload({
       className={cn("relative mx-auto w-full max-w-sm", className || "")}
       role="complementary"
     >
-      <div className="group relative w-full rounded-xl bg-white p-0.5 ring-1 ring-gray-200 dark:bg-black dark:ring-white/10">
+      <div className="group relative w-full rounded-xl bg-card p-0.5 ring-1 ring-border">
         <div className="-top-px absolute inset-x-0 h-px w-full bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
 
-        <div className="relative w-full rounded-[10px] bg-gray-50/50 p-1.5 dark:bg-white/[0.02]">
+        <div className="relative w-full rounded-[10px] bg-muted/50 p-1.5">
           <div
             className={cn(
-              "relative mx-auto w-full overflow-hidden rounded-lg border border-gray-100 bg-white dark:border-white/[0.08] dark:bg-black/50",
+              "relative mx-auto w-full overflow-hidden rounded-lg border border-border bg-background",
               error ? "border-red-500/50" : ""
             )}
           >
@@ -473,10 +473,10 @@ export default function FileUpload({
                     </div>
 
                     <div className="mb-4 space-y-1.5 text-center">
-                      <h3 className="font-semibold text-gray-900 text-lg tracking-tight dark:text-white">
+                      <h3 className="font-semibold text-foreground text-lg tracking-tight">
                         Drag and drop or
                       </h3>
-                      <p className="text-gray-500 text-xs dark:text-gray-400">
+                      <p className="text-muted-foreground text-xs">
                         {acceptedFileTypes?.length
                           ? `${acceptedFileTypes
                               .map((t) => t.split("/")[1])
@@ -488,7 +488,7 @@ export default function FileUpload({
                     </div>
 
                     <button
-                      className="group flex w-4/5 items-center justify-center gap-2 rounded-lg bg-gray-100 px-4 py-2.5 font-semibold text-gray-900 text-sm transition-all duration-200 hover:bg-gray-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/20"
+                      className="group flex w-4/5 items-center justify-center gap-2 rounded-lg bg-secondary px-4 py-2.5 font-semibold text-secondary-foreground text-sm transition-all duration-200 hover:bg-secondary/80"
                       onClick={triggerFileInput}
                       type="button"
                     >
@@ -496,7 +496,7 @@ export default function FileUpload({
                       <UploadCloud className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
                     </button>
 
-                    <p className="mt-3 text-gray-500 text-xs dark:text-gray-400">
+                    <p className="mt-3 text-muted-foreground text-xs">
                       or drag and drop your file here
                     </p>
 
@@ -522,11 +522,11 @@ export default function FileUpload({
                     </div>
 
                     <div className="mb-4 space-y-1.5 text-center">
-                      <h3 className="truncate font-semibold text-gray-900 text-sm dark:text-white">
+                      <h3 className="truncate font-semibold text-foreground text-sm">
                         {file?.name}
                       </h3>
                       <div className="flex items-center justify-center gap-2 text-xs">
-                        <span className="text-gray-500 dark:text-gray-400">
+                        <span className="text-muted-foreground">
                           {formatBytes(file?.size || 0)}
                         </span>
                         <span className="font-medium text-blue-500">
@@ -536,7 +536,7 @@ export default function FileUpload({
                     </div>
 
                     <button
-                      className="flex w-4/5 items-center justify-center gap-2 rounded-lg bg-gray-100 px-4 py-2.5 font-semibold text-gray-900 text-sm transition-all duration-200 hover:bg-gray-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/20"
+                      className="flex w-4/5 items-center justify-center gap-2 rounded-lg bg-secondary px-4 py-2.5 font-semibold text-secondary-foreground text-sm transition-all duration-200 hover:bg-secondary/80"
                       onClick={resetState}
                       type="button"
                     >
