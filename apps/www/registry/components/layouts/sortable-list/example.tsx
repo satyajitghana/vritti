@@ -118,9 +118,9 @@ function SortableListDemo() {
               )}
             >
               {isOpen ? (
-                <XIcon className="h-5 w-5 text-neutral-500" />
+                <XIcon className="h-5 w-5 text-muted-foreground" />
               ) : (
-                <Settings2Icon className="stroke-1 h-5 w-5 text-white/80" />
+                <Settings2Icon className="stroke-1 h-5 w-5 text-primary-foreground/80" />
               )}
             </motion.button>
 
@@ -129,19 +129,19 @@ function SortableListDemo() {
                 {isOpen ? (
                   <motion.div className="flex w-full flex-col">
                     <div className="w-full px-3 py-2">
-                      <label className="text-xs text-neutral-400">Title</label>
+                      <label className="text-xs text-muted-foreground">Title</label>
                       <input
                         type="text"
                         value={item.text}
-                        className="w-full rounded-lg border border-black/10 bg-neutral-800 px-2 py-1 text-sm text-white"
+                        className="w-full rounded-lg border border-border bg-muted px-2 py-1 text-sm text-foreground"
                         readOnly
                       />
                     </div>
                     <div className="w-full px-3 py-2">
-                      <label className="text-xs text-neutral-400">
+                      <label className="text-xs text-muted-foreground">
                         Description
                       </label>
-                      <p className="text-xs text-neutral-300">
+                      <p className="text-xs text-muted-foreground/80">
                         {item.description}
                       </p>
                     </div>
@@ -150,7 +150,7 @@ function SortableListDemo() {
                         size="sm"
                         variant="ghost"
                         onClick={() => setOpenItemId(null)}
-                        className="h-7 rounded-lg bg-[#13EEE3]/80 hover:bg-[#13EEE3] hover:text-black text-black"
+                        className="h-7 rounded-lg bg-accent-foreground/80 hover:bg-accent-foreground text-accent"
                       >
                         Close
                       </Button>
@@ -167,16 +167,16 @@ function SortableListDemo() {
 
   return (
     <div className="md:px-4 w-full max-w-xl">
-      <div className="mb-9 rounded-2xl p-2 shadow-sm md:p-6 bg-black">
+      <div className="mb-9 rounded-2xl p-2 shadow-sm md:p-6 bg-background">
         <div className="overflow-auto p-1 md:p-4">
           <div className="flex flex-col space-y-2">
-            <h3 className="text-neutral-200">Agent workflow</h3>
+            <h3 className="text-foreground">Agent workflow</h3>
             <div className="flex items-center justify-between gap-4 py-2">
               <button disabled={items?.length > 5} onClick={handleAddItem}>
-                <Plus className="h-5 w-5 text-neutral-500/80 hover:text-white/80" />
+                <Plus className="h-5 w-5 text-muted-foreground hover:text-foreground" />
               </button>
               <button onClick={handleResetItems}>
-                <RepeatIcon className="h-4 w-4 text-neutral-500/80 hover:text-white/80" />
+                <RepeatIcon className="h-4 w-4 text-muted-foreground hover:text-foreground" />
               </button>
             </div>
             <SortableList

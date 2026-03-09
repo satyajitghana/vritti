@@ -17,15 +17,15 @@ interface CustomCSSProperties extends React.CSSProperties {
 }
 
 const buttonVariants = cva(
-  'group relative z-0 bg-white dark:bg-[rgba(0,0,0,1)] flex cursor-pointer items-center justify-center overflow-hidden whitespace-nowrap  transform-gpu transition-all duration-300 ease-in-out active:translate-y-px',
+  'group relative z-0 bg-background flex cursor-pointer items-center justify-center overflow-hidden whitespace-nowrap  transform-gpu transition-all duration-300 ease-in-out active:translate-y-px',
   {
     variants: {
       variant: {
-        default: 'text-cyan-400 border border-cyan-400/20 hover:text-cyan-300',
+        default: 'text-primary border border-primary/20 hover:text-primary/80',
         outline:
-          'bg-transparent text-cyan-400 border border-cyan-400 hover:text-cyan-300',
-        ghost: 'bg-transparent text-cyan-400 hover:bg-cyan-950/30',
-        glow: 'text-cyan-400 border border-cyan-400/30 hover:text-cyan-300 hover:shadow-glow',
+          'bg-transparent text-primary border border-primary hover:text-primary/80',
+        ghost: 'bg-transparent text-primary hover:bg-primary/10',
+        glow: 'text-primary border border-primary/30 hover:text-primary/80 hover:shadow-glow',
       },
       size: {
         default: 'h-10 px-6 py-2',
@@ -34,7 +34,7 @@ const buttonVariants = cva(
         icon: 'h-10 w-10',
       },
       glow: {
-        true: 'hover:shadow-[0_0_5px_#03e9f4,0_0_25px_#03e9f4]',
+        true: 'hover:shadow-[0_0_5px_var(--shimmer-color),0_0_25px_var(--shimmer-color)]',
         false: '',
       },
       textEffect: {
@@ -89,11 +89,11 @@ const AnimatedButton = React.forwardRef<HTMLButtonElement, AnimatedButtonProps>(
       rounded,
       asChild = false,
       hideAnimations = false,
-      shimmerColor = '#03e9f4',
+      shimmerColor = 'var(--primary)',
       shimmerSize = '0.05em',
       shimmerDuration = '3s',
       borderRadius = '100px',
-      background = 'rgba(0, 0, 0, 1)',
+      background = 'var(--background)',
       style,
       children,
       ...props

@@ -21,7 +21,7 @@ interface Spark {
 }
 
 const ClickSpark: React.FC<ClickSparkProps> = ({
-  sparkColor = '#fff',
+  sparkColor: sparkColorProp,
   sparkSize = 10,
   sparkRadius = 15,
   sparkCount = 8,
@@ -33,6 +33,18 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sparksRef = useRef<Spark[]>([]);
   const startTimeRef = useRef<number | null>(null);
+  const [resolvedColor, setResolvedColor] = React.useState('#000000');
+
+  useEffect(() => {
+    if (sparkColorProp) {
+      setResolvedColor(sparkColorProp);
+    } else {
+      const fg = getComputedStyle(document.documentElement).getPropertyValue('--foreground').trim();
+      setResolvedColor(fg || '#000000');
+    }
+  }, [sparkColorProp]);
+
+  const sparkColor = sparkColorProp || resolvedColor;
 
   useEffect(() => {
     const canvas = canvasRef.current;

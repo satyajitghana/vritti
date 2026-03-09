@@ -134,8 +134,8 @@ function SortableListItem({
                         aria-label="Mark to delete"
                         onClick={() => onCompleteItem(item.id)}
                         className={cn(
-                          "h-5 w-5 rounded-md border border-white/20 bg-black/30 flex items-center justify-center shrink-0",
-                          item.checked && "bg-black text-red-200"
+                          "h-5 w-5 rounded-md border border-border flex items-center justify-center shrink-0 bg-background/30",
+                          item.checked && "bg-background text-destructive"
                         )}
                       >
                         {item.checked && (
@@ -146,7 +146,7 @@ function SortableListItem({
                       </button>
                     </div>
                     {/* List Order */}
-                    <p className="font-mono text-xs pl-1 text-white/50">
+                    <p className="font-mono text-xs pl-1 text-muted-foreground">
                       {order + 1}
                     </p>
 
@@ -168,7 +168,7 @@ function SortableListItem({
                       <h4
                         className={cn(
                           "tracking-tighter text-base md:text-lg ",
-                          item.checked ? "text-red-400" : "text-white/70"
+                          item.checked ? "text-destructive" : "text-primary-foreground/70"
                         )}
                       >
                         {item.checked ? "Delete" : ` ${item.text}`}
@@ -214,7 +214,7 @@ function SortableListItem({
                   bounce: 0,
                 },
               }}
-              className="-ml-[1px] h-[1.5rem] w-3 rounded-l-none  rounded-r-none border-y  border-y-white/5 border-r-white/10 bg-[#161716] "
+              className="-ml-[1px] h-[1.5rem] w-3 rounded-l-none  rounded-r-none border-y  border-y-border/50 border-r-border bg-card "
             />
           ) : null}
         </AnimatePresence>
@@ -240,7 +240,7 @@ function SortableListItem({
                 x: -10,
                 transition: { delay: 0, duration: 0.12 },
               }}
-              className="inset-0 z-0 border-spacing-1  rounded-r-xl rounded-l-sm border-r-2   border-r-red-300/60 bg-[#161716]/80 shadow-[0_1px_0_0_rgba(255,255,255,0.03)_inset,0_0_0_1px_rgba(255,255,255,0.03)_inset,0_0_0_1px_rgba(0,0,0,0.1),0_2px_2px_0_rgba(0,0,0,0.1),0_4px_4px_0_rgba(0,0,0,0.1),0_8px_8px_0_rgba(0,0,0,0.1)] dark:bg-[#161716]/50"
+              className="inset-0 z-0 border-spacing-1  rounded-r-xl rounded-l-sm border-r-2   border-r-destructive/60 bg-card/80 shadow-[0_1px_0_0_rgba(255,255,255,0.03)_inset,0_0_0_1px_rgba(255,255,255,0.03)_inset,0_0_0_1px_rgba(0,0,0,0.1),0_2px_2px_0_rgba(0,0,0,0.1),0_4px_4px_0_rgba(0,0,0,0.1),0_8px_8px_0_rgba(0,0,0,0.1)]"
             >
               <button
                 type="button"

@@ -38,7 +38,7 @@ export function AnimatedCheckbox({
     >
       <div
         className={cn(
-          "size-4.5 rounded-[6px] flex items-center justify-center border-[1.5px] transition-colors duration-200",
+          "size-5 shrink-0 rounded-[6px] flex items-center justify-center border-[1.5px] transition-colors duration-200",
           checked
             ? "bg-foreground border-transparent"
             : "bg-transparent border-muted-foreground/40 hover:border-muted-foreground/60"

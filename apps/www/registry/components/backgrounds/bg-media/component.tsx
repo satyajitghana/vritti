@@ -13,7 +13,7 @@ type MediaType = "image" | "video"
 
 // Update the cva call with these types
 const backgroundVariants = cva(
-  "relative h-screen max-h-[1000px] w-full min-h-[500px] lg:min-h-[600px]",
+  "relative h-full w-full min-h-[300px]",
   {
     variants: {
       overlay: {
@@ -99,7 +99,7 @@ export const BackgroundMedia: React.FC<BackgroundMediaProps> = ({
       {type === "video" && (
         <button
           aria-label={isPlaying ? "Pause video" : "Play video"}
-          className="absolute bottom-4 right-4 z-50 px-4 py-2 bg-gray-900 text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+          className="absolute bottom-4 right-4 z-50 px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/80 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
           onClick={toggleMediaPlay}
         >
           {isPlaying ? "Pause" : "Play"}

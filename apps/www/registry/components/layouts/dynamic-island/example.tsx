@@ -142,28 +142,24 @@ const DynamicAction = () => {
 
   return (
     <div className="h-full">
-      <div className="flex flex-col gap-4 h-full">
-        <div className="absolute top-12 left-1">
+      <div className="flex flex-col items-center gap-4 h-full">
+        <DynamicIsland id="dynamic-blob">{renderState()}</DynamicIsland>
+        <div className="flex items-center gap-2">
           <Button
             onClick={cycleBlobStates}
             disabled={blobState.isAnimating}
-            className="mt-4 p-2 border rounded-md max-w-[200px]"
+            className="p-2 border rounded-md max-w-[200px]"
           >
             Click
             <MousePointerClickIcon className="ml-2 h-4 w-4" />
           </Button>
+          <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold">
+            prev - {blobState.previousSize}
+          </span>
+          <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold">
+            cur - {blobState.size}
+          </span>
         </div>
-        <div className="absolute top-1 right-2">
-          <div className="flex gap-1">
-            <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold">
-              prev - {blobState.previousSize}
-            </span>
-            <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold">
-              cur - {blobState.size}
-            </span>
-          </div>
-        </div>
-        <DynamicIsland id="dynamic-blob">{renderState()}</DynamicIsland>
       </div>
     </div>
   )

@@ -2,7 +2,7 @@ import { InteractiveInput } from "./component";
 
 export default function InteractiveInputExample() {
   return (
-    <div className="flex flex-col items-center gap-6 p-8 bg-black rounded-lg">
+    <div className="flex flex-col items-center gap-6 p-8 bg-background rounded-lg">
       <InteractiveInput placeholder="Type something..." />
       <InteractiveInput
         variant="glow"

@@ -26,6 +26,8 @@ pnpm --filter @vritti/www tsx apps/www/scripts/generate-docs.mts
 
 ## Testing with Playwright
 
+**IMPORTANT:** After changing any component, you MUST verify it with Playwright screenshots before committing.
+
 Use Python Playwright to take screenshots and verify the site visually.
 
 ### Setup
@@ -54,7 +56,7 @@ cd /root/.cache/ms-playwright/chromium_headless_shell-1208 && unzip -q -o /tmp/c
 ### Usage
 
 ```bash
-# Take a screenshot
+# Take a single page screenshot
 python3 -c "
 from playwright.sync_api import sync_playwright
 with sync_playwright() as p:
@@ -67,11 +69,54 @@ with sync_playwright() as p:
 "
 ```
 
+```bash
+# Screenshot a specific component (replace COMPONENT_NAME)
+python3 -c "
+from playwright.sync_api import sync_playwright
+with sync_playwright() as p:
+    browser = p.chromium.launch()
+    page = browser.new_page(viewport={'width': 1280, 'height': 720})
+    page.goto('http://localhost:3000/docs/components/COMPONENT_NAME')
+    page.wait_for_timeout(3000)
+    page.screenshot(path='/tmp/COMPONENT_NAME.png')
+    browser.close()
+"
+```
+
+```bash
+# Batch screenshot multiple components
+python3 -c "
+from playwright.sync_api import sync_playwright
+import os
+os.makedirs('/tmp/screenshots', exist_ok=True)
+components = ['animated-button', 'click-spark', 'sortable-list']  # add your components
+with sync_playwright() as p:
+    browser = p.chromium.launch()
+    page = browser.new_page(viewport={'width': 1280, 'height': 720})
+    for name in components:
+        page.goto(f'http://localhost:3000/docs/components/{name}', timeout=15000)
+        page.wait_for_timeout(3000)
+        page.screenshot(path=f'/tmp/screenshots/{name}.png')
+    browser.close()
+"
+```
+
+### Verification Workflow
+
+After modifying any component:
+
+1. Start the dev server: `pnpm --filter @vritti/www dev`
+2. Take a screenshot of the modified component page
+3. Read the screenshot to visually verify it renders correctly
+4. Check both light and dark mode if theme-related changes were made
+5. Component doc pages are at: `/docs/components/<component-name>`
+
 Use Playwright to:
 - Verify pages render without errors after changes
 - Check theme toggle works (click button, screenshot before/after)
 - Verify no console errors (especially React Error #185)
 - Test component rendering on specific pages
+- Verify components are visible in both light and dark mode
 
 ## Architecture Notes
 

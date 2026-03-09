@@ -186,7 +186,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
           <div className="relative z-10 flex-1 p-[10px] box-border">
             <img src={c.image} alt={c.title} loading="lazy" className="w-full h-full object-cover rounded-[10px]" />
           </div>
-          <footer className="relative z-10 p-3 text-white font-sans grid grid-cols-[1fr_auto] gap-x-3 gap-y-1">
+          <footer className="relative z-10 p-3 text-foreground font-sans grid grid-cols-[1fr_auto] gap-x-3 gap-y-1">
             <h3 className="m-0 text-[1.05rem] font-semibold">{c.title}</h3>
             {c.handle && <span className="text-[0.95rem] opacity-80 text-right">{c.handle}</span>}
             <p className="m-0 text-[0.85rem] opacity-85">{c.subtitle}</p>

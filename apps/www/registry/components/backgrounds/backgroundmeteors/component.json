@@ -1,5 +1,6 @@
 {
   "name": "backgroundmeteors",
+  "title": "Background Meteors",
   "type": "component",
   "description": "Animated meteor beams falling through a grid background",
   "category": "backgrounds",

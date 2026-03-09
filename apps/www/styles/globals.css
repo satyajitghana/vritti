@@ -639,3 +639,12 @@
   }
 
 }
+
+@keyframes circling {
+  0% {
+    transform: rotate(calc(var(--circling-offset) * 1deg)) translateY(calc(var(--circling-radius) * -1px)) rotate(calc(var(--circling-offset) * -1deg)) translate(-50%, -50%);
+  }
+  100% {
+    transform: rotate(calc(var(--circling-offset) * 1deg + var(--circling-direction) * 360deg)) translateY(calc(var(--circling-radius) * -1px)) rotate(calc((var(--circling-offset) * 1deg + var(--circling-direction) * 360deg) * -1)) translate(-50%, -50%);
+  }
+}
