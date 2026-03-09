@@ -1,0 +1,7 @@
+{
+  "name": "pixelated-canvas",
+  "type": "component",
+  "description": "Canvas-based image pixelation with interactive mouse distortion effects",
+  "category": "media",
+  "dependencies": []
+}

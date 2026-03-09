@@ -1,0 +1,11 @@
+{
+  "name": "keyboard",
+  "type": "component",
+  "description": "Interactive MacBook-style keyboard with sound effects and key press visualization.",
+  "category": "special",
+  "dependencies": ["motion", "@tabler/icons-react"],
+  "meta": {
+    "tags": ["keyboard", "interactive", "apple", "macbook", "sound"],
+    "source": "aceternity"
+  }
+}

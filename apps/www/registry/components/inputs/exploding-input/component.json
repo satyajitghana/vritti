@@ -1,0 +1,11 @@
+{
+  "name": "exploding-input",
+  "type": "component",
+  "description": "Input component that spawns particle effects when typing.",
+  "category": "inputs",
+  "dependencies": [],
+  "meta": {
+    "tags": ["input", "animation", "particles", "exploding"],
+    "source": "spell-ui"
+  }
+}

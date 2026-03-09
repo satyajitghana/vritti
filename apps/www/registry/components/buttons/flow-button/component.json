@@ -1,0 +1,11 @@
+{
+  "name": "flow-button",
+  "type": "component",
+  "description": "A button with animated flowing dashed border on hover.",
+  "category": "buttons",
+  "dependencies": ["@radix-ui/react-slot"],
+  "meta": {
+    "tags": ["button", "animation", "border", "flow"],
+    "source": "spell-ui"
+  }
+}

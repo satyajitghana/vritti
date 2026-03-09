@@ -1,0 +1,11 @@
+{
+  "name": "pop-button",
+  "type": "component",
+  "description": "A playful 3D-style button with push-down animation effect.",
+  "category": "buttons",
+  "dependencies": ["@radix-ui/react-slot"],
+  "meta": {
+    "tags": ["button", "3d", "animation", "pop"],
+    "source": "spell-ui"
+  }
+}

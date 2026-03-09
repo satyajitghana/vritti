@@ -1,0 +1,7 @@
+{
+  "name": "dither-shader",
+  "type": "component",
+  "description": "Canvas-based dithering effect with multiple modes and color options",
+  "category": "media",
+  "dependencies": []
+}

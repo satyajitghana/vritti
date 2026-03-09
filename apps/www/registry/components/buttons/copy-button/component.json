@@ -1,0 +1,11 @@
+{
+  "name": "copy-button",
+  "type": "component",
+  "description": "A copy-to-clipboard button with blur transition effect.",
+  "category": "buttons",
+  "dependencies": ["lucide-react"],
+  "meta": {
+    "tags": ["button", "copy", "clipboard"],
+    "source": "spell-ui"
+  }
+}

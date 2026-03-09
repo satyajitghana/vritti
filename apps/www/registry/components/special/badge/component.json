@@ -1,0 +1,11 @@
+{
+  "name": "badge",
+  "type": "component",
+  "description": "A badge component with multiple color variants and sizes.",
+  "category": "special",
+  "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+  "meta": {
+    "tags": ["badge", "variant", "label"],
+    "source": "spell-ui"
+  }
+}

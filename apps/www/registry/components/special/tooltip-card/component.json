@@ -1,0 +1,7 @@
+{
+  "name": "tooltip-card",
+  "type": "component",
+  "description": "A smart tooltip that follows the mouse cursor with automatic viewport edge detection",
+  "category": "special",
+  "dependencies": ["motion"]
+}

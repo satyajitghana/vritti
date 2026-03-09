@@ -1,0 +1,11 @@
+{
+  "name": "bars-spinner",
+  "type": "component",
+  "description": "A loading spinner with rotating bars animation.",
+  "category": "animations",
+  "dependencies": [],
+  "meta": {
+    "tags": ["spinner", "loading", "bars", "animation"],
+    "source": "spell-ui"
+  }
+}

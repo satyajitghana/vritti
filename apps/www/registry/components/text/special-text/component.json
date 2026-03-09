@@ -1,0 +1,11 @@
+{
+  "name": "special-text",
+  "type": "component",
+  "description": "Animated text with scramble/matrix effect.",
+  "category": "text",
+  "dependencies": [],
+  "meta": {
+    "tags": ["text", "animation", "scramble", "matrix"],
+    "source": "spell-ui"
+  }
+}

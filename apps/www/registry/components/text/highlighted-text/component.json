@@ -1,0 +1,11 @@
+{
+  "name": "highlighted-text",
+  "type": "component",
+  "description": "Text with sliding background highlight animation using mix-blend-mode.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "meta": {
+    "tags": ["text", "animation", "highlight"],
+    "source": "spell-ui"
+  }
+}

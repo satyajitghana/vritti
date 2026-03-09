@@ -1,0 +1,11 @@
+{
+  "name": "text-marquee",
+  "type": "component",
+  "description": "Animated text marquee component with vertical scrolling.",
+  "category": "text",
+  "dependencies": [],
+  "meta": {
+    "tags": ["text", "animation", "marquee", "scroll"],
+    "source": "spell-ui"
+  }
+}

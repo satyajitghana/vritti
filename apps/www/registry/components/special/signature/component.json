@@ -1,0 +1,11 @@
+{
+  "name": "signature",
+  "type": "component",
+  "description": "Animated signature component with handwriting effect using custom fonts.",
+  "category": "special",
+  "dependencies": ["motion", "opentype.js", "@types/opentype.js"],
+  "meta": {
+    "tags": ["signature", "animation", "handwriting", "svg"],
+    "source": "spell-ui"
+  }
+}

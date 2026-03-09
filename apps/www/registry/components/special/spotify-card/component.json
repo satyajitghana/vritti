@@ -1,0 +1,11 @@
+{
+  "name": "spotify-card",
+  "type": "component",
+  "description": "Display Spotify tracks with album art and blurred background.",
+  "category": "special",
+  "dependencies": ["@icons-pack/react-simple-icons", "spotify-url-info"],
+  "meta": {
+    "tags": ["spotify", "music", "card", "embed"],
+    "source": "spell-ui"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "apple-hello-effect",
+  "type": "component",
+  "description": "Apple-style SVG handwriting animation with 'hello' text effect.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "meta": {
+    "tags": ["text", "animation", "apple", "handwriting", "svg"],
+    "source": "chanhdai"
+  }
+}

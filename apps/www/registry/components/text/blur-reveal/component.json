@@ -1,0 +1,11 @@
+{
+  "name": "blur-reveal",
+  "type": "component",
+  "description": "Animated text reveal with character-level blur effect.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "meta": {
+    "tags": ["text", "animation", "blur", "reveal"],
+    "source": "spell-ui"
+  }
+}

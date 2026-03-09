@@ -1,12 +1,7 @@
 {
   "name": "code-block",
   "type": "component",
-  "description": "Beautiful code block with tabs and copy functionality",
+  "description": "Syntax-highlighted code block with tabs, line highlighting, and copy button",
   "category": "special",
-  "dependencies": ["motion"],
-  "files": [],
-  "meta": {
-    "tags": ["code", "display"],
-    "source": "cult-ui"
-  }
+  "dependencies": ["react-syntax-highlighter", "@tabler/icons-react"]
 }

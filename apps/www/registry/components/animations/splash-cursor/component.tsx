@@ -1188,18 +1188,25 @@ export default function SplashCursor({
       return ((value - min) % range) + min;
     }
 
+    function getCanvasOffset() {
+      const rect = canvas!.getBoundingClientRect();
+      return { left: rect.left, top: rect.top };
+    }
+
     window.addEventListener('mousedown', e => {
       const pointer = pointers[0];
-      const posX = scaleByPixelRatio(e.clientX);
-      const posY = scaleByPixelRatio(e.clientY);
+      const offset = getCanvasOffset();
+      const posX = scaleByPixelRatio(e.clientX - offset.left);
+      const posY = scaleByPixelRatio(e.clientY - offset.top);
       updatePointerDownData(pointer, -1, posX, posY);
       clickSplat(pointer);
     });
 
     function handleFirstMouseMove(e: MouseEvent) {
       const pointer = pointers[0];
-      const posX = scaleByPixelRatio(e.clientX);
-      const posY = scaleByPixelRatio(e.clientY);
+      const offset = getCanvasOffset();
+      const posX = scaleByPixelRatio(e.clientX - offset.left);
+      const posY = scaleByPixelRatio(e.clientY - offset.top);
       const color = generateColor();
       updateFrame();
       updatePointerMoveData(pointer, posX, posY, color);
@@ -1209,8 +1216,9 @@ export default function SplashCursor({
 
     window.addEventListener('mousemove', e => {
       const pointer = pointers[0];
-      const posX = scaleByPixelRatio(e.clientX);
-      const posY = scaleByPixelRatio(e.clientY);
+      const offset = getCanvasOffset();
+      const posX = scaleByPixelRatio(e.clientX - offset.left);
+      const posY = scaleByPixelRatio(e.clientY - offset.top);
       const color = pointer.color;
       updatePointerMoveData(pointer, posX, posY, color);
     });
@@ -1218,9 +1226,10 @@ export default function SplashCursor({
     function handleFirstTouchStart(e: TouchEvent) {
       const touches = e.targetTouches;
       const pointer = pointers[0];
+      const offset = getCanvasOffset();
       for (let i = 0; i < touches.length; i++) {
-        const posX = scaleByPixelRatio(touches[i].clientX);
-        const posY = scaleByPixelRatio(touches[i].clientY);
+        const posX = scaleByPixelRatio(touches[i].clientX - offset.left);
+        const posY = scaleByPixelRatio(touches[i].clientY - offset.top);
         updateFrame();
         updatePointerDownData(pointer, touches[i].identifier, posX, posY);
       }
@@ -1233,9 +1242,10 @@ export default function SplashCursor({
       e => {
         const touches = e.targetTouches;
         const pointer = pointers[0];
+        const offset = getCanvasOffset();
         for (let i = 0; i < touches.length; i++) {
-          const posX = scaleByPixelRatio(touches[i].clientX);
-          const posY = scaleByPixelRatio(touches[i].clientY);
+          const posX = scaleByPixelRatio(touches[i].clientX - offset.left);
+          const posY = scaleByPixelRatio(touches[i].clientY - offset.top);
           updatePointerDownData(pointer, touches[i].identifier, posX, posY);
         }
       },
@@ -1247,9 +1257,10 @@ export default function SplashCursor({
       e => {
         const touches = e.targetTouches;
         const pointer = pointers[0];
+        const offset = getCanvasOffset();
         for (let i = 0; i < touches.length; i++) {
-          const posX = scaleByPixelRatio(touches[i].clientX);
-          const posY = scaleByPixelRatio(touches[i].clientY);
+          const posX = scaleByPixelRatio(touches[i].clientX - offset.left);
+          const posY = scaleByPixelRatio(touches[i].clientY - offset.top);
           updatePointerMoveData(pointer, posX, posY, pointer.color);
         }
       },

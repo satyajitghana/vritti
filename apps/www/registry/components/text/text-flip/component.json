@@ -1,0 +1,11 @@
+{
+  "name": "text-flip",
+  "type": "component",
+  "description": "Rotating text animation that cycles through items with smooth transitions.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "meta": {
+    "tags": ["text", "animation", "flip", "rotate", "cycle"],
+    "source": "chanhdai"
+  }
+}

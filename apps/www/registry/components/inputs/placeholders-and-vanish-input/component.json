@@ -1,0 +1,7 @@
+{
+  "name": "placeholders-and-vanish-input",
+  "type": "component",
+  "description": "Search input with rotating placeholder text and vanishing text animation on submit",
+  "category": "inputs",
+  "dependencies": ["motion"]
+}

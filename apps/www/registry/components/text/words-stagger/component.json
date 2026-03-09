@@ -1,0 +1,11 @@
+{
+  "name": "words-stagger",
+  "type": "component",
+  "description": "Word-by-word text animation with blur, transform, and opacity effects.",
+  "category": "text",
+  "dependencies": ["motion"],
+  "meta": {
+    "tags": ["text", "animation", "stagger", "words"],
+    "source": "spell-ui"
+  }
+}

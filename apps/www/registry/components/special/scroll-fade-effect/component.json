@@ -1,0 +1,11 @@
+{
+  "name": "scroll-fade-effect",
+  "type": "component",
+  "description": "Pure CSS gradient fade effect at scroll container edges.",
+  "category": "special",
+  "dependencies": [],
+  "meta": {
+    "tags": ["scroll", "fade", "gradient", "css"],
+    "source": "chanhdai"
+  }
+}

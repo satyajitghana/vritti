@@ -1,0 +1,11 @@
+{
+  "name": "animated-gradient",
+  "type": "component",
+  "description": "Animated gradient background with presets and customizable swirl effects using WebGL.",
+  "category": "backgrounds",
+  "dependencies": [],
+  "meta": {
+    "tags": ["background", "gradient", "animation", "webgl"],
+    "source": "spell-ui"
+  }
+}

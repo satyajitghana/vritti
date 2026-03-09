@@ -1,0 +1,11 @@
+{
+  "name": "tweet",
+  "type": "component",
+  "description": "Embed Twitter/X posts with custom styling.",
+  "category": "special",
+  "dependencies": ["react-tweet", "@icons-pack/react-simple-icons", "lucide-react"],
+  "meta": {
+    "tags": ["tweet", "twitter", "social", "embed"],
+    "source": "spell-ui"
+  }
+}
