@@ -6,6 +6,9 @@
   "dependencies": [],
   "files": [],
   "meta": {
-    "tags": ["layouts"]
+    "tags": [
+      "layouts",
+      "glass"
+    ]
   }
 }

@@ -3,5 +3,13 @@
   "type": "component",
   "description": "Characters float into view on scroll using GSAP ScrollTrigger.",
   "category": "text",
-  "dependencies": ["gsap"]
+  "dependencies": [
+    "gsap"
+  ],
+  "meta": {
+    "tags": [
+      "scroll",
+      "text"
+    ]
+  }
 }

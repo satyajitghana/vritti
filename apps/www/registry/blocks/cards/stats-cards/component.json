@@ -1,0 +1,12 @@
+{
+  "name": "stats-cards",
+  "type": "block",
+  "description": "Animated statistics cards with counting animations and trend indicators.",
+  "category": "cards",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["cards", "stats", "analytics", "counter", "dashboard"],
+    "source": "vritti"
+  }
+}

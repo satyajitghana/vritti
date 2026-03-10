@@ -3,10 +3,16 @@
   "type": "component",
   "description": "A pixelated blast particle background effect.",
   "category": "backgrounds",
-  "dependencies": ["three", "postprocessing"],
+  "dependencies": [
+    "three",
+    "postprocessing"
+  ],
   "files": [],
   "meta": {
-    "tags": ["background"],
+    "tags": [
+      "background",
+      "image"
+    ],
     "source": "react-bits"
   }
 }

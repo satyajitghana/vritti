@@ -6,6 +6,10 @@
   "dependencies": [],
   "files": [],
   "meta": {
-    "tags": ["text", "animation"]
+    "tags": [
+      "text",
+      "animation",
+      "video"
+    ]
   }
 }

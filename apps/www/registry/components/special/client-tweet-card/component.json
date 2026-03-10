@@ -3,9 +3,14 @@
   "type": "component",
   "description": "A client-side version of the tweet card.",
   "category": "special",
-  "dependencies": ["react-tweet"],
+  "dependencies": [
+    "react-tweet"
+  ],
   "files": [],
   "meta": {
-    "tags": ["special"]
+    "tags": [
+      "special",
+      "card"
+    ]
   }
 }

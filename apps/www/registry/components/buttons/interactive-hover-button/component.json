@@ -3,9 +3,15 @@
   "type": "component",
   "description": "A buttons interactive hover button component",
   "category": "buttons",
-  "dependencies": ["lucide-react"],
+  "dependencies": [
+    "lucide-react"
+  ],
   "files": [],
   "meta": {
-    "tags": ["buttons"]
+    "tags": [
+      "buttons",
+      "hover",
+      "button"
+    ]
   }
 }

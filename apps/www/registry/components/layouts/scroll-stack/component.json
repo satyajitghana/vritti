@@ -3,9 +3,14 @@
   "type": "component",
   "description": "A layouts scroll stack component",
   "category": "layouts",
-  "dependencies": ["lenis"],
+  "dependencies": [
+    "lenis"
+  ],
   "files": [],
   "meta": {
-    "tags": ["layouts"]
+    "tags": [
+      "layouts",
+      "scroll"
+    ]
   }
 }

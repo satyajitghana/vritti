@@ -4,6 +4,14 @@
   "title": "Social Button",
   "description": "A share button that expands into a row of social media icons on hover.",
   "category": "buttons",
-  "dependencies": ["motion", "lucide-react"],
-  "source": "kokonutui"
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "source": "kokonutui",
+  "meta": {
+    "tags": [
+      "button"
+    ]
+  }
 }

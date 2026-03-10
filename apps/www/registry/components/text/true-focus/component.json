@@ -3,5 +3,12 @@
   "type": "component",
   "description": "Text with an animated focus border that highlights words sequentially.",
   "category": "text",
-  "dependencies": ["motion"]
+  "dependencies": [
+    "motion"
+  ],
+  "meta": {
+    "tags": [
+      "text"
+    ]
+  }
 }

@@ -5,7 +5,13 @@
   "category": "inputs",
   "dependencies": [],
   "meta": {
-    "tags": ["input", "color", "picker", "selector"],
+    "tags": [
+      "input",
+      "color",
+      "picker",
+      "selector",
+      "form"
+    ],
     "source": "spell-ui"
   }
 }

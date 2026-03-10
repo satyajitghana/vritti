@@ -1,0 +1,17 @@
+{
+  "name": "carousel-cards",
+  "type": "component",
+  "title": "Carousel Cards",
+  "description": "Airbnb-inspired horizontal scrolling carousel with experience cards featuring images, ratings, and pricing.",
+  "category": "layouts",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "source": "kokonutui",
+  "meta": {
+    "tags": [
+      "card",
+      "carousel"
+    ]
+  }
+}

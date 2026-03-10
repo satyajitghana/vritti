@@ -15,11 +15,11 @@ export default function HoverVideoPlayerDemo() {
         <GradientHeading>Hover video player</GradientHeading>
       </div>
       <motion.div
-        initial={{ maxWidth: "24rem" }} // 96 in rem
+        initial={{ maxWidth: "24rem" }}
         whileHover={{ maxWidth: "100%" }}
         transition={{
           duration: 0.5,
-          ease: [0.32, 0.72, 0, 1], // Custom easing for smooth animation
+          ease: [0.32, 0.72, 0, 1],
         }}
         className={cn(
           "group relative flex flex-col overflow-hidden rounded-lg w-full h-full",
@@ -28,8 +28,8 @@ export default function HoverVideoPlayerDemo() {
         )}
       >
         <HoverVideoPlayer
-          videoSrc="https://player.vimeo.com/video/1037289858"
-          thumbnailSrc="/placeholders/newcopy-thumbnail.png"
+          videoSrc="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+          thumbnailSrc="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Big_buck_bunny_poster_big.jpg/800px-Big_buck_bunny_poster_big.jpg"
           enableControls
           style={{
             width: "100%",
@@ -39,9 +39,9 @@ export default function HoverVideoPlayerDemo() {
         />
       </motion.div>
 
-      <a href="https://www.newcult.co" target="_blank">
-        newcopy.ai
-      </a>
+      <p className="text-sm text-muted-foreground">
+        Hover over the video to play
+      </p>
     </div>
   )
 }

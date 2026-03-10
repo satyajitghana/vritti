@@ -6,7 +6,15 @@
   "dependencies": [],
   "files": [],
   "meta": {
-    "tags": ["backgrounds", "aurora", "dots", "glow", "interactive", "canvas"],
+    "tags": [
+      "backgrounds",
+      "aurora",
+      "dots",
+      "glow",
+      "interactive",
+      "canvas",
+      "background"
+    ],
     "source": "scrollx-ui"
   }
 }

@@ -5,7 +5,13 @@
   "category": "special",
   "dependencies": [],
   "meta": {
-    "tags": ["scroll", "fade", "gradient", "css"],
+    "tags": [
+      "scroll",
+      "fade",
+      "gradient",
+      "css",
+      "reveal"
+    ],
     "source": "chanhdai"
   }
 }

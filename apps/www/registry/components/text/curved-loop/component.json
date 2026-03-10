@@ -3,5 +3,10 @@
   "type": "component",
   "description": "Marquee text that flows along a curved SVG path.",
   "category": "text",
-  "dependencies": []
+  "dependencies": [],
+  "meta": {
+    "tags": [
+      "text"
+    ]
+  }
 }

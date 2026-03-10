@@ -1,0 +1,12 @@
+{
+  "name": "cta-gradient",
+  "type": "block",
+  "description": "A bold gradient call-to-action banner with animated background and dual action buttons.",
+  "category": "cta",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["cta", "gradient", "banner", "action", "landing"],
+    "source": "vritti"
+  }
+}

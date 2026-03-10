@@ -3,9 +3,15 @@
   "type": "component",
   "description": "A buttons shiny button component",
   "category": "buttons",
-  "dependencies": ["motion"],
+  "dependencies": [
+    "motion"
+  ],
   "files": [],
   "meta": {
-    "tags": ["buttons"]
+    "tags": [
+      "buttons",
+      "button",
+      "glow"
+    ]
   }
 }

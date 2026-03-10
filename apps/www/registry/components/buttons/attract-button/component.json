@@ -4,6 +4,14 @@
   "title": "Attract Button",
   "description": "A button with floating particles that magnetically attract to center on hover.",
   "category": "buttons",
-  "dependencies": ["motion", "lucide-react"],
-  "source": "kokonutui"
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
+  "source": "kokonutui",
+  "meta": {
+    "tags": [
+      "button"
+    ]
+  }
 }

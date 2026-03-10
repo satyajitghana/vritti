@@ -11,8 +11,8 @@ export default function ScrollAndSwapTextExample() {
       ref={containerRef}
       className="w-full h-[400px] overflow-y-auto relative"
     >
-      <div className="h-[200px]" />
-      <div className="flex flex-col items-center gap-4 text-4xl font-bold">
+      <div className="h-[400px]" />
+      <div className="flex flex-col items-center gap-8 text-4xl font-bold">
         <ScrollAndSwapText containerRef={containerRef} as="h2">
           Scroll
         </ScrollAndSwapText>

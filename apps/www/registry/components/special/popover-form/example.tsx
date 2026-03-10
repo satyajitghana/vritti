@@ -76,7 +76,7 @@ export function NewsletterSignupExample() {
                   placeholder="you@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-3 py-2 border  rounded-md shadow-sm placeholder-muted-foreground focus:outline-none focus:ring-primary focus:border-primary"
+                  className="w-full px-3 py-2 border rounded-md shadow-sm placeholder-muted-foreground focus:outline-none focus:ring-primary focus:border-primary bg-background text-foreground"
                   required
                 />
                 <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
@@ -248,7 +248,7 @@ export function FeedbackFormExample() {
                 placeholder="Feedback"
                 value={feedback}
                 onChange={(e) => setFeedback(e.target.value)}
-                className="h-32 w-full resize-none rounded-t-lg p-3 text-sm outline-none"
+                className="h-32 w-full resize-none rounded-t-lg bg-background text-foreground p-3 text-sm outline-none"
                 required
               />
             </div>
@@ -331,7 +331,7 @@ export function ContactFormExample() {
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-3 py-2 border  rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-white dark:bg-black"
+                className="w-full px-3 py-2 border  rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-background text-foreground"
                 required
               />
             </div>
@@ -347,7 +347,7 @@ export function ContactFormExample() {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3 py-2 border  rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-white dark:bg-black"
+                className="w-full px-3 py-2 border  rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-background text-foreground"
                 required
               />
             </div>
@@ -362,7 +362,7 @@ export function ContactFormExample() {
                 id="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-white dark:bg-black"
+                className="w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary bg-background text-foreground"
                 rows={3}
                 required
               />
@@ -394,12 +394,5 @@ export function ContactFormExample() {
 }
 
 export default function PopoverFormExamples() {
-  return (
-    <div className="space-y-8 grid grid-cols-1 ">
-      <FeedbackFormExample />
-      <ContactFormExample />
-      <NewsletterSignupExample />
-      <ColorThemeSwitcherExample />
-    </div>
-  )
+  return <FeedbackFormExample />
 }

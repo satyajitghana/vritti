@@ -137,6 +137,7 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
     const renderRef = useRef<any>(null)
     const runnerRef = useRef<any>(null)
     const bodiesMap = useRef(new Map<string, PhysicsBody>())
+    const pendingRegistrations = useRef<{ id: string; element: HTMLElement; props: MatterBodyProps }[]>([])
     const frameId = useRef<number>(undefined)
     const isRunning = useRef(false)
     const [matterLoaded, setMatterLoaded] = useState(false)
@@ -157,7 +158,10 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
 
     const registerElement = useCallback(
       (id: string, element: HTMLElement, matterProps: MatterBodyProps) => {
-        if (!canvas.current || !MatterRef.current || !engineRef.current) return
+        if (!canvas.current || !MatterRef.current || !engineRef.current) {
+          pendingRegistrations.current.push({ id, element, props: matterProps })
+          return
+        }
         const Matter = MatterRef.current
         const width = element.offsetWidth
         const height = element.offsetHeight
@@ -305,8 +309,15 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
     useEffect(() => {
       if (!matterLoaded) return
       initializeRenderer()
+
+      // Flush any registrations that were queued before the engine was ready
+      const pending = pendingRegistrations.current.splice(0)
+      for (const { id, element, props: p } of pending) {
+        registerElement(id, element, p)
+      }
+
       return clearRenderer
-    }, [matterLoaded, initializeRenderer, clearRenderer])
+    }, [matterLoaded, initializeRenderer, clearRenderer, registerElement])
 
     return (
       <GravityContext.Provider value={{ registerElement, unregisterElement }}>

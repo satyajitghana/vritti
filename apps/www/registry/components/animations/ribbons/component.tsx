@@ -180,6 +180,7 @@ const Ribbons: React.FC<RibbonsProps> = ({
     resize();
 
     const mouse = new Vec3();
+    let mouseInitialized = false;
     function updateMouse(e: MouseEvent | TouchEvent) {
       let x: number, y: number;
       if (!container) return;
@@ -196,7 +197,20 @@ const Ribbons: React.FC<RibbonsProps> = ({
       }
       const width = container.clientWidth;
       const height = container.clientHeight;
-      mouse.set((x / width) * 2 - 1, (y / height) * -2 + 1, 0);
+      const nx = (x / width) * 2 - 1;
+      const ny = (y / height) * -2 + 1;
+      if (!mouseInitialized) {
+        mouseInitialized = true;
+        mouse.set(nx, ny, 0);
+        // Snap all points to initial mouse position to prevent glitchy burst
+        lines.forEach(line => {
+          const target = new Vec3(nx, ny, 0).add(line.mouseOffset);
+          line.points.forEach(p => p.copy(target));
+          line.mouseVelocity.set(0, 0, 0);
+        });
+      } else {
+        mouse.set(nx, ny, 0);
+      }
     }
     container.addEventListener('mousemove', updateMouse);
     container.addEventListener('touchstart', updateMouse);
@@ -210,6 +224,12 @@ const Ribbons: React.FC<RibbonsProps> = ({
       const currentTime = performance.now();
       const dt = currentTime - lastTime;
       lastTime = currentTime;
+
+      // Skip animation until mouse is initialized to prevent glitchy initial state
+      if (!mouseInitialized) {
+        renderer.render({ scene });
+        return;
+      }
 
       lines.forEach(line => {
         tmp.copy(mouse).add(line.mouseOffset).sub(line.points[0]).multiply(line.spring);

@@ -3,10 +3,16 @@
   "type": "component",
   "description": "YouTube video player with custom controls",
   "category": "special",
-  "dependencies": ["motion"],
+  "dependencies": [
+    "motion"
+  ],
   "files": [],
   "meta": {
-    "tags": ["media", "youtube"],
+    "tags": [
+      "media",
+      "youtube",
+      "video"
+    ],
     "source": "cult-ui",
     "previewSize": "lg"
   }

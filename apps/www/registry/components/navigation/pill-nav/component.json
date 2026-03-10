@@ -1,0 +1,16 @@
+{
+  "name": "pill-nav",
+  "type": "component",
+  "description": "A layouts pill nav component",
+  "category": "layouts",
+  "dependencies": [
+    "gsap"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "layouts",
+      "navigation"
+    ]
+  }
+}

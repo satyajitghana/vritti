@@ -9,6 +9,10 @@ export type ComponentCategory =
   | 'text'
   | 'buttons'
   | 'layouts'
+  | 'cards'
+  | 'navigation'
+  | 'carousels'
+  | 'cursors'
   | 'shaders'
   | 'special'
   | 'inputs'
@@ -27,6 +31,11 @@ export type BlockCategory =
   | 'billing'
   | 'modal'
   | 'account'
+  | 'navigation'
+  | 'cards'
+  | 'gallery'
+  | 'features'
+  | 'cta'
   | 'special';
 
 export interface PropDefinition {
@@ -161,39 +170,67 @@ export const CATEGORIES: CategoryInfo[] = [
     order: 4,
   },
   {
+    name: 'cards',
+    label: 'Cards',
+    description: 'Card components and containers',
+    icon: 'Square',
+    order: 5,
+  },
+  {
     name: 'layouts',
     label: 'Layouts',
     description: 'Layout and grid systems',
     icon: 'Layout',
-    order: 5,
+    order: 6,
+  },
+  {
+    name: 'navigation',
+    label: 'Navigation',
+    description: 'Menus, navbars, tabs and navigation elements',
+    icon: 'Menu',
+    order: 7,
+  },
+  {
+    name: 'carousels',
+    label: 'Carousels & Sliders',
+    description: 'Carousel, slider and gallery components',
+    icon: 'GalleryHorizontal',
+    order: 8,
+  },
+  {
+    name: 'cursors',
+    label: 'Cursors',
+    description: 'Custom cursor effects and interactions',
+    icon: 'MousePointer2',
+    order: 9,
   },
   {
     name: 'inputs',
     label: 'Inputs',
     description: 'Form inputs and interactive controls',
     icon: 'TextCursorInput',
-    order: 6,
+    order: 10,
   },
   {
     name: 'media',
     label: 'Media',
     description: 'Media players and content display',
     icon: 'Play',
-    order: 7,
+    order: 11,
   },
   {
     name: 'shaders',
     label: 'Shaders',
     description: 'Advanced shader-based effects',
     icon: 'Sparkles',
-    order: 8,
+    order: 12,
   },
   {
     name: 'special',
     label: 'Special',
     description: 'Complex and unique components',
     icon: 'Star',
-    order: 9,
+    order: 13,
   },
 ];
 
@@ -284,10 +321,45 @@ export const BLOCK_CATEGORIES: BlockCategoryInfo[] = [
     order: 12,
   },
   {
+    name: 'navigation',
+    label: 'Navigation',
+    description: 'Navbars, sidebars, tabs, and navigation patterns',
+    icon: 'Menu',
+    order: 13,
+  },
+  {
+    name: 'cards',
+    label: 'Cards',
+    description: 'Card layouts, grids, and card-based sections',
+    icon: 'LayoutGrid',
+    order: 14,
+  },
+  {
+    name: 'gallery',
+    label: 'Gallery',
+    description: 'Image galleries, portfolios, and media grids',
+    icon: 'Image',
+    order: 15,
+  },
+  {
+    name: 'features',
+    label: 'Features',
+    description: 'Feature showcases and highlights sections',
+    icon: 'Zap',
+    order: 16,
+  },
+  {
+    name: 'cta',
+    label: 'Call to Action',
+    description: 'CTA banners, newsletter signups, and conversion sections',
+    icon: 'Megaphone',
+    order: 17,
+  },
+  {
     name: 'special',
     label: 'Special',
     description: 'AI agents, Web3, and other specialized blocks',
     icon: 'Sparkles',
-    order: 13,
+    order: 18,
   },
 ];

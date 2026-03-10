@@ -1,0 +1,12 @@
+{
+  "name": "notification-cards",
+  "type": "block",
+  "description": "A notification feed with different notification types, timestamps, and swipe-to-dismiss.",
+  "category": "cards",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["cards", "notifications", "feed", "activity", "alerts"],
+    "source": "vritti"
+  }
+}

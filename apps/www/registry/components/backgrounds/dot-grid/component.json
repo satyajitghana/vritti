@@ -3,10 +3,15 @@
   "type": "component",
   "description": "An interactive animated dot grid background.",
   "category": "backgrounds",
-  "dependencies": ["gsap"],
+  "dependencies": [
+    "gsap"
+  ],
   "files": [],
   "meta": {
-    "tags": ["background"],
+    "tags": [
+      "background",
+      "grid"
+    ],
     "source": "react-bits"
   }
 }

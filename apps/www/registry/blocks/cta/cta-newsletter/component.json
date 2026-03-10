@@ -1,0 +1,12 @@
+{
+  "name": "cta-newsletter",
+  "type": "block",
+  "description": "A newsletter subscription section with email input, animated submit button, and social proof.",
+  "category": "cta",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["cta", "newsletter", "email", "subscription", "signup"],
+    "source": "vritti"
+  }
+}

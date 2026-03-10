@@ -4,6 +4,13 @@
   "title": "Profile Dropdown",
   "description": "A user profile dropdown menu with avatar, user info, navigation items with badges, and sign out button.",
   "category": "inputs",
-  "dependencies": ["lucide-react"],
-  "source": "kokonutui"
+  "dependencies": [
+    "lucide-react"
+  ],
+  "source": "kokonutui",
+  "meta": {
+    "tags": [
+      "form"
+    ]
+  }
 }

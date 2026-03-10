@@ -3,5 +3,10 @@
   "type": "component",
   "description": "Text with a glitch distortion animation effect.",
   "category": "text",
-  "dependencies": []
+  "dependencies": [],
+  "meta": {
+    "tags": [
+      "text"
+    ]
+  }
 }

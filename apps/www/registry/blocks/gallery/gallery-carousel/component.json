@@ -1,0 +1,12 @@
+{
+  "name": "gallery-carousel",
+  "type": "block",
+  "description": "A full-width image carousel with thumbnail strip navigation and smooth slide transitions.",
+  "category": "gallery",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["gallery", "carousel", "slider", "thumbnails", "fullwidth"],
+    "source": "vritti"
+  }
+}

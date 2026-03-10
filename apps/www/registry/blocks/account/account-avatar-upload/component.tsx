@@ -54,10 +54,10 @@ export default function AccountAvatarUpload() {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-6">
-          <div className="flex items-center gap-6">
+        <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-[1fr_auto]">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
             <div className="flex items-center gap-4">
-              <div className="relative">
+              <div className="relative shrink-0">
                 <Avatar className="border-border h-16 w-16 border-2">
                   <AvatarImage
                     src={

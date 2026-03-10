@@ -1,0 +1,12 @@
+{
+  "name": "sidebar-dashboard",
+  "type": "block",
+  "description": "A collapsible dashboard sidebar with icon navigation, sections, and active state indicators.",
+  "category": "navigation",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["navigation", "sidebar", "dashboard", "collapsible", "menu"],
+    "source": "vritti"
+  }
+}

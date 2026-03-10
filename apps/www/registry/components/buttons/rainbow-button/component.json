@@ -3,9 +3,15 @@
   "type": "component",
   "description": "A buttons rainbow button component",
   "category": "buttons",
-  "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority"
+  ],
   "files": [],
   "meta": {
-    "tags": ["buttons"]
+    "tags": [
+      "buttons",
+      "button"
+    ]
   }
 }

@@ -1,0 +1,12 @@
+{
+  "name": "breadcrumb-animated",
+  "type": "block",
+  "description": "An animated breadcrumb navigation with smooth transitions between path segments.",
+  "category": "navigation",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["navigation", "breadcrumb", "animated", "path"],
+    "source": "vritti"
+  }
+}

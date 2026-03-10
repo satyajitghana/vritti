@@ -6,7 +6,13 @@
   "dependencies": [],
   "files": [],
   "meta": {
-    "tags": ["svg", "filter", "pixelate", "pixel"],
+    "tags": [
+      "svg",
+      "filter",
+      "pixelate",
+      "pixel",
+      "image"
+    ],
     "source": "fancy"
   }
 }

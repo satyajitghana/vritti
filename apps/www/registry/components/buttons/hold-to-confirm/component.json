@@ -3,10 +3,19 @@
   "type": "component",
   "description": "A button that requires holding to confirm an action with fill or border progress animation",
   "category": "buttons",
-  "dependencies": ["motion"],
+  "dependencies": [
+    "motion"
+  ],
   "files": [],
   "meta": {
-    "tags": ["buttons", "hold", "confirm", "progress", "animation"],
+    "tags": [
+      "buttons",
+      "hold",
+      "confirm",
+      "progress",
+      "animation",
+      "button"
+    ],
     "source": "scrollx-ui"
   }
 }

@@ -3,9 +3,18 @@
   "type": "component",
   "description": "Rotating text animation that cycles through items with smooth transitions.",
   "category": "text",
-  "dependencies": ["motion"],
+  "dependencies": [
+    "motion"
+  ],
   "meta": {
-    "tags": ["text", "animation", "flip", "rotate", "cycle"],
+    "tags": [
+      "text",
+      "animation",
+      "flip",
+      "rotate",
+      "cycle",
+      "transform"
+    ],
     "source": "chanhdai"
   }
 }

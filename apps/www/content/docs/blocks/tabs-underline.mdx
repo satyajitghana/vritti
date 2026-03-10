@@ -1,0 +1,47 @@
+---
+title: Tabs Underline
+description: A horizontal tab navigation with a smooth animated underline indicator and tab content panels.
+---
+
+<ComponentTags tags={["navigation","tabs","underline","animated","indicator"]} />
+
+<ComponentPreview name="tabs-underline-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://vritti.thesatyajit.com/r/tabs-underline"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="tabs-underline" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Dependencies
+
+```bash
+npm install motion
+```

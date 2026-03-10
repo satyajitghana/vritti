@@ -4,6 +4,14 @@
   "title": "Scroll Text",
   "description": "A scrollable list of text items that highlights the currently visible item in the viewport.",
   "category": "text",
-  "dependencies": ["motion"],
-  "source": "kokonutui"
+  "dependencies": [
+    "motion"
+  ],
+  "source": "kokonutui",
+  "meta": {
+    "tags": [
+      "scroll",
+      "text"
+    ]
+  }
 }

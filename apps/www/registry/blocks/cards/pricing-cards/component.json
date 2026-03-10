@@ -1,0 +1,12 @@
+{
+  "name": "pricing-cards",
+  "type": "block",
+  "description": "Tiered pricing cards with highlighted popular plan, feature lists, and animated hover effects.",
+  "category": "cards",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["cards", "pricing", "plans", "subscription", "tiers"],
+    "source": "vritti"
+  }
+}

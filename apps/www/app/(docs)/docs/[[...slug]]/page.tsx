@@ -45,15 +45,21 @@ export default async function Page(props: PageProps) {
     return doc.title
   }
 
+  // Deduplicate consecutive breadcrumb items with the same name (e.g., folder + index page)
+  const dedupedBreadcrumbs = breadcrumbs.filter((item, i) => {
+    if (i === 0) return true
+    return resolveBreadcrumbName(item) !== resolveBreadcrumbName(breadcrumbs[i - 1])
+  })
+
   return (
     <div className="flex gap-10">
       <div className="flex-1 min-w-0">
         {/* Breadcrumbs */}
-        {breadcrumbs.length > 1 && (
+        {dedupedBreadcrumbs.length > 1 && (
           <nav className="flex items-center gap-1 text-sm text-muted-foreground mb-6">
-            {breadcrumbs.map((item, i) => {
+            {dedupedBreadcrumbs.map((item, i) => {
               const label = resolveBreadcrumbName(item)
-              const isLast = i === breadcrumbs.length - 1
+              const isLast = i === dedupedBreadcrumbs.length - 1
               return (
                 <span key={item.url ?? label} className="flex items-center gap-1">
                   {i > 0 && (

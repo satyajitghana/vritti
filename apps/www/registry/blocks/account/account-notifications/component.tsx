@@ -38,7 +38,13 @@ export default function AccountNotifications() {
           </CardHeader>
           <CardContent>
             <div className="overflow-x-auto">
-              <table className="w-full">
+              <table className="w-full table-fixed">
+                <colgroup>
+                  <col className="w-auto" />
+                  <col className="w-20 min-w-[5rem]" />
+                  <col className="w-20 min-w-[5rem]" />
+                  <col className="w-20 min-w-[5rem]" />
+                </colgroup>
                 <thead>
                   <tr className="border-b text-left text-sm">
                     <th className="pb-3 font-medium">Notification</th>
@@ -50,18 +56,24 @@ export default function AccountNotifications() {
                 <tbody>
                   {NOTIFICATIONS.map((notification) => (
                     <tr key={notification.id} className="border-b last:border-0">
-                      <td className="py-4">
+                      <td className="py-4 pr-4">
                         <p className="font-medium">{notification.label}</p>
                         <p className="text-muted-foreground text-sm">{notification.description}</p>
                       </td>
                       <td className="py-4 text-center">
-                        <Switch checked={settings[notification.id]?.email} onCheckedChange={() => toggle(notification.id, "email")} />
+                        <div className="flex justify-center">
+                          <Switch checked={settings[notification.id]?.email} onCheckedChange={() => toggle(notification.id, "email")} />
+                        </div>
                       </td>
                       <td className="py-4 text-center">
-                        <Switch checked={settings[notification.id]?.push} onCheckedChange={() => toggle(notification.id, "push")} />
+                        <div className="flex justify-center">
+                          <Switch checked={settings[notification.id]?.push} onCheckedChange={() => toggle(notification.id, "push")} />
+                        </div>
                       </td>
                       <td className="py-4 text-center">
-                        <Switch checked={settings[notification.id]?.sms} onCheckedChange={() => toggle(notification.id, "sms")} />
+                        <div className="flex justify-center">
+                          <Switch checked={settings[notification.id]?.sms} onCheckedChange={() => toggle(notification.id, "sms")} />
+                        </div>
                       </td>
                     </tr>
                   ))}

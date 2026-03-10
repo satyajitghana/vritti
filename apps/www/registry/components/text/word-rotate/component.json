@@ -3,9 +3,15 @@
   "type": "component",
   "description": "A vertical rotation of words",
   "category": "text",
-  "dependencies": ["motion"],
+  "dependencies": [
+    "motion"
+  ],
   "files": [],
   "meta": {
-    "tags": ["text", "animation"]
+    "tags": [
+      "text",
+      "animation",
+      "transform"
+    ]
   }
 }

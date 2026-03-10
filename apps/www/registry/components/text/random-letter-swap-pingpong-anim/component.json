@@ -3,10 +3,20 @@
   "type": "component",
   "description": "Text animation that swaps letters in random order with ping-pong on hover in/out.",
   "category": "text",
-  "dependencies": ["motion"],
+  "dependencies": [
+    "motion"
+  ],
   "files": [],
   "meta": {
-    "tags": ["text", "animation", "letter", "swap", "random", "pingpong"],
+    "tags": [
+      "text",
+      "animation",
+      "letter",
+      "swap",
+      "random",
+      "pingpong",
+      "transform"
+    ],
     "source": "fancy"
   }
 }

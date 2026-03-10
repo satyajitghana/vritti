@@ -19,7 +19,7 @@ export default function BackgroundImageTextureExample() {
     useState<TextureVariant>("fabric-of-squares")
 
   return (
-    <div className="w-full max-w-2xl mx-auto space-y-6 p-4">
+    <div className="w-full mx-auto space-y-6 p-4">
       <div>
         <h2 className="text-xl font-bold mb-2">Background Image Texture</h2>
         <p className="text-sm text-muted-foreground">
@@ -46,7 +46,7 @@ export default function BackgroundImageTextureExample() {
       <BackgroundImageTexture
         variant={selectedVariant}
         opacity={0.5}
-        className="rounded-lg border border-border p-8 min-h-[300px]"
+        className="rounded-lg border border-border p-8 min-h-[500px]"
       >
         <div className="space-y-4">
           <h3 className="text-2xl font-bold text-foreground">

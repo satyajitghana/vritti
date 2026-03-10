@@ -4,6 +4,14 @@
   "title": "Loader",
   "description": "An elegant monochrome loading spinner with multiple concentric rotating rings and breathing text animation.",
   "category": "animations",
-  "dependencies": ["motion"],
-  "source": "vritti"
+  "dependencies": [
+    "motion"
+  ],
+  "source": "vritti",
+  "meta": {
+    "tags": [
+      "orbit",
+      "animation"
+    ]
+  }
 }

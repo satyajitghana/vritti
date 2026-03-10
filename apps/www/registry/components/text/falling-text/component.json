@@ -3,5 +3,12 @@
   "type": "component",
   "description": "Physics-based falling text effect using Matter.js.",
   "category": "text",
-  "dependencies": ["matter-js"]
+  "dependencies": [
+    "matter-js"
+  ],
+  "meta": {
+    "tags": [
+      "text"
+    ]
+  }
 }

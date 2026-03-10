@@ -3,9 +3,14 @@
   "type": "component",
   "description": "A card that displays a tweet with the author's name, handle, and profile picture.",
   "category": "special",
-  "dependencies": ["react-tweet"],
+  "dependencies": [
+    "react-tweet"
+  ],
   "files": [],
   "meta": {
-    "tags": ["special"]
+    "tags": [
+      "special",
+      "card"
+    ]
   }
 }

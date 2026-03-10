@@ -6,7 +6,10 @@
   "dependencies": [],
   "files": [],
   "meta": {
-    "tags": ["animation"],
+    "tags": [
+      "animation",
+      "particles"
+    ],
     "source": "react-bits"
   }
 }

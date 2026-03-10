@@ -5,6 +5,7 @@ import { CodeTabs } from "@/components/code-tabs"
 import { CodeBlockCommand } from "@/components/code-block-command"
 import { ComponentPreview } from "@/components/component-preview"
 import { ComponentSource } from "@/components/component-source"
+import { ComponentTags } from "@/components/component-tags"
 import { CopyButton } from "@/components/copy-button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { getIconForLanguageExtension } from "@/components/icons"
@@ -278,6 +279,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     CodeTabs,
     ComponentPreview,
     ComponentSource,
+    ComponentTags,
     ...components,
   }
 }

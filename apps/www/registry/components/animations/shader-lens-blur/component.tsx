@@ -173,6 +173,7 @@ export function ShaderLensBlur() {
 
     const { clientWidth: w, clientHeight: h } = containerRef.current
     const aspect = w / h
+    const dpr = Math.min(window.devicePixelRatio, 2)
 
     cameraRef.current.left = -aspect
     cameraRef.current.right = aspect
@@ -181,19 +182,20 @@ export function ShaderLensBlur() {
     cameraRef.current.updateProjectionMatrix()
 
     rendererRef.current.setSize(w, h)
-    materialRef.current.uniforms.u_resolution.value.set(w, h)
+    materialRef.current.uniforms.u_resolution.value.set(w * dpr, h * dpr)
   }, [])
 
   const updateMousePosition = useCallback(
     (x: number, y: number) => {
       if (!containerRef.current || !materialRef.current) return
       const rect = containerRef.current.getBoundingClientRect()
-      const mouseX = x - rect.left
-      const mouseY = y - rect.top
+      const dpr = Math.min(window.devicePixelRatio, 2)
+      const mouseX = (x - rect.left) * dpr
+      const mouseY = (y - rect.top) * dpr
       if (isInteracting || config.enableHover) {
         materialRef.current.uniforms.u_mouse.value.set(
           mouseX,
-          rect.height - mouseY
+          rect.height * dpr - mouseY
         )
       }
     },

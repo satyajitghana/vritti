@@ -123,6 +123,8 @@ export const ElementAlongPathItem = ({
       style={{
         offsetPath: `path('${path}')`,
         offsetDistance: animationType === "scroll" ? scp : undefined,
+        offsetRotate: "0deg",
+        offsetAnchor: "50% 50%",
       }}
       transition={transition}
     >

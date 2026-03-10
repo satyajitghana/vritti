@@ -3,10 +3,17 @@
   "type": "component",
   "description": "Video player that plays on hover",
   "category": "special",
-  "dependencies": ["motion"],
+  "dependencies": [
+    "motion"
+  ],
   "files": [],
   "meta": {
-    "tags": ["media", "video", "interactive"],
+    "tags": [
+      "media",
+      "video",
+      "interactive",
+      "hover"
+    ],
     "source": "cult-ui"
   }
 }

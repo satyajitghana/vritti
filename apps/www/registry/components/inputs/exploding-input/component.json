@@ -5,7 +5,13 @@
   "category": "inputs",
   "dependencies": [],
   "meta": {
-    "tags": ["input", "animation", "particles", "exploding"],
+    "tags": [
+      "input",
+      "animation",
+      "particles",
+      "exploding",
+      "form"
+    ],
     "source": "spell-ui"
   }
 }

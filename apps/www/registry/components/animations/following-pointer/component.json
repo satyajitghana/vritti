@@ -1,7 +1,0 @@
-{
-  "name": "following-pointer",
-  "type": "component",
-  "description": "Cursor-following pointer animation with color labels on hover",
-  "category": "animations",
-  "dependencies": ["motion"]
-}

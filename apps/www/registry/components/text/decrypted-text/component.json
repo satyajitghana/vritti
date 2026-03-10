@@ -3,5 +3,12 @@
   "type": "component",
   "description": "Text that decrypts itself with a scrambling animation.",
   "category": "text",
-  "dependencies": ["motion"]
+  "dependencies": [
+    "motion"
+  ],
+  "meta": {
+    "tags": [
+      "text"
+    ]
+  }
 }

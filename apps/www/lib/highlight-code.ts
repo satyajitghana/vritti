@@ -63,6 +63,7 @@ export async function highlightCode(code: string, language: string = "tsx") {
       dark: "github-dark",
       light: "github-light",
     },
+    defaultColor: false,
     transformers: [
       {
         pre(node) {
