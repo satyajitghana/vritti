@@ -1,10 +1,52 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useRef, useEffect, useCallback } from "react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { blockList } from "@/registry/block-list"
 import { BLOCK_CATEGORIES } from "@/registry/schema"
+
+function LazyIframe({ src, className }: { src: string; className?: string }) {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
+    const el = containerRef.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: "200px" }
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <div ref={containerRef} className="relative h-full w-full">
+      {/* Skeleton placeholder */}
+      {!isLoaded && (
+        <div className="absolute inset-0 animate-pulse bg-muted" />
+      )}
+      {isVisible && (
+        <iframe
+          src={src}
+          className={className}
+          tabIndex={-1}
+          loading="lazy"
+          onLoad={() => setIsLoaded(true)}
+        />
+      )}
+    </div>
+  )
+}
 
 function BlockCard({
   name,
@@ -21,11 +63,9 @@ function BlockCard({
       className="group relative flex flex-col overflow-hidden rounded-lg border bg-background transition-all hover:shadow-lg hover:border-foreground/20"
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-        <iframe
+        <LazyIframe
           src={`/preview/${name}-demo`}
           className="pointer-events-none absolute left-0 top-0 h-[400%] w-[400%] origin-top-left scale-25 border-0"
-          tabIndex={-1}
-          loading="lazy"
         />
         <div className="absolute inset-0 bg-transparent group-hover:bg-foreground/5 transition-colors" />
       </div>

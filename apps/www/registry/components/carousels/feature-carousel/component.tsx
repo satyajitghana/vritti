@@ -187,14 +187,12 @@ function useNumberCycler(
 
   // Setup timer function
   const setupTimer = useCallback(() => {
-    console.log("Setting up timer")
     // Clear any existing timer
     if (timerRef.current) {
       clearTimeout(timerRef.current)
     }
 
     timerRef.current = setTimeout(() => {
-      console.log("Timer triggered, advancing to next step")
       setCurrentNumber((prev) => (prev + 1) % totalSteps)
       setIsManualInteraction(false)
       // Recursively setup next timer
@@ -204,7 +202,6 @@ function useNumberCycler(
 
   // Handle manual increment
   const increment = useCallback(() => {
-    console.log("Manual increment triggered")
     setIsManualInteraction(true)
     setCurrentNumber((prev) => (prev + 1) % totalSteps)
 
@@ -214,25 +211,14 @@ function useNumberCycler(
 
   // Initial timer setup and cleanup
   useEffect(() => {
-    console.log("Initial timer setup")
     setupTimer()
 
     return () => {
-      console.log("Cleaning up timer")
       if (timerRef.current) {
         clearTimeout(timerRef.current)
       }
     }
   }, [setupTimer])
-
-  // Debug logging
-  useEffect(() => {
-    console.log("Current state:", {
-      currentNumber,
-      isManualInteraction,
-      hasTimer: !!timerRef.current,
-    })
-  }, [currentNumber, isManualInteraction])
 
   return {
     currentNumber,
@@ -685,7 +671,7 @@ export function FeatureCarousel({
               <AnimatedStepImage
                 alt={image.alt}
                 className="pointer-events-none top-[50%] w-[90%] overflow-hidden rounded-2xl border border-neutral-100/10 md:left-[35px] md:top-[30%] md:w-full dark:border-zinc-700"
-                src="/cults.png"
+                src={image.step4light}
                 preset="fadeInScale"
                 delay={0.1}
               />

@@ -332,7 +332,6 @@ export const componentList: Array<{ name: string; title: string; category: strin
   { name: "shuffle", title: "Shuffle", category: "text", tags: ["text"] },
   { name: "side-panel", title: "Side Panel", category: "layouts", tags: ["layout","panel","slide"] },
   { name: "signature", title: "Signature", category: "special", tags: ["signature","animation","handwriting","svg"] },
-  { name: "signupform", title: "Signupform", category: "inputs", tags: ["form","signup","register","auth","input"] },
   { name: "silk", title: "Silk", category: "backgrounds", tags: ["background"] },
   { name: "simple-carousel", title: "Simple Carousel", category: "carousels", tags: ["carousel","marquee","scroll","drag"] },
   { name: "simple-marquee", title: "Simple Marquee", category: "carousels", tags: ["marquee","scroll","infinite","drag"] },

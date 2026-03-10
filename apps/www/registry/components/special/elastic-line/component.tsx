@@ -202,6 +202,7 @@ const ElasticLine: React.FC<ElasticLineProps> = ({
       className={`w-full h-full ${className || ""}`}
       viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
       preserveAspectRatio="none"
+      overflow="visible"
     >
       <motion.path
         ref={pathRef}

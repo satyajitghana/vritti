@@ -464,7 +464,7 @@ export default function FileUpload({
                     }}
                     className="absolute inset-0 flex flex-col items-center justify-center p-6"
                     exit={{ opacity: 0, y: -10 }}
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={false}
                     key="dropzone"
                     onDragLeave={handleDragLeave}
                     onDragOver={handleDragOver}

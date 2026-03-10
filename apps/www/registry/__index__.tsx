@@ -11288,39 +11288,6 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/special/signature/example")),
     meta: {"tags":["signature","animation","handwriting","svg"],"source":"spell-ui"},
   },
-  "signupform": {
-    name: "signupform",
-    description: "Styled signup form with social auth buttons and split layout",
-    type: "registry:ui",
-    category: "inputs",
-    registryDependencies: undefined,
-    dependencies: ["motion"],
-    files: [{
-      path: "registry/components/inputs/signupform/component.tsx",
-      type: "registry:ui",
-      target: ""
-    }],
-    component: React.lazy(async () => {
-      const mod = await import("@/registry/components/inputs/signupform/component")
-      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
-      return { default: mod.default || mod[exportName] }
-    }),
-    meta: {"tags":["form","signup","register","auth","input"],"source":"scrollx-ui"},
-  },
-  "signupform-demo": {
-    name: "signupform-demo",
-    description: "Styled signup form with social auth buttons and split layout (demo)",
-    type: "registry:example",
-    category: "inputs",
-    registryDependencies: ["signupform"],
-    files: [{
-      path: "registry/components/inputs/signupform/example.tsx",
-      type: "registry:example",
-      target: ""
-    }],
-    component: React.lazy(() => import("@/registry/components/inputs/signupform/example")),
-    meta: {"tags":["form","signup","register","auth","input"],"source":"scrollx-ui"},
-  },
   "silk": {
     name: "silk",
     description: "A flowing silk fabric background effect.",
@@ -13530,6 +13497,34 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/layouts/toolbar-expandable/example")),
+    meta: {"tags":["layout","toolbar","expandable"],"source":"cult-ui"},
+  },
+  "toolbar-expandable-controlled": {
+    name: "toolbar-expandable-controlled",
+    description: "Expandable toolbar with step-based navigation (controlled)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["toolbar-expandable"],
+    files: [{
+      path: "registry/components/layouts/toolbar-expandable/example-controlled.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/toolbar-expandable/example-controlled")),
+    meta: {"tags":["layout","toolbar","expandable"],"source":"cult-ui"},
+  },
+  "toolbar-expandable-deployment": {
+    name: "toolbar-expandable-deployment",
+    description: "Expandable toolbar with step-based navigation (deployment)",
+    type: "registry:example",
+    category: "layouts",
+    registryDependencies: ["toolbar-expandable"],
+    files: [{
+      path: "registry/components/layouts/toolbar-expandable/example-deployment.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/layouts/toolbar-expandable/example-deployment")),
     meta: {"tags":["layout","toolbar","expandable"],"source":"cult-ui"},
   },
   "tooltip-card": {

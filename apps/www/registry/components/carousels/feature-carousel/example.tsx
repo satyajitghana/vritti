@@ -43,12 +43,12 @@ export default function FeatureCarouselDemo() {
             )}
             // Example images
             image={{
-              step1light1: "/feature-1.png",
-              step1light2: "/feature-2.png",
-              step2light1: "/feature-3.png",
-              step2light2: "/feature-4.png",
-              step3light: "/feature-2.png",
-              step4light: "/feature-5.png",
+              step1light1: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&h=400&fit=crop",
+              step1light2: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=400&fit=crop",
+              step2light1: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=600&h=400&fit=crop",
+              step2light2: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=600&h=400&fit=crop",
+              step3light: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=400&fit=crop",
+              step4light: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=600&h=400&fit=crop",
               alt: "Feature demonstration",
             }}
             // Card styling

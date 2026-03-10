@@ -113,7 +113,7 @@ export default function SmoothDrawer({
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-end justify-center">
+        <div className="fixed inset-0 z-[999] isolate flex items-end justify-center">
           <div
             className="absolute inset-0 bg-black/40"
             onClick={() => setIsOpen(false)}

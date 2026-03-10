@@ -16,7 +16,7 @@ interface SignatureProps {
 
 export function Signature({
   text = "Signature",
-  color = "#000",
+  color = "currentColor",
   fontSize = 14,
   duration = 1.5,
   delay = 0,

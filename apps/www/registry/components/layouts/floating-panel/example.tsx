@@ -164,7 +164,7 @@ const ImagePreviewFloatingPanel = () => {
       <FloatingPanelContent className="w-80">
         <FloatingPanelBody>
           <motion.img
-            src="/placeholder.svg?height=200&width=300"
+            src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300&h=200&fit=crop"
             alt="Preview"
             className="w-full h-auto rounded-md"
             initial={{ opacity: 0, scale: 0.9 }}

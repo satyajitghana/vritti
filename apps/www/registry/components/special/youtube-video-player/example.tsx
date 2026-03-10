@@ -13,20 +13,18 @@ export default function YouTubeVideoPlayerDemo() {
         </p>
       </div>
 
-      {/* Custom Thumbnail */}
+      {/* Basic Player */}
       <section className="space-y-4">
         <div>
-          <h2 className="text-2xl font-semibold mb-2">Custom Thumbnail</h2>
+          <h2 className="text-2xl font-semibold mb-2">Basic Player</h2>
           <p className="text-muted-foreground">
-            Player with a custom thumbnail image instead of the default YouTube
-            thumbnail.
+            A simple YouTube video player with default settings.
           </p>
         </div>
         <div className="max-w-2xl">
           <YouTubePlayer
-            videoId="jNQXAC9IVRw"
-            title="Me at the zoo - First YouTube Video"
-            customThumbnail="/placeholder.jpg"
+            videoId="dQw4w9WgXcQ"
+            title="Rick Astley - Never Gonna Give You Up"
           />
         </div>
       </section>
@@ -41,8 +39,8 @@ export default function YouTubeVideoPlayerDemo() {
         </div>
         <div className="max-w-2xl">
           <YouTubePlayer
-            videoId="kJQP7kiw5Fk"
-            title="Despacito - Luis Fonsi ft. Daddy Yankee"
+            videoId="9bZkp7q19f0"
+            title="PSY - GANGNAM STYLE"
             containerClassName="border-2 border-primary rounded-2xl shadow-2xl"
             thumbnailImageClassName="opacity-90 saturate-150"
             playButtonClassName="bg-primary/20 border-border/20 hover:bg-primary/30"
@@ -54,7 +52,7 @@ export default function YouTubeVideoPlayerDemo() {
         </div>
       </section>
 
-      {/* Multiple Players Grid */}
+      {/* Multiple Players */}
       <section className="space-y-4">
         <div>
           <h2 className="text-2xl font-semibold mb-2">Multiple Players</h2>
@@ -62,148 +60,22 @@ export default function YouTubeVideoPlayerDemo() {
             A grid of multiple video players with different content.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <YouTubePlayer
+            videoId="dQw4w9WgXcQ"
+            title="Rick Astley - Never Gonna Give You Up"
+            className="w-full"
+          />
           <YouTubePlayer
             videoId="9bZkp7q19f0"
             title="PSY - GANGNAM STYLE"
             className="w-full"
           />
           <YouTubePlayer
-            videoId="fJ9rUzIMcZQ"
-            title="Queen – Bohemian Rhapsody"
+            videoId="kJQP7kiw5Fk"
+            title="Luis Fonsi - Despacito"
             className="w-full"
           />
-          <YouTubePlayer
-            videoId="L_jWHffIx5E"
-            title="Smash Mouth - All Star"
-            className="w-full"
-          />
-          <YouTubePlayer
-            videoId="hTWKbfoikeg"
-            title="Nirvana - Smells Like Teen Spirit"
-            className="w-full"
-          />
-          <YouTubePlayer
-            videoId="djV11Xbc914"
-            title="a-ha - Take On Me"
-            className="w-full"
-          />
-          <YouTubePlayer
-            videoId="ZbZSe6N_BXs"
-            title="Happy - Pharrell Williams"
-            className="w-full"
-          />
-        </div>
-      </section>
-
-      {/* Different Aspect Ratios */}
-      <section className="space-y-4">
-        <div>
-          <h2 className="text-2xl font-semibold mb-2">Different Sizes</h2>
-          <p className="text-muted-foreground">
-            Players in different container sizes to show responsive behavior.
-          </p>
-        </div>
-        <div className="space-y-8">
-          {/* Small */}
-          <div>
-            <h3 className="text-lg font-medium mb-3">Small (300px)</h3>
-            <div className="w-full max-w-[300px]">
-              <YouTubePlayer
-                videoId="2yJgwwDcgV8"
-                title="Nyan Cat [original]"
-              />
-            </div>
-          </div>
-
-          {/* Medium */}
-          <div>
-            <h3 className="text-lg font-medium mb-3">Medium (500px)</h3>
-            <div className="w-full max-w-[500px]">
-              <YouTubePlayer videoId="oHg5SJYRHA0" title="RickRoll'D" />
-            </div>
-          </div>
-
-          {/* Large */}
-          <div>
-            <h3 className="text-lg font-medium mb-3">Large (800px)</h3>
-            <div className="w-full max-w-[800px]">
-              <YouTubePlayer videoId="y6120QOlsfU" title="Darude - Sandstorm" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* URL Formats */}
-      <section className="space-y-4">
-        <div>
-          <h2 className="text-2xl font-semibold mb-2">Different URL Formats</h2>
-          <p className="text-muted-foreground">
-            The player can handle different YouTube URL formats automatically.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Regular video ID */}
-          <div>
-            <h3 className="text-sm font-medium mb-2">
-              Video ID: "dQw4w9WgXcQ"
-            </h3>
-            <YouTubePlayer videoId="dQw4w9WgXcQ" title="Using Video ID" />
-          </div>
-
-          {/* Full YouTube URL */}
-          <div>
-            <h3 className="text-sm font-medium mb-2">
-              Full URL: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-            </h3>
-            <YouTubePlayer
-              videoId="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-              title="Using Full YouTube URL"
-            />
-          </div>
-
-          {/* Short URL */}
-          <div>
-            <h3 className="text-sm font-medium mb-2">
-              Short URL: "https://youtu.be/dQw4w9WgXcQ"
-            </h3>
-            <YouTubePlayer
-              videoId="https://youtu.be/dQw4w9WgXcQ"
-              title="Using Short YouTube URL"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Feature Highlights */}
-      <section className="space-y-4">
-        <div>
-          <h2 className="text-2xl font-semibold mb-2">Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <h3 className="text-lg font-medium">✨ Key Features</h3>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• Expandable full-screen mode</li>
-                <li>• Custom thumbnails support</li>
-                <li>• Smooth animations with Framer Motion</li>
-                <li>• Keyboard shortcuts (ESC to close)</li>
-                <li>• Responsive design</li>
-                <li>• Accessible controls</li>
-                <li>• Multiple URL format support</li>
-              </ul>
-            </div>
-            <div className="space-y-2">
-              <h3 className="text-lg font-medium">🎨 Customization</h3>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                <li>• Fully customizable styling</li>
-                <li>• Custom play button designs</li>
-                <li>• Thumbnail overlay effects</li>
-                <li>• Control button positioning</li>
-                <li>• Container and backdrop styling</li>
-                <li>• Title and text customization</li>
-              </ul>
-            </div>
-          </div>
         </div>
       </section>
     </div>

@@ -58,7 +58,7 @@ export function TableOfContents() {
   if (headings.length === 0) return null;
 
   return (
-    <nav className="hidden xl:block sticky top-20 max-h-[calc(100vh-5rem)] overflow-y-auto py-6">
+    <nav className="hidden xl:block sticky top-20 max-h-[calc(100vh-5rem)] overflow-y-auto py-6 w-56 shrink-0">
       <p className="text-sm font-medium mb-3">On this page</p>
       <ul className="space-y-1">
         {headings.map((heading) => (
@@ -77,7 +77,7 @@ export function TableOfContents() {
                   : 'text-muted-foreground border-l-2 border-transparent pl-3'
               )}
             >
-              {heading.text}
+              <span className="truncate block">{heading.text}</span>
             </a>
           </li>
         ))}
