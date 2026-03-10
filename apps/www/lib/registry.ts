@@ -127,6 +127,14 @@ async function getFileContent(file: RegistryFileInput) {
   // Fix imports.
   code = fixImport(code)
 
+  // Fix relative ./component imports to @/components/vritti/<name>
+  const pathParts = file.path.split('/')
+  const componentName = pathParts[pathParts.length - 2]
+  code = code.replace(
+    /from\s+["']\.\/component["']/g,
+    `from "@/components/vritti/${componentName}"`
+  )
+
   return code
 }
 
@@ -144,7 +152,7 @@ function getFileTarget(file: RegistryFileInput) {
     }
 
     if (file.type === "registry:ui") {
-      target = `components/ui/${fileName}`
+      target = `components/vritti/${fileName}`
     }
 
     if (file.type === "registry:hook") {
@@ -194,7 +202,7 @@ export function fixImport(content: string) {
     if (type.endsWith("components")) {
       return `@/components/${component}`
     } else if (type.endsWith("ui")) {
-      return `@/components/ui/${component}`
+      return `@/components/vritti/${component}`
     } else if (type.endsWith("hooks")) {
       return `@/hooks/${component}`
     } else if (type.endsWith("lib")) {
