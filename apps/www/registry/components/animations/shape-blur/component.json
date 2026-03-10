@@ -3,10 +3,15 @@
   "type": "component",
   "description": "Blurred shape animation.",
   "category": "animations",
-  "dependencies": ["three"],
+  "dependencies": [
+    "three"
+  ],
   "files": [],
   "meta": {
-    "tags": ["animation"],
+    "tags": [
+      "animation",
+      "blur"
+    ],
     "source": "react-bits"
   }
 }

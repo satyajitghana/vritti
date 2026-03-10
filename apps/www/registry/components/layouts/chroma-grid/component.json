@@ -3,9 +3,14 @@
   "type": "component",
   "description": "A layouts chroma grid component",
   "category": "layouts",
-  "dependencies": ["gsap"],
+  "dependencies": [
+    "gsap"
+  ],
   "files": [],
   "meta": {
-    "tags": ["layouts"]
+    "tags": [
+      "layouts",
+      "grid"
+    ]
   }
 }

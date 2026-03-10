@@ -1,0 +1,16 @@
+{
+  "name": "apple-cards-carousel",
+  "type": "component",
+  "description": "Apple-style expandable cards carousel with blur image transitions",
+  "category": "layouts",
+  "dependencies": [
+    "motion",
+    "@tabler/icons-react"
+  ],
+  "meta": {
+    "tags": [
+      "card",
+      "carousel"
+    ]
+  }
+}

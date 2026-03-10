@@ -4,6 +4,13 @@
   "title": "Dynamic Text",
   "description": "Animated text that rapidly cycles through greetings in different languages before settling on the final one.",
   "category": "text",
-  "dependencies": ["motion"],
-  "source": "kokonutui"
+  "dependencies": [
+    "motion"
+  ],
+  "source": "kokonutui",
+  "meta": {
+    "tags": [
+      "text"
+    ]
+  }
 }

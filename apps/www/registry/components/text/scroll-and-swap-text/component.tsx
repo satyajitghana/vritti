@@ -37,7 +37,7 @@ interface ScrollAndSwapTextProps {
 const ScrollAndSwapText = ({
   children,
   as = "span",
-  offset = ["0 0", "0 1"],
+  offset = ["start end", "end start"],
   className,
   containerRef,
   springConfig = { stiffness: 200, damping: 30 },

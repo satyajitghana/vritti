@@ -5,5 +5,10 @@
   "description": "A branded button linking to v0.dev with the v0 logo, styled for light and dark modes.",
   "category": "buttons",
   "dependencies": [],
-  "source": "kokonutui"
+  "source": "kokonutui",
+  "meta": {
+    "tags": [
+      "button"
+    ]
+  }
 }

@@ -3,10 +3,19 @@
   "type": "component",
   "description": "Infinite scrolling card flow with 3D flip on hover effect",
   "category": "animations",
-  "dependencies": ["motion"],
+  "dependencies": [
+    "motion"
+  ],
   "files": [],
   "meta": {
-    "tags": ["animation", "scroll", "flip", "cards", "marquee"],
+    "tags": [
+      "animation",
+      "scroll",
+      "flip",
+      "cards",
+      "marquee",
+      "transform"
+    ],
     "source": "scrollx-ui"
   }
 }

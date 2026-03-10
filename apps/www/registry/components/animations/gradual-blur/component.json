@@ -3,10 +3,13 @@
   "type": "component",
   "description": "Gradual blur animation effect.",
   "category": "animations",
-  "dependencies": ["mathjs"],
+  "dependencies": [],
   "files": [],
   "meta": {
-    "tags": ["animation"],
+    "tags": [
+      "animation",
+      "blur"
+    ],
     "source": "react-bits"
   }
 }

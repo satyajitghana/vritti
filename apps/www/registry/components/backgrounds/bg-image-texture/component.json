@@ -6,7 +6,12 @@
   "dependencies": [],
   "files": [],
   "meta": {
-    "tags": ["background", "texture"],
+    "tags": [
+      "background",
+      "texture",
+      "text",
+      "image"
+    ],
     "source": "cult-ui"
   }
 }

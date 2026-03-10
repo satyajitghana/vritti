@@ -3,10 +3,20 @@
   "type": "component",
   "description": "WebGL-powered cosmic background with aurora, cosmic, and neon shader variants",
   "category": "backgrounds",
-  "dependencies": ["three"],
+  "dependencies": [
+    "three"
+  ],
   "files": [],
   "meta": {
-    "tags": ["backgrounds", "cosmic", "webgl", "shader", "three.js", "aurora"],
+    "tags": [
+      "backgrounds",
+      "cosmic",
+      "webgl",
+      "shader",
+      "three.js",
+      "aurora",
+      "background"
+    ],
     "source": "scrollx-ui"
   }
 }

@@ -3,10 +3,20 @@
   "type": "component",
   "description": "Text animation that swaps letters with ping-pong effect on hover in/out.",
   "category": "text",
-  "dependencies": ["motion"],
+  "dependencies": [
+    "motion"
+  ],
   "files": [],
   "meta": {
-    "tags": ["text", "animation", "letter", "swap", "hover", "pingpong"],
+    "tags": [
+      "text",
+      "animation",
+      "letter",
+      "swap",
+      "hover",
+      "pingpong",
+      "transform"
+    ],
     "source": "fancy"
   }
 }

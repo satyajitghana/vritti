@@ -3,9 +3,17 @@
   "type": "component",
   "description": "A layouts fluid glass component",
   "category": "layouts",
-  "dependencies": ["three", "@react-three/fiber", "@react-three/drei", "maath"],
+  "dependencies": [
+    "three",
+    "@react-three/fiber",
+    "@react-three/drei",
+    "maath"
+  ],
   "files": [],
   "meta": {
-    "tags": ["layouts"]
+    "tags": [
+      "layouts",
+      "glass"
+    ]
   }
 }

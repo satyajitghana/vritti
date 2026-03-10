@@ -3,9 +3,14 @@
   "type": "component",
   "description": "A backgrounds light rays component",
   "category": "backgrounds",
-  "dependencies": ["motion"],
+  "dependencies": [
+    "motion"
+  ],
   "files": [],
   "meta": {
-    "tags": ["backgrounds"]
+    "tags": [
+      "backgrounds",
+      "background"
+    ]
   }
 }

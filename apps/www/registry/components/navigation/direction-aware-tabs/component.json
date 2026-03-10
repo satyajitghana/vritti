@@ -1,0 +1,20 @@
+{
+  "name": "direction-aware-tabs",
+  "type": "component",
+  "description": "Tab component with direction-aware animations and transitions",
+  "category": "layouts",
+  "dependencies": [
+    "motion",
+    "react-use-measure"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "layout",
+      "tabs",
+      "animation",
+      "navigation"
+    ],
+    "source": "cult-ui"
+  }
+}

@@ -3,10 +3,19 @@
   "type": "component",
   "description": "WebGL shader with lens blur effects and mouse interaction",
   "category": "animations",
-  "dependencies": ["motion", "three", "jotai"],
+  "dependencies": [
+    "motion",
+    "three",
+    "jotai"
+  ],
   "files": [],
   "meta": {
-    "tags": ["animation", "shader", "webgl"],
+    "tags": [
+      "animation",
+      "shader",
+      "webgl",
+      "blur"
+    ],
     "source": "cult-ui"
   }
 }

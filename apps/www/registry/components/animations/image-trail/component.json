@@ -3,10 +3,15 @@
   "type": "component",
   "description": "Trail of images following the cursor.",
   "category": "animations",
-  "dependencies": ["gsap"],
+  "dependencies": [
+    "gsap"
+  ],
   "files": [],
   "meta": {
-    "tags": ["animation"],
+    "tags": [
+      "animation",
+      "image"
+    ],
     "source": "react-bits"
   }
 }

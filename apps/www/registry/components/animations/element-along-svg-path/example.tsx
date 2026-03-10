@@ -16,13 +16,13 @@ export default function ElementAlongSvgPathExample() {
         transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
       >
         <ElementAlongPathItem startOffset={0}>
-          <div className="w-6 h-6 rounded-full bg-blue-500 -translate-x-1/2 -translate-y-1/2" />
+          <div className="w-6 h-6 rounded-full bg-blue-500" />
         </ElementAlongPathItem>
         <ElementAlongPathItem startOffset={33}>
-          <div className="w-6 h-6 rounded-full bg-green-500 -translate-x-1/2 -translate-y-1/2" />
+          <div className="w-6 h-6 rounded-full bg-green-500" />
         </ElementAlongPathItem>
         <ElementAlongPathItem startOffset={66}>
-          <div className="w-6 h-6 rounded-full bg-red-500 -translate-x-1/2 -translate-y-1/2" />
+          <div className="w-6 h-6 rounded-full bg-red-500" />
         </ElementAlongPathItem>
       </ElementAlongPath>
     </div>

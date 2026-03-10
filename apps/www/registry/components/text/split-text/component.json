@@ -3,5 +3,13 @@
   "type": "component",
   "description": "Animated text splitting into characters or words with GSAP.",
   "category": "text",
-  "dependencies": ["gsap", "@gsap/react"]
+  "dependencies": [
+    "gsap",
+    "@gsap/react"
+  ],
+  "meta": {
+    "tags": [
+      "text"
+    ]
+  }
 }

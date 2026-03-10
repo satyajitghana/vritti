@@ -6,7 +6,16 @@
   "dependencies": [],
   "files": [],
   "meta": {
-    "tags": ["input", "slider", "angle", "circular", "rotation", "dial"],
+    "tags": [
+      "input",
+      "slider",
+      "angle",
+      "circular",
+      "rotation",
+      "dial",
+      "carousel",
+      "form"
+    ],
     "source": "diceui"
   }
 }

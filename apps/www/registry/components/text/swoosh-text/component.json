@@ -4,6 +4,13 @@
   "title": "Swoosh Text",
   "description": "Text with colorful cascading text-shadow layers that disappear on hover with a swoosh effect.",
   "category": "text",
-  "dependencies": ["motion"],
-  "source": "kokonutui"
+  "dependencies": [
+    "motion"
+  ],
+  "source": "kokonutui",
+  "meta": {
+    "tags": [
+      "text"
+    ]
+  }
 }

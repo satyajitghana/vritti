@@ -6,6 +6,10 @@
   "dependencies": [],
   "files": [],
   "meta": {
-    "tags": ["backgrounds"]
+    "tags": [
+      "backgrounds",
+      "grid",
+      "background"
+    ]
   }
 }

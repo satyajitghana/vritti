@@ -3,5 +3,10 @@
   "type": "component",
   "description": "Text rendered with a fuzzy, vibrating canvas effect.",
   "category": "text",
-  "dependencies": []
+  "dependencies": [],
+  "meta": {
+    "tags": [
+      "text"
+    ]
+  }
 }

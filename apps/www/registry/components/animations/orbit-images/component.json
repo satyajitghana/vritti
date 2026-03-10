@@ -3,10 +3,16 @@
   "type": "component",
   "description": "Images orbiting in a circular path.",
   "category": "animations",
-  "dependencies": ["motion"],
+  "dependencies": [
+    "motion"
+  ],
   "files": [],
   "meta": {
-    "tags": ["animation"],
+    "tags": [
+      "animation",
+      "image",
+      "orbit"
+    ],
     "source": "react-bits"
   }
 }

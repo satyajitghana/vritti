@@ -3,9 +3,14 @@
   "type": "component",
   "description": "Animated Scroll Progress for your pages",
   "category": "animations",
-  "dependencies": ["motion"],
+  "dependencies": [
+    "motion"
+  ],
   "files": [],
   "meta": {
-    "tags": ["animation"]
+    "tags": [
+      "animation",
+      "scroll"
+    ]
   }
 }

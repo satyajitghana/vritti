@@ -3,10 +3,19 @@
   "type": "component",
   "description": "Text animation that swaps letters forward with stagger on hover.",
   "category": "text",
-  "dependencies": ["motion"],
+  "dependencies": [
+    "motion"
+  ],
   "files": [],
   "meta": {
-    "tags": ["text", "animation", "letter", "swap", "hover"],
+    "tags": [
+      "text",
+      "animation",
+      "letter",
+      "swap",
+      "hover",
+      "transform"
+    ],
     "source": "fancy"
   }
 }

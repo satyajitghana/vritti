@@ -4,6 +4,13 @@
   "title": "Sliced Text",
   "description": "Text that appears split horizontally and merges back together on hover.",
   "category": "text",
-  "dependencies": ["motion"],
-  "source": "kokonutui"
+  "dependencies": [
+    "motion"
+  ],
+  "source": "kokonutui",
+  "meta": {
+    "tags": [
+      "text"
+    ]
+  }
 }

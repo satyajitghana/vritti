@@ -3,9 +3,14 @@
   "type": "component",
   "description": "Confetti animations for delightful user experiences",
   "category": "animations",
-  "dependencies": ["canvas-confetti"],
+  "dependencies": [
+    "canvas-confetti"
+  ],
   "files": [],
   "meta": {
-    "tags": ["animation"]
+    "tags": [
+      "animation",
+      "particles"
+    ]
   }
 }

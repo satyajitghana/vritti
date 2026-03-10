@@ -3,5 +3,10 @@
   "type": "component",
   "description": "Canvas-based image pixelation with interactive mouse distortion effects",
   "category": "media",
-  "dependencies": []
+  "dependencies": [],
+  "meta": {
+    "tags": [
+      "image"
+    ]
+  }
 }

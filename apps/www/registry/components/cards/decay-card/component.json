@@ -1,0 +1,16 @@
+{
+  "name": "decay-card",
+  "type": "component",
+  "description": "A layouts decay card component",
+  "category": "layouts",
+  "dependencies": [
+    "gsap"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "layouts",
+      "card"
+    ]
+  }
+}

@@ -3,9 +3,18 @@
   "type": "component",
   "description": "Character-by-character shimmering text animation with CSS variable colors.",
   "category": "text",
-  "dependencies": ["motion"],
+  "dependencies": [
+    "motion"
+  ],
   "meta": {
-    "tags": ["text", "animation", "shimmer", "character"],
+    "tags": [
+      "text",
+      "animation",
+      "shimmer",
+      "character",
+      "glow",
+      "orbit"
+    ],
     "source": "chanhdai"
   }
 }

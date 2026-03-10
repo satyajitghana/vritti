@@ -293,6 +293,9 @@ export default function FileUpload({
       aria-label="File upload"
       className={cn("relative mx-auto w-full max-w-sm", className || "")}
       role="complementary"
+      onDragOver={handleDragOver}
+      onDragLeave={handleDragLeave}
+      onDrop={handleDrop}
     >
       <div className="group relative w-full rounded-xl bg-white p-0.5 ring-1 ring-gray-200 dark:bg-black dark:ring-white/10">
         <div className="-top-px absolute inset-x-0 h-px w-full bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
@@ -305,7 +308,7 @@ export default function FileUpload({
           >
             <div className="relative h-[240px]">
               <AnimatePresence mode="wait">
-                {status === "idle" || status === "dragging" ? (
+                {status === "idle" || status === "dragging" || status === "error" ? (
                   <motion.div
                     animate={{ opacity: status === "dragging" ? 0.8 : 1, y: 0, scale: status === "dragging" ? 0.98 : 1 }}
                     className="absolute inset-0 flex flex-col items-center justify-center p-6"

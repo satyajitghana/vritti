@@ -3,9 +3,16 @@
   "type": "component",
   "description": "Scrolling text whose speed changes based on scroll speed",
   "category": "text",
-  "dependencies": ["motion"],
+  "dependencies": [
+    "motion"
+  ],
   "files": [],
   "meta": {
-    "tags": ["text", "animation"]
+    "tags": [
+      "text",
+      "animation",
+      "scroll",
+      "marquee"
+    ]
   }
 }

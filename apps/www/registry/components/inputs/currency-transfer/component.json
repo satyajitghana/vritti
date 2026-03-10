@@ -3,10 +3,20 @@
   "type": "component",
   "description": "Multi-step currency transfer animation with progress indicator and exchange rate display",
   "category": "inputs",
-  "dependencies": ["motion", "lucide-react"],
+  "dependencies": [
+    "motion",
+    "lucide-react"
+  ],
   "files": [],
   "meta": {
-    "tags": ["transfer", "currency", "animation", "finance", "progress"],
+    "tags": [
+      "transfer",
+      "currency",
+      "animation",
+      "finance",
+      "progress",
+      "form"
+    ],
     "source": "kokonutui"
   }
 }

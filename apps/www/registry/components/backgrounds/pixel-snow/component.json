@@ -3,10 +3,15 @@
   "type": "component",
   "description": "An animated pixel snow falling background effect.",
   "category": "backgrounds",
-  "dependencies": ["three"],
+  "dependencies": [
+    "three"
+  ],
   "files": [],
   "meta": {
-    "tags": ["background"],
+    "tags": [
+      "background",
+      "image"
+    ],
     "source": "react-bits"
   }
 }

@@ -38,15 +38,28 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
   useEffect(() => {
     if (sparkColorProp) {
       setResolvedColor(sparkColorProp);
-    } else {
-      // Resolve CSS variable to rgb() format for canvas compatibility
+      return;
+    }
+
+    const resolve = () => {
       const el = document.createElement('div');
       el.style.color = 'var(--foreground)';
       document.body.appendChild(el);
       const resolved = getComputedStyle(el).color;
       el.remove();
       setResolvedColor(resolved || '#000000');
-    }
+    };
+
+    resolve();
+
+    // Re-resolve when the theme changes (dark class toggled on <html>)
+    const observer = new MutationObserver(resolve);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
+    return () => observer.disconnect();
   }, [sparkColorProp]);
 
   const sparkColor = sparkColorProp || resolvedColor;

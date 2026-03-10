@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs'
 import path from 'path'
 
+const SITE_URL = 'https://vritti.thesatyajit.com'
 const REGISTRY_BASE = path.join(process.cwd(), 'registry', 'components')
 const BLOCKS_BASE = path.join(process.cwd(), 'registry', 'blocks')
 const COMPONENT_DOCS_OUTPUT = path.join(process.cwd(), 'content', 'docs', 'components')
@@ -11,7 +12,11 @@ const CATEGORIES = [
   { name: 'backgrounds', label: 'Backgrounds' },
   { name: 'text', label: 'Text Effects' },
   { name: 'buttons', label: 'Buttons' },
+  { name: 'cards', label: 'Cards' },
   { name: 'layouts', label: 'Layouts' },
+  { name: 'navigation', label: 'Navigation' },
+  { name: 'carousels', label: 'Carousels & Sliders' },
+  { name: 'cursors', label: 'Cursors' },
   { name: 'inputs', label: 'Inputs' },
   { name: 'media', label: 'Media' },
   { name: 'special', label: 'Special' },
@@ -62,6 +67,7 @@ interface ItemInfo {
   type: 'component' | 'block'
   props: PropInfo[]
   extraExamples: ExampleInfo[]
+  tags: string[]
 }
 
 async function scanItems(basePath: string, categories: { name: string; label: string }[], itemType: 'component' | 'block'): Promise<ItemInfo[]> {
@@ -123,6 +129,10 @@ async function scanItems(basePath: string, categories: { name: string; label: st
         description: p.description || '',
       }))
 
+      // Read tags from component.json meta
+      const meta = (metadata.meta as Record<string, unknown>) || {}
+      const tags: string[] = (meta.tags as string[]) || []
+
       items.push({
         name,
         title: (metadata.title as string) || toTitleCase(name),
@@ -134,6 +144,7 @@ async function scanItems(basePath: string, categories: { name: string; label: st
         hasExample,
         type: itemType,
         props,
+        tags,
         extraExamples,
       })
     }
@@ -156,6 +167,11 @@ function generateItemMDX(item: ItemInfo): string {
   lines.push('---')
   lines.push('')
 
+  if (item.tags.length > 0) {
+    lines.push(`<ComponentTags tags={${JSON.stringify(item.tags)}} />`)
+    lines.push('')
+  }
+
   if (item.hasExample) {
     lines.push(`<ComponentPreview name="${item.name}-demo" />`)
     lines.push('')
@@ -175,7 +191,7 @@ function generateItemMDX(item: ItemInfo): string {
   lines.push('<TabsContent value="cli">')
   lines.push('')
   lines.push('```bash')
-  lines.push(`npx shadcn@latest add "https://vritti-ui.vercel.app/r/${item.name}"`)
+  lines.push(`npx shadcn@latest add "${SITE_URL}/r/${item.name}"`)
   lines.push('```')
   lines.push('')
   lines.push('</TabsContent>')

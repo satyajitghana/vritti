@@ -3,5 +3,13 @@
   "type": "component",
   "description": "Typewriter effect that types and deletes text with a blinking cursor.",
   "category": "text",
-  "dependencies": ["gsap"]
+  "dependencies": [
+    "gsap"
+  ],
+  "meta": {
+    "tags": [
+      "text",
+      "typewriter"
+    ]
+  }
 }

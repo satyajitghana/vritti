@@ -3,5 +3,12 @@
   "type": "component",
   "description": "Text that scrambles on mouse proximity using GSAP.",
   "category": "text",
-  "dependencies": ["gsap"]
+  "dependencies": [
+    "gsap"
+  ],
+  "meta": {
+    "tags": [
+      "text"
+    ]
+  }
 }

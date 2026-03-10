@@ -3,10 +3,17 @@
   "type": "component",
   "description": "Pixelated trail following the cursor.",
   "category": "animations",
-  "dependencies": ["three", "@react-three/fiber", "@react-three/drei"],
+  "dependencies": [
+    "three",
+    "@react-three/fiber",
+    "@react-three/drei"
+  ],
   "files": [],
   "meta": {
-    "tags": ["animation"],
+    "tags": [
+      "animation",
+      "image"
+    ],
     "source": "react-bits"
   }
 }

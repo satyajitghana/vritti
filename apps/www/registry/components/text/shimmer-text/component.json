@@ -4,6 +4,14 @@
   "title": "Shimmer Text",
   "description": "Text with a shimmering gradient animation that continuously sweeps across the text.",
   "category": "text",
-  "dependencies": ["motion"],
-  "source": "kokonutui"
+  "dependencies": [
+    "motion"
+  ],
+  "source": "kokonutui",
+  "meta": {
+    "tags": [
+      "text",
+      "glow"
+    ]
+  }
 }

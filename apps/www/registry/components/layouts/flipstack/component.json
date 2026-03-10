@@ -3,10 +3,19 @@
   "type": "component",
   "description": "An animated card stack that fans out with rotation on scroll into view",
   "category": "layouts",
-  "dependencies": ["motion"],
+  "dependencies": [
+    "motion"
+  ],
   "files": [],
   "meta": {
-    "tags": ["layouts", "card", "stack", "animation", "flip"],
+    "tags": [
+      "layouts",
+      "card",
+      "stack",
+      "animation",
+      "flip",
+      "transform"
+    ],
     "source": "scrollx-ui"
   }
 }

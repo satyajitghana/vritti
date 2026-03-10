@@ -1,0 +1,24 @@
+{
+  "name": "spotlight-cards",
+  "type": "component",
+  "description": "Feature grid with aurora ambient glow, magnetic 3D tilt, and focus-dim sibling cards",
+  "category": "layouts",
+  "dependencies": [
+    "lucide-react",
+    "motion"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "cards",
+      "grid",
+      "spotlight",
+      "tilt",
+      "3d",
+      "hover",
+      "features",
+      "card"
+    ],
+    "source": "kokonutui"
+  }
+}

@@ -3,5 +3,14 @@
   "type": "component",
   "description": "Words reveal with opacity and blur on scroll using GSAP.",
   "category": "text",
-  "dependencies": ["gsap"]
+  "dependencies": [
+    "gsap"
+  ],
+  "meta": {
+    "tags": [
+      "scroll",
+      "reveal",
+      "text"
+    ]
+  }
 }

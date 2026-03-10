@@ -3,5 +3,12 @@
   "type": "component",
   "description": "Animated number counting up effect.",
   "category": "text",
-  "dependencies": ["motion"]
+  "dependencies": [
+    "motion"
+  ],
+  "meta": {
+    "tags": [
+      "text"
+    ]
+  }
 }

@@ -14,7 +14,7 @@ interface LineShadowTextProps
 
 export function LineShadowText({
   children,
-  shadowColor = "black",
+  shadowColor,
   className,
   as: Component = "span",
   ...props
@@ -28,7 +28,7 @@ export function LineShadowText({
 
   return (
     <MotionComponent
-      style={{ "--shadow-color": shadowColor } as React.CSSProperties}
+      style={{ "--shadow-color": shadowColor || "currentColor" } as React.CSSProperties}
       className={cn(
         "relative z-0 inline-flex",
         "after:absolute after:top-[0.04em] after:left-[0.04em] after:content-[attr(data-text)]",
