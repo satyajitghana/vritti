@@ -649,7 +649,7 @@
   }
 
   [data-line] span {
-    color: var(--shiki-light);
+    color: var(--shiki-light) !important;
 
     @variant dark {
       color: var(--shiki-dark) !important;

@@ -9398,6 +9398,48 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/special/popover-form/example")),
     meta: {"tags":["form","popover"],"source":"cult-ui"},
   },
+  "popover-form-contact": {
+    name: "popover-form-contact",
+    description: "Form popover with success states and animations (contact)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["popover-form"],
+    files: [{
+      path: "registry/components/special/popover-form/example-contact.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/popover-form/example-contact")),
+    meta: {"tags":["form","popover"],"source":"cult-ui"},
+  },
+  "popover-form-newsletter": {
+    name: "popover-form-newsletter",
+    description: "Form popover with success states and animations (newsletter)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["popover-form"],
+    files: [{
+      path: "registry/components/special/popover-form/example-newsletter.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/popover-form/example-newsletter")),
+    meta: {"tags":["form","popover"],"source":"cult-ui"},
+  },
+  "popover-form-theme-switcher": {
+    name: "popover-form-theme-switcher",
+    description: "Form popover with success states and animations (theme-switcher)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["popover-form"],
+    files: [{
+      path: "registry/components/special/popover-form/example-theme-switcher.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/popover-form/example-theme-switcher")),
+    meta: {"tags":["form","popover"],"source":"cult-ui"},
+  },
   "prism": {
     name: "prism",
     description: "A prismatic light refraction background effect.",
@@ -14515,6 +14557,34 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/special/youtube-video-player/example")),
+    meta: {"tags":["media","youtube","video"],"source":"cult-ui","previewSize":"lg"},
+  },
+  "youtube-video-player-custom-styling": {
+    name: "youtube-video-player-custom-styling",
+    description: "YouTube video player with custom controls (custom-styling)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["youtube-video-player"],
+    files: [{
+      path: "registry/components/special/youtube-video-player/example-custom-styling.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/youtube-video-player/example-custom-styling")),
+    meta: {"tags":["media","youtube","video"],"source":"cult-ui","previewSize":"lg"},
+  },
+  "youtube-video-player-multiple": {
+    name: "youtube-video-player-multiple",
+    description: "YouTube video player with custom controls (multiple)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["youtube-video-player"],
+    files: [{
+      path: "registry/components/special/youtube-video-player/example-multiple.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/youtube-video-player/example-multiple")),
     meta: {"tags":["media","youtube","video"],"source":"cult-ui","previewSize":"lg"},
   },
   "account-2fa": {
