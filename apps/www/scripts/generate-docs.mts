@@ -1,7 +1,8 @@
 import { promises as fs } from 'fs'
 import path from 'path'
-
-const SITE_URL = 'https://vritti.thesatyajit.com'
+// Read base URL from site config - change siteConfig.url and re-run this script to update all docs
+const { siteConfig } = await import('../config/site.js')
+const SITE_URL = siteConfig.url
 const REGISTRY_BASE = path.join(process.cwd(), 'registry', 'components')
 const BLOCKS_BASE = path.join(process.cwd(), 'registry', 'blocks')
 const COMPONENT_DOCS_OUTPUT = path.join(process.cwd(), 'content', 'docs', 'components')
