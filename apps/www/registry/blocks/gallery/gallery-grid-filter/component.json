@@ -1,0 +1,12 @@
+{
+  "name": "gallery-grid-filter",
+  "type": "block",
+  "description": "A filterable grid gallery with category tabs and animated layout transitions.",
+  "category": "gallery",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["gallery", "grid", "filter", "categories", "portfolio"],
+    "source": "vritti"
+  }
+}

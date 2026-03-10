@@ -1,0 +1,12 @@
+{
+  "name": "tabs-underline",
+  "type": "block",
+  "description": "A horizontal tab navigation with a smooth animated underline indicator and tab content panels.",
+  "category": "navigation",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["navigation", "tabs", "underline", "animated", "indicator"],
+    "source": "vritti"
+  }
+}

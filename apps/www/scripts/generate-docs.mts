@@ -36,6 +36,11 @@ const BLOCK_CATEGORIES = [
   { name: 'billing', label: 'Billing' },
   { name: 'modal', label: 'Modals' },
   { name: 'account', label: 'Account' },
+  { name: 'navigation', label: 'Navigation' },
+  { name: 'cards', label: 'Cards' },
+  { name: 'gallery', label: 'Gallery' },
+  { name: 'features', label: 'Features' },
+  { name: 'cta', label: 'Call to Action' },
   { name: 'special', label: 'Special' },
 ]
 

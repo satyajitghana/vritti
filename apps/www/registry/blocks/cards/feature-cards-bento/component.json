@@ -1,0 +1,12 @@
+{
+  "name": "feature-cards-bento",
+  "type": "block",
+  "description": "A bento grid layout of feature cards with varying sizes, icons, and gradient accents.",
+  "category": "cards",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["cards", "bento", "features", "grid", "gradient"],
+    "source": "vritti"
+  }
+}

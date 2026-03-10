@@ -31,6 +31,11 @@ export type BlockCategory =
   | 'billing'
   | 'modal'
   | 'account'
+  | 'navigation'
+  | 'cards'
+  | 'gallery'
+  | 'features'
+  | 'cta'
   | 'special';
 
 export interface PropDefinition {
@@ -316,10 +321,45 @@ export const BLOCK_CATEGORIES: BlockCategoryInfo[] = [
     order: 12,
   },
   {
+    name: 'navigation',
+    label: 'Navigation',
+    description: 'Navbars, sidebars, tabs, and navigation patterns',
+    icon: 'Menu',
+    order: 13,
+  },
+  {
+    name: 'cards',
+    label: 'Cards',
+    description: 'Card layouts, grids, and card-based sections',
+    icon: 'LayoutGrid',
+    order: 14,
+  },
+  {
+    name: 'gallery',
+    label: 'Gallery',
+    description: 'Image galleries, portfolios, and media grids',
+    icon: 'Image',
+    order: 15,
+  },
+  {
+    name: 'features',
+    label: 'Features',
+    description: 'Feature showcases and highlights sections',
+    icon: 'Zap',
+    order: 16,
+  },
+  {
+    name: 'cta',
+    label: 'Call to Action',
+    description: 'CTA banners, newsletter signups, and conversion sections',
+    icon: 'Megaphone',
+    order: 17,
+  },
+  {
     name: 'special',
     label: 'Special',
     description: 'AI agents, Web3, and other specialized blocks',
     icon: 'Sparkles',
-    order: 13,
+    order: 18,
   },
 ];

@@ -1,0 +1,12 @@
+{
+  "name": "features-alternating",
+  "type": "block",
+  "description": "Alternating left-right feature sections with illustrations and scroll-triggered animations.",
+  "category": "features",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["features", "alternating", "sections", "scroll", "landing"],
+    "source": "vritti"
+  }
+}

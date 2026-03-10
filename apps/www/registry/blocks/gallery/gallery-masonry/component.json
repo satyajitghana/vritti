@@ -1,0 +1,12 @@
+{
+  "name": "gallery-masonry",
+  "type": "block",
+  "description": "A responsive masonry photo gallery with lightbox preview and smooth hover animations.",
+  "category": "gallery",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["gallery", "masonry", "photos", "grid", "lightbox"],
+    "source": "vritti"
+  }
+}

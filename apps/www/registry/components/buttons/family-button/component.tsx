@@ -19,16 +19,16 @@ const FamilyButton: React.FC<FamilyButtonProps> = ({ children }) => {
   return (
     <div
       className={cn(
-        "rounded-[24px] border border-black/10  shadow-sm dark:border-yellow-400/20",
-        "bg-gradient-to-b  from-neutral-900 to-black",
+        "rounded-[24px] border border-border shadow-sm",
+        "bg-gradient-to-b from-muted to-background",
         isExpanded
-          ? "w-[204px] bg-gradient-to-b dark:from-stone-900 dark:to-neutral-900/80"
-          : "dark:from-neutral-900 dark:to-stone-950 bg-gradient-to-b"
+          ? "w-[204px] bg-gradient-to-b from-muted/80 to-background"
+          : "from-muted to-background bg-gradient-to-b"
       )}
     >
-      <div className="rounded-[23px] border   border-black/10 ">
-        <div className="rounded-[22px] border  dark:border-stone-800 border-white/50 ">
-          <div className="rounded-[21px] border    border-neutral-950/20   flex items-center justify-center ">
+      <div className="rounded-[23px] border border-border/50">
+        <div className="rounded-[22px] border border-border/60">
+          <div className="rounded-[21px] border border-border/40 flex items-center justify-center">
             <FamilyButtonContainer
               isExpanded={isExpanded}
               toggleExpand={toggleExpand}
@@ -71,9 +71,9 @@ const FamilyButtonContainer: FC<FamilyButtonContainerProps> = ({
   return (
     <motion.div
       className={cn(
-        "relative   border-white/10 border shadow-lg flex flex-col space-y-1  items-center  text-white  cursor-pointer z-10",
+        "relative border-border/30 border shadow-lg flex flex-col space-y-1 items-center text-foreground cursor-pointer z-10",
         !isExpanded
-          ? "bg-gradient-to-b from-neutral-900 to-stone-900 dark:from-stone-700 dark:to-neutral-800/80"
+          ? "bg-gradient-to-b from-muted to-muted/80"
           : ""
       )}
       layoutRoot
@@ -103,7 +103,7 @@ const FamilyButtonContainer: FC<FamilyButtonContainerProps> = ({
       {children}
 
       <motion.div
-        className="absolute  "
+        className="absolute"
         initial={{ x: "-50%" }}
         animate={{
           x: isExpanded ? "0%" : "-50%",
@@ -120,7 +120,7 @@ const FamilyButtonContainer: FC<FamilyButtonContainerProps> = ({
       >
         {isExpanded ? (
           <motion.div
-            className="p-[10px] group bg-neutral-800/50 dark:bg-black/50 border border-cyan-100/30 hover:border-neutral-200 text-orange-50 rounded-full shadow-2xl transition-colors duration-300 "
+            className="p-[10px] group bg-muted/80 border border-border hover:border-border/80 text-foreground rounded-full shadow-2xl transition-colors duration-300"
             onClick={toggleExpand}
             layoutId="expand-toggle"
             initial={false}
@@ -133,14 +133,14 @@ const FamilyButtonContainer: FC<FamilyButtonContainerProps> = ({
           >
             <XIcon
               className={cn(
-                "h-7 w-7 text-cyan-100/30 dark:text-neutral-400/80 group-hover:text-neutral-500 transition-colors duration-200 "
+                "h-7 w-7 text-muted-foreground group-hover:text-foreground transition-colors duration-200"
               )}
             />
           </motion.div>
         ) : (
           <motion.div
             className={cn(
-              "p-[10px] group bg-neutral-200 dark:bg-cyan-500/90 text-cyan-50 border border-cyan-100/10  shadow-2xl transition-colors duration-200"
+              "p-[10px] group bg-primary text-primary-foreground border border-primary/20 shadow-2xl transition-colors duration-200"
             )}
             style={{ borderRadius: 24 }}
             onClick={toggleExpand}
@@ -153,7 +153,7 @@ const FamilyButtonContainer: FC<FamilyButtonContainerProps> = ({
               },
             }}
           >
-            <PlusIcon className="h-7 w-7 text-black dark:text-neutral-900" />
+            <PlusIcon className="h-7 w-7 text-primary-foreground" />
           </motion.div>
         )}
       </motion.div>

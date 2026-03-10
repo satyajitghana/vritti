@@ -15545,6 +15545,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/blocks/blog/blog-rectangular/example")),
     meta: {"tags":["blog","posts","rectangular","images"],"source":"creative-tim"},
   },
+  "breadcrumb-animated": {
+    name: "breadcrumb-animated",
+    description: "An animated breadcrumb navigation with smooth transitions between path segments.",
+    type: "registry:block",
+    category: "navigation",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/navigation/breadcrumb-animated/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/navigation/breadcrumb-animated/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["navigation","breadcrumb","animated","path"],"source":"vritti"},
+  },
+  "breadcrumb-animated-demo": {
+    name: "breadcrumb-animated-demo",
+    description: "An animated breadcrumb navigation with smooth transitions between path segments. (demo)",
+    type: "registry:example",
+    category: "navigation",
+    registryDependencies: ["breadcrumb-animated"],
+    files: [{
+      path: "registry/blocks/navigation/breadcrumb-animated/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/navigation/breadcrumb-animated/example")),
+    meta: {"tags":["navigation","breadcrumb","animated","path"],"source":"vritti"},
+  },
   "cancel-subscription-card": {
     name: "cancel-subscription-card",
     description: "A cancellation flow card with plan details, warning section, and two-step confirmation.",
@@ -15742,6 +15775,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/blocks/modal/command-menu-03/example")),
     meta: {"tags":["modal","dialog","command"],"source":"blocks.so"},
+  },
+  "command-palette": {
+    name: "command-palette",
+    description: "A keyboard-driven command palette with search, categories, and keyboard navigation.",
+    type: "registry:block",
+    category: "navigation",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/navigation/command-palette/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/navigation/command-palette/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["navigation","command","search","palette","keyboard"],"source":"vritti"},
+  },
+  "command-palette-demo": {
+    name: "command-palette-demo",
+    description: "A keyboard-driven command palette with search, categories, and keyboard navigation. (demo)",
+    type: "registry:example",
+    category: "navigation",
+    registryDependencies: ["command-palette"],
+    files: [{
+      path: "registry/blocks/navigation/command-palette/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/navigation/command-palette/example")),
+    meta: {"tags":["navigation","command","search","palette","keyboard"],"source":"vritti"},
   },
   "contact-form-background": {
     name: "contact-form-background",
@@ -16369,6 +16435,72 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/blocks/ecommerce/crud-edit-profile/example")),
     meta: {"tags":["ecommerce","crud","edit","profile","form"],"source":"creative-tim"},
+  },
+  "cta-gradient": {
+    name: "cta-gradient",
+    description: "A bold gradient call-to-action banner with animated background and dual action buttons.",
+    type: "registry:block",
+    category: "cta",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/cta/cta-gradient/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/cta/cta-gradient/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["cta","gradient","banner","action","landing"],"source":"vritti"},
+  },
+  "cta-gradient-demo": {
+    name: "cta-gradient-demo",
+    description: "A bold gradient call-to-action banner with animated background and dual action buttons. (demo)",
+    type: "registry:example",
+    category: "cta",
+    registryDependencies: ["cta-gradient"],
+    files: [{
+      path: "registry/blocks/cta/cta-gradient/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/cta/cta-gradient/example")),
+    meta: {"tags":["cta","gradient","banner","action","landing"],"source":"vritti"},
+  },
+  "cta-newsletter": {
+    name: "cta-newsletter",
+    description: "A newsletter subscription section with email input, animated submit button, and social proof.",
+    type: "registry:block",
+    category: "cta",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/cta/cta-newsletter/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/cta/cta-newsletter/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["cta","newsletter","email","subscription","signup"],"source":"vritti"},
+  },
+  "cta-newsletter-demo": {
+    name: "cta-newsletter-demo",
+    description: "A newsletter subscription section with email input, animated submit button, and social proof. (demo)",
+    type: "registry:example",
+    category: "cta",
+    registryDependencies: ["cta-newsletter"],
+    files: [{
+      path: "registry/blocks/cta/cta-newsletter/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/cta/cta-newsletter/example")),
+    meta: {"tags":["cta","newsletter","email","subscription","signup"],"source":"vritti"},
   },
   "detailed-usage-table": {
     name: "detailed-usage-table",
@@ -17227,6 +17359,105 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/blocks/faq/faq-simple/example")),
     meta: {"tags":["faq","simple","questions","answers"],"source":"creative-tim"},
+  },
+  "feature-cards-bento": {
+    name: "feature-cards-bento",
+    description: "A bento grid layout of feature cards with varying sizes, icons, and gradient accents.",
+    type: "registry:block",
+    category: "cards",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/cards/feature-cards-bento/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/cards/feature-cards-bento/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["cards","bento","features","grid","gradient"],"source":"vritti"},
+  },
+  "feature-cards-bento-demo": {
+    name: "feature-cards-bento-demo",
+    description: "A bento grid layout of feature cards with varying sizes, icons, and gradient accents. (demo)",
+    type: "registry:example",
+    category: "cards",
+    registryDependencies: ["feature-cards-bento"],
+    files: [{
+      path: "registry/blocks/cards/feature-cards-bento/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/cards/feature-cards-bento/example")),
+    meta: {"tags":["cards","bento","features","grid","gradient"],"source":"vritti"},
+  },
+  "features-alternating": {
+    name: "features-alternating",
+    description: "Alternating left-right feature sections with illustrations and scroll-triggered animations.",
+    type: "registry:block",
+    category: "features",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/features/features-alternating/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/features/features-alternating/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["features","alternating","sections","scroll","landing"],"source":"vritti"},
+  },
+  "features-alternating-demo": {
+    name: "features-alternating-demo",
+    description: "Alternating left-right feature sections with illustrations and scroll-triggered animations. (demo)",
+    type: "registry:example",
+    category: "features",
+    registryDependencies: ["features-alternating"],
+    files: [{
+      path: "registry/blocks/features/features-alternating/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/features/features-alternating/example")),
+    meta: {"tags":["features","alternating","sections","scroll","landing"],"source":"vritti"},
+  },
+  "features-icon-grid": {
+    name: "features-icon-grid",
+    description: "A responsive grid of feature items with icons, titles, and descriptions with staggered animations.",
+    type: "registry:block",
+    category: "features",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/features/features-icon-grid/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/features/features-icon-grid/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["features","grid","icons","staggered","landing"],"source":"vritti"},
+  },
+  "features-icon-grid-demo": {
+    name: "features-icon-grid-demo",
+    description: "A responsive grid of feature items with icons, titles, and descriptions with staggered animations. (demo)",
+    type: "registry:example",
+    category: "features",
+    registryDependencies: ["features-icon-grid"],
+    files: [{
+      path: "registry/blocks/features/features-icon-grid/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/features/features-icon-grid/example")),
+    meta: {"tags":["features","grid","icons","staggered","landing"],"source":"vritti"},
   },
   "file-upload-01": {
     name: "file-upload-01",
@@ -18250,6 +18481,105 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/blocks/special/form-layout-05/example")),
     meta: {"tags":["special","form"],"source":"blocks.so"},
+  },
+  "gallery-carousel": {
+    name: "gallery-carousel",
+    description: "A full-width image carousel with thumbnail strip navigation and smooth slide transitions.",
+    type: "registry:block",
+    category: "gallery",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/gallery/gallery-carousel/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/gallery/gallery-carousel/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["gallery","carousel","slider","thumbnails","fullwidth"],"source":"vritti"},
+  },
+  "gallery-carousel-demo": {
+    name: "gallery-carousel-demo",
+    description: "A full-width image carousel with thumbnail strip navigation and smooth slide transitions. (demo)",
+    type: "registry:example",
+    category: "gallery",
+    registryDependencies: ["gallery-carousel"],
+    files: [{
+      path: "registry/blocks/gallery/gallery-carousel/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/gallery/gallery-carousel/example")),
+    meta: {"tags":["gallery","carousel","slider","thumbnails","fullwidth"],"source":"vritti"},
+  },
+  "gallery-grid-filter": {
+    name: "gallery-grid-filter",
+    description: "A filterable grid gallery with category tabs and animated layout transitions.",
+    type: "registry:block",
+    category: "gallery",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/blocks/gallery/gallery-grid-filter/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/gallery/gallery-grid-filter/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["gallery","grid","filter","categories","portfolio"],"source":"vritti"},
+  },
+  "gallery-grid-filter-demo": {
+    name: "gallery-grid-filter-demo",
+    description: "A filterable grid gallery with category tabs and animated layout transitions. (demo)",
+    type: "registry:example",
+    category: "gallery",
+    registryDependencies: ["gallery-grid-filter"],
+    files: [{
+      path: "registry/blocks/gallery/gallery-grid-filter/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/gallery/gallery-grid-filter/example")),
+    meta: {"tags":["gallery","grid","filter","categories","portfolio"],"source":"vritti"},
+  },
+  "gallery-masonry": {
+    name: "gallery-masonry",
+    description: "A responsive masonry photo gallery with lightbox preview and smooth hover animations.",
+    type: "registry:block",
+    category: "gallery",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/blocks/gallery/gallery-masonry/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/gallery/gallery-masonry/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["gallery","masonry","photos","grid","lightbox"],"source":"vritti"},
+  },
+  "gallery-masonry-demo": {
+    name: "gallery-masonry-demo",
+    description: "A responsive masonry photo gallery with lightbox preview and smooth hover animations. (demo)",
+    type: "registry:example",
+    category: "gallery",
+    registryDependencies: ["gallery-masonry"],
+    files: [{
+      path: "registry/blocks/gallery/gallery-masonry/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/gallery/gallery-masonry/example")),
+    meta: {"tags":["gallery","masonry","photos","grid","lightbox"],"source":"vritti"},
   },
   "grid-list-01": {
     name: "grid-list-01",
@@ -19340,6 +19670,72 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/blocks/modal/modal-success/example")),
     meta: {"tags":["modal","success","state","confirmation"],"source":"creative-tim"},
   },
+  "navbar-gradient": {
+    name: "navbar-gradient",
+    description: "A floating gradient navbar with animated hover effects and responsive mobile menu.",
+    type: "registry:block",
+    category: "navigation",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/navigation/navbar-gradient/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/navigation/navbar-gradient/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["navigation","navbar","gradient","floating","responsive"],"source":"vritti"},
+  },
+  "navbar-gradient-demo": {
+    name: "navbar-gradient-demo",
+    description: "A floating gradient navbar with animated hover effects and responsive mobile menu. (demo)",
+    type: "registry:example",
+    category: "navigation",
+    registryDependencies: ["navbar-gradient"],
+    files: [{
+      path: "registry/blocks/navigation/navbar-gradient/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/navigation/navbar-gradient/example")),
+    meta: {"tags":["navigation","navbar","gradient","floating","responsive"],"source":"vritti"},
+  },
+  "notification-cards": {
+    name: "notification-cards",
+    description: "A notification feed with different notification types, timestamps, and swipe-to-dismiss.",
+    type: "registry:block",
+    category: "cards",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/cards/notification-cards/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/cards/notification-cards/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["cards","notifications","feed","activity","alerts"],"source":"vritti"},
+  },
+  "notification-cards-demo": {
+    name: "notification-cards-demo",
+    description: "A notification feed with different notification types, timestamps, and swipe-to-dismiss. (demo)",
+    type: "registry:example",
+    category: "cards",
+    registryDependencies: ["notification-cards"],
+    files: [{
+      path: "registry/blocks/cards/notification-cards/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/cards/notification-cards/example")),
+    meta: {"tags":["cards","notifications","feed","activity","alerts"],"source":"vritti"},
+  },
   "onboarding-01": {
     name: "onboarding-01",
     description: "Multi-step onboarding wizard with progress indicator",
@@ -19636,6 +20032,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/blocks/billing/payment-method-selector/example")),
     meta: undefined,
+  },
+  "pricing-cards": {
+    name: "pricing-cards",
+    description: "Tiered pricing cards with highlighted popular plan, feature lists, and animated hover effects.",
+    type: "registry:block",
+    category: "cards",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/cards/pricing-cards/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/cards/pricing-cards/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["cards","pricing","plans","subscription","tiers"],"source":"vritti"},
+  },
+  "pricing-cards-demo": {
+    name: "pricing-cards-demo",
+    description: "Tiered pricing cards with highlighted popular plan, feature lists, and animated hover effects. (demo)",
+    type: "registry:example",
+    category: "cards",
+    registryDependencies: ["pricing-cards"],
+    files: [{
+      path: "registry/blocks/cards/pricing-cards/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/cards/pricing-cards/example")),
+    meta: {"tags":["cards","pricing","plans","subscription","tiers"],"source":"vritti"},
   },
   "pricing-table-five": {
     name: "pricing-table-five",
@@ -20165,6 +20594,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/blocks/ecommerce/shopping-cart/example")),
     meta: {"tags":["ecommerce","cart","shopping","order-summary","checkout"],"source":"creative-tim"},
   },
+  "sidebar-dashboard": {
+    name: "sidebar-dashboard",
+    description: "A collapsible dashboard sidebar with icon navigation, sections, and active state indicators.",
+    type: "registry:block",
+    category: "navigation",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/navigation/sidebar-dashboard/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/navigation/sidebar-dashboard/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["navigation","sidebar","dashboard","collapsible","menu"],"source":"vritti"},
+  },
+  "sidebar-dashboard-demo": {
+    name: "sidebar-dashboard-demo",
+    description: "A collapsible dashboard sidebar with icon navigation, sections, and active state indicators. (demo)",
+    type: "registry:example",
+    category: "navigation",
+    registryDependencies: ["sidebar-dashboard"],
+    files: [{
+      path: "registry/blocks/navigation/sidebar-dashboard/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/navigation/sidebar-dashboard/example")),
+    meta: {"tags":["navigation","sidebar","dashboard","collapsible","menu"],"source":"vritti"},
+  },
   "software-purchase": {
     name: "software-purchase",
     description: "A software purchase checkout form with plan selection and payment details.",
@@ -20693,6 +21155,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/blocks/special/stats-15/example")),
     meta: {"tags":["special","stats","analytics"],"source":"blocks.so"},
   },
+  "stats-cards": {
+    name: "stats-cards",
+    description: "Animated statistics cards with counting animations and trend indicators.",
+    type: "registry:block",
+    category: "cards",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/cards/stats-cards/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/cards/stats-cards/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["cards","stats","analytics","counter","dashboard"],"source":"vritti"},
+  },
+  "stats-cards-demo": {
+    name: "stats-cards-demo",
+    description: "Animated statistics cards with counting animations and trend indicators. (demo)",
+    type: "registry:example",
+    category: "cards",
+    registryDependencies: ["stats-cards"],
+    files: [{
+      path: "registry/blocks/cards/stats-cards/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/cards/stats-cards/example")),
+    meta: {"tags":["cards","stats","analytics","counter","dashboard"],"source":"vritti"},
+  },
   "subscription-management": {
     name: "subscription-management",
     description: "A subscription management card showing current plan details, billing cycle, and upgrade options.",
@@ -20890,6 +21385,72 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/blocks/special/table-05/example")),
     meta: {"tags":["special","table","form"],"source":"blocks.so"},
+  },
+  "tabs-underline": {
+    name: "tabs-underline",
+    description: "A horizontal tab navigation with a smooth animated underline indicator and tab content panels.",
+    type: "registry:block",
+    category: "navigation",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/blocks/navigation/tabs-underline/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/navigation/tabs-underline/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["navigation","tabs","underline","animated","indicator"],"source":"vritti"},
+  },
+  "tabs-underline-demo": {
+    name: "tabs-underline-demo",
+    description: "A horizontal tab navigation with a smooth animated underline indicator and tab content panels. (demo)",
+    type: "registry:example",
+    category: "navigation",
+    registryDependencies: ["tabs-underline"],
+    files: [{
+      path: "registry/blocks/navigation/tabs-underline/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/navigation/tabs-underline/example")),
+    meta: {"tags":["navigation","tabs","underline","animated","indicator"],"source":"vritti"},
+  },
+  "team-cards-grid": {
+    name: "team-cards-grid",
+    description: "A responsive team members grid with animated hover effects showing roles and social links.",
+    type: "registry:block",
+    category: "cards",
+    registryDependencies: undefined,
+    dependencies: ["motion","lucide-react"],
+    files: [{
+      path: "registry/blocks/cards/team-cards-grid/component.tsx",
+      type: "registry:block",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/blocks/cards/team-cards-grid/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["cards","team","grid","hover","social"],"source":"vritti"},
+  },
+  "team-cards-grid-demo": {
+    name: "team-cards-grid-demo",
+    description: "A responsive team members grid with animated hover effects showing roles and social links. (demo)",
+    type: "registry:example",
+    category: "cards",
+    registryDependencies: ["team-cards-grid"],
+    files: [{
+      path: "registry/blocks/cards/team-cards-grid/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/blocks/cards/team-cards-grid/example")),
+    meta: {"tags":["cards","team","grid","hover","social"],"source":"vritti"},
   },
   "testimonial-avatars": {
     name: "testimonial-avatars",

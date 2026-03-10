@@ -131,20 +131,20 @@ export function MusicPlayerExample() {
 
   return (
     <div className="flex flex-col items-center pt-4 ">
-      <div className="flex space-x-1 border border-none rounded-[8px] cursor-pointer bg-neutral-700  px-[3px] py-[3.2px] shadow-inner-shadow">
+      <div className="flex space-x-1 border border-none rounded-[8px] cursor-pointer bg-muted px-[3px] py-[3.2px] shadow-inner-shadow">
         {tabs.map((tab, i) => (
           <button
             key={`${tab.id}-i-${i}`}
             onClick={() => handleTabClick(tab.id)}
             className={`${
-              activeTab === tab.id ? "text-white " : "hover:text-neutral-300/60"
-            } relative rounded-[5px] px-3 py-1.5 text-xs sm:text-sm font-medium text-neutral-600  transition focus-visible:outline-1 focus-visible:ring-1 focus-visible:ring-blue-light focus-visible:outline-none`}
+              activeTab === tab.id ? "text-foreground" : "hover:text-muted-foreground/60"
+            } relative rounded-[5px] px-3 py-1.5 text-xs sm:text-sm font-medium text-muted-foreground transition focus-visible:outline-1 focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none`}
             style={{ WebkitTapHighlightColor: "transparent" }}
           >
             {activeTab === tab.id && (
               <motion.span
                 layoutId="family-bubble"
-                className="absolute inset-0 z-10 bg-neutral-800  mix-blend-difference shadow-inner-shadow"
+                className="absolute inset-0 z-10 bg-accent mix-blend-difference shadow-inner-shadow"
                 style={{ borderRadius: 5 }}
                 transition={{ type: "spring", bounce: 0.19, duration: 0.4 }}
               />

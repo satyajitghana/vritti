@@ -1,0 +1,12 @@
+{
+  "name": "navbar-gradient",
+  "type": "block",
+  "description": "A floating gradient navbar with animated hover effects and responsive mobile menu.",
+  "category": "navigation",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["navigation", "navbar", "gradient", "floating", "responsive"],
+    "source": "vritti"
+  }
+}

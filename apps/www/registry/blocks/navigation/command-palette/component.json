@@ -1,0 +1,12 @@
+{
+  "name": "command-palette",
+  "type": "block",
+  "description": "A keyboard-driven command palette with search, categories, and keyboard navigation.",
+  "category": "navigation",
+  "dependencies": ["motion", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["navigation", "command", "search", "palette", "keyboard"],
+    "source": "vritti"
+  }
+}
