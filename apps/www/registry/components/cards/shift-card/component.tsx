@@ -76,11 +76,11 @@ const ShiftCard = React.forwardRef<HTMLDivElement, ShiftCardProps>(
       <motion.div
         ref={ref}
         className={cn(
-          "min-h-[240px] w-[280px] md:min-h-[300px] md:w-[300px]",
+          "min-h-[300px] w-[280px]  md:w-[300px]",
           " group relative flex flex-col items-center justify-between overflow-hidden rounded-xl  p-3 text-sm ",
           " hover:cursor-pointer bg-card  ",
           "shadow-[0px_1px_1px_0px_rgba(0,0,0,0.05),0px_1px_1px_0px_rgba(255,252,240,0.5)_inset,0px_0px_0px_1px_hsla(0,0%,100%,0.1)_inset,0px_0px_1px_0px_rgba(28,27,26,0.5)]",
-          /* 
+          /*
           Applies a multi-layer shadow effect in dark mode:
           1. Two subtle white inset shadows: one horizontal at 1px height, and one around the entire border at 1px width, both with a very light opacity of 0.03, creating a slight inner glow.
           2. A series of black shadows:
@@ -95,7 +95,7 @@ const ShiftCard = React.forwardRef<HTMLDivElement, ShiftCardProps>(
         whileHover={{ scale: 1.02 }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        onTapStart={handleTapStart}
+        onClick={handleTapStart}
         onTapCancel={handleTapCancel}
         onTap={handleTap}
         {...props}
@@ -118,7 +118,7 @@ const ShiftCard = React.forwardRef<HTMLDivElement, ShiftCardProps>(
 
         <ShiftCardContent
           isHovered={isHovered}
-          className="absolute bottom-0 left-0 right-0 flex  flex-col gap-4  rounded-xl  "
+          className="absolute -bottom-1.5 left-0 right-0 flex  flex-col gap-4  rounded-xl  "
         >
           <motion.div className="flex w-full flex-col gap-1  ">
             {bottomContent}

@@ -3,7 +3,7 @@
   "type": "component",
   "title": "Loading Carousel",
   "description": "A loading carousel component with smooth transitions and customizable content for loading states.",
-  "dependencies": ["motion", "embla-carousel-autoplay", "lucide-react"],
+  "dependencies": ["motion"],
   "files": [],
   "meta": {
     "tags": ["carousel", "loading", "animation", "skeleton"],

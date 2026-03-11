@@ -1,0 +1,13 @@
+{
+  "name": "pixel-paragraph-words-inverse",
+  "type": "component",
+  "title": "Pixel Paragraph Words Inverse",
+  "description": "A paragraph in pixel font where specific words escape into interactive sans/mono with hover swap or cycle.",
+  "category": "text",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["text", "paragraph", "pixel", "font", "inverse"],
+    "source": "cult-ui"
+  }
+}

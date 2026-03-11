@@ -1,12 +1,12 @@
 {
   "name": "squiggle-arrow",
   "type": "component",
-  "description": "Hand-drawn squiggly arrow with customizable variants",
+  "description": "Hand-drawn squiggly arrow SVG with multiple variants and direction support",
   "category": "special",
   "dependencies": [],
   "files": [],
   "meta": {
-    "tags": ["display", "arrow"],
+    "tags": ["arrow", "svg", "decoration", "illustration", "squiggle"],
     "source": "cult-ui"
   }
 }
