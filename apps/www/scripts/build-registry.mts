@@ -342,36 +342,6 @@ ${entries.join('\n')}
   console.log(`Block list built: ${blocks.length} entries -> ${BLOCK_LIST_OUTPUT}`)
 }
 
-function fixImportPaths(content: string): string {
-  // Fix @/registry/... imports to @/components/vritti/... for installation
-  const regex = /@\/(.+?)\/((?:.*?\/)?(?:components|ui|hooks|lib))\/([\w-]+)/g
-  return content.replace(regex, (match, _path, type, component) => {
-    if (type.endsWith('components')) return `@/components/${component}`
-    if (type.endsWith('ui')) return `@/components/vritti/${component}`
-    if (type.endsWith('hooks')) return `@/hooks/${component}`
-    if (type.endsWith('lib')) return `@/lib/${component}`
-    return match
-  })
-}
-
-function fixFileContent(content: string, componentName: string): string {
-  let code = content
-  // Convert default exports to named exports
-  code = code.replace(
-    /export\s+default\s+(?!(function|class)\b)(\w+)/g,
-    'export { $2 }'
-  )
-  code = code.replaceAll('export default function', 'export function')
-  code = code.replaceAll('export default class', 'export class')
-  // Fix import paths
-  code = fixImportPaths(code)
-  // Fix relative ./component imports
-  code = code.replace(
-    /from\s+["']\.\/component["']/g,
-    `from "@/components/vritti/${componentName}"`
-  )
-  return code
-}
 
 async function buildRegistryJson(components: ComponentMeta[], blocks: ComponentMeta[]) {
   const items: Record<string, unknown>[] = []
@@ -379,11 +349,6 @@ async function buildRegistryJson(components: ComponentMeta[], blocks: ComponentM
   // Process components
   for (const comp of components) {
     const compDir = path.join(REGISTRY_BASE, comp.category, comp.name)
-    const componentFile = path.join(compDir, 'component.tsx')
-
-    // Read and fix component content
-    const rawContent = await fs.readFile(componentFile, 'utf-8')
-    const content = fixFileContent(rawContent, comp.name)
 
     const tags = (comp.meta?.tags as string[] | undefined) || []
 
@@ -398,7 +363,6 @@ async function buildRegistryJson(components: ComponentMeta[], blocks: ComponentM
         path: `registry/components/${comp.category}/${comp.name}/${comp.name}.tsx`,
         type: 'registry:ui',
         target: `components/vritti/${comp.name}.tsx`,
-        content,
       }],
       categories: [comp.category, ...tags],
       meta: comp.meta || {},
@@ -408,8 +372,6 @@ async function buildRegistryJson(components: ComponentMeta[], blocks: ComponentM
     const compFiles = await fs.readdir(compDir)
     const hasExample = compFiles.includes('example.tsx')
     if (hasExample) {
-      const exRawContent = await fs.readFile(path.join(compDir, 'example.tsx'), 'utf-8')
-      const exContent = fixFileContent(exRawContent, comp.name)
       items.push({
         name: `${comp.name}-demo`,
         type: 'registry:example',
@@ -419,7 +381,6 @@ async function buildRegistryJson(components: ComponentMeta[], blocks: ComponentM
         files: [{
           path: `registry/components/${comp.category}/${comp.name}/example.tsx`,
           type: 'registry:example',
-          content: exContent,
         }],
         categories: [comp.category],
       })
@@ -431,8 +392,6 @@ async function buildRegistryJson(components: ComponentMeta[], blocks: ComponentM
       .sort()
     for (const exFile of extraExamples) {
       const variant = exFile.replace('example-', '').replace('.tsx', '')
-      const exRawContent = await fs.readFile(path.join(compDir, exFile), 'utf-8')
-      const exContent = fixFileContent(exRawContent, comp.name)
       items.push({
         name: `${comp.name}-${variant}`,
         type: 'registry:example',
@@ -442,7 +401,6 @@ async function buildRegistryJson(components: ComponentMeta[], blocks: ComponentM
         files: [{
           path: `registry/components/${comp.category}/${comp.name}/${exFile}`,
           type: 'registry:example',
-          content: exContent,
         }],
         categories: [comp.category],
       })
@@ -452,10 +410,6 @@ async function buildRegistryJson(components: ComponentMeta[], blocks: ComponentM
   // Process blocks
   for (const block of blocks) {
     const blockDir = path.join(BLOCKS_BASE, block.category, block.name)
-    const componentFile = path.join(blockDir, 'component.tsx')
-
-    const rawContent = await fs.readFile(componentFile, 'utf-8')
-    const content = fixFileContent(rawContent, block.name)
 
     items.push({
       name: block.name,
@@ -468,7 +422,6 @@ async function buildRegistryJson(components: ComponentMeta[], blocks: ComponentM
         path: `registry/blocks/${block.category}/${block.name}/${block.name}.tsx`,
         type: 'registry:block',
         target: `components/vritti/blocks/${block.name}.tsx`,
-        content,
       }],
       categories: [block.category],
       meta: block.meta || {},
@@ -478,8 +431,6 @@ async function buildRegistryJson(components: ComponentMeta[], blocks: ComponentM
     const blockFiles = await fs.readdir(blockDir)
     const hasExample = blockFiles.includes('example.tsx')
     if (hasExample) {
-      const exRawContent = await fs.readFile(path.join(blockDir, 'example.tsx'), 'utf-8')
-      const exContent = fixFileContent(exRawContent, block.name)
       items.push({
         name: `${block.name}-demo`,
         type: 'registry:example',
@@ -489,7 +440,6 @@ async function buildRegistryJson(components: ComponentMeta[], blocks: ComponentM
         files: [{
           path: `registry/blocks/${block.category}/${block.name}/example.tsx`,
           type: 'registry:example',
-          content: exContent,
         }],
         categories: [block.category],
       })
@@ -500,8 +450,6 @@ async function buildRegistryJson(components: ComponentMeta[], blocks: ComponentM
       .sort()
     for (const exFile of extraBlockExamples) {
       const variant = exFile.replace('example-', '').replace('.tsx', '')
-      const exRawContent = await fs.readFile(path.join(blockDir, exFile), 'utf-8')
-      const exContent = fixFileContent(exRawContent, block.name)
       items.push({
         name: `${block.name}-${variant}`,
         type: 'registry:example',
@@ -511,7 +459,6 @@ async function buildRegistryJson(components: ComponentMeta[], blocks: ComponentM
         files: [{
           path: `registry/blocks/${block.category}/${block.name}/${exFile}`,
           type: 'registry:example',
-          content: exContent,
         }],
         categories: [block.category],
       })
