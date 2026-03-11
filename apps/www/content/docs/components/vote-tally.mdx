@@ -1,11 +1,11 @@
 ---
-title: Distorted Glass
-description: A glass morphism effect using SVG filters with fractal noise to create visual transitions between sections.
+title: Vote Tally
+description: Upvote/downvote tally component with sortable groups and toggle support
 ---
 
-<ComponentTags tags={["background","glass","morphism","svg","filter","distortion"]} />
+<ComponentTags tags={["vote","upvote","tally","counter","input"]} />
 
-<ComponentPreview name="distorted-glass-demo" />
+<ComponentPreview name="vote-tally-demo" />
 
 ## Installation
 
@@ -19,7 +19,7 @@ description: A glass morphism effect using SVG filters with fractal noise to cre
 <TabsContent value="cli">
 
 ```bash
-npx shadcn@latest add "https://vritti.thesatyajit.com/r/distorted-glass"
+npx shadcn@latest add "https://vritti.thesatyajit.com/r/vote-tally"
 ```
 
 </TabsContent>
@@ -30,7 +30,7 @@ npx shadcn@latest add "https://vritti.thesatyajit.com/r/distorted-glass"
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="distorted-glass" />
+<ComponentSource name="vote-tally" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
@@ -39,3 +39,9 @@ npx shadcn@latest add "https://vritti.thesatyajit.com/r/distorted-glass"
 </TabsContent>
 
 </Tabs>
+
+## Dependencies
+
+```bash
+npm install @radix-ui/react-use-controllable-state
+```

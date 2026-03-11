@@ -2,8 +2,6 @@
   "title": "Getting Started",
   "pages": [
     "introduction",
-    "installation",
-    "mcp",
-    "skills"
+    "installation"
   ]
 }
