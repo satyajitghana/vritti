@@ -1,12 +1,8 @@
 {
   "name": "minimal-card",
   "type": "component",
-  "description": "Clean and minimal card with subtle styling",
-  "category": "layouts",
+  "description": "A clean, minimal card component with subtle shadows, rounded corners, and composable sub-components for image, title, description, content, and footer.",
+  "category": "cards",
   "dependencies": [],
-  "files": [],
-  "meta": {
-    "tags": ["layout", "card", "minimal"],
-    "source": "cult-ui"
-  }
+  "meta": { "tags": ["card", "minimal", "composable", "shadow"], "source": "cult-ui" }
 }

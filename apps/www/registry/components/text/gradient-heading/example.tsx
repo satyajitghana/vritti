@@ -1,36 +1,25 @@
 "use client"
 
-import * as React from "react"
-
-import { GradientHeading, type Size, type Variant, type Weight } from "./component"
+import { GradientHeading } from "./component"
 
 export default function GradientHeadingDemo() {
-  const variants: Variant[] = ["default", "pink", "light"]
-  const sizes: Size[] = ["lg", "xl", "xxl", "xxxl"]
-  const weights: Weight[] = ["thin", "base", "semi", "bold", "black"]
-
   return (
-    <div className="space-y-8 p-4">
-      {variants.map((variant) => (
-        <div key={variant}>
-          <h2 className="text-xl font-semibold mb-4">Variant: {variant}</h2>
-          {sizes.map((size) => (
-            <div key={size} className="mb-2">
-              {weights.map((weight) => (
-                <GradientHeading
-                  key={`${variant}-${size}-${weight}`}
-                  variant={variant}
-                  size={size}
-                  weight={weight}
-                  className="mb-2"
-                >
-                  {`Heading - ${size}`}
-                </GradientHeading>
-              ))}
-            </div>
-          ))}
-        </div>
-      ))}
+    <div className="space-y-6 p-4">
+      <GradientHeading variant="default" size="xl" weight="bold">
+        Default Gradient Heading
+      </GradientHeading>
+
+      <GradientHeading variant="pink" size="lg" weight="semi">
+        Accent Gradient Heading
+      </GradientHeading>
+
+      <GradientHeading variant="secondary" size="md" weight="bold">
+        Secondary Gradient Heading
+      </GradientHeading>
+
+      <GradientHeading variant="default" size="sm" weight="base">
+        Small Base Weight
+      </GradientHeading>
     </div>
   )
 }

@@ -9,7 +9,7 @@ export default function FractalDotGridExample() {
       <p className="text-sm text-muted-foreground mb-6">
         An animated dot grid background with wave effects on hover.
       </p>
-      <div className="relative h-[400px] w-full rounded-lg overflow-hidden border border-border bg-white dark:bg-black">
+      <div className="relative h-[400px] w-full rounded-lg overflow-hidden border border-border bg-background">
         <FractalDotGrid
           dotSize={5.5}
           dotSpacing={13}

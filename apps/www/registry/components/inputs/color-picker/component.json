@@ -1,0 +1,12 @@
+{
+  "name": "color-picker",
+  "type": "component",
+  "description": "Animated color picker with HSL controls, hex input, and preset swatches",
+  "category": "inputs",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["color", "picker", "input", "hsl", "hex"],
+    "source": "cult-ui"
+  }
+}

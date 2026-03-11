@@ -1,12 +1,13 @@
 {
   "name": "gradient-heading",
   "type": "component",
-  "description": "Heading with gradient text effects",
+  "title": "Gradient Heading",
+  "description": "A heading component with customizable gradient text effects.",
   "category": "text",
   "dependencies": ["@radix-ui/react-slot"],
   "files": [],
   "meta": {
-    "tags": ["text", "gradient", "heading"],
+    "tags": ["text", "heading", "gradient"],
     "source": "cult-ui"
   }
 }

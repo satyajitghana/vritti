@@ -1,0 +1,8 @@
+{
+  "name": "texture-overlay",
+  "type": "component",
+  "description": "A texture overlay component with various CSS gradient patterns (dots, grid, noise, crosshatch, diagonal, halftone, and more) for adding visual texture to backgrounds.",
+  "category": "cards",
+  "dependencies": [],
+  "meta": { "tags": ["texture", "overlay", "pattern", "background", "css"], "source": "cult-ui" }
+}

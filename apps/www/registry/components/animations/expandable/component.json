@@ -1,0 +1,12 @@
+{
+  "name": "expandable",
+  "type": "component",
+  "title": "Expandable",
+  "description": "An expandable component system with smooth animations and customizable presets.",
+  "dependencies": ["motion", "react-use-measure"],
+  "files": [],
+  "meta": {
+    "tags": ["expandable", "animation", "accordion", "collapsible", "presets"],
+    "source": "cult-ui"
+  }
+}

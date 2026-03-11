@@ -1,0 +1,11 @@
+{
+  "name": "cosmic-button",
+  "type": "component",
+  "description": "An animated button/link with a cosmic gradient border effect that spins around the perimeter.",
+  "category": "buttons",
+  "dependencies": [],
+  "meta": {
+    "tags": ["button", "animation", "gradient", "cosmic", "border"],
+    "source": "cult-ui"
+  }
+}

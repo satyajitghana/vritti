@@ -1,0 +1,13 @@
+{
+  "name": "pixel-heading-word",
+  "type": "component",
+  "title": "Pixel Heading Word",
+  "description": "A whole-word pixel-font heading that swaps or cycles fonts on hover.",
+  "category": "text",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["text", "heading", "pixel", "font", "hover"],
+    "source": "cult-ui"
+  }
+}

@@ -30,7 +30,7 @@ interface FractalDotGridProps {
 
 const NoiseSVG = React.memo(() => (
   <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-    <filter id="noise">
+    <filter id="fractal-dot-grid-noise">
       <feTurbulence
         type="fractalNoise"
         baseFrequency="0.65"
@@ -38,7 +38,7 @@ const NoiseSVG = React.memo(() => (
         stitchTiles="stitch"
       />
     </filter>
-    <rect width="100%" height="100%" filter="url(#noise)" />
+    <rect width="100%" height="100%" filter="url(#fractal-dot-grid-noise)" />
   </svg>
 ))
 
@@ -260,8 +260,7 @@ const DotCanvas: React.FC<{
     return (
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 h-full w-full bg-gray-100"
-        style={{ mixBlendMode: "multiply" }}
+        className="absolute inset-0 h-full w-full bg-background"
       />
     )
   }

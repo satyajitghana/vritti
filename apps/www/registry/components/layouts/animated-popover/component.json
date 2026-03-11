@@ -1,0 +1,12 @@
+{
+  "name": "animated-popover",
+  "type": "component",
+  "description": "Layout-animated popover with spring transitions, form support, and composable content areas",
+  "category": "layouts",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["popover", "animation", "form", "overlay"],
+    "source": "cult-ui"
+  }
+}

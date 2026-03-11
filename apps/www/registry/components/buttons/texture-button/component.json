@@ -1,18 +1,11 @@
 {
   "name": "texture-button",
   "type": "component",
-  "description": "Button with texture overlay effects and variants",
+  "description": "A button with layered texture gradients, multiple variants (primary, accent, destructive, secondary, minimal, icon), and dark mode support.",
   "category": "buttons",
-  "dependencies": [
-    "@radix-ui/react-slot"
-  ],
-  "files": [],
+  "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
   "meta": {
-    "tags": [
-      "button",
-      "texture",
-      "text"
-    ],
+    "tags": ["button", "texture", "gradient", "variants"],
     "source": "cult-ui"
   }
 }
