@@ -329,7 +329,7 @@ function Typography() {
       anchorX="center"
       anchorY="middle"
     >
-      React Bits
+      Vritti UI
     </Text>
   );
 }

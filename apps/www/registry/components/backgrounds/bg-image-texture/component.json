@@ -1,7 +1,7 @@
 {
   "name": "bg-image-texture",
   "type": "component",
-  "description": "Background texture component with multiple texture variants",
+  "description": "A background texture component with multiple texture variants and customizable opacity.",
   "category": "backgrounds",
   "dependencies": [],
   "files": [],
@@ -9,8 +9,8 @@
     "tags": [
       "background",
       "texture",
-      "text",
-      "image"
+      "image",
+      "pattern"
     ],
     "source": "cult-ui"
   }

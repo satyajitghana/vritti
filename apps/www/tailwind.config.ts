@@ -12,9 +12,11 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-geist-mono)', 'monospace'],
-        'pixel-line': ['var(--font-geist-pixel-line)', 'monospace'],
-        'pixel-triangle': ['var(--font-geist-pixel-triangle)', 'monospace'],
+        'pixel-square': ['var(--font-geist-pixel-square)', 'monospace'],
+        'pixel-grid': ['var(--font-geist-pixel-grid)', 'monospace'],
         'pixel-circle': ['var(--font-geist-pixel-circle)', 'monospace'],
+        'pixel-triangle': ['var(--font-geist-pixel-triangle)', 'monospace'],
+        'pixel-line': ['var(--font-geist-pixel-line)', 'monospace'],
       },
     },
   },

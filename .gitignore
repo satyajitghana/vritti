@@ -60,3 +60,7 @@ Thumbs.db
 
 magicui
 fumadocs
+
+# Generated registry files
+apps/www/public/registry.json
+skills/vritti-ui/references/

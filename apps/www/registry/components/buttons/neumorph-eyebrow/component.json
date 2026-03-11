@@ -1,0 +1,12 @@
+{
+  "name": "neumorph-eyebrow",
+  "type": "component",
+  "description": "A neumorphic eyebrow/badge component with soft shadow effects and modern styling.",
+  "category": "buttons",
+  "dependencies": ["class-variance-authority"],
+  "files": [],
+  "meta": {
+    "tags": ["eyebrow", "neumorphism", "badge", "label"],
+    "source": "cult-ui"
+  }
+}

@@ -12,6 +12,8 @@ import {
   Download,
   Blocks,
   Sparkles,
+  Bot,
+  Zap,
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -163,6 +165,8 @@ function buildComponentSections(): NavSection[] {
       items: [
         { title: 'Introduction', href: '/docs/getting-started/introduction', icon: BookOpen },
         { title: 'Installation', href: '/docs/getting-started/installation', icon: Download },
+        { title: 'MCP', href: '/docs/getting-started/mcp', icon: Bot },
+        { title: 'Skills', href: '/docs/getting-started/skills', icon: Zap },
       ],
     },
   ];

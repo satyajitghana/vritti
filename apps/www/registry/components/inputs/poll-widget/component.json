@@ -1,0 +1,17 @@
+{
+  "name": "poll-widget",
+  "type": "component",
+  "description": "A poll widget with inline, popover, and dialog modes, optional results display, and animations.",
+  "category": "inputs",
+  "dependencies": [
+    "@radix-ui/react-use-controllable-state",
+    "class-variance-authority",
+    "lucide-react",
+    "motion"
+  ],
+  "files": [],
+  "meta": {
+    "tags": ["poll", "vote", "widget", "dialog", "popover"],
+    "source": "cult-ui"
+  }
+}

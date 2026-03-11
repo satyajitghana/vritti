@@ -1,0 +1,19 @@
+{
+  "name": "distorted-glass",
+  "type": "component",
+  "description": "A glass morphism effect using SVG filters with fractal noise to create visual transitions between sections.",
+  "category": "backgrounds",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": [
+      "background",
+      "glass",
+      "morphism",
+      "svg",
+      "filter",
+      "distortion"
+    ],
+    "source": "cult-ui"
+  }
+}

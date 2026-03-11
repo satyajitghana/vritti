@@ -1,0 +1,12 @@
+{
+  "name": "vote-tally",
+  "type": "component",
+  "description": "Upvote/downvote tally component with sortable groups and toggle support",
+  "category": "inputs",
+  "dependencies": ["@radix-ui/react-use-controllable-state"],
+  "files": [],
+  "meta": {
+    "tags": ["vote", "upvote", "tally", "counter", "input"],
+    "source": "cult-ui"
+  }
+}

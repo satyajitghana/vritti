@@ -1,0 +1,12 @@
+{
+  "name": "terminal-animation",
+  "type": "component",
+  "description": "Animated terminal emulator with typing effects, tabbed commands, and customizable output rendering",
+  "category": "special",
+  "dependencies": ["@radix-ui/react-slot", "@radix-ui/react-use-controllable-state"],
+  "files": [],
+  "meta": {
+    "tags": ["terminal", "animation", "code", "cli", "typing"],
+    "source": "cult-ui"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "feature-carousel",
+  "type": "component",
+  "title": "Feature Carousel",
+  "description": "A feature carousel component with smooth transitions and customizable layouts for showcasing features.",
+  "dependencies": ["motion"],
+  "files": [],
+  "meta": {
+    "tags": ["carousel", "feature", "animation", "slides"],
+    "source": "cult-ui"
+  }
+}

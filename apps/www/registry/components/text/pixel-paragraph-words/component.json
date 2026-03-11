@@ -1,0 +1,13 @@
+{
+  "name": "pixel-paragraph-words",
+  "type": "component",
+  "title": "Pixel Paragraph Words",
+  "description": "A paragraph where specific words render in an interactive pixel font that swaps or cycles on hover.",
+  "category": "text",
+  "dependencies": [],
+  "files": [],
+  "meta": {
+    "tags": ["text", "paragraph", "pixel", "font", "interactive"],
+    "source": "cult-ui"
+  }
+}

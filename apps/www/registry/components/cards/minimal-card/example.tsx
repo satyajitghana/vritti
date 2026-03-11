@@ -1,53 +1,15 @@
-import {
-  MinimalCard,
-  MinimalCardDescription,
-  MinimalCardImage,
-  MinimalCardTitle,
-} from "./component"
+"use client"
 
-export default function MinimalCardDemo() {
-  const cards = [
-    {
-      title: "Sick title",
-      description:
-        "How to design with gestures and motion that feel intuitive and natural.",
-    },
-    {
-      title: "Sick title",
-      description:
-        "How to design with gestures and motion that feel intuitive and natural.",
-    },
-    {
-      title: "Sick title",
-      description:
-        "How to design with gestures and motion that feel intuitive and natural.",
-    },
-    {
-      title: "Sick title",
-      description:
-        "How to design with gestures and motion that feel intuitive and natural.",
-    },
-    {
-      title: "Sick title",
-      description:
-        "How to design with gestures and motion that feel intuitive and natural.",
-    },
-  ]
+import { MinimalCard, MinimalCardImage, MinimalCardTitle, MinimalCardDescription } from "./component"
+
+export default function MinimalCardExample() {
   return (
-    <div className="w-full max-w-4xl">
-      <div className="min-h-[500px] p-4  flex flex-col justify-center  rounded-lg space-y-4">
-        <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
-          {cards.map((card) => (
-            <MinimalCard>
-              <MinimalCardImage src="/basic-img.png" alt={card.title} />
-              <MinimalCardTitle>{card.title}</MinimalCardTitle>
-              <MinimalCardDescription>
-                {card.description}
-              </MinimalCardDescription>
-            </MinimalCard>
-          ))}
-        </div>
-      </div>
+    <div className="flex items-center justify-center p-8">
+      <MinimalCard className="max-w-[280px]">
+        <MinimalCardImage src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=300&fit=crop" alt="Abstract art" />
+        <MinimalCardTitle>Minimal Card</MinimalCardTitle>
+        <MinimalCardDescription>A clean card with subtle shadows and composable layout.</MinimalCardDescription>
+      </MinimalCard>
     </div>
   )
 }

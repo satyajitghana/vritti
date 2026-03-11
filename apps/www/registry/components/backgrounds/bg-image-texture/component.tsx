@@ -17,32 +17,71 @@ interface BackgroundImageTextureProps {
   children?: React.ReactNode
 }
 
-const textureCss: Record<Exclude<TextureVariant, "none">, React.CSSProperties> = {
+const textureCss: Record<
+  Exclude<TextureVariant, "none">,
+  { light: React.CSSProperties; dark: React.CSSProperties }
+> = {
   "fabric-of-squares": {
-    backgroundImage:
-      "linear-gradient(45deg, rgba(0,0,0,0.03) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.03) 75%), linear-gradient(45deg, rgba(0,0,0,0.03) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.03) 75%)",
-    backgroundSize: "20px 20px",
-    backgroundPosition: "0 0, 10px 10px",
+    light: {
+      backgroundImage:
+        "linear-gradient(45deg, rgba(0,0,0,0.03) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.03) 75%), linear-gradient(45deg, rgba(0,0,0,0.03) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.03) 75%)",
+      backgroundSize: "20px 20px",
+      backgroundPosition: "0 0, 10px 10px",
+    },
+    dark: {
+      backgroundImage:
+        "linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.03) 75%), linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.03) 75%)",
+      backgroundSize: "20px 20px",
+      backgroundPosition: "0 0, 10px 10px",
+    },
   },
   "grid-noise": {
-    backgroundImage:
-      "linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)",
-    backgroundSize: "16px 16px",
+    light: {
+      backgroundImage:
+        "linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)",
+      backgroundSize: "16px 16px",
+    },
+    dark: {
+      backgroundImage:
+        "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
+      backgroundSize: "16px 16px",
+    },
   },
   inflicted: {
-    backgroundImage:
-      "radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px)",
-    backgroundSize: "12px 12px",
+    light: {
+      backgroundImage:
+        "radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px)",
+      backgroundSize: "12px 12px",
+    },
+    dark: {
+      backgroundImage:
+        "radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)",
+      backgroundSize: "12px 12px",
+    },
   },
   "debut-light": {
-    backgroundImage:
-      "linear-gradient(0deg, rgba(0,0,0,0.02) 50%, transparent 50%), linear-gradient(90deg, rgba(0,0,0,0.02) 50%, transparent 50%)",
-    backgroundSize: "4px 4px",
+    light: {
+      backgroundImage:
+        "linear-gradient(0deg, rgba(0,0,0,0.02) 50%, transparent 50%), linear-gradient(90deg, rgba(0,0,0,0.02) 50%, transparent 50%)",
+      backgroundSize: "4px 4px",
+    },
+    dark: {
+      backgroundImage:
+        "linear-gradient(0deg, rgba(255,255,255,0.02) 50%, transparent 50%), linear-gradient(90deg, rgba(255,255,255,0.02) 50%, transparent 50%)",
+      backgroundSize: "4px 4px",
+    },
   },
   groovepaper: {
-    backgroundImage:
-      "linear-gradient(rgba(0,0,0,0.03) 2px, transparent 2px), linear-gradient(90deg, rgba(0,0,0,0.03) 2px, transparent 2px), linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px)",
-    backgroundSize: "40px 40px, 40px 40px, 10px 10px, 10px 10px",
+    light: {
+      backgroundImage:
+        "linear-gradient(rgba(0,0,0,0.03) 2px, transparent 2px), linear-gradient(90deg, rgba(0,0,0,0.03) 2px, transparent 2px), linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px)",
+      backgroundSize: "40px 40px, 40px 40px, 10px 10px, 10px 10px",
+    },
+    dark: {
+      backgroundImage:
+        "linear-gradient(rgba(255,255,255,0.03) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,0.03) 2px, transparent 2px), linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)",
+      backgroundSize: "40px 40px, 40px 40px, 10px 10px, 10px 10px",
+    },
   },
 }
 
@@ -52,20 +91,31 @@ export function BackgroundImageTexture({
   className,
   children,
 }: BackgroundImageTextureProps) {
-  const textureStyle = variant !== "none" ? textureCss[variant] : null
+  const textureStyles = variant !== "none" ? textureCss[variant] : null
 
   return (
     <div className={cn("relative", className)}>
-      {textureStyle && (
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{
-            ...textureStyle,
-            backgroundRepeat: "repeat",
-            opacity,
-          }}
-        />
+      {textureStyles && (
+        <>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 dark:hidden"
+            style={{
+              ...textureStyles.light,
+              backgroundRepeat: "repeat",
+              opacity,
+            }}
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 hidden dark:block"
+            style={{
+              ...textureStyles.dark,
+              backgroundRepeat: "repeat",
+              opacity,
+            }}
+          />
+        </>
       )}
       {children && <div className="relative">{children}</div>}
     </div>

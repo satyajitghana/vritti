@@ -1,0 +1,11 @@
+{
+  "name": "gradient-button-group",
+  "type": "component",
+  "description": "Premium layered button group with animated active state, gradient ring accents, and smooth layout transitions.",
+  "category": "buttons",
+  "dependencies": ["motion"],
+  "meta": {
+    "tags": ["button", "navigation", "animation", "gradient", "group"],
+    "source": "cult-ui"
+  }
+}

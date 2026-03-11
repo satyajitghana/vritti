@@ -1,12 +1,12 @@
 {
   "name": "family-drawer",
   "type": "component",
-  "description": "Multi-view drawer with smooth animations and navigation",
+  "description": "Animated multi-view drawer with smooth height transitions and view management",
   "category": "layouts",
-  "dependencies": ["motion", "react-use-measure", "vaul"],
+  "dependencies": ["motion", "react-use-measure", "vaul", "@radix-ui/react-slot"],
   "files": [],
   "meta": {
-    "tags": ["layout", "drawer", "animation"],
+    "tags": ["drawer", "modal", "sheet", "animation", "multi-view"],
     "source": "cult-ui"
   }
 }

@@ -1,0 +1,12 @@
+{
+  "name": "prompt-library",
+  "type": "component",
+  "description": "Browse, insert, and manage prompt templates with categories and custom prompts.",
+  "category": "inputs",
+  "dependencies": ["lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["ai", "prompt", "library", "command", "dialog"],
+    "source": "cult-ui"
+  }
+}

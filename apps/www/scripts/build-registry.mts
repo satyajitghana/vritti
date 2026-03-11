@@ -6,6 +6,8 @@ const BLOCKS_BASE = path.join(process.cwd(), 'registry', 'blocks')
 const INDEX_OUTPUT = path.join(process.cwd(), 'registry', '__index__.tsx')
 const COMPONENT_LIST_OUTPUT = path.join(process.cwd(), 'registry', 'component-list.ts')
 const BLOCK_LIST_OUTPUT = path.join(process.cwd(), 'registry', 'block-list.ts')
+const REGISTRY_JSON_OUTPUT = path.join(process.cwd(), 'public', 'registry.json')
+const SKILL_REFS_DIR = path.join(process.cwd(), '..', '..', 'skills', 'vritti-ui', 'references')
 
 const CATEGORIES = [
   'animations',
@@ -340,6 +342,197 @@ ${entries.join('\n')}
   console.log(`Block list built: ${blocks.length} entries -> ${BLOCK_LIST_OUTPUT}`)
 }
 
+
+async function buildRegistryJson(components: ComponentMeta[], blocks: ComponentMeta[]) {
+  const items: Record<string, unknown>[] = []
+
+  // Process components
+  for (const comp of components) {
+    const compDir = path.join(REGISTRY_BASE, comp.category, comp.name)
+
+    const tags = (comp.meta?.tags as string[] | undefined) || []
+
+    items.push({
+      name: comp.name,
+      type: 'registry:ui',
+      title: comp.title,
+      description: comp.description,
+      dependencies: comp.dependencies || [],
+      registryDependencies: comp.registryDependencies || [],
+      files: [{
+        path: `registry/components/${comp.category}/${comp.name}/${comp.name}.tsx`,
+        type: 'registry:ui',
+        target: `components/vritti/${comp.name}.tsx`,
+      }],
+      categories: [comp.category, ...tags],
+      meta: comp.meta || {},
+    })
+
+    // Add example items
+    const compFiles = await fs.readdir(compDir)
+    const hasExample = compFiles.includes('example.tsx')
+    if (hasExample) {
+      items.push({
+        name: `${comp.name}-demo`,
+        type: 'registry:example',
+        title: `${comp.title} Demo`,
+        description: `${comp.description} (demo)`,
+        registryDependencies: [comp.name],
+        files: [{
+          path: `registry/components/${comp.category}/${comp.name}/example.tsx`,
+          type: 'registry:example',
+        }],
+        categories: [comp.category],
+      })
+    }
+
+    // Add extra examples
+    const extraExamples = compFiles
+      .filter(f => f.startsWith('example-') && f.endsWith('.tsx'))
+      .sort()
+    for (const exFile of extraExamples) {
+      const variant = exFile.replace('example-', '').replace('.tsx', '')
+      items.push({
+        name: `${comp.name}-${variant}`,
+        type: 'registry:example',
+        title: `${comp.title} (${toTitleCase(variant)})`,
+        description: `${comp.description} (${variant})`,
+        registryDependencies: [comp.name],
+        files: [{
+          path: `registry/components/${comp.category}/${comp.name}/${exFile}`,
+          type: 'registry:example',
+        }],
+        categories: [comp.category],
+      })
+    }
+  }
+
+  // Process blocks
+  for (const block of blocks) {
+    const blockDir = path.join(BLOCKS_BASE, block.category, block.name)
+
+    items.push({
+      name: block.name,
+      type: 'registry:block',
+      title: block.title,
+      description: block.description,
+      dependencies: block.dependencies || [],
+      registryDependencies: block.registryDependencies || [],
+      files: [{
+        path: `registry/blocks/${block.category}/${block.name}/${block.name}.tsx`,
+        type: 'registry:block',
+        target: `components/vritti/blocks/${block.name}.tsx`,
+      }],
+      categories: [block.category],
+      meta: block.meta || {},
+    })
+
+    // Add block examples
+    const blockFiles = await fs.readdir(blockDir)
+    const hasExample = blockFiles.includes('example.tsx')
+    if (hasExample) {
+      items.push({
+        name: `${block.name}-demo`,
+        type: 'registry:example',
+        title: `${block.title} Demo`,
+        description: `${block.description} (demo)`,
+        registryDependencies: [block.name],
+        files: [{
+          path: `registry/blocks/${block.category}/${block.name}/example.tsx`,
+          type: 'registry:example',
+        }],
+        categories: [block.category],
+      })
+    }
+
+    const extraBlockExamples = blockFiles
+      .filter(f => f.startsWith('example-') && f.endsWith('.tsx'))
+      .sort()
+    for (const exFile of extraBlockExamples) {
+      const variant = exFile.replace('example-', '').replace('.tsx', '')
+      items.push({
+        name: `${block.name}-${variant}`,
+        type: 'registry:example',
+        title: `${block.title} (${toTitleCase(variant)})`,
+        description: `${block.description} (${variant})`,
+        registryDependencies: [block.name],
+        files: [{
+          path: `registry/blocks/${block.category}/${block.name}/${exFile}`,
+          type: 'registry:example',
+        }],
+        categories: [block.category],
+      })
+    }
+  }
+
+  const registry = {
+    $schema: 'https://ui.shadcn.com/schema/registry.json',
+    name: 'vritti',
+    homepage: 'https://vritti.thesatyajit.com',
+    items,
+  }
+
+  await fs.writeFile(REGISTRY_JSON_OUTPUT, JSON.stringify(registry, null, 2), 'utf-8')
+  console.log(`Registry JSON built: ${items.length} items -> ${REGISTRY_JSON_OUTPUT}`)
+}
+
+async function buildSkillReferences(components: ComponentMeta[], blocks: ComponentMeta[]) {
+  await fs.mkdir(SKILL_REFS_DIR, { recursive: true })
+
+  // Build component catalog
+  let componentCatalog = `# Vritti UI Component Catalog\n\n`
+  componentCatalog += `> Auto-generated from the registry. ${components.length} components across ${CATEGORIES.length} categories.\n\n`
+
+  const componentsByCategory = new Map<string, ComponentMeta[]>()
+  for (const comp of components) {
+    const list = componentsByCategory.get(comp.category) || []
+    list.push(comp)
+    componentsByCategory.set(comp.category, list)
+  }
+
+  for (const category of CATEGORIES) {
+    const items = componentsByCategory.get(category) || []
+    if (items.length === 0) continue
+    componentCatalog += `## ${toTitleCase(category)} (${items.length})\n\n`
+    componentCatalog += `| Component | Description | Dependencies |\n`
+    componentCatalog += `|-----------|-------------|-------------|\n`
+    for (const item of items) {
+      const deps = (item.dependencies || []).join(', ') || '-'
+      componentCatalog += `| [${item.title}](https://vritti.thesatyajit.com/docs/components/${item.name}) | ${item.description.replace(/\|/g, '\\|')} | ${deps} |\n`
+    }
+    componentCatalog += `\n`
+  }
+
+  await fs.writeFile(path.join(SKILL_REFS_DIR, 'component-catalog.md'), componentCatalog, 'utf-8')
+
+  // Build block catalog
+  let blockCatalog = `# Vritti UI Block Catalog\n\n`
+  blockCatalog += `> Auto-generated from the registry. ${blocks.length} blocks across ${BLOCK_CATEGORIES.length} categories.\n\n`
+
+  const blocksByCategory = new Map<string, ComponentMeta[]>()
+  for (const block of blocks) {
+    const list = blocksByCategory.get(block.category) || []
+    list.push(block)
+    blocksByCategory.set(block.category, list)
+  }
+
+  for (const category of BLOCK_CATEGORIES) {
+    const items = blocksByCategory.get(category) || []
+    if (items.length === 0) continue
+    blockCatalog += `## ${toTitleCase(category)} (${items.length})\n\n`
+    blockCatalog += `| Block | Description | Dependencies |\n`
+    blockCatalog += `|-------|-------------|-------------|\n`
+    for (const item of items) {
+      const deps = (item.dependencies || []).join(', ') || '-'
+      blockCatalog += `| [${item.title}](https://vritti.thesatyajit.com/docs/blocks/${item.name}) | ${item.description.replace(/\|/g, '\\|')} | ${deps} |\n`
+    }
+    blockCatalog += `\n`
+  }
+
+  await fs.writeFile(path.join(SKILL_REFS_DIR, 'block-catalog.md'), blockCatalog, 'utf-8')
+  console.log(`Skill references built -> ${SKILL_REFS_DIR}`)
+}
+
 async function main() {
   console.log('Scanning components...')
   const components = await scanDirectory(REGISTRY_BASE, CATEGORIES, 'component')
@@ -352,6 +545,8 @@ async function main() {
   await buildRegistryIndex(components, blocks)
   await buildComponentList(components)
   await buildBlockList(blocks)
+  await buildRegistryJson(components, blocks)
+  await buildSkillReferences(components, blocks)
 
   console.log('Done!')
 }

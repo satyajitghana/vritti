@@ -1,0 +1,12 @@
+{
+  "name": "onboarding",
+  "type": "component",
+  "description": "Multi-step onboarding flow with step indicators, navigation, choice groups, and feature carousels",
+  "category": "layouts",
+  "dependencies": ["@radix-ui/react-use-controllable-state", "class-variance-authority"],
+  "files": [],
+  "meta": {
+    "tags": ["onboarding", "wizard", "stepper", "flow", "steps"],
+    "source": "cult-ui"
+  }
+}

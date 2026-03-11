@@ -1,0 +1,12 @@
+{
+  "name": "choice-poll",
+  "type": "component",
+  "description": "Interactive poll component with single and multi-select modes, animated progress bars, and vote results display",
+  "category": "inputs",
+  "dependencies": ["@radix-ui/react-use-controllable-state", "lucide-react"],
+  "files": [],
+  "meta": {
+    "tags": ["poll", "vote", "choice", "survey", "input"],
+    "source": "cult-ui"
+  }
+}

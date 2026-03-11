@@ -1,0 +1,106 @@
+---
+title: MCP
+description: Use Vritti UI components with AI assistants via the Model Context Protocol.
+---
+
+The [Model Context Protocol](https://modelcontextprotocol.io) (MCP) enables AI assistants to browse, search, and install Vritti UI components using natural language.
+
+With MCP configured, you can ask your AI assistant things like:
+
+- "Add the animated beam component from vritti"
+- "Install a pricing block from vritti"
+- "Show me all animation components in vritti"
+
+## Setup
+
+### 1. Add the Vritti Registry
+
+Add Vritti as a registry in your project's `components.json`:
+
+```json title="components.json"
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "registries": {
+    "vritti": {
+      "url": "https://vritti.thesatyajit.com/r"
+    }
+  }
+}
+```
+
+### 2. Configure the MCP Server
+
+The [shadcn MCP server](https://github.com/anthropics/shadcn-mcp-server) works with any shadcn-compatible registry, including Vritti.
+
+<Tabs defaultValue="claude-code">
+  <TabsList>
+    <TabsTrigger value="claude-code">Claude Code</TabsTrigger>
+    <TabsTrigger value="cursor">Cursor</TabsTrigger>
+    <TabsTrigger value="vscode">VS Code</TabsTrigger>
+  </TabsList>
+  <TabsContent value="claude-code">
+    Run the following command to add the MCP server to Claude Code:
+
+    ```bash
+    claude mcp add shadcn -- npx -y @anthropic-ai/shadcn-mcp-server@latest
+    ```
+  </TabsContent>
+  <TabsContent value="cursor">
+    Add the following to your `.cursor/mcp.json`:
+
+    ```json title=".cursor/mcp.json"
+    {
+      "mcpServers": {
+        "shadcn": {
+          "command": "npx",
+          "args": ["-y", "@anthropic-ai/shadcn-mcp-server@latest"]
+        }
+      }
+    }
+    ```
+  </TabsContent>
+  <TabsContent value="vscode">
+    Add the following to your `.vscode/mcp.json`:
+
+    ```json title=".vscode/mcp.json"
+    {
+      "servers": {
+        "shadcn": {
+          "command": "npx",
+          "args": ["-y", "@anthropic-ai/shadcn-mcp-server@latest"]
+        }
+      }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## How It Works
+
+1. **Registry Connection** - The MCP server connects to Vritti's registry at `https://vritti.thesatyajit.com/r`
+2. **Component Discovery** - The AI assistant can search and browse all 427+ components and 241+ blocks
+3. **Installation** - When you ask for a component, the assistant installs it using the shadcn CLI
+
+## Direct CLI Installation
+
+You can also install components directly without MCP:
+
+```bash
+npx shadcn@latest add "https://vritti.thesatyajit.com/r/animated-beam"
+```
+
+## Registry Endpoints
+
+| Endpoint | Description |
+|----------|-------------|
+| `/registry.json` | Full registry with all components and blocks |
+| `/r/{name}` | Individual component metadata and files |
+
+## Available MCP Tools
+
+When the MCP server is configured, your AI assistant has access to:
+
+- **search** - Search for components by name, description, or category
+- **view** - View component details, dependencies, and source code
+- **install** - Install components into your project
+- **browse** - Browse components by category
