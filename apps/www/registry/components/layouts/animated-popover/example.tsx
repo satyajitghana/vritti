@@ -10,16 +10,22 @@ import {
   PopoverFooter,
   PopoverCloseButton,
   PopoverSubmitButton,
-} from "./component"
+} from "@/registry/components/layouts/animated-popover/component"
 
 export default function AnimatedPopoverExample() {
   return (
-    <div className="flex items-center justify-center p-8 min-h-[300px]">
+    <div className="flex min-h-[300px] items-center justify-center">
       <PopoverRoot>
-        <PopoverTrigger>Add Note</PopoverTrigger>
+        <PopoverTrigger className="rounded-lg">
+          Add Note
+        </PopoverTrigger>
         <PopoverContent>
-          <PopoverForm onSubmit={(note) => console.log("Submitted:", note)}>
-            <PopoverLabel>Write a note...</PopoverLabel>
+          <PopoverForm
+            onSubmit={(note) => {
+              console.log("Submitted:", note)
+            }}
+          >
+            <PopoverLabel>Write a quick note...</PopoverLabel>
             <PopoverTextarea />
             <PopoverFooter>
               <PopoverCloseButton />

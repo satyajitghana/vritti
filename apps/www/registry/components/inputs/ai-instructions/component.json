@@ -1,0 +1,11 @@
+{
+  "name": "ai-instructions",
+  "type": "component",
+  "description": "AI instruction manager with searchable list, toggle activation, hover previews, and custom instruction creation dialog.",
+  "category": "inputs",
+  "dependencies": ["lucide-react"],
+  "meta": {
+    "tags": ["ai", "instructions", "settings", "command", "dialog"],
+    "source": "cult-ui"
+  }
+}

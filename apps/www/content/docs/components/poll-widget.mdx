@@ -1,0 +1,56 @@
+---
+title: Poll Widget
+description: A poll widget with inline, popover, and dialog modes, optional results display, and animations.
+---
+
+<ComponentTags tags={["poll","vote","widget","dialog","popover"]} />
+
+<ComponentPreview name="poll-widget-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add "https://vritti.thesatyajit.com/r/poll-widget"
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="poll-widget" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Dependencies
+
+```bash
+npm install @radix-ui/react-use-controllable-state class-variance-authority lucide-react motion
+```
+
+## Examples
+
+### Dialog
+
+<ComponentPreview name="poll-widget-dialog" />
+
+<ComponentSource name="poll-widget-dialog" />
+

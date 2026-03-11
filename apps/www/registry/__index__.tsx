@@ -105,6 +105,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/inputs/ai-input-search/example")),
     meta: {"tags":["input","search","ai","web","toggle","form"],"source":"kokonutui"},
   },
+  "ai-instructions": {
+    name: "ai-instructions",
+    description: "AI instruction manager with searchable list, toggle activation, hover previews, and custom instruction creation dialog.",
+    type: "registry:ui",
+    category: "inputs",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/components/inputs/ai-instructions/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/inputs/ai-instructions/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ai","instructions","settings","command","dialog"],"source":"cult-ui"},
+  },
+  "ai-instructions-demo": {
+    name: "ai-instructions-demo",
+    description: "AI instruction manager with searchable list, toggle activation, hover previews, and custom instruction creation dialog. (demo)",
+    type: "registry:example",
+    category: "inputs",
+    registryDependencies: ["ai-instructions"],
+    files: [{
+      path: "registry/components/inputs/ai-instructions/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/inputs/ai-instructions/example")),
+    meta: {"tags":["ai","instructions","settings","command","dialog"],"source":"cult-ui"},
+  },
   "ai-loading": {
     name: "ai-loading",
     description: "Code-style loading animation with rotating SVG spinner and scrolling task lines",
@@ -6976,6 +7009,39 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/inputs/interactive-input/example")),
     meta: {"tags":["input","interactive","shimmer","glow","sci-fi","form"],"source":"scrollx-ui"},
   },
+  "intro-disclosure": {
+    name: "intro-disclosure",
+    description: "Feature tour disclosure with step navigation, media previews, and responsive dialog/drawer layout",
+    type: "registry:ui",
+    category: "special",
+    registryDependencies: undefined,
+    dependencies: ["motion","react-use-measure"],
+    files: [{
+      path: "registry/components/special/intro-disclosure/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/special/intro-disclosure/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["disclosure","tour","intro","onboarding","feature"],"source":"cult-ui"},
+  },
+  "intro-disclosure-demo": {
+    name: "intro-disclosure-demo",
+    description: "Feature tour disclosure with step navigation, media previews, and responsive dialog/drawer layout (demo)",
+    type: "registry:example",
+    category: "special",
+    registryDependencies: ["intro-disclosure"],
+    files: [{
+      path: "registry/components/special/intro-disclosure/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/special/intro-disclosure/example")),
+    meta: {"tags":["disclosure","tour","intro","onboarding","feature"],"source":"cult-ui"},
+  },
   "iphone": {
     name: "iphone",
     description: "A mockup of the iPhone",
@@ -8792,36 +8858,36 @@ export const Index: Record<string, any> = {
   },
   "neumorph-eyebrow": {
     name: "neumorph-eyebrow",
-    description: "Neumorphic eyebrow with soft shadow effects",
+    description: "A neumorphic eyebrow/badge component with soft shadow effects and modern styling.",
     type: "registry:ui",
-    category: "text",
+    category: "buttons",
     registryDependencies: undefined,
-    dependencies: [],
+    dependencies: ["class-variance-authority"],
     files: [{
-      path: "registry/components/text/neumorph-eyebrow/component.tsx",
+      path: "registry/components/buttons/neumorph-eyebrow/component.tsx",
       type: "registry:ui",
       target: ""
     }],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/components/text/neumorph-eyebrow/component")
+      const mod = await import("@/registry/components/buttons/neumorph-eyebrow/component")
       const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
       return { default: mod.default || mod[exportName] }
     }),
-    meta: {"tags":["text","neumorphic"],"source":"cult-ui"},
+    meta: {"tags":["eyebrow","neumorphism","badge","label"],"source":"cult-ui"},
   },
   "neumorph-eyebrow-demo": {
     name: "neumorph-eyebrow-demo",
-    description: "Neumorphic eyebrow with soft shadow effects (demo)",
+    description: "A neumorphic eyebrow/badge component with soft shadow effects and modern styling. (demo)",
     type: "registry:example",
-    category: "text",
+    category: "buttons",
     registryDependencies: ["neumorph-eyebrow"],
     files: [{
-      path: "registry/components/text/neumorph-eyebrow/example.tsx",
+      path: "registry/components/buttons/neumorph-eyebrow/example.tsx",
       type: "registry:example",
       target: ""
     }],
-    component: React.lazy(() => import("@/registry/components/text/neumorph-eyebrow/example")),
-    meta: {"tags":["text","neumorphic"],"source":"cult-ui"},
+    component: React.lazy(() => import("@/registry/components/buttons/neumorph-eyebrow/example")),
+    meta: {"tags":["eyebrow","neumorphism","badge","label"],"source":"cult-ui"},
   },
   "noise": {
     name: "noise",
@@ -9822,6 +9888,53 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/cursors/pointer/example")),
     meta: {"tags":["special"]},
   },
+  "poll-widget": {
+    name: "poll-widget",
+    description: "A poll widget with inline, popover, and dialog modes, optional results display, and animations.",
+    type: "registry:ui",
+    category: "inputs",
+    registryDependencies: undefined,
+    dependencies: ["@radix-ui/react-use-controllable-state","class-variance-authority","lucide-react","motion"],
+    files: [{
+      path: "registry/components/inputs/poll-widget/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/inputs/poll-widget/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["poll","vote","widget","dialog","popover"],"source":"cult-ui"},
+  },
+  "poll-widget-demo": {
+    name: "poll-widget-demo",
+    description: "A poll widget with inline, popover, and dialog modes, optional results display, and animations. (demo)",
+    type: "registry:example",
+    category: "inputs",
+    registryDependencies: ["poll-widget"],
+    files: [{
+      path: "registry/components/inputs/poll-widget/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/inputs/poll-widget/example")),
+    meta: {"tags":["poll","vote","widget","dialog","popover"],"source":"cult-ui"},
+  },
+  "poll-widget-dialog": {
+    name: "poll-widget-dialog",
+    description: "A poll widget with inline, popover, and dialog modes, optional results display, and animations. (dialog)",
+    type: "registry:example",
+    category: "inputs",
+    registryDependencies: ["poll-widget"],
+    files: [{
+      path: "registry/components/inputs/poll-widget/example-dialog.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/inputs/poll-widget/example-dialog")),
+    meta: {"tags":["poll","vote","widget","dialog","popover"],"source":"cult-ui"},
+  },
   "pop-button": {
     name: "pop-button",
     description: "A playful 3D-style button with push-down animation effect.",
@@ -10094,6 +10207,39 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/special/progressive-blur/example")),
     meta: {"tags":["special","blur"]},
+  },
+  "prompt-library": {
+    name: "prompt-library",
+    description: "Browse, insert, and manage prompt templates with categories and custom prompts.",
+    type: "registry:ui",
+    category: "inputs",
+    registryDependencies: undefined,
+    dependencies: ["lucide-react"],
+    files: [{
+      path: "registry/components/inputs/prompt-library/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/inputs/prompt-library/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["ai","prompt","library","command","dialog"],"source":"cult-ui"},
+  },
+  "prompt-library-demo": {
+    name: "prompt-library-demo",
+    description: "Browse, insert, and manage prompt templates with categories and custom prompts. (demo)",
+    type: "registry:example",
+    category: "inputs",
+    registryDependencies: ["prompt-library"],
+    files: [{
+      path: "registry/components/inputs/prompt-library/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/inputs/prompt-library/example")),
+    meta: {"tags":["ai","prompt","library","command","dialog"],"source":"cult-ui"},
   },
   "pulsating-button": {
     name: "pulsating-button",
