@@ -1,0 +1,66 @@
+---
+title: Skills
+description: Give AI agents deep knowledge of Vritti UI components and patterns.
+---
+
+[Skills](https://skills.sh) are reusable capabilities for AI agents that provide procedural knowledge about specific tools and libraries. The Vritti UI skill gives AI assistants deep knowledge of all 427+ components and 241+ blocks, so they can recommend and install the right components for your use case.
+
+## Install the Skill
+
+```bash
+npx skills add satyajitghana/vritti
+```
+
+This works with **Claude Code**, **Cursor**, **Windsurf**, **VS Code with GitHub Copilot**, and other AI coding assistants.
+
+## What the Skill Provides
+
+The Vritti UI skill gives your AI assistant:
+
+- **Component knowledge** - A searchable catalog of all 427+ components across 12 categories (animations, backgrounds, text, buttons, cards, layouts, navigation, and more)
+- **Block knowledge** - A catalog of 241+ blocks across 18 categories (hero sections, pricing, auth forms, testimonials, and more)
+- **Installation guidance** - How to install components via the shadcn CLI
+- **Pattern awareness** - Best practices for theming, fonts, and dependencies
+- **Registry integration** - How to use the Vritti registry with MCP and the shadcn CLI
+
+## How It Works
+
+Once installed, the skill activates when you ask about UI components, animations, or building interfaces. For example:
+
+- "I need an animated loading spinner" → Recommends from the Animations category
+- "Build me a pricing page" → Suggests pricing blocks
+- "Add a particle background" → Points to the Backgrounds category
+- "I need a login form" → Recommends auth blocks
+
+The skill includes reference catalogs that are auto-generated from the registry, so they're always up to date with the latest components.
+
+## Combining with MCP
+
+For the best experience, use both the skill and [MCP](/docs/getting-started/mcp) together:
+
+1. **Skill** provides component knowledge and recommendations
+2. **MCP** provides the ability to search, browse, and install components
+
+```bash
+# Install the skill
+npx skills add satyajitghana/vritti
+
+# Configure MCP (Claude Code)
+claude mcp add shadcn -- npx -y @anthropic-ai/shadcn-mcp-server@latest
+```
+
+Then add Vritti as a registry in `components.json`:
+
+```json title="components.json"
+{
+  "registries": {
+    "vritti": {
+      "url": "https://vritti.thesatyajit.com/r"
+    }
+  }
+}
+```
+
+## Skill Repository
+
+The skill is hosted in the [Vritti GitHub repository](https://github.com/satyajitghana/vritti) under `skills/vritti-ui/`. It follows the [skills.sh](https://skills.sh/docs) specification.

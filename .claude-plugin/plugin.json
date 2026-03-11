@@ -1,0 +1,22 @@
+{
+  "name": "vritti-ui",
+  "version": "1.0.0",
+  "description": "Vritti UI - 427+ animated React components and 241+ blocks for AI agents",
+  "author": {
+    "name": "satyajitghana"
+  },
+  "repository": "https://github.com/satyajitghana/vritti",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "animations",
+    "tailwind",
+    "nextjs",
+    "shadcn",
+    "motion",
+    "blocks"
+  ],
+  "skills": "./skills/"
+}
