@@ -148,8 +148,35 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     return {}
   }
 
+  const slug = params.slug ?? []
+  const category =
+    slug[0]
+      ? slug[0].charAt(0).toUpperCase() + slug[0].slice(1)
+      : 'Docs'
+  const ogImageUrl = `${siteConfig.url}/api/og?title=${encodeURIComponent(page.data.title)}&description=${encodeURIComponent(page.data.description ?? '')}&category=${encodeURIComponent(category)}`
+
   return {
     title: page.data.title,
     description: page.data.description,
+    openGraph: {
+      title: page.data.title,
+      description: page.data.description,
+      type: 'article',
+      url: `${siteConfig.url}/docs/${slug.join('/')}`,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: page.data.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: page.data.title,
+      description: page.data.description,
+      images: [ogImageUrl],
+    },
   }
 }
