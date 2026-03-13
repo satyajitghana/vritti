@@ -14,6 +14,7 @@ const CATEGORIES = [
   { name: 'text', label: 'Text Effects' },
   { name: 'buttons', label: 'Buttons' },
   { name: 'cards', label: 'Cards' },
+  { name: 'charts', label: 'Charts' },
   { name: 'layouts', label: 'Layouts' },
   { name: 'navigation', label: 'Navigation' },
   { name: 'carousels', label: 'Carousels & Sliders' },

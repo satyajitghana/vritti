@@ -10,6 +10,7 @@ export type ComponentCategory =
   | 'buttons'
   | 'layouts'
   | 'cards'
+  | 'charts'
   | 'navigation'
   | 'carousels'
   | 'cursors'
@@ -175,6 +176,13 @@ export const CATEGORIES: CategoryInfo[] = [
     description: 'Card components and containers',
     icon: 'Square',
     order: 5,
+  },
+  {
+    name: 'charts',
+    label: 'Charts',
+    description: 'Data visualization and chart components',
+    icon: 'BarChart2',
+    order: 6,
   },
   {
     name: 'layouts',

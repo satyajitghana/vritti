@@ -1,0 +1,26 @@
+{
+  "name": "live-line-chart",
+  "type": "component",
+  "title": "Live Line Chart",
+  "description": "Real-time streaming line chart with smooth scroll animation for live data feeds",
+  "category": "charts",
+  "dependencies": [
+    "@visx/responsive",
+    "@visx/scale",
+    "@visx/shape",
+    "@visx/group",
+    "@visx/event",
+    "d3-array",
+    "motion"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "charts",
+      "data-visualization",
+      "visx",
+      "live-line"
+    ],
+    "source": "bklit-ui"
+  }
+}
