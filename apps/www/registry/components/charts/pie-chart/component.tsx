@@ -3,6 +3,7 @@
 import type { ReactElement, ReactNode, RefObject } from "react";
 import {
   Children,
+  cloneElement,
   createContext,
   isValidElement,
   useCallback,
@@ -12,6 +13,9 @@ import {
   useRef,
   useState
 } from "react";
+import {
+  Progress
+} from "@base-ui/react/progress";
 import NumberFlow from "@number-flow/react";
 import {
   cn
@@ -33,6 +37,14 @@ import {
 import {
   pie as d3Pie
 } from "d3-shape";
+import {
+  LinearGradient,
+  RadialGradient
+} from "@visx/gradient";
+import {
+  PatternLines
+} from "@visx/pattern";
+export { LinearGradient, RadialGradient, PatternLines };
 
 // ---- pie-context.tsx ----
 // CSS variable references for pie chart theming
@@ -1064,5 +1076,341 @@ export function PieChart({
 }
 
 PieChart.displayName = "PieChart";
+
+// ---- legend-context.tsx ----
+// CSS variable references for legend theming
+export const legendCssVars = {
+  background: "var(--legend)",
+  foreground: "var(--legend-foreground)",
+  muted: "var(--legend-muted)",
+  mutedForeground: "var(--legend-muted-foreground)",
+  track: "var(--legend-track)",
+};
+
+export interface LegendItemData {
+  /** Display label */
+  label: string;
+  /** Current value */
+  value: number;
+  /** Maximum value (for progress/percentage calculation) */
+  maxValue?: number;
+  /** Item color */
+  color: string;
+}
+
+export interface LegendContextValue {
+  /** All legend items */
+  items: LegendItemData[];
+  /** Currently hovered index */
+  hoveredIndex: number | null;
+  /** Set hovered index */
+  setHoveredIndex: (index: number | null) => void;
+}
+
+export interface LegendItemContextValue {
+  /** The current item data */
+  item: LegendItemData;
+  /** Index of this item */
+  index: number;
+  /** Whether this item is hovered */
+  isHovered: boolean;
+  /** Whether this item is faded (another item is hovered) */
+  isFaded: boolean;
+  /** Percentage value (value / maxValue * 100) */
+  percentage: number;
+}
+
+const LegendContext = createContext<LegendContextValue | null>(null);
+const LegendItemContext = createContext<LegendItemContextValue | null>(null);
+
+export function LegendProvider({
+  children,
+  value,
+}: {
+  children: ReactNode;
+  value: LegendContextValue;
+}) {
+  return (
+    <LegendContext.Provider value={value}>{children}</LegendContext.Provider>
+  );
+}
+
+export function LegendItemProvider({
+  children,
+  value,
+}: {
+  children: ReactNode;
+  value: LegendItemContextValue;
+}) {
+  return (
+    <LegendItemContext.Provider value={value}>
+      {children}
+    </LegendItemContext.Provider>
+  );
+}
+
+export function useLegend(): LegendContextValue {
+  const context = useContext(LegendContext);
+  if (!context) {
+    throw new Error("useLegend must be used within a <Legend> component.");
+  }
+  return context;
+}
+
+export function useLegendItem(): LegendItemContextValue {
+  const context = useContext(LegendItemContext);
+  if (!context) {
+    throw new Error(
+      "useLegendItem must be used within a <LegendItem> component."
+    );
+  }
+  return context;
+}
+
+// ---- legend-marker.tsx ----
+export interface LegendMarkerProps {
+  /** Marker size class. Default: "h-2.5 w-2.5" */
+  className?: string;
+}
+
+export function LegendMarker({ className = "h-2.5 w-2.5" }: LegendMarkerProps) {
+  const { item } = useLegendItem();
+
+  return (
+    <div
+      className={cn("shrink-0 rounded-full", className)}
+      style={{ backgroundColor: item.color }}
+    />
+  );
+}
+
+LegendMarker.displayName = "LegendMarker";
+
+// ---- legend-label.tsx ----
+export interface LegendLabelProps {
+  /** Label class name. Default: "text-sm font-medium" */
+  className?: string;
+}
+
+export function LegendLabel({
+  className = "text-sm font-medium",
+}: LegendLabelProps) {
+  const { item } = useLegendItem();
+
+  return (
+    <span className={cn("text-legend-foreground", className)}>
+      {item.label}
+    </span>
+  );
+}
+
+LegendLabel.displayName = "LegendLabel";
+
+// ---- legend-value.tsx ----
+export interface LegendValueProps {
+  /** Value class name. Default: "text-sm tabular-nums" */
+  className?: string;
+  /** Show percentage alongside value. Default: false */
+  showPercentage?: boolean;
+  /** Percentage class name. Default: "text-xs tabular-nums" */
+  percentageClassName?: string;
+  /** Format function for the value. Default: toLocaleString() */
+  formatValue?: (value: number) => string;
+  /** Format function for percentage. Default: (p) => `${p.toFixed(0)}%` */
+  formatPercentage?: (percentage: number) => string;
+}
+
+export function LegendValue({
+  className = "text-sm tabular-nums",
+  showPercentage = false,
+  percentageClassName = "text-xs tabular-nums",
+  formatValue = (v) => v.toLocaleString(),
+  formatPercentage = (p) => `${p.toFixed(0)}%`,
+}: LegendValueProps) {
+  const { item, percentage } = useLegendItem();
+
+  return (
+    <span
+      className={cn(
+        "flex items-center gap-2 text-legend-muted-foreground",
+        className
+      )}
+    >
+      <span>{formatValue(item.value)}</span>
+      {showPercentage && item.maxValue && (
+        <span className={percentageClassName}>
+          {formatPercentage(percentage)}
+        </span>
+      )}
+    </span>
+  );
+}
+
+LegendValue.displayName = "LegendValue";
+
+// ---- legend-progress.tsx ----
+export interface LegendProgressProps {
+  /** Track class name */
+  trackClassName?: string;
+  /** Indicator class name */
+  indicatorClassName?: string;
+  /** Track height. Default: "h-1.5" */
+  height?: string;
+}
+
+export function LegendProgress({
+  trackClassName = "",
+  indicatorClassName = "",
+  height = "h-1.5",
+}: LegendProgressProps) {
+  const { item } = useLegendItem();
+
+  if (!item.maxValue) {
+    return null;
+  }
+
+  return (
+    <Progress.Root max={item.maxValue} value={item.value}>
+      <Progress.Track
+        className={cn(
+          "w-full overflow-hidden rounded-full bg-legend-track",
+          height,
+          trackClassName
+        )}
+      >
+        <Progress.Indicator
+          className={cn(
+            "h-full rounded-full transition-all duration-500",
+            indicatorClassName
+          )}
+          style={{ backgroundColor: item.color }}
+        />
+      </Progress.Track>
+    </Progress.Root>
+  );
+}
+
+LegendProgress.displayName = "LegendProgress";
+
+// ---- legend-item.tsx ----
+export interface LegendItemProps {
+  /** Container class name */
+  className?: string;
+  /** Children components (LegendMarker, LegendLabel, LegendValue, LegendProgress) */
+  children: ReactNode;
+}
+
+export function LegendItem({ className = "", children }: LegendItemProps) {
+  const { setHoveredIndex } = useLegend();
+  const { index, isHovered } = useLegendItem();
+
+  return (
+    // biome-ignore lint/a11y/noNoninteractiveElementInteractions: Legend item hover interaction
+    // biome-ignore lint/a11y/noStaticElementInteractions: Legend item hover interaction
+    <div
+      className={cn(
+        "cursor-pointer rounded-lg px-2 py-1.5 transition-all duration-150 ease-out",
+        isHovered && "bg-legend-muted",
+        className
+      )}
+      data-hovered={isHovered ? "" : undefined}
+      onMouseEnter={() => setHoveredIndex(index)}
+      onMouseLeave={() => setHoveredIndex(null)}
+    >
+      {children}
+    </div>
+  );
+}
+
+LegendItem.displayName = "LegendItem";
+
+// ---- legend.tsx ----
+export interface LegendProps {
+  /** Legend items data */
+  items: LegendItemData[];
+  /** Controlled hover state */
+  hoveredIndex?: number | null;
+  /** Hover state change callback */
+  onHoverChange?: (index: number | null) => void;
+  /** Title shown above the legend */
+  title?: string;
+  /** Title class name */
+  titleClassName?: string;
+  /** Container class name */
+  className?: string;
+  /** Children - should contain a single LegendItem that will be mapped for each item */
+  children: ReactElement;
+}
+
+export function Legend({
+  items,
+  hoveredIndex: controlledHoveredIndex,
+  onHoverChange,
+  title,
+  titleClassName = "text-sm font-semibold",
+  className = "",
+  children,
+}: LegendProps) {
+  const [internalHoveredIndex, setInternalHoveredIndex] = useState<
+    number | null
+  >(null);
+
+  const isControlled = controlledHoveredIndex !== undefined;
+  const hoveredIndex = isControlled
+    ? controlledHoveredIndex
+    : internalHoveredIndex;
+  const setHoveredIndex = (index: number | null) => {
+    if (isControlled) {
+      onHoverChange?.(index);
+    } else {
+      setInternalHoveredIndex(index);
+    }
+  };
+
+  const contextValue = {
+    items,
+    hoveredIndex,
+    setHoveredIndex,
+  };
+
+  return (
+    <LegendProvider value={contextValue}>
+      <div className={cn("legend-container flex flex-col gap-2", className)}>
+        {title && (
+          <h3 className={cn("mb-1 text-legend-foreground", titleClassName)}>
+            {title}
+          </h3>
+        )}
+        {items.map((item, index) => {
+          const isHovered = hoveredIndex === index;
+          const isFaded = hoveredIndex !== null && hoveredIndex !== index;
+          const percentage = item.maxValue
+            ? (item.value / item.maxValue) * 100
+            : 0;
+
+          const itemContext = {
+            item,
+            index,
+            isHovered,
+            isFaded,
+            percentage,
+          };
+
+          if (isValidElement(children)) {
+            return (
+              <LegendItemProvider key={item.label} value={itemContext}>
+                {cloneElement(children)}
+              </LegendItemProvider>
+            );
+          }
+
+          return null;
+        })}
+      </div>
+    </LegendProvider>
+  );
+}
+
+Legend.displayName = "Legend";
 
 export default PieChart;

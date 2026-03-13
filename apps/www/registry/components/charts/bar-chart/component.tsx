@@ -42,6 +42,14 @@ import {
 import {
   ParentSize
 } from "@visx/responsive";
+import {
+  LinearGradient,
+  RadialGradient
+} from "@visx/gradient";
+import {
+  PatternLines
+} from "@visx/pattern";
+export { LinearGradient, RadialGradient, PatternLines };
 
 // ---- use-chart-interaction.ts ----
 export interface ChartSelection {

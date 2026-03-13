@@ -1,8 +1,10 @@
 "use client";
 
-import type { ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 import {
+  cloneElement,
   createContext,
+  isValidElement,
   useCallback,
   useContext,
   useEffect,
@@ -10,6 +12,9 @@ import {
   useRef,
   useState
 } from "react";
+import {
+  Progress
+} from "@base-ui/react/progress";
 import {
   scaleLinear
 } from "@visx/scale";
@@ -758,5 +763,218 @@ export function RadarChart({
     </div>
   );
 }
+
+// ---- legend-context.tsx ----
+export const legendCssVars = {
+  background: "var(--legend)",
+  foreground: "var(--legend-foreground)",
+  muted: "var(--legend-muted)",
+  mutedForeground: "var(--legend-muted-foreground)",
+  track: "var(--legend-track)",
+};
+
+export interface LegendItemData {
+  label: string;
+  value: number;
+  maxValue?: number;
+  color: string;
+}
+
+export interface LegendContextValue {
+  items: LegendItemData[];
+  hoveredIndex: number | null;
+  setHoveredIndex: (index: number | null) => void;
+}
+
+export interface LegendItemContextValue {
+  item: LegendItemData;
+  index: number;
+  isHovered: boolean;
+  isFaded: boolean;
+  percentage: number;
+}
+
+const LegendContext = createContext<LegendContextValue | null>(null);
+const LegendItemContext = createContext<LegendItemContextValue | null>(null);
+
+export function LegendProvider({
+  children,
+  value,
+}: {
+  children: ReactNode;
+  value: LegendContextValue;
+}) {
+  return (
+    <LegendContext.Provider value={value}>{children}</LegendContext.Provider>
+  );
+}
+
+export function LegendItemProvider({
+  children,
+  value,
+}: {
+  children: ReactNode;
+  value: LegendItemContextValue;
+}) {
+  return (
+    <LegendItemContext.Provider value={value}>
+      {children}
+    </LegendItemContext.Provider>
+  );
+}
+
+export function useLegend(): LegendContextValue {
+  const context = useContext(LegendContext);
+  if (!context) {
+    throw new Error("useLegend must be used within a <Legend> component.");
+  }
+  return context;
+}
+
+export function useLegendItem(): LegendItemContextValue {
+  const context = useContext(LegendItemContext);
+  if (!context) {
+    throw new Error("useLegendItem must be used within a <LegendItem> component.");
+  }
+  return context;
+}
+
+export interface LegendMarkerProps {
+  className?: string;
+}
+
+export function LegendMarker({ className = "h-2.5 w-2.5" }: LegendMarkerProps) {
+  const { item } = useLegendItem();
+  return (
+    <div
+      className={cn("shrink-0 rounded-full", className)}
+      style={{ backgroundColor: item.color }}
+    />
+  );
+}
+LegendMarker.displayName = "LegendMarker";
+
+export interface LegendLabelProps {
+  className?: string;
+}
+
+export function LegendLabel({ className = "text-sm font-medium" }: LegendLabelProps) {
+  const { item } = useLegendItem();
+  return (
+    <span className={cn("text-legend-foreground", className)}>
+      {item.label}
+    </span>
+  );
+}
+LegendLabel.displayName = "LegendLabel";
+
+export interface LegendValueProps {
+  className?: string;
+  showPercentage?: boolean;
+  percentageClassName?: string;
+  formatValue?: (value: number) => string;
+  formatPercentage?: (percentage: number) => string;
+}
+
+export function LegendValue({
+  className = "text-sm tabular-nums",
+  showPercentage = false,
+  percentageClassName = "text-xs tabular-nums",
+  formatValue = (v) => v.toLocaleString(),
+  formatPercentage = (p) => `${p.toFixed(0)}%`,
+}: LegendValueProps) {
+  const { item, percentage } = useLegendItem();
+  return (
+    <span className={cn("flex items-center gap-2 text-legend-muted-foreground", className)}>
+      <span>{formatValue(item.value)}</span>
+      {showPercentage && item.maxValue && (
+        <span className={percentageClassName}>{formatPercentage(percentage)}</span>
+      )}
+    </span>
+  );
+}
+LegendValue.displayName = "LegendValue";
+
+export interface LegendItemProps {
+  className?: string;
+  children: ReactNode;
+}
+
+export function LegendItem({ className = "", children }: LegendItemProps) {
+  const { setHoveredIndex } = useLegend();
+  const { index, isHovered } = useLegendItem();
+  return (
+    // biome-ignore lint/a11y/noNoninteractiveElementInteractions: Legend item hover interaction
+    // biome-ignore lint/a11y/noStaticElementInteractions: Legend item hover interaction
+    <div
+      className={cn(
+        "cursor-pointer rounded-lg px-2 py-1.5 transition-all duration-150 ease-out",
+        isHovered && "bg-legend-muted",
+        className
+      )}
+      data-hovered={isHovered ? "" : undefined}
+      onMouseEnter={() => setHoveredIndex(index)}
+      onMouseLeave={() => setHoveredIndex(null)}
+    >
+      {children}
+    </div>
+  );
+}
+LegendItem.displayName = "LegendItem";
+
+export interface LegendProps {
+  items: LegendItemData[];
+  hoveredIndex?: number | null;
+  onHoverChange?: (index: number | null) => void;
+  title?: string;
+  titleClassName?: string;
+  className?: string;
+  children: ReactElement;
+}
+
+export function Legend({
+  items,
+  hoveredIndex: controlledHoveredIndex,
+  onHoverChange,
+  title,
+  titleClassName = "text-sm font-semibold",
+  className = "",
+  children,
+}: LegendProps) {
+  const [internalHoveredIndex, setInternalHoveredIndex] = useState<number | null>(null);
+  const isControlled = controlledHoveredIndex !== undefined;
+  const hoveredIndex = isControlled ? controlledHoveredIndex : internalHoveredIndex;
+  const setHoveredIndex = (index: number | null) => {
+    if (isControlled) {
+      onHoverChange?.(index);
+    } else {
+      setInternalHoveredIndex(index);
+    }
+  };
+
+  return (
+    <LegendProvider value={{ items, hoveredIndex, setHoveredIndex }}>
+      <div className={cn("legend-container flex flex-col gap-2", className)}>
+        {title && (
+          <h3 className={cn("mb-1 text-legend-foreground", titleClassName)}>{title}</h3>
+        )}
+        {items.map((item, index) => {
+          const isHovered = hoveredIndex === index;
+          const isFaded = hoveredIndex !== null && hoveredIndex !== index;
+          const percentage = item.maxValue ? (item.value / item.maxValue) * 100 : 0;
+          if (isValidElement(children)) {
+            return (
+              <LegendItemProvider key={item.label} value={{ item, index, isHovered, isFaded, percentage }}>
+                {cloneElement(children)}
+              </LegendItemProvider>
+            );
+          }
+          return null;
+        })}
+      </div>
+    </LegendProvider>
+  );
+}
+Legend.displayName = "Legend";
 
 export default RadarChart;
