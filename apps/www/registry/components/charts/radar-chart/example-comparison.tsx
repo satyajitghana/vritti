@@ -30,7 +30,9 @@ export default function RadarChartComparisonDemo() {
         <RadarGrid />
         <RadarAxis />
         <RadarLabels />
-        <RadarArea />
+        {data.map((_, i) => (
+          <RadarArea key={i} index={i} />
+        ))}
       </RadarChart>
     </div>
   )

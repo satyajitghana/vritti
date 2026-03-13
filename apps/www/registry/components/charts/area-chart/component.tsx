@@ -3,7 +3,7 @@
 import {
   localPoint
 } from "@visx/event";
-import type { scaleBand, scaleLinear, scaleTime } from "@visx/scale";
+import type { scaleBand } from "@visx/scale";
 import {
   scaleLinear,
   scaleTime
@@ -55,9 +55,6 @@ import {
 } from "d3-array";
 
 // ---- use-chart-interaction.ts ----
-type ScaleTime = ReturnType<typeof scaleTime<number>>;
-type ScaleLinear = ReturnType<typeof scaleLinear<number>>;
-
 export interface ChartSelection {
   startX: number;
   endX: number;
@@ -67,8 +64,8 @@ export interface ChartSelection {
 }
 
 interface UseChartInteractionParams {
-  xScale: ScaleTime;
-  yScale: ScaleLinear;
+  xScale: ScaleTime<number>;
+  yScale: ScaleLinear<number>;
   data: Record<string, unknown>[];
   lines: LineConfig[];
   margin: Margin;

@@ -24,7 +24,7 @@ export default function RadarChartDemo() {
         <RadarGrid />
         <RadarAxis />
         <RadarLabels />
-        <RadarArea />
+        <RadarArea index={0} />
       </RadarChart>
     </div>
   )

@@ -30,7 +30,7 @@ export default function LiveLineChartDemo() {
   return (
     <div className="w-full p-4">
       <LiveLineChart data={data} value={value} window={30}>
-        <LiveLine stroke="var(--chart-line-primary)" />
+        <LiveLine dataKey="value" stroke="var(--chart-line-primary)" />
         <LiveXAxis />
         <LiveYAxis />
       </LiveLineChart>

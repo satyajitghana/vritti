@@ -18,10 +18,12 @@ export default function PieChartDonutDemo() {
           <PieSlice index={index} key={item.label} />
         ))}
         <PieCenter>
-          <div className="text-center">
-            <div className="text-2xl font-bold">{total}</div>
-            <div className="text-sm text-muted-foreground">Total</div>
-          </div>
+          {() => (
+            <div className="text-center">
+              <div className="text-2xl font-bold">{total}</div>
+              <div className="text-sm text-muted-foreground">Total</div>
+            </div>
+          )}
         </PieCenter>
       </PieChart>
     </div>

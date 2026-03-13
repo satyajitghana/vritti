@@ -16,9 +16,11 @@ export default function RingChartDemo() {
           <Ring index={index} key={item.label} />
         ))}
         <RingCenter>
-          <div className="text-center">
-            <div className="text-sm font-medium text-muted-foreground">Daily Goals</div>
-          </div>
+          {() => (
+            <div className="text-center">
+              <div className="text-sm font-medium text-muted-foreground">Daily Goals</div>
+            </div>
+          )}
         </RingCenter>
       </RingChart>
     </div>
