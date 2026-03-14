@@ -2607,7 +2607,7 @@ export const Index: Record<string, any> = {
     type: "registry:ui",
     category: "charts",
     registryDependencies: undefined,
-    dependencies: ["@visx/responsive","@visx/scale","@visx/shape","@visx/group","@visx/event","@visx/grid","d3-array","motion","react-use-measure"],
+    dependencies: ["@visx/responsive","@visx/scale","@visx/shape","@visx/group","@visx/event","@visx/grid","@visx/gradient","@visx/pattern","d3-array","motion","react-use-measure"],
     files: [{
       path: "registry/components/charts/candlestick-chart/component.tsx",
       type: "registry:ui",
@@ -2632,6 +2632,48 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/charts/candlestick-chart/example")),
+    meta: {"tags":["charts","data-visualization","visx","candlestick"],"source":"bklit-ui"},
+  },
+  "candlestick-chart-bitcoin": {
+    name: "candlestick-chart-bitcoin",
+    description: "Financial OHLC candlestick chart for stock and crypto data visualization (bitcoin)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["candlestick-chart"],
+    files: [{
+      path: "registry/components/charts/candlestick-chart/example-bitcoin.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/candlestick-chart/example-bitcoin")),
+    meta: {"tags":["charts","data-visualization","visx","candlestick"],"source":"bklit-ui"},
+  },
+  "candlestick-chart-ohlv": {
+    name: "candlestick-chart-ohlv",
+    description: "Financial OHLC candlestick chart for stock and crypto data visualization (ohlv)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["candlestick-chart"],
+    files: [{
+      path: "registry/components/charts/candlestick-chart/example-ohlv.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/candlestick-chart/example-ohlv")),
+    meta: {"tags":["charts","data-visualization","visx","candlestick"],"source":"bklit-ui"},
+  },
+  "candlestick-chart-weekly": {
+    name: "candlestick-chart-weekly",
+    description: "Financial OHLC candlestick chart for stock and crypto data visualization (weekly)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["candlestick-chart"],
+    files: [{
+      path: "registry/components/charts/candlestick-chart/example-weekly.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/candlestick-chart/example-weekly")),
     meta: {"tags":["charts","data-visualization","visx","candlestick"],"source":"bklit-ui"},
   },
   "canvas-fractal-grid": {
@@ -5843,6 +5885,20 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/charts/funnel-chart/example")),
     meta: {"tags":["charts","data-visualization","visx","funnel"],"source":"bklit-ui"},
   },
+  "funnel-chart-ecommerce": {
+    name: "funnel-chart-ecommerce",
+    description: "Animated funnel chart with halo rings for conversion and pipeline visualization (ecommerce)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["funnel-chart"],
+    files: [{
+      path: "registry/components/charts/funnel-chart/example-ecommerce.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/funnel-chart/example-ecommerce")),
+    meta: {"tags":["charts","data-visualization","visx","funnel"],"source":"bklit-ui"},
+  },
   "funnel-chart-gradient": {
     name: "funnel-chart-gradient",
     description: "Animated funnel chart with halo rings for conversion and pipeline visualization (gradient)",
@@ -5855,6 +5911,20 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/charts/funnel-chart/example-gradient")),
+    meta: {"tags":["charts","data-visualization","visx","funnel"],"source":"bklit-ui"},
+  },
+  "funnel-chart-saas": {
+    name: "funnel-chart-saas",
+    description: "Animated funnel chart with halo rings for conversion and pipeline visualization (saas)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["funnel-chart"],
+    files: [{
+      path: "registry/components/charts/funnel-chart/example-saas.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/funnel-chart/example-saas")),
     meta: {"tags":["charts","data-visualization","visx","funnel"],"source":"bklit-ui"},
   },
   "fuzzy-text": {
@@ -8204,6 +8274,20 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/charts/live-line-chart/example")),
     meta: {"tags":["charts","data-visualization","visx","live-line"],"source":"bklit-ui"},
   },
+  "live-line-chart-heartrate": {
+    name: "live-line-chart-heartrate",
+    description: "Real-time streaming line chart with smooth scroll animation for live data feeds (heartrate)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["live-line-chart"],
+    files: [{
+      path: "registry/components/charts/live-line-chart/example-heartrate.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/live-line-chart/example-heartrate")),
+    meta: {"tags":["charts","data-visualization","visx","live-line"],"source":"bklit-ui"},
+  },
   "live-line-chart-price": {
     name: "live-line-chart-price",
     description: "Real-time streaming line chart with smooth scroll animation for live data feeds (price)",
@@ -8216,6 +8300,20 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/charts/live-line-chart/example-price")),
+    meta: {"tags":["charts","data-visualization","visx","live-line"],"source":"bklit-ui"},
+  },
+  "live-line-chart-server": {
+    name: "live-line-chart-server",
+    description: "Real-time streaming line chart with smooth scroll animation for live data feeds (server)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["live-line-chart"],
+    files: [{
+      path: "registry/components/charts/live-line-chart/example-server.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/live-line-chart/example-server")),
     meta: {"tags":["charts","data-visualization","visx","live-line"],"source":"bklit-ui"},
   },
   "loader": {
@@ -11315,6 +11413,20 @@ export const Index: Record<string, any> = {
       target: ""
     }],
     component: React.lazy(() => import("@/registry/components/charts/ring-chart/example")),
+    meta: {"tags":["charts","data-visualization","visx","ring"],"source":"bklit-ui"},
+  },
+  "ring-chart-fitness": {
+    name: "ring-chart-fitness",
+    description: "Concentric ring chart for multi-metric progress and comparison visualization (fitness)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["ring-chart"],
+    files: [{
+      path: "registry/components/charts/ring-chart/example-fitness.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/ring-chart/example-fitness")),
     meta: {"tags":["charts","data-visualization","visx","ring"],"source":"bklit-ui"},
   },
   "ring-chart-legend": {
