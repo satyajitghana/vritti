@@ -11,6 +11,8 @@
     "@visx/group",
     "@visx/event",
     "@visx/grid",
+    "@visx/gradient",
+    "@visx/pattern",
     "d3-array",
     "motion",
     "react-use-measure"

@@ -1,30 +1,21 @@
 "use client"
-import PieChart, { PieSlice, PieCenter } from "./component"
+import PieChart, { PieCenter, PieSlice } from "./component"
 
 const data = [
-  { label: "React", value: 400, color: "hsl(217, 91%, 60%)" },
-  { label: "Vue", value: 200, color: "hsl(142, 71%, 45%)" },
-  { label: "Angular", value: 150, color: "hsl(0, 91%, 65%)" },
-  { label: "Svelte", value: 100, color: "hsl(38, 92%, 50%)" },
+  { label: "React", value: 400, color: "var(--chart-1)" },
+  { label: "Vue", value: 200, color: "var(--chart-2)" },
+  { label: "Angular", value: 150, color: "var(--chart-3)" },
+  { label: "Svelte", value: 100, color: "var(--chart-4)" },
 ]
-
-const total = data.reduce((s, d) => s + d.value, 0)
 
 export default function PieChartDonutDemo() {
   return (
     <div className="flex justify-center p-8">
-      <PieChart data={data} size={300} innerRadius={80} cornerRadius={4} padAngle={0.04}>
+      <PieChart cornerRadius={4} data={data} innerRadius={80} padAngle={0.04} size={300}>
         {data.map((item, index) => (
           <PieSlice index={index} key={item.label} />
         ))}
-        <PieCenter>
-          {() => (
-            <div className="text-center">
-              <div className="text-2xl font-bold">{total}</div>
-              <div className="text-sm text-muted-foreground">Total</div>
-            </div>
-          )}
-        </PieCenter>
+        <PieCenter defaultLabel="Total" />
       </PieChart>
     </div>
   )
