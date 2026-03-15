@@ -15,6 +15,7 @@ const CATEGORIES = [
   'text',
   'buttons',
   'cards',
+  'charts',
   'layouts',
   'navigation',
   'carousels',

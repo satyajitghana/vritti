@@ -1,0 +1,20 @@
+{
+  "name": "funnel-chart",
+  "type": "component",
+  "title": "Funnel Chart",
+  "description": "Animated funnel chart with halo rings for conversion and pipeline visualization",
+  "category": "charts",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "charts",
+      "data-visualization",
+      "visx",
+      "funnel"
+    ],
+    "source": "bklit-ui"
+  }
+}

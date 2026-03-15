@@ -1,0 +1,29 @@
+{
+  "name": "bar-chart",
+  "type": "component",
+  "title": "Bar Chart",
+  "description": "Flexible bar chart supporting grouped, stacked, vertical, and horizontal layouts",
+  "category": "charts",
+  "dependencies": [
+    "@visx/responsive",
+    "@visx/scale",
+    "@visx/shape",
+    "@visx/group",
+    "@visx/event",
+    "@visx/grid",
+    "d3-array",
+    "motion",
+    "react-use-measure",
+    "@base-ui/react"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "charts",
+      "data-visualization",
+      "visx",
+      "bar"
+    ],
+    "source": "bklit-ui"
+  }
+}

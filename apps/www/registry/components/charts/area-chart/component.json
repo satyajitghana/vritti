@@ -1,0 +1,30 @@
+{
+  "name": "area-chart",
+  "type": "component",
+  "title": "Area Chart",
+  "description": "Composable area chart with gradients, animations, and interactive tooltips",
+  "category": "charts",
+  "dependencies": [
+    "@visx/responsive",
+    "@visx/scale",
+    "@visx/shape",
+    "@visx/gradient",
+    "@visx/group",
+    "@visx/axis",
+    "@visx/event",
+    "@visx/grid",
+    "d3-array",
+    "motion",
+    "react-use-measure"
+  ],
+  "files": [],
+  "meta": {
+    "tags": [
+      "charts",
+      "data-visualization",
+      "visx",
+      "area"
+    ],
+    "source": "bklit-ui"
+  }
+}

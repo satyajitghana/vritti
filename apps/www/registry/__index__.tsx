@@ -1151,6 +1151,81 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/buttons/apple-play-button/example")),
     meta: {"tags":["button","play","apple","animation","toggle"],"source":"skiper-ui"},
   },
+  "area-chart": {
+    name: "area-chart",
+    description: "Composable area chart with gradients, animations, and interactive tooltips",
+    type: "registry:ui",
+    category: "charts",
+    registryDependencies: undefined,
+    dependencies: ["@visx/responsive","@visx/scale","@visx/shape","@visx/gradient","@visx/group","@visx/axis","@visx/event","@visx/grid","d3-array","motion","react-use-measure"],
+    files: [{
+      path: "registry/components/charts/area-chart/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/charts/area-chart/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["charts","data-visualization","visx","area"],"source":"bklit-ui"},
+  },
+  "area-chart-demo": {
+    name: "area-chart-demo",
+    description: "Composable area chart with gradients, animations, and interactive tooltips (demo)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["area-chart"],
+    files: [{
+      path: "registry/components/charts/area-chart/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/area-chart/example")),
+    meta: {"tags":["charts","data-visualization","visx","area"],"source":"bklit-ui"},
+  },
+  "area-chart-multi": {
+    name: "area-chart-multi",
+    description: "Composable area chart with gradients, animations, and interactive tooltips (multi)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["area-chart"],
+    files: [{
+      path: "registry/components/charts/area-chart/example-multi.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/area-chart/example-multi")),
+    meta: {"tags":["charts","data-visualization","visx","area"],"source":"bklit-ui"},
+  },
+  "area-chart-segment": {
+    name: "area-chart-segment",
+    description: "Composable area chart with gradients, animations, and interactive tooltips (segment)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["area-chart"],
+    files: [{
+      path: "registry/components/charts/area-chart/example-segment.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/area-chart/example-segment")),
+    meta: {"tags":["charts","data-visualization","visx","area"],"source":"bklit-ui"},
+  },
+  "area-chart-tooltip": {
+    name: "area-chart-tooltip",
+    description: "Composable area chart with gradients, animations, and interactive tooltips (tooltip)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["area-chart"],
+    files: [{
+      path: "registry/components/charts/area-chart/example-tooltip.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/area-chart/example-tooltip")),
+    meta: {"tags":["charts","data-visualization","visx","area"],"source":"bklit-ui"},
+  },
   "ascii-text": {
     name: "ascii-text",
     description: "Renders text with an ASCII art style effect using Three.js.",
@@ -1645,6 +1720,151 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/special/banner/example")),
     meta: {"tags":["display","banner","notification"],"source":"kibo-ui"},
+  },
+  "bar-chart": {
+    name: "bar-chart",
+    description: "Flexible bar chart supporting grouped, stacked, vertical, and horizontal layouts",
+    type: "registry:ui",
+    category: "charts",
+    registryDependencies: undefined,
+    dependencies: ["@visx/responsive","@visx/scale","@visx/shape","@visx/group","@visx/event","@visx/grid","d3-array","motion","react-use-measure","@base-ui/react"],
+    files: [{
+      path: "registry/components/charts/bar-chart/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/charts/bar-chart/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["charts","data-visualization","visx","bar"],"source":"bklit-ui"},
+  },
+  "bar-chart-demo": {
+    name: "bar-chart-demo",
+    description: "Flexible bar chart supporting grouped, stacked, vertical, and horizontal layouts (demo)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["bar-chart"],
+    files: [{
+      path: "registry/components/charts/bar-chart/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/bar-chart/example")),
+    meta: {"tags":["charts","data-visualization","visx","bar"],"source":"bklit-ui"},
+  },
+  "bar-chart-custom-tooltip": {
+    name: "bar-chart-custom-tooltip",
+    description: "Flexible bar chart supporting grouped, stacked, vertical, and horizontal layouts (custom-tooltip)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["bar-chart"],
+    files: [{
+      path: "registry/components/charts/bar-chart/example-custom-tooltip.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/bar-chart/example-custom-tooltip")),
+    meta: {"tags":["charts","data-visualization","visx","bar"],"source":"bklit-ui"},
+  },
+  "bar-chart-gradient": {
+    name: "bar-chart-gradient",
+    description: "Flexible bar chart supporting grouped, stacked, vertical, and horizontal layouts (gradient)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["bar-chart"],
+    files: [{
+      path: "registry/components/charts/bar-chart/example-gradient.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/bar-chart/example-gradient")),
+    meta: {"tags":["charts","data-visualization","visx","bar"],"source":"bklit-ui"},
+  },
+  "bar-chart-horizontal": {
+    name: "bar-chart-horizontal",
+    description: "Flexible bar chart supporting grouped, stacked, vertical, and horizontal layouts (horizontal)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["bar-chart"],
+    files: [{
+      path: "registry/components/charts/bar-chart/example-horizontal.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/bar-chart/example-horizontal")),
+    meta: {"tags":["charts","data-visualization","visx","bar"],"source":"bklit-ui"},
+  },
+  "bar-chart-legend": {
+    name: "bar-chart-legend",
+    description: "Flexible bar chart supporting grouped, stacked, vertical, and horizontal layouts (legend)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["bar-chart"],
+    files: [{
+      path: "registry/components/charts/bar-chart/example-legend.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/bar-chart/example-legend")),
+    meta: {"tags":["charts","data-visualization","visx","bar"],"source":"bklit-ui"},
+  },
+  "bar-chart-narrow": {
+    name: "bar-chart-narrow",
+    description: "Flexible bar chart supporting grouped, stacked, vertical, and horizontal layouts (narrow)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["bar-chart"],
+    files: [{
+      path: "registry/components/charts/bar-chart/example-narrow.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/bar-chart/example-narrow")),
+    meta: {"tags":["charts","data-visualization","visx","bar"],"source":"bklit-ui"},
+  },
+  "bar-chart-no-gap": {
+    name: "bar-chart-no-gap",
+    description: "Flexible bar chart supporting grouped, stacked, vertical, and horizontal layouts (no-gap)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["bar-chart"],
+    files: [{
+      path: "registry/components/charts/bar-chart/example-no-gap.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/bar-chart/example-no-gap")),
+    meta: {"tags":["charts","data-visualization","visx","bar"],"source":"bklit-ui"},
+  },
+  "bar-chart-pattern": {
+    name: "bar-chart-pattern",
+    description: "Flexible bar chart supporting grouped, stacked, vertical, and horizontal layouts (pattern)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["bar-chart"],
+    files: [{
+      path: "registry/components/charts/bar-chart/example-pattern.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/bar-chart/example-pattern")),
+    meta: {"tags":["charts","data-visualization","visx","bar"],"source":"bklit-ui"},
+  },
+  "bar-chart-stacked": {
+    name: "bar-chart-stacked",
+    description: "Flexible bar chart supporting grouped, stacked, vertical, and horizontal layouts (stacked)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["bar-chart"],
+    files: [{
+      path: "registry/components/charts/bar-chart/example-stacked.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/bar-chart/example-stacked")),
+    meta: {"tags":["charts","data-visualization","visx","bar"],"source":"bklit-ui"},
   },
   "bars-spinner": {
     name: "bars-spinner",
@@ -2380,6 +2600,81 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/navigation/bubble-menu/example")),
     meta: {"tags":["layouts","navigation"]},
+  },
+  "candlestick-chart": {
+    name: "candlestick-chart",
+    description: "Financial OHLC candlestick chart for stock and crypto data visualization",
+    type: "registry:ui",
+    category: "charts",
+    registryDependencies: undefined,
+    dependencies: ["@visx/responsive","@visx/scale","@visx/shape","@visx/group","@visx/event","@visx/grid","@visx/gradient","@visx/pattern","d3-array","motion","react-use-measure"],
+    files: [{
+      path: "registry/components/charts/candlestick-chart/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/charts/candlestick-chart/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["charts","data-visualization","visx","candlestick"],"source":"bklit-ui"},
+  },
+  "candlestick-chart-demo": {
+    name: "candlestick-chart-demo",
+    description: "Financial OHLC candlestick chart for stock and crypto data visualization (demo)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["candlestick-chart"],
+    files: [{
+      path: "registry/components/charts/candlestick-chart/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/candlestick-chart/example")),
+    meta: {"tags":["charts","data-visualization","visx","candlestick"],"source":"bklit-ui"},
+  },
+  "candlestick-chart-bitcoin": {
+    name: "candlestick-chart-bitcoin",
+    description: "Financial OHLC candlestick chart for stock and crypto data visualization (bitcoin)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["candlestick-chart"],
+    files: [{
+      path: "registry/components/charts/candlestick-chart/example-bitcoin.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/candlestick-chart/example-bitcoin")),
+    meta: {"tags":["charts","data-visualization","visx","candlestick"],"source":"bklit-ui"},
+  },
+  "candlestick-chart-ohlv": {
+    name: "candlestick-chart-ohlv",
+    description: "Financial OHLC candlestick chart for stock and crypto data visualization (ohlv)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["candlestick-chart"],
+    files: [{
+      path: "registry/components/charts/candlestick-chart/example-ohlv.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/candlestick-chart/example-ohlv")),
+    meta: {"tags":["charts","data-visualization","visx","candlestick"],"source":"bklit-ui"},
+  },
+  "candlestick-chart-weekly": {
+    name: "candlestick-chart-weekly",
+    description: "Financial OHLC candlestick chart for stock and crypto data visualization (weekly)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["candlestick-chart"],
+    files: [{
+      path: "registry/components/charts/candlestick-chart/example-weekly.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/candlestick-chart/example-weekly")),
+    meta: {"tags":["charts","data-visualization","visx","candlestick"],"source":"bklit-ui"},
   },
   "canvas-fractal-grid": {
     name: "canvas-fractal-grid",
@@ -5557,6 +5852,81 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/cursors/following-pointer/example")),
     meta: {"tags":["animation"]},
   },
+  "funnel-chart": {
+    name: "funnel-chart",
+    description: "Animated funnel chart with halo rings for conversion and pipeline visualization",
+    type: "registry:ui",
+    category: "charts",
+    registryDependencies: undefined,
+    dependencies: ["motion"],
+    files: [{
+      path: "registry/components/charts/funnel-chart/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/charts/funnel-chart/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["charts","data-visualization","visx","funnel"],"source":"bklit-ui"},
+  },
+  "funnel-chart-demo": {
+    name: "funnel-chart-demo",
+    description: "Animated funnel chart with halo rings for conversion and pipeline visualization (demo)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["funnel-chart"],
+    files: [{
+      path: "registry/components/charts/funnel-chart/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/funnel-chart/example")),
+    meta: {"tags":["charts","data-visualization","visx","funnel"],"source":"bklit-ui"},
+  },
+  "funnel-chart-ecommerce": {
+    name: "funnel-chart-ecommerce",
+    description: "Animated funnel chart with halo rings for conversion and pipeline visualization (ecommerce)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["funnel-chart"],
+    files: [{
+      path: "registry/components/charts/funnel-chart/example-ecommerce.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/funnel-chart/example-ecommerce")),
+    meta: {"tags":["charts","data-visualization","visx","funnel"],"source":"bklit-ui"},
+  },
+  "funnel-chart-gradient": {
+    name: "funnel-chart-gradient",
+    description: "Animated funnel chart with halo rings for conversion and pipeline visualization (gradient)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["funnel-chart"],
+    files: [{
+      path: "registry/components/charts/funnel-chart/example-gradient.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/funnel-chart/example-gradient")),
+    meta: {"tags":["charts","data-visualization","visx","funnel"],"source":"bklit-ui"},
+  },
+  "funnel-chart-saas": {
+    name: "funnel-chart-saas",
+    description: "Animated funnel chart with halo rings for conversion and pipeline visualization (saas)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["funnel-chart"],
+    files: [{
+      path: "registry/components/charts/funnel-chart/example-saas.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/funnel-chart/example-saas")),
+    meta: {"tags":["charts","data-visualization","visx","funnel"],"source":"bklit-ui"},
+  },
   "fuzzy-text": {
     name: "fuzzy-text",
     description: "Text rendered with a fuzzy, vibrating canvas effect.",
@@ -7664,6 +8034,81 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/backgrounds/lightning/example")),
     meta: {"tags":["background"],"source":"react-bits"},
   },
+  "line-chart": {
+    name: "line-chart",
+    description: "Multi-series line chart with animated paths, highlight segments, and interactive tooltips",
+    type: "registry:ui",
+    category: "charts",
+    registryDependencies: undefined,
+    dependencies: ["@visx/responsive","@visx/scale","@visx/shape","@visx/group","@visx/event","@visx/grid","d3-array","motion","react-use-measure","@base-ui/react"],
+    files: [{
+      path: "registry/components/charts/line-chart/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/charts/line-chart/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["charts","data-visualization","visx","line"],"source":"bklit-ui"},
+  },
+  "line-chart-demo": {
+    name: "line-chart-demo",
+    description: "Multi-series line chart with animated paths, highlight segments, and interactive tooltips (demo)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["line-chart"],
+    files: [{
+      path: "registry/components/charts/line-chart/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/line-chart/example")),
+    meta: {"tags":["charts","data-visualization","visx","line"],"source":"bklit-ui"},
+  },
+  "line-chart-multi": {
+    name: "line-chart-multi",
+    description: "Multi-series line chart with animated paths, highlight segments, and interactive tooltips (multi)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["line-chart"],
+    files: [{
+      path: "registry/components/charts/line-chart/example-multi.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/line-chart/example-multi")),
+    meta: {"tags":["charts","data-visualization","visx","line"],"source":"bklit-ui"},
+  },
+  "line-chart-segment": {
+    name: "line-chart-segment",
+    description: "Multi-series line chart with animated paths, highlight segments, and interactive tooltips (segment)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["line-chart"],
+    files: [{
+      path: "registry/components/charts/line-chart/example-segment.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/line-chart/example-segment")),
+    meta: {"tags":["charts","data-visualization","visx","line"],"source":"bklit-ui"},
+  },
+  "line-chart-tooltip": {
+    name: "line-chart-tooltip",
+    description: "Multi-series line chart with animated paths, highlight segments, and interactive tooltips (tooltip)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["line-chart"],
+    files: [{
+      path: "registry/components/charts/line-chart/example-tooltip.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/line-chart/example-tooltip")),
+    meta: {"tags":["charts","data-visualization","visx","line"],"source":"bklit-ui"},
+  },
   "line-shadow-text": {
     name: "line-shadow-text",
     description: "A text component with a moving line shadow.",
@@ -7795,6 +8240,81 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/cards/liquid-glass-card/example")),
     meta: {"tags":["card","glass","glassmorphism","blur","apple"],"source":"kokonutui"},
+  },
+  "live-line-chart": {
+    name: "live-line-chart",
+    description: "Real-time streaming line chart with smooth scroll animation for live data feeds",
+    type: "registry:ui",
+    category: "charts",
+    registryDependencies: undefined,
+    dependencies: ["@visx/responsive","@visx/scale","@visx/shape","@visx/group","@visx/event","d3-array","motion"],
+    files: [{
+      path: "registry/components/charts/live-line-chart/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/charts/live-line-chart/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["charts","data-visualization","visx","live-line"],"source":"bklit-ui"},
+  },
+  "live-line-chart-demo": {
+    name: "live-line-chart-demo",
+    description: "Real-time streaming line chart with smooth scroll animation for live data feeds (demo)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["live-line-chart"],
+    files: [{
+      path: "registry/components/charts/live-line-chart/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/live-line-chart/example")),
+    meta: {"tags":["charts","data-visualization","visx","live-line"],"source":"bklit-ui"},
+  },
+  "live-line-chart-heartrate": {
+    name: "live-line-chart-heartrate",
+    description: "Real-time streaming line chart with smooth scroll animation for live data feeds (heartrate)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["live-line-chart"],
+    files: [{
+      path: "registry/components/charts/live-line-chart/example-heartrate.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/live-line-chart/example-heartrate")),
+    meta: {"tags":["charts","data-visualization","visx","live-line"],"source":"bklit-ui"},
+  },
+  "live-line-chart-price": {
+    name: "live-line-chart-price",
+    description: "Real-time streaming line chart with smooth scroll animation for live data feeds (price)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["live-line-chart"],
+    files: [{
+      path: "registry/components/charts/live-line-chart/example-price.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/live-line-chart/example-price")),
+    meta: {"tags":["charts","data-visualization","visx","live-line"],"source":"bklit-ui"},
+  },
+  "live-line-chart-server": {
+    name: "live-line-chart-server",
+    description: "Real-time streaming line chart with smooth scroll animation for live data feeds (server)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["live-line-chart"],
+    files: [{
+      path: "registry/components/charts/live-line-chart/example-server.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/live-line-chart/example-server")),
+    meta: {"tags":["charts","data-visualization","visx","live-line"],"source":"bklit-ui"},
   },
   "loader": {
     name: "loader",
@@ -9318,6 +9838,123 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/special/perspective-book/example")),
     meta: {"tags":["3d","book","perspective","hover"],"source":"spell-ui"},
   },
+  "pie-chart": {
+    name: "pie-chart",
+    description: "Pie and donut chart with smooth hover animations and composable center content",
+    type: "registry:ui",
+    category: "charts",
+    registryDependencies: undefined,
+    dependencies: ["@visx/responsive","@visx/shape","d3-shape","motion","@number-flow/react"],
+    files: [{
+      path: "registry/components/charts/pie-chart/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/charts/pie-chart/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["charts","data-visualization","visx","pie"],"source":"bklit-ui"},
+  },
+  "pie-chart-demo": {
+    name: "pie-chart-demo",
+    description: "Pie and donut chart with smooth hover animations and composable center content (demo)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["pie-chart"],
+    files: [{
+      path: "registry/components/charts/pie-chart/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/pie-chart/example")),
+    meta: {"tags":["charts","data-visualization","visx","pie"],"source":"bklit-ui"},
+  },
+  "pie-chart-custom-center": {
+    name: "pie-chart-custom-center",
+    description: "Pie and donut chart with smooth hover animations and composable center content (custom-center)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["pie-chart"],
+    files: [{
+      path: "registry/components/charts/pie-chart/example-custom-center.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/pie-chart/example-custom-center")),
+    meta: {"tags":["charts","data-visualization","visx","pie"],"source":"bklit-ui"},
+  },
+  "pie-chart-donut": {
+    name: "pie-chart-donut",
+    description: "Pie and donut chart with smooth hover animations and composable center content (donut)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["pie-chart"],
+    files: [{
+      path: "registry/components/charts/pie-chart/example-donut.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/pie-chart/example-donut")),
+    meta: {"tags":["charts","data-visualization","visx","pie"],"source":"bklit-ui"},
+  },
+  "pie-chart-gradient": {
+    name: "pie-chart-gradient",
+    description: "Pie and donut chart with smooth hover animations and composable center content (gradient)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["pie-chart"],
+    files: [{
+      path: "registry/components/charts/pie-chart/example-gradient.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/pie-chart/example-gradient")),
+    meta: {"tags":["charts","data-visualization","visx","pie"],"source":"bklit-ui"},
+  },
+  "pie-chart-hover": {
+    name: "pie-chart-hover",
+    description: "Pie and donut chart with smooth hover animations and composable center content (hover)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["pie-chart"],
+    files: [{
+      path: "registry/components/charts/pie-chart/example-hover.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/pie-chart/example-hover")),
+    meta: {"tags":["charts","data-visualization","visx","pie"],"source":"bklit-ui"},
+  },
+  "pie-chart-legend": {
+    name: "pie-chart-legend",
+    description: "Pie and donut chart with smooth hover animations and composable center content (legend)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["pie-chart"],
+    files: [{
+      path: "registry/components/charts/pie-chart/example-legend.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/pie-chart/example-legend")),
+    meta: {"tags":["charts","data-visualization","visx","pie"],"source":"bklit-ui"},
+  },
+  "pie-chart-pattern": {
+    name: "pie-chart-pattern",
+    description: "Pie and donut chart with smooth hover animations and composable center content (pattern)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["pie-chart"],
+    files: [{
+      path: "registry/components/charts/pie-chart/example-pattern.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/pie-chart/example-pattern")),
+    meta: {"tags":["charts","data-visualization","visx","pie"],"source":"bklit-ui"},
+  },
   "pill-nav": {
     name: "pill-nav",
     description: "A layouts pill nav component",
@@ -10307,6 +10944,81 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("@/registry/components/special/qr-code/example")),
     meta: {"tags":["qr-code","generator","barcode","encoding"],"source":"diceui"},
   },
+  "radar-chart": {
+    name: "radar-chart",
+    description: "Spider/radar chart for multi-metric comparison across categories",
+    type: "registry:ui",
+    category: "charts",
+    registryDependencies: undefined,
+    dependencies: ["@visx/responsive","@visx/shape","motion"],
+    files: [{
+      path: "registry/components/charts/radar-chart/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/charts/radar-chart/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["charts","data-visualization","visx","radar"],"source":"bklit-ui"},
+  },
+  "radar-chart-demo": {
+    name: "radar-chart-demo",
+    description: "Spider/radar chart for multi-metric comparison across categories (demo)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["radar-chart"],
+    files: [{
+      path: "registry/components/charts/radar-chart/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/radar-chart/example")),
+    meta: {"tags":["charts","data-visualization","visx","radar"],"source":"bklit-ui"},
+  },
+  "radar-chart-comparison": {
+    name: "radar-chart-comparison",
+    description: "Spider/radar chart for multi-metric comparison across categories (comparison)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["radar-chart"],
+    files: [{
+      path: "registry/components/charts/radar-chart/example-comparison.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/radar-chart/example-comparison")),
+    meta: {"tags":["charts","data-visualization","visx","radar"],"source":"bklit-ui"},
+  },
+  "radar-chart-legend": {
+    name: "radar-chart-legend",
+    description: "Spider/radar chart for multi-metric comparison across categories (legend)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["radar-chart"],
+    files: [{
+      path: "registry/components/charts/radar-chart/example-legend.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/radar-chart/example-legend")),
+    meta: {"tags":["charts","data-visualization","visx","radar"],"source":"bklit-ui"},
+  },
+  "radar-chart-minimal": {
+    name: "radar-chart-minimal",
+    description: "Spider/radar chart for multi-metric comparison across categories (minimal)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["radar-chart"],
+    files: [{
+      path: "registry/components/charts/radar-chart/example-minimal.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/radar-chart/example-minimal")),
+    meta: {"tags":["charts","data-visualization","visx","radar"],"source":"bklit-ui"},
+  },
   "rainbow-button": {
     name: "rainbow-button",
     description: "A buttons rainbow button component",
@@ -10669,6 +11381,81 @@ export const Index: Record<string, any> = {
     }],
     component: React.lazy(() => import("@/registry/components/buttons/rich-button/example")),
     meta: {"tags":["button","gradient","variant"],"source":"spell-ui"},
+  },
+  "ring-chart": {
+    name: "ring-chart",
+    description: "Concentric ring chart for multi-metric progress and comparison visualization",
+    type: "registry:ui",
+    category: "charts",
+    registryDependencies: undefined,
+    dependencies: ["@visx/responsive","@visx/shape","d3-shape","motion","@number-flow/react"],
+    files: [{
+      path: "registry/components/charts/ring-chart/component.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/components/charts/ring-chart/component")
+      const exportName = Object.keys(mod).find(key => typeof mod[key] === 'function' || typeof mod[key] === 'object')
+      return { default: mod.default || mod[exportName] }
+    }),
+    meta: {"tags":["charts","data-visualization","visx","ring"],"source":"bklit-ui"},
+  },
+  "ring-chart-demo": {
+    name: "ring-chart-demo",
+    description: "Concentric ring chart for multi-metric progress and comparison visualization (demo)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["ring-chart"],
+    files: [{
+      path: "registry/components/charts/ring-chart/example.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/ring-chart/example")),
+    meta: {"tags":["charts","data-visualization","visx","ring"],"source":"bklit-ui"},
+  },
+  "ring-chart-fitness": {
+    name: "ring-chart-fitness",
+    description: "Concentric ring chart for multi-metric progress and comparison visualization (fitness)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["ring-chart"],
+    files: [{
+      path: "registry/components/charts/ring-chart/example-fitness.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/ring-chart/example-fitness")),
+    meta: {"tags":["charts","data-visualization","visx","ring"],"source":"bklit-ui"},
+  },
+  "ring-chart-legend": {
+    name: "ring-chart-legend",
+    description: "Concentric ring chart for multi-metric progress and comparison visualization (legend)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["ring-chart"],
+    files: [{
+      path: "registry/components/charts/ring-chart/example-legend.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/ring-chart/example-legend")),
+    meta: {"tags":["charts","data-visualization","visx","ring"],"source":"bklit-ui"},
+  },
+  "ring-chart-progress": {
+    name: "ring-chart-progress",
+    description: "Concentric ring chart for multi-metric progress and comparison visualization (progress)",
+    type: "registry:example",
+    category: "charts",
+    registryDependencies: ["ring-chart"],
+    files: [{
+      path: "registry/components/charts/ring-chart/example-progress.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    component: React.lazy(() => import("@/registry/components/charts/ring-chart/example-progress")),
+    meta: {"tags":["charts","data-visualization","visx","ring"],"source":"bklit-ui"},
   },
   "ripple": {
     name: "ripple",
